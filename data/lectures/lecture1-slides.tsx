@@ -16,16 +16,14 @@ const slides: Slide[] = [
     contentType: "center",
     content: (
       <>
-        <div className="mb-12">
-          <SlideTitle size="xl" className="mb-4">
-            Welcome to <GradientText>Python</GradientText>
-            <br />
-            <span className="text-3xl md:text-4xl">for Biologists</span>
-          </SlideTitle>
-          <p className="text-xl text-gray-300 mt-4 text-center">
-            Transform your research with computational skills
-          </p>
-        </div>
+        <SlideTitle size="xl" className="mb-4">
+          Welcome to <GradientText>Python</GradientText>
+          <br />
+          <span className="text-3xl md:text-4xl">for Biologists</span>
+        </SlideTitle>
+        <p className="text-xl text-gray-300 mb-10 text-center">
+          Transform your research with computational skills
+        </p>
 
         <div className="grid md:grid-cols-2 gap-8 mt-12">
           <ConceptCard title="What You'll Achieve" icon="🎯" iconColor="blue">
@@ -83,9 +81,11 @@ const slides: Slide[] = [
     contentType: "center",
     content: (
       <>
-        <SlideTitle className="mb-12">
-          AI & LLMs: <GradientText>A Double-Edged Sword</GradientText>
-        </SlideTitle>
+
+          <SlideTitle className="mb-4">
+            AI & LLMs: <GradientText>A Double-Edged Sword</GradientText>
+          </SlideTitle>
+
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-8">
           <div className="card border-bio-green/50">
@@ -166,9 +166,11 @@ const slides: Slide[] = [
     contentType: "top",
     content: (
       <>
-        <SlideTitle className="mb-12">
-          Who Uses <GradientText>Python</GradientText>?
-        </SlideTitle>
+        <div className="pb-10">
+          <SlideTitle>
+            Who Uses <GradientText>Python</GradientText>?
+          </SlideTitle>
+        </div>
 
         <p className="text-2xl text-center text-gray-300 mb-12">
           The same tools you'll learn power the world's biggest companies
@@ -239,14 +241,6 @@ const slides: Slide[] = [
           </div>
         </div>
 
-        <div className="text-center mt-10">
-          <div className="inline-block bg-bio-blue/10 rounded-full px-8 py-4 border border-bio-blue/30">
-            <p className="text-lg">
-              Python is the <span className="font-bold text-bio-blue">2nd best language</span> for{" "}
-              <span className="font-bold text-bio-green">everything!</span>
-            </p>
-          </div>
-        </div>
       </>
     )
   },
@@ -258,11 +252,13 @@ const slides: Slide[] = [
     contentType: "center",
     content: (
       <>
-        <div className="flex items-center justify-center mb-12">
-          <span className="text-6xl mr-4">🐍</span>
-          <SlideTitle>
-            The Story of <GradientText>Python</GradientText>
-          </SlideTitle>
+        <div className="pb-10">
+          <div className="flex items-center justify-center">
+            <span className="text-6xl mr-4">🐍</span>
+            <SlideTitle>
+              The Story of <GradientText>Python</GradientText>
+            </SlideTitle>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
@@ -347,11 +343,10 @@ const slides: Slide[] = [
   {
     id: 5,
     title: "The Python Organisation",
-    contentType: "center",
+    contentType: "top",
     content: (
       <>
-        <div className="flex items-center justify-center mb-8">
-          <span className="text-6xl mr-4">🐍</span>
+        <div className="pb-10">
           <SlideTitle>
             The Python <GradientText>Organisation</GradientText>
           </SlideTitle>
@@ -363,50 +358,44 @@ const slides: Slide[] = [
           </a>
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           <div>
-            <h3 className="text-3xl font-bold text-bio-yellow mb-6 flex items-center">
-              <span className="text-2xl mr-3">🔄</span>
+            <h3 className="text-2xl font-bold text-bio-yellow mb-4 flex items-center">
+              <span className="text-xl mr-2">🔄</span>
               Development Cycle
             </h3>
 
-            <div className="card border-2 border-bio-green mb-4">
-              <div className="flex items-center justify-between mb-2">
-                <h4 className="text-2xl font-bold text-bio-green">Python 3.13</h4>
-                <span className="badge-available">Current</span>
+            <div className="card border border-bio-green mb-3 p-3">
+              <div className="flex items-center justify-between mb-1">
+                <h4 className="text-lg font-bold text-bio-green">Python 3.13</h4>
+                <span className="text-xs bg-bio-green/20 px-2 py-1 rounded">Current</span>
               </div>
-              <p className="text-gray-300">Released October 2024</p>
-              <FeatureList
-                items={[
-                  { title: "Free-threaded mode (no GIL) experimental" },
-                  { title: "JIT compiler experimental" },
-                  { title: "Enhanced error messages" }
-                ]}
-                icon="•"
-                iconColor="green"
-                titleColor="default"
-                spacing="tight"
-                className="mt-2 text-sm text-gray-400"
-              />
+              <p className="text-sm text-gray-300">Released October 2024</p>
+              <div className="mt-2 text-xs text-gray-400 space-y-1">
+                <p>• Free-threaded mode (no GIL) experimental</p>
+                <p>• JIT compiler experimental</p>
+                <p>• Enhanced error messages</p>
+              </div>
             </div>
 
-            <ConceptCard title="🍂 Annual Autumn Release" icon="" variant="default">
-              <p className="text-gray-300 mb-3">New major version every October</p>
-              <div className="space-y-2">
-                <div className="flex items-center justify-between text-sm">
+            <div className="glass-dark rounded-lg p-3 mb-3">
+              <h4 className="font-bold text-bio-yellow mb-2 text-sm">🍂 Annual Autumn Release</h4>
+              <p className="text-sm text-gray-300 mb-2">New major version every October</p>
+              <div className="space-y-1">
+                <div className="flex items-center justify-between text-xs">
                   <span className="text-gray-400">Python 3.14</span>
                   <span className="text-bio-yellow">October 2025</span>
                 </div>
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex items-center justify-between text-xs">
                   <span className="text-gray-400">Python 3.15</span>
                   <span className="text-bio-yellow">October 2026</span>
                 </div>
               </div>
-            </ConceptCard>
+            </div>
 
-            <div className="mt-4 glass-dark rounded-xl p-4">
-              <h4 className="font-bold text-bio-blue mb-2">Version Support Timeline</h4>
-              <div className="space-y-1 text-sm">
+            <div className="glass-dark rounded-lg p-3">
+              <h4 className="font-bold text-bio-blue mb-2 text-sm">Version Support Timeline</h4>
+              <div className="space-y-1 text-xs">
                 <div className="flex justify-between">
                   <span className="text-gray-300">Full support:</span>
                   <span className="text-bio-green">18 months</span>
@@ -420,25 +409,33 @@ const slides: Slide[] = [
           </div>
 
           <div>
-            <h3 className="text-3xl font-bold text-gradient-purple mb-6 flex items-center">
-              <span className="text-2xl mr-3">🌍</span>
+            <h3 className="text-2xl font-bold text-gradient-purple mb-4 flex items-center">
+              <span className="text-xl mr-2">🌍</span>
               Global Impact
             </h3>
 
-            <StatsGrid
-              items={[
-                { value: "10M+", label: "Active developers", color: "yellow" },
-                { value: "500K+", label: "PyPI packages", color: "yellow" },
-                { value: "#1", label: "on GitHub", color: "green" },
-                { value: "30+", label: "PyCons yearly", color: "green" }
-              ]}
-              columns={2}
-              className="mb-6"
-            />
+            <div className="grid grid-cols-2 gap-2 mb-4">
+              <div className="glass-dark rounded-lg p-3 text-center">
+                <p className="text-2xl font-bold text-bio-yellow">10M+</p>
+                <p className="text-xs text-gray-400">Active developers</p>
+              </div>
+              <div className="glass-dark rounded-lg p-3 text-center">
+                <p className="text-2xl font-bold text-bio-yellow">500K+</p>
+                <p className="text-xs text-gray-400">PyPI packages</p>
+              </div>
+              <div className="glass-dark rounded-lg p-3 text-center">
+                <p className="text-2xl font-bold text-bio-green">#1</p>
+                <p className="text-xs text-gray-400">on GitHub</p>
+              </div>
+              <div className="glass-dark rounded-lg p-3 text-center">
+                <p className="text-2xl font-bold text-bio-green">30+</p>
+                <p className="text-xs text-gray-400">PyCons yearly</p>
+              </div>
+            </div>
 
-            <div className="bio-note">
-              <h4 className="font-bold text-bio-green mb-3">Python Software Foundation</h4>
-              <p className="text-sm text-gray-300 mb-3">
+            <div className="bio-note p-4">
+              <h4 className="font-bold text-bio-green mb-2">Python Software Foundation</h4>
+              <p className="text-sm text-gray-300 mb-2">
                 Non-profit supporting Python development and community
               </p>
               <div className="grid grid-cols-2 gap-2 text-sm">
@@ -455,10 +452,10 @@ const slides: Slide[] = [
           </div>
         </div>
 
-        <div className="mt-8 text-center">
-          <div className="inline-block bg-gradient-to-r from-bio-blue/20 to-bio-purple/20 rounded-2xl px-8 py-4 border border-bio-blue/30">
-            <p className="text-lg">
-              <span className="text-2xl mr-2">🐍</span>
+        <div className="mt-6 text-center">
+          <div className="inline-block bg-gradient-to-r from-bio-blue/20 to-bio-purple/20 rounded-xl px-6 py-3 border border-bio-blue/30">
+            <p className="text-base">
+              <span className="text-xl mr-2">🐍</span>
               Python is <span className="font-bold text-bio-blue">open source</span> and
               <span className="font-bold text-bio-green"> community-driven</span> - anyone can contribute!
             </p>
@@ -468,18 +465,20 @@ const slides: Slide[] = [
     )
   },
 
-  // Slide 6: Python in the Programming Landscape
+  // Slide 6: Programming Paradigms
   {
     id: 6,
-    title: "Python in the Programming Landscape",
-    contentType: "top",
+    title: "Programming Paradigms",
+    contentType: "center",
     content: (
       <>
-        <SlideTitle className="mb-12">
-          Python in the <GradientText>Programming Landscape</GradientText>
-        </SlideTitle>
+        <div className="pb-10">
+          <SlideTitle>
+            Programming <GradientText>Paradigms</GradientText>
+          </SlideTitle>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto mb-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
           <ConceptCard title="🔄 Interpreted vs Compiled" icon="">
             <div className="space-y-3">
               <div className="glass-dark rounded-xl p-4">
@@ -532,64 +531,7 @@ string s = "hi"; // s is always a string`}</pre>
           </ConceptCard>
         </div>
 
-        <div className="mb-8">
-          <h3 className="text-2xl font-bold text-center mb-6">
-            Where Python <span className="text-gradient-purple">Fits In</span>
-          </h3>
-
-          <div className="overflow-x-auto">
-            <table className="bio-table mx-auto">
-              <thead>
-                <tr>
-                  <th className="text-left">Language</th>
-                  <th>Type System</th>
-                  <th>Execution</th>
-                  <th>Best For</th>
-                  <th>Learning Curve</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="bg-bio-blue/10">
-                  <td className="font-bold text-bio-blue">Python 🐍</td>
-                  <td>Dynamic</td>
-                  <td>Interpreted</td>
-                  <td>Data Science, AI, Web, Automation</td>
-                  <td><span className="text-bio-green">◉◯◯◯◯</span> Easy</td>
-                </tr>
-                <tr>
-                  <td className="font-bold">R</td>
-                  <td>Dynamic</td>
-                  <td>Interpreted</td>
-                  <td>Statistics, Data Analysis</td>
-                  <td><span className="text-bio-yellow">◉◉◯◯◯</span> Moderate</td>
-                </tr>
-                <tr>
-                  <td className="font-bold">JavaScript</td>
-                  <td>Dynamic</td>
-                  <td>Interpreted/JIT</td>
-                  <td>Web Development</td>
-                  <td><span className="text-bio-yellow">◉◉◯◯◯</span> Moderate</td>
-                </tr>
-                <tr>
-                  <td className="font-bold">Java</td>
-                  <td>Static</td>
-                  <td>Compiled (bytecode)</td>
-                  <td>Enterprise, Android</td>
-                  <td><span className="text-orange-400">◉◉◉◯◯</span> Challenging</td>
-                </tr>
-                <tr>
-                  <td className="font-bold">C++</td>
-                  <td>Static</td>
-                  <td>Compiled</td>
-                  <td>Systems, Games, Performance</td>
-                  <td><span className="text-red-400">◉◉◉◉◯</span> Difficult</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto mt-12">
           <div className="text-center glass-dark rounded-xl p-4">
             <p className="text-3xl mb-2">🚀</p>
             <p className="font-bold text-bio-green">Fast to Write</p>
@@ -610,16 +552,132 @@ string s = "hi"; // s is always a string`}</pre>
     )
   },
 
-  // Slide 7: What We'll Build
+  // Slide 7: Language Comparison
   {
     id: 7,
+    title: "Language Comparison",
+    contentType: "center",
+    content: (
+      <>
+        <div className="pb-10">
+          <SlideTitle>
+            Where Python <span className="text-gradient-purple">Fits In</span>
+          </SlideTitle>
+        </div>
+
+        <div className="overflow-x-auto mb-12">
+          <table className="bio-table mx-auto">
+            <thead>
+              <tr>
+                <th className="text-left">Language</th>
+                <th>Type System</th>
+                <th>Execution</th>
+                <th>Best For</th>
+                <th>Learning Curve</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-bio-blue/10">
+                <td className="font-bold text-bio-blue">Python 🐍</td>
+                <td>Dynamic</td>
+                <td>Interpreted</td>
+                <td>Data Science, AI, Web, Automation</td>
+                <td><span className="text-bio-green">◉◯◯◯◯</span> Easy</td>
+              </tr>
+              <tr>
+                <td className="font-bold">R</td>
+                <td>Dynamic</td>
+                <td>Interpreted</td>
+                <td>Statistics, Data Analysis</td>
+                <td><span className="text-bio-yellow">◉◉◯◯◯</span> Moderate</td>
+              </tr>
+              <tr>
+                <td className="font-bold">JavaScript</td>
+                <td>Dynamic</td>
+                <td>Interpreted/JIT</td>
+                <td>Web Development</td>
+                <td><span className="text-bio-yellow">◉◉◯◯◯</span> Moderate</td>
+              </tr>
+              <tr>
+                <td className="font-bold">Java</td>
+                <td>Static</td>
+                <td>Compiled (bytecode)</td>
+                <td>Enterprise, Android</td>
+                <td><span className="text-orange-400">◉◉◉◯◯</span> Challenging</td>
+              </tr>
+              <tr>
+                <td className="font-bold">C++</td>
+                <td>Static</td>
+                <td>Compiled</td>
+                <td>Systems, Games, Performance</td>
+                <td><span className="text-red-400">◉◉◉◉◯</span> Difficult</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className="text-center">
+          <div className="inline-block bg-bio-blue/10 rounded-full px-8 py-4 border border-bio-blue/30">
+            <p className="text-lg">
+              Python is the <span className="font-bold text-bio-blue">2nd best language</span> for{" "}
+              <span className="font-bold text-bio-green">everything!</span>
+            </p>
+          </div>
+        </div>
+      </>
+    )
+  },
+
+// Slide 8: Course Structure
+  {
+    id: 8,
+    title: "Course Structure",
+    contentType: "center",
+    content: (
+      <>
+        <div className="pb-10">
+          <SlideTitle>
+            Course <GradientText>Structure</GradientText>
+          </SlideTitle>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          <div className="space-y-4">
+            {[
+              { num: "1", title: "Interactive Lectures", desc: "Core concepts with biological examples", icon: "📚" },
+              { num: "2", title: "Hands-on Seminars", desc: "Apply concepts to real problems", icon: "💻" },
+              { num: "3", title: "Weekly Exercises", desc: "Practice with guided problems", icon: "✏️" },
+              { num: "4", title: "Personal Projects", desc: "Apply to your own research", icon: "🚀", highlight: true }
+            ].map((item, index) => (
+              <div key={index} className="glass-dark rounded-xl p-6 flex items-center">
+                <div className={`${item.highlight ? 'bg-bio-yellow/20' : 'bg-bio-blue/20'} rounded-full w-12 h-12 flex items-center justify-center mr-4`}>
+                  <span className={`font-bold ${item.highlight ? 'text-bio-yellow' : 'text-bio-blue'}`}>{item.num}</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-bold text-lg">{item.title}</h3>
+                  <p className="text-gray-400">{item.desc}</p>
+                </div>
+                <div className="text-2xl">{item.icon}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </>
+    )
+  },
+
+  // Slide 9: What We'll Build
+  {
+    id: 9,
     title: "What We'll Build Together",
     contentType: "center",
     content: (
       <>
-        <SlideTitle className="mb-12">
-          What We'll <span className="text-gradient-purple">Build Together</span>
-        </SlideTitle>
+        <div className="pb-10">
+          <SlideTitle>
+            What We'll <span className="text-gradient-purple">Build Together</span>
+          </SlideTitle>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <div className="bio-note">
@@ -667,53 +725,21 @@ string s = "hi"; // s is always a string`}</pre>
     )
   },
 
-  // Slide 8: Course Structure
-  {
-    id: 8,
-    title: "Course Structure",
-    contentType: "center",
-    content: (
-      <>
-        <SlideTitle className="mb-12">
-          Course <GradientText>Structure</GradientText>
-        </SlideTitle>
+  
 
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-4">
-            {[
-              { num: "1", title: "Interactive Lectures", desc: "Core concepts with biological examples", icon: "📚" },
-              { num: "2", title: "Hands-on Seminars", desc: "Apply concepts to real problems", icon: "💻" },
-              { num: "3", title: "Weekly Exercises", desc: "Practice with guided problems", icon: "✏️" },
-              { num: "4", title: "Personal Projects", desc: "Apply to your own research", icon: "🚀", highlight: true }
-            ].map((item, index) => (
-              <div key={index} className="glass-dark rounded-xl p-6 flex items-center">
-                <div className={`${item.highlight ? 'bg-bio-yellow/20' : 'bg-bio-blue/20'} rounded-full w-12 h-12 flex items-center justify-center mr-4`}>
-                  <span className={`font-bold ${item.highlight ? 'text-bio-yellow' : 'text-bio-blue'}`}>{item.num}</span>
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-bold text-lg">{item.title}</h3>
-                  <p className="text-gray-400">{item.desc}</p>
-                </div>
-                <div className="text-2xl">{item.icon}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </>
-    )
-  },
-
-  // Slide 9: Let's Start
+  // Slide 10: Let's Start
   {
-    id: 9,
+    id: 10,
     title: "Ready to Start Coding?",
     contentType: "center",
     content: (
       <>
         <div className="text-center">
-          <SlideTitle className="mb-8">
-            Ready to <GradientText>Start Coding</GradientText>?
-          </SlideTitle>
+          <div className="pb-10">
+            <SlideTitle>
+              Ready to <GradientText>Start Coding</GradientText>?
+            </SlideTitle>
+          </div>
 
           <div className="text-6xl mb-8 animate-float">
             🚀

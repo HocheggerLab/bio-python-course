@@ -4,6 +4,8 @@ interface SlideNavigationProps {
   onPrevious: () => void
   onNext: () => void
   onSlideSelect: (slideIndex: number) => void
+  onExportPDF: () => void
+  isExporting: boolean
 }
 
 export default function SlideNavigation({
@@ -11,7 +13,9 @@ export default function SlideNavigation({
   totalSlides,
   onPrevious,
   onNext,
-  onSlideSelect
+  onSlideSelect,
+  onExportPDF,
+  isExporting
 }: SlideNavigationProps) {
   return (
     <div className="slide-navigation">
@@ -35,13 +39,34 @@ export default function SlideNavigation({
           ))}
         </div>
 
-        <button
-          onClick={onNext}
-          disabled={currentSlide === totalSlides - 1}
-          className="btn-secondary !py-1 !px-3 !text-sm disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          Next →
-        </button>
+        <div className="flex items-center space-x-3">
+          <button
+            onClick={onExportPDF}
+            disabled={isExporting}
+            className="btn-secondary !py-1 !px-3 !text-sm disabled:opacity-50 disabled:cursor-not-allowed pdf-export-btn flex items-center gap-1"
+            title="Download slides as PDF"
+          >
+            {isExporting ? (
+              <>
+                <span className="animate-spin">⏳</span>
+                <span className="hidden sm:inline">Exporting...</span>
+              </>
+            ) : (
+              <>
+                📄
+                <span className="hidden sm:inline">PDF</span>
+              </>
+            )}
+          </button>
+
+          <button
+            onClick={onNext}
+            disabled={currentSlide === totalSlides - 1}
+            className="btn-secondary !py-1 !px-3 !text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Next →
+          </button>
+        </div>
       </div>
     </div>
   )

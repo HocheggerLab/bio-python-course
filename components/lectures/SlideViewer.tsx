@@ -60,25 +60,6 @@ export default function SlideViewer({ lecture }: SlideViewerProps) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* PDF Export Button */}
-      <button
-        onClick={handleExportPDF}
-        disabled={isExporting}
-        className="fixed top-20 right-4 z-40 btn-secondary !py-2 !px-4 text-sm flex items-center gap-2 disabled:opacity-50 pdf-export-btn"
-        title="Download slides as PDF"
-      >
-        {isExporting ? (
-          <>
-            <span className="animate-spin">⏳</span>
-            Exporting...
-          </>
-        ) : (
-          <>
-            📄 Download PDF
-          </>
-        )}
-      </button>
-
       <main className="flex-1 relative">
         {lecture.slides.map((slide, index) => (
           <Slide
@@ -95,6 +76,8 @@ export default function SlideViewer({ lecture }: SlideViewerProps) {
         onPrevious={handlePrevious}
         onNext={handleNext}
         onSlideSelect={handleSlideSelect}
+        onExportPDF={handleExportPDF}
+        isExporting={isExporting}
       />
     </div>
   )

@@ -145,11 +145,33 @@
     overflow: visible !important;
     max-width: none !important;
     max-height: none !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    display: block !important;
     padding: 60px !important;
     box-sizing: border-box !important;
+  }
+
+  .pdf-export-mode .slide-content {
+    width: 100% !important;
+    max-width: 1800px !important;
+    margin: 0 auto !important;
+    height: calc(100% - 120px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .pdf-export-mode .slide-content-top {
+    width: 100% !important;
+    max-width: 1800px !important;
+    margin: 0 auto !important;
+    height: calc(100% - 120px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    padding-top: 40px !important;
   }
 
   .pdf-export-mode .slide-navigation {
@@ -167,6 +189,13 @@
     opacity: 1 !important;
     visibility: visible !important;
     display: block !important;
+  }
+
+  /* Better text rendering for PDF export */
+  .pdf-export-mode * {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
   }
 
   /* Fix gradient text for PDF export */
@@ -196,6 +225,17 @@
 
   .pdf-export-mode .text-bio-blue {
     color: #3b82f6 !important;
+  }
+
+  /* Ensure consistent font sizes in PDF */
+  .pdf-export-mode h1, .pdf-export-mode h2, .pdf-export-mode h3 {
+    line-height: 1.2 !important;
+  }
+
+  .pdf-export-mode .glass-dark {
+    background: rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: none !important;
   }
 
   /* Hide PDF export button during export */
@@ -356,6 +396,11 @@
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  /* Slide title wrapper for consistent spacing */
+  .slide-title-wrapper {
+    padding-bottom: 2.5rem !important; /* 40px */
   }
 
   /* Custom scrollbar for slides */
