@@ -1,42 +1,394 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* All @layer base styles */
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
+  /* Smooth scrolling for the entire app */
   html {
-    color-scheme: dark;
+    @apply scroll-smooth;
   }
+  
+  /* Better text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Custom selection colors */
+  ::selection {
+    @apply bg-bio-blue/30 text-white;
+  }
+}
+
+/* All @layer components styles */
+
+@layer components {
+  /* Primary button style */
+  .btn-primary {
+    @apply px-6 py-3 bg-bio-blue text-bio-dark rounded-full font-bold 
+           transition-all duration-300 hover:bg-bio-light-blue hover:scale-105
+           focus:outline-none focus:ring-2 focus:ring-bio-blue focus:ring-offset-2
+           focus:ring-offset-bio-dark;
+  }
+  
+  /* Secondary button style */
+  .btn-secondary {
+    @apply px-6 py-3 border-2 border-bio-blue text-bio-blue rounded-full font-bold
+           transition-all duration-300 hover:bg-bio-blue hover:text-bio-dark
+           hover:scale-105 focus:outline-none focus:ring-2 focus:ring-bio-blue 
+           focus:ring-offset-2 focus:ring-offset-bio-dark;
+  }
+  
+  /* Card component */
+  .card {
+    @apply bg-white/5 backdrop-blur-sm rounded-xl p-6 
+           border border-white/10 transition-all duration-300
+           hover:border-bio-blue hover:transform hover:-translate-y-1
+           hover:shadow-bio-glow-sm;
+  }
+  
+  /* Concept box (from lecture design) */
+  .concept-box {
+    @apply bg-white/5 p-6 rounded-2xl border-l-4 border-bio-blue
+           backdrop-blur-md shadow-lg;
+  }
+  
+  /* Code block styling */
+  .code-block {
+    @apply bg-code-bg border border-code-border rounded-xl p-5
+           font-mono text-sm overflow-x-auto relative;
+  }
+  
+  .code-block pre {
+    @apply m-0 whitespace-pre-wrap leading-relaxed;
+  }
+  
+  /* Output block styling */
+  .output-block {
+    @apply bg-output-bg border border-output-border rounded-xl p-4
+           font-mono text-bio-light-blue border-l-4 border-l-bio-light-blue;
+  }
+  
+  /* Exercise box */
+  .exercise-box {
+    @apply bg-bio-yellow/10 border-2 border-bio-yellow rounded-2xl p-6;
+  }
+  
+  /* Bio note */
+  .bio-note {
+    @apply bg-bio-green/10 border-l-4 border-bio-green p-4 rounded-r-xl;
+  }
+  
+  /* Navigation styles */
+  .nav-link {
+    @apply text-gray-300 hover:text-bio-blue transition-colors duration-200;
+  }
+  
+  /* Slide container */
+  .slide-container {
+    @apply min-h-screen flex items-center justify-center p-8
+           bg-gradient-to-br from-bio-dark to-bio-darker;
+  }
+  
+@layer components {
+  /* ... your existing components ... */
+
+  /* Slide system components */
+  .slide {
+    @apply hidden min-h-screen w-full relative overflow-y-auto overflow-x-hidden pb-24;
+    scroll-behavior: smooth;
+  }
+  
+  .slide.active {
+    @apply block;
+  }
+  
+  .slide-content {
+    @apply w-full max-w-7xl mx-auto px-8 py-16 min-h-screen flex flex-col justify-center;
+  }
+  
+  /* For content-heavy slides that need top alignment */
+  .slide-content-top {
+    @apply w-full max-w-7xl mx-auto px-8 pt-24 pb-8 min-h-screen flex flex-col justify-start;
+  }
+  
+  /* Navigation bar for slides */
+  .slide-navigation {
+    @apply fixed bottom-0 left-0 right-0 z-50 
+           bg-black/10 backdrop-blur-lg backdrop-saturate-150
+           border-t border-white/10 px-4 py-1.5;
+  }
+  
+  /* Slide indicators */
+  .slide-indicator {
+    @apply w-2 h-2 rounded-full bg-white/30 cursor-pointer transition-all duration-300
+           hover:bg-white/50;
+  }
+  
+  .slide-indicator.active {
+    @apply bg-bio-blue w-8;
+  }
+
+  /* PDF Export Styles */
+  .pdf-export-mode {
+    overflow: hidden !important;
+  }
+
+  .pdf-export-mode .slide {
+    page-break-after: always;
+    width: 1920px !important;
+    height: 1080px !important;
+    position: relative !important;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    overflow: visible !important;
+    max-width: none !important;
+    max-height: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 60px !important;
+    box-sizing: border-box !important;
+  }
+
+  .pdf-export-mode .slide-navigation {
+    display: none !important;
+  }
+
+  .pdf-export-mode .slide:not(.active) {
+    display: none !important;
+  }
+
+  /* Ensure images display properly in PDF export */
+  .pdf-export-mode img {
+    max-width: 100% !important;
+    height: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  /* Fix gradient text for PDF export */
+  .pdf-export-mode .text-gradient {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+    background-clip: unset !important;
+    color: #60a5fa !important;
+  }
+
+  .pdf-export-mode .text-gradient-purple {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+    background-clip: unset !important;
+    color: #a855f7 !important;
+  }
+
+  .pdf-export-mode .text-bio-green {
+    color: #10b981 !important;
+  }
+
+  .pdf-export-mode .text-bio-yellow {
+    color: #f59e0b !important;
+  }
+
+  .pdf-export-mode .text-bio-blue {
+    color: #3b82f6 !important;
+  }
+
+  /* Hide PDF export button during export */
+  .pdf-export-mode .pdf-export-btn {
+    display: none !important;
+  }
+
+  /* Print Styles - Alternative approach */
+  @media print {
+    body {
+      margin: 0;
+      padding: 0;
+      background: white !important;
+    }
+
+    .slide {
+      page-break-after: always;
+      width: 100vw !important;
+      height: 100vh !important;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    .slide:not(.active) {
+      display: none !important;
+    }
+
+    .slide-navigation {
+      display: none !important;
+    }
+
+    .print-mode .slide {
+      display: flex !important;
+    }
+
+    .print-mode .slide:not(.active) {
+      display: flex !important;
+    }
+
+    /* Ensure colors print correctly */
+    .text-gradient {
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+    }
+
+    .glass-dark {
+      background: rgba(0, 0, 0, 0.1) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      backdrop-filter: blur(8px) !important;
+    }
+  }
+}
+
+
+
+  /* Section headers */
+  .section-header {
+    @apply text-4xl md:text-5xl font-bold text-center mb-12;
+  }
+  
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-bio-blue to-bio-light-blue 
+           bg-clip-text text-transparent;
+  }
+  
+  /* Purple gradient for special elements */
+  .text-gradient-purple {
+    @apply bg-bio-gradient bg-clip-text text-transparent;
+  }
+  
+  /* DNA visualization */
+  .dna-visual {
+    @apply bg-bio-gradient p-5 rounded-xl font-mono text-lg
+           tracking-wider text-center text-white shadow-xl;
+  }
+  
+  /* Status badges */
+  .badge-available {
+    @apply px-3 py-1 bg-bio-green/20 text-bio-green text-sm rounded-full font-semibold;
+  }
+  
+  .badge-coming-soon {
+    @apply px-3 py-1 bg-orange-500/20 text-orange-400 text-sm rounded-full font-semibold;
+  }
+  
+  /* Lecture number badge */
+  .lecture-number {
+    @apply inline-block w-8 h-8 bg-bio-blue text-bio-dark 
+           rounded-full text-center leading-8 font-bold mr-2;
+  }
+  
+  /* Method cards for string methods */
+  .method-card {
+    @apply bg-white/5 p-4 rounded-lg border border-white/10
+           transition-all duration-300 hover:transform hover:-translate-y-1
+           hover:border-bio-blue;
+  }
+  
+  /* Table styling */
+  .bio-table {
+    @apply w-full border-collapse;
+  }
+  
+  .bio-table th {
+    @apply p-4 text-left bg-bio-blue/20 text-bio-blue font-bold
+           border-b border-white/10;
+  }
+  
+  .bio-table td {
+    @apply p-4 text-left bg-white/5 border-b border-white/10;
+  }
+}
+
+/* All @layer utilities styles */
+
+@layer utilities {
+  /* Custom animation delays */
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  
+  /* Custom backdrop filters */
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+  
+  /* Glassmorphism effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  /* Dark glassmorphism */
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-md border border-white/10;
+  }
+  
+  /* Hide scrollbar but keep functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Custom scrollbar for slides */
+  .slide-scrollbar::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  .slide-scrollbar::-webkit-scrollbar-track {
+    @apply bg-white/5;
+  }
+  
+  .slide-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-bio-blue/50 rounded-full;
+  }
+  
+  .slide-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-bio-blue/70;
+  }
+  
+  /* Scroll indicator animation */
+  @keyframes bounce-fade {
+    0%, 100% {
+      opacity: 0.6;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(10px);
+    }
+  }
+  
+  .animate-bounce-fade {
+    animation: bounce-fade 2s ease-in-out infinite;
+  }
+
 }
