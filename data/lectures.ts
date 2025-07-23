@@ -19,7 +19,7 @@ export const lectures: Lecture[] = [
       "Your first bio program"
     ],
     slideUrl: "/lectures/1",
-    notebookUrl: "/lectures/lecture1/notebook.ipynb"
+    notebookUrl: "/notebooks/lecture-1"
   },
   {
     id: 2,

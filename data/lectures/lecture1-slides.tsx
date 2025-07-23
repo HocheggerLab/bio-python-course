@@ -13,6 +13,10 @@ import {
   TheSolutionSlide,
   BreakingDownProblemsSlide,
   Step1CodeSlide,
+  Step2IntroSlide,
+  Step2CodeSlide,
+  Step3IntroSlide,
+  Step3CodeSlide,
   ReadyToStartSlide
 } from './lecture1'
 
@@ -94,6 +98,26 @@ const slideDefinitions: SlideDefinition[] = [
     title: "Step 1: The Code",
     contentType: "center",
     component: Step1CodeSlide
+  },
+  {
+    title: "Step 2: Scaling with Loops",
+    contentType: "center",
+    component: Step2IntroSlide
+  },
+  {
+    title: "Step 2: The Code",
+    contentType: "center",
+    component: Step2CodeSlide
+  },
+  {
+    title: "Step 3: Processing Many Values at Once",
+    contentType: "center",
+    component: Step3IntroSlide
+  },
+  {
+    title: "Step 3: The Code - Lists & For Loops",
+    contentType: "center",
+    component: Step3CodeSlide
   }
 ]
 

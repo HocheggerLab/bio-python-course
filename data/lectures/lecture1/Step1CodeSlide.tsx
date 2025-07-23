@@ -63,7 +63,7 @@ export function Step1CodeSlide() {
               </p>
             </div>
             <a 
-              href="https://colab.research.google.com/github/YOUR_USERNAME/python-for-biologists-nextjs/blob/main/notebooks/lecture01/step1_calculate_volume.ipynb"
+              href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/calculate_volume.ipynb"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-bio-blue hover:bg-bio-blue/80 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition-colors"
@@ -102,25 +102,71 @@ export function Step1CodeSlide() {
           </ul>
         </div>
         {/* Key concepts */}
-        <div className="grid md:grid-cols-3 gap-4 mb-4">
-          <div className="bg-bio-dark/70 rounded-lg p-4 border-l-4 border-purple-500">
-            <h4 className="font-bold text-purple-400 mb-2 text-sm">Google Colab</h4>
+        <div className="grid md:grid-cols-4 gap-4 mb-4">
+          <a 
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/collab_notebooks.ipynb"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-bio-dark/70 hover:bg-purple-500/20 rounded-lg p-4 border-l-4 border-purple-500 block transition-colors cursor-pointer"
+          >
+            <h4 className="font-bold text-purple-400 mb-2 text-sm flex items-center">
+              Google Colab
+              <svg className="w-4 h-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </h4>
             <p className="text-xs text-gray-300">
               Run Python code in your browser - no installation needed!
             </p>
-          </div>
-          <div className="bg-bio-dark/70 rounded-lg p-4 border-l-4 border-bio-yellow">
-            <h4 className="font-bold text-bio-yellow mb-2 text-sm">Variables</h4>
+          </a>
+          <a 
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/variables_and_comments.ipynb"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-bio-dark/70 hover:bg-bio-yellow/20 rounded-lg p-4 border-l-4 border-bio-yellow block transition-colors cursor-pointer"
+          >
+            <h4 className="font-bold text-bio-yellow mb-2 text-sm flex items-center">
+              Variables
+              <svg className="w-4 h-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </h4>
             <p className="text-xs text-gray-300">
               Store values with meaningful names for clarity and reusability
             </p>
-          </div>
-          <div className="bg-bio-dark/70 rounded-lg p-4 border-l-4 border-bio-green">
-            <h4 className="font-bold text-bio-green mb-2 text-sm">f-strings</h4>
+          </a>
+          <a 
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/datatypes.ipynb"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-bio-dark/70 hover:bg-bio-blue/20 rounded-lg p-4 border-l-4 border-bio-blue block transition-colors cursor-pointer"
+          >
+            <h4 className="font-bold text-bio-blue mb-2 text-sm flex items-center">
+              Datatypes
+              <svg className="w-4 h-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </h4>
+            <p className="text-xs text-gray-300">
+              Numbers, text, and decimals for different kinds of data
+            </p>
+          </a>
+          <a 
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/f_strings.ipynb"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-bio-dark/70 hover:bg-bio-green/20 rounded-lg p-4 border-l-4 border-bio-green block transition-colors cursor-pointer"
+          >
+            <h4 className="font-bold text-bio-green mb-2 text-sm flex items-center">
+              f-strings
+              <svg className="w-4 h-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </h4>
             <p className="text-xs text-gray-300">
               Format output with <code className="text-bio-yellow">:.2f</code> for 2 decimal places
             </p>
-          </div>
+          </a>
         </div>
 
         

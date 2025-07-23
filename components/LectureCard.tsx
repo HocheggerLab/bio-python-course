@@ -30,8 +30,13 @@ export default function LectureCard({ lecture }: LectureCardProps) {
               View Slides
             </Link>
             {lecture.notebookUrl && (
-              <a href={lecture.notebookUrl} className="btn-secondary !py-2 !px-4 text-sm">
-                Colab
+              <a 
+                href={lecture.notebookUrl} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary !py-2 !px-4 text-sm"
+              >
+                Notebooks
               </a>
             )}
           </>
