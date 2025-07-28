@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Slide from './Slide'
 import SlideNavigation from './SlideNavigation'
 import { LectureData } from '@/data/lectures/types'
-import { exportSlidesToPDF } from '@/lib/pdf-export'
+import { exportSlidesToPDF } from '@/utils/pdf-export'
 
 interface SlideViewerProps {
   lecture: LectureData
