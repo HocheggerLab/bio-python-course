@@ -3,7 +3,7 @@ import React from 'react';
 interface ConceptCardProps {
   title: string;
   icon?: string;
-  iconColor?: string;
+  iconColor?: 'blue' | 'yellow' | 'green' | 'purple' | 'red';
   children: React.ReactNode;
   className?: string;
   variant?: 'default' | 'highlight' | 'warning' | 'success';

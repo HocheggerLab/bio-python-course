@@ -1,10 +1,8 @@
 'use client'
 
 import { useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
 
 export default function ScrollToHashOnLoad() {
-  const searchParams = useSearchParams()
 
   useEffect(() => {
     // Check if there's a hash in the URL
