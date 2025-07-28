@@ -23,26 +23,39 @@ export default function LectureCard({ lecture }: LectureCardProps) {
           </li>
         ))}
       </ul>
-      <div className="flex gap-3 flex-wrap">
+      <div className="flex gap-2 flex-wrap">
         {lecture.status === 'available' && lecture.slideUrl && (
           <>
-            <Link href={lecture.slideUrl} className="btn-primary !py-2 !px-4 text-sm">
-              View Slides
+            <Link href={lecture.slideUrl} className="btn-primary !py-1 !px-3 text-xs">
+              Slides
             </Link>
             {lecture.notebookUrl && (
               <a 
                 href={lecture.notebookUrl} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary !py-2 !px-4 text-sm"
+                className="btn-secondary !py-1 !px-3 text-xs"
               >
                 Notebooks
               </a>
             )}
+            <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark">
+              Video
+            </Link>
           </>
         )}
         {lecture.status === 'coming-soon' && (
-          <span className="text-gray-400 text-sm">Coming Week {lecture.id}</span>
+          <>
+            <Link href="/under-construction" className="btn-primary !py-1 !px-3 text-xs">
+              Slides
+            </Link>
+            <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs">
+              Notebooks
+            </Link>
+            <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark">
+              Video
+            </Link>
+          </>
         )}
       </div>
     </div>

@@ -32,14 +32,14 @@ export default function Footer() {
               <a href="mailto:hh65@sussex.ac.uk" className="nav-link">
                 📧 Contact
               </a>
-              <a href="https://github.com/hochegger-lab/python-for-biologists" className="nav-link">
+              <a href="https://github.com/HocheggerLab" className="nav-link">
                 💻 GitHub
               </a>
             </div>
             
             <div className="flex gap-4">
               <a 
-                href="https://bsky.app/profile/hochegger.bsky.social" 
+                href="https://bsky.app/profile/helfridh.bsky.social" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="nav-link"
@@ -47,7 +47,7 @@ export default function Footer() {
                 🦋 Bluesky
               </a>
               <a 
-                href="https://linkedin.com/in/helfrid-hochegger" 
+                href="https://www.linkedin.com/in/helfrid-hochegger-996a85299/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="nav-link"
@@ -55,7 +55,7 @@ export default function Footer() {
                 💼 LinkedIn
               </a>
               <a 
-                href="/instructor" 
+                href="https://profiles.sussex.ac.uk/p218740-helfrid-hochegger" 
                 className="nav-link"
               >
                 👨‍🏫 Instructor

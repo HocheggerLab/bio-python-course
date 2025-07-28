@@ -10,12 +10,12 @@ export interface Lecture {
 export const lectures: Lecture[] = [
   {
     id: 1,
-    title: "Introduction to Python",
+    title: "Automate lab calculations",
     status: "available",
     topics: [
       "Setting up Google Colab",
       "Variables and data types",
-      "Basic operations",
+      "Functions, Lists and Loops",
       "Your first bio program"
     ],
     slideUrl: "/lectures/1",
@@ -24,47 +24,45 @@ export const lectures: Lecture[] = [
   {
     id: 2,
     title: "Strings & DNA Analysis",
-    status: "available",
+    status: "coming-soon",
     topics: [
       "String methods for sequences",
-      "DNA/RNA manipulation",
-      "Pattern finding",
+      "Dictionaries and Conditionals",
+      "Biopython",
       "Real sequence analysis"
     ],
-    slideUrl: "/lectures/2",
-    notebookUrl: "/lectures/lecture2/notebook.ipynb"
   },
   {
     id: 3,
-    title: "Functions & Dictionaries",
+    title: "Image Analysis in Python",
     status: "coming-soon",
     topics: [
-      "Creating reusable functions",
-      "Biological dictionaries",
-      "Codon tables",
-      "Translation tools"
-    ]
-  },
-  {
-    id: 4,
-    title: "Lists & File I/O",
-    status: "coming-soon",
-    topics: [
-      "Working with data lists",
-      "Reading FASTA files",
-      "Processing lab data",
+      "Numpy, Scikit-image",
+      "Image segmentation",
+      "Feature Extraction",
       "Batch analysis"
     ]
   },
   {
-    id: 5,
-    title: "Data Analysis & Visualization",
+    id: 4,
+    title: "Analyse Cancer Cell Dependencies",
     status: "coming-soon",
     topics: [
-      "NumPy for bio data",
-      "Pandas DataFrames",
-      "Matplotlib plots",
-      "Statistical analysis"
+      "Object Oriented Programming",
+      "Pandas, Matplotlib and Seaborn",
+      "Linear Regression Analysis",
+      "Plotting and Visualisation",
+    ]
+  },
+  {
+    id: 5,
+    title: "Building a local AI agent to perform PubMed searches",
+    status: "coming-soon",
+    topics: [
+      "Working with LLMs",
+      "Understanding agentic AI",
+      "Deploying a local model",
+      "Automating PubMed searches and text analysis"
     ]
   }
 ]

@@ -1,6 +1,7 @@
 import { LectureData, Slide } from './types'
 import {
   WelcomeSlide,
+  TeachingPhilosophySlide,
   AILLMSlide,
   WhoUsesPythonSlide,
   PythonStorySlide,
@@ -17,6 +18,9 @@ import {
   Step2CodeSlide,
   Step3IntroSlide,
   Step3CodeSlide,
+  Step4IntroSlide,
+  Step4CodeSlide,
+  FinalResultSlide,
   ReadyToStartSlide
 } from './lecture1'
 
@@ -33,6 +37,11 @@ const slideDefinitions: SlideDefinition[] = [
     title: "Welcome",
     contentType: "center",
     component: WelcomeSlide
+  },
+  {
+    title: "How to Teach (and Learn) Python",
+    contentType: "center",
+    component: TeachingPhilosophySlide
   },
   {
     title: "AI & LLMs: A Double-Edged Sword",
@@ -118,6 +127,21 @@ const slideDefinitions: SlideDefinition[] = [
     title: "Step 3: The Code - Lists & For Loops",
     contentType: "center",
     component: Step3CodeSlide
+  },
+  {
+    title: "Step 4: Working with Real Data Files",
+    contentType: "center",
+    component: Step4IntroSlide
+  },
+  {
+    title: "Step 4: The Code - File I/O",
+    contentType: "center",
+    component: Step4CodeSlide
+  },
+  {
+    title: "The Complete Solution",
+    contentType: "center",
+    component: FinalResultSlide
   }
 ]
 

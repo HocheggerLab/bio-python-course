@@ -1,11 +1,14 @@
 import React from 'react';
+import { SlideTitle } from '@/components/slides';
 
 const Step3CodeSlide: React.FC = () => {
   return (
     <div className="h-full flex flex-col justify-center items-center p-8 bg-gradient-to-br from-bio-dark via-bio-darker to-black text-white">
-      <h1 className="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-bio-blue to-bio-yellow">
-        Step 3: The Code - Lists & For Loops
-      </h1>
+      <div className="pb-8">
+        <SlideTitle>
+          Step 3: <span className="text-bio-blue">The Code</span> - Lists & For Loops
+        </SlideTitle>
+      </div>
       
       <div className="max-w-5xl w-full space-y-6">
         <div className="bg-gray-900 rounded-lg p-6 border border-bio-blue/30">
@@ -30,8 +33,9 @@ reagents = [
           <pre className="text-sm overflow-x-auto">
             <code className="text-gray-300">
 {`# Our function from Step 2
-def calculate_volume(molecular_weight, mass_mg, concentration_mM):
-    volume_mL = mass_mg / (molecular_weight * concentration_mM)
+def calculate_volume(mol_weight, weighed_mass, end_concentration):
+    """Calculate solvent volume needed for stock solution"""
+    volume_mL = 1000 * weighed_mass / mol_weight / end_concentration
     return volume_mL
 
 # Process ALL reagents with a for loop

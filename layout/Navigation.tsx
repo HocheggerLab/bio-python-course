@@ -2,9 +2,37 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useRouter, usePathname } from 'next/navigation'
+
+const useScrollToSection = () => {
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const scrollToSection = (sectionId: string) => {
+    // If we're not on the homepage, navigate there first
+    if (pathname !== '/') {
+      router.push(`/#${sectionId}`)
+      return
+    }
+
+    // If we're on the homepage, scroll to the section
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const navbarHeight = 80 // Approximate navbar height
+      const elementPosition = element.offsetTop - navbarHeight
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
+  return scrollToSection
+}
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const scrollToSection = useScrollToSection()
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -21,12 +49,12 @@ export default function Navigation() {
             </Link>
           </div>
           <div className="hidden md:flex items-center">
-            <Link href="/#lectures" scroll={false} className="nav-link mr-8">Lectures</Link>
-            <Link href="/#seminars" scroll={false} className="nav-link mr-8">Seminars</Link>
-            <Link href="/#resources" scroll={false} className="nav-link mr-8">Resources</Link>
-            <Link href="/#schedule" scroll={false} className="nav-link mr-8">Schedule</Link>
-            <Link href="/#about" scroll={false} className="nav-link mr-8">About</Link>
-            <a href="https://github.com/hochegger-lab/python-for-biologists" target="_blank"
+            <button onClick={() => scrollToSection('lectures')} className="nav-link mr-8">Lectures</button>
+            <button onClick={() => scrollToSection('seminars')} className="nav-link mr-8">Seminars</button>
+            <button onClick={() => scrollToSection('resources')} className="nav-link mr-8">Resources</button>
+            <button onClick={() => scrollToSection('schedule')} className="nav-link mr-8">Schedule</button>
+            <button onClick={() => scrollToSection('about')} className="nav-link mr-8">About</button>
+            <a href="https://github.com/HocheggerLab/y3-bio-python" target="_blank"
                className="btn-secondary !py-2 !px-4 text-sm">
               GitHub →
             </a>
@@ -51,12 +79,12 @@ export default function Navigation() {
       {isMobileMenuOpen && (
         <div className="md:hidden glass-dark border-t border-white/10 animate-in slide-in-from-top-2 duration-200">
           <div className="px-6 py-4 space-y-3">
-            <Link href="/#lectures" scroll={false} className="block nav-link py-2" onClick={toggleMobileMenu}>Lectures</Link>
-            <Link href="/#seminars" scroll={false} className="block nav-link py-2" onClick={toggleMobileMenu}>Seminars</Link>
-            <Link href="/#resources" scroll={false} className="block nav-link py-2" onClick={toggleMobileMenu}>Resources</Link>
-            <Link href="/#schedule" scroll={false} className="block nav-link py-2" onClick={toggleMobileMenu}>Schedule</Link>
-            <Link href="/#about" scroll={false} className="block nav-link py-2" onClick={toggleMobileMenu}>About</Link>
-            <a href="https://github.com/hochegger-lab/python-for-biologists" target="_blank" className="block nav-link py-2" onClick={toggleMobileMenu}>GitHub →</a>
+            <button onClick={() => { scrollToSection('lectures'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Lectures</button>
+            <button onClick={() => { scrollToSection('seminars'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Seminars</button>
+            <button onClick={() => { scrollToSection('resources'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Resources</button>
+            <button onClick={() => { scrollToSection('schedule'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Schedule</button>
+            <button onClick={() => { scrollToSection('about'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">About</button>
+            <a href="https://github.com/HocheggerLab/y3-bio-python" target="_blank" className="block nav-link py-2" onClick={toggleMobileMenu}>GitHub →</a>
           </div>
         </div>
       )}

@@ -50,35 +50,15 @@ export function AILLMSlide() {
         </div>
       </div>
 
-      <ConceptCard title="🔑 The Golden Rule" icon="" className="max-w-4xl mx-auto">
-        <p className="text-lg text-center mb-6 font-semibold">
-          Type the code <span className="text-bio-blue">YOURSELF</span> first,
-          then consult AI for questions and alternatives
-        </p>
-
-        <div className="grid md:grid-cols-3 gap-4 mt-8">
-          <div className="text-center bg-bio-dark rounded-lg p-4">
-            <div className="text-3xl mb-2">💪</div>
-            <p className="text-sm">You don't get fit by watching fitness videos</p>
-          </div>
-          <div className="text-center bg-bio-dark rounded-lg p-4">
-            <div className="text-3xl mb-2">🎸</div>
-            <p className="text-sm">You don't learn guitar by watching YouTube</p>
-          </div>
-          <div className="text-center bg-bio-dark rounded-lg p-4">
-            <div className="text-3xl mb-2">💻</div>
-            <p className="text-sm">You don't learn coding by copying AI output</p>
-          </div>
-        </div>
-      </ConceptCard>
-
-      <div className="text-center mt-8">
-        <p className="text-xl text-gray-300">
-          <strong className="text-bio-green">DO:</strong> Write → Test → Debug → Ask AI → Understand → Improve
-        </p>
-        <p className="text-xl text-gray-300 mt-2">
-          <strong className="text-red-400">DON'T:</strong> Ask AI → Copy → Paste → Submit
-        </p>
+      <div className="text-center mt-8 max-w-4xl mx-auto">
+        <ConceptCard title="The Right Approach" icon="🎯" className="border-bio-blue/30">
+          <p className="text-xl text-gray-300 mb-4">
+            <strong className="text-bio-green">DO:</strong> Write → Test → Debug → Ask AI → Understand → Improve
+          </p>
+          <p className="text-xl text-gray-300">
+            <strong className="text-red-400">DON'T:</strong> Ask AI → Copy → Paste → Submit
+          </p>
+        </ConceptCard>
       </div>
     </>
   )

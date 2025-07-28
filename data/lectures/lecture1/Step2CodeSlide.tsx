@@ -1,11 +1,14 @@
 import React from 'react';
+import { SlideTitle } from '@/components/slides';
 
 const Step2CodeSlide: React.FC = () => {
   return (
     <div className="h-full flex flex-col justify-center items-center p-8 bg-gradient-to-br from-bio-dark via-bio-darker to-black text-white">
-      <h1 className="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-bio-blue to-bio-yellow">
-        Step 2: The Code - Creating a Function
-      </h1>
+      <div className="pb-8">
+        <SlideTitle>
+          Step 2: <span className="text-bio-blue">The Code</span> - Creating a Function
+        </SlideTitle>
+      </div>
       
       <div className="max-w-5xl w-full space-y-6">
         <div className="bg-gray-900 rounded-lg p-6 border border-bio-blue/30">
@@ -16,7 +19,7 @@ const Step2CodeSlide: React.FC = () => {
 mass_mg = 89.5           # mg weighed
 concentration_mM = 10    # desired concentration
 
-volume_mL = mass_mg / (molecular_weight * concentration_mM)
+volume_mL = 1000 * mass_mg / (molecular_weight * concentration_mM)
 print(f"Add {volume_mL:.2f} mL of DMSO")`}
             </code>
           </pre>
@@ -26,9 +29,9 @@ print(f"Add {volume_mL:.2f} mL of DMSO")`}
           <h3 className="text-lg font-semibold mb-3 text-bio-yellow">After: Packaged as a function</h3>
           <pre className="text-sm overflow-x-auto">
             <code className="text-gray-300">
-{`def calculate_volume(molecular_weight, mass_mg, concentration_mM):
+{`def calculate_volume(mol_weight, weighed_mass, end_concentration):
     """Calculate solvent volume needed for stock solution"""
-    volume_mL = mass_mg / (molecular_weight * concentration_mM)
+    volume_mL = 1000 * weighed_mass / mol_weight / end_concentration
     return volume_mL
 
 # Now we can use it for any reagent!
@@ -46,7 +49,7 @@ print(f"MG132 (5mM): Add {volume_5mM:.2f} mL of DMSO")`}
           <h3 className="text-lg font-semibold mb-3 text-bio-green">Output:</h3>
           <pre className="text-sm overflow-x-auto font-mono text-green-400">
 {`MG132: Add 18.82 mL of DMSO
-MG132 (5mM): Add 37.65 mL of DMSO`}
+MG132 (5mM): Add 37.64 mL of DMSO`}
           </pre>
         </div>
 
@@ -54,7 +57,8 @@ MG132 (5mM): Add 37.65 mL of DMSO`}
           <p className="text-lg text-gray-300">
             <span className="text-bio-blue font-semibold">Key concepts:</span>{' '}
             <span className="text-bio-yellow font-mono">def</span> (define),{' '}
-            <span className="text-bio-yellow font-mono">return</span> (send back result),{' '}
+            def <span className="text-bio-yellow font-mono">(argument)</span> (input data),{' '}
+            <span className="text-bio-yellow font-mono">return</span> (output data),{' '}
             <span className="text-bio-yellow font-mono">"""docstring"""</span> (documentation)
           </p>
         </div>

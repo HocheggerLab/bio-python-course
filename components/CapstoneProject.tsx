@@ -1,9 +1,9 @@
 export default function CapstoneProject() {
   const features = [
-    "Reads multiple sequence files",
-    "Finds genes and ORFs",
-    "Translates to proteins",
-    "Generates analysis reports"
+    "Analyse and quantify microscopy data",
+    "Automate NGS sequence analysis",
+    "Perform correlation analysis on complex biological data",
+    "Work with an LLM to analyse text"
   ]
 
   return (
@@ -13,10 +13,10 @@ export default function CapstoneProject() {
       </span>
       <div className="flex items-center mb-4">
         <span className="text-2xl mr-2">🎯</span>
-        <h3 className="text-xl font-bold">Gene Analysis Pipeline</h3>
+        <h3 className="text-xl font-bold">Apply what you learned to a project of your choice</h3>
       </div>
       <p className="text-gray-300 mb-6">
-        Combine all your skills to build a complete gene analysis tool that:
+        Combine all your skills to:
       </p>
       <ul className="space-y-2 text-gray-300">
         {features.map((feature, index) => (

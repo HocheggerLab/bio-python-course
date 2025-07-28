@@ -37,7 +37,7 @@ export function Step1CodeSlide() {
             <p className="text-gray-300">end_concentration = <span className="text-bio-yellow">0.1</span> <span className="text-gray-500"># desired concentration in mM</span></p>
             <p className="mt-2"></p>
             <p className="text-gray-500"># Calculate the volume needed (in mL)</p>
-            <p className="text-gray-300">volume = (weighed_mass / mol_weight) / end_concentration</p>
+            <p className="text-gray-300">volume = 1000 * (weighed_mass / mol_weight) / end_concentration</p>
             <p className="mt-2"></p>
             <p className="text-gray-500"># Print the result with 2 decimal places</p>
             <p className="text-gray-300"><span className="text-bio-blue">print</span>(f<span className="text-bio-green">"Volume needed: {'{'}volume:.2f{'}'} mL"</span>)</p>

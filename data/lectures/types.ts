@@ -2,7 +2,7 @@ export interface Slide {
   id: number
   title: string
   content: React.ReactNode
-  contentType: 'center' | 'top' // determines slide-content vs slide-content-top
+  contentType: 'center' | 'top' | 'split' // determines slide-content vs slide-content-top
 }
 
 export interface LectureData {

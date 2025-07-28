@@ -12,34 +12,34 @@ export const resources: Resource[] = [
     title: 'Notebooks',
     description: 'Colab templates for every lecture',
     icon: '📓',
-    href: '/resources/notebooks/'
+    href: '/under-construction'
   },
   {
     id: 'data',
     title: 'Sample Data',
     description: 'Real sequences & datasets',
     icon: '🧬',
-    href: '/resources/data/'
+    href: '/under-construction'
   },
   {
     id: 'cheatsheets',
     title: 'Cheat Sheets',
     description: 'Quick reference PDFs',
     icon: '📖',
-    href: '/resources/cheatsheets/'
+    href: '/under-construction'
   },
   {
     id: 'exercises',
     title: 'Practice',
     description: 'Extra problems & solutions',
     icon: '🎯',
-    href: '/resources/exercises/'
+    href: '/under-construction'
   },
   {
     id: 'tools',
     title: 'Dev Tools',
     description: 'Python IDEs & setup guides',
     icon: '🛠️',
-    href: '/resources/tools/'
+    href: '/under-construction'
   }
 ]

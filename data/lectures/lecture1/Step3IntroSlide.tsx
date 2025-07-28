@@ -1,11 +1,14 @@
 import React from 'react';
+import { SlideTitle } from '@/components/slides';
 
 const Step3IntroSlide: React.FC = () => {
   return (
     <div className="h-full flex flex-col justify-center items-center p-8 bg-gradient-to-br from-bio-dark via-bio-darker to-black text-white">
-      <h1 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-bio-blue to-bio-yellow">
-        Step 3: Processing Many Values at Once
-      </h1>
+      <div className="pb-8">
+        <SlideTitle>
+          Step 3: <span className="text-bio-blue">Processing Many Values</span> at Once
+        </SlideTitle>
+      </div>
       
       <div className="max-w-4xl w-full">
         <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 mb-8 border border-bio-blue/30">

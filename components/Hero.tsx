@@ -1,10 +1,8 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function Hero() {
-  const showCourseIntro = () => {
-    // Placeholder for intro video functionality
-    alert('Course intro video coming soon!')
-  }
 
   return (
     <section className="pt-32 pb-20 px-6">
@@ -24,9 +22,9 @@ export default function Hero() {
             <a href="#lectures" className="btn-primary text-lg">
               Start Learning →
             </a>
-            <button onClick={showCourseIntro} className="btn-secondary text-lg">
+            <Link href="/under-construction" className="btn-secondary text-lg">
               Watch Intro Video
-            </button>
+            </Link>
           </div>
         </div>
 
