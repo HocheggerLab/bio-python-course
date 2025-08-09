@@ -1,0 +1,7 @@
+export { WelcomeSlide } from './WelcomeSlide'
+export { DevelopmentEnvironmentSlide } from './DevelopmentEnvironmentSlide'
+export { VSCodeSlide } from './VSCodeSlide'
+export { UVPythonSlide } from './UVPythonSlide'
+export { TerminalBasicsSlide } from './TerminalBasicsSlide'
+export { GitVersionControlSlide } from './GitVersionControlSlide'
+export { ResourcesNextStepsSlide } from './ResourcesNextStepsSlide'

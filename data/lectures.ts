@@ -1,7 +1,7 @@
 export interface Lecture {
   id: number
   title: string
-  status: 'available' | 'coming-soon'
+  status: 'available' | 'coming-soon' | 'under-construction'
   topics: string[]
   slideUrl?: string
   notebookUrl?: string
@@ -24,13 +24,14 @@ export const lectures: Lecture[] = [
   {
     id: 2,
     title: "Strings & DNA Analysis",
-    status: "coming-soon",
+    status: "under-construction",
     topics: [
       "String methods for sequences",
       "Dictionaries and Conditionals",
       "Biopython",
       "Real sequence analysis"
     ],
+    slideUrl: "/lectures/2"
   },
   {
     id: 3,

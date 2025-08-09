@@ -8,8 +8,14 @@ interface LectureCardProps {
 export default function LectureCard({ lecture }: LectureCardProps) {
   return (
     <div className="card group">
-      <span className={lecture.status === 'available' ? 'badge-available' : 'badge-coming-soon'}>
-        {lecture.status === 'available' ? 'Available' : 'Coming Soon'}
+      <span className={
+        lecture.status === 'available' ? 'badge-available' : 
+        lecture.status === 'under-construction' ? 'badge-under-construction' : 
+        'badge-coming-soon'
+      }>
+        {lecture.status === 'available' ? 'Available' : 
+         lecture.status === 'under-construction' ? 'Under Construction' : 
+         'Coming Soon'}
       </span>
       <div className="flex items-center mb-4 mt-4">
         <span className="lecture-number">{lecture.id}</span>
@@ -39,6 +45,25 @@ export default function LectureCard({ lecture }: LectureCardProps) {
                 Notebooks
               </a>
             )}
+            <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark">
+              Video
+            </Link>
+          </>
+        )}
+        {lecture.status === 'under-construction' && (
+          <>
+            {lecture.slideUrl ? (
+              <Link href={lecture.slideUrl} className="btn-primary !py-1 !px-3 text-xs">
+                Slides
+              </Link>
+            ) : (
+              <Link href="/under-construction" className="btn-primary !py-1 !px-3 text-xs">
+                Slides
+              </Link>
+            )}
+            <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs">
+              Notebooks
+            </Link>
             <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark">
               Video
             </Link>
