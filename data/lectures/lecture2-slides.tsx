@@ -1,13 +1,13 @@
 import { LectureData, Slide } from './types'
 import {
-  WelcomeSlide,
-  DevelopmentEnvironmentSlide,
-  VSCodeSlide,
-  UVPythonSlide,
-  TerminalBasicsSlide,
-  GitVersionControlSlide,
-  ResourcesNextStepsSlide
-} from './lecture2'
+  Step2IntroSlide,
+  Step2CodeSlide,
+  Step3IntroSlide,
+  Step3CodeSlide,
+  Step4IntroSlide,
+  Step4CodeSlide,
+  FinalResultSlide
+} from './lecture1'
 
 interface SlideDefinition {
   title: string
@@ -19,39 +19,39 @@ interface SlideDefinition {
 
 const slideDefinitions: SlideDefinition[] = [
   {
-    title: "Welcome to Lecture 2",
+    title: "Scaling with Loops",
     contentType: "center",
-    component: WelcomeSlide
+    component: Step2IntroSlide
   },
   {
-    title: "Beyond Google Colab",
+    title: "Loops: The Code",
     contentType: "center",
-    component: DevelopmentEnvironmentSlide
+    component: Step2CodeSlide
   },
   {
-    title: "VS Code: Your New Python Laboratory",
+    title: "Processing Many Values at Once",
     contentType: "center",
-    component: VSCodeSlide
+    component: Step3IntroSlide
   },
   {
-    title: "UV Python: Modern Package Management",
+    title: "Lists & For Loops: The Code",
     contentType: "center",
-    component: UVPythonSlide
+    component: Step3CodeSlide
   },
   {
-    title: "Terminal Essentials",
+    title: "Working with Real Data Files",
     contentType: "center",
-    component: TerminalBasicsSlide
+    component: Step4IntroSlide
   },
   {
-    title: "Git Version Control",
+    title: "File I/O: The Code",
     contentType: "center",
-    component: GitVersionControlSlide
+    component: Step4CodeSlide
   },
   {
-    title: "Resources & Next Steps",
+    title: "The Complete Solution",
     contentType: "center",
-    component: ResourcesNextStepsSlide
+    component: FinalResultSlide
   }
 ]
 
@@ -66,6 +66,6 @@ const slides: Slide[] = slideDefinitions.map((def, index) => ({
 
 export const lecture2Data: LectureData = {
   id: '2',
-  title: 'Sequence Analysis & Python Basics',
+  title: 'Lists, Loops & File I/O',
   slides
 }

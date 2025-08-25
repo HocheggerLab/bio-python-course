@@ -49,7 +49,8 @@ export default function Navigation() {
             </Link>
           </div>
           <div className="hidden md:flex items-center">
-            <button onClick={() => scrollToSection('lectures')} className="nav-link mr-8">Lectures</button>
+            <button onClick={() => scrollToSection('core-sessions')} className="nav-link mr-8">Core Sessions</button>
+            <button onClick={() => scrollToSection('specialization-tracks')} className="nav-link mr-8">Specializations</button>
             <button onClick={() => scrollToSection('seminars')} className="nav-link mr-8">Seminars</button>
             <button onClick={() => scrollToSection('resources')} className="nav-link mr-8">Resources</button>
             <button onClick={() => scrollToSection('schedule')} className="nav-link mr-8">Schedule</button>
@@ -79,7 +80,8 @@ export default function Navigation() {
       {isMobileMenuOpen && (
         <div className="md:hidden glass-dark border-t border-white/10 animate-in slide-in-from-top-2 duration-200">
           <div className="px-6 py-4 space-y-3">
-            <button onClick={() => { scrollToSection('lectures'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Lectures</button>
+            <button onClick={() => { scrollToSection('core-sessions'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Core Sessions</button>
+            <button onClick={() => { scrollToSection('specialization-tracks'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Specializations</button>
             <button onClick={() => { scrollToSection('seminars'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Seminars</button>
             <button onClick={() => { scrollToSection('resources'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Resources</button>
             <button onClick={() => { scrollToSection('schedule'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Schedule</button>

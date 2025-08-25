@@ -5,65 +5,114 @@ export interface Lecture {
   topics: string[]
   slideUrl?: string
   notebookUrl?: string
+  type?: 'core' | 'specialization'
 }
 
-export const lectures: Lecture[] = [
+export const coreSessionsData: Lecture[] = [
   {
     id: 1,
-    title: "Automate lab calculations",
+    title: "Lab Calculations",
     status: "available",
     topics: [
-      "Setting up Google Colab",
-      "Variables and data types",
-      "Functions, Lists and Loops",
-      "Your first bio program"
+      "Introduction to Python",
+      "Types and assignment",
+      "Lists, For Loops and Functions",
+      "Error Handling"
     ],
     slideUrl: "/lectures/1",
-    notebookUrl: "/notebooks/lecture-1"
+    notebookUrl: "/notebooks/lecture-1",
+    type: 'core'
   },
   {
     id: 2,
-    title: "Strings & DNA Analysis",
+    title: "Analysing DNA",
     status: "under-construction",
     topics: [
-      "String methods for sequences",
-      "Dictionaries and Conditionals",
-      "Biopython",
-      "Real sequence analysis"
+      "String operations, dictionaries and conditionals",
+      "Sequence file formats",
+      "File I/O",
+      "Biopython"
     ],
-    slideUrl: "/lectures/2"
+    slideUrl: "/lectures/2",
+    type: 'core'
   },
   {
     id: 3,
-    title: "Image Analysis in Python",
+    title: "Analysing Data Sets & P-values",
     status: "coming-soon",
     topics: [
-      "Numpy, Scikit-image",
-      "Image segmentation",
-      "Feature Extraction",
-      "Batch analysis"
-    ]
+      "C-Python and vectorisation",
+      "Scientific computing",
+      "NumPy and SciPy",
+      "Statistical analysis"
+    ],
+    slideUrl: "/lectures/3",
+    type: 'core'
   },
   {
     id: 4,
-    title: "Analyse Cancer Cell Dependencies",
+    title: "Linear Regression of Cancer Data",
     status: "coming-soon",
     topics: [
-      "Object Oriented Programming",
-      "Pandas, Matplotlib and Seaborn",
-      "Linear Regression Analysis",
-      "Plotting and Visualisation",
-    ]
+      "Object-oriented programming",
+      "Pandas DataFrames",
+      "Cancer dependency analysis",
+      "Regression models"
+    ],
+    type: 'core'
   },
   {
     id: 5,
-    title: "Building a local AI agent to perform PubMed searches",
+    title: "Visualising Linear Regression Data",
     status: "coming-soon",
     topics: [
-      "Working with LLMs",
-      "Understanding agentic AI",
-      "Deploying a local model",
-      "Automating PubMed searches and text analysis"
-    ]
+      "Matplotlib fundamentals",
+      "Seaborn for statistical plots",
+      "Publication-ready figures",
+      "Interactive visualizations"
+    ],
+    type: 'core'
   }
 ]
+
+export const specializationTracks: Lecture[] = [
+  {
+    id: 6,
+    title: "Image Analysis Track",
+    status: "coming-soon",
+    topics: [
+      "NumPy and scikit-image basics",
+      "Microscopy image processing",
+      "Cell segmentation and tracking",
+      "Batch analysis pipelines"
+    ],
+    type: 'specialization'
+  },
+  {
+    id: 7,
+    title: "Data Analysis & Visualization Track",
+    status: "coming-soon",
+    topics: [
+      "Pandas for biological data",
+      "Statistical analysis with SciPy",
+      "Creating publication-ready figures",
+      "Analyzing experimental results"
+    ],
+    type: 'specialization'
+  },
+  {
+    id: 8,
+    title: "Text Analysis & AI Track",
+    status: "coming-soon",
+    topics: [
+      "Working with LLMs for biology",
+      "Automating literature searches",
+      "Text mining PubMed abstracts",
+      "Building research assistants"
+    ],
+    type: 'specialization'
+  }
+]
+
+// For backward compatibility
+export const lectures: Lecture[] = [...coreSessionsData, ...specializationTracks]

@@ -19,7 +19,7 @@ export default function Hero() {
             A practical programming course for Year 3 Life Sciences students at the University of Sussex. No prior coding experience required!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-            <a href="#lectures" className="btn-primary text-lg">
+            <a href="#core-sessions" className="btn-primary text-lg">
               Start Learning →
             </a>
             <Link href="/under-construction" className="btn-secondary text-lg">
@@ -32,19 +32,19 @@ export default function Hero() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
           <div className="card text-center animate-fade-in animation-delay-200">
             <div className="text-4xl font-bold text-gradient mb-2">5</div>
-            <div className="text-gray-400">Interactive Lectures</div>
+            <div className="text-gray-400">Core Sessions</div>
           </div>
           <div className="card text-center animate-fade-in animation-delay-400">
-            <div className="text-4xl font-bold text-gradient mb-2">20+</div>
-            <div className="text-gray-400">Hands-on Exercises</div>
+            <div className="text-4xl font-bold text-gradient-purple mb-2">3</div>
+            <div className="text-gray-400">Specialization Tracks</div>
           </div>
           <div className="card text-center animate-fade-in animation-delay-600">
             <div className="text-4xl font-bold text-gradient mb-2">100%</div>
             <div className="text-gray-400">Biology Focused</div>
           </div>
           <div className="card text-center animate-fade-in" style={{animationDelay: '800ms'}}>
-            <div className="text-4xl font-bold text-gradient mb-2">0</div>
-            <div className="text-gray-400">Prerequisites</div>
+            <div className="text-4xl font-bold text-gradient mb-2">1</div>
+            <div className="text-gray-400">Final Project</div>
           </div>
         </div>
       </div>
