@@ -1,13 +1,13 @@
 import { LectureData, Slide } from './types'
 import {
-  Step2IntroSlide,
-  Step2CodeSlide,
-  Step3IntroSlide,
-  Step3CodeSlide,
-  Step4IntroSlide,
-  Step4CodeSlide,
-  FinalResultSlide
-} from './lecture1'
+  WelcomeSlide,
+  DevelopmentEnvironmentSlide,
+  VSCodeSlide,
+  UVPythonSlide,
+  TerminalBasicsSlide,
+  GitVersionControlSlide,
+  ResourcesNextStepsSlide
+} from './lecture2'
 
 interface SlideDefinition {
   title: string
@@ -19,39 +19,39 @@ interface SlideDefinition {
 
 const slideDefinitions: SlideDefinition[] = [
   {
-    title: "Scaling with Loops",
+    title: "Welcome to Lecture 2",
     contentType: "center",
-    component: Step2IntroSlide
+    component: WelcomeSlide
   },
   {
-    title: "Loops: The Code",
+    title: "Beyond Google Colab",
     contentType: "center",
-    component: Step2CodeSlide
+    component: DevelopmentEnvironmentSlide
   },
   {
-    title: "Processing Many Values at Once",
+    title: "VS Code: Your New Python Laboratory",
     contentType: "center",
-    component: Step3IntroSlide
+    component: VSCodeSlide
   },
   {
-    title: "Lists & For Loops: The Code",
+    title: "UV Python: Modern Package Management",
     contentType: "center",
-    component: Step3CodeSlide
+    component: UVPythonSlide
   },
   {
-    title: "Working with Real Data Files",
+    title: "Terminal Essentials",
     contentType: "center",
-    component: Step4IntroSlide
+    component: TerminalBasicsSlide
   },
   {
-    title: "File I/O: The Code",
+    title: "Git Version Control",
     contentType: "center",
-    component: Step4CodeSlide
+    component: GitVersionControlSlide
   },
   {
-    title: "The Complete Solution",
+    title: "Resources & Next Steps",
     contentType: "center",
-    component: FinalResultSlide
+    component: ResourcesNextStepsSlide
   }
 ]
 
@@ -66,6 +66,6 @@ const slides: Slide[] = slideDefinitions.map((def, index) => ({
 
 export const lecture2Data: LectureData = {
   id: '2',
-  title: 'Lists, Loops & File I/O',
+  title: 'Analysing DNA: String Operations, Sequence Formats & Biopython',
   slides
 }

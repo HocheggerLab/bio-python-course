@@ -14,6 +14,13 @@ import {
   TheSolutionSlide,
   BreakingDownProblemsSlide,
   Step1CodeSlide,
+  Step2IntroSlide,
+  Step2CodeSlide,
+  Step3IntroSlide,
+  Step3CodeSlide,
+  Step4IntroSlide,
+  Step4CodeSlide,
+  FinalResultSlide,
   ReadyToStartSlide
 } from './lecture1'
 
@@ -100,6 +107,41 @@ const slideDefinitions: SlideDefinition[] = [
     title: "Step 1: The Code",
     contentType: "center",
     component: Step1CodeSlide
+  },
+  {
+    title: "Scaling with Loops",
+    contentType: "center",
+    component: Step2IntroSlide
+  },
+  {
+    title: "Loops: The Code",
+    contentType: "center",
+    component: Step2CodeSlide
+  },
+  {
+    title: "Processing Many Values at Once",
+    contentType: "center",
+    component: Step3IntroSlide
+  },
+  {
+    title: "Lists & For Loops: The Code",
+    contentType: "center",
+    component: Step3CodeSlide
+  },
+  {
+    title: "Working with Real Data Files",
+    contentType: "center",
+    component: Step4IntroSlide
+  },
+  {
+    title: "File I/O: The Code",
+    contentType: "center",
+    component: Step4CodeSlide
+  },
+  {
+    title: "The Complete Solution",
+    contentType: "center",
+    component: FinalResultSlide
   }
 ]
 
@@ -114,6 +156,6 @@ const slides: Slide[] = slideDefinitions.map((def, index) => ({
 
 export const lecture1Data: LectureData = {
   id: '1',
-  title: 'Introduction to Python for Biologists',
+  title: 'Lab Calculations: Intro to Python, Types, Assignment & For Loops',
   slides
 }

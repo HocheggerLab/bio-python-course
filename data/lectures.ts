@@ -16,8 +16,8 @@ export const coreSessionsData: Lecture[] = [
     topics: [
       "Introduction to Python",
       "Types and assignment",
-      "Lists, For Loops and Functions",
-      "Error Handling"
+      "For loops",
+      "Lists and file I/O"
     ],
     slideUrl: "/lectures/1",
     notebookUrl: "/notebooks/lecture-1",
@@ -28,7 +28,7 @@ export const coreSessionsData: Lecture[] = [
     title: "Analysing DNA",
     status: "under-construction",
     topics: [
-      "String operations, dictionaries and conditionals",
+      "String operations",
       "Sequence file formats",
       "File I/O",
       "Biopython"
@@ -42,8 +42,7 @@ export const coreSessionsData: Lecture[] = [
     status: "coming-soon",
     topics: [
       "C-Python and vectorisation",
-      "Scientific computing",
-      "NumPy and SciPy",
+      "Scientific computing (NumPy, SciPy)",
       "Statistical analysis"
     ],
     slideUrl: "/lectures/3",
@@ -56,8 +55,7 @@ export const coreSessionsData: Lecture[] = [
     topics: [
       "Object-oriented programming",
       "Pandas DataFrames",
-      "Cancer dependency analysis",
-      "Regression models"
+      "Cancer dependency analysis"
     ],
     type: 'core'
   },
@@ -68,8 +66,7 @@ export const coreSessionsData: Lecture[] = [
     topics: [
       "Matplotlib fundamentals",
       "Seaborn for statistical plots",
-      "Publication-ready figures",
-      "Interactive visualizations"
+      "Publication-ready figures"
     ],
     type: 'core'
   }
