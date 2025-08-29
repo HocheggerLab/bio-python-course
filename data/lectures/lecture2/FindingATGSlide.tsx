@@ -143,14 +143,14 @@ Position 11: 'G'
         <section>
           <div className="bg-gradient-to-r from-red-500/20 to-orange-500/20 border border-red-500/30 rounded-xl p-6">
             <h3 className="text-xl font-semibold text-white mb-4 flex items-center">
-              🚧 We've Hit a Problem!
+              🚧 We&apos;ve Hit a Problem!
             </h3>
             <div className="space-y-3 text-gray-300">
               <p>
                 <strong>What we can do:</strong> Extract 3-base sequences from every position ✅
               </p>
               <p>
-                <strong>What we can't do yet:</strong> Check IF a sequence equals "ATG" ❌
+                <strong>What we can&apos;t do yet:</strong> Check IF a sequence equals &quot;ATG&quot; ❌
               </p>
               <p className="text-bio-yellow">
                 <strong>We need:</strong> A way to make decisions in our code - Python <em>conditionals</em>!
@@ -166,7 +166,7 @@ Position 11: 'G'
               📚 Coming Up Next: Python Conditionals
             </h3>
             <div className="text-gray-300 space-y-2">
-              <p>To solve our ATG-finding problem, we'll learn:</p>
+              <p>To solve our ATG-finding problem, we&apos;ll learn:</p>
               <ul className="ml-6 space-y-1">
                 <li>• <code className="text-bio-blue bg-bio-dark px-2 py-1 rounded">if</code> statements for making decisions</li>
                 <li>• Comparing strings with <code className="text-bio-blue bg-bio-dark px-2 py-1 rounded">==</code></li>

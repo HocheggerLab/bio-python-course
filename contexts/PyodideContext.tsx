@@ -75,7 +75,7 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const loadPyodideScript = useCallback((): Promise<void> => {
     return new Promise((resolve, reject) => {
       // Check if Pyodide script is already loaded
-      if (window.loadPyodide) {
+      if (typeof window.loadPyodide !== 'undefined') {
         resolve()
         return
       }
