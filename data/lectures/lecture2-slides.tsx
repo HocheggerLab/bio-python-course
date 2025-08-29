@@ -1,6 +1,12 @@
 import { LectureData, Slide } from './types'
 import {
   WelcomeSlide,
+  TodaysGoalSlide,
+  DarrensProblemSlide,
+  ORFExplainerSlide,
+  Part1TitleSlide,
+  ReviewDataTypesSlide,
+  DNAStringOperationsSlide,
   DevelopmentEnvironmentSlide,
   VSCodeSlide,
   UVPythonSlide,
@@ -23,6 +29,40 @@ const slideDefinitions: SlideDefinition[] = [
     contentType: "center",
     component: WelcomeSlide
   },
+  {
+    title: "Today's Goal",
+    contentType: "center",
+    component: TodaysGoalSlide
+  },
+  {
+    title: "Meet Darren",
+    contentType: "center",
+    component: DarrensProblemSlide
+  },
+  {
+    title: "Understanding ORFs",
+    contentType: "center",
+    component: ORFExplainerSlide
+  },
+
+  {
+    title: "Part 1: String Fundamentals",
+    contentType: "center",
+    component: Part1TitleSlide
+  },
+  {
+    title: "Review: Data Types & Strings",
+    contentType: "center",
+    component: ReviewDataTypesSlide
+  },
+  {
+    title: "DNA-Specific String Operations",
+    contentType: "center",
+    component: DNAStringOperationsSlide
+  },
+  // More DNA analysis slides will be added here
+  
+  // Programming environment preamble
   {
     title: "Beyond Google Colab",
     contentType: "center",
@@ -52,7 +92,9 @@ const slideDefinitions: SlideDefinition[] = [
     title: "Resources & Next Steps",
     contentType: "center",
     component: ResourcesNextStepsSlide
-  }
+  },
+  // DNA analysis content starts here
+  
 ]
 
 const slides: Slide[] = slideDefinitions.map((def, index) => ({
