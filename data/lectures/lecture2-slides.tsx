@@ -4,9 +4,11 @@ import {
   TodaysGoalSlide,
   DarrensProblemSlide,
   ORFExplainerSlide,
+  ORFProblemBreakdownSlide,
   Part1TitleSlide,
   ReviewDataTypesSlide,
-  DNAStringOperationsSlide,
+  DNAStringOperationSlideSlicing,
+  FindingATGSlide,
   DevelopmentEnvironmentSlide,
   VSCodeSlide,
   UVPythonSlide,
@@ -44,6 +46,11 @@ const slideDefinitions: SlideDefinition[] = [
     contentType: "center",
     component: ORFExplainerSlide
   },
+  {
+    title: "Breaking Down the ORF Problem",
+    contentType: "center",
+    component: ORFProblemBreakdownSlide
+  },
 
   {
     title: "Part 1: String Fundamentals",
@@ -56,9 +63,14 @@ const slideDefinitions: SlideDefinition[] = [
     component: ReviewDataTypesSlide
   },
   {
-    title: "DNA-Specific String Operations",
+    title: "DNA String Slicing",
     contentType: "center",
-    component: DNAStringOperationsSlide
+    component: DNAStringOperationSlideSlicing
+  },
+  {
+    title: "Finding ATGs: Loops + Slicing",
+    contentType: "center",
+    component: FindingATGSlide
   },
   // More DNA analysis slides will be added here
   
