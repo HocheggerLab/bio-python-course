@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -13,15 +12,9 @@ export default function Footer() {
                 href="https://www.sussex.ac.uk/schools/life-sciences/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-white opacity-50 rounded hover:scale-110 hover:opacity-100 transition-transform duration-200"
+                className="text-sm text-gray-400 hover:text-bio-blue transition-colors"
               >
-                <Image 
-                  src="/sussex.png" 
-                  alt="University of Sussex" 
-                  width={120}
-                  height={30}
-                  className="h-8 w-auto hover:opacity-100 transition-opacity"
-                />
+                University of Sussex
               </a>
             </div>
             <p className="text-gray-400">© Helfrid Hochegger 2025 | All materials freely available</p>

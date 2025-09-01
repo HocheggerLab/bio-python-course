@@ -20,7 +20,7 @@ export function SlideTitle({
   size = 'large',
   center = true 
 }: SlideTitleProps) {
-  const baseClasses = `font-bold ${sizeClasses[size]} ${center ? 'text-center' : ''}`;
+  const baseClasses = `font-bold mt-10 ${sizeClasses[size]} ${center ? 'text-center' : ''}`;
   
   return (
     <h2 className={`${baseClasses} ${className}`}>

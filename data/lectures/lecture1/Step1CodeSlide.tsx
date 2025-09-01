@@ -1,13 +1,29 @@
+'use client'
+
+import dynamic from 'next/dynamic'
 import { 
   SlideTitle
 } from '@/components/slides'
+
+// Dynamically import PythonCodeRunner to avoid SSR issues
+const PythonCodeRunner = dynamic(
+  () => import('@/components/python/PythonCodeRunner'),
+  { 
+    ssr: false,
+    loading: () => (
+      <div className="bg-bio-card border border-bio-blue/20 rounded-xl p-6 text-center">
+        <div className="animate-pulse">Loading interactive Python...</div>
+      </div>
+    )
+  }
+)
 
 export function Step1CodeSlide() {
   return (
     <>
       <div className="pb-8">
         <SlideTitle>
-          Step 1: <span className="text-bio-blue">The Code</span>
+          Step 1: <span className="text-bio-blue">Calculating the Dilution Volume</span>
         </SlideTitle>
       </div>
 
@@ -23,56 +39,38 @@ export function Step1CodeSlide() {
           </p>
         </div>
 
-        {/* The actual code */}
-        <div className="bg-gray-900 rounded-lg overflow-hidden">
-          <div className="bg-gray-800 px-4 py-2 border-b border-gray-700">
-            <p className="text-sm text-gray-400 font-mono">calculate_volume.py</p>
-          </div>
-          <div className="p-4 font-mono text-sm">
-            <p className="text-gray-500"># Step 1: Calculate solvent volume for one reagent</p>
-            <p className="mt-2"></p>
-            <p className="text-gray-500"># Define our variables</p>
-            <p className="text-gray-300">mol_weight = <span className="text-bio-yellow">342.3</span>      <span className="text-gray-500"># molecular weight in g/mol</span></p>
-            <p className="text-gray-300">weighed_mass = <span className="text-bio-yellow">5.2</span>      <span className="text-gray-500"># mass in mg</span></p>
-            <p className="text-gray-300">end_concentration = <span className="text-bio-yellow">0.1</span> <span className="text-gray-500"># desired concentration in mM</span></p>
-            <p className="mt-2"></p>
-            <p className="text-gray-500"># Calculate the volume needed (in mL)</p>
-            <p className="text-gray-300">volume = 1000 * (weighed_mass / mol_weight) / end_concentration</p>
-            <p className="mt-2"></p>
-            <p className="text-gray-500"># Print the result with 2 decimal places</p>
-            <p className="text-gray-300"><span className="text-bio-blue">print</span>(f<span className="text-bio-green">"Volume needed: {'{'}volume:.2f{'}'} mL"</span>)</p>
-          </div>
-        </div>
+        {/* Interactive Python Code */}
+        <PythonCodeRunner
+          initialCode={`# Step 1: Calculate solvent volume for one reagent
 
-        {/* Output */}
-        <div className="bg-gray-900 border border-gray-700 rounded-lg p-4">
-          <div className="flex items-center mb-2">
-            <span className="text-bio-green mr-2">▶</span>
-            <span className="text-sm text-gray-400">Output:</span>
-          </div>
-          <pre className="text-bio-green font-mono text-sm">Volume needed: 151.85 mL</pre>
-        </div>
+# Define our variables
+mol_weight = 342.3      # molecular weight in g/mol
+weighed_mass = 5.2      # mass in mg
+end_concentration = 10 # desired concentration in mM
 
-        {/* Try it yourself */}
-        <div className="bg-gradient-to-r from-bio-blue/20 to-bio-green/20 rounded-lg p-6 border border-bio-blue/30">
-          <div className="flex items-center justify-between">
-            <div>
-              <h4 className="font-bold text-bio-blue mb-2">Try it Yourself!</h4>
-              <p className="text-sm text-gray-300">
-                Open this code in Google Colab and experiment with different values
-              </p>
-            </div>
-            <a 
-              href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/calculate_volume.ipynb"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-bio-blue hover:bg-bio-blue/80 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition-colors"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.95 8.385l-1.446-.695a1.87 1.87 0 00-1.71.099l-.885.443a.59.59 0 01-.615-.009l-1.417-.816a.59.59 0 01-.294-.511V6.21c0-.21.11-.403.294-.511l1.417-.816a.59.59 0 01.615-.009l.885.443c.516.258 1.146.234 1.638-.062l1.518-.912a.59.59 0 01.885.511v2.042a.59.59 0 01-.294.511l-1.59.954z" fill="currentColor"/>
-              </svg>
-              Open in Colab
-            </a>
+# Calculate the volume needed (in mL)
+volume = 1000 * (weighed_mass / mol_weight) / end_concentration
+
+# Print the result with 2 decimal places
+print(f"Volume needed: {volume:.2f} mL")`}
+          staticOutput={`Volume needed: 1.519 mL`}
+          hints={[
+            "Try changing the weighed_mass to see how it affects the volume",
+            "What happens if you change the end_concentration to 0.05 mM?",
+            "The formula: volume = 1000 * (mass/mol_weight) / concentration"
+          ]}
+          height="350px"
+        />
+
+        {/* Experiment Section */}
+        <div className="bg-gradient-to-r from-bio-green/20 to-bio-blue/20 border border-bio-green/30 rounded-xl p-6">
+          <h3 className="text-xl font-semibold text-white mb-4">
+            🧪 Try Different Values!
+          </h3>
+          <div className="text-gray-300 space-y-2">
+            <p><strong className="text-bio-green">Challenge 1:</strong> What volume do you need if you weigh 8.5 mg?</p>
+            <p><strong className="text-bio-green">Challenge 2:</strong> How does doubling the concentration affect the volume?</p>
+            <p><strong className="text-bio-green">Challenge 3:</strong> Try calculating for caffeine (mol_weight = 194.19)!</p>
           </div>
         </div>
 {/* Learning outcomes */}

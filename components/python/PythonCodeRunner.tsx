@@ -4,11 +4,9 @@ import React, { useState, useEffect } from 'react'
 import { usePyodide } from '@/contexts/PyodideContext'
 import StaticCodeDisplay from './StaticCodeDisplay'
 
-// We'll use a simple textarea for now, can upgrade to CodeMirror later
 interface PythonCodeRunnerProps {
   initialCode?: string
   height?: string
-  showLineNumbers?: boolean
   editable?: boolean
   autoRun?: boolean
   expectedOutput?: string
@@ -24,7 +22,6 @@ interface PythonCodeRunnerProps {
 export default function PythonCodeRunner({
   initialCode = '',
   height = '200px',
-  showLineNumbers = true,
   editable = true,
   autoRun = false,
   expectedOutput,
@@ -50,18 +47,22 @@ export default function PythonCodeRunner({
   const [showHint, setShowHint] = useState(false)
   const [currentHint, setCurrentHint] = useState(0)
 
-  // If browser doesn't support Pyodide, show static fallback
-  if (!browserSupport.supported) {
-    return (
-      <StaticCodeDisplay
-        code={initialCode}
-        output={staticOutput}
-        error={staticError}
-        description={description}
-        browserMessage={browserSupport.fallbackMessage}
-      />
-    )
-  }
+  // Move useEffect BEFORE any conditional returns (React Hooks rule)
+  useEffect(() => {
+    // Only auto-run if browser supports Pyodide
+    if (autoRun && isReady && browserSupport.supported) {
+      // Use a timeout to ensure we don't run during the render phase
+      const timer = setTimeout(() => {
+        if (!isRunning) {
+          handleRun()
+        }
+      }, 0)
+      
+      return () => clearTimeout(timer)
+    }
+    // We intentionally only want this to run when these specific props change
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoRun, isReady, browserSupport.supported])
 
   const handleRun = async () => {
     if (!isReady) return
@@ -108,11 +109,18 @@ export default function PythonCodeRunner({
     }
   }
 
-  useEffect(() => {
-    if (autoRun && isReady && !isRunning) {
-      handleRun()
-    }
-  }, [isReady, autoRun])
+  // Check browser support AFTER all hooks (React Hooks rule)
+  if (!browserSupport.supported) {
+    return (
+      <StaticCodeDisplay
+        code={initialCode}
+        output={staticOutput}
+        error={staticError}
+        description={description}
+        browserMessage={browserSupport.fallbackMessage}
+      />
+    )
+  }
 
   // Show loading state while Pyodide initializes
   if (isLoading) {
@@ -186,17 +194,16 @@ export default function PythonCodeRunner({
           </div>
         )}
         
-        {/* Code Editor - Simple textarea for now */}
-        <div className="relative">
-          <textarea
-            value={code}
-            onChange={(e) => setCode(e.target.value)}
-            disabled={!editable || isRunning}
-            className="w-full bg-bio-dark text-gray-300 font-mono text-sm p-4 border-none outline-none resize-none"
-            style={{ height }}
-            spellCheck={false}
-          />
-        </div>
+        {/* Code Editor - Fallback to textarea for visibility */}
+        <textarea
+          value={code}
+          onChange={(e) => setCode(e.target.value)}
+          disabled={!editable || isRunning}
+          className="w-full bg-bio-dark text-gray-300 font-mono text-sm p-4 border-none outline-none resize-none"
+          style={{ height }}
+          spellCheck={false}
+          placeholder="# Your Python code here..."
+        />
       </div>
 
       {/* Hint Display */}

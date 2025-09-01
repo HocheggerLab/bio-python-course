@@ -61,9 +61,15 @@ export default function LectureCard({ lecture }: LectureCardProps) {
                 Slides
               </Link>
             )}
-            <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs">
-              Notebooks
-            </Link>
+            {lecture.notebookUrl ? (
+              <Link href={lecture.notebookUrl} className="btn-secondary !py-1 !px-3 text-xs">
+                Notebooks
+              </Link>
+            ) : (
+              <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs">
+                Notebooks
+              </Link>
+            )}
             <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark">
               Video
             </Link>

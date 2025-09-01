@@ -13,15 +13,27 @@ import {
   TheProblemSlide,
   TheSolutionSlide,
   BreakingDownProblemsSlide,
+  CompleteCodeSlide,
   Step1CodeSlide,
+  Step1Variables,
+  Step1Datatypes,
+  Step1PrintingFStrings,
   Step2IntroSlide,
+  Step2Lists,
+  Step2ForLoops,
   Step2CodeSlide,
   Step3IntroSlide,
+  Step3Functions,
+  Step3Parameters,
   Step3CodeSlide,
   Step4IntroSlide,
   Step4CodeSlide,
   FinalResultSlide,
-  ReadyToStartSlide
+  GoogleColabSlide,
+  ReadyToStartSlide,
+  Lecture1SummarySlide,
+  NextStepsSlide,
+  FurtherResourcesSlide
 } from './lecture1'
 
 interface SlideDefinition {
@@ -104,45 +116,91 @@ const slideDefinitions: SlideDefinition[] = [
     component: BreakingDownProblemsSlide
   },
   {
+    title: "The Complete Solution",
+    contentType: "center",
+    component: CompleteCodeSlide
+  },
+  {
     title: "Step 1: The Code",
     contentType: "center",
     component: Step1CodeSlide
   },
   {
-    title: "Scaling with Loops",
+    title: "Google Colab: Your Python Laboratory",
+    contentType: "center",
+    component: GoogleColabSlide
+  },
+  {
+    title: "Variables & Assignment",
+    contentType: "center", 
+    component: Step1Variables
+  },
+  {
+    title: "Data Types",
+    contentType: "center",
+    component: Step1Datatypes
+  },
+  {
+    title: "Printing & F-Strings",
+    contentType: "center",
+    component: Step1PrintingFStrings
+  },
+  {
+    title: "Analyzing Many Values at Once",
     contentType: "center",
     component: Step2IntroSlide
   },
   {
-    title: "Loops: The Code",
+    title: "Lists - Storing Multiple Values",
     contentType: "center",
-    component: Step2CodeSlide
+    component: Step2Lists
   },
   {
-    title: "Processing Many Values at Once",
+    title: "For Loops - Processing Each Item",
+    contentType: "center",
+    component: Step2ForLoops
+  },
+  // {
+  //   title: "Step 2: Process Many Concentrations",
+  //   contentType: "center",
+  //   component: Step2CodeSlide
+  // },
+  {
+    title: "Creating Reusable Functions",
     contentType: "center",
     component: Step3IntroSlide
   },
   {
-    title: "Lists & For Loops: The Code",
+    title: "Functions - Packaging Your Code",
     contentType: "center",
-    component: Step3CodeSlide
+    component: Step3Functions
   },
   {
-    title: "Working with Real Data Files",
+    title: "Function Parameters & Arguments",
     contentType: "center",
-    component: Step4IntroSlide
-  },
-  {
-    title: "File I/O: The Code",
-    contentType: "center",
-    component: Step4CodeSlide
+    component: Step3Parameters
   },
   {
     title: "The Complete Solution",
     contentType: "center",
-    component: FinalResultSlide
-  }
+    component: CompleteCodeSlide
+  },
+  {
+    title: "Lecture 1 Summary",
+    contentType: "center",
+    component: Lecture1SummarySlide
+  },
+  {
+    title: "Next Steps",
+    contentType: "center",
+    component: NextStepsSlide
+  },
+  {
+    title: "Further Resources",
+    contentType: "center",
+    component: FurtherResourcesSlide
+  },
+  
 ]
 
 const slides: Slide[] = slideDefinitions.map((def, index) => ({

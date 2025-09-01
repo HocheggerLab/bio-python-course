@@ -34,6 +34,7 @@ export const coreSessionsData: Lecture[] = [
       "Biopython"
     ],
     slideUrl: "/lectures/2",
+    notebookUrl: "/notebooks/lecture-2",
     type: 'core'
   },
   {

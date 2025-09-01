@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CodeMirror styling adjustments */
+.codemirror-container .cm-editor {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.codemirror-container .cm-focused {
+  outline: none !important;
+}
+
+/* Removed problematic CSS overrides that were making text invisible */
+
 /* All @layer base styles */
 
 @layer base {
