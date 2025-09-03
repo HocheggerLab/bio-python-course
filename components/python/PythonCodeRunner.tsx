@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { usePyodide } from '@/contexts/PyodideContext'
 import StaticCodeDisplay from './StaticCodeDisplay'
+import CodeEditor from './CodeEditor'
 
 interface PythonCodeRunnerProps {
   initialCode?: string
@@ -194,16 +195,17 @@ export default function PythonCodeRunner({
           </div>
         )}
         
-        {/* Code Editor - Fallback to textarea for visibility */}
-        <textarea
-          value={code}
-          onChange={(e) => setCode(e.target.value)}
-          disabled={!editable || isRunning}
-          className="w-full bg-bio-dark text-gray-300 font-mono text-sm p-4 border-none outline-none resize-none"
-          style={{ height }}
-          spellCheck={false}
-          placeholder="# Your Python code here..."
-        />
+        {/* Code Editor with Syntax Highlighting */}
+        <div className="bg-bio-dark">
+          <CodeEditor
+            code={code}
+            onChange={setCode}
+            disabled={!editable || isRunning}
+            height={height}
+            placeholder="# Your Python code here..."
+            language="python"
+          />
+        </div>
       </div>
 
       {/* Hint Display */}

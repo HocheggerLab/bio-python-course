@@ -4,6 +4,7 @@ import {
   SlideTitle, 
   GradientText
 } from '@/components/slides'
+import SyntaxHighlighter from '@/components/syntax/SyntaxHighlighter'
 
 export default function Slide06FinalCode() {
   return (
@@ -26,70 +27,52 @@ export default function Slide06FinalCode() {
 
           {/* Code Display */}
           <div className="bg-gradient-to-br from-bio-dark to-bio-darker border border-bio-blue/30 rounded-xl p-6">
-            <div className="bg-black/50 rounded-lg p-6 font-mono text-sm overflow-x-auto">
-              <div className="text-bio-green mb-4"># The Genetic Code - Maps DNA codons to amino acids</div>
-              <div className="text-white mb-2">
-                <span className="text-bio-blue">CODON_TABLE</span> = {'{'}
-              </div>
-              <div className="text-gray-300 ml-4 mb-2">
-                <span className="text-bio-yellow">'TTT'</span>: <span className="text-bio-yellow">'F'</span>, <span className="text-bio-yellow">'TTC'</span>: <span className="text-bio-yellow">'F'</span>, <span className="text-bio-yellow">'TTA'</span>: <span className="text-bio-yellow">'L'</span>, <span className="text-bio-yellow">'TTG'</span>: <span className="text-bio-yellow">'L'</span>,<br/>
-                <span className="text-bio-yellow">'TCT'</span>: <span className="text-bio-yellow">'S'</span>, <span className="text-bio-yellow">'TCC'</span>: <span className="text-bio-yellow">'S'</span>, <span className="text-bio-yellow">'TCA'</span>: <span className="text-bio-yellow">'S'</span>, <span className="text-bio-yellow">'TCG'</span>: <span className="text-bio-yellow">'S'</span>,<br/>
-                <span className="text-bio-yellow">'TAT'</span>: <span className="text-bio-yellow">'Y'</span>, <span className="text-bio-yellow">'TAC'</span>: <span className="text-bio-yellow">'Y'</span>, <span className="text-bio-yellow">'TAA'</span>: <span className="text-red-400">'*'</span>, <span className="text-bio-yellow">'TAG'</span>: <span className="text-red-400">'*'</span>,<br/>
-                <span className="text-gray-500"># ... and 52 more codons</span>
-              </div>
-              <div className="text-white mb-6">{'}'}</div>
+            <SyntaxHighlighter
+              code={`# The Genetic Code - Maps DNA codons to amino acids
+CODON_TABLE = {
+    'TTT': 'F', 'TTC': 'F', 'TTA': 'L', 'TTG': 'L',
+    'TCT': 'S', 'TCC': 'S', 'TCA': 'S', 'TCG': 'S',
+    'TAT': 'Y', 'TAC': 'Y', 'TAA': '*', 'TAG': '*',
+    # ... and 52 more codons
+}
 
-              <div className="text-bio-green mb-2"># Step 1: Find the START codon (ATG)</div>
-              <div className="text-white mb-2">
-                <span className="text-purple-400">def</span> <span className="text-bio-blue">find_atg</span>(dna_sequence):
-              </div>
-              <div className="text-gray-300 ml-4 mb-2">
-                <span className="text-bio-green">"""Find the first ATG start codon in the sequence."""</span><br/>
-                <span className="text-purple-400">for</span> i <span className="text-purple-400">in</span> <span className="text-bio-blue">range</span>(<span className="text-bio-blue">len</span>(dna_sequence) - 2):<br/>
-                <span className="ml-4"><span className="text-purple-400">if</span> dna_sequence[i:i+3] == <span className="text-bio-yellow">'ATG'</span>:</span><br/>
-                <span className="ml-8"><span className="text-purple-400">return</span> i</span>
-              </div>
+# Step 1: Find the START codon (ATG)
+def find_atg(dna_sequence):
+    """Find the first ATG start codon in the sequence."""
+    for i in range(len(dna_sequence) - 2):
+        if dna_sequence[i:i+3] == 'ATG':
+            return i
 
-              <div className="text-bio-green mb-2 mt-6"># Step 2: Extract ORF from ATG to STOP codon</div>
-              <div className="text-white mb-2">
-                <span className="text-purple-400">def</span> <span className="text-bio-blue">find_orf</span>(dna_sequence, atg_index):
-              </div>
-              <div className="text-gray-300 ml-4 mb-2">
-                <span className="text-bio-green">"""Find the ORF starting from ATG position until stop codon."""</span><br/>
-                orf = <span className="text-bio-yellow">''</span><br/>
-                <span className="text-purple-400">for</span> i <span className="text-purple-400">in</span> <span className="text-bio-blue">range</span>(atg_index, <span className="text-bio-blue">len</span>(dna_sequence) - 2, 3):<br/>
-                <span className="ml-4">codon = dna_sequence[i:i+3]</span><br/>
-                <span className="ml-4">orf += codon</span><br/>
-                <span className="ml-4"><span className="text-purple-400">if</span> CODON_TABLE[codon] == <span className="text-red-400">'*'</span>:</span><br/>
-                <span className="ml-8"><span className="text-purple-400">break</span></span><br/>
-                <span className="text-purple-400">return</span> orf
-              </div>
+# Step 2: Extract ORF from ATG to STOP codon
+def find_orf(dna_sequence, atg_index):
+    """Find the ORF starting from ATG position until stop codon."""
+    orf = ''
+    for i in range(atg_index, len(dna_sequence) - 2, 3):
+        codon = dna_sequence[i:i+3]
+        orf += codon
+        if CODON_TABLE[codon] == '*':
+            break
+    return orf
 
-              <div className="text-bio-green mb-2 mt-6"># Step 3: Translate DNA to protein</div>
-              <div className="text-white mb-2">
-                <span className="text-purple-400">def</span> <span className="text-bio-blue">translate_orf</span>(orf):
-              </div>
-              <div className="text-gray-300 ml-4 mb-2">
-                <span className="text-bio-green">"""Translate DNA ORF to protein sequence."""</span><br/>
-                protein = <span className="text-bio-yellow">''</span><br/>
-                <span className="text-purple-400">for</span> i <span className="text-purple-400">in</span> <span className="text-bio-blue">range</span>(0, <span className="text-bio-blue">len</span>(orf), 3):<br/>
-                <span className="ml-4">codon = orf[i:i+3]</span><br/>
-                <span className="ml-4">protein += CODON_TABLE[codon]</span><br/>
-                <span className="text-purple-400">return</span> protein
-              </div>
+# Step 3: Translate DNA to protein
+def translate_orf(orf):
+    """Translate DNA ORF to protein sequence."""
+    protein = ''
+    for i in range(0, len(orf), 3):
+        codon = orf[i:i+3]
+        protein += CODON_TABLE[codon]
+    return protein
 
-              <div className="text-bio-green mb-2 mt-6"># Step 4: Main function that puts it all together</div>
-              <div className="text-white mb-2">
-                <span className="text-purple-400">def</span> <span className="text-bio-blue">find_protein_sequence</span>(dna_sequence):
-              </div>
-              <div className="text-gray-300 ml-4">
-                <span className="text-bio-green">"""Main function to find protein sequence from DNA."""</span><br/>
-                atg_index = <span className="text-bio-blue">find_atg</span>(dna_sequence)<br/>
-                orf = <span className="text-bio-blue">find_orf</span>(dna_sequence, atg_index)<br/>
-                protein_sequence = <span className="text-bio-blue">translate_orf</span>(orf)<br/>
-                <span className="text-purple-400">return</span> protein_sequence
-              </div>
-            </div>
+# Step 4: Main function that puts it all together
+def find_protein_sequence(dna_sequence):
+    """Main function to find protein sequence from DNA."""
+    atg_index = find_atg(dna_sequence)
+    orf = find_orf(dna_sequence, atg_index)
+    protein_sequence = translate_orf(orf)
+    return protein_sequence`}
+              language="python"
+              className="bg-black/50"
+            />
           </div>
 
           {/* Key Concepts */}
