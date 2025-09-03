@@ -39,18 +39,6 @@ export const coreSessionsData: Lecture[] = [
   },
   {
     id: 3,
-    title: "Analysing Data Sets & P-values",
-    status: "coming-soon",
-    topics: [
-      "C-Python and vectorisation",
-      "Scientific computing (NumPy, SciPy)",
-      "Statistical analysis"
-    ],
-    slideUrl: "/lectures/3",
-    type: 'core'
-  },
-  {
-    id: 4,
     title: "Linear Regression of Cancer Data",
     status: "coming-soon",
     topics: [
@@ -58,10 +46,11 @@ export const coreSessionsData: Lecture[] = [
       "Pandas DataFrames",
       "Cancer dependency analysis"
     ],
+    slideUrl: "/lectures/3",
     type: 'core'
   },
   {
-    id: 5,
+    id: 4,
     title: "Visualising Linear Regression Data",
     status: "coming-soon",
     topics: [
@@ -69,6 +58,19 @@ export const coreSessionsData: Lecture[] = [
       "Seaborn for statistical plots",
       "Publication-ready figures"
     ],
+    slideUrl: "/lectures/4",
+    type: 'core'
+  },
+  {
+    id: 5,
+    title: "Analysing Data Sets & P-values",
+    status: "coming-soon",
+    topics: [
+      "C-Python and vectorisation",
+      "Scientific computing (NumPy, SciPy)",
+      "Statistical analysis"
+    ],
+    slideUrl: "/lectures/5",
     type: 'core'
   }
 ]

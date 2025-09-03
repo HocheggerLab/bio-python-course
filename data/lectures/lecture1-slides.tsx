@@ -1,34 +1,35 @@
 import { LectureData, Slide } from './types'
 import {
-  WelcomeSlide,
-  TeachingPhilosophySlide,
-  AILLMSlide,
-  WhoUsesPythonSlide,
-  PythonStorySlide,
-  PythonOrganisationSlide,
-  ProgrammingParadigmsSlide,
-  LanguageComparisonSlide,
-  CourseStructureSlide,
-  WhatWellBuildSlide,
-  TheProblemSlide,
-  TheSolutionSlide,
-  BreakingDownProblemsSlide,
-  CompleteCodeSlide,
-  Step1CodeSlide,
-  Step1Variables,
-  Step1Datatypes,
-  Step1PrintingFStrings,
-  Step2IntroSlide,
-  Step2Lists,
-  Step2ForLoops,
-  Step3IntroSlide,
-  Step3Functions,
-  Step3Parameters,
-  GoogleColabSlide,
-  ReadyToStartSlide,
-  Lecture1SummarySlide,
-  NextStepsSlide,
-  FurtherResourcesSlide
+  Slide01Welcome,
+  Slide02HowToLearnPython,
+  Slide03AIAndLLMs,
+  Slide04WhoUsesPython,
+  Slide05PythonStory,
+  Slide06PythonOrganisation,
+  Slide07ProgrammingParadigms,
+  Slide08LanguageComparison,
+  Slide09CourseStructure,
+  Slide10WhatWellBuild,
+  Slide11ReadyToStart,
+  Slide12TheProblem,
+  Slide13TheSolution,
+  Slide14BreakingDownProblems,
+  Slide15CompleteCode,
+  Slide16Step1Code,
+  Slide17GoogleColab,
+  Slide18VariablesAssignment,
+  Slide19DataTypes,
+  Slide20PrintingFStrings,
+  Slide21AnalyzingManyValues,
+  Slide22Lists,
+  Slide23ForLoops,
+  Slide24CreatingReusableFunctions,
+  Slide25Functions,
+  Slide26FunctionParameters,
+  Slide27CompleteCodeAgain,
+  Slide28Lecture1Summary,
+  Slide29NextSteps,
+  Slide30FurtherResources
 } from './lecture1'
 
 interface SlideDefinition {
@@ -43,157 +44,152 @@ const slideDefinitions: SlideDefinition[] = [
   {
     title: "Welcome",
     contentType: "center",
-    component: WelcomeSlide
+    component: Slide01Welcome
   },
   {
     title: "How to Teach (and Learn) Python",
     contentType: "center",
-    component: TeachingPhilosophySlide
+    component: Slide02HowToLearnPython
   },
   {
     title: "AI & LLMs: A Double-Edged Sword",
     contentType: "center",
-    component: AILLMSlide
+    component: Slide03AIAndLLMs
   },
   {
     title: "Who Uses Python?",
     contentType: "top",
-    component: WhoUsesPythonSlide
+    component: Slide04WhoUsesPython
   },
   {
     title: "The Story of Python",
     contentType: "center",
-    component: PythonStorySlide
+    component: Slide05PythonStory
   },
   {
     title: "The Python Organisation",
     contentType: "top",
-    component: PythonOrganisationSlide
+    component: Slide06PythonOrganisation
   },
   {
     title: "Programming Paradigms",
     contentType: "center",
-    component: ProgrammingParadigmsSlide
+    component: Slide07ProgrammingParadigms
   },
   {
     title: "Language Comparison",
     contentType: "center",
-    component: LanguageComparisonSlide
+    component: Slide08LanguageComparison
   },
   {
     title: "Course Structure",
     contentType: "center",
-    component: CourseStructureSlide
+    component: Slide09CourseStructure
   },
   {
     title: "What We'll Build Together",
     contentType: "center",
-    component: WhatWellBuildSlide
+    component: Slide10WhatWellBuild
   },
   {
     title: "Ready to Start Coding?",
     contentType: "center",
-    component: ReadyToStartSlide
+    component: Slide11ReadyToStart
   },
   {
     title: "The Problem",
     contentType: "center",
-    component: TheProblemSlide
+    component: Slide12TheProblem
   },
   {
     title: "The Solution: Code Planning",
     contentType: "center",
-    component: TheSolutionSlide
+    component: Slide13TheSolution
   },
   {
     title: "Breaking Down Problems",
     contentType: "center",
-    component: BreakingDownProblemsSlide
+    component: Slide14BreakingDownProblems
   },
   {
     title: "The Complete Solution",
     contentType: "center",
-    component: CompleteCodeSlide
+    component: Slide15CompleteCode
   },
   {
     title: "Step 1: The Code",
     contentType: "center",
-    component: Step1CodeSlide
+    component: Slide16Step1Code
   },
   {
     title: "Google Colab: Your Python Laboratory",
     contentType: "center",
-    component: GoogleColabSlide
+    component: Slide17GoogleColab
   },
   {
     title: "Variables & Assignment",
     contentType: "center", 
-    component: Step1Variables
+    component: Slide18VariablesAssignment
   },
   {
     title: "Data Types",
     contentType: "center",
-    component: Step1Datatypes
+    component: Slide19DataTypes
   },
   {
     title: "Printing & F-Strings",
     contentType: "center",
-    component: Step1PrintingFStrings
+    component: Slide20PrintingFStrings
   },
   {
     title: "Analyzing Many Values at Once",
     contentType: "center",
-    component: Step2IntroSlide
+    component: Slide21AnalyzingManyValues
   },
   {
     title: "Lists - Storing Multiple Values",
     contentType: "center",
-    component: Step2Lists
+    component: Slide22Lists
   },
   {
     title: "For Loops - Processing Each Item",
     contentType: "center",
-    component: Step2ForLoops
+    component: Slide23ForLoops
   },
-  // {
-  //   title: "Step 2: Process Many Concentrations",
-  //   contentType: "center",
-  //   component: Step2CodeSlide
-  // },
   {
     title: "Creating Reusable Functions",
     contentType: "center",
-    component: Step3IntroSlide
+    component: Slide24CreatingReusableFunctions
   },
   {
     title: "Functions - Packaging Your Code",
     contentType: "center",
-    component: Step3Functions
+    component: Slide25Functions
   },
   {
     title: "Function Parameters & Arguments",
     contentType: "center",
-    component: Step3Parameters
+    component: Slide26FunctionParameters
   },
   {
     title: "The Complete Solution",
     contentType: "center",
-    component: CompleteCodeSlide
+    component: Slide27CompleteCodeAgain
   },
   {
     title: "Lecture 1 Summary",
     contentType: "center",
-    component: Lecture1SummarySlide
+    component: Slide28Lecture1Summary
   },
   {
     title: "Next Steps",
     contentType: "center",
-    component: NextStepsSlide
+    component: Slide29NextSteps
   },
   {
     title: "Further Resources",
     contentType: "center",
-    component: FurtherResourcesSlide
+    component: Slide30FurtherResources
   },
   
 ]

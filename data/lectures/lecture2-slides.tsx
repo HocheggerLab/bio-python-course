@@ -1,20 +1,21 @@
 import { LectureData, Slide } from './types'
 import {
-  WelcomeSlide,
-  TodaysGoalSlide,
-  DarrensProblemSlide,
-  ORFExplainerSlide,
-  ORFProblemBreakdownSlide,
-  Part1TitleSlide,
-  ReviewDataTypesSlide,
-  DNAStringOperationSlideSlicing,
-  FindingATGSlide,
-  DevelopmentEnvironmentSlide,
-  VSCodeSlide,
-  UVPythonSlide,
-  TerminalBasicsSlide,
-  GitVersionControlSlide,
-  ResourcesNextStepsSlide
+  Slide01Welcome,
+  Slide02TodaysGoals,
+  Slide03DarrensProblem,
+  Slide04ORFExplainer,
+  Slide05ORFProblemBreakdown,
+  Slide06FinalCode,
+  Slide07Part1Title,
+  Slide08ReviewDataTypes,
+  Slide09DNAStringOperationSlicing,
+  Slide10FindingATG,
+  Slide11Part2Title,
+  Slide12ConditionalsBasics,
+  Slide13FindATGFunction,
+  Slide14Part3Title,
+  Slide15DictionariesBasics,
+  
 } from './lecture2'
 
 interface SlideDefinition {
@@ -27,85 +28,82 @@ interface SlideDefinition {
 
 const slideDefinitions: SlideDefinition[] = [
   {
-    title: "Welcome to Lecture 2",
+    title: "Welcome",
     contentType: "center",
-    component: WelcomeSlide
+    component: Slide01Welcome
   },
   {
-    title: "Today's Goal",
+    title: "Today's Goals",
     contentType: "center",
-    component: TodaysGoalSlide
+    component: Slide02TodaysGoals
   },
   {
     title: "Meet Darren",
     contentType: "center",
-    component: DarrensProblemSlide
+    component: Slide03DarrensProblem
   },
   {
-    title: "Understanding ORFs",
+    title: "Open Reading Frames",
     contentType: "center",
-    component: ORFExplainerSlide
+    component: Slide04ORFExplainer
   },
   {
-    title: "Breaking Down the ORF Problem",
+    title: "Breaking Down the Problem",
     contentType: "center",
-    component: ORFProblemBreakdownSlide
-  },
-
-  {
-    title: "Part 1: String Fundamentals",
-    contentType: "center",
-    component: Part1TitleSlide
+    component: Slide05ORFProblemBreakdown
   },
   {
-    title: "Review: Data Types & Strings",
+    title: "The Complete Solution",
     contentType: "center",
-    component: ReviewDataTypesSlide
+    component: Slide06FinalCode
   },
   {
-    title: "DNA String Slicing",
+    title: "String Fundamentals",
     contentType: "center",
-    component: DNAStringOperationSlideSlicing
+    component: Slide07Part1Title
   },
   {
-    title: "Finding ATGs: Loops + Slicing",
+    title: "Data Types & Strings",
     contentType: "center",
-    component: FindingATGSlide
+    component: Slide08ReviewDataTypes
   },
-  // More DNA analysis slides will be added here
+  {
+    title: "String Slicing",
+    contentType: "center",
+    component: Slide09DNAStringOperationSlicing
+  },
+  {
+    title: "Finding ATGs",
+    contentType: "center",
+    component: Slide10FindingATG
+  },
+  {
+    title: "Python Conditionals",
+    contentType: "center",
+    component: Slide11Part2Title
+  },
+  {
+    title: "Conditionals Basics",
+    contentType: "center",
+    component: Slide12ConditionalsBasics
+  },
+  {
+    title: "Building find_atg()",
+    contentType: "center",
+    component: Slide13FindATGFunction
+  },
+  {
+    title: "Python Dictionaries",
+    contentType: "center",
+    component: Slide14Part3Title
+  },
+  {
+    title: "Dictionaries Basics",
+    contentType: "center",
+    component: Slide15DictionariesBasics
+  },
+  // More slides will be added here
   
-  // Programming environment preamble
-  {
-    title: "Beyond Google Colab",
-    contentType: "center",
-    component: DevelopmentEnvironmentSlide
-  },
-  {
-    title: "VS Code: Your New Python Laboratory",
-    contentType: "center",
-    component: VSCodeSlide
-  },
-  {
-    title: "UV Python: Modern Package Management",
-    contentType: "center",
-    component: UVPythonSlide
-  },
-  {
-    title: "Terminal Essentials",
-    contentType: "center",
-    component: TerminalBasicsSlide
-  },
-  {
-    title: "Git Version Control",
-    contentType: "center",
-    component: GitVersionControlSlide
-  },
-  {
-    title: "Resources & Next Steps",
-    contentType: "center",
-    component: ResourcesNextStepsSlide
-  },
-  // DNA analysis content starts here
   
 ]
 
