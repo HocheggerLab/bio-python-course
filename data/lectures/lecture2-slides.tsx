@@ -15,7 +15,10 @@ import {
   Slide13FindATGFunction,
   Slide14Part3Title,
   Slide15DictionariesBasics,
-  
+  Slide16TwoCoreFunctions,
+  Slide17FinalCodeError,
+  Slide18ErrorMessages,
+  Slide19DefensiveProgramming,
 } from './lecture2'
 
 interface SlideDefinition {
@@ -101,6 +104,26 @@ const slideDefinitions: SlideDefinition[] = [
     title: "Dictionaries Basics",
     contentType: "center",
     component: Slide15DictionariesBasics
+  },
+  {
+    title: "Two Core Functions",
+    contentType: "center",
+    component: Slide16TwoCoreFunctions
+  },
+  {
+    title: "Debugging & Error Handling",
+    contentType: "center",
+    component: Slide17FinalCodeError
+  },
+  {
+    title: "Understanding Error Messages",
+    contentType: "center",
+    component: Slide18ErrorMessages
+  },
+  {
+    title: "Defensive Programming",
+    contentType: "center",
+    component: Slide19DefensiveProgramming
   },
   // More slides will be added here
   

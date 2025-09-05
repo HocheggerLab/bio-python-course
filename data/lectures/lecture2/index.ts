@@ -13,3 +13,7 @@ export { default as Slide12ConditionalsBasics } from './Slide12ConditionalsBasic
 export { default as Slide13FindATGFunction } from './Slide13FindATGFunction'
 export { default as Slide14Part3Title } from './Slide14Part3Title'
 export { default as Slide15DictionariesBasics } from './Slide15DictionariesBasics'
+export { default as Slide16TwoCoreFunctions } from './Slide16TwoCoreFunctions'
+export { default as Slide17FinalCodeError } from './Slide17FinalCodeError'
+export { default as Slide18ErrorMessages } from './Slide18ErrorMessages'
+export { default as Slide19DefensiveProgramming } from './Slide19DefensiveProgramming'

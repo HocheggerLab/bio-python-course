@@ -11,6 +11,7 @@ interface CodeEditorProps {
   height?: string
   placeholder?: string
   language?: string
+  showLineNumbers?: boolean
 }
 
 export default function CodeEditor({
@@ -19,7 +20,8 @@ export default function CodeEditor({
   disabled = false,
   height = '200px',
   placeholder = '# Your Python code here...',
-  language = 'python'
+  language = 'python',
+  showLineNumbers = true
 }: CodeEditorProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const highlightRef = useRef<HTMLPreElement>(null)
@@ -56,6 +58,11 @@ export default function CodeEditor({
             <code>
               {tokens.map((line, i) => (
                 <div key={i} {...getLineProps({ line })}>
+                  {showLineNumbers && (
+                    <span className="inline-block w-8 text-gray-500 select-none mr-2">
+                      {i + 1}
+                    </span>
+                  )}
                   {line.map((token, key) => (
                     <span key={key} {...getTokenProps({ token })} />
                   ))}
@@ -81,6 +88,7 @@ export default function CodeEditor({
           fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace',
           lineHeight: '1.5',
           caretColor: '#d1d5db',
+          paddingLeft: showLineNumbers ? '60px' : '16px', // Offset for line numbers
         }}
       />
     </div>

@@ -49,7 +49,7 @@ export default function Lecture2Notebooks() {
       id: 4,
       title: "📊 Dictionaries & Translation",
       description: "Use dictionaries to translate DNA to protein sequences",
-      badge: "Coming Soon",
+      badge: "Available",
       topics: [
         "Python dictionaries for genetic code",
         "Key-value pairs for codon mapping",
@@ -57,11 +57,26 @@ export default function Lecture2Notebooks() {
         "Handling special codons",
         "Building protein sequences"
       ],
-      url: "#",
-      available: false
+      url: "https://github.com/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_2/L2_N3_dictionaries.ipynb",
+      available: true
     },
     {
       id: 5,
+      title: "🐛 Debugging Biological Code",
+      description: "Learn to identify and fix common errors in biological programming",
+      badge: "Available",
+      topics: [
+        "Syntax errors in biological code",
+        "Type errors with biological data",
+        "Name errors and undefined variables",
+        "Logic errors in calculations",
+        "Debugging strategies and tips"
+      ],
+      url: "https://github.com/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_2/L2_N4_debugging.ipynb",
+      available: true
+    },
+    {
+      id: 6,
       title: "📁 Working with FASTA Files",
       description: "Read and process real biological sequence files",
       badge: "Coming Soon",
@@ -76,7 +91,7 @@ export default function Lecture2Notebooks() {
       available: false
     },
     {
-      id: 6,
+      id: 7,
       title: "🧮 Longest ORF Finder",
       description: "Find the longest Open Reading Frame in sequences",
       badge: "Coming Soon",
@@ -91,7 +106,7 @@ export default function Lecture2Notebooks() {
       available: false
     },
     {
-      id: 7,
+      id: 8,
       title: "🐍 Introduction to Biopython",
       description: "Professional tools for biological sequence analysis",
       badge: "Coming Soon",
@@ -106,7 +121,7 @@ export default function Lecture2Notebooks() {
       available: false
     },
     {
-      id: 8,
+      id: 9,
       title: "🚀 Complete ORF Pipeline",
       description: "Put it all together: analyze multiple sequences automatically",
       badge: "Final Project",

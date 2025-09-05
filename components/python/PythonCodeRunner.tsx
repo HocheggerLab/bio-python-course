@@ -13,6 +13,7 @@ interface PythonCodeRunnerProps {
   expectedOutput?: string
   hints?: string[]
   onSuccess?: () => void
+  showLineNumbers?: boolean
   
   // Static fallback props
   staticOutput?: string
@@ -28,6 +29,7 @@ export default function PythonCodeRunner({
   expectedOutput,
   hints = [],
   onSuccess,
+  showLineNumbers = true,
   staticOutput,
   staticError,
   description
@@ -204,6 +206,7 @@ export default function PythonCodeRunner({
             height={height}
             placeholder="# Your Python code here..."
             language="python"
+            showLineNumbers={showLineNumbers}
           />
         </div>
       </div>
