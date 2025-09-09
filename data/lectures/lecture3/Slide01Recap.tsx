@@ -2,7 +2,6 @@
 
 import { 
   SlideTitle, 
-  SlideContent, 
   GradientText 
 } from '@/components/slides'
 
