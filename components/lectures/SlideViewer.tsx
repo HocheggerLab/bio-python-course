@@ -12,7 +12,7 @@ interface SlideViewerProps {
 
 export default function SlideViewer({ lecture }: SlideViewerProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [isExporting, setIsExporting] = useState(false)
+  // const [isExporting, setIsExporting] = useState(false) // PDF export disabled
 
   // Keyboard navigation
   useEffect(() => {
@@ -46,6 +46,7 @@ export default function SlideViewer({ lecture }: SlideViewerProps) {
     setCurrentSlide(slideIndex)
   }
 
+  /* PDF Export - Temporarily disabled due to complex slide formats
   const handleExportPDF = async () => {
     setIsExporting(true)
     try {
@@ -57,6 +58,7 @@ export default function SlideViewer({ lecture }: SlideViewerProps) {
       setIsExporting(false)
     }
   }
+  */
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -76,8 +78,8 @@ export default function SlideViewer({ lecture }: SlideViewerProps) {
         onPrevious={handlePrevious}
         onNext={handleNext}
         onSlideSelect={handleSlideSelect}
-        onExportPDF={handleExportPDF}
-        isExporting={isExporting}
+        onExportPDF={() => {}} // Disabled
+        isExporting={false} // Disabled
       />
     </div>
   )

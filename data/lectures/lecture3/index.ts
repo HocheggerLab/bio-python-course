@@ -1,0 +1,7 @@
+export { default as Slide01Recap } from './Slide01Recap'
+export { default as Slide02TheProblem } from './Slide02TheProblem'
+export { default as Slide03TodaysGoals } from './Slide03TodaysGoals'
+export { default as Slide04Part1Title } from './Slide04Part1Title'
+export { default as Slide05LaundryAnalogy } from './Slide05LaundryAnalogy'
+export { default as Slide06PackageTypes } from './Slide06PackageTypes'
+export { default as Slide07RandomExample } from './Slide07RandomExample'

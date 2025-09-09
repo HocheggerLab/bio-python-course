@@ -59,7 +59,7 @@ export default function CodeEditor({
               {tokens.map((line, i) => (
                 <div key={i} {...getLineProps({ line })}>
                   {showLineNumbers && (
-                    <span className="inline-block w-8 text-gray-500 select-none mr-2">
+                    <span className="inline-block w-10 text-gray-500 select-none mr-1">
                       {i + 1}
                     </span>
                   )}
@@ -88,7 +88,7 @@ export default function CodeEditor({
           fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace',
           lineHeight: '1.5',
           caretColor: '#d1d5db',
-          paddingLeft: showLineNumbers ? '60px' : '16px', // Offset for line numbers
+          paddingLeft: showLineNumbers ? '56px' : '16px', // Offset for line numbers (w-10 + mr-1 = 44px + 12px padding)
         }}
       />
     </div>

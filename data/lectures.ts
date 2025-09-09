@@ -40,7 +40,7 @@ export const coreSessionsData: Lecture[] = [
   {
     id: 3,
     title: "Linear Regression of Cancer Data",
-    status: "coming-soon",
+    status: "under-construction",
     topics: [
       "Object-oriented programming",
       "Pandas DataFrames",

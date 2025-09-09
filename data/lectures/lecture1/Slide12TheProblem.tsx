@@ -36,7 +36,7 @@ export function Slide12TheProblem() {
             <div className="space-y-4 text-left">
               <p className="text-gray-300">
                 Alex has been asked to <span className="text-bio-yellow font-semibold">restock solutions</span> in the lab. 
-                He has about <span className="text-bio-blue font-bold">100 bottles</span> of different reagents 
+                She has about <span className="text-bio-blue font-bold">100 bottles</span> of different reagents 
                 and needs to make <span className="text-bio-green font-bold">10mM stocks</span> for each.
               </p>
               
