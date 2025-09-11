@@ -16,7 +16,7 @@ export default function Slide04Part1Title() {
       <SlideTitle size="xl" className="mb-8">
         Python <GradientText>Package Ecosystem & Standard Library Modules</GradientText>
         <br />
-        <span className="text-3xl md:text-4xl">Working with Open Source Code</span>
+        <span className="text-4xl md:text-5xl mt-4 block">Working with Open Source Code</span>
       </SlideTitle>
       
       <p className="text-lg text-gray-300 text-center mb-8">

@@ -7,6 +7,11 @@ import {
   Slide05LaundryAnalogy,
   Slide06PackageTypes,
   Slide07RandomExample,
+  Slide08Part3Title,
+  Slide09IntroClasses,
+  Slide10ClassMethods,
+  Slide11Part4Title,
+  Slide12DataIntro,
 } from './lecture3'
 
 interface SlideDefinition {
@@ -52,6 +57,31 @@ const slideDefinitions: SlideDefinition[] = [
     title: "Standard Library Example: Random",
     contentType: "center",
     component: Slide07RandomExample
+  },
+  {
+    title: "Part 3: Classes & Objects",
+    contentType: "center",
+    component: Slide08Part3Title
+  },
+  {
+    title: "Classes: Storing Data",
+    contentType: "top",
+    component: Slide09IntroClasses
+  },
+  {
+    title: "Classes: Adding Methods",
+    contentType: "top",
+    component: Slide10ClassMethods
+  },
+  {
+    title: "Part 4: Enter Pandas",
+    contentType: "center",
+    component: Slide11Part4Title
+  },
+  {
+    title: "Our Dataset: DepMap CRISPR",
+    contentType: "top",
+    component: Slide12DataIntro
   },
   // More slides will be added here
 ]
