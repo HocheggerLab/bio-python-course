@@ -255,7 +255,7 @@ stock = 10  # mg/mL
             Ready to practice function parameters? Open this interactive notebook to work through more examples and exercises.
           </p>
           <a
-            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/functions.ipynb"
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N7_functions.ipynb"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-bio-blue to-purple-500 text-white font-semibold rounded-lg hover:from-bio-blue/80 hover:to-purple-500/80 transition-all duration-200 shadow-lg hover:shadow-xl"

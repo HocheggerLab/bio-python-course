@@ -22,6 +22,7 @@ export default function About() {
         <div className="concept-box space-y-6">
           <p className="text-lg leading-relaxed">
             This course is specifically designed for Year 3 students in the Life Sciences from the University of Sussex who want to add computational skills to their toolkit.
+            But this course is also for anyone who wants to learn Python for biology!
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             <div>

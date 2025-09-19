@@ -243,7 +243,7 @@ Sample B (should be 2.5):
             </p>
           </div>
           <a 
-            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/variables_and_comments.ipynb"
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N2_variables_and_comments.ipynb"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-bio-blue hover:bg-bio-blue/80 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition-colors"

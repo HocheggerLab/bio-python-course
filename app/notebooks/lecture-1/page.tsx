@@ -12,7 +12,7 @@ export default function Lecture1Notebooks() {
         "Common mistakes and solutions",
         "Practice exercises"
       ],
-      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/collab_notebooks.ipynb"
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N1_collab_notebooks.ipynb"
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ export default function Lecture1Notebooks() {
         "Variable assignment and updates",
         "Biology examples and practice"
       ],
-      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/variables_and_comments.ipynb"
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N2_variables_and_comments.ipynb"
     },
     {
       id: 3,
@@ -40,7 +40,7 @@ export default function Lecture1Notebooks() {
         "Booleans for true/false states",
         "Type conversion and common errors"
       ],
-      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/datatypes.ipynb"
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N3_datatypes.ipynb"
     },
     {
       id: 4,
@@ -54,7 +54,7 @@ export default function Lecture1Notebooks() {
         "Creating neat data tables",
         "Lab report formatting"
       ],
-      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/f_strings.ipynb"
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N4_f_strings.ipynb"
     },
     {
       id: 5,
@@ -68,7 +68,7 @@ export default function Lecture1Notebooks() {
         "Functions with and without returns",
         "Default parameters and documentation"
       ],
-      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/functions.ipynb"
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N7_functions.ipynb"
     },
     {
       id: 6,
@@ -82,7 +82,7 @@ export default function Lecture1Notebooks() {
         "Adding and modifying list items",
         "Real biological examples"
       ],
-      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/lists.ipynb"
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N5_lists.ipynb"
     },
     {
       id: 7,
@@ -96,7 +96,7 @@ export default function Lecture1Notebooks() {
         "Quality control automation",
         "High-throughput data analysis"
       ],
-      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/for_loops.ipynb"
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N6_for_loops.ipynb"
     },
     {
       id: 8,

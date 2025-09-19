@@ -118,7 +118,7 @@ print(f"Volume needed: {volume:.2f} mL")`}
             </p>
           </a>
           <a 
-            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/variables_and_comments.ipynb"
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N2_variables_and_comments.ipynb"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-bio-dark/70 hover:bg-bio-yellow/20 rounded-lg p-4 border-l-4 border-bio-yellow block transition-colors cursor-pointer"
@@ -134,7 +134,7 @@ print(f"Volume needed: {volume:.2f} mL")`}
             </p>
           </a>
           <a 
-            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/datatypes.ipynb"
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N3_datatypes.ipynb"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-bio-dark/70 hover:bg-bio-blue/20 rounded-lg p-4 border-l-4 border-bio-blue block transition-colors cursor-pointer"
@@ -150,7 +150,7 @@ print(f"Volume needed: {volume:.2f} mL")`}
             </p>
           </a>
           <a 
-            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/f_strings.ipynb"
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N4_f_strings.ipynb"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-bio-dark/70 hover:bg-bio-green/20 rounded-lg p-4 border-l-4 border-bio-green block transition-colors cursor-pointer"

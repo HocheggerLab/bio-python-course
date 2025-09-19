@@ -12,6 +12,11 @@ import {
   Slide10ClassMethods,
   Slide11Part4Title,
   Slide12DataIntro,
+  Slide13FirstPandasSteps,
+  Slide14ResearchQuestion,
+  Slide15FilteringData,
+  Slide16Statistics,
+  Slide17DataSorting,
 } from './lecture3'
 
 interface SlideDefinition {
@@ -82,6 +87,31 @@ const slideDefinitions: SlideDefinition[] = [
     title: "Our Dataset: DepMap CRISPR",
     contentType: "top",
     component: Slide12DataIntro
+  },
+  {
+    title: "First Steps: Loading & Inspecting Data",
+    contentType: "top",
+    component: Slide13FirstPandasSteps
+  },
+  {
+    title: "Research Question: Essential Genes",
+    contentType: "top",
+    component: Slide14ResearchQuestion
+  },
+  {
+    title: "Step 1: Filtering DataFrames",
+    contentType: "top",
+    component: Slide15FilteringData
+  },
+  {
+    title: "Step 2: Calculating Statistics",
+    contentType: "top",
+    component: Slide16Statistics
+  },
+  {
+    title: "Step 3: Sorting Data",
+    contentType: "top",
+    component: Slide17DataSorting
   },
   // More slides will be added here
 ]

@@ -279,7 +279,7 @@ ph_values = [6.5, 7.0, 7.4, 8.2]
             </p>
           </div>
           <a 
-            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/for_loops.ipynb"
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N6_for_loops.ipynb"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-bio-blue hover:bg-bio-blue/80 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition-colors"

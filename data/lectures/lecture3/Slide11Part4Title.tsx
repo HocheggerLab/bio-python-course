@@ -16,7 +16,7 @@ export default function Slide11Part4Title() {
       <SlideTitle size="xl" className="mb-8">
         Enter <GradientText>Pandas</GradientText>
         <br />
-        <span className="text-4xl md:text-5xl mt-4 block">The Library That Changed Everything</span>
+        <span className="text-4xl md:text-5xl mt-4 block">The Library That Changed Data Science</span>
       </SlideTitle>
       
       <p className="text-lg text-gray-300 text-center mb-8">

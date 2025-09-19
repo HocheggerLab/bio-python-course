@@ -77,7 +77,7 @@ Wortmannin: Add 15.17 mL of DMSO`}
 
         <div className="mt-8 flex gap-4 justify-center">
           <a
-            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/lists.ipynb"
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N5_lists.ipynb"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-bio-blue to-purple-500 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
@@ -88,7 +88,7 @@ Wortmannin: Add 15.17 mL of DMSO`}
             Lists Notebook
           </a>
           <a
-            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/for_loops.ipynb"
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N6_for_loops.ipynb"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-bio-green text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"

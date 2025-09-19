@@ -25,11 +25,11 @@ export default function Footer() {
               <a href="mailto:hh65@sussex.ac.uk" className="nav-link">
                 📧 Contact
               </a>
-              <a href="https://github.com/HocheggerLab" className="nav-link">
+              <a href="https://github.com/HocheggerLab/y3-bio-python" className="nav-link">
                 💻 GitHub
               </a>
             </div>
-            
+          
             <div className="flex gap-4">
               <a 
                 href="https://bsky.app/profile/helfridh.bsky.social" 

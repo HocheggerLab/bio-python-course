@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python for Biologists - Introduction</title>
+
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.min.css">
+
+    <style>
+        :root {
+            --bio-blue: #00d4ff;
+            --bio-green: #4CAF50;
+            --bio-yellow: #ffd700;
+            --bio-purple: #8a2be2;
+            --bio-dark: #1a1a2e;
+            --bio-darker: #0f0f1e;
+        }
+
+        .reveal {
+            background: linear-gradient(135deg, var(--bio-dark) 0%, var(--bio-darker) 100%);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            text-transform: none;
+            line-height: 1.2;
+        }
+
+        .reveal .slides {
+            text-align: left;
+            width: 50% !important;
+            margin-left: auto;
+            padding-right: 5%;
+        }
+
+        .reveal .slides section {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Welcome Slide */
+        .welcome-slide {
+            text-align: center !important;
+        }
+
+        .welcome-title {
+            font-size: 4em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--bio-blue) 0%, var(--bio-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .dna-icon {
+            font-size: 5em;
+            margin-bottom: 40px;
+            display: inline-block;
+        }
+
+        .course-title {
+            font-size: 2em;
+            color: var(--bio-blue);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        /* Section Headers */
+        .section-header {
+            font-size: 2.5em;
+            color: var(--bio-blue);
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        /* Benefits */
+        .benefit {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 12px;
+            border-left: 4px solid var(--bio-blue);
+            opacity: 0;
+            animation: fadeInLeft 0.5s forwards;
+        }
+
+        .benefit:nth-child(2) { animation-delay: 0.2s; }
+        .benefit:nth-child(3) { animation-delay: 0.4s; }
+        .benefit:nth-child(4) { animation-delay: 0.6s; }
+        .benefit:nth-child(5) { animation-delay: 0.8s; }
+
+        .benefit-icon {
+            font-size: 2em;
+            margin-right: 20px;
+            min-width: 50px;
+        }
+
+        .benefit-text {
+            font-size: 1.3em;
+            line-height: 1.4;
+            color: #e0e0e0;
+        }
+
+        .highlight {
+            color: var(--bio-green);
+            font-weight: 600;
+        }
+
+        /* Phases */
+        .phase {
+            margin-bottom: 35px;
+            padding: 25px;
+            border-radius: 12px;
+            opacity: 0;
+            animation: slideUp 0.5s forwards;
+        }
+
+        .phase:nth-child(2) { animation-delay: 0.3s; }
+        .phase:nth-child(3) { animation-delay: 0.6s; }
+
+        .phase1 {
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(138, 43, 226, 0.1));
+            border-left: 4px solid var(--bio-purple);
+        }
+
+        .phase2 {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 212, 255, 0.1));
+            border-left: 4px solid var(--bio-blue);
+        }
+
+        .phase3 {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(76, 175, 80, 0.1));
+            border-left: 4px solid var(--bio-green);
+        }
+
+        .phase-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Approach Grid */
+        .approach-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .approach-item {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .approach-item:nth-child(1) { animation-delay: 0.1s; }
+        .approach-item:nth-child(2) { animation-delay: 0.2s; }
+        .approach-item:nth-child(3) { animation-delay: 0.3s; }
+        .approach-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .approach-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .approach-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--bio-green);
+            margin-bottom: 8px;
+        }
+
+        /* Achievements */
+        .achievement {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            opacity: 0;
+            animation: slideInLeft 0.5s ease forwards;
+        }
+
+        .achievement:nth-child(2) { animation-delay: 0.1s; }
+        .achievement:nth-child(3) { animation-delay: 0.2s; }
+        .achievement:nth-child(4) { animation-delay: 0.3s; }
+        .achievement:nth-child(5) { animation-delay: 0.4s; }
+        .achievement:nth-child(6) { animation-delay: 0.5s; }
+
+        .check-icon {
+            font-size: 1.5em;
+            color: var(--bio-green);
+            margin-right: 15px;
+        }
+
+        .achievement-text {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+        .achievement-text strong {
+            color: var(--bio-green);
+        }
+
+        /* CTA */
+        .call-to-action {
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.3), rgba(0, 212, 255, 0.3));
+            border-radius: 16px;
+            border: 2px solid var(--bio-green);
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-text {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--bio-green), var(--bio-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Animations */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .no-install-banner {
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(0, 212, 255, 0.2));
+            border-radius: 12px;
+            text-align: center;
+            font-size: 1.2em;
+            border: 2px solid rgba(76, 175, 80, 0.5);
+        }
+
+        .confidence-box {
+            margin-top: 40px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(0, 212, 255, 0.2));
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid rgba(76, 175, 80, 0.5);
+        }
+
+        .website-preview {
+            padding: 30px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 16px;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .resource-item {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        /* Override Reveal.js defaults */
+        .reveal .progress {
+            color: var(--bio-blue);
+        }
+
+        .reveal .controls {
+            color: var(--bio-blue);
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Slide 1: Welcome -->
+            <section data-auto-animate>
+                <div class="welcome-slide">
+                    <div class="dna-icon floating">🧬</div>
+                    <div class="welcome-title">Welcome!</div>
+                    <div class="course-title">Python for Biologists</div>
+                </div>
+            </section>
+
+            <!-- Slide 2: Why Python -->
+            <section data-auto-animate>
+                <h1 class="section-header">Why Python for Biology?</h1>
+                <div class="benefits-container">
+                    <div class="benefit">
+                        <div class="benefit-icon">⚡</div>
+                        <div class="benefit-text">
+                            Process <span class="highlight">thousands of sequences</span> in seconds
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">🔬</div>
+                        <div class="benefit-text">
+                            Automate <span class="highlight">laboratory calculations</span>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">📊</div>
+                        <div class="benefit-text">
+                            Create <span class="highlight">publication-ready</span> visualizations
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">🚀</div>
+                        <div class="benefit-text">
+                            Focus on <span class="highlight">biological questions</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Course Structure -->
+            <section data-auto-animate>
+                <h1 class="section-header">Your Learning Journey</h1>
+                <div class="phase phase1">
+                    <div class="phase-title">
+                        <span>📚</span>
+                        5 Interactive Lectures
+                    </div>
+                    <div>From Python basics to data visualization</div>
+                </div>
+                <div class="phase phase2">
+                    <div class="phase-title">
+                        <span>🧪</span>
+                        10 Practice Seminars
+                    </div>
+                    <div>Hands-on sessions with real datasets</div>
+                </div>
+                <div class="phase phase3">
+                    <div class="phase-title">
+                        <span>🚀</span>
+                        Capstone Project
+                    </div>
+                    <div>Build your own gene analysis pipeline</div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Learning Approach -->
+            <section data-auto-animate>
+                <h1 class="section-header">How We Learn</h1>
+                <div class="approach-grid">
+                    <div class="approach-item">
+                        <div class="approach-icon">🧬</div>
+                        <div class="approach-title">Real Data</div>
+                        <div>Actual research datasets</div>
+                    </div>
+                    <div class="approach-item">
+                        <div class="approach-icon">💡</div>
+                        <div class="approach-title">Learn by Doing</div>
+                        <div>Code from day one</div>
+                    </div>
+                    <div class="approach-item">
+                        <div class="approach-icon">☁️</div>
+                        <div class="approach-title">Google Colab</div>
+                        <div>Browser-based coding</div>
+                    </div>
+                    <div class="approach-item">
+                        <div class="approach-icon">🤝</div>
+                        <div class="approach-title">Full Support</div>
+                        <div>Labs & office hours</div>
+                    </div>
+                </div>
+                <div class="no-install-banner">
+                    ✨ <strong>No Installation Required - Start Today!</strong>
+                </div>
+            </section>
+
+            <!-- Slide 5: What You'll Achieve -->
+            <section data-auto-animate>
+                <h1 class="section-header">Your New Skills</h1>
+                <div class="achievement">
+                    <div class="check-icon">✓</div>
+                    <div class="achievement-text">
+                        <strong>Automate</strong> lab calculations & processing
+                    </div>
+                </div>
+                <div class="achievement">
+                    <div class="check-icon">✓</div>
+                    <div class="achievement-text">
+                        <strong>Analyze</strong> biological sequences
+                    </div>
+                </div>
+                <div class="achievement">
+                    <div class="check-icon">✓</div>
+                    <div class="achievement-text">
+                        <strong>Visualize</strong> complex datasets
+                    </div>
+                </div>
+                <div class="achievement">
+                    <div class="check-icon">✓</div>
+                    <div class="achievement-text">
+                        <strong>Build</strong> analysis pipelines
+                    </div>
+                </div>
+                <div class="achievement">
+                    <div class="check-icon">✓</div>
+                    <div class="achievement-text">
+                        <strong>Debug</strong> code independently
+                    </div>
+                </div>
+                <div class="confidence-box">
+                    <strong>Confidence to tackle any computational challenge</strong>
+                </div>
+            </section>
+
+            <!-- Slide 6: Getting Started -->
+            <section data-auto-animate>
+                <h1 class="section-header">Ready to Start?</h1>
+                <div class="website-preview">
+                    <div style="font-size: 3em; margin-bottom: 20px;">🌐</div>
+                    <div style="font-size: 1.3em; color: var(--bio-blue); font-weight: 600;">
+                        Course Website Available Now
+                    </div>
+                    <div>All materials freely accessible</div>
+                </div>
+                <div class="resources-grid">
+                    <div class="resource-item">
+                        <div style="font-size: 2em;">📚</div>
+                        <div>Slides</div>
+                    </div>
+                    <div class="resource-item">
+                        <div style="font-size: 2em;">📓</div>
+                        <div>Notebooks</div>
+                    </div>
+                    <div class="resource-item">
+                        <div style="font-size: 2em;">🛠️</div>
+                        <div>Guides</div>
+                    </div>
+                </div>
+                <div class="call-to-action">
+                    <div class="cta-text">
+                        Let's Code Biology Together!
+                    </div>
+                    <div>
+                        🚀 Your journey starts now 🧬
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: false,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            autoAnimateDuration: 0.8,
+
+            // Presentation size for half-screen display
+            width: 1920,
+            height: 1080,
+            margin: 0.1,
+
+            // Optional: Auto-advance slides (in milliseconds)
+            // autoSlide: 15000,
+            // loop: false,
+
+            keyboard: {
+                39: 'next', // right arrow
+                37: 'prev', // left arrow
+                32: 'next', // spacebar
+                13: 'next', // enter
+                27: 'toggleOverview', // escape
+                70: 'toggleFullscreen', // f
+            }
+        });
+
+        // Reset animations when slide changes
+        Reveal.on('slidechanged', event => {
+            // Reset animations for the current slide
+            const currentSlide = event.currentSlide;
+            const animatedElements = currentSlide.querySelectorAll('[class*="benefit"], [class*="phase"], [class*="achievement"], [class*="approach-item"]');
+
+            animatedElements.forEach(el => {
+                const cls = el.className;
+                el.style.animation = 'none';
+                el.offsetHeight; // Trigger reflow
+                el.style.animation = '';
+            });
+        });
+    </script>
+</body>
+</html>

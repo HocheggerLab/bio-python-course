@@ -12,7 +12,7 @@ export default function Lecture2Notebooks() {
         "Finding patterns in sequences",
         "Hands-on DNA manipulation exercises"
       ],
-      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_2/string_manipulation.ipynb",
+      url: "https://colab.research.google.com/github.com/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N1_collab_notebooks.ipynb",
       available: true
     },
     {

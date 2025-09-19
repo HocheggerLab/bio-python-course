@@ -9,31 +9,31 @@ export const scheduleData: ScheduleWeek[] = [
   {
     week: 1,
     lectureTopic: "Introduction to Python & Setup",
-    seminar: "-",
-    assignment: "Exercise Set 1"
+    seminar: "Lab calculator workshop",
+    assignment: ""
   },
   {
     week: 2,
     lectureTopic: "Strings & DNA Analysis",
     seminar: "Sequence Analysis Workshop",
-    assignment: "ORF Finder Project"
+    assignment: ""
   },
   {
     week: 3,
-    lectureTopic: "Functions & Dictionaries",
-    seminar: "Codon Table Implementation",
-    assignment: "Translation Tool"
+    lectureTopic: "Object Oriented Programming and intro to Pandas",
+    seminar: "Depmap Data Workshop",
+    assignment: "Python Basics Test"
   },
   {
     week: 4,
-    lectureTopic: "Lists & File I/O",
-    seminar: "FASTA Processing Lab",
-    assignment: "Multi-file Parser"
+    lectureTopic: "Linear Regression and Data Visualisation",
+    seminar: "Matplotlin Seaborn Workshop",
+    assignment: "DNA Analysis Project"
   },
   {
     week: 5,
-    lectureTopic: "Data Analysis & Visualization",
-    seminar: "Final Project Workshop",
+    lectureTopic: "Image Analysis and Statistics with Python",
+    seminar: "Image Analysis Workshop",
     assignment: "Final Project"
   }
 ]

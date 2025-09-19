@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-container {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .welcome-title {
+            font-size: 72px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #00d4ff 0%, #4CAF50 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .dna-icon {
+            font-size: 100px;
+            margin-bottom: 40px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .course-title {
+            font-size: 36px;
+            color: #00d4ff;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="dna-icon">🧬</div>
+        <div class="welcome-title">Welcome!</div>
+        <div class="course-title">Python for Biologists</div>
+    </div>
+</body>
+</html>

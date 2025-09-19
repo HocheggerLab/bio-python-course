@@ -14,10 +14,10 @@ export function DevelopmentEnvironmentSlide() {
         <span className="text-3xl md:text-4xl">Choosing Your Development Path</span>
       </SlideTitle>
       <p className="text-xl text-gray-300 mb-10 text-center">
-        Three pathways to Python mastery - choose what works for you
+        Two pathways to Python mastery - choose what works for you
       </p>
 
-      <div className="grid md:grid-cols-3 gap-6 mt-12">
+      <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto">
         <ConceptCard title="Stay with Colab" icon="☁️" iconColor="blue">
           <FeatureList 
             items={[
@@ -68,33 +68,6 @@ export function DevelopmentEnvironmentSlide() {
           <div className="mt-4 text-center">
             <span className="px-3 py-1 bg-bio-blue/20 text-bio-blue text-sm rounded-full">
               Recommended Path
-            </span>
-          </div>
-        </ConceptCard>
-
-        <ConceptCard title="Advanced Setup" icon="🚀" iconColor="blue">
-          <FeatureList 
-            items={[
-              {
-                title: "Full Control",
-                description: "Complete development environment with terminal mastery"
-              },
-              {
-                title: "Reproducible Science",
-                description: "Version control, package management, and collaboration tools"
-              },
-              {
-                title: "Career Ready",
-                description: "Skills that transfer directly to research computing jobs"
-              }
-            ]}
-            icon="⚡"
-            iconColor="purple"
-            titleColor="yellow"
-          />
-          <div className="mt-4 text-center">
-            <span className="px-3 py-1 bg-purple-500/20 text-purple-400 text-sm rounded-full">
-              For Ambitious Students
             </span>
           </div>
         </ConceptCard>

@@ -110,7 +110,7 @@ export default function Slide17GoogleColab() {
           </p>
           <div className="text-center">
             <a 
-              href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_2/string_manipulation.ipynb"
+              href="https://colab.research.google.com/github.com/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N1_collab_notebooks.ipynb.ipynb"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-bio-blue hover:bg-bio-blue/80 text-white px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-bio-blue/20 transform hover:-translate-y-1"
@@ -118,7 +118,7 @@ export default function Slide17GoogleColab() {
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.95 8.385l-1.446-.695a1.87 1.87 0 00-1.71.099l-.885.443a.59.59 0 01-.615-.009l-1.417-.816a.59.59 0 01-.294-.511V6.21c0-.21.11-.403.294-.511l1.417-.816a.59.59 0 01.615-.009l.885.443c.516.258 1.146.234 1.638-.062l1.518-.912a.59.59 0 01.885.511v2.042a.59.59 0 01-.294.511l-1.59.954z" fill="currentColor"/>
               </svg>
-              Open String Manipulation Notebook
+              Open Colab Notebook
             </a>
           </div>
         </section>
@@ -184,6 +184,30 @@ export default function Slide17GoogleColab() {
                 <li>✓ Advanced features & libraries</li>
               </ul>
             </div>
+          </div>
+        </section>
+
+        {/* Power Users Section */}
+        <section className="bg-gradient-to-r from-bio-blue/10 to-purple-500/10 border border-bio-blue/40 rounded-xl p-6 mt-8">
+          <h2 className="text-2xl font-semibold text-bio-blue mb-4 text-center">
+            💻 For Power Users
+          </h2>
+          <p className="text-gray-300 text-center mb-6">
+            Want to take your Python development to the next level? Learn how to set up a professional local
+            development environment with VS Code for more powerful coding capabilities.
+          </p>
+          <div className="text-center">
+            <a
+              href="/dev-tools"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-bio-blue to-purple-500 hover:from-bio-blue/80 hover:to-purple-500/80 text-white px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 transform hover:-translate-y-1"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+              Explore VS Code Setup
+            </a>
           </div>
         </section>
       </div>

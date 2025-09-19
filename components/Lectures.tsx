@@ -27,7 +27,7 @@ export default function Lectures() {
       <section id="specialization-tracks" className="py-20 px-6 bg-gradient-to-b from-bio-dark to-bio-darker">
         <div className="container mx-auto max-w-6xl">
           <h2 className="section-header">
-            Specialization <span className="text-gradient-purple">Tracks</span>
+            Specialisation <span className="text-gradient-purple">Tracks</span>
           </h2>
           <p className="text-center text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
             Choose one track to deepen your skills for your final project. 

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Approach</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .slide-container {
+            max-width: 700px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #00d4ff;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .approach-item {
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .approach-item:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .approach-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .approach-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .approach-desc {
+            font-size: 16px;
+            color: #e0e0e0;
+            line-height: 1.4;
+        }
+
+        .no-install-banner {
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(0, 212, 255, 0.2));
+            border-radius: 12px;
+            text-align: center;
+            font-size: 20px;
+            border: 2px solid rgba(76, 175, 80, 0.5);
+        }
+
+        .banner-icon {
+            font-size: 28px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1>How We Learn</h1>
+
+        <div class="approach-grid">
+            <div class="approach-item">
+                <div class="approach-icon">🧬</div>
+                <div class="approach-title">Real Data</div>
+                <div class="approach-desc">DNA sequences, proteins, actual research datasets</div>
+            </div>
+
+            <div class="approach-item">
+                <div class="approach-icon">💡</div>
+                <div class="approach-title">Learn by Doing</div>
+                <div class="approach-desc">Write code from day one, immediate feedback</div>
+            </div>
+
+            <div class="approach-item">
+                <div class="approach-icon">☁️</div>
+                <div class="approach-title">Google Colab</div>
+                <div class="approach-desc">Code in your browser, save to Google Drive</div>
+            </div>
+
+            <div class="approach-item">
+                <div class="approach-icon">🤝</div>
+                <div class="approach-title">Support Available</div>
+                <div class="approach-desc">Lab sessions, office hours, peer collaboration</div>
+            </div>
+        </div>
+
+        <div class="no-install-banner">
+            <span class="banner-icon">✨</span>
+            <strong>No Installation Required - Start Coding Today!</strong>
+        </div>
+    </div>
+</body>
+</html>

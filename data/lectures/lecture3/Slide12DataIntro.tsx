@@ -17,9 +17,15 @@ export default function Slide12DataIntro() {
           <h3 className="text-lg font-semibold text-bio-blue mb-4 text-center">
             🧬 The Cancer Dependency Map (DepMap)
           </h3>
-          <p className="text-gray-300 text-center">
+          <p className="text-gray-300 text-center mb-3">
             A massive project by the <span className="text-bio-blue font-semibold">Broad Institute</span> to find cancer's weaknesses across 
             <span className="text-amber-400 font-semibold"> 1000+ cancer cell lines</span>
+          </p>
+          <p className="text-center">
+            <a href="https://depmap.org" target="_blank" rel="noopener noreferrer" 
+               className="text-bio-blue hover:text-bio-yellow transition-colors font-semibold text-sm">
+              🔗 depmap.org
+            </a>
           </p>
         </div>
         
@@ -53,18 +59,18 @@ export default function Slide12DataIntro() {
           </h3>
           
           <SyntaxHighlighter
-            code={`# Each row = one cancer cell line
-# Each column = one gene
-# Each value = gene effect score
+            code={`# Our dataset: Breast vs Myeloid cancers
+# Metadata columns + gene effect scores
 
-                    TP53    BRCA1   MYC     PIK3CA
-ACH-000001         -0.12   -0.05   -1.23   -0.08     # Lung cancer line
-ACH-000002         -2.15   -0.91   -1.45   -0.07     # Breast cancer line  
-ACH-000003         -0.08   -0.04   -1.89   -1.12     # Colon cancer line
-...                ...     ...     ...     ...
-ACH-001216         -0.45   -0.23   -1.67   -0.34     # Brain cancer line
+model_id    cell_line_name  oncotree_lineage  oncotree_primary_disease    A1BG    A1CF    A2M
+ACH-000004  HEL            Myeloid           Acute Myeloid Leukemia      0.005   -0.069  -0.098
+ACH-000017  SK-BR-3        Breast            Invasive Breast Carcinoma   -0.032  -0.102  -0.013  
+ACH-000019  MCF7           Breast            Invasive Breast Carcinoma   0.036   0.018   0.095
+ACH-000028  KPL-1          Breast            Invasive Breast Carcinoma   -0.188  -0.149  0.077
+...         ...            ...               ...                         ...     ...     ...
 
-# Interpretation: BRCA1 knockout kills ACH-000002 (-0.91) but not others!`}
+# We'll compare: Are certain genes more essential in breast vs myeloid cancers?
+# Perfect for groupby analysis!`}
             language="python"
           />
         </div>

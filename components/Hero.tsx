@@ -36,7 +36,7 @@ export default function Hero() {
           </div>
           <div className="card text-center animate-fade-in animation-delay-400">
             <div className="text-4xl font-bold text-gradient-purple mb-2">3</div>
-            <div className="text-gray-400">Specialization Tracks</div>
+            <div className="text-gray-400">Specialisation Tracks</div>
           </div>
           <div className="card text-center animate-fade-in animation-delay-600">
             <div className="text-4xl font-bold text-gradient mb-2">100%</div>
