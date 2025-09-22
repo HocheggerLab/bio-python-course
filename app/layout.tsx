@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-gradient-to-br from-bio-dark to-bio-darker text-white min-h-screen">
+      <body className="bg-gradient-to-br from-bio-dark to-bio-darker text-white min-h-screen" suppressHydrationWarning>
         <Navigation />
         {children}
         <Footer />

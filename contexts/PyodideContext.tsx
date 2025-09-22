@@ -305,28 +305,32 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   const resetWorkspace = useCallback(async (): Promise<void> => {
     if (!pyodide) return
-    
+
     try {
       // Clear all user-defined variables except built-ins and our biology functions
       await pyodide.runPythonAsync(`
-        # Get list of current variables
-        current_vars = list(globals().keys())
-        
-        # Define variables to keep (built-ins + our biology tools)
-        keep_vars = {
-            '__name__', '__doc__', '__package__', '__loader__', '__spec__',
-            '__annotations__', '__builtins__', '__file__', '__cached__',
-            'dna_codon_table', 'rna_codon_table', 
-            'complement_dna', 'reverse_complement', 'transcribe', 'translate_dna', 'gc_content',
-            'sys', 'io', 'redirect_stdout', 'redirect_stderr'
-        }
-        
-        # Remove user-defined variables
-        for var_name in current_vars:
-            if var_name not in keep_vars and not var_name.startswith('_'):
-                del globals()[var_name]
-        
-        print("🔄 Workspace reset - biology tools still available!")
+# Get list of current variables
+current_vars = list(globals().keys())
+
+# Define variables to keep (built-ins + our biology tools)
+keep_vars = {
+    '__name__', '__doc__', '__package__', '__loader__', '__spec__',
+    '__annotations__', '__builtins__', '__file__', '__cached__',
+    'dna_codon_table', 'rna_codon_table',
+    'complement_dna', 'reverse_complement', 'transcribe', 'translate_dna', 'gc_content',
+    'sys', 'io', 'redirect_stdout', 'redirect_stderr', 'StringIO',
+    'old_stdout', 'old_stderr'
+}
+
+# Remove user-defined variables
+for var_name in list(current_vars):
+    if var_name not in keep_vars and not var_name.startswith('_'):
+        try:
+            del globals()[var_name]
+        except:
+            pass
+
+print("🔄 Workspace reset - biology tools still available!")
       `)
     } catch (err) {
       console.error('Failed to reset workspace:', err)

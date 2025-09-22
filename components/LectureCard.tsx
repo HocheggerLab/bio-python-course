@@ -45,9 +45,20 @@ export default function LectureCard({ lecture }: LectureCardProps) {
                 Notebooks
               </a>
             )}
-            <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark">
-              Video
-            </Link>
+            {lecture.videoUrl ? (
+              <a
+                href={lecture.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark"
+              >
+                Video
+              </a>
+            ) : (
+              <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark">
+                Video
+              </Link>
+            )}
           </>
         )}
         {lecture.status === 'under-construction' && (
@@ -70,9 +81,20 @@ export default function LectureCard({ lecture }: LectureCardProps) {
                 Notebooks
               </Link>
             )}
-            <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark">
-              Video
-            </Link>
+            {lecture.videoUrl ? (
+              <a
+                href={lecture.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark"
+              >
+                Video
+              </a>
+            ) : (
+              <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark">
+                Video
+              </Link>
+            )}
           </>
         )}
         {lecture.status === 'coming-soon' && (
@@ -83,9 +105,20 @@ export default function LectureCard({ lecture }: LectureCardProps) {
             <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs">
               Notebooks
             </Link>
-            <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark">
-              Video
-            </Link>
+            {lecture.videoUrl ? (
+              <a
+                href={lecture.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark"
+              >
+                Video
+              </a>
+            ) : (
+              <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark">
+                Video
+              </Link>
+            )}
           </>
         )}
       </div>

@@ -5,6 +5,7 @@ export interface Lecture {
   topics: string[]
   slideUrl?: string
   notebookUrl?: string
+  videoUrl?: string
   type?: 'core' | 'specialization'
 }
 
@@ -21,6 +22,7 @@ export const coreSessionsData: Lecture[] = [
     ],
     slideUrl: "/lectures/1",
     notebookUrl: "/notebooks/lecture-1",
+    videoUrl: "https://studio.youtube.com/playlist/PLYTU_Kb0BRDIjqcvTBfBkuWq6xEi6Wie2/videos",
     type: 'core'
   },
   {
