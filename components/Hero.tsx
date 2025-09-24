@@ -22,7 +22,7 @@ export default function Hero() {
             <a href="#core-sessions" className="btn-primary text-lg">
               Start Learning →
             </a>
-            <a href="https://www.youtube.com/watch?v=ceKtuKS2pPk" target="_blank" rel="noopener noreferrer" className="btn-secondary text-lg">
+            <a href="https://youtu.be/-8e-c_Rqvn0" target="_blank" rel="noopener noreferrer" className="btn-secondary text-lg">
               Watch Intro Video
             </a>
           </div>

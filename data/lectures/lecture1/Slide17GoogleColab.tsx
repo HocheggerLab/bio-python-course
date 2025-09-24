@@ -102,7 +102,7 @@ export default function Slide17GoogleColab() {
         {/* String Manipulation Notebook Link */}
         <section className="bg-gradient-to-r from-bio-blue/20 to-bio-green/20 border border-bio-blue/30 rounded-xl p-6">
           <h2 className="text-2xl font-semibold text-white mb-4 text-center">
-            🧬 Try String Manipulation in Colab
+            🧬 Try experimenting in Colab
           </h2>
           <p className="text-gray-300 text-center mb-6">
             Practice DNA sequence analysis with our interactive notebook. Work through examples, 
@@ -110,7 +110,7 @@ export default function Slide17GoogleColab() {
           </p>
           <div className="text-center">
             <a 
-              href="https://colab.research.google.com/github.com/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N1_collab_notebooks.ipynb.ipynb"
+              href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N1_collab_notebooks.ipynb"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-bio-blue hover:bg-bio-blue/80 text-white px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-bio-blue/20 transform hover:-translate-y-1"
