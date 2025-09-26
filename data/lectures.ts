@@ -53,11 +53,12 @@ export const coreSessionsData: Lecture[] = [
   },
   {
     id: 4,
-    title: "Visualising Linear Regression Data",
-    status: "coming-soon",
+    title: "Statistical Analysis & Data Visualization",
+    status: "under-construction",
     topics: [
-      "Matplotlib fundamentals",
-      "Seaborn for statistical plots",
+      "Linear regression analysis",
+      "Matplotlib & Seaborn visualization",
+      "Cancer gene correlation analysis",
       "Publication-ready figures"
     ],
     slideUrl: "/lectures/4",

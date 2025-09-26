@@ -1,5 +1,6 @@
 import { LectureData, Slide } from './types'
-import { 
+import {
+  Slide00Welcome,
   Slide01Recap,
   Slide02TheProblem,
   Slide03TodaysGoals,
@@ -17,6 +18,8 @@ import {
   Slide15FilteringData,
   Slide16Statistics,
   Slide17DataSorting,
+  Slide18Summary,
+  Slide19WhatWeLearned,
 } from './lecture3'
 
 interface SlideDefinition {
@@ -28,6 +31,11 @@ interface SlideDefinition {
 }
 
 const slideDefinitions: SlideDefinition[] = [
+  {
+    title: "Welcome to Data Analysis with Python",
+    contentType: "center",
+    component: Slide00Welcome
+  },
   {
     title: "Recap: Our Python Journey So Far",
     contentType: "center",
@@ -112,6 +120,16 @@ const slideDefinitions: SlideDefinition[] = [
     title: "Step 3: Sorting Data",
     contentType: "top",
     component: Slide17DataSorting
+  },
+  {
+    title: "Analysis Summary & Results",
+    contentType: "top",
+    component: Slide18Summary
+  },
+  {
+    title: "What We Learned Today",
+    contentType: "top",
+    component: Slide19WhatWeLearned
   },
   // More slides will be added here
 ]
