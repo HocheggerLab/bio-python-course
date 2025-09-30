@@ -13,6 +13,11 @@ interface PyodideInterface {
   interrupt: () => void
   globals: any
   version: string
+  FS: {
+    writeFile: (filename: string, content: string) => void
+    readFile: (filename: string) => string
+    unlink: (filename: string) => void
+  }
 }
 
 // Global Pyodide loader function (will be available after CDN script loads)

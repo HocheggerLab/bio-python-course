@@ -19,6 +19,7 @@ import {
   Slide17FinalCodeError,
   Slide18ErrorMessages,
   Slide19DefensiveProgramming,
+  Slide20FASTAFileFormats,
 } from './lecture2'
 
 interface SlideDefinition {
@@ -124,6 +125,11 @@ const slideDefinitions: SlideDefinition[] = [
     title: "Defensive Programming",
     contentType: "center",
     component: Slide19DefensiveProgramming
+  },
+  {
+    title: "DNA Sequence File Formats: FASTA",
+    contentType: "top",
+    component: Slide20FASTAFileFormats
   },
   // More slides will be added here
   

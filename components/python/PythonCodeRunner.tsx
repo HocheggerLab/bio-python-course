@@ -50,6 +50,11 @@ export default function PythonCodeRunner({
   const [showHint, setShowHint] = useState(false)
   const [currentHint, setCurrentHint] = useState(0)
 
+  // Update code when initialCode changes
+  useEffect(() => {
+    setCode(initialCode)
+  }, [initialCode])
+
   // Move useEffect BEFORE any conditional returns (React Hooks rule)
   useEffect(() => {
     // Only auto-run if browser supports Pyodide
@@ -60,7 +65,7 @@ export default function PythonCodeRunner({
           handleRun()
         }
       }, 0)
-      
+
       return () => clearTimeout(timer)
     }
     // We intentionally only want this to run when these specific props change

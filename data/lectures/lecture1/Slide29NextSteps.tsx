@@ -95,7 +95,7 @@ export function Slide29NextSteps() {
                 <div>• Growth rate calculator</div>
               </div>
               <a
-                href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/lab_calculator_toolkit.ipynb"
+                href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_P1_lab_calculator_toolkit.ipynb"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 bg-bio-green text-white font-semibold rounded-lg hover:bg-bio-green/80 transition-all duration-200"

@@ -23,7 +23,11 @@ export default function Schedule() {
                   <td>{week.week}</td>
                   <td>{week.lectureTopic}</td>
                   <td>{week.seminar}</td>
-                  <td>{week.assignment}</td>
+                  <td>
+                    {week.assignment.map((line, index) => (
+                      <div key={index}>{line}</div>
+                    ))}
+                  </td>
                 </tr>
               ))}
             </tbody>
