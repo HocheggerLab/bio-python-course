@@ -20,6 +20,8 @@ import {
   Slide18ErrorMessages,
   Slide19DefensiveProgramming,
   Slide20FASTAFileFormats,
+  Slide21WithStatementFileIO,
+  Slide22Lecture2Summary,
 } from './lecture2'
 
 interface SlideDefinition {
@@ -130,6 +132,16 @@ const slideDefinitions: SlideDefinition[] = [
     title: "DNA Sequence File Formats: FASTA",
     contentType: "top",
     component: Slide20FASTAFileFormats
+  },
+  {
+    title: "File I/O & the with Statement",
+    contentType: "top",
+    component: Slide21WithStatementFileIO
+  },
+  {
+    title: "Lecture 2 Summary & What's Next",
+    contentType: "center",
+    component: Slide22Lecture2Summary
   },
   // More slides will be added here
   

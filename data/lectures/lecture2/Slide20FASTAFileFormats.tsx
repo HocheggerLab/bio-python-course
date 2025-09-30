@@ -268,7 +268,7 @@ for gene_id, data in sequences.items():
             Build complete FASTA parsers and work with real research datasets
           </p>
           <a
-            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_2/L2_N7_fasta_files.ipynb"
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_2/L2_N5_fasta-files.ipynb"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-bio-blue hover:bg-bio-blue/80 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-bio-blue/20"
