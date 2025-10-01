@@ -9,7 +9,7 @@ export function Slide02HowToLearnPython() {
   return (
     <>
       <SlideTitle className="mb-6">
-        How to Teach (and Learn) <GradientText>Python</GradientText>
+        How to Learn (and Teach) <GradientText>Python</GradientText>
       </SlideTitle>
 
       <div className="max-w-5xl mx-auto space-y-6">
