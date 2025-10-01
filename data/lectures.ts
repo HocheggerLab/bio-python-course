@@ -66,7 +66,7 @@ export const coreSessionsData: Lecture[] = [
   },
   {
     id: 5,
-    title: "Analysing Data Sets & P-values",
+    title: "Analysing Image Data & Statistics",
     status: "coming-soon",
     topics: [
       "C-Python and vectorisation",
