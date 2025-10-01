@@ -49,21 +49,7 @@ export function Slide10WhatWellBuild() {
             <div className="bg-bio-dark/50 border border-bio-green/30 rounded-lg p-4 hover:border-bio-green/50 transition-all">
               <div className="flex items-center mb-2">
                 <span className="text-2xl mr-2">3️⃣</span>
-                <h4 className="text-lg font-bold text-bio-green">Data & Statistics</h4>
-              </div>
-              <ul className="text-sm text-gray-300 space-y-1">
-                <li>• NumPy arrays</li>
-                <li>• Statistical analysis</li>
-                <li>• P-value calculations</li>
-                <li>• Scientific computing</li>
-              </ul>
-            </div>
-
-            {/* Lecture 4 */}
-            <div className="bg-bio-dark/50 border border-purple-500/30 rounded-lg p-4 hover:border-purple-500/50 transition-all">
-              <div className="flex items-center mb-2">
-                <span className="text-2xl mr-2">4️⃣</span>
-                <h4 className="text-lg font-bold text-purple-400">Cancer Data</h4>
+                <h4 className="text-lg font-bold text-bio-green">Tabular Data</h4>
               </div>
               <ul className="text-sm text-gray-300 space-y-1">
                 <li>• Pandas DataFrames</li>
@@ -73,17 +59,31 @@ export function Slide10WhatWellBuild() {
               </ul>
             </div>
 
-            {/* Lecture 5 */}
-            <div className="bg-bio-dark/50 border border-bio-blue/30 rounded-lg p-4 hover:border-bio-blue/50 transition-all">
+            {/* Lecture 4 */}
+            <div className="bg-bio-dark/50 border border-purple-500/30 rounded-lg p-4 hover:border-purple-500/50 transition-all">
               <div className="flex items-center mb-2">
-                <span className="text-2xl mr-2">5️⃣</span>
-                <h4 className="text-lg font-bold text-bio-blue">Visualization</h4>
+                <span className="text-2xl mr-2">4️⃣</span>
+                <h4 className="text-lg font-bold text-purple-400">Visualization</h4>
               </div>
               <ul className="text-sm text-gray-300 space-y-1">
                 <li>• Matplotlib basics</li>
                 <li>• Seaborn statistics</li>
                 <li>• Publication figures</li>
                 <li>• Interactive plots</li>
+              </ul>
+            </div>
+
+            {/* Lecture 5 */}
+            <div className="bg-bio-dark/50 border border-bio-blue/30 rounded-lg p-4 hover:border-bio-blue/50 transition-all">
+              <div className="flex items-center mb-2">
+                <span className="text-2xl mr-2">5️⃣</span>
+                <h4 className="text-lg font-bold text-bio-blue">Image Data & Statistics</h4>
+              </div>
+              <ul className="text-sm text-gray-300 space-y-1">
+                <li>• NumPy arrays</li>
+                <li>• Statistical analysis</li>
+                <li>• P-value calculations</li>
+                <li>• Scientific computing</li>
               </ul>
             </div>
 
