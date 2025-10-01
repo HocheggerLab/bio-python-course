@@ -1,6 +1,7 @@
 import { LectureData, Slide } from './types'
 import {
   Slide01Welcome,
+  Slide01aWhyCode,
   Slide02HowToLearnPython,
   Slide03AIAndLLMs,
   Slide04WhoUsesPython,
@@ -45,6 +46,11 @@ const slideDefinitions: SlideDefinition[] = [
     title: "Welcome",
     contentType: "center",
     component: Slide01Welcome
+  },
+  {
+    title: "Why Learning to Code?",
+    contentType: "center",
+    component: Slide01aWhyCode
   },
   {
     title: "How to Teach (and Learn) Python",

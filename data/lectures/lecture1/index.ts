@@ -1,5 +1,6 @@
 // Export all slide components with numerical + descriptive naming for maintainability
 export { Slide01Welcome as Slide01Welcome } from './Slide01Welcome'
+export { Slide01aWhyCode } from './Slide01aWhyCode'
 export { Slide02HowToLearnPython } from './Slide02HowToLearnPython'
 export { Slide03AIAndLLMs } from './Slide03AIAndLLMs'
 export { Slide04WhoUsesPython } from './Slide04WhoUsesPython'
