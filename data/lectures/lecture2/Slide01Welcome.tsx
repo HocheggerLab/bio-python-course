@@ -44,7 +44,7 @@ export function Slide01Welcome() {
           <FeatureList 
             items={[
               {
-                title: "Variables & Data Types",
+                title: "Python dictionaries",
                 description: "Store and manipulate biological data efficiently"
               },
               {

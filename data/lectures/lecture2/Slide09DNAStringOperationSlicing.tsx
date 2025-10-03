@@ -42,7 +42,7 @@ export default function Slide09DNAStringOperationSlicing() {
           </div>
           <PythonCodeRunner
             initialCode={`# Basic string slicing with DNA
-dna = "ATGCGTAAA"
+dna = "ATGCGTAA"
 
 # Try different slicing examples
 print("Basic slicing examples:")
@@ -69,7 +69,7 @@ TGC`}
           </div>
           <PythonCodeRunner
             initialCode={`# Challenge: Print out the last three bases of the DNA sequence
-dna = "ATGCGTAAA"
+dna = "ATGCGTAA"
 
 # Your code here:
 # Use slicing to get the last 3 bases and print them

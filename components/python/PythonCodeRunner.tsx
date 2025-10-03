@@ -29,7 +29,7 @@ export default function PythonCodeRunner({
   expectedOutput,
   hints = [],
   onSuccess,
-  showLineNumbers = true,
+  showLineNumbers = false,
   staticOutput,
   staticError,
   description

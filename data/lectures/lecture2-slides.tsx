@@ -22,6 +22,7 @@ import {
   Slide20FASTAFileFormats,
   Slide21WithStatementFileIO,
   Slide22Lecture2Summary,
+  Slide23Resources,
 } from './lecture2'
 
 interface SlideDefinition {
@@ -143,9 +144,14 @@ const slideDefinitions: SlideDefinition[] = [
     contentType: "center",
     component: Slide22Lecture2Summary
   },
+  {
+    title: "Resources for DNA Pythonistas",
+    contentType: "top",
+    component: Slide23Resources
+  },
   // More slides will be added here
-  
-  
+
+
 ]
 
 const slides: Slide[] = slideDefinitions.map((def, index) => ({

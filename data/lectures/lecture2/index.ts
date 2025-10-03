@@ -20,3 +20,4 @@ export { default as Slide19DefensiveProgramming } from './Slide19DefensiveProgra
 export { default as Slide20FASTAFileFormats } from './Slide20FASTAFileFormats'
 export { default as Slide21WithStatementFileIO } from './Slide21WithStatementFileIO'
 export { default as Slide22Lecture2Summary } from './Slide22Lecture2Summary'
+export { default as Slide23Resources } from './Slide23Resources'

@@ -110,11 +110,7 @@ for i in range(len(dna)):
     three_bases = dna[i:i+3]
     print(f"Position {i}: '{three_bases}'")
     
-    # Show what happens when we run out of bases
-    if len(three_bases) < 3:
-        print(f"  -> Only {len(three_bases)} base(s) left!")
-
-print()
+    
 print("🤔 Next question: How do we check if each 3-base sequence is 'ATG'?")`}
             staticOutput={`Extracting 3-base sequences from each position:
 
