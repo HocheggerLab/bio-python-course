@@ -28,7 +28,7 @@ export const coreSessionsData: Lecture[] = [
   {
     id: 2,
     title: "Analysing DNA",
-    status: "under-construction",
+    status: "available",
     topics: [
       "String operations",
       "Sequence file formats",
@@ -37,6 +37,7 @@ export const coreSessionsData: Lecture[] = [
     ],
     slideUrl: "/lectures/2",
     notebookUrl: "/notebooks/lecture-2",
+    videoUrl: "https://www.youtube.com/playlist?list=PLYTU_Kb0BRDJB7Z6tLVHbJUtMcVcmev3-",
     type: 'core'
   },
   {
