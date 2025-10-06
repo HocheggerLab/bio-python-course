@@ -12,14 +12,14 @@ export default function Lecture2Notebooks() {
         "Finding patterns in sequences",
         "Hands-on DNA manipulation exercises"
       ],
-      url: "https://colab.research.google.com/github.com/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_N1_collab_notebooks.ipynb",
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_2/L2_N1_string_manipulation.ipynb",
       available: true
     },
     {
       id: 2,
       title: "🎯 Python Conditionals",
       description: "Learn to make decisions in code with if/elif/else statements",
-      badge: "Coming Soon",
+      badge: "Available",
       topics: [
         "If statements and boolean logic",
         "Comparing sequences with ==",
@@ -27,26 +27,11 @@ export default function Lecture2Notebooks() {
         "Elif for multiple conditions",
         "Combining loops and conditionals"
       ],
-      url: "#",
-      available: false
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_2/L2_N2_conditionals_practice.ipynb",
+      available: true
     },
     {
       id: 3,
-      title: "🔍 Finding ORFs",
-      description: "Build your first Open Reading Frame finder",
-      badge: "Coming Soon",
-      topics: [
-        "Identifying ATG start codons",
-        "Extracting codons systematically",
-        "Finding stop codons (TAA, TAG, TGA)",
-        "Building complete ORFs",
-        "Storing results in lists"
-      ],
-      url: "#",
-      available: false
-    },
-    {
-      id: 4,
       title: "📊 Dictionaries & Translation",
       description: "Use dictionaries to translate DNA to protein sequences",
       badge: "Available",
@@ -57,11 +42,11 @@ export default function Lecture2Notebooks() {
         "Handling special codons",
         "Building protein sequences"
       ],
-      url: "https://github.com/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_2/L2_N3_dictionaries.ipynb",
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_2/L2_N3_dictionaries.ipynb",
       available: true
     },
     {
-      id: 5,
+      id: 4,
       title: "🐛 Debugging Biological Code",
       description: "Learn to identify and fix common errors in biological programming",
       badge: "Available",
@@ -72,14 +57,14 @@ export default function Lecture2Notebooks() {
         "Logic errors in calculations",
         "Debugging strategies and tips"
       ],
-      url: "https://github.com/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_2/L2_N4_debugging.ipynb",
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_2/L2_N4_debugging.ipynb",
       available: true
     },
     {
-      id: 6,
+      id: 5,
       title: "📁 Working with FASTA Files",
       description: "Read and process real biological sequence files",
-      badge: "Coming Soon",
+      badge: "Available",
       topics: [
         "Understanding FASTA format",
         "Reading sequences from files",
@@ -87,53 +72,8 @@ export default function Lecture2Notebooks() {
         "Processing multiple sequences",
         "Writing results to files"
       ],
-      url: "#",
-      available: false
-    },
-    {
-      id: 7,
-      title: "🧮 Longest ORF Finder",
-      description: "Find the longest Open Reading Frame in sequences",
-      badge: "Coming Soon",
-      topics: [
-        "Comparing ORF lengths",
-        "Using max() and len() functions",
-        "Tracking best results",
-        "Handling multiple reading frames",
-        "Optimization strategies"
-      ],
-      url: "#",
-      available: false
-    },
-    {
-      id: 8,
-      title: "🐍 Introduction to Biopython",
-      description: "Professional tools for biological sequence analysis",
-      badge: "Coming Soon",
-      topics: [
-        "Installing and importing Biopython",
-        "Seq and SeqRecord objects",
-        "Built-in translation methods",
-        "Reading sequence files efficiently",
-        "Advanced sequence operations"
-      ],
-      url: "#",
-      available: false
-    },
-    {
-      id: 9,
-      title: "🚀 Complete ORF Pipeline",
-      description: "Put it all together: analyze multiple sequences automatically",
-      badge: "Final Project",
-      topics: [
-        "Reading multiple FASTA files",
-        "Finding all ORFs in each sequence",
-        "Translating to protein sequences",
-        "Identifying longest ORFs",
-        "Exporting results for analysis"
-      ],
-      url: "#",
-      available: false
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_2/L2_N5_fasta-files.ipynb",
+      available: true
     }
   ]
 
@@ -146,8 +86,8 @@ export default function Lecture2Notebooks() {
             🧬 <span className="text-gradient">Lecture 2: DNA Analysis & Sequence Processing</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Interactive notebooks for analyzing DNA sequences, finding Open Reading Frames, 
-            and translating genetic code to proteins.
+            Interactive notebooks for string manipulation, conditionals, dictionaries, debugging,
+            and working with FASTA files.
           </p>
         </div>
 
@@ -158,8 +98,8 @@ export default function Lecture2Notebooks() {
           </h2>
           <div className="space-y-2 text-gray-300">
             <p><strong className="text-bio-yellow">Start with String Manipulation</strong> - Learn the fundamentals of working with DNA sequences.</p>
-            <p><strong className="text-bio-yellow">Build up to ORF finding</strong> - Each notebook adds new skills for sequence analysis.</p>
-            <p><strong className="text-bio-yellow">Real biological problems</strong> - Work with actual DNA sequences and genetic code.</p>
+            <p><strong className="text-bio-yellow">Master conditionals and dictionaries</strong> - Essential tools for biological programming.</p>
+            <p><strong className="text-bio-yellow">Real biological problems</strong> - Work with actual DNA sequences and FASTA files.</p>
           </div>
         </div>
 
@@ -237,48 +177,48 @@ export default function Lecture2Notebooks() {
           </h2>
           <div className="grid md:grid-cols-2 gap-4 text-gray-300">
             <div>
-              <p className="mb-2"><strong className="text-bio-green">Week 1:</strong> String manipulation and conditionals</p>
-              <p><strong className="text-bio-green">Week 2:</strong> ORF finding and dictionaries</p>
+              <p className="mb-2"><strong className="text-bio-green">Fundamentals:</strong> String manipulation and conditionals</p>
+              <p><strong className="text-bio-green">Data Structures:</strong> Dictionaries for genetic code</p>
             </div>
             <div>
-              <p className="mb-2"><strong className="text-bio-green">Week 3:</strong> File I/O and Biopython basics</p>
-              <p><strong className="text-bio-green">Week 4:</strong> Complete pipeline project</p>
+              <p className="mb-2"><strong className="text-bio-green">Debugging:</strong> Finding and fixing code errors</p>
+              <p><strong className="text-bio-green">File Handling:</strong> Working with FASTA files</p>
             </div>
           </div>
         </div>
 
-        {/* Project Preview */}
+        {/* Key Skills */}
         <div className="bg-gradient-to-r from-purple-900/20 to-bio-blue/20 border border-purple-500/30 rounded-lg p-6 mb-8">
           <h2 className="text-2xl font-bold text-purple-400 mb-4 flex items-center">
-            🚀 Final Project: Complete ORF Analysis Pipeline
+            🎓 Skills You'll Master
           </h2>
           <p className="text-gray-300 mb-4">
-            By the end of this lecture series, you'll build a complete pipeline that can:
+            By completing these notebooks, you'll be able to:
           </p>
           <ul className="grid md:grid-cols-2 gap-2 text-gray-300">
             <li className="flex items-start">
               <span className="text-purple-400 mr-2">✓</span>
-              Read multiple DNA sequences from FASTA files
+              Manipulate DNA sequences using string slicing
             </li>
             <li className="flex items-start">
               <span className="text-purple-400 mr-2">✓</span>
-              Find all Open Reading Frames automatically
+              Use conditionals to make decisions in code
             </li>
             <li className="flex items-start">
               <span className="text-purple-400 mr-2">✓</span>
-              Translate DNA sequences to proteins
+              Work with dictionaries for genetic code translation
             </li>
             <li className="flex items-start">
               <span className="text-purple-400 mr-2">✓</span>
-              Identify the longest ORF in each sequence
+              Debug common programming errors effectively
             </li>
             <li className="flex items-start">
               <span className="text-purple-400 mr-2">✓</span>
-              Export results for further analysis
+              Read and process FASTA sequence files
             </li>
             <li className="flex items-start">
               <span className="text-purple-400 mr-2">✓</span>
-              Process hundreds of sequences in seconds
+              Build robust biological data analysis scripts
             </li>
           </ul>
         </div>
