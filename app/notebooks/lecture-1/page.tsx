@@ -110,7 +110,7 @@ export default function Lecture1Notebooks() {
         "Protein yield calculator",
         "Growth rate calculator"
       ],
-      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/lab_calculator_toolkit.ipynb"
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_P1_lab_calculator_toolkit.ipynb"
     }
   ]
 
@@ -207,7 +207,7 @@ export default function Lecture1Notebooks() {
           </h2>
           <div className="flex justify-center">
             <a
-              href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/lab_calculator_toolkit.ipynb"
+              href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_P1_lab_calculator_toolkit.ipynb"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-bio-green to-teal-600 hover:from-teal-600 hover:to-bio-green text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-bio-green/20"
