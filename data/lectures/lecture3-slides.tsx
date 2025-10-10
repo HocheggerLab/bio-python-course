@@ -20,6 +20,7 @@ import {
   Slide17DataSorting,
   Slide18Summary,
   Slide19WhatWeLearned,
+  Slide20FurtherResources,
 } from './lecture3'
 
 interface SlideDefinition {
@@ -131,7 +132,11 @@ const slideDefinitions: SlideDefinition[] = [
     contentType: "top",
     component: Slide19WhatWeLearned
   },
-  // More slides will be added here
+  {
+    title: "Further Resources",
+    contentType: "top",
+    component: Slide20FurtherResources
+  },
 ]
 
 const slides: Slide[] = slideDefinitions.map((def, index) => ({

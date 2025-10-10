@@ -40,6 +40,27 @@ export default function Slide18Summary() {
               </p>
             </div>
           </div>
+
+          {/* Colab Link */}
+          <div className="mt-6 flex items-center justify-between bg-gradient-to-r from-purple-500/10 to-bio-blue/10 rounded-xl p-6 border border-purple-500/30">
+            <div>
+              <h4 className="font-bold text-purple-400 mb-2">🔬 Try the Full Analysis</h4>
+              <p className="text-sm text-gray-300">
+                Run all the steps yourself with the complete DepMap notebook
+              </p>
+            </div>
+            <a
+              href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_3/L3_N3_depmap_analysis.ipynb"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-bio-blue hover:bg-bio-blue/80 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition-colors"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.95 8.385l-1.446-.695a1.87 1.87 0 00-1.71.099l-.885.443a.59.59 0 01-.615-.009l-1.417-.816a.59.59 0 01-.294-.511V6.21c0-.21.11-.403.294-.511l1.417-.816a.59.59 0 01.615-.009l.885.443c.516.258 1.146.234 1.638-.062l1.518-.912a.59.59 0 01.885.511v2.042a.59.59 0 01-.294.511l-1.59.954z"/>
+              </svg>
+              Open in Colab
+            </a>
+          </div>
         </div>
 
         {/* Results section */}

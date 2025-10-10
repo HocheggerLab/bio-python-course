@@ -1,8 +1,23 @@
-import { 
-  SlideTitle, 
+'use client'
+
+import dynamic from 'next/dynamic'
+import {
+  SlideTitle,
   GradientText
 } from '@/components/slides'
-import SyntaxHighlighter from '@/components/syntax/SyntaxHighlighter'
+
+// Dynamically import PythonCodeRunner to avoid SSR issues
+const PythonCodeRunner = dynamic(
+  () => import('@/components/python/PythonCodeRunner'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="bg-bio-card border border-bio-blue/20 rounded-xl p-6 text-center">
+        <div className="animate-pulse">Loading interactive Python...</div>
+      </div>
+    )
+  }
+)
 
 export default function Slide09IntroClasses() {
   return (
@@ -11,7 +26,7 @@ export default function Slide09IntroClasses() {
         Classes: <GradientText>Storing Data</GradientText>
       </SlideTitle>
       
-      <div className="max-w-5xl mx-auto space-y-6">
+      <div className="max-w-[95%] mx-auto space-y-6">
         {/* Simple explanation */}
         <div className="bg-gradient-to-r from-bio-blue/10 to-bio-green/10 border border-bio-blue/30 rounded-xl p-6">
           <p className="text-lg text-gray-300 text-center mb-4">
@@ -19,14 +34,15 @@ export default function Slide09IntroClasses() {
           </p>
         </div>
         
-        {/* Code example */}
+        {/* Interactive Code example */}
         <div className="bg-gradient-to-br from-bio-dark/50 to-bio-darker/50 border border-gray-500/30 rounded-xl p-6">
           <h3 className="text-lg font-semibold text-bio-green mb-4">
-            🧬 Creating a DNASequence Class
+            🧬 Creating a DNASequence Class - Try It!
           </h3>
-          
-          <SyntaxHighlighter
-            code={`class DNASequence:
+
+          <PythonCodeRunner
+            key="dna-sequence-class"
+            initialCode={`class DNASequence:
     def __init__(self, sequence, name):
         """This runs when we create a new DNASequence object"""
         self.sequence = sequence.upper()  # Store the DNA sequence
@@ -42,7 +58,8 @@ print(f"Sequence: {gene1.sequence}")        # Sequence: ATCGATCGATCG
 print(f"Length: {len(gene1.sequence)}")     # Length: 12
 
 print(f"Gene 2: {gene2.name} -> {gene2.sequence}")`}
-            language="python"
+            height="450px"
+            showLineNumbers={false}
           />
         </div>
         

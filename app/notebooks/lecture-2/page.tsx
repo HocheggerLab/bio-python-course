@@ -74,6 +74,21 @@ export default function Lecture2Notebooks() {
       ],
       url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_2/L2_N5_fasta-files.ipynb",
       available: true
+    },
+    {
+      id: 6,
+      title: "🧬 DNA Analysis Toolkit",
+      description: "Real Python tools for DNA sequence analysis!",
+      badge: "Apply It!",
+      topics: [
+        "GC content calculator",
+        "Reverse complement generator",
+        "ORF finder and translator",
+        "Codon usage analyzer",
+        "Restriction site mapper"
+      ],
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_2/L2_P1_dna_analysis_toolkit.ipynb",
+      available: true
     }
   ]
 

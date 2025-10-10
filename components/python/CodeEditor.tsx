@@ -53,11 +53,13 @@ export default function CodeEditor({
               fontSize: '14px',
               fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace',
               lineHeight: '1.5',
+              whiteSpace: 'pre',
+              overflowX: 'auto',
             }}
           >
-            <code>
+            <code style={{ whiteSpace: 'pre' }}>
               {tokens.map((line, i) => (
-                <div key={i} {...getLineProps({ line })}>
+                <div key={i} {...getLineProps({ line })} style={{ whiteSpace: 'pre' }}>
                   {showLineNumbers && (
                     <span className="inline-block w-10 text-gray-500 select-none mr-1">
                       {i + 1}
@@ -89,6 +91,9 @@ export default function CodeEditor({
           lineHeight: '1.5',
           caretColor: '#d1d5db',
           paddingLeft: showLineNumbers ? '56px' : '16px', // Offset for line numbers (w-10 + mr-1 = 44px + 12px padding)
+          whiteSpace: 'pre',
+          wordWrap: 'normal',
+          overflowX: 'auto',
         }}
       />
     </div>

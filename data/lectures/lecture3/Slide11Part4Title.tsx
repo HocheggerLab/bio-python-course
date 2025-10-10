@@ -1,5 +1,6 @@
-import { 
-  SlideTitle, 
+import Image from 'next/image'
+import {
+  SlideTitle,
   GradientText
 } from '@/components/slides'
 import SyntaxHighlighter from '@/components/syntax/SyntaxHighlighter'
@@ -79,13 +80,43 @@ df.describe()       # DataFrame method - built-in functionality`}
             />
           </div>
           
-          <div className="mt-6 text-center">
-            <p className="text-amber-400 font-semibold text-lg mb-2">
-              🚀 Time to Get Hands-On!
-            </p>
-            <p className="text-gray-300 text-sm">
-              Let's switch to <span className="text-bio-blue font-semibold">Google Colab</span> where we can work with real biological datasets
-            </p>
+          <div className="mt-6 grid md:grid-cols-2 gap-6 items-center">
+            {/* Wes McKinney Image */}
+            <div className="flex flex-col items-center">
+              <div className="relative w-48 h-48 rounded-xl overflow-hidden border-2 border-amber-400/30 mb-3">
+                <Image
+                  src="/wesmckinney.png"
+                  alt="Wes McKinney - Creator of Pandas"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <p className="text-gray-300 text-sm text-center">
+                <span className="text-amber-400 font-semibold">Wes McKinney</span><br />
+                Creator of Pandas (2008)
+              </p>
+            </div>
+
+            {/* Get Started Box */}
+            <div className="text-center">
+              <p className="text-amber-400 font-semibold text-lg mb-3">
+                📚 Learn More About Pandas
+              </p>
+              <p className="text-gray-300 text-sm mb-4">
+                Official documentation with comprehensive guides and API reference
+              </p>
+              <a
+                href="https://pandas.pydata.org/docs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-500 to-bio-blue text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                Pandas Documentation
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -197,10 +197,15 @@ print(top_genes)`}
             <span className="text-bio-blue font-semibold"> Pandas data analysis</span>
           </p>
           <a
-            href="/lectures/4"
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_3/L3_P1_biological_data_analysis_toolkit.ipynb"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-bio-green to-bio-blue hover:from-bio-green/80 hover:to-bio-blue/80 text-white px-8 py-3 rounded-lg font-bold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-bio-blue/20"
           >
-            <span>Ready for Statistical Analysis! 📈</span>
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.95 8.385l-1.446-.695a1.87 1.87 0 00-1.71.099l-.885.443a.59.59 0 01-.615-.009l-1.417-.816a.59.59 0 01-.294-.511V6.21c0-.21.11-.403.294-.511l1.417-.816a.59.59 0 01.615-.009l.885.443c.516.258 1.146.234 1.638-.062l1.518-.912a.59.59 0 01.885.511v2.042a.59.59 0 01-.294.511l-1.59.954z"/>
+            </svg>
+            <span>Practice Your Skills! 🧪</span>
           </a>
         </div>
       </div>

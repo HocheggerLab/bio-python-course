@@ -20,7 +20,7 @@ export default function Lecture3Notebooks() {
       id: 2,
       title: "🐼 Introduction to Pandas",
       description: "Master DataFrames for analyzing large biological datasets",
-      badge: "Coming Soon",
+      badge: "Available",
       topics: [
         "Creating and loading DataFrames",
         "Selecting rows and columns",
@@ -28,14 +28,14 @@ export default function Lecture3Notebooks() {
         "Basic statistics and summaries",
         "Working with the DepMap dataset"
       ],
-      url: "#",
-      available: false
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_3/L3_N2_pandas_introduction.ipynb",
+      available: true
     },
     {
       id: 3,
       title: "🧬 DepMap Cancer Dependencies",
       description: "Analyze real cancer cell line dependency data",
-      badge: "Coming Soon",
+      badge: "Available",
       topics: [
         "Loading the DepMap dataset",
         "Exploring cancer cell lines",
@@ -43,14 +43,14 @@ export default function Lecture3Notebooks() {
         "Calculating correlations",
         "Identifying similar genes to ATR"
       ],
-      url: "#",
-      available: false
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_3/L3_N3_depmap_analysis.ipynb",
+      available: true
     },
     {
       id: 4,
       title: "📊 Data Filtering & Selection",
       description: "Advanced techniques for working with large datasets",
-      badge: "Coming Soon",
+      badge: "Available",
       topics: [
         "Boolean indexing with biological data",
         "Filtering by cell line type",
@@ -58,38 +58,53 @@ export default function Lecture3Notebooks() {
         "Handling missing values",
         "Creating data subsets"
       ],
-      url: "#",
-      available: false
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_3/L3_N4_pandas_filtering.ipynb",
+      available: true
     },
     {
       id: 5,
-      title: "🔬 Statistical Analysis with Pandas",
+      title: "🔬 Statistical Analysis",
       description: "Perform statistical analysis on biological data",
-      badge: "Coming Soon",
+      badge: "Available",
       topics: [
-        "Correlation analysis",
-        "Groupby operations for cell types",
-        "Summary statistics",
-        "Finding significant relationships",
-        "Data aggregation techniques"
+        "Basic statistics with Python",
+        "Mean, median, and standard deviation",
+        "Understanding biological variation",
+        "Statistical significance",
+        "Applying statistics to datasets"
       ],
-      url: "#",
-      available: false
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_3/L3_N5_statistics.ipynb",
+      available: true
     },
     {
       id: 6,
-      title: "📈 Linear Regression Analysis",
-      description: "Build linear models to understand gene relationships",
-      badge: "Final Project",
+      title: "🔄 Sorting & Ranking Data",
+      description: "Sort and rank biological datasets to find insights",
+      badge: "Available",
       topics: [
-        "Simple linear regression",
-        "Multiple regression analysis",
-        "Model evaluation metrics",
-        "Predicting gene dependencies",
-        "Interpreting biological significance"
+        "Sorting DataFrames by values",
+        "Finding top and bottom genes",
+        "Multi-column sorting",
+        "Ranking gene dependencies",
+        "Identifying outliers and extremes"
       ],
-      url: "#",
-      available: false
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_3/L3_N6_pandas_sorting.ipynb",
+      available: true
+    },
+    {
+      id: 7,
+      title: "🧪 Biological Data Analysis Toolkit",
+      description: "Real Python tools for comprehensive data analysis!",
+      badge: "Apply It!",
+      topics: [
+        "Complete DepMap analysis pipeline",
+        "Gene dependency explorer",
+        "Statistical analysis tools",
+        "Data visualization helpers",
+        "Integrated analysis workflows"
+      ],
+      url: "https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_3/L3_P1_biological_data_analysis_toolkit.ipynb",
+      available: true
     }
   ]
 

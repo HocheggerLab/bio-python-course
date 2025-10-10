@@ -118,12 +118,14 @@
   }
   
   .slide-content {
-    @apply w-full max-w-7xl mx-auto px-8 py-16 min-h-screen flex flex-col justify-center;
+    @apply w-full mx-auto px-8 py-16 min-h-screen flex flex-col justify-center;
+    max-width: 95%;
   }
-  
+
   /* For content-heavy slides that need top alignment */
   .slide-content-top {
-    @apply w-full max-w-7xl mx-auto px-8 pt-24 pb-8 min-h-screen flex flex-col justify-start;
+    @apply w-full mx-auto px-8 pt-24 pb-8 min-h-screen flex flex-col justify-start;
+    max-width: 95%;
   }
   
   /* Navigation bar for slides */

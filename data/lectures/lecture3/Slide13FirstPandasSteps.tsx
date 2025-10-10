@@ -116,13 +116,24 @@ df.sample(5)      # 5 random rows`}
         </div>
 
         {/* Call to action */}
-        <div className="text-center bg-gradient-to-r from-bio-green/10 to-amber-400/10 rounded-xl p-4">
-          <p className="text-bio-green font-semibold text-lg mb-2">
-            🚀 Ready to Get Hands-On?
-          </p>
-          <p className="text-gray-300 text-sm">
-            Time to switch to <span className="text-bio-blue font-semibold">Google Colab</span> and explore real cancer data!
-          </p>
+        <div className="flex items-center justify-between bg-gradient-to-r from-bio-green/10 to-amber-400/10 rounded-xl p-6 border border-bio-green/30">
+          <div>
+            <h4 className="font-bold text-bio-green mb-2">🚀 Ready to Get Hands-On?</h4>
+            <p className="text-sm text-gray-300">
+              Time to explore real cancer data with Pandas!
+            </p>
+          </div>
+          <a
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_3/L3_N2_pandas_introduction.ipynb"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-bio-blue hover:bg-bio-blue/80 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition-colors"
+          >
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.95 8.385l-1.446-.695a1.87 1.87 0 00-1.71.099l-.885.443a.59.59 0 01-.615-.009l-1.417-.816a.59.59 0 01-.294-.511V6.21c0-.21.11-.403.294-.511l1.417-.816a.59.59 0 01.615-.009l.885.443c.516.258 1.146.234 1.638-.062l1.518-.912a.59.59 0 01.885.511v2.042a.59.59 0 01-.294.511l-1.59.954z" fill="currentColor"/>
+            </svg>
+            Open in Colab
+          </a>
         </div>
       </div>
     </>
