@@ -58,7 +58,7 @@ export default function Lectures() {
                   <div className="text-3xl mb-3">🔍</div>
                   <h4 className="text-purple-400 font-semibold mb-2">Sequence Analysis</h4>
                   <p className="text-gray-300 text-sm">
-                    Work with real sequencing data, perform alignment and variant calling
+                    Work with real sequencing data, compare reads to reference and call variants
                   </p>
                 </div>
                 <div className="bg-bio-dark/50 rounded-xl p-6 text-center">
@@ -79,17 +79,17 @@ export default function Lectures() {
                     <h5 className="text-bio-green font-semibold text-sm mb-2">What You'll Build</h5>
                     <ul className="text-gray-300 text-sm space-y-1">
                       <li>• FASTQ quality assessment tool</li>
-                      <li>• Sequence alignment pipeline</li>
+                      <li>• Read comparison to reference sequence</li>
                       <li>• Mutation detection algorithm</li>
-                      <li>• Visualization dashboard</li>
+                      <li>• Publication-ready scientific figures</li>
                     </ul>
                   </div>
                   <div>
                     <h5 className="text-amber-400 font-semibold text-sm mb-2">Skills You'll Gain</h5>
                     <ul className="text-gray-300 text-sm space-y-1">
-                      <li>• Bioinformatics file formats</li>
+                      <li>• Reading bioinformatics file formats (FASTA)</li>
                       <li>• Large dataset processing</li>
-                      <li>• Statistical analysis of variants</li>
+                      <li>• Descriptive statistics of variants</li>
                       <li>• Research-grade Python coding</li>
                     </ul>
                   </div>
