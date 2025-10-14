@@ -51,6 +51,7 @@ export const coreSessionsData: Lecture[] = [
     ],
     slideUrl: "/lectures/3",
     notebookUrl: "/notebooks/lecture-3",
+    videoUrl: "https://www.youtube.com/playlist?list=PLYTU_Kb0BRDKScs5gRfKyLdvnc-mveSCB",
     type: 'core'
   },
   {
