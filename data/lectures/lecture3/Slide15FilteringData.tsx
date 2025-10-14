@@ -32,16 +32,16 @@ export default function Slide15FilteringData() {
             <div>
               <h4 className="text-amber-400 font-semibold text-sm mb-3">Single Condition</h4>
               <SyntaxHighlighter
-                code={`# Basic pattern: df.loc[condition]
+                code={`# Basic pattern: df[condition]
 
 # Equals
-df.loc[df['column'] == 'value']
+df[df['column'] == 'value']
 
 # Greater than
-df.loc[df['age'] > 30]
+df[df['age'] > 30]
 
 # String contains
-df.loc[df['gene'].str.contains('BRCA')]`}
+df[df['gene'].str.contains('BRCA')]`}
                 language="python"
               />
             </div>
@@ -53,13 +53,13 @@ df.loc[df['gene'].str.contains('BRCA')]`}
 # Note: Need parentheses!
 
 # AND condition
-df.loc[(df['age'] > 30) & (df['sex'] == 'F')]
+df[(df['age'] > 30) & (df['sex'] == 'F')]
 
 # OR condition
-df.loc[(df['type'] == 'A') | (df['type'] == 'B')]
+df[(df['type'] == 'A') | (df['type'] == 'B')]
 
 # NOT condition
-df.loc[~df['column'].isnull()]`}
+df[~df['column'].isnull()]`}
                 language="python"
               />
             </div>
@@ -74,20 +74,20 @@ df.loc[~df['column'].isnull()]`}
 
           <SyntaxHighlighter
             code={`# Filter for breast cancer cell lines
-breast_df = df.loc[df['oncotree_lineage'] == 'Breast']
+breast_df = df[df['oncotree_lineage'] == 'Breast']
 print(f"Found {len(breast_df)} breast cancer cell lines")
 
 # Filter for myeloid cancer cell lines
-myeloid_df = df.loc[df['oncotree_lineage'] == 'Myeloid']
+myeloid_df = df[df['oncotree_lineage'] == 'Myeloid']
 print(f"Found {len(myeloid_df)} myeloid cancer cell lines")
 
 # Advanced: Get both types in one DataFrame
-both_types = df.loc[(df['oncotree_lineage'] == 'Breast') |
+both_types = df[(df['oncotree_lineage'] == 'Breast') |
                      (df['oncotree_lineage'] == 'Myeloid')]
 
 # Alternative using .isin()
 cancer_types = ['Breast', 'Myeloid']
-both_types = df.loc[df['oncotree_lineage'].isin(cancer_types)]`}
+both_types = df[df['oncotree_lineage'].isin(cancer_types)]`}
             language="python"
           />
         </div>
@@ -134,11 +134,11 @@ both_types = df.loc[df['oncotree_lineage'].isin(cancer_types)]`}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
             <div className="text-center">
               <p className="text-red-400 font-semibold mb-1">❌ Wrong (Python and/or)</p>
-              <code className="text-gray-400">df.loc[df['x'] &gt; 5 and df['y'] &lt; 10]</code>
+              <code className="text-gray-400">df[df['x'] &gt; 5 and df['y'] &lt; 10]</code>
             </div>
             <div className="text-center">
               <p className="text-bio-green font-semibold mb-1">✅ Correct (Pandas &/|)</p>
-              <code className="text-bio-yellow">df.loc[(df['x'] &gt; 5) &amp; (df['y'] &lt; 10)]</code>
+              <code className="text-bio-yellow">df[(df['x'] &gt; 5) &amp; (df['y'] &lt; 10)]</code>
             </div>
           </div>
           <p className="text-center text-xs text-gray-400 mt-2">Always use & | ~ with parentheses!</p>
