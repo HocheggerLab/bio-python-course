@@ -1,0 +1,26 @@
+<svg width="180" height="120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="180" height="120" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="90" y="15" fill="#a855f7" font-size="11" font-weight="bold" text-anchor="middle" font-family="Arial">Size by Magnitude</text>
+
+  <!-- Points of increasing size -->
+  <circle cx="30" cy="60" r="4" fill="#a855f7" opacity="0.8"/>
+  <circle cx="60" cy="60" r="7" fill="#a855f7" opacity="0.8"/>
+  <circle cx="90" cy="60" r="10" fill="#a855f7" opacity="0.8"/>
+  <circle cx="120" cy="60" r="13" fill="#a855f7" opacity="0.8"/>
+  <circle cx="150" cy="60" r="16" fill="#a855f7" opacity="0.8"/>
+
+  <!-- Labels showing values -->
+  <text x="30" y="85" fill="#ffffff" font-size="8" text-anchor="middle" font-family="Arial">10</text>
+  <text x="60" y="85" fill="#ffffff" font-size="8" text-anchor="middle" font-family="Arial">50</text>
+  <text x="90" y="85" fill="#ffffff" font-size="8" text-anchor="middle" font-family="Arial">100</text>
+  <text x="120" y="85" fill="#ffffff" font-size="8" text-anchor="middle" font-family="Arial">200</text>
+  <text x="150" y="85" fill="#ffffff" font-size="8" text-anchor="middle" font-family="Arial">500</text>
+
+  <!-- Arrow showing increase -->
+  <path d="M 15 105 L 165 105" stroke="#a855f7" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <path d="M 160 102 L 165 105 L 160 108" stroke="#a855f7" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <text x="90" y="115" fill="#a855f7" font-size="9" text-anchor="middle" font-family="Arial">Increasing Value</text>
+</svg>

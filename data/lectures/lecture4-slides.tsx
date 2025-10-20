@@ -1,10 +1,19 @@
 import { LectureData, Slide } from './types'
 import {
-  Slide00Welcome,
-  Slide02TheProblem,
-  Slide03GeneDependencyCorrelation,
-  Slide04ATRBiologicalContext,
-  Slide05PearsonCorrelationCode,
+  Slide01Recap,
+  Slide02Vectorisation,
+  Slide03GeneExpressionData,
+  Slide04IntroEDA,
+  Slide05DataInspection,
+  Slide06GroupByBasics,
+  Slide07TidyData,
+  Slide08GroupByGeneExpression,
+  Slide09DataVisualization,
+  Slide10DataTypes,
+  Slide11PlotTypes,
+  Slide12Aesthetics,
+  Slide13FurtherReading,
+  Slide14MatplotlibIntro,
 } from './lecture4'
 
 interface SlideDefinition {
@@ -17,31 +26,75 @@ interface SlideDefinition {
 
 const slideDefinitions: SlideDefinition[] = [
   {
-    title: "Welcome to Statistical Analysis & Visualization",
-    contentType: "center",
-    component: Slide00Welcome
-  },
-  {
-    title: "The Next Challenge: Gene Correlation & Visualization",
-    contentType: "center",
-    component: Slide02TheProblem
-  },
-  {
-    title: "Understanding Gene Dependency Correlation",
+    title: "Recap: Lecture 3 - Analysing DepMap Data",
     contentType: "top",
-    component: Slide03GeneDependencyCorrelation
+    component: Slide01Recap
   },
   {
-    title: "Biological Context: Why Study ATR?",
+    title: "Pandas Superpowers: NumPy & Vectorisation",
     contentType: "top",
-    component: Slide04ATRBiologicalContext
+    component: Slide02Vectorisation
   },
   {
-    title: "Calculating Pearson Correlation with Pandas",
+    title: "Our Dataset: DepMap Gene Expression",
     contentType: "top",
-    component: Slide05PearsonCorrelationCode
+    component: Slide03GeneExpressionData
   },
-  // More slides will be added here
+  {
+    title: "Introduction to Exploratory Data Analysis",
+    contentType: "top",
+    component: Slide04IntroEDA
+  },
+  {
+    title: "Data Inspection: Quality Control Checks",
+    contentType: "top",
+    component: Slide05DataInspection
+  },
+  {
+    title: "The Power of GroupBy",
+    contentType: "top",
+    component: Slide06GroupByBasics
+  },
+  {
+    title: "Tidy Data Format",
+    contentType: "top",
+    component: Slide07TidyData
+  },
+  {
+    title: "GroupBy with Gene Expression Data",
+    contentType: "top",
+    component: Slide08GroupByGeneExpression
+  },
+  {
+    title: "The Power of Data Visualization",
+    contentType: "top",
+    component: Slide09DataVisualization
+  },
+  {
+    title: "Understanding Data Types",
+    contentType: "top",
+    component: Slide10DataTypes
+  },
+  {
+    title: "Essential Plot Types",
+    contentType: "top",
+    component: Slide11PlotTypes
+  },
+  {
+    title: "Visual Aesthetics",
+    contentType: "top",
+    component: Slide12Aesthetics
+  },
+  {
+    title: "Further Reading",
+    contentType: "top",
+    component: Slide13FurtherReading
+  },
+  {
+    title: "Introduction to Matplotlib",
+    contentType: "top",
+    component: Slide14MatplotlibIntro
+  }
 ]
 
 const slides: Slide[] = slideDefinitions.map((def, index) => ({
@@ -55,6 +108,6 @@ const slides: Slide[] = slideDefinitions.map((def, index) => ({
 
 export const lecture4Data: LectureData = {
   id: '4',
-  title: 'Statistical Analysis & Data Visualization',
+  title: 'Explorative Data Analysis',
   slides
 }

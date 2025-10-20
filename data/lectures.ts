@@ -42,7 +42,7 @@ export const coreSessionsData: Lecture[] = [
   },
   {
     id: 3,
-    title: "Linear Regression of Cancer Data",
+    title: "Analysing DepMap Data",
     status: "available",
     topics: [
       "Object-oriented programming",
@@ -56,25 +56,26 @@ export const coreSessionsData: Lecture[] = [
   },
   {
     id: 4,
-    title: "Statistical Analysis & Data Visualization",
+    title: "Explorative Data Analysis",
     status: "under-construction",
     topics: [
-      "Linear regression analysis",
-      "Matplotlib & Seaborn visualization",
-      "Cancer gene correlation analysis",
-      "Publication-ready figures"
+      "Vectorisation",
+      "Explorative data analysis techniques",
+      "Visualization principles",
+      "Matplotlib for scientific plots"
     ],
     slideUrl: "/lectures/4",
     type: 'core'
   },
   {
     id: 5,
-    title: "Analysing Image Data & Statistics",
+    title: "Advanced Statistical Analysis",
     status: "coming-soon",
     topics: [
-      "C-Python and vectorisation",
-      "Scientific computing (NumPy, SciPy)",
-      "Statistical analysis"
+      "Linear regression analysis",
+      "Seaborn for publication-ready plots",
+      "Statistics and SciPy",
+      "Exploring new packages on PyPI"
     ],
     slideUrl: "/lectures/5",
     type: 'core'

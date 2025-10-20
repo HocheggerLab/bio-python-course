@@ -1,0 +1,5 @@
+export { default as Slide00Welcome } from './Slide00Welcome'
+export { default as Slide02TheProblem } from './Slide02TheProblem'
+export { default as Slide03GeneDependencyCorrelation } from './Slide03GeneDependencyCorrelation'
+export { default as Slide04ATRBiologicalContext } from './Slide04ATRBiologicalContext'
+export { default as Slide05PearsonCorrelationCode } from './Slide05PearsonCorrelationCode'

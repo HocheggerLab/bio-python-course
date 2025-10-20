@@ -1,0 +1,39 @@
+<svg width="180" height="120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="180" height="120" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="90" y="15" fill="#fbbf24" font-size="11" font-weight="bold" text-anchor="middle" font-family="Arial">Shape by Category</text>
+
+  <!-- Different shapes for different categories -->
+
+  <!-- Circles -->
+  <circle cx="30" cy="40" r="5" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <circle cx="40" cy="55" r="5" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <circle cx="25" cy="65" r="5" fill="none" stroke="#fbbf24" stroke-width="2"/>
+
+  <!-- Squares -->
+  <rect x="63" y="35" width="10" height="10" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <rect x="73" y="50" width="10" height="10" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <rect x="60" y="60" width="10" height="10" fill="none" stroke="#fbbf24" stroke-width="2"/>
+
+  <!-- Triangles -->
+  <path d="M 105 45 L 110 35 L 115 45 Z" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <path d="M 115 60 L 120 50 L 125 60 Z" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <path d="M 102 70 L 107 60 L 112 70 Z" fill="none" stroke="#fbbf24" stroke-width="2"/>
+
+  <!-- Diamonds -->
+  <path d="M 150 35 L 155 40 L 150 45 L 145 40 Z" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <path d="M 160 50 L 165 55 L 160 60 L 155 55 Z" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <path d="M 147 60 L 152 65 L 147 70 L 142 65 Z" fill="none" stroke="#fbbf24" stroke-width="2"/>
+
+  <!-- Legend -->
+  <circle cx="22" cy="90" r="4" fill="none" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="30" y="94" fill="#ffffff" font-size="8" font-family="Arial">Control</text>
+
+  <rect x="63" y="86" width="8" height="8" fill="none" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="75" y="94" fill="#ffffff" font-size="8" font-family="Arial">Drug A</text>
+
+  <path d="M 122 90 L 126 84 L 130 90 Z" fill="none" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="135" y="94" fill="#ffffff" font-size="8" font-family="Arial">Drug B</text>
+</svg>

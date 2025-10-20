@@ -1,0 +1,21 @@
+<svg width="200" height="150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="150" fill="#1a1a2e"/>
+
+  <!-- Axes -->
+  <line x1="30" y1="20" x2="30" y2="130" stroke="#fbbf24" stroke-width="2"/>
+  <line x1="30" y1="130" x2="180" y2="130" stroke="#fbbf24" stroke-width="2"/>
+
+  <!-- Histogram bins forming a bell curve -->
+  <rect x="35" y="115" width="12" height="15" fill="#fbbf24" opacity="0.8"/>
+  <rect x="47" y="105" width="12" height="25" fill="#fbbf24" opacity="0.8"/>
+  <rect x="59" y="90" width="12" height="40" fill="#fbbf24" opacity="0.8"/>
+  <rect x="71" y="70" width="12" height="60" fill="#fbbf24" opacity="0.8"/>
+  <rect x="83" y="50" width="12" height="80" fill="#fbbf24" opacity="0.8"/>
+  <rect x="95" y="35" width="12" height="95" fill="#fbbf24" opacity="0.8"/>
+  <rect x="107" y="50" width="12" height="80" fill="#fbbf24" opacity="0.8"/>
+  <rect x="119" y="70" width="12" height="60" fill="#fbbf24" opacity="0.8"/>
+  <rect x="131" y="90" width="12" height="40" fill="#fbbf24" opacity="0.8"/>
+  <rect x="143" y="105" width="12" height="25" fill="#fbbf24" opacity="0.8"/>
+  <rect x="155" y="115" width="12" height="15" fill="#fbbf24" opacity="0.8"/>
+</svg>

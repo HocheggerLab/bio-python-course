@@ -1,0 +1,48 @@
+<svg width="200" height="150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="150" fill="#1a1a2e"/>
+
+  <!-- Axes -->
+  <line x1="30" y1="20" x2="30" y2="130" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="30" y1="130" x2="180" y2="130" stroke="#00d4ff" stroke-width="2"/>
+
+  <!-- Three box plots side by side -->
+
+  <!-- Box 1 -->
+  <!-- Whisker lines -->
+  <line x1="55" y1="40" x2="55" y2="50" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="55" y1="110" x2="55" y2="120" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="50" y1="40" x2="60" y2="40" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="50" y1="120" x2="60" y2="120" stroke="#00d4ff" stroke-width="2"/>
+  <!-- Whisker connectors -->
+  <line x1="55" y1="40" x2="55" y2="50" stroke="#00d4ff" stroke-width="1.5"/>
+  <line x1="55" y1="110" x2="55" y2="120" stroke="#00d4ff" stroke-width="1.5"/>
+  <!-- Box -->
+  <rect x="42" y="50" width="26" height="60" fill="#00d4ff" opacity="0.3" stroke="#00d4ff" stroke-width="2"/>
+  <!-- Median line -->
+  <line x1="42" y1="75" x2="68" y2="75" stroke="#00d4ff" stroke-width="3"/>
+
+  <!-- Box 2 -->
+  <line x1="100" y1="50" x2="100" y2="60" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="100" y1="105" x2="100" y2="115" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="95" y1="50" x2="105" y2="50" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="95" y1="115" x2="105" y2="115" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="100" y1="50" x2="100" y2="60" stroke="#00d4ff" stroke-width="1.5"/>
+  <line x1="100" y1="105" x2="100" y2="115" stroke="#00d4ff" stroke-width="1.5"/>
+  <rect x="87" y="60" width="26" height="45" fill="#00d4ff" opacity="0.3" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="87" y1="82" x2="113" y2="82" stroke="#00d4ff" stroke-width="3"/>
+
+  <!-- Box 3 -->
+  <line x1="145" y1="45" x2="145" y2="55" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="145" y1="100" x2="145" y2="110" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="140" y1="45" x2="150" y2="45" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="140" y1="110" x2="150" y2="110" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="145" y1="45" x2="145" y2="55" stroke="#00d4ff" stroke-width="1.5"/>
+  <line x1="145" y1="100" x2="145" y2="110" stroke="#00d4ff" stroke-width="1.5"/>
+  <rect x="132" y="55" width="26" height="45" fill="#00d4ff" opacity="0.3" stroke="#00d4ff" stroke-width="2"/>
+  <line x1="132" y1="70" x2="158" y2="70" stroke="#00d4ff" stroke-width="3"/>
+
+  <!-- Outlier points -->
+  <circle cx="55" cy="30" r="2.5" fill="#00d4ff"/>
+  <circle cx="145" cy="35" r="2.5" fill="#00d4ff"/>
+</svg>

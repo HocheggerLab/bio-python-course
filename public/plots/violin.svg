@@ -1,0 +1,30 @@
+<svg width="200" height="150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="150" fill="#1a1a2e"/>
+
+  <!-- Axes -->
+  <line x1="30" y1="20" x2="30" y2="130" stroke="#4CAF50" stroke-width="2"/>
+  <line x1="30" y1="130" x2="180" y2="130" stroke="#4CAF50" stroke-width="2"/>
+
+  <!-- Three violin plots side by side -->
+
+  <!-- Violin 1 -->
+  <path d="M 55,40 Q 45,50 42,60 Q 40,75 42,90 Q 45,100 55,110 Q 65,100 68,90 Q 70,75 68,60 Q 65,50 55,40 Z"
+        fill="#4CAF50" opacity="0.3" stroke="#4CAF50" stroke-width="2"/>
+  <!-- Internal box -->
+  <rect x="50" y="60" width="10" height="35" fill="#4CAF50" opacity="0.5"/>
+  <!-- Median line -->
+  <line x1="48" y1="77" x2="62" y2="77" stroke="#4CAF50" stroke-width="2.5"/>
+
+  <!-- Violin 2 -->
+  <path d="M 100,50 Q 92,60 90,70 Q 88,82 90,95 Q 92,105 100,115 Q 108,105 110,95 Q 112,82 110,70 Q 108,60 100,50 Z"
+        fill="#4CAF50" opacity="0.3" stroke="#4CAF50" stroke-width="2"/>
+  <rect x="96" y="70" width="8" height="30" fill="#4CAF50" opacity="0.5"/>
+  <line x1="94" y1="85" x2="106" y2="85" stroke="#4CAF50" stroke-width="2.5"/>
+
+  <!-- Violin 3 -->
+  <path d="M 145,45 Q 137,55 135,65 Q 133,75 135,85 Q 137,95 145,105 Q 153,95 155,85 Q 157,75 155,65 Q 153,55 145,45 Z"
+        fill="#4CAF50" opacity="0.3" stroke="#4CAF50" stroke-width="2"/>
+  <rect x="141" y="60" width="8" height="30" fill="#4CAF50" opacity="0.5"/>
+  <line x1="139" y1="75" x2="151" y2="75" stroke="#4CAF50" stroke-width="2.5"/>
+</svg>

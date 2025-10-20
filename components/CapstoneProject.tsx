@@ -1,9 +1,9 @@
 export default function CapstoneProject() {
   const features = [
-    "Analyse and quantify microscopy data",
-    "Automate NGS sequence analysis",
-    "Perform correlation analysis on complex biological data",
-    "Work with an LLM to analyse text"
+    "Explore large gene effect datasets from DepMap",
+    "Analyze gene expression patterns across cancer cell lines",
+    "Perform correlation analysis to identify genetic dependencies",
+    "Create publication-ready visualizations of genomic data"
   ]
 
   return (
@@ -12,11 +12,11 @@ export default function CapstoneProject() {
         Capstone Project
       </span>
       <div className="flex items-center mb-4">
-        <span className="text-2xl mr-2">🎯</span>
-        <h3 className="text-xl font-bold">Apply what you learned to a project of your choice</h3>
+        <span className="text-2xl mr-2">🧬</span>
+        <h3 className="text-xl font-bold">Become a Bioinformatician</h3>
       </div>
       <p className="text-gray-300 mb-6">
-        Combine all your skills to:
+        Explore large gene effect and expression data with EDA and correlation analysis:
       </p>
       <ul className="space-y-2 text-gray-300">
         {features.map((feature, index) => (
