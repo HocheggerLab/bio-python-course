@@ -14,6 +14,11 @@ import {
   Slide12Aesthetics,
   Slide13FurtherReading,
   Slide14MatplotlibIntro,
+  Slide15HistogramsDistribution,
+  Slide16Subplots,
+  Slide17Scatterplots,
+  Slide18Boxplots,
+  Slide19Summary,
 } from './lecture4'
 
 interface SlideDefinition {
@@ -94,6 +99,31 @@ const slideDefinitions: SlideDefinition[] = [
     title: "Introduction to Matplotlib",
     contentType: "top",
     component: Slide14MatplotlibIntro
+  },
+  {
+    title: "Understanding Data Distribution with Histograms",
+    contentType: "top",
+    component: Slide15HistogramsDistribution
+  },
+  {
+    title: "Creating Subplots for Comparisons",
+    contentType: "top",
+    component: Slide16Subplots
+  },
+  {
+    title: "Exploring Relationships with Scatter Plots",
+    contentType: "top",
+    component: Slide17Scatterplots
+  },
+  {
+    title: "Comparing Groups with Box Plots",
+    contentType: "top",
+    component: Slide18Boxplots
+  },
+  {
+    title: "Lecture 4 Summary: EDA & Visualization",
+    contentType: "top",
+    component: Slide19Summary
   }
 ]
 

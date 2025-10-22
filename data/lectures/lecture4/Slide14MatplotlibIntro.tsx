@@ -161,7 +161,7 @@ ax.set_ylabel('Cell Viability')`}
       </div>
 
       {/* First Steps */}
-      <div className="bg-gradient-to-r from-bio-blue to-purple-600 rounded-xl p-6">
+      <div className="bg-gradient-to-r from-bio-blue to-purple-600 rounded-xl p-6 mb-6">
         <h3 className="text-lg font-bold text-white mb-3 text-center">
           🚀 Your First Matplotlib Plot - Three Steps
         </h3>
@@ -178,6 +178,26 @@ ax.set_ylabel('Cell Viability')`}
             <p className="font-semibold mb-1">3️⃣ Customize & Show</p>
             <code className="text-xs bg-black/30 px-2 py-1 rounded block">ax.set_xlabel(...)</code>
           </div>
+        </div>
+      </div>
+
+      {/* Practice Notebook */}
+      <div className="bg-gradient-to-br from-bio-green/20 to-bio-blue/20 border border-bio-green/50 rounded-xl p-6">
+        <h3 className="text-lg font-bold text-bio-green mb-3 text-center">
+          📓 Practice Notebook
+        </h3>
+        <div className="text-center">
+          <a
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_4/L4_N4_matplotlib_intro.ipynb"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-bio-blue hover:bg-bio-blue/80 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+          >
+            Open Matplotlib Practice in Colab →
+          </a>
+          <p className="text-gray-400 text-sm mt-3">
+            Learn matplotlib by creating your first biological plots!
+          </p>
         </div>
       </div>
     </div>

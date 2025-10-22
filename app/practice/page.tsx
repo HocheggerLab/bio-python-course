@@ -171,6 +171,48 @@ export default function PracticePage() {
               </a>
             </div>
 
+            {/* Functions */}
+            <div className="bg-bio-dark/50 rounded-xl border border-bio-blue/20 p-6 hover:border-bio-blue/50 transition-colors">
+              <div className="text-center mb-4">
+                <div className="text-3xl mb-2">⚙️</div>
+                <h3 className="text-xl font-bold text-bio-blue mb-2">
+                  Functions
+                </h3>
+                <p className="text-gray-300 text-sm mb-4">
+                  Creating reusable code blocks and organizing your programs
+                </p>
+              </div>
+              <a
+                href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/revision/Lecture03_Functions.ipynb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full bg-bio-blue hover:bg-bio-blue/80 text-white py-3 px-4 rounded-lg font-semibold text-center transition-colors"
+              >
+                Open Revision Notebook
+              </a>
+            </div>
+
+            {/* Pandas Slicing */}
+            <div className="bg-bio-dark/50 rounded-xl border border-bio-blue/20 p-6 hover:border-bio-blue/50 transition-colors">
+              <div className="text-center mb-4">
+                <div className="text-3xl mb-2">🔪</div>
+                <h3 className="text-xl font-bold text-bio-blue mb-2">
+                  Pandas Slicing
+                </h3>
+                <p className="text-gray-300 text-sm mb-4">
+                  Master DataFrame indexing, selection, and data extraction
+                </p>
+              </div>
+              <a
+                href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/revision/Lecture04_Pandas_Slicing.ipynb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full bg-bio-blue hover:bg-bio-blue/80 text-white py-3 px-4 rounded-lg font-semibold text-center transition-colors"
+              >
+                Open Revision Notebook
+              </a>
+            </div>
+
           </div>
         </div>
 

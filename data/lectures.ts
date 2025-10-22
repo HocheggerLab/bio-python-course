@@ -57,7 +57,7 @@ export const coreSessionsData: Lecture[] = [
   {
     id: 4,
     title: "Explorative Data Analysis",
-    status: "under-construction",
+    status: "available",
     topics: [
       "Vectorisation",
       "Explorative data analysis techniques",
@@ -65,6 +65,8 @@ export const coreSessionsData: Lecture[] = [
       "Matplotlib for scientific plots"
     ],
     slideUrl: "/lectures/4",
+    notebookUrl: "/notebooks/lecture-4",
+    videoUrl: "https://www.youtube.com/watch?v=rIGN8RcXHP8&list=PLYTU_Kb0BRDLyGEG_kbOjL8e7hgkxEBWD&index=11",
     type: 'core'
   },
   {

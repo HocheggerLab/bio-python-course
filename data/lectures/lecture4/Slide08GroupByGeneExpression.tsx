@@ -198,7 +198,7 @@ df.groupby('oncotree_lineage').agg({
       </div>
 
       {/* Key Takeaway */}
-      <div className="bg-gradient-to-r from-bio-blue to-purple-600 rounded-xl p-6">
+      <div className="bg-gradient-to-r from-bio-blue to-purple-600 rounded-xl p-6 mb-6">
         <h3 className="text-lg font-bold text-white mb-3 text-center">
           💡 GroupBy Unlocks Comparative Biology
         </h3>
@@ -207,6 +207,26 @@ df.groupby('oncotree_lineage').agg({
           cancer types?", "Which tissue has highest expression?", "Are blood cancers different from
           solid tumors?" GroupBy is your tool for asking these questions!
         </p>
+      </div>
+
+      {/* Practice Notebook */}
+      <div className="bg-gradient-to-br from-bio-green/20 to-bio-blue/20 border border-bio-green/50 rounded-xl p-6">
+        <h3 className="text-lg font-bold text-bio-green mb-3 text-center">
+          📓 Practice Notebook
+        </h3>
+        <div className="text-center">
+          <a
+            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_4/L4_N3_groupby.ipynb"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-bio-blue hover:bg-bio-blue/80 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+          >
+            Open GroupBy Practice in Colab →
+          </a>
+          <p className="text-gray-400 text-sm mt-3">
+            Try these examples yourself and explore more GroupBy operations!
+          </p>
+        </div>
       </div>
     </div>
   )
