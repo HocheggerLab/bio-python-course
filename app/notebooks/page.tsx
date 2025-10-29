@@ -22,26 +22,26 @@ export default function NotebooksPage() {
     },
     {
       number: 3,
-      title: "Functions & Data Analysis",
-      description: "Functions, dictionaries, and structured data processing",
+      title: "OOP, Python Pckages and Pandas",
+      description: "Learn how to get superpowers with oython packages, and take your first steps with Pandas DataFrames",
       topics: ["Function Design", "Dictionaries", "Data Structures"],
       status: "available",
       icon: "📊"
     },
     {
       number: 4,
-      title: "Lists & File I/O",
-      description: "Working with lists and reading biological data files",
+      title: "Matplotlib and Data Visualization",
+      description: "Generate publication-ready plots and visualisations",
       topics: ["List Operations", "File Handling", "Data Import/Export"],
-      status: "coming-soon",
+      status: "available",
       icon: "📂"
     },
     {
       number: 5,
-      title: "Data Visualization",
-      description: "Creating publication-ready plots and visualizations",
-      topics: ["Matplotlib", "Seaborn", "Biological Plots"],
-      status: "coming-soon",
+      title: "End to End Data Mining Project",
+      description: "Complete biological data analysis from start to finish",
+      topics: ["Matplotlib", "Seaborn", "Scipy", "Biological Plots"],
+      status: "available",
       icon: "📈"
     }
   ]
