@@ -97,12 +97,15 @@ export default function Lectures() {
               </div>
 
               <div className="text-center">
-                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-bio-green to-bio-blue text-white px-8 py-3 rounded-lg font-bold text-lg mb-4">
-                  <span className="text-bio-yellow">⏳</span>
-                  <span>Available After Lecture 3</span>
-                </div>
+                <a
+                  href="/assignments/sequence-analysis"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-bio-green to-bio-blue hover:from-bio-green/80 hover:to-bio-blue/80 text-white px-8 py-3 rounded-lg font-bold text-lg mb-4 transition-all transform hover:scale-105"
+                >
+                  <span>📋</span>
+                  <span>View Assignment Details</span>
+                </a>
                 <p className="text-gray-400 text-sm">
-                  Complete the core sessions first to build the foundation skills needed for this advanced project
+                  Available after Lecture 3 - Complete the core sessions first to build the foundation skills
                 </p>
               </div>
             </div>

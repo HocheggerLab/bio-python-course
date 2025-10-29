@@ -32,8 +32,8 @@ export const scheduleData: ScheduleWeek[] = [
   },
   {
     week: 5,
-    lectureTopic: "Image Analysis and Statistics with Python",
-    seminar: "Image Analysis Workshop",
+    lectureTopic: "End to End Data Mining project",
+    seminar: "Gene Dependency Correlation Analysis Workshop",
     assignment: ["Final Project, due Week 11", "Basic Python Skill Test"]
   }
 ]

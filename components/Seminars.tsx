@@ -16,24 +16,24 @@ export default function Seminars() {
     },
     {
       session: 3,
-      title: "Data Processing Lab",
-      description: "Functions, dictionaries, and data analysis",
+      title: "OOP and Pandas Data Workshop",
+      description: "First steps working with Python packages and Pandas DataFrames",
       notebook: "L3_P1_practice.ipynb",
       status: "available"
     },
     {
       session: 4,
-      title: "File Operations Workshop",
-      description: "Lists, file I/O, and data management",
+      title: "Matplotlib and Vidualisation Workshop",
+      description: "Generating publication-ready plots and visualisations",
       notebook: "L4_P1_practice.ipynb",
-      status: "coming-soon"
+      status: "available"
     },
     {
       session: 5,
-      title: "Visualization Lab",
-      description: "Data visualization and advanced analysis",
-      notebook: "L5_P1_practice.ipynb",
-      status: "coming-soon"
+      title: "End to End Analysis Workshop",
+      description: "Gene Dependency Correlation Analysis with Statistics and Visualisation",
+      notebook: "L5_P1_E2Eanalysis.ipynb",
+      status: "available"
     }
   ]
 

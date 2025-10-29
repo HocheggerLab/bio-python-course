@@ -71,7 +71,7 @@ export const coreSessionsData: Lecture[] = [
   },
   {
     id: 5,
-    title: "Advanced Statistical Analysis",
+    title: "End to End Data Mining Project",
     status: "available",
     topics: [
       "Linear regression analysis",
@@ -81,6 +81,7 @@ export const coreSessionsData: Lecture[] = [
     ],
     slideUrl: "/lectures/5",
     notebookUrl: "/notebooks/lecture-5",
+    videoUrl: "https://www.youtube.com/playlist?list=PLYTU_Kb0BRDI4iMytSaNMFZL64K2jm9uK",
     type: 'core'
   }
 ]
