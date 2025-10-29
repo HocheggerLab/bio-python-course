@@ -245,7 +245,7 @@ df.boxplot(column='gene', by='type')`}
       </div>
 
       {/* Key Takeaways */}
-      <div className="bg-gradient-to-r from-bio-blue to-purple-600 rounded-xl p-6">
+      <div className="bg-gradient-to-r from-bio-blue to-purple-600 rounded-xl p-6 mb-6">
         <h3 className="text-xl font-bold text-white mb-4 text-center">
           🎯 Key Takeaways
         </h3>
@@ -264,6 +264,27 @@ df.boxplot(column='gene', by='type')`}
         <div className="mt-4 pt-4 border-t border-white/20 text-center">
           <p className="text-white font-semibold text-lg">
             🧬 You now have the tools to explore and visualize biological data like a pro! 🎉
+          </p>
+        </div>
+      </div>
+
+      {/* Practice Notebooks */}
+      <div className="bg-gradient-to-br from-bio-green/20 to-bio-blue/20 border border-bio-green/50 rounded-xl p-6">
+        <h3 className="text-lg font-bold text-bio-green mb-3 text-center">
+          📓 Practice Notebooks
+        </h3>
+        <p className="text-gray-300 text-center mb-4">
+          Apply what you've learned with hands-on exercises and real biological datasets
+        </p>
+        <div className="text-center">
+          <a
+            href="/notebooks/lecture-4"
+            className="inline-block bg-bio-blue hover:bg-bio-blue/80 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+          >
+            View All Lecture 4 Notebooks →
+          </a>
+          <p className="text-gray-400 text-sm mt-3">
+            Practice vectorization, groupby, and data visualization with guided exercises
           </p>
         </div>
       </div>

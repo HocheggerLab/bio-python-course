@@ -80,6 +80,7 @@ export const coreSessionsData: Lecture[] = [
       "Exploring new packages on PyPI"
     ],
     slideUrl: "/lectures/5",
+    notebookUrl: "/notebooks/lecture-5",
     type: 'core'
   }
 ]

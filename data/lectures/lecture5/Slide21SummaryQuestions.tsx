@@ -188,6 +188,27 @@ export default function Slide21SummaryQuestions() {
             </div>
           </div>
         </div>
+
+        {/* Practice Notebooks */}
+        <div className="bg-gradient-to-br from-bio-green/20 to-bio-blue/20 border border-bio-green/50 rounded-xl p-6">
+          <h3 className="text-lg font-bold text-bio-green mb-3 text-center">
+            📓 Practice Notebooks
+          </h3>
+          <p className="text-gray-300 text-center mb-4">
+            Master statistical analysis and visualization with hands-on exercises
+          </p>
+          <div className="text-center">
+            <a
+              href="/notebooks/lecture-5"
+              className="inline-block bg-bio-blue hover:bg-bio-blue/80 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+            >
+              View All Lecture 5 Notebooks →
+            </a>
+            <p className="text-gray-400 text-sm mt-3">
+              Practice SciPy statistics, Seaborn visualization, FDR correction, and complete end-to-end analysis
+            </p>
+          </div>
+        </div>
       </div>
     </>
   )
