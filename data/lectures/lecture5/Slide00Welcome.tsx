@@ -88,7 +88,7 @@ export default function Slide00Welcome() {
           />
         </ConceptCard>
 
-        <ConceptCard title="Lecture 4: Data Visualization" icon="📈" iconColor="amber">
+        <ConceptCard title="Lecture 4: Data Visualization" icon="📈" iconColor="yellow">
           <FeatureList
             items={[
               {
