@@ -72,7 +72,7 @@ export const coreSessionsData: Lecture[] = [
   {
     id: 5,
     title: "Advanced Statistical Analysis",
-    status: "coming-soon",
+    status: "available",
     topics: [
       "Linear regression analysis",
       "Seaborn for publication-ready plots",

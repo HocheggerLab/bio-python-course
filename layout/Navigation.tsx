@@ -92,6 +92,9 @@ export default function Navigation() {
                   <Link href="/lectures/4" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
                     Lecture 4: Statistics & Visualization
                   </Link>
+                  <Link href="/lectures/5" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
+                    Lecture 5: Advanced Statistics
+                  </Link>
                 </div>
               )}
             </div>
@@ -165,6 +168,7 @@ export default function Navigation() {
               <Link href="/lectures/2" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Lecture 2: Strings & DNA</Link>
               <Link href="/lectures/3" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Lecture 3: Data Analysis</Link>
               <Link href="/lectures/4" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Lecture 4: Statistics & Visualization</Link>
+              <Link href="/lectures/5" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Lecture 5: Advanced Statistics</Link>
             </div>
 
             <button onClick={() => { scrollToSection('specialization-tracks'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Specializations</button>

@@ -22,6 +22,15 @@ export default function Slide03GeneDependencyCorrelation() {
     {x: -3.6, y: -1.1}, {x: -2.9, y: -2.2}, {x: -1.6, y: -0.9}, {x: -3.8, y: -1.4}
   ]
 
+  // Fictional data for ATR vs MDM2 (negative correlation, r=-0.72)
+  const atrMdm2 = [
+    {x: -3.2, y: -0.3}, {x: -2.8, y: -0.8}, {x: -4.1, y: -0.2}, {x: -1.5, y: -2.8},
+    {x: -3.7, y: -0.4}, {x: -2.1, y: -1.9}, {x: -4.5, y: -0.1}, {x: -1.9, y: -2.3},
+    {x: -3.4, y: -0.5}, {x: -2.6, y: -1.2}, {x: -3.9, y: -0.3}, {x: -1.7, y: -2.6},
+    {x: -3.1, y: -0.6}, {x: -2.4, y: -1.5}, {x: -4.3, y: -0.2}, {x: -2.0, y: -2.1},
+    {x: -3.6, y: -0.4}, {x: -2.9, y: -1.0}, {x: -1.6, y: -2.7}, {x: -3.8, y: -0.3}
+  ]
+
   const ScatterPlot = ({ data, title, color, correlation }: {
     data: {x: number, y: number}[],
     title: string,
@@ -70,12 +79,23 @@ export default function Slide03GeneDependencyCorrelation() {
           })}
 
           {/* Trend line for correlated data */}
-          {correlation !== '0.02' && (
+          {correlation === '0.85' && (
             <line
               x1="50"
               y1="150"
               x2="250"
               y2="30"
+              stroke={color}
+              strokeWidth="2"
+              opacity="0.6"
+            />
+          )}
+          {correlation === '-0.72' && (
+            <line
+              x1="50"
+              y1="30"
+              x2="250"
+              y2="150"
               stroke={color}
               strokeWidth="2"
               opacity="0.6"
@@ -107,18 +127,32 @@ export default function Slide03GeneDependencyCorrelation() {
           <h3 className="text-xl font-semibold text-bio-blue mb-4 text-center">
             🤝 What Are We Measuring?
           </h3>
-          <p className="text-gray-300 text-center text-lg mb-4">
+          <p className="text-gray-300 text-center text-lg mb-3">
             <span className="text-bio-yellow font-semibold">Gene Dependency Correlation</span> =
             How <span className="text-purple-400 font-semibold">similarly</span> two genes behave across different cancer cell lines
           </p>
+          <div className="grid md:grid-cols-2 gap-4 mt-4">
+            <div className="bg-bio-green/10 border border-bio-green/30 rounded-lg p-3">
+              <p className="text-bio-green font-semibold text-sm mb-1">✓ Positive Correlation</p>
+              <p className="text-gray-300 text-xs">
+                Cells that depend on Gene X <span className="text-bio-yellow">also depend</span> on Gene Y
+              </p>
+            </div>
+            <div className="bg-red-400/10 border border-red-400/30 rounded-lg p-3">
+              <p className="text-red-400 font-semibold text-sm mb-1">✗ Negative Correlation</p>
+              <p className="text-gray-300 text-xs">
+                Cells that <span className="text-red-400">do not need</span> Gene X <span className="text-bio-yellow">need</span> Gene Y and vice versa
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Scatter plot comparison */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* High correlation */}
-          <div className="bg-gradient-to-br from-bio-green/10 to-emerald-500/10 border border-bio-green/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-bio-green mb-4 text-center">
-              🧬 Strong Correlation: ATR vs ATRIP
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          {/* High positive correlation */}
+          <div className="bg-gradient-to-br from-bio-green/10 to-emerald-500/10 border border-bio-green/30 rounded-xl p-5">
+            <h3 className="text-base font-semibold text-bio-green mb-3 text-center">
+              ✓ Positive: ATR vs ATRIP
             </h3>
             <ScatterPlot
               data={atrAtrip}
@@ -126,21 +160,41 @@ export default function Slide03GeneDependencyCorrelation() {
               color="#10B981"
               correlation="0.85"
             />
-            <div className="mt-4 bg-bio-dark/30 rounded-lg p-3">
-              <p className="text-bio-green text-sm font-semibold mb-2">📈 Clear Pattern!</p>
+            <div className="mt-3 bg-bio-dark/30 rounded-lg p-2">
+              <p className="text-bio-green text-xs font-semibold mb-1">Cells that depend on ATR also depend on ATRIP</p>
               <ul className="text-gray-300 text-xs space-y-1">
-                <li>• Points follow a diagonal line</li>
-                <li>• When ATR is essential → ATRIP is essential</li>
-                <li>• Both genes work together in DNA repair</li>
-                <li>• <span className="text-bio-blue font-semibold">ATRIP activates ATR</span> - they're partners!</li>
+                <li>• Upward diagonal trend</li>
+                <li>• Both genes work together</li>
+                <li>• DNA repair partners</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Negative correlation */}
+          <div className="bg-gradient-to-br from-red-400/10 to-pink-500/10 border border-red-400/30 rounded-xl p-5">
+            <h3 className="text-base font-semibold text-red-400 mb-3 text-center">
+              ✗ Negative: ATR vs MDM2
+            </h3>
+            <ScatterPlot
+              data={atrMdm2}
+              title="ATR vs MDM2"
+              color="#F87171"
+              correlation="-0.72"
+            />
+            <div className="mt-3 bg-bio-dark/30 rounded-lg p-2">
+              <p className="text-red-400 text-xs font-semibold mb-1">Cells that don't need ATR need MDM2 and vice versa</p>
+              <ul className="text-gray-300 text-xs space-y-1">
+                <li>• Downward diagonal trend</li>
+                <li>• Opposite dependencies</li>
+                <li>• Compensatory pathways</li>
               </ul>
             </div>
           </div>
 
           {/* No correlation */}
-          <div className="bg-gradient-to-br from-amber-400/10 to-yellow-500/10 border border-amber-400/30 rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-amber-400 mb-4 text-center">
-              🎲 No Correlation: ATR vs COL1A1
+          <div className="bg-gradient-to-br from-amber-400/10 to-yellow-500/10 border border-amber-400/30 rounded-xl p-5">
+            <h3 className="text-base font-semibold text-amber-400 mb-3 text-center">
+              ○ None: ATR vs COL1A1
             </h3>
             <ScatterPlot
               data={atrCol1a1}
@@ -148,13 +202,12 @@ export default function Slide03GeneDependencyCorrelation() {
               color="#F59E0B"
               correlation="0.02"
             />
-            <div className="mt-4 bg-bio-dark/30 rounded-lg p-3">
-              <p className="text-amber-400 text-sm font-semibold mb-2">🌐 Random Scatter!</p>
+            <div className="mt-3 bg-bio-dark/30 rounded-lg p-2">
+              <p className="text-amber-400 text-xs font-semibold mb-1">No relationship between genes</p>
               <ul className="text-gray-300 text-xs space-y-1">
-                <li>• Points scattered randomly</li>
-                <li>• No predictable relationship</li>
-                <li>• ATR (DNA repair) vs COL1A1 (collagen)</li>
-                <li>• <span className="text-amber-400 font-semibold">Completely different pathways</span></li>
+                <li>• Random scatter pattern</li>
+                <li>• Independent functions</li>
+                <li>• Different pathways</li>
               </ul>
             </div>
           </div>
@@ -194,10 +247,13 @@ export default function Slide03GeneDependencyCorrelation() {
           </h4>
           <div className="text-center space-y-2">
             <p className="text-gray-300 text-sm">
-              <span className="text-bio-green font-semibold">High correlation (0.85)</span> = Genes work together in the same pathway
+              <span className="text-bio-green font-semibold">Positive correlation (+0.85)</span> = Genes co-essential, work together
             </p>
             <p className="text-gray-300 text-sm">
-              <span className="text-amber-400 font-semibold">Low correlation (0.02)</span> = Genes function independently
+              <span className="text-red-400 font-semibold">Negative correlation (-0.72)</span> = Opposite patterns, compensatory pathways
+            </p>
+            <p className="text-gray-300 text-sm">
+              <span className="text-amber-400 font-semibold">No correlation (0.02)</span> = Genes function independently
             </p>
             <p className="text-bio-yellow font-semibold text-sm mt-3">
               🎯 This is how we discover biological networks from data!
