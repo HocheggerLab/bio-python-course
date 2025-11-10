@@ -136,8 +136,7 @@ export default function Lectures() {
             Specialisation <span className="text-gradient-purple">Tracks</span>
           </h2>
           <p className="text-center text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
-            Choose one track to deepen your skills for your final project.
-            Ambitious students are encouraged to explore all three tracks.
+            These three tracks are designed to deepen your skills in specific areas of biology and will be available in the future.
           </p>
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {specializationTracks.map((track) => (

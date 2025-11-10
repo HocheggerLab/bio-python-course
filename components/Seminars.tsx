@@ -109,18 +109,16 @@ export default function Seminars() {
                 <h5 className="font-semibold text-bio-yellow mb-2">Session 6 Topics:</h5>
                 <ul className="text-gray-300 space-y-1 text-sm">
                   <li>• Project overview and requirements</li>
-                  <li>• Dataset selection guidance</li>
+                  <li>• Dataset download guidance</li>
                   <li>• Pipeline architecture planning</li>
-                  <li>• Collaboration and Git workflows</li>
                 </ul>
               </div>
               <div>
                 <h5 className="font-semibold text-bio-yellow mb-2">Deliverables:</h5>
                 <ul className="text-gray-300 space-y-1 text-sm">
-                  <li>• Project proposal draft</li>
-                  <li>• Dataset identification</li>
-                  <li>• Development environment setup</li>
-                  <li>• Timeline and milestone planning</li>
+                  <li>• Understanding the project requirements</li>
+                  <li>• Choosing the appropriate dataset</li>
+                  <li>• Planning the pipeline architecture</li>
                 </ul>
               </div>
             </div>
