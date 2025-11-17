@@ -40,12 +40,12 @@ export default function DevToolsPage() {
             </div>
           </a>
 
-          <Link href="/dev-tools/vscode" className="block group">
+          <Link href="/dev-tools/cursor-setup" className="block group">
             <div className="h-full p-6 bg-bio-dark/50 rounded-xl border border-bio-blue/20 hover:border-bio-blue/50 transition-colors">
               <div className="text-center">
                 <div className="text-4xl mb-4">💻</div>
                 <h3 className="text-xl font-bold text-bio-blue mb-2">
-                  VS Code Setup
+                  Cursor Setup
                 </h3>
                 <p className="text-gray-300">
                   Set up a professional development environment

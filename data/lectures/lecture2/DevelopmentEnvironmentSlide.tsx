@@ -45,7 +45,7 @@ export function DevelopmentEnvironmentSlide() {
           </div>
         </ConceptCard>
 
-        <ConceptCard title="VS Code Setup" icon="💻" iconColor="blue">
+        <ConceptCard title="Cursor Setup" icon="💻" iconColor="blue">
           <FeatureList 
             items={[
               {
