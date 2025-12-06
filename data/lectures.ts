@@ -113,14 +113,15 @@ export const specializationTracks: Lecture[] = [
   },
   {
     id: 8,
-    title: "Text Analysis & AI Track",
-    status: "coming-soon",
+    title: "LLMs and Agentic AI in Biology",
+    status: "available",
     topics: [
       "Working with LLMs for biology",
       "Automating literature searches",
       "Text mining PubMed abstracts",
       "Building research assistants"
     ],
+    slideUrl: "/lectures/8",
     type: 'specialization'
   }
 ]
