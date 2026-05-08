@@ -112,6 +112,9 @@ lerna-debug.log*
 CLAUDE.node_modules
 .claude
 
+# Blog drafts (local only)
+/blog/
+
 # Backup files
 *.bak
 *.backup
