@@ -5,7 +5,7 @@ import { usePyodide } from '@/contexts/PyodideContext'
 import StaticCodeDisplay from './StaticCodeDisplay'
 import CodeEditor from './CodeEditor'
 
-interface PythonCodeRunnerProps {
+export interface PythonCodeRunnerProps {
   initialCode?: string
   height?: string
   editable?: boolean

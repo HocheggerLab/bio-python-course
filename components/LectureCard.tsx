@@ -35,9 +35,17 @@ export default function LectureCard({ lecture }: LectureCardProps) {
             <Link href={lecture.slideUrl} className="btn-primary !py-1 !px-3 text-xs">
               Slides
             </Link>
+            {lecture.labsUrl && (
+              <Link
+                href={lecture.labsUrl}
+                className="btn-secondary !py-1 !px-3 text-xs border-bio-green text-bio-green hover:bg-bio-green hover:text-bio-dark"
+              >
+                Labs
+              </Link>
+            )}
             {lecture.notebookUrl && (
-              <a 
-                href={lecture.notebookUrl} 
+              <a
+                href={lecture.notebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary !py-1 !px-3 text-xs"
@@ -72,6 +80,12 @@ export default function LectureCard({ lecture }: LectureCardProps) {
                 Slides
               </Link>
             )}
+            <Link
+              href={lecture.labsUrl ?? '/under-construction'}
+              className="btn-secondary !py-1 !px-3 text-xs border-bio-green text-bio-green hover:bg-bio-green hover:text-bio-dark"
+            >
+              Labs
+            </Link>
             {lecture.notebookUrl ? (
               <Link href={lecture.notebookUrl} className="btn-secondary !py-1 !px-3 text-xs">
                 Notebooks
@@ -101,6 +115,12 @@ export default function LectureCard({ lecture }: LectureCardProps) {
           <>
             <Link href="/under-construction" className="btn-primary !py-1 !px-3 text-xs">
               Slides
+            </Link>
+            <Link
+              href={lecture.labsUrl ?? '/under-construction'}
+              className="btn-secondary !py-1 !px-3 text-xs border-bio-green text-bio-green hover:bg-bio-green hover:text-bio-dark"
+            >
+              Labs
             </Link>
             <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs">
               Notebooks

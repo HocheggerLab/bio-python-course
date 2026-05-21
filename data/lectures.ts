@@ -6,42 +6,66 @@ export interface Lecture {
   slideUrl?: string
   notebookUrl?: string
   videoUrl?: string
+  labsUrl?: string
   type?: 'core' | 'specialization'
 }
 
-export const coreSessionsData: Lecture[] = [
+export const pythonBasicsData: Lecture[] = [
   {
     id: 1,
-    title: "Lab Calculations",
+    title: "Data Types, Variables and Basic Operations",
     status: "available",
     topics: [
-      "Introduction to Python",
-      "Types and assignment",
-      "For loops",
-      "Lists and file I/O"
+      "Variables and assignment",
+      "Core types: int, float, bool, str",
+      "Arithmetic and string operators",
+      "print() and f-strings"
     ],
     slideUrl: "/lectures/1",
-    notebookUrl: "/notebooks/lecture-1",
-    videoUrl: "https://www.youtube.com/playlist?list=PLYTU_Kb0BRDIjqcvTBfBkuWq6xEi6Wie2",
+    labsUrl: "/labs/sessions",
     type: 'core'
   },
   {
     id: 2,
-    title: "Analysing DNA",
-    status: "available",
+    title: "Strings and Lists",
+    status: "under-construction",
     topics: [
-      "String operations",
-      "Sequence file formats",
-      "File I/O",
-      "Biopython"
+      "String indexing, slicing and methods",
+      "Lists: creation, indexing, append",
+      "Iterating with for loops",
+      "DNA sequence manipulation"
     ],
-    slideUrl: "/lectures/2",
-    notebookUrl: "/notebooks/lecture-2",
-    videoUrl: "https://www.youtube.com/playlist?list=PLYTU_Kb0BRDJB7Z6tLVHbJUtMcVcmev3-",
     type: 'core'
   },
   {
     id: 3,
+    title: "Loops, Dictionaries and Control Flow",
+    status: "under-construction",
+    topics: [
+      "for / while loops and range()",
+      "if / elif / else",
+      "Dictionaries and .items() iteration",
+      "Building a codon translation table"
+    ],
+    type: 'core'
+  },
+  {
+    id: 4,
+    title: "Functions, Files and Error Handling",
+    status: "under-construction",
+    topics: [
+      "Defining functions and return values",
+      "Scope, type hints and docstrings",
+      "Reading and writing files",
+      "try / except and raising errors"
+    ],
+    type: 'core'
+  },
+]
+
+export const pythonDataData: Lecture[] = [
+  {
+    id: 5,
     title: "Analysing DepMap Data",
     status: "available",
     topics: [
@@ -55,7 +79,7 @@ export const coreSessionsData: Lecture[] = [
     type: 'core'
   },
   {
-    id: 4,
+    id: 6,
     title: "Explorative Data Analysis",
     status: "available",
     topics: [
@@ -70,7 +94,7 @@ export const coreSessionsData: Lecture[] = [
     type: 'core'
   },
   {
-    id: 5,
+    id: 7,
     title: "End to End Data Mining Project",
     status: "available",
     topics: [
@@ -83,33 +107,6 @@ export const coreSessionsData: Lecture[] = [
     notebookUrl: "/notebooks/lecture-5",
     videoUrl: "https://www.youtube.com/playlist?list=PLYTU_Kb0BRDI4iMytSaNMFZL64K2jm9uK",
     type: 'core'
-  }
-]
-
-export const specializationTracks: Lecture[] = [
-  {
-    id: 6,
-    title: "Image Analysis Track",
-    status: "coming-soon",
-    topics: [
-      "NumPy and scikit-image basics",
-      "Microscopy image processing",
-      "Cell segmentation and tracking",
-      "Batch analysis pipelines"
-    ],
-    type: 'specialization'
-  },
-  {
-    id: 7,
-    title: "Data Analysis & Visualization Track",
-    status: "coming-soon",
-    topics: [
-      "Pandas for biological data",
-      "Statistical analysis with SciPy",
-      "Creating publication-ready figures",
-      "Analyzing experimental results"
-    ],
-    type: 'specialization'
   },
   {
     id: 8,
@@ -122,9 +119,11 @@ export const specializationTracks: Lecture[] = [
       "Building research assistants"
     ],
     slideUrl: "/lectures/8",
-    type: 'specialization'
+    type: 'core'
   }
 ]
 
 // For backward compatibility
-export const lectures: Lecture[] = [...coreSessionsData, ...specializationTracks]
+export const coreSessionsData: Lecture[] = [...pythonBasicsData, ...pythonDataData]
+
+export const lectures: Lecture[] = coreSessionsData

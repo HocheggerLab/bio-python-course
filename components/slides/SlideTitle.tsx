@@ -3,49 +3,37 @@ import React from 'react';
 interface SlideTitleProps {
   children: React.ReactNode;
   className?: string;
-  size?: 'small' | 'medium' | 'large' | 'xl';
   center?: boolean;
 }
 
-const sizeClasses = {
-  small: 'text-3xl md:text-4xl',
-  medium: 'text-4xl md:text-5xl',
-  large: 'text-5xl md:text-6xl',
-  xl: 'text-6xl md:text-7xl'
-};
-
-export function SlideTitle({ 
-  children, 
-  className = '', 
-  size = 'large',
-  center = true 
+export function SlideTitle({
+  children,
+  className = '',
+  center = true,
 }: SlideTitleProps) {
-  const baseClasses = `font-bold mt-10 ${sizeClasses[size]} ${center ? 'text-center' : ''}`;
-  
   return (
-    <h2 className={`${baseClasses} ${className}`}>
+    <h2 className={`font-bold text-3xl md:text-5xl xl:text-7xl 2xl:text-8xl mt-4 md:mt-6 xl:mt-10 ${center ? 'text-center' : ''} ${className}`}>
       {children}
     </h2>
   );
 }
 
-// Helper component for gradient text within titles
 interface GradientTextProps {
   children: React.ReactNode;
   variant?: 'default' | 'purple' | 'green' | 'yellow';
 }
 
-export function GradientText({ 
-  children, 
-  variant = 'default' 
+export function GradientText({
+  children,
+  variant = 'default',
 }: GradientTextProps) {
   const gradientClasses = {
     default: 'text-gradient',
     purple: 'text-gradient-purple',
     green: 'text-bio-green',
-    yellow: 'text-bio-yellow'
+    yellow: 'text-bio-yellow',
   };
-  
+
   return (
     <span className={gradientClasses[variant]}>
       {children}

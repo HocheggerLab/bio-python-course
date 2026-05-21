@@ -1,30 +1,48 @@
 import LectureCard from './LectureCard'
 import CapstoneProject from './CapstoneProject'
-import { coreSessionsData, specializationTracks } from '@/data/lectures'
+import { pythonBasicsData, pythonDataData } from '@/data/lectures'
 
 export default function Lectures() {
   return (
     <>
-      {/* Core Sessions Section */}
-      <section id="core-sessions" className="py-20 px-6">
+      {/* Section 1: Python Basics */}
+      <section id="python-basics" className="py-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <h2 className="section-header">
-            Core <span className="text-gradient">Sessions</span>
+            Section 1: <span className="text-gradient">Python Basics</span>
           </h2>
           <p className="text-center text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
-            Master the Python fundamentals through hands-on biological applications. 
-            All students complete these five essential sessions.
+            Build your Python foundations through hands-on biological applications.
+            Sessions 1–4 take you from your first variable to writing robust, testable functions.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
-            {coreSessionsData.map((lecture) => (
+            {pythonBasicsData.map((lecture) => (
               <LectureCard key={lecture.id} lecture={lecture} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* DNA Analysis Task Section */}
-      <section id="dna-analysis-task" className="py-20 px-6 bg-gradient-to-b from-bio-darker to-bio-dark">
+      {/* Section 2: Python and Data in Biology */}
+      <section id="python-data" className="py-20 px-6 bg-gradient-to-b from-bio-darker to-bio-dark">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="section-header">
+            Section 2: Python and <span className="text-gradient-purple">Data in Biology</span>
+          </h2>
+          <p className="text-center text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
+            Apply your Python skills to real biological datasets. Sessions 5–8 cover
+            data analysis, visualisation, statistics, and AI tools for research.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {pythonDataData.map((lecture) => (
+              <LectureCard key={lecture.id} lecture={lecture} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DNA Analysis Task */}
+      <section id="dna-analysis-task" className="py-20 px-6 bg-gradient-to-b from-bio-dark to-bio-darker">
         <div className="container mx-auto max-w-6xl">
           <h2 className="section-header">
             DNA Analysis <span className="text-gradient-green">Task</span>
@@ -76,7 +94,7 @@ export default function Lectures() {
                 </h4>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h5 className="text-bio-green font-semibold text-sm mb-2">What You'll Build</h5>
+                    <h5 className="text-bio-green font-semibold text-sm mb-2">What You&apos;ll Build</h5>
                     <ul className="text-gray-300 text-sm space-y-1">
                       <li>• FASTQ quality assessment tool</li>
                       <li>• Read comparison to reference sequence</li>
@@ -85,7 +103,7 @@ export default function Lectures() {
                     </ul>
                   </div>
                   <div>
-                    <h5 className="text-amber-400 font-semibold text-sm mb-2">Skills You'll Gain</h5>
+                    <h5 className="text-amber-400 font-semibold text-sm mb-2">Skills You&apos;ll Gain</h5>
                     <ul className="text-gray-300 text-sm space-y-1">
                       <li>• Reading bioinformatics file formats (FASTA)</li>
                       <li>• Large dataset processing</li>
@@ -105,7 +123,7 @@ export default function Lectures() {
                   <span>View Assignment Details</span>
                 </a>
                 <p className="text-gray-400 text-sm">
-                  Available after Lecture 3 - Complete the core sessions first to build the foundation skills
+                  Available after Session 4 — complete the Python Basics section first to build the foundation skills
                 </p>
               </div>
             </div>
@@ -113,35 +131,18 @@ export default function Lectures() {
         </div>
       </section>
 
-      {/* Final Project Section */}
-      <section id="final-project" className="py-20 px-6 bg-gradient-to-b from-bio-dark to-bio-darker">
+      {/* Final Project */}
+      <section id="final-project" className="py-20 px-6 bg-gradient-to-b from-bio-darker to-bio-dark">
         <div className="container mx-auto max-w-6xl">
           <h2 className="section-header">
             Final <span className="text-gradient">Project</span>
           </h2>
           <p className="text-center text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
-            Apply everything you've learned to explore large-scale genomic datasets.
+            Apply everything you&apos;ve learned to explore large-scale genomic datasets.
             Become a bioinformatician through hands-on data analysis.
           </p>
           <div className="max-w-3xl mx-auto">
             <CapstoneProject />
-          </div>
-        </div>
-      </section>
-
-      {/* Specialization Tracks Section */}
-      <section id="specialization-tracks" className="py-20 px-6 bg-gradient-to-b from-bio-darker to-bio-dark">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="section-header">
-            Specialisation <span className="text-gradient-purple">Tracks</span>
-          </h2>
-          <p className="text-center text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
-            These three tracks are designed to deepen your skills in specific areas of biology and will be available in the future.
-          </p>
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {specializationTracks.map((track) => (
-              <LectureCard key={track.id} lecture={track} />
-            ))}
           </div>
         </div>
       </section>

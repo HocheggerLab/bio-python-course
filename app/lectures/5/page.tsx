@@ -1,13 +1,21 @@
-'use client'
+import Link from 'next/link'
 
-import SlideViewer from '@/components/lectures/SlideViewer'
-import { lecture5Data } from '@/data/lectures/lecture5-slides'
-import { PyodideProvider } from '@/contexts/PyodideContext'
-
-export default function Lecture5Page() {
+export default function LecturePage() {
   return (
-    <PyodideProvider>
-      <SlideViewer lecture={lecture5Data} />
-    </PyodideProvider>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-bio-dark to-bio-darker">
+      <div className="text-center max-w-lg mx-auto px-6">
+        <div className="text-6xl mb-6">🚧</div>
+        <h1 className="text-3xl font-bold text-white mb-4">
+          Lecture <span className="text-gradient">Under Construction</span>
+        </h1>
+        <p className="text-gray-300 mb-8">
+          This lecture is being redesigned for the new course structure.
+          Check back soon.
+        </p>
+        <Link href="/" className="btn-primary">
+          ← Back to Course
+        </Link>
+      </div>
+    </div>
   )
 }

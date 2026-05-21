@@ -79,27 +79,37 @@ export default function Navigation() {
                 </svg>
               </button>
               {isLecturesOpen && (
-                <div className="absolute top-full mt-2 w-48 bg-bio-dark/95 backdrop-blur-md border border-bio-blue/20 rounded-lg shadow-lg overflow-hidden">
-                  <Link href="/lectures/1" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
-                    Lecture 1: Introduction
+                <div className="absolute top-full mt-2 w-64 bg-bio-dark/95 backdrop-blur-md border border-bio-blue/20 rounded-lg shadow-lg overflow-hidden">
+                  <div className="px-4 py-2 text-xs font-semibold text-bio-blue/70 uppercase tracking-wider border-b border-white/10">Python Basics</div>
+                  <Link href="/lectures/1" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    1. Variables &amp; Data Types
                   </Link>
-                  <Link href="/lectures/2" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
-                    Lecture 2: Strings & DNA
+                  <Link href="/lectures/2" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    2. Strings &amp; Lists
                   </Link>
-                  <Link href="/lectures/3" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
-                    Lecture 3: Data Analysis
+                  <Link href="/lectures/3" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    3. Loops &amp; Dictionaries
                   </Link>
-                  <Link href="/lectures/4" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
-                    Lecture 4: Statistics & Visualization
+                  <Link href="/lectures/4" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    4. Functions, Files &amp; Errors
                   </Link>
-                  <Link href="/lectures/5" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
-                    Lecture 5: Advanced Statistics
+                  <div className="px-4 py-2 text-xs font-semibold text-bio-blue/70 uppercase tracking-wider border-t border-b border-white/10">Python &amp; Data</div>
+                  <Link href="/lectures/5" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    5. DepMap Data Analysis
+                  </Link>
+                  <Link href="/lectures/6" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    6. Explorative Data Analysis
+                  </Link>
+                  <Link href="/lectures/7" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    7. End-to-End Data Mining
+                  </Link>
+                  <Link href="/lectures/8" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    8. LLMs &amp; Agentic AI
                   </Link>
                 </div>
               )}
             </div>
 
-            <button onClick={() => scrollToSection('specialization-tracks')} className="nav-link mr-8">Specialisations</button>
             <button onClick={() => scrollToSection('seminars')} className="nav-link mr-8">Seminars</button>
 
             {/* Resources Dropdown */}
@@ -118,8 +128,8 @@ export default function Navigation() {
                   <button onClick={() => { scrollToSection('resources'); setIsResourcesOpen(false); }} className="block w-full text-left px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
                     All Resources
                   </button>
-                  <Link href="/notebooks" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
-                    Course Notebooks
+                  <Link href="/labs" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
+                    Labs
                   </Link>
                   <Link href="/data" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
                     Sample Datasets
@@ -163,22 +173,25 @@ export default function Navigation() {
           <div className="px-6 py-4 space-y-3">
             {/* Lectures Section */}
             <div className="border-b border-white/10 pb-3">
-              <div className="text-sm font-semibold text-bio-blue mb-2">Lectures</div>
-              <Link href="/lectures/1" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Lecture 1: Introduction</Link>
-              <Link href="/lectures/2" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Lecture 2: Strings & DNA</Link>
-              <Link href="/lectures/3" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Lecture 3: Data Analysis</Link>
-              <Link href="/lectures/4" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Lecture 4: Statistics & Visualization</Link>
-              <Link href="/lectures/5" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Lecture 5: Advanced Statistics</Link>
+              <div className="text-xs font-semibold text-bio-blue/70 uppercase tracking-wider mb-1">Python Basics</div>
+              <Link href="/lectures/1" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">1. Variables &amp; Data Types</Link>
+              <Link href="/lectures/2" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">2. Strings &amp; Lists</Link>
+              <Link href="/lectures/3" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">3. Loops &amp; Dictionaries</Link>
+              <Link href="/lectures/4" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">4. Functions, Files &amp; Errors</Link>
+              <div className="text-xs font-semibold text-bio-blue/70 uppercase tracking-wider mt-2 mb-1">Python &amp; Data</div>
+              <Link href="/lectures/5" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">5. DepMap Data Analysis</Link>
+              <Link href="/lectures/6" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">6. Explorative Data Analysis</Link>
+              <Link href="/lectures/7" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">7. End-to-End Data Mining</Link>
+              <Link href="/lectures/8" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">8. LLMs &amp; Agentic AI</Link>
             </div>
 
-            <button onClick={() => { scrollToSection('specialization-tracks'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Specializations</button>
             <button onClick={() => { scrollToSection('seminars'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Seminars</button>
 
             {/* Resources Section */}
             <div className="border-b border-white/10 pb-3">
               <div className="text-sm font-semibold text-bio-blue mb-2">Resources</div>
               <button onClick={() => { scrollToSection('resources'); toggleMobileMenu(); }} className="block nav-link py-2 pl-4 text-left w-full">All Resources</button>
-              <Link href="/notebooks" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Course Notebooks</Link>
+              <Link href="/labs" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Labs</Link>
               <Link href="/data" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Sample Datasets</Link>
               <Link href="/practice" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Practice Sessions</Link>
               <Link href="/dev-tools" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Development Tools</Link>

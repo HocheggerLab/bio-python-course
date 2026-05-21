@@ -1,0 +1,61 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: 🧬
+        - link "Python for Biologists" [ref=e7] [cursor=pointer]:
+          - /url: /
+      - generic [ref=e8]:
+        - button "Lectures" [ref=e10] [cursor=pointer]:
+          - text: Lectures
+          - img [ref=e11]
+        - button "Seminars" [ref=e13] [cursor=pointer]
+        - button "Resources" [ref=e15] [cursor=pointer]:
+          - text: Resources
+          - img [ref=e16]
+        - button "Schedule" [ref=e18] [cursor=pointer]
+        - button "About" [ref=e19] [cursor=pointer]
+        - link "GitHub →" [ref=e20] [cursor=pointer]:
+          - /url: https://github.com/HocheggerLab/y3-bio-python
+  - generic [ref=e70]:
+    - heading "How This Course Works" [level=2] [ref=e71]
+    - generic [ref=e72]:
+      - generic [ref=e73]:
+        - generic [ref=e74]: 📚
+        - generic [ref=e75]: "8"
+        - generic [ref=e76]: Lectures
+        - paragraph [ref=e77]: Core concepts introduced with live coding and biological examples
+      - generic [ref=e78]:
+        - generic [ref=e79]: 💻
+        - generic [ref=e80]: "8"
+        - generic [ref=e81]: Lab Sessions
+        - paragraph [ref=e82]: Hands-on seminars — you write code, demonstrators circulate
+      - generic [ref=e83]:
+        - generic [ref=e84]: 🧬
+        - generic [ref=e85]: "1"
+        - generic [ref=e86]: Assessed Project
+        - paragraph [ref=e87]: Apply everything to a real biological dataset of your choice
+      - generic [ref=e88]:
+        - generic [ref=e89]: 🤝
+        - generic [ref=e90]: ∞
+        - generic [ref=e91]: Support
+        - paragraph [ref=e92]: Course website, notebooks, Colab, and instructor office hours
+    - paragraph [ref=e93]: One coherent project thread runs through all 8 sessions — from your first variable to a working analysis pipeline.
+  - generic [ref=e28]:
+    - button "← Previous" [ref=e29] [cursor=pointer]
+    - generic [ref=e30]:
+      - button "Go to slide 1" [ref=e31] [cursor=pointer]
+      - button "Go to slide 2" [ref=e32] [cursor=pointer]
+      - button "Go to slide 3" [ref=e33] [cursor=pointer]
+      - button "Go to slide 4" [ref=e34] [cursor=pointer]
+      - button "Go to slide 5" [ref=e35] [cursor=pointer]
+      - button "Go to slide 6" [ref=e36] [cursor=pointer]
+      - button "Go to slide 7" [ref=e37] [cursor=pointer]
+      - button "Go to slide 8" [ref=e38] [cursor=pointer]
+      - button "Go to slide 9" [ref=e39] [cursor=pointer]
+      - button "Go to slide 10" [ref=e40] [cursor=pointer]
+      - button "Go to slide 11" [ref=e41] [cursor=pointer]
+    - button "Next →" [active] [ref=e42] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=e64] [cursor=pointer]:
+    - img [ref=e65]
+  - alert [ref=e68]

@@ -1,6 +1,3 @@
-'use client'
-
-import { DevelopmentEnvironmentSlide } from '@/data/lectures/lecture2/DevelopmentEnvironmentSlide'
 import Link from 'next/link'
 
 export default function DevToolsPage() {
@@ -11,8 +8,10 @@ export default function DevToolsPage() {
           ← Back to Home
         </Link>
 
-        <div className="mt-8">
-          <DevelopmentEnvironmentSlide />
+        <div className="mt-8 text-center py-12">
+          <div className="text-5xl mb-4">🚧</div>
+          <h2 className="text-2xl font-bold text-white mb-2">Dev Tools Guide</h2>
+          <p className="text-gray-400">Being redesigned for the new course structure.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto">
