@@ -34,8 +34,10 @@ export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isResourcesOpen, setIsResourcesOpen] = useState(false)
   const [isLecturesOpen, setIsLecturesOpen] = useState(false)
+  const [isLabsOpen, setIsLabsOpen] = useState(false)
   const resourcesRef = useRef<HTMLDivElement>(null)
   const lecturesRef = useRef<HTMLDivElement>(null)
+  const labsRef = useRef<HTMLDivElement>(null)
   const scrollToSection = useScrollToSection()
 
   const toggleMobileMenu = () => {
@@ -50,6 +52,9 @@ export default function Navigation() {
       }
       if (lecturesRef.current && !lecturesRef.current.contains(event.target as Node)) {
         setIsLecturesOpen(false)
+      }
+      if (labsRef.current && !labsRef.current.contains(event.target as Node)) {
+        setIsLabsOpen(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -105,6 +110,52 @@ export default function Navigation() {
                   </Link>
                   <Link href="/lectures/8" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
                     8. LLMs &amp; Agentic AI
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Labs Dropdown */}
+            <div className="relative mr-8" ref={labsRef}>
+              <button
+                onClick={() => setIsLabsOpen(!isLabsOpen)}
+                className="nav-link flex items-center gap-1"
+              >
+                Labs
+                <svg className={`w-4 h-4 transition-transform ${isLabsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {isLabsOpen && (
+                <div className="absolute top-full mt-2 w-64 bg-bio-dark/95 backdrop-blur-md border border-bio-blue/20 rounded-lg shadow-lg overflow-hidden">
+                  <Link href="/labs" className="block px-4 py-2.5 text-bio-blue hover:bg-bio-blue/20 transition-colors text-sm font-semibold border-b border-white/10">
+                    All Labs
+                  </Link>
+                  <div className="px-4 py-2 text-xs font-semibold text-bio-blue/70 uppercase tracking-wider border-b border-white/10">Python Basics</div>
+                  <Link href="/labs/1" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    Lab 1. Setup &amp; First Steps
+                  </Link>
+                  <Link href="/labs/2" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    Lab 2. Strings &amp; Lists
+                  </Link>
+                  <Link href="/labs/3" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    Lab 3. Loops &amp; Dictionaries
+                  </Link>
+                  <Link href="/labs/4" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    Lab 4. Functions, Files &amp; Errors
+                  </Link>
+                  <div className="px-4 py-2 text-xs font-semibold text-bio-blue/70 uppercase tracking-wider border-t border-b border-white/10">Python &amp; Data</div>
+                  <Link href="/labs/5" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    Lab 5. DepMap Data Analysis
+                  </Link>
+                  <Link href="/labs/6" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    Lab 6. Explorative Data Analysis
+                  </Link>
+                  <Link href="/labs/7" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    Lab 7. End-to-End Data Mining
+                  </Link>
+                  <Link href="/labs/8" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                    Lab 8. LLMs &amp; Agentic AI
                   </Link>
                 </div>
               )}
@@ -183,6 +234,21 @@ export default function Navigation() {
               <Link href="/lectures/6" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">6. Explorative Data Analysis</Link>
               <Link href="/lectures/7" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">7. End-to-End Data Mining</Link>
               <Link href="/lectures/8" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">8. LLMs &amp; Agentic AI</Link>
+            </div>
+
+            {/* Labs Section */}
+            <div className="border-b border-white/10 pb-3">
+              <Link href="/labs" onClick={toggleMobileMenu} className="block nav-link py-1.5 text-sm font-semibold text-bio-blue">All Labs</Link>
+              <div className="text-xs font-semibold text-bio-blue/70 uppercase tracking-wider mt-2 mb-1">Python Basics</div>
+              <Link href="/labs/1" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 1. Setup &amp; First Steps</Link>
+              <Link href="/labs/2" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 2. Strings &amp; Lists</Link>
+              <Link href="/labs/3" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 3. Loops &amp; Dictionaries</Link>
+              <Link href="/labs/4" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 4. Functions, Files &amp; Errors</Link>
+              <div className="text-xs font-semibold text-bio-blue/70 uppercase tracking-wider mt-2 mb-1">Python &amp; Data</div>
+              <Link href="/labs/5" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 5. DepMap Data Analysis</Link>
+              <Link href="/labs/6" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 6. Explorative Data Analysis</Link>
+              <Link href="/labs/7" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 7. End-to-End Data Mining</Link>
+              <Link href="/labs/8" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 8. LLMs &amp; Agentic AI</Link>
             </div>
 
             <button onClick={() => { scrollToSection('seminars'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Seminars</button>

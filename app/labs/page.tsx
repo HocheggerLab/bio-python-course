@@ -1,62 +1,10 @@
 import Link from 'next/link'
-
-interface LabCard {
-  href: string
-  icon: string
-  title: string
-  description: string
-  cta: string
-  color: 'blue' | 'green' | 'yellow' | 'purple'
-  external?: boolean
-}
-
-const cards: LabCard[] = [
-  {
-    href: '/labs/sessions',
-    icon: '🧪',
-    title: 'Lab Sessions',
-    description:
-      'Guided sessions that recap the lecture material and walk you through hands-on practice. New slide decks each week.',
-    cta: 'Open sessions →',
-    color: 'blue',
-  },
-  {
-    href: '/notebooks',
-    icon: '📓',
-    title: 'Notebooks',
-    description:
-      'Every notebook from every lecture, ready to open in Google Colab. Tutorial walk-throughs and exercise notebooks.',
-    cta: 'Browse notebooks →',
-    color: 'green',
-  },
-  {
-    href: '/labs/cheatsheets',
-    icon: '📄',
-    title: 'Cheatsheets',
-    description:
-      'One-page PDF references for the topics we cover — variables, types, string methods, plotting, and more.',
-    cta: 'Get cheatsheets →',
-    color: 'yellow',
-  },
-  {
-    href: '/labs/datacamp',
-    icon: '🎓',
-    title: 'DataCamp Courses',
-    description:
-      'Curated DataCamp tracks that pair with each lecture — extra structured practice if you want more depth.',
-    cta: 'See courses →',
-    color: 'purple',
-  },
-]
-
-const colorClasses: Record<LabCard['color'], string> = {
-  blue: 'border-bio-blue/30 bg-bio-blue/10 hover:bg-bio-blue/15 text-bio-blue',
-  green: 'border-bio-green/30 bg-bio-green/10 hover:bg-bio-green/15 text-bio-green',
-  yellow: 'border-bio-yellow/30 bg-bio-yellow/10 hover:bg-bio-yellow/15 text-bio-yellow',
-  purple: 'border-purple-400/30 bg-purple-400/10 hover:bg-purple-400/15 text-purple-400',
-}
+import { labs } from './_shared/labs'
 
 export default function LabsPage() {
+  const basics = labs.filter((l) => l.group === 'Python Basics')
+  const data = labs.filter((l) => l.group === 'Python & Data')
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-bio-dark to-bio-darker pt-24 pb-16 px-4">
       <div className="container mx-auto max-w-6xl">
@@ -73,48 +21,70 @@ export default function LabsPage() {
             Labs
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Everything you need between lectures: guided sessions, exercise notebooks,
-            quick references, and external practice tracks.
+            Eight hands-on labs — one per lecture. Each lab bundles a recap deck
+            with practice notebooks you run in Colab.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 xl:gap-8">
-          {cards.map((card) => {
-            const Tag = card.external ? 'a' : Link
-            const tagProps = card.external
-              ? { href: card.href, target: '_blank', rel: 'noopener noreferrer' }
-              : { href: card.href }
-            return (
-              <Tag
-                key={card.title}
-                {...tagProps}
-                className={`group block rounded-2xl border-2 transition-all duration-300
-                            p-6 md:p-8 xl:p-10
-                            hover:-translate-y-1 hover:shadow-xl
-                            ${colorClasses[card.color].replace(/text-\S+/, '')}`}
-              >
-                <div className="flex items-start gap-4 md:gap-6">
-                  <div className="text-4xl md:text-5xl xl:text-6xl shrink-0">{card.icon}</div>
-                  <div className="flex-1 min-w-0">
-                    <h2 className={`text-xl md:text-2xl xl:text-3xl font-bold mb-2 md:mb-3 ${colorClasses[card.color].match(/text-\S+/)?.[0] ?? ''}`}>
-                      {card.title}
-                    </h2>
-                    <p className="text-gray-300 text-sm md:text-base xl:text-lg leading-relaxed mb-4 md:mb-5">
-                      {card.description}
-                    </p>
-                    <span
-                      className={`inline-flex items-center font-semibold text-sm md:text-base ${colorClasses[card.color].match(/text-\S+/)?.[0] ?? ''} group-hover:translate-x-1 transition-transform`}
-                    >
-                      {card.cta}
-                    </span>
-                  </div>
-                </div>
-              </Tag>
-            )
-          })}
-        </div>
+        <LabSection title="Python Basics" items={basics} />
+        <LabSection title="Python & Data" items={data} className="mt-12 md:mt-16" />
 
       </div>
     </div>
+  )
+}
+
+function LabSection({
+  title,
+  items,
+  className = '',
+}: {
+  title: string
+  items: typeof labs
+  className?: string
+}) {
+  return (
+    <section className={className}>
+      <h2 className="text-xs md:text-sm font-semibold text-bio-blue/70 uppercase tracking-widest mb-4 md:mb-6">
+        {title}
+      </h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+        {items.map((lab) => (
+          <Link
+            key={lab.num}
+            href={`/labs/${lab.num}`}
+            className={`block rounded-2xl border-2 p-5 md:p-6 transition-all duration-300
+              ${lab.available
+                ? 'border-bio-blue/30 bg-bio-blue/10 hover:bg-bio-blue/15 hover:-translate-y-1 hover:shadow-xl'
+                : 'border-white/10 bg-white/[0.03] hover:bg-white/[0.06]'}
+            `}
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <span
+                className={`inline-flex items-center justify-center rounded-full font-bold w-10 h-10 text-base
+                  ${lab.available ? 'bg-bio-blue/20 text-bio-blue' : 'bg-white/10 text-white/50'}`}
+              >
+                {lab.num}
+              </span>
+              <h3 className="text-base md:text-lg font-bold text-white leading-snug">
+                {lab.title}
+              </h3>
+            </div>
+
+            <p className="text-gray-400 text-sm leading-relaxed mb-3">
+              {lab.blurb}
+            </p>
+
+            <span
+              className={`inline-block text-xs font-semibold
+                ${lab.available ? 'text-bio-blue' : 'text-white/40'}`}
+            >
+              {lab.available ? 'Open lab →' : 'Coming soon'}
+            </span>
+          </Link>
+        ))}
+      </div>
+    </section>
   )
 }

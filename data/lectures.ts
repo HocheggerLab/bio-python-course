@@ -22,7 +22,7 @@ export const pythonBasicsData: Lecture[] = [
       "print() and f-strings"
     ],
     slideUrl: "/lectures/1",
-    labsUrl: "/labs/sessions",
+    labsUrl: "/labs/1",
     type: 'core'
   },
   {

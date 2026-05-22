@@ -14,25 +14,25 @@ const sessions: Session[] = [
     title: 'Using Notebooks',
     topics: ['Colab basics', 'Cells & shortcuts', 'Your first notebook', 'Practice notebook'],
     status: 'available',
-    href: '/labs/sessions/1',
+    href: '/labs/1/1',
   },
   {
     num: 2,
     title: 'Variables, Data Types & Operators',
     topics: ['Recap of lecture 1', 'Variables & types', 'Arithmetic & string ops', 'Practice notebook'],
     status: 'available',
-    href: '/labs/sessions/2',
+    href: '/labs/1/2',
   },
   {
     num: 3,
     title: 'Terminal Usage — Windows & Mac',
     topics: ['Why the terminal?', 'Navigating the file system', 'Running Python from the terminal', 'Cheatsheet'],
     status: 'available',
-    href: '/labs/sessions/3',
+    href: '/labs/1/3',
   },
 ]
 
-export default function LabSessionsPage() {
+export default function Lab1Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-bio-dark to-bio-darker pt-24 pb-16 px-4">
       <div className="container mx-auto max-w-6xl">
@@ -45,8 +45,11 @@ export default function LabSessionsPage() {
         </Link>
 
         <div className="text-center mb-12 md:mb-16">
+          <p className="text-bio-blue/70 text-sm md:text-base font-semibold uppercase tracking-widest mb-2">
+            Lab 1
+          </p>
           <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-bio-blue mb-4">
-            Lab Sessions
+            Setup &amp; First Steps
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Guided slide decks combining a recap of the lecture material with
@@ -96,7 +99,7 @@ export default function LabSessionsPage() {
                   className={`inline-block text-xs md:text-sm font-semibold
                     ${disabled
                       ? 'text-white/40'
-                      : 'text-bio-blue group-hover:translate-x-1'}`}
+                      : 'text-bio-blue'}`}
                 >
                   {disabled ? 'Coming soon' : 'Open session →'}
                 </span>

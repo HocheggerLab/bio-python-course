@@ -1,34 +1,17 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import SlideViewer from '@/components/lectures/SlideViewer'
+import { LectureData } from '@/data/lectures/types'
+import { session1Data } from '@/data/sessions/session1'
+import { session2Data } from '@/data/sessions/session2'
 
-interface SessionInfo {
+interface SessionStub {
   num: number
   title: string
   outline: string[]
 }
 
-const sessions: Record<string, SessionInfo> = {
-  '1': {
-    num: 1,
-    title: 'Using Notebooks',
-    outline: [
-      'What a notebook is',
-      'Cells, kernels & shortcuts',
-      'Running Python in Colab',
-      'Practice notebook',
-    ],
-  },
-  '2': {
-    num: 2,
-    title: 'Variables, Data Types & Operators',
-    outline: [
-      'Recap of lecture 1',
-      'Variables & assignment',
-      'Numeric & string types',
-      'Arithmetic & string operations',
-      'Practice notebook',
-    ],
-  },
+const sessionStubs: Record<string, SessionStub> = {
   '3': {
     num: 3,
     title: 'Terminal Usage — Windows & Mac',
@@ -41,13 +24,34 @@ const sessions: Record<string, SessionInfo> = {
   },
 }
 
-export default async function LabSessionPage({
+const sessionDecks: Record<string, LectureData> = {
+  '1': session1Data,
+  '2': session2Data,
+}
+
+export default async function Lab1SessionPage({
   params,
 }: {
   params: Promise<{ id: string }>
 }) {
   const { id } = await params
-  const session = sessions[id]
+
+  const deck = sessionDecks[id]
+  if (deck) {
+    return (
+      <>
+        <Link
+          href="/labs/1"
+          className="fixed top-20 left-4 md:top-24 md:left-6 z-40 inline-flex items-center gap-2 rounded-full bg-bio-dark/80 backdrop-blur-md border border-bio-blue/30 text-bio-blue hover:bg-bio-blue/20 hover:text-bio-light-blue transition-colors px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-semibold shadow-lg"
+        >
+          ← Lab 1
+        </Link>
+        <SlideViewer lecture={deck} />
+      </>
+    )
+  }
+
+  const session = sessionStubs[id]
   if (!session) notFound()
 
   return (
@@ -55,10 +59,10 @@ export default async function LabSessionPage({
       <div className="container mx-auto max-w-4xl">
 
         <Link
-          href="/labs/sessions"
+          href="/labs/1"
           className="inline-flex items-center mb-8 text-bio-blue hover:text-bio-yellow transition-colors text-sm md:text-base"
         >
-          ← Back to sessions
+          ← Back to Lab 1
         </Link>
 
         <div className="rounded-2xl border-2 border-bio-blue/30 bg-bio-blue/10 p-8 md:p-12 xl:p-16">
