@@ -1,0 +1,92 @@
+/* Shared cheat-sheet styling — Python for Biologists.
+   Used by the terminal sheets; render with weasyprint. */
+
+@page { size: A4; margin: 0; }
+html { background: #0d1117; }
+body {
+  margin: 0;
+  padding: 11mm 12mm 9mm;
+  font-family: "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  color: #d1d5db;
+  font-size: 9pt;
+  line-height: 1.4;
+}
+
+/* header */
+header { margin-bottom: 8px; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
+header .row { display: flex; align-items: center; justify-content: space-between; }
+h1 { margin: 0; font-size: 18pt; font-weight: 800; color: #ffffff; letter-spacing: -0.3px; white-space: nowrap; }
+h1 .accent { color: #00d4ff; }
+body.terminal h1 .accent { color: #6bd36f; }
+.sub { margin-top: 2px; font-size: 9pt; color: #9ca3af; }
+
+.badge { font-size: 8pt; font-weight: 700; padding: 3px 10px; border-radius: 999px; border: 1px solid; }
+.badge.mac { color: #58e6ff; border-color: rgba(0,212,255,0.4); background: rgba(0,212,255,0.10); }
+.badge.win { color: #6bd36f; border-color: rgba(76,175,80,0.4); background: rgba(76,175,80,0.10); }
+
+/* "how to open" panel */
+.open {
+  background: rgba(76,175,80,0.07);
+  border: 1px solid #30363d; border-left: 3px solid #4CAF50;
+  border-radius: 7px; padding: 8px 11px; margin: 9px 0 9px;
+}
+.open h2 { color: #6bd36f; margin: 0 0 5px; font-size: 10.5pt; }
+.open ol { margin: 0; padding-left: 18px; font-size: 8.7pt; }
+.open ol li { margin: 1px 0; }
+.open .prompt { margin-top: 5px; font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 8.2pt; color: #8b949e; }
+
+kbd {
+  font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 7.6pt;
+  background: #161b22; border: 1px solid #30363d; border-bottom-width: 2px;
+  border-radius: 4px; padding: 1px 5px; color: #e6edf3;
+}
+
+/* two-column masonry of cards */
+.grid { column-count: 2; column-gap: 10px; }
+.card {
+  break-inside: avoid;
+  background: rgba(255,255,255,0.04);
+  border-left: 3px solid #00d4ff;
+  border-radius: 7px;
+  padding: 8px 10px 9px;
+  margin: 0 0 9px;
+}
+.card h2 { margin: 0 0 5px; font-size: 10.5pt; font-weight: 700; color: #00d4ff; }
+.card p { margin: 0 0 5px; font-size: 8.3pt; color: #9ca3af; }
+
+.blue   { border-left-color: #00d4ff; } .blue   h2 { color: #58e6ff; }
+.green  { border-left-color: #4CAF50; } .green  h2 { color: #6bd36f; }
+.yellow { border-left-color: #ffd700; } .yellow h2 { color: #ffd700; }
+.purple { border-left-color: #a78bfa; } .purple h2 { color: #c4b5fd; }
+.pink   { border-left-color: #f472b6; } .pink   h2 { color: #f9a8d4; }
+.red    { border-left-color: #f87171; } .red    h2 { color: #fca5a5; }
+
+pre {
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  background: #161b22; border: 1px solid #30363d; border-radius: 5px;
+  padding: 7px 8px; margin: 0; font-size: 8.2pt; line-height: 1.55;
+  color: #e6edf3; white-space: pre-wrap;
+}
+.c { color: #8b949e; } /* comment */
+.s { color: #7ee787; } /* string  */
+.n { color: #79c0ff; } /* number/keyword */
+.o { color: #ff7b72; } /* danger/operator */
+
+.warn { color: #fca5a5; font-size: 8pt; margin: 5px 0 0; }
+
+/* Warp pro tip */
+.protip {
+  background: rgba(255,215,0,0.08);
+  border: 1px solid #30363d; border-left: 3px solid #ffd700;
+  border-radius: 7px; padding: 8px 11px; margin: 4px 0 0;
+}
+.protip .eyebrow { font-size: 7.2pt; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,215,0,0.65); font-weight: 700; }
+.protip h2 { color: #ffd700; margin: 1px 0 4px; font-size: 10.5pt; }
+.protip p { margin: 0; font-size: 8.4pt; color: #c9d1d9; }
+.protip a { color: #58e6ff; text-decoration: none; font-weight: 700; }
+
+footer {
+  margin-top: 8px; border-top: 1px solid #30363d; padding-top: 6px;
+  display: flex; justify-content: space-between;
+  font-size: 7.6pt; color: #6b7280;
+}

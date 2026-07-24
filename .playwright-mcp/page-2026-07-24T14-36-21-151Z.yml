@@ -1,0 +1,91 @@
+- generic [active] [ref=f1e1]:
+  - navigation [ref=f1e2]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - generic [ref=f1e6]: 🧬
+        - link "Python for Biologists" [ref=f1e7] [cursor=pointer]:
+          - /url: /
+      - generic [ref=f1e8]:
+        - button "Lectures" [ref=f1e10] [cursor=pointer]
+        - button "Labs" [ref=f1e14] [cursor=pointer]
+        - button "Seminars" [ref=f1e17] [cursor=pointer]
+        - button "Resources" [ref=f1e19] [cursor=pointer]
+        - button "Schedule" [ref=f1e22] [cursor=pointer]
+        - button "About" [ref=f1e23] [cursor=pointer]
+        - link "GitHub →" [ref=f1e24] [cursor=pointer]:
+          - /url: https://github.com/HocheggerLab/y3-bio-python
+  - link "← Lab 1" [ref=f1e25] [cursor=pointer]:
+    - /url: /labs/1
+  - generic [ref=f1e28]:
+    - heading "Your First Terminal — Safe to Touch" [level=2] [ref=f1e29]
+    - generic [ref=f1e30]:
+      - generic [ref=f1e31]:
+        - generic [ref=f1e32]:
+          - generic [ref=f1e33]: A conversation, not a hacker screen
+          - paragraph [ref=f1e34]:
+            - text: You type a line, the computer answers. This one is a
+            - strong [ref=f1e35]: sandbox
+            - text: — it isn't your real machine, so you
+            - strong [ref=f1e36]: cannot break anything
+            - text: . Poke at it.
+        - generic [ref=f1e37]:
+          - generic [ref=f1e38]: Try these, in order
+          - list [ref=f1e39]:
+            - listitem [ref=f1e40]:
+              - generic [ref=f1e41]: "1"
+              - generic [ref=f1e42]: help — see what you can do
+            - listitem [ref=f1e43]:
+              - generic [ref=f1e44]: "2"
+              - generic [ref=f1e45]: pwd — where am I?
+            - listitem [ref=f1e46]:
+              - generic [ref=f1e47]: "3"
+              - generic [ref=f1e48]: ls — what's here?
+            - listitem [ref=f1e49]:
+              - generic [ref=f1e50]: "4"
+              - generic [ref=f1e51]: cd Downloads then ls
+            - listitem [ref=f1e52]:
+              - generic [ref=f1e53]: "5"
+              - generic [ref=f1e54]: cd .. — go back
+        - paragraph [ref=f1e56]:
+          - text: Flip the 🍎 macOS / ⊞ Windows switch and watch the prompt and path change —
+          - strong [ref=f1e57]: the commands stay identical
+          - text: . That's the whole cross-platform story in one toggle.
+      - generic [ref=f1e59]:
+        - generic [ref=f1e60]:
+          - generic [ref=f1e61]: practice terminal
+          - generic [ref=f1e67]:
+            - button "🍎 macOS" [ref=f1e68] [cursor=pointer]
+            - button "⊞ Windows" [ref=f1e69] [cursor=pointer]
+            - button "↺ reset" [ref=f1e70] [cursor=pointer]
+        - generic [ref=f1e71]:
+          - generic [ref=f1e72]: practice sandbox — type 'help' to see what you can do. You can't break anything here.
+          - generic [ref=f1e73]:
+            - generic [ref=f1e74]: you@mac ~ %
+            - textbox "terminal input" [ref=f1e75]
+  - generic [ref=f1e77]:
+    - button "← Previous" [disabled] [ref=f1e78]
+    - generic [ref=f1e79]:
+      - button "Go to slide 1" [ref=f1e80] [cursor=pointer]
+      - button "Go to slide 2" [ref=f1e81] [cursor=pointer]
+    - button "Next →" [ref=f1e82] [cursor=pointer]
+  - contentinfo [ref=f1e83]:
+    - generic [ref=f1e85]:
+      - generic [ref=f1e86]:
+        - generic [ref=f1e87]:
+          - paragraph [ref=f1e88]: Python for Biologists
+          - link "University of Sussex" [ref=f1e89] [cursor=pointer]:
+            - /url: https://www.sussex.ac.uk/schools/life-sciences/
+        - paragraph [ref=f1e90]: © Helfrid Hochegger 2025 | All materials freely available
+      - generic [ref=f1e91]:
+        - generic [ref=f1e92]:
+          - link "📧 Contact" [ref=f1e93] [cursor=pointer]:
+            - /url: mailto:hh65@sussex.ac.uk
+          - link "💻 GitHub" [ref=f1e94] [cursor=pointer]:
+            - /url: https://github.com/HocheggerLab/y3-bio-python
+        - generic [ref=f1e95]:
+          - link "🦋 Bluesky" [ref=f1e96] [cursor=pointer]:
+            - /url: https://bsky.app/profile/helfridh.bsky.social
+          - link "💼 LinkedIn" [ref=f1e97] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/helfrid-hochegger-996a85299/
+          - link "👨‍🏫 Instructor" [ref=f1e98] [cursor=pointer]:
+            - /url: https://profiles.sussex.ac.uk/p218740-helfrid-hochegger

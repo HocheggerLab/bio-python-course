@@ -39,7 +39,7 @@ const types: Array<{
   },
 ]
 
-export function Slide03DataTypes() {
+export function Slide02DataTypes() {
   return (
     <>
       <SlideTitle>

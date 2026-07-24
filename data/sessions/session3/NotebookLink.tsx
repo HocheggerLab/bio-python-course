@@ -1,6 +1,6 @@
 const COLAB_BASE = 'https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main'
 
-export const NOTEBOOK_VARIABLES = `${COLAB_BASE}/lab01/02_variables_and_print.ipynb`
+export const NOTEBOOK_DATATYPES = `${COLAB_BASE}/lab01/03_data_types.ipynb`
 
 export function NotebookLink({ url, label }: { url: string; label?: string }) {
   return (

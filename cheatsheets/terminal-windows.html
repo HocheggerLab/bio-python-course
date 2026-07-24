@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Terminal Cheat Sheet — Windows</title>
+<link rel="stylesheet" href="cheatsheet.css">
+</head>
+<body class="terminal">
+
+<header>
+  <div class="row">
+    <h1>Terminal <span class="accent">Cheat Sheet</span></h1>
+    <span class="badge win">Windows · PowerShell</span>
+  </div>
+  <div class="sub">The everyday commands — find your way, make folders, move files. Python for Biologists.</div>
+</header>
+
+<div class="open">
+  <h2>Open the terminal</h2>
+  <ol>
+    <li>Press the <kbd>Win</kbd> key, type <b>PowerShell</b>, hit <kbd>Enter</kbd></li>
+    <li>(or right-click <b>Start → Terminal</b>)</li>
+    <li>Use <b>PowerShell</b> — not the old <b>Command Prompt</b> (cmd)</li>
+  </ol>
+  <div class="prompt">You'll see a prompt like:   PS C:\Users\you&gt;</div>
+</div>
+
+<div class="grid">
+
+  <div class="card blue">
+    <h2>Find your way</h2>
+<pre>pwd            <span class="c"># where am I?</span>
+ls             <span class="c"># list files  (or: dir)</span>
+ls -Force      <span class="c"># include hidden files</span>
+cd folder      <span class="c"># go into a folder</span>
+cd ..          <span class="c"># go up one level</span>
+cd ~           <span class="c"># go home</span>
+clear          <span class="c"># clear the screen (or cls)</span>
+cat file.txt   <span class="c"># show a file's contents</span></pre>
+  </div>
+
+  <div class="card green">
+    <h2>Make things</h2>
+<pre>mkdir data       <span class="c"># make a folder</span>
+mkdir a\b\c      <span class="c"># nested folders</span>
+ni notes.txt     <span class="c"># make an empty file</span></pre>
+    <p style="margin-top:6px">Paths use <b>\</b> (backslash): <span style="font-family:monospace">cd Documents\data</span></p>
+  </div>
+
+  <div class="card red">
+    <h2>Copy · move · delete</h2>
+<pre>cp a.txt b.txt   <span class="c"># copy a file</span>
+cp -r dir1 dir2  <span class="c"># copy a folder</span>
+mv a.txt data\   <span class="c"># move a file</span>
+mv old.txt new.txt <span class="c"># rename a file</span>
+rm file.txt      <span class="c"># delete a file</span>
+rm -r folder     <span class="o"># delete a folder</span></pre>
+    <p class="warn"><b>Careful:</b> rm is permanent — it does <b>not</b> use the Recycle Bin.</p>
+  </div>
+
+  <div class="card purple">
+    <h2>Help &amp; shortcuts</h2>
+<pre>Get-Help ls    <span class="c"># help for a command</span>
+ls -?          <span class="c"># quick usage</span></pre>
+    <p style="margin-top:6px">
+      <kbd>Tab</kbd> auto-completes names ·
+      <kbd>↑</kbd> <kbd>↓</kbd> scroll previous commands
+    </p>
+  </div>
+
+</div>
+
+<div class="protip">
+  <div class="eyebrow">Pro tip</div>
+  <h2>A nicer terminal — Warp</h2>
+  <p>
+    <a href="https://www.warp.dev">warp.dev</a> is a free, modern terminal (same on Windows &amp; Mac)
+    with autocomplete and a built-in AI helper — a teacher, not a crutch. Download it, choose
+    <b>Skip for now</b> (no account needed). Every command above works exactly the same in it.
+  </p>
+</div>
+
+<footer>
+  <span>Python for Biologists — University of Sussex</span>
+  <span>You can't break anything by looking. Experiment freely.</span>
+</footer>
+
+</body>
+</html>

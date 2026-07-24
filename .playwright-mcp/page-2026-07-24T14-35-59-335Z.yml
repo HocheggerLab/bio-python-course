@@ -1,0 +1,105 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: 🧬
+        - link "Python for Biologists" [ref=e7] [cursor=pointer]:
+          - /url: /
+      - generic [ref=e8]:
+        - button "Lectures" [ref=e10] [cursor=pointer]
+        - button "Labs" [ref=e14] [cursor=pointer]
+        - button "Seminars" [ref=e17] [cursor=pointer]
+        - button "Resources" [ref=e19] [cursor=pointer]
+        - button "Schedule" [ref=e22] [cursor=pointer]
+        - button "About" [ref=e23] [cursor=pointer]
+        - link "GitHub →" [ref=e24] [cursor=pointer]:
+          - /url: https://github.com/HocheggerLab/y3-bio-python
+  - link "← Lab 1" [ref=e25] [cursor=pointer]:
+    - /url: /labs/1
+  - generic [ref=e28]:
+    - heading "Your First Terminal — Safe to Touch" [level=2] [ref=e29]
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - generic [ref=e33]: A conversation, not a hacker screen
+          - paragraph [ref=e34]:
+            - text: You type a line, the computer answers. This one is a
+            - strong [ref=e35]: sandbox
+            - text: — it isn't your real machine, so you
+            - strong [ref=e36]: cannot break anything
+            - text: . Poke at it.
+        - generic [ref=e37]:
+          - generic [ref=e38]: Try these, in order
+          - list [ref=e39]:
+            - listitem [ref=e40]:
+              - generic [ref=e41]: "1"
+              - generic [ref=e42]: help — see what you can do
+            - listitem [ref=e43]:
+              - generic [ref=e44]: "2"
+              - generic [ref=e45]: pwd — where am I?
+            - listitem [ref=e46]:
+              - generic [ref=e47]: "3"
+              - generic [ref=e48]: ls — what's here?
+            - listitem [ref=e49]:
+              - generic [ref=e50]: "4"
+              - generic [ref=e51]: cd Downloads then ls
+            - listitem [ref=e52]:
+              - generic [ref=e53]: "5"
+              - generic [ref=e54]: cd .. — go back
+        - paragraph [ref=e56]:
+          - text: Flip the 🍎 macOS / ⊞ Windows switch and watch the prompt and path change —
+          - strong [ref=e57]: the commands stay identical
+          - text: . That's the whole cross-platform story in one toggle.
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - generic [ref=e61]: practice terminal
+          - generic [ref=e67]:
+            - button "🍎 macOS" [ref=e68] [cursor=pointer]
+            - button "⊞ Windows" [ref=e69] [cursor=pointer]
+            - button "↺ reset" [ref=e70] [cursor=pointer]
+        - generic [ref=e71]:
+          - generic [ref=e72]: practice sandbox — type 'help' to see what you can do. You can't break anything here.
+          - generic [ref=e109]: you@mac ~ % ls
+          - generic [ref=e110]:
+            - generic [ref=e111]: Desktop/
+            - generic [ref=e112]: Documents/
+            - generic [ref=e113]: Downloads/
+          - generic [ref=e114]: you@mac ~ % cd Downloads
+          - generic [ref=e115]: you@mac ~/Downloads % ls
+          - generic [ref=e116]:
+            - generic [ref=e117]: reads.fastq.gz
+            - generic [ref=e118]: sequences.fasta
+          - generic [ref=e119]: PS C:\Users\you\Downloads> pwd
+          - generic [ref=e120]: C:\Users\you\Downloads
+          - generic [ref=e73]:
+            - generic [ref=e74]: PS C:\Users\you\Downloads>
+            - textbox "terminal input" [active] [ref=e75]
+  - generic [ref=e77]:
+    - button "← Previous" [disabled] [ref=e78]
+    - generic [ref=e79]:
+      - button "Go to slide 1" [ref=e80] [cursor=pointer]
+      - button "Go to slide 2" [ref=e81] [cursor=pointer]
+    - button "Next →" [ref=e82] [cursor=pointer]
+  - contentinfo [ref=e83]:
+    - generic [ref=e85]:
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - paragraph [ref=e88]: Python for Biologists
+          - link "University of Sussex" [ref=e89] [cursor=pointer]:
+            - /url: https://www.sussex.ac.uk/schools/life-sciences/
+        - paragraph [ref=e90]: © Helfrid Hochegger 2025 | All materials freely available
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - link "📧 Contact" [ref=e93] [cursor=pointer]:
+            - /url: mailto:hh65@sussex.ac.uk
+          - link "💻 GitHub" [ref=e94] [cursor=pointer]:
+            - /url: https://github.com/HocheggerLab/y3-bio-python
+        - generic [ref=e95]:
+          - link "🦋 Bluesky" [ref=e96] [cursor=pointer]:
+            - /url: https://bsky.app/profile/helfridh.bsky.social
+          - link "💼 LinkedIn" [ref=e97] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/helfrid-hochegger-996a85299/
+          - link "👨‍🏫 Instructor" [ref=e98] [cursor=pointer]:
+            - /url: https://profiles.sussex.ac.uk/p218740-helfrid-hochegger
+  - button "Open Next.js Dev Tools" [ref=e104] [cursor=pointer]
+  - alert [ref=e108]

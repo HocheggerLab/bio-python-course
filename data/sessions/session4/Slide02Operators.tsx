@@ -2,7 +2,7 @@ import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
 import { SlideCard, CardHeading, CardBody } from '@/components/slides/SlideCard'
 import { NotebookLink, NOTEBOOK_OPERATORS } from './NotebookLink'
 
-export function Slide04Operators() {
+export function Slide02Operators() {
   return (
     <>
       <SlideTitle>

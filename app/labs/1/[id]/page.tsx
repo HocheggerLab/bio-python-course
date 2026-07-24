@@ -4,6 +4,9 @@ import SlideViewer from '@/components/lectures/SlideViewer'
 import { LectureData } from '@/data/lectures/types'
 import { session1Data } from '@/data/sessions/session1'
 import { session2Data } from '@/data/sessions/session2'
+import { session3Data } from '@/data/sessions/session3'
+import { session4Data } from '@/data/sessions/session4'
+import { session5Data } from '@/data/sessions/session5'
 
 interface SessionStub {
   num: number
@@ -11,22 +14,14 @@ interface SessionStub {
   outline: string[]
 }
 
-const sessionStubs: Record<string, SessionStub> = {
-  '3': {
-    num: 3,
-    title: 'Terminal Usage — Windows & Mac',
-    outline: [
-      'Why the terminal matters',
-      'Navigating the file system',
-      'Running Python from the terminal',
-      'Cheatsheet & next steps',
-    ],
-  },
-}
+const sessionStubs: Record<string, SessionStub> = {}
 
 const sessionDecks: Record<string, LectureData> = {
   '1': session1Data,
   '2': session2Data,
+  '3': session3Data,
+  '4': session4Data,
+  '5': session5Data,
 }
 
 export default async function Lab1SessionPage({

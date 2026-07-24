@@ -1,5 +1,4 @@
 import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
-import { SlideCard, CardHeading, CardBody } from '@/components/slides/SlideCard'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
 const demoCode = `codon_table = {
@@ -66,37 +65,15 @@ export function Slide23Capstone() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
 
-        {/* LEFT — a happy Claudia + what's inside */}
-        <div className="flex flex-col gap-3 md:gap-4 min-h-0">
-          <figure className="rounded-xl overflow-hidden bg-white shadow-lg ring-1 ring-white/10 w-full max-w-[22rem] md:max-w-none mx-auto">
+        {/* LEFT — a happy Claudia, running it on the whole folder */}
+        <div className="flex items-center justify-center min-h-0">
+          <figure className="rounded-xl overflow-hidden bg-white shadow-lg ring-1 ring-white/10 w-full max-w-[26rem] md:max-w-none">
             <img
-              src="/claudia_capstone.png"
+              src="/claudia_final.png"
               alt="Claudia smiling as her finished program translates a whole folder of sequences at once, cleanly skipping the broken one"
               className="w-full h-auto object-contain"
             />
           </figure>
-
-          <SlideCard color="green" layout="start" padding="tight" className="border-l-4">
-            <CardHeading size="sm" color="green" className="mb-2">
-              Every session, working together
-            </CardHeading>
-            <CardBody className="text-[11px] md:text-sm xl:text-base">
-              A <strong>dictionary</strong> (S2) maps codons · two <strong>functions</strong> (S4)
-              name the work · a <strong>loop</strong> with <span className="font-mono">break</span>{' '}
-              (S3) reads each gene · and <span className="font-mono">raise</span> +{' '}
-              <span className="font-mono">try/except</span> (S4) let one bad sequence be{' '}
-              <em>skipped</em>, not crash the batch.
-            </CardBody>
-          </SlideCard>
-
-          <SlideCard color="yellow" layout="start" padding="tight" className="border-l-4">
-            <CardBody className="text-[11px] md:text-sm">
-              The payoff: because <span className="font-mono">clean_dna</span> refuses bad data at the
-              door, <span className="font-mono">translate</span> can <strong>trust</strong> every
-              codon — <span className="font-mono">codon_table[codon]</span>, no more{' '}
-              <span className="font-mono">.get(codon, &quot;?&quot;)</span> quietly lying.
-            </CardBody>
-          </SlideCard>
         </div>
 
         {/* RIGHT — the whole program, live */}

@@ -18,17 +18,31 @@ const sessions: Session[] = [
   },
   {
     num: 2,
-    title: 'Variables, Data Types & Operators',
-    topics: ['Recap of lecture 1', 'Variables & types', 'Arithmetic & string ops', 'Practice notebook'],
+    title: 'Variables & print',
+    topics: ['Store values in variables', 'Naming rules', 'print() & f-strings', 'Practice notebook'],
     status: 'available',
     href: '/labs/1/2',
   },
   {
     num: 3,
+    title: 'Data Types',
+    topics: ['int, float, str, bool', 'Checking with type()', 'Converting between types', 'Practice notebook'],
+    status: 'available',
+    href: '/labs/1/3',
+  },
+  {
+    num: 4,
+    title: 'Operators',
+    topics: ['Arithmetic & string ops', 'Comparisons & booleans', 'A first mini-program', 'Practice notebook'],
+    status: 'available',
+    href: '/labs/1/4',
+  },
+  {
+    num: 5,
     title: 'Terminal Usage — Windows & Mac',
     topics: ['Why the terminal?', 'Navigating the file system', 'Running Python from the terminal', 'Cheatsheet'],
     status: 'available',
-    href: '/labs/1/3',
+    href: '/labs/1/5',
   },
 ]
 
@@ -106,6 +120,29 @@ export default function Lab1Page() {
               </Link>
             )
           })}
+        </div>
+
+        {/* Resources & cheat sheets */}
+        <div className="mt-8 md:mt-10">
+          <Link
+            href="/labs/1/resources"
+            className="block rounded-2xl border-2 border-bio-yellow/30 bg-bio-yellow/10 hover:bg-bio-yellow/15 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 p-6 md:p-8"
+          >
+            <div className="flex items-center gap-4 md:gap-5">
+              <span className="text-4xl md:text-5xl shrink-0">📄</span>
+              <div className="min-w-0">
+                <h2 className="text-lg md:text-xl xl:text-2xl font-bold text-white leading-snug">
+                  Resources &amp; Cheat Sheets
+                </h2>
+                <p className="text-sm md:text-base text-gray-300 mt-1">
+                  Downloadable one-page references — Python basics &amp; terminal commands.
+                </p>
+              </div>
+              <span className="ml-auto shrink-0 text-bio-yellow font-semibold text-sm md:text-base">
+                Open →
+              </span>
+            </div>
+          </Link>
         </div>
 
       </div>
