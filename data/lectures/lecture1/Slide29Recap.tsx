@@ -6,9 +6,9 @@ const covered = [
   'Variables & assignment',
   'print() and f-strings',
   'Built-in functions — len(), round(), type()',
+  'Reading errors — NameError, SyntaxError, TypeError',
   'Four data types — str, int, float, bool',
-  'Booleans & comparisons',
-  'Arithmetic — +, -, *, /, //, %, **',
+  'Arithmetic — +, -, *, /',
   '.count() — your first string method',
   'A working GC content calculator',
 ]

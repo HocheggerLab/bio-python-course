@@ -2,10 +2,10 @@ import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
 import { SlideCard, CardHeading, CardBody, CardList } from '@/components/slides/SlideCard'
 
 const sessionTwo = [
-  'Strings as sequences — len(), indexing, slicing',
-  'More string methods — .upper(), .replace(), splitting',
-  'Lists — holding many sequences at once',
-  'for-loops — run the GC calculator on each one',
+  'Lists — hold a whole folder of sequences at once',
+  'Strings are sequences too — indexing & slicing to pull out codons',
+  'More string methods — .replace() (transcription), .find()',
+  'Dictionaries — map each codon to its amino acid',
 ]
 
 const homework = [
@@ -25,11 +25,12 @@ export function Slide30Outlook() {
 
         <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">
-            Session 2 — scaling up the calculator
+            Session 2 — from one sequence to many
           </CardHeading>
           <CardBody className="mb-3 md:mb-4">
-            Today you analysed <strong>one</strong> sequence. But Claudia has{' '}
-            <strong>10,000</strong>. What if we started with <strong>200</strong>?
+            Today you analysed <strong>one</strong> sequence. But Claudia has a whole{' '}
+            <strong>folder</strong> of them — first we need a way to hold many at once, and
+            to look inside each one.
           </CardBody>
           <CardList items={sessionTwo} bullet="▸" color="blue" />
         </SlideCard>

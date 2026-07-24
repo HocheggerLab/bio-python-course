@@ -12,18 +12,20 @@ import { Slide09Roadmap } from './Slide09Roadmap'
 import { Slide09bRoadmap2 } from './Slide09bRoadmap2'
 import { Slide10TodaysGoal } from './Slide10TodaysGoal'
 import { Slide11HowWeWork } from './Slide11HowWeWork'
+// Block 1 — Variables, print, built-ins, errors
 import { Slide14Variables } from './Slide14Variables'
-import { Slide15PrintFStrings } from './Slide15PrintFStrings'
-import { Slide16BuiltinFunctions } from './Slide16BuiltinFunctions'
-import { Slide17TIYAssign } from './Slide17TIYAssign'
-import { Slide18TIYSwap } from './Slide18TIYSwap'
-import { Slide19DataTypes } from './Slide19DataTypes'
-import { Slide20Booleans } from './Slide20Booleans'
-import { Slide21TIYPredictType } from './Slide21TIYPredictType'
-import { Slide22IntegerArithmetic } from './Slide22IntegerArithmetic'
-import { Slide23TIYCodonArithmetic } from './Slide23TIYCodonArithmetic'
-import { Slide24FloatArithmetic } from './Slide24FloatArithmetic'
-import { Slide25TIYGCFraction } from './Slide25TIYGCFraction'
+import { Slide15NamingVariables } from './Slide15NamingVariables'
+import { Slide16Print } from './Slide16Print'
+import { Slide17FStrings } from './Slide17FStrings'
+import { Slide18BuiltinFunctions } from './Slide18BuiltinFunctions'
+import { Slide19Errors } from './Slide19Errors'
+import { Slide20CommonErrors } from './Slide20CommonErrors'
+import { Slide21TIYFixErrors } from './Slide21TIYFixErrors'
+// Block 2 — Data types, operators, GC calculator
+import { Slide22DataTypes } from './Slide22DataTypes'
+import { Slide23TypeFunction } from './Slide23TypeFunction'
+import { Slide24Operators } from './Slide24Operators'
+import { Slide25Division } from './Slide25Division'
 import { Slide26CountMethod } from './Slide26CountMethod'
 import { Slide27FinalDemo } from './Slide27FinalDemo'
 import { Slide28TIYSpikeTrain } from './Slide28TIYSpikeTrain'
@@ -34,6 +36,7 @@ export const lecture1Data: LectureData = {
   id: 'lecture-1',
   title: 'Data Types, Variables and Basic Operations',
   slides: [
+    // ── Intro ──────────────────────────────────────────────
     { id: 1,  title: 'Course Programme',                contentType: 'center', content: <Slide01CourseProgramme /> },
     { id: 2,  title: 'How the Course Works',            contentType: 'top',    content: <Slide02HowCourseWorks /> },
     { id: 3,  title: 'Assessment & Exams',              contentType: 'center', content: <Slide03Assessment /> },
@@ -47,21 +50,23 @@ export const lecture1Data: LectureData = {
     { id: 11, title: 'Our Roadmap',                     contentType: 'top',    content: <Slide09Roadmap /> },
     { id: 12, title: 'Roadmap — Data Science',          contentType: 'top',    content: <Slide09bRoadmap2 /> },
     { id: 13, title: "Session 1 — Today's Goal",        contentType: 'top',    content: <Slide10TodaysGoal /> },
+    // ── Block 1: Variables · print · built-ins · errors ────
     { id: 14, title: 'Variables',                       contentType: 'top',    content: <Slide14Variables /> },
-    { id: 15, title: 'print() and f-strings',           contentType: 'top',    content: <Slide15PrintFStrings /> },
-    { id: 16, title: 'Built-in Functions',              contentType: 'top',    content: <Slide16BuiltinFunctions /> },
-    { id: 17, title: 'TIY — Assign your own',           contentType: 'top',    content: <Slide17TIYAssign /> },
-    { id: 18, title: 'TIY — Swap two variables',        contentType: 'top',    content: <Slide18TIYSwap /> },
-    { id: 19, title: 'Data Types',                      contentType: 'top',    content: <Slide19DataTypes /> },
-    { id: 20, title: 'Booleans & Comparisons',          contentType: 'top',    content: <Slide20Booleans /> },
-    { id: 21, title: 'TIY — Predict the type',          contentType: 'top',    content: <Slide21TIYPredictType /> },
-    { id: 22, title: 'Integer Arithmetic',              contentType: 'top',    content: <Slide22IntegerArithmetic /> },
-    { id: 23, title: 'TIY — Codon arithmetic',          contentType: 'top',    content: <Slide23TIYCodonArithmetic /> },
-    { id: 24, title: 'Float Arithmetic',                contentType: 'top',    content: <Slide24FloatArithmetic /> },
-    { id: 25, title: 'TIY — Compute GC fraction',       contentType: 'top',    content: <Slide25TIYGCFraction /> },
+    { id: 15, title: 'Naming Variables',                contentType: 'top',    content: <Slide15NamingVariables /> },
+    { id: 16, title: 'print()',                         contentType: 'top',    content: <Slide16Print /> },
+    { id: 17, title: 'f-strings',                       contentType: 'top',    content: <Slide17FStrings /> },
+    { id: 18, title: 'Built-in Functions',              contentType: 'top',    content: <Slide18BuiltinFunctions /> },
+    { id: 19, title: 'Errors Are Normal',               contentType: 'top',    content: <Slide19Errors /> },
+    { id: 20, title: 'Common Errors',                   contentType: 'top',    content: <Slide20CommonErrors /> },
+    { id: 21, title: 'TIY — Fix the errors',            contentType: 'top',    content: <Slide21TIYFixErrors /> },
+    // ── Block 2: Data types · operators · GC calculator ────
+    { id: 22, title: 'The Four Data Types',             contentType: 'top',    content: <Slide22DataTypes /> },
+    { id: 23, title: 'type()',                          contentType: 'top',    content: <Slide23TypeFunction /> },
+    { id: 24, title: 'Arithmetic Operators',            contentType: 'top',    content: <Slide24Operators /> },
+    { id: 25, title: 'Division & Decimals',             contentType: 'top',    content: <Slide25Division /> },
     { id: 26, title: 'Counting Characters — .count()',  contentType: 'top',    content: <Slide26CountMethod /> },
     { id: 27, title: "Demo — Claudia's first report",   contentType: 'top',    content: <Slide27FinalDemo /> },
-    { id: 28, title: 'Test — Spike train',              contentType: 'top',    content: <Slide28TIYSpikeTrain /> },
+    { id: 28, title: 'TIY — Spike train',               contentType: 'top',    content: <Slide28TIYSpikeTrain /> },
     { id: 29, title: 'Recap',                           contentType: 'top',    content: <Slide29Recap /> },
     { id: 30, title: "What's Next",                     contentType: 'top',    content: <Slide30Outlook /> },
   ],

@@ -27,14 +27,16 @@ export const pythonBasicsData: Lecture[] = [
   },
   {
     id: 2,
-    title: "Strings and Lists",
+    title: "Lists, Strings and Maps",
     status: "under-construction",
     topics: [
-      "String indexing, slicing and methods",
-      "Lists: creation, indexing, append",
-      "Iterating with for loops",
-      "DNA sequence manipulation"
+      "Lists: holding a collection of sequences",
+      "Strings as sequences: indexing & slicing",
+      "String methods: .replace(), .find()",
+      "Dictionaries: mapping codons to amino acids"
     ],
+    slideUrl: "/lectures/2",
+    labsUrl: "/labs/2",
     type: 'core'
   },
   {
