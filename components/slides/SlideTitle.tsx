@@ -12,7 +12,7 @@ export function SlideTitle({
   center = true,
 }: SlideTitleProps) {
   return (
-    <h2 className={`font-bold text-3xl md:text-5xl xl:text-7xl 2xl:text-8xl mt-4 md:mt-6 xl:mt-10 ${center ? 'text-center' : ''} ${className}`}>
+    <h2 className={`font-bold text-2xl md:text-4xl xl:text-5xl 2xl:text-6xl tracking-tight mt-4 md:mt-6 xl:mt-8 ${center ? 'text-center' : ''} ${className}`}>
       {children}
     </h2>
   );

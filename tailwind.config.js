@@ -10,92 +10,84 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Primary bio-themed colors
-        "bio-blue": "#00d4ff",
-        "bio-light-blue": "#58e6ff",
-        "bio-dark-blue": "#0099cc",
+        /* ── Technical-docs dark theme ───────────────────────────────
+           Token names are unchanged so every existing slide inherits
+           the new look without edits. Values are desaturated: one
+           calm blue accent, muted semantic colours, flat surfaces. */
 
-        // Dark backgrounds (from lecture 2 design)
-        "bio-dark": "#1a1a2e",
-        "bio-darker": "#16213e",
-        "bio-darkest": "#0d1117",
+        // Accent — a documentation blue, not neon cyan
+        "bio-blue": "#5b9df9",
+        "bio-light-blue": "#8fbcfb",
+        "bio-dark-blue": "#3d7fd6",
 
-        // Code block colors
-        "code-bg": "#0d1117",
-        "code-border": "#30363d",
-        "output-bg": "#1c2333",
-        "output-border": "#2d3748",
+        /* Surfaces. The page sits on `bio-darkest`; `bio-dark` is now the
+           *panel* colour, one step lighter — so the ~500 existing
+           `bg-bio-dark/50` code blocks read as raised surfaces instead of
+           disappearing into the background. */
+        "bio-dark": "#1b1f27",
+        "bio-darker": "#151920",
+        "bio-darkest": "#0d0f13",
 
-        // Accent colors
-        "bio-yellow": "#ffd700",
-        "bio-green": "#4CAF50",
+        // Code blocks — one step darker than the page, hairline border
+        "code-bg": "#0a0c0f",
+        "code-border": "#22262e",
+        "output-bg": "#12151a",
+        "output-border": "#22262e",
+
+        // Semantic accents (kept: they carry pedagogical meaning)
+        "bio-yellow": "#d6a44c",
+        "bio-green": "#5fb37a",
         "bio-purple": {
-          light: "#764ba2",
-          DEFAULT: "#667eea",
+          light: "#9d86d4",
+          DEFAULT: "#8b74c9",
         },
 
         // DNA visualization colors
-        "dna-start": "#ff6b6b", // ATG highlight
-        "dna-stop": "#4ecdc4", // Stop codon highlight
+        "dna-start": "#e07b6f",
+        "dna-stop": "#5fb3ae",
       },
 
       fontFamily: {
-        sans: ["Segoe UI", "Tahoma", "Geneva", "Verdana", "sans-serif"],
-        mono: ["Monaco", "Menlo", "Ubuntu Mono", "Consolas", "monospace"],
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
 
       fontSize: {
-        // Custom sizes for consistency
         hero: "4rem",
         section: "2.5rem",
         "slide-title": "3rem",
       },
 
       animation: {
-        "slide-in": "slideIn 0.5s ease-out",
-        "fade-in": "fadeIn 0.5s ease-out",
-        float: "float 6s ease-in-out infinite",
-        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "fade-in": "fadeIn 0.4s ease-out",
       },
 
       keyframes: {
-        slideIn: {
-          "0%": { transform: "translateX(20px)", opacity: "0" },
-          "100%": { transform: "translateX(0)", opacity: "1" },
-        },
         fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
       },
 
       backgroundImage: {
-        // Gradients from the designs
-        "bio-gradient": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-        "dark-gradient": "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
-        "blue-gradient": "linear-gradient(90deg, #00d4ff, #0099cc)",
-      },
-
-      backdropBlur: {
-        xs: "2px",
+        // Flat now — kept as tokens so old utility names still resolve
+        "bio-gradient": "none",
+        "dark-gradient": "none",
+        "blue-gradient": "none",
       },
 
       boxShadow: {
-        "bio-glow": "0 20px 40px rgba(0, 212, 255, 0.3)",
-        "bio-glow-sm": "0 10px 20px rgba(0, 212, 255, 0.2)",
-        code: "0 4px 6px -1px rgba(0, 0, 0, 0.3)",
+        // No glow. Depth comes from borders, not light.
+        "bio-glow": "none",
+        "bio-glow-sm": "none",
+        code: "none",
       },
 
       borderRadius: {
-        xl: "1rem",
-        "2xl": "1.25rem",
+        xl: "0.5rem",
+        "2xl": "0.625rem",
       },
     },
   },
   plugins: [],
 };
-

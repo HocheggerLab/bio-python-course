@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import Navigation from "@/layout/Navigation";
 import Footer from "@/layout/Footer";
 import "./globals.css";
+
+const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
   title: "Python for Biologists",
@@ -14,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="bg-gradient-to-br from-bio-dark to-bio-darker text-white min-h-screen" suppressHydrationWarning>
+    <html lang="en" className={`scroll-smooth ${sans.variable} ${mono.variable}`}>
+      <body className="bg-bio-darkest text-white min-h-screen" suppressHydrationWarning>
         <Navigation />
         {children}
         <Footer />

@@ -2,14 +2,29 @@ import React from 'react'
 
 export type CardColor = 'blue' | 'green' | 'yellow' | 'purple' | 'pink' | 'red' | 'neutral'
 
+/* Technical-docs surfaces: one flat panel colour for every card, with the
+   semantic colour carried by the heading and the accent rule instead of a
+   tinted fill. Keeps the pedagogical colour signal, drops the sticker look. */
 const cardColorClasses: Record<CardColor, string> = {
-  blue: 'border-bio-blue/30 bg-bio-blue/10 hover:bg-bio-blue/15',
-  green: 'border-bio-green/30 bg-bio-green/10 hover:bg-bio-green/15',
-  yellow: 'border-bio-yellow/30 bg-bio-yellow/10 hover:bg-bio-yellow/15',
-  purple: 'border-purple-400/30 bg-purple-400/10 hover:bg-purple-400/15',
-  pink: 'border-pink-400/30 bg-pink-400/10 hover:bg-pink-400/15',
-  red: 'border-red-500/30 bg-red-500/10 hover:bg-red-500/15',
-  neutral: 'border-white/10 bg-white/5 hover:bg-white/10',
+  blue: 'border-white/10 bg-bio-dark/40 hover:border-bio-blue/40',
+  green: 'border-white/10 bg-bio-dark/40 hover:border-bio-green/40',
+  yellow: 'border-white/10 bg-bio-dark/40 hover:border-bio-yellow/40',
+  purple: 'border-white/10 bg-bio-dark/40 hover:border-purple-400/40',
+  pink: 'border-white/10 bg-bio-dark/40 hover:border-pink-400/40',
+  red: 'border-white/10 bg-bio-dark/40 hover:border-red-400/40',
+  neutral: 'border-white/10 bg-bio-dark/40 hover:border-white/20',
+}
+
+/* Left/top accent rule colour — this is what now carries the semantics for
+   the ~250 cards that set `border-l-4` / `border-t-4`. */
+const accentRuleByColor: Record<CardColor, string> = {
+  blue: 'border-l-bio-blue border-t-bio-blue',
+  green: 'border-l-bio-green border-t-bio-green',
+  yellow: 'border-l-bio-yellow border-t-bio-yellow',
+  purple: 'border-l-purple-400 border-t-purple-400',
+  pink: 'border-l-pink-400 border-t-pink-400',
+  red: 'border-l-red-400 border-t-red-400',
+  neutral: 'border-l-white/30 border-t-white/30',
 }
 
 const accentTextByColor: Record<CardColor, string> = {
@@ -70,9 +85,9 @@ const layoutClass: Record<Layout, string> = {
 type Padding = 'normal' | 'compact' | 'tight'
 
 const paddingClass: Record<Padding, string> = {
-  normal: 'p-4 md:p-8 xl:p-14 2xl:p-20',
-  compact: 'p-4 md:p-6 xl:p-10 2xl:p-12',
-  tight: 'p-3 md:p-4 xl:p-6 2xl:p-8',
+  normal: 'p-4 md:p-6 xl:p-10 2xl:p-14',
+  compact: 'p-4 md:p-5 xl:p-7 2xl:p-9',
+  tight: 'p-3 md:p-4 xl:p-5 2xl:p-6',
 }
 
 interface SlideCardBaseProps {
@@ -102,9 +117,10 @@ const isLink = (p: SlideCardProps): p is SlideCardLinkProps =>
 export function SlideCard(props: SlideCardProps) {
   const { color = 'neutral', layout = 'center', padding = 'normal', className = '', children } = props
   const cls =
-    `rounded-xl border transition-colors flex flex-col ` +
+    `rounded-md border transition-colors flex flex-col ` +
     `${paddingClass[padding]} ` +
-    `${cardColorClasses[color]} ${layoutClass[layout]} ${className}`
+    `${cardColorClasses[color]} ${accentRuleByColor[color]} ` +
+    `${layoutClass[layout]} ${className}`
 
   if (isLink(props)) {
     return (
@@ -204,7 +220,7 @@ export function CardBody({
 }) {
   return (
     <p
-      className={`text-gray-300 text-sm md:text-lg xl:text-xl 2xl:text-2xl leading-relaxed ${className}`}
+      className={`text-gray-400 text-sm md:text-lg xl:text-xl 2xl:text-2xl leading-relaxed ${className}`}
     >
       {children}
     </p>
@@ -222,7 +238,7 @@ export function CardPill({
 }) {
   return (
     <span
-      className={`text-[10px] md:text-sm xl:text-base font-mono border rounded-full px-3 md:px-5 py-1 md:py-2 ${cardAccents.border[color]} ${className}`}
+      className={`text-[10px] md:text-sm xl:text-base font-mono border rounded px-2.5 md:px-4 py-1 md:py-1.5 ${cardAccents.border[color]} ${className}`}
     >
       {children}
     </span>

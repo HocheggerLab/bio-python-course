@@ -57,8 +57,7 @@
   .card {
     @apply bg-white/5 backdrop-blur-sm rounded-xl p-6 
            border border-white/10 transition-all duration-300
-           hover:border-bio-blue hover:transform hover:-translate-y-1
-           hover:shadow-bio-glow-sm;
+           hover:border-white/20;
   }
   
   /* Concept box (from lecture design) */
@@ -101,7 +100,7 @@
   /* Slide container */
   .slide-container {
     @apply min-h-screen flex items-center justify-center p-8
-           bg-gradient-to-br from-bio-dark to-bio-darker;
+           bg-bio-darkest;
   }
   
 @layer components {
@@ -110,7 +109,7 @@
   /* Slide viewport — fluid full-bleed page that fills the screen between the
      fixed Navigation (~80px tall) and the fixed SlideNavigation (~64px tall). */
   .slide-viewport {
-    @apply flex flex-col bg-gradient-to-br from-bio-dark to-bio-darker;
+    @apply flex flex-col bg-bio-darkest;
     padding-top: 5rem;
     padding-bottom: 4rem;
     min-height: 100dvh;
@@ -165,18 +164,17 @@
   
   /* Gradient text */
   .text-gradient {
-    @apply bg-gradient-to-r from-bio-blue to-bio-light-blue 
-           bg-clip-text text-transparent;
+    @apply text-bio-blue;
   }
   
   /* Purple gradient for special elements */
   .text-gradient-purple {
-    @apply bg-bio-gradient bg-clip-text text-transparent;
+    @apply text-bio-purple-light;
   }
   
   /* DNA visualization */
   .dna-visual {
-    @apply bg-bio-gradient p-5 rounded-xl font-mono text-lg
+    @apply bg-white/5 border border-white/10 p-5 rounded-xl font-mono text-lg
            tracking-wider text-center text-white shadow-xl;
   }
   
