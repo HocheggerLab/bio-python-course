@@ -65,9 +65,11 @@ export default function Navigation() {
     <nav className="fixed w-full top-0 z-50 glass-dark border-b border-white/10">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <span className="text-2xl">🧬</span>
-            <Link href="/" className="text-xl font-bold text-gradient">
+          <div className="flex items-center">
+            <Link
+              href="/"
+              className="text-lg font-semibold tracking-tight text-gray-300 hover:text-white transition-colors"
+            >
               Python for Biologists
             </Link>
           </div>
