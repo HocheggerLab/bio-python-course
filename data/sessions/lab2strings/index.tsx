@@ -5,6 +5,6 @@ export const lab2StringsData: LectureData = {
   id: 'lab-2-strings',
   title: 'Lab 2 · Strings',
   slides: [
-    { id: 1, title: 'Strings', contentType: 'top', content: <Slide01Strings /> },
+    { id: 1, title: 'Strings', contentType: 'center', content: <Slide01Strings /> },
   ],
 }

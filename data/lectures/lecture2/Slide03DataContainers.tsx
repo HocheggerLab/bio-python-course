@@ -32,7 +32,7 @@ export function Slide03DataContainers() {
         This Session — <GradientText>Data Containers</GradientText>
       </SlideTitle>
 
-      <div className="flex flex-col gap-4 md:gap-6 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="flex flex-col gap-4 md:gap-6 mt-4 md:mt-6 xl:mt-8">
 
         <SlideCard color="neutral" layout="start" padding="compact">
           <CardBody>
@@ -44,7 +44,7 @@ export function Slide03DataContainers() {
           </CardBody>
         </SlideCard>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 flex-1 min-h-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {containers.map((c) => (
             <SlideCard key={c.name} color={c.color} layout="start" padding="compact" className="border-l-4">
               <div className="text-3xl md:text-5xl xl:text-6xl mb-2 md:mb-3">{c.icon}</div>

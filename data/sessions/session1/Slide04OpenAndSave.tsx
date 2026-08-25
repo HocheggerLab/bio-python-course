@@ -9,7 +9,7 @@ export function Slide04OpenAndSave() {
         Open, <GradientText>Save</GradientText>, Share
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8">
 
         <SlideCard color="blue" layout="start" padding="compact">
           <CardHeading size="sm" color="blue" className="mb-3 md:mb-4">📥 Open a notebook</CardHeading>

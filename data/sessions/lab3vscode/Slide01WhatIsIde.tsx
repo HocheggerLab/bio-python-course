@@ -51,7 +51,7 @@ export function Slide01WhatIsIde() {
         window</span>.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8">
         {cards.map((c) => (
           <SlideCard key={c.title} color={c.color} layout="center" padding="compact">
             <div className="text-4xl md:text-6xl xl:text-7xl mb-2 md:mb-4">{c.icon}</div>

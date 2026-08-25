@@ -15,7 +15,7 @@ export function Slide05GenomeReveal() {
         Which Genome Is <GradientText>Bigger</GradientText>?
       </SlideTitle>
 
-      <div className="flex flex-col gap-3 md:gap-5 mt-3 md:mt-5 flex-1 min-h-0">
+      <div className="flex flex-col gap-3 md:gap-5 mt-3 md:mt-5">
 
         <SlideCard color="neutral" layout="start" padding="compact">
           <CardBody>
@@ -26,7 +26,7 @@ export function Slide05GenomeReveal() {
         </SlideCard>
 
         {/* genome size bars */}
-        <div className="flex flex-col gap-2 md:gap-3 flex-1 min-h-0 justify-center">
+        <div className="flex flex-col gap-2 md:gap-3 justify-center">
           {rows.map((r) => (
             <div key={r.name} className="flex items-center gap-2 md:gap-4">
               <div className="w-28 md:w-44 text-right text-xs md:text-base text-gray-300 shrink-0">

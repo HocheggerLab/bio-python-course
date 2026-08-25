@@ -6,7 +6,7 @@ export const session3Data: LectureData = {
   id: 'session-3',
   title: 'Lab 1 — Session 3: Data Types',
   slides: [
-    { id: 1, title: 'Session 3 — Data Types',    contentType: 'top', content: <Slide01Overview /> },
-    { id: 2, title: 'Four Core Data Types',      contentType: 'top', content: <Slide02DataTypes /> },
+    { id: 1, title: 'Session 3 — Data Types',    contentType: 'center', content: <Slide01Overview /> },
+    { id: 2, title: 'Four Core Data Types',      contentType: 'center', content: <Slide02DataTypes /> },
   ],
 }

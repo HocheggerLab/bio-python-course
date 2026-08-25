@@ -8,7 +8,7 @@ export function Slide02ClaudiaHook() {
         From One Sequence to <GradientText>Many</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 items-center">
 
         {/* LEFT — Claudia's new problem */}
         <div className="flex justify-center min-h-0">

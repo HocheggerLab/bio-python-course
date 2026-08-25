@@ -10,7 +10,7 @@ export function Slide16Finale() {
         Two Proteins, <GradientText>One Sequence</GradientText>
       </SlideTitle>
 
-      <div className="flex flex-col gap-3 md:gap-4 xl:gap-5 mt-3 md:mt-4 flex-1 min-h-0">
+      <div className="flex flex-col gap-3 md:gap-4 xl:gap-5 mt-3 md:mt-4">
 
         {/* the shared fragment */}
         <div>
@@ -23,7 +23,7 @@ export function Slide16Finale() {
         </div>
 
         {/* two frames */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5 flex-1 min-h-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
 
           <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
             <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">

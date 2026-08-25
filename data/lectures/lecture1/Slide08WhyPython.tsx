@@ -38,10 +38,10 @@ export function Slide08WhyPython() {
         Why <GradientText>Python?</GradientText>
       </SlideTitle>
 
-      <div className="flex flex-col gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="flex flex-col gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8">
 
         {/* Hero strap */}
-        <SlideCard color="blue" layout="middle" padding="compact" className="border-l-4">
+        <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
           <p className="text-center font-bold text-base md:text-2xl xl:text-3xl 2xl:text-4xl text-white leading-snug">
             Python is the <span className="text-bio-blue">2<sup>nd</sup> best language for everything</span>{' '}
             — and <span className="text-bio-green">#1 for science.</span>
@@ -104,7 +104,7 @@ export function Slide08WhyPython() {
 
         {/* Bottom row: home turf + beyond */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 xl:gap-6">
-          <SlideCard color="purple" layout="middle" padding="compact">
+          <SlideCard color="purple" layout="start" padding="compact">
             <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
               <span className="text-2xl md:text-3xl xl:text-4xl">🥇</span>
               <CardHeading size="sm" color="purple">Home turf</CardHeading>
@@ -115,7 +115,7 @@ export function Slide08WhyPython() {
             </CardBody>
           </SlideCard>
 
-          <SlideCard color="green" layout="middle" padding="compact">
+          <SlideCard color="green" layout="start" padding="compact">
             <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
               <span className="text-2xl md:text-3xl xl:text-4xl">🌍</span>
               <CardHeading size="sm" color="green">Beyond data</CardHeading>

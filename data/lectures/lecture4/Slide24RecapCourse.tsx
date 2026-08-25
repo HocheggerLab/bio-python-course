@@ -43,7 +43,7 @@ export function Slide24RecapCourse() {
         exercise. That&apos;s programming.
       </CardBody>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 md:gap-5 xl:gap-6 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 md:gap-5 xl:gap-6 mt-4 md:mt-6 xl:mt-8">
 
         <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
           <CardIcon size="sm" className="mb-1 md:mb-2">🔢</CardIcon>

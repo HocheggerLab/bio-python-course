@@ -23,10 +23,10 @@ export function Slide04Resources() {
         Your Main <GradientText>Resources</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 items-start">
 
         {/* Website card */}
-        <SlideCard color="blue" layout="between" href="/" className="text-left">
+        <SlideCard color="blue" layout="start" href="/" className="text-left md:col-span-2">
           <div className="flex items-center gap-3 md:gap-5 xl:gap-6 mb-4 md:mb-8 xl:mb-10">
             <CardIcon size="sm">🚀</CardIcon>
             <div>
@@ -35,7 +35,7 @@ export function Slide04Resources() {
             </div>
           </div>
 
-          <ul className="flex flex-col gap-2 md:gap-5 xl:gap-6 flex-1 justify-center">
+          <ul className="flex flex-col gap-2 md:gap-5 xl:gap-6">
             {websiteFeatures.map((f) => (
               <li key={f.label} className="flex items-start gap-3 md:gap-5">
                 <span className="text-lg md:text-3xl xl:text-4xl mt-0.5 shrink-0">{f.icon}</span>
@@ -55,17 +55,20 @@ export function Slide04Resources() {
         {/* Canvas card */}
         <SlideCard
           color="green"
-          layout="center"
+          layout="start"
           href="https://canvas.sussex.ac.uk/courses/34489"
           external
+          className="text-left"
         >
-          <CardIcon size="lg" className="mb-3 md:mb-6 xl:mb-8">🎓</CardIcon>
-          <CardEyebrow color="green">Submission &amp; Grades</CardEyebrow>
-          <CardHeading size="lg" color="green" className="mt-2 md:mt-3 mb-2 md:mb-5">
-            Canvas
-          </CardHeading>
-          <CardBody>Content coming soon.</CardBody>
-          <CardPill color="green" className="mt-4 md:mt-10 xl:mt-12">
+          <div className="flex items-center gap-3 md:gap-5 mb-4 md:mb-6">
+            <CardIcon size="sm">🎓</CardIcon>
+            <div>
+              <CardEyebrow color="green">Submission &amp; Grades</CardEyebrow>
+              <CardHeading color="green">Canvas</CardHeading>
+            </div>
+          </div>
+          <CardBody>Hand in your work and pick up your grades here.</CardBody>
+          <CardPill color="green" className="mt-4 md:mt-6 self-start">
             canvas.sussex.ac.uk →
           </CardPill>
         </SlideCard>

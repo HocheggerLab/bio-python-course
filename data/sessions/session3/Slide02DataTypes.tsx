@@ -46,7 +46,7 @@ export function Slide02DataTypes() {
         Four Core <GradientText>Data Types</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 md:gap-5 xl:gap-6 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3 md:gap-5 xl:gap-6 mt-4 md:mt-6 xl:mt-8">
         {types.map((t) => (
           <SlideCard key={t.name} color={t.color} layout="start" padding="compact">
             <div className="text-3xl md:text-5xl xl:text-6xl mb-2 md:mb-3">{t.icon}</div>

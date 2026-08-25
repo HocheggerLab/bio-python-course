@@ -21,7 +21,7 @@ export function Slide02HowCourseWorks() {
         How This Course <GradientText>Works</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-3 md:gap-5 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-3 md:gap-5 xl:gap-8 mt-4 md:mt-6 xl:mt-8">
         {components.map((c) => (
           <StatCard
             key={c.label}

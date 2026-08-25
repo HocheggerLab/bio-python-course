@@ -8,7 +8,7 @@ export function Slide07WhyProgramming() {
         Why Should I Learn <GradientText>Programming?</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8">
 
         {/* LEFT: cartoons illustrating Claudia's problem */}
         <div className="flex flex-col justify-center gap-3 md:gap-4 xl:gap-6 min-h-0">
@@ -44,7 +44,7 @@ export function Slide07WhyProgramming() {
 
         {/* RIGHT: three outcome cards */}
         <div className="flex flex-col gap-3 md:gap-4 xl:gap-6 min-h-0">
-          <SlideCard color="red" layout="middle" padding="compact" className="border-l-4 flex-1">
+          <SlideCard color="red" layout="start" padding="compact" className="border-l-4 flex-1">
             <CardHeading size="sm" color="red" className="mb-2 md:mb-3">
               Without programming
             </CardHeading>
@@ -54,7 +54,7 @@ export function Slide07WhyProgramming() {
             </CardBody>
           </SlideCard>
 
-          <SlideCard color="green" layout="middle" padding="compact" className="border-l-4 flex-1">
+          <SlideCard color="green" layout="start" padding="compact" className="border-l-4 flex-1">
             <CardHeading size="sm" color="green" className="mb-2 md:mb-3">
               With a Python script
             </CardHeading>
@@ -65,7 +65,7 @@ export function Slide07WhyProgramming() {
             </CardBody>
           </SlideCard>
 
-          <SlideCard color="blue" layout="middle" padding="compact" className="border-l-4 flex-1">
+          <SlideCard color="blue" layout="start" padding="compact" className="border-l-4 flex-1">
             <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">
               By the end of this module
             </CardHeading>

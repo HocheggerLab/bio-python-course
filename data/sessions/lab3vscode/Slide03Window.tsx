@@ -36,7 +36,7 @@ export function Slide03Window() {
         The <GradientText>VS Code</GradientText> window
       </SlideTitle>
 
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-6 flex-1 min-h-0">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-6">
         {/* ── the mockup ── */}
         <div className="xl:col-span-2 min-h-0">
           <div className="h-full rounded-xl overflow-hidden border border-white/15 bg-[#1e1e2e] flex flex-col text-xs md:text-sm">
@@ -49,7 +49,7 @@ export function Slide03Window() {
             </div>
 
             {/* body: activity bar · explorer · editor */}
-            <div className="flex flex-1 min-h-0">
+            <div className="flex">
               {/* activity bar */}
               <div className="flex flex-col items-center gap-4 py-3 px-2 bg-black/20 border-r border-white/10 text-lg">
                 <span>📄</span>

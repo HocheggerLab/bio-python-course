@@ -41,7 +41,7 @@ export function Slide08aStoryOfPython() {
         <span className="mr-3">🐍</span>The Story of <GradientText>Python</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8">
 
         {/* LEFT: timeline */}
         <ol className="md:col-span-3 flex flex-col gap-2 md:gap-3 xl:gap-4 min-h-0">
@@ -68,7 +68,7 @@ export function Slide08aStoryOfPython() {
         {/* RIGHT: Guido + easter egg + documentary link */}
         <div className="md:col-span-2 flex flex-col gap-3 md:gap-4 xl:gap-5 min-h-0">
 
-          <SlideCard color="purple" layout="middle" padding="compact">
+          <SlideCard color="purple" layout="start" padding="compact">
             <img
               src="/guido.png"
               alt="Guido van Rossum"
@@ -85,7 +85,7 @@ export function Slide08aStoryOfPython() {
             </blockquote>
           </SlideCard>
 
-          <SlideCard color="yellow" layout="middle" padding="tight">
+          <SlideCard color="yellow" layout="start" padding="tight">
             <p className="text-center text-xs md:text-sm xl:text-base 2xl:text-lg leading-snug">
               <span className="mr-1">🎩</span>
               Named after{' '}

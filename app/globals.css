@@ -125,8 +125,10 @@
   }
 
   /* Centered content — fills the screen; padding scales by breakpoint. */
+  /* Centred content. `justify-center` on a flex column clips the top when
+     the content outgrows the viewport, so allow it to scroll instead. */
   .slide-content {
-    @apply w-full flex-1 flex flex-col justify-center
+    @apply w-full flex-1 min-h-0 overflow-y-auto flex flex-col justify-center
            px-5 py-8 md:px-10 md:py-12 xl:px-20 xl:py-16;
   }
 

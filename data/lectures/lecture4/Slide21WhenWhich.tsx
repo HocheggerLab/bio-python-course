@@ -9,7 +9,7 @@ export function Slide21WhenWhich() {
         <GradientText>try / except</GradientText>
       </SlideTitle>
 
-      <div className="flex flex-col gap-3 md:gap-4 xl:gap-5 mt-3 md:mt-4 flex-1 min-h-0">
+      <div className="flex flex-col gap-3 md:gap-4 xl:gap-5 mt-3 md:mt-4">
 
         <SlideCard color="neutral" layout="start" padding="compact">
           <CardBody className="text-xs md:text-sm xl:text-base">
@@ -18,7 +18,7 @@ export function Slide21WhenWhich() {
           </CardBody>
         </SlideCard>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5 flex-1 min-h-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
 
           {/* if guard */}
           <SlideCard color="green" layout="start" padding="compact" className="border-l-4">

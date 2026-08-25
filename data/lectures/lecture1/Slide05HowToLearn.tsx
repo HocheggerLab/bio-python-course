@@ -33,7 +33,7 @@ export function Slide05HowToLearn() {
         How to Learn <GradientText>Programming</GradientText>
       </SlideTitle>
 
-      <div className="flex flex-col gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="flex flex-col gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8">
 
         {/* Golden Rule hero card */}
         <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
@@ -47,11 +47,11 @@ export function Slide05HowToLearn() {
             and work on <span className="text-bio-blue">YOUR OWN PROJECTS!</span>
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 xl:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 sm:divide-x sm:divide-white/10">
             {analogies.map((a) => (
               <div
                 key={a.icon}
-                className="bg-black/30 border border-white/5 rounded-lg p-3 md:p-5 xl:p-6 flex flex-col items-center text-center gap-2 md:gap-3"
+                className="flex flex-col items-center text-center gap-2 md:gap-3 px-2 md:px-5"
               >
                 <span className="text-3xl md:text-5xl xl:text-6xl">{a.icon}</span>
                 <p className="text-xs md:text-base xl:text-lg 2xl:text-xl text-gray-300 leading-snug">
@@ -63,40 +63,40 @@ export function Slide05HowToLearn() {
         </SlideCard>
 
         {/* Three sub-cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 xl:gap-8 flex-1 min-h-0">
-          <SlideCard color="green" layout="middle" padding="compact">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 xl:gap-8">
+          <SlideCard color="green" layout="start" padding="compact">
             <CardHeading size="sm" color="green" className="mb-3 md:mb-4 xl:mb-6">
               What we provide
             </CardHeading>
             <CardList items={provided} bullet="✓" color="green" />
           </SlideCard>
 
-          <SlideCard color="yellow" layout="middle" padding="compact">
+          <SlideCard color="yellow" layout="start" padding="compact">
             <CardHeading size="sm" color="yellow" className="mb-3 md:mb-4 xl:mb-6">
               What you must do
             </CardHeading>
             <CardList items={required} bullet="→" color="yellow" />
           </SlideCard>
 
-          <SlideCard color="purple" layout="middle" padding="compact">
-            <CardHeading size="sm" color="purple" className="mb-3 md:mb-4 xl:mb-6 text-center">
-              Your Potential Outcomes
+          <SlideCard color="purple" layout="start" padding="compact">
+            <CardHeading size="sm" color="purple" className="mb-3 md:mb-4 xl:mb-6">
+              Where this can take you
             </CardHeading>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 xl:gap-5">
-              <div className="text-center">
-                <div className="text-red-400 font-bold text-sm md:text-base xl:text-lg 2xl:text-xl mb-1 md:mb-2">
-                  Worst Case
+            <div className="flex flex-col gap-3 md:gap-5">
+              <div>
+                <div className="text-red-400 font-semibold text-sm md:text-base xl:text-lg mb-0.5 md:mb-1">
+                  At worst
                 </div>
-                <p className="text-gray-300 text-xs md:text-sm xl:text-base 2xl:text-lg leading-snug">
-                  Overview of Python applications for biology — still valuable knowledge!
+                <p className="text-gray-400 text-sm md:text-base xl:text-lg leading-relaxed">
+                  An overview of what Python does for biology — still worth knowing.
                 </p>
               </div>
-              <div className="text-center">
-                <div className="text-bio-green font-bold text-sm md:text-base xl:text-lg 2xl:text-xl mb-1 md:mb-2">
-                  Best Case
+              <div>
+                <div className="text-bio-green font-semibold text-sm md:text-base xl:text-lg mb-0.5 md:mb-1">
+                  At best
                 </div>
-                <p className="text-gray-300 text-xs md:text-sm xl:text-base 2xl:text-lg leading-snug">
-                  Start your coding journey, solve real problems, build useful projects!
+                <p className="text-gray-400 text-sm md:text-base xl:text-lg leading-relaxed">
+                  You start coding for real — solving your own problems, building your own tools.
                 </p>
               </div>
             </div>

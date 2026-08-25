@@ -42,7 +42,7 @@ export function Slide20DictExamples() {
         Dictionaries Are <GradientText>Everywhere</GradientText>
       </SlideTitle>
 
-      <div className="flex flex-col gap-4 md:gap-6 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="flex flex-col gap-4 md:gap-6 mt-4 md:mt-6 xl:mt-8">
 
         <SlideCard color="neutral" layout="start" padding="compact">
           <CardBody>
@@ -53,7 +53,7 @@ export function Slide20DictExamples() {
           </CardBody>
         </SlideCard>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 flex-1 min-h-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {examples.map((e) => (
             <SlideCard key={e.domain} color={e.color} layout="start" padding="compact" className="border-l-4">
               <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">

@@ -37,8 +37,8 @@ export const lecture2Data: LectureData = {
   slides: [
     // ── Intro ──────────────────────────────────────────────
     { id: 1, title: 'Recap — Session 1',         contentType: 'top', content: <Slide01Recap /> },
-    { id: 2, title: 'From One Sequence to Many',  contentType: 'top', content: <Slide02ClaudiaHook /> },
-    { id: 3, title: 'This Session — Containers',  contentType: 'top', content: <Slide03DataContainers /> },
+    { id: 2, title: 'From One Sequence to Many',  contentType: 'center', content: <Slide02ClaudiaHook /> },
+    { id: 3, title: 'This Session — Containers',  contentType: 'center', content: <Slide03DataContainers /> },
     // ── Block 1: Lists ─────────────────────────────────────
     { id: 4, title: 'Lists',                      contentType: 'top', content: <Slide04Lists /> },
     { id: 5, title: 'Indexing & Slicing',         contentType: 'top', content: <Slide05IndexingSlicing /> },
@@ -58,13 +58,13 @@ export const lecture2Data: LectureData = {
     { id: 18, title: 'TIY — Profile a sequence', contentType: 'top', content: <Slide18TIYSequenceReport /> },
     // ── Block 3: Dictionaries ──────────────────────────────
     { id: 19, title: 'Dictionaries — a lookup table', contentType: 'top', content: <Slide19CodonTable /> },
-    { id: 20, title: 'Dictionaries Are Everywhere', contentType: 'top', content: <Slide20DictExamples /> },
+    { id: 20, title: 'Dictionaries Are Everywhere', contentType: 'center', content: <Slide20DictExamples /> },
     { id: 21, title: 'Looking Up by Key',         contentType: 'top', content: <Slide21LookupByKey /> },
     { id: 22, title: 'KeyError & .get()',         contentType: 'top', content: <Slide22KeyErrorGet /> },
     { id: 23, title: 'Building & Checking',       contentType: 'top', content: <Slide23BuildingDicts /> },
     { id: 24, title: 'TIY — Translate by lookup', contentType: 'top', content: <Slide24TIYTranslate /> },
     // ── Wrap-up ────────────────────────────────────────────
-    { id: 25, title: 'Recap — Lists, Strings & Maps', contentType: 'top', content: <Slide25Recap /> },
-    { id: 26, title: 'What’s Next — Control Flow',     contentType: 'top', content: <Slide26Outlook /> },
+    { id: 25, title: 'Recap — Lists, Strings & Maps', contentType: 'center', content: <Slide25Recap /> },
+    { id: 26, title: 'What’s Next — Control Flow',     contentType: 'center', content: <Slide26Outlook /> },
   ],
 }

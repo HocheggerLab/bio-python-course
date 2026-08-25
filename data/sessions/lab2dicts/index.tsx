@@ -5,6 +5,6 @@ export const lab2DictsData: LectureData = {
   id: 'lab-2-dicts',
   title: 'Lab 2 · Dictionaries',
   slides: [
-    { id: 1, title: 'Dictionaries', contentType: 'top', content: <Slide01Dicts /> },
+    { id: 1, title: 'Dictionaries', contentType: 'center', content: <Slide01Dicts /> },
   ],
 }

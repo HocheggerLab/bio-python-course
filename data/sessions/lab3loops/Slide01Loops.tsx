@@ -25,14 +25,14 @@ export function Slide01Loops() {
         Loops — <GradientText>do it to every value</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8">
 
-        <SlideCard color="blue" layout="middle" padding="compact" className="border-l-4">
+        <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="blue" className="mb-3 md:mb-4">The core patterns</CardHeading>
           <CardList items={patterns} bullet="▸" color="blue" />
         </SlideCard>
 
-        <SlideCard color="green" layout="middle" padding="compact" className="border-l-4">
+        <SlideCard color="green" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="green" className="mb-3 md:mb-4">Level up</CardHeading>
           <CardList items={levelUp} bullet="▸" color="green" />
         </SlideCard>

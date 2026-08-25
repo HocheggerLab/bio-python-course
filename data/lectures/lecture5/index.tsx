@@ -18,7 +18,7 @@ export const lecture5Data: LectureData = {
   slides: [
     // ── Intro ──────────────────────────────────────────────
     { id: 1, title: 'Part 1 Done — You Have Mastered the Basics', contentType: 'center', content: <Slide01Recap /> },
-    { id: 2, title: "Today's Question — Can a City Feed Its Bees?", contentType: 'top', content: <Slide02TheProblem /> },
+    { id: 2, title: "Today's Question — Can a City Feed Its Bees?", contentType: 'center', content: <Slide02TheProblem /> },
     { id: 3, title: 'This Session — Meet the DataFrame',  contentType: 'center', content: <Slide03ThisSession /> },
     // ── Part 1: packages (via random) ──────────────────────
     { id: 4, title: 'Two Kinds of Package',              contentType: 'center', content: <Slide04Packages /> },

@@ -9,7 +9,7 @@ export function Slide02InstallUv() {
         Step 1 — <GradientText>Install uv &amp; get Python</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 flex-1 min-h-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6">
 
         {/* install uv */}
         <div className="flex flex-col gap-2 md:gap-3 min-h-0">

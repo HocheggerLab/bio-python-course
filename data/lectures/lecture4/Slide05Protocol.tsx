@@ -26,9 +26,9 @@ export function Slide05Protocol() {
         You Already Do This <GradientText variant="green">at the Bench</GradientText>
       </SlideTitle>
 
-      <div className="flex flex-col gap-3 md:gap-4 mt-3 md:mt-4 flex-1 min-h-0">
+      <div className="flex flex-col gap-3 md:gap-4 mt-3 md:mt-4">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 flex-1 min-h-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8">
 
           {/* LEFT — the plan */}
           <div className="flex flex-col gap-2 md:gap-3 min-h-0">

@@ -8,7 +8,7 @@ export function Slide25Division() {
         Division &amp; <GradientText>Decimals</GradientText>
       </SlideTitle>
 
-      <div className="flex flex-col gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="flex flex-col gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8">
 
         <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">

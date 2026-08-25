@@ -10,7 +10,7 @@ export function Slide02TheProblem() {
         Today's Question: Can a City Feed Its Own <GradientText variant="green">Bees?</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0 items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 items-stretch">
 
         {/* LEFT — bee photo (placeholder until the Nicholls Lab image is added) */}
         <figure className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 bg-gradient-to-br from-bio-green/20 via-bio-dark to-bio-blue/10 min-h-0 flex items-center justify-center">

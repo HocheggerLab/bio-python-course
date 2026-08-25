@@ -38,20 +38,20 @@ export const lecture4Data: LectureData = {
   slides: [
     // ── Intro ──────────────────────────────────────────────
     { id: 1, title: 'Recap — Session 3',              contentType: 'top', content: <Slide01Recap /> },
-    { id: 2, title: "Claudia's Next Problem",         contentType: 'top', content: <Slide02ClaudiaHook /> },
-    { id: 3, title: 'This Session — Algorithms, Functions & Errors', contentType: 'top', content: <Slide03ThisSession /> },
+    { id: 2, title: "Claudia's Next Problem",         contentType: 'center', content: <Slide02ClaudiaHook /> },
+    { id: 3, title: 'This Session — Algorithms, Functions & Errors', contentType: 'center', content: <Slide03ThisSession /> },
     // ── Part 1: algorithms & decomposition ─────────────────
-    { id: 4, title: 'You Already Wrote an Algorithm', contentType: 'top', content: <Slide04AlgorithmReveal /> },
-    { id: 5, title: 'You Already Do This at the Bench', contentType: 'top', content: <Slide05Protocol /> },
+    { id: 4, title: 'You Already Wrote an Algorithm', contentType: 'center', content: <Slide04AlgorithmReveal /> },
+    { id: 5, title: 'You Already Do This at the Bench', contentType: 'center', content: <Slide05Protocol /> },
     { id: 6, title: 'Break Down — the Other Strand',  contentType: 'top', content: <Slide06ReverseComplement /> },
-    { id: 7, title: 'TIY — Break It Down',            contentType: 'top', content: <Slide07TIYDecompose /> },
+    { id: 7, title: 'TIY — Break It Down',            contentType: 'center', content: <Slide07TIYDecompose /> },
     { id: 8, title: 'Chains Get Long',                contentType: 'top', content: <Slide08ChainsToFunctions /> },
     // ── Part 2: functions — where we're heading… ───────────
     { id: 9,  title: 'Packaging It Up — def',         contentType: 'top', content: <Slide09Def /> },
     // …now build it from nothing, one idea per slide
     { id: 10, title: 'The Simplest Function',         contentType: 'top', content: <Slide09aSimplest /> },
     { id: 11, title: 'Give It Something to Work On',  contentType: 'top', content: <Slide09bParameter /> },
-    { id: 12, title: 'Naming Functions',              contentType: 'top', content: <Slide09cNaming /> },
+    { id: 12, title: 'Naming Functions',              contentType: 'center', content: <Slide09cNaming /> },
     { id: 13, title: 'Hand the Answer Back — return', contentType: 'top', content: <Slide09dReturn /> },
     { id: 14, title: 'Two Parameters — and a Default', contentType: 'top', content: <Slide09eDefaults /> },
     // …and back to the full picture
@@ -59,16 +59,16 @@ export const lecture4Data: LectureData = {
     { id: 16, title: 'Say What It Does — docstrings', contentType: 'top', content: <Slide11Docstrings /> },
     { id: 17, title: 'TIY — Package the Spaghetti',   contentType: 'top', content: <Slide12TIYPackageGC /> },
     // ── Part 3: defensive programming ──────────────────────
-    { id: 18, title: 'Real Data Is Messy',            contentType: 'top', content: <Slide17DefensiveCrash /> },
+    { id: 18, title: 'Real Data Is Messy',            contentType: 'center', content: <Slide17DefensiveCrash /> },
     { id: 19, title: 'Check First — the if guard',    contentType: 'top', content: <Slide18GuardFix /> },
-    { id: 20, title: 'Fail Loudly — raise',           contentType: 'top', content: <Slide19Raise /> },
+    { id: 20, title: 'Fail Loudly — raise',           contentType: 'center', content: <Slide19Raise /> },
     { id: 21, title: 'The Advanced Pattern — try / except', contentType: 'top', content: <Slide20TryExcept /> },
-    { id: 22, title: 'Which One? if vs try / except', contentType: 'top', content: <Slide21WhenWhich /> },
+    { id: 22, title: 'Which One? if vs try / except', contentType: 'center', content: <Slide21WhenWhich /> },
     { id: 23, title: 'TIY — A Defensive Function',    contentType: 'top', content: <Slide22TIYCleanDna /> },
     // ── Wrap-up: capstone · course recap · outlook ─────────
     { id: 24, title: "Claudia's Whole Job — One Program", contentType: 'top', content: <Slide23Capstone /> },
-    { id: 25, title: 'Recap — Sessions 1–4',          contentType: 'top', content: <Slide24RecapCourse /> },
-    { id: 26, title: 'It Was Never About DNA',        contentType: 'top', content: <Slide25ApplySkills /> },
-    { id: 27, title: "What's Next — Part 2",          contentType: 'top', content: <Slide26Outlook /> },
+    { id: 25, title: 'Recap — Sessions 1–4',          contentType: 'center', content: <Slide24RecapCourse /> },
+    { id: 26, title: 'It Was Never About DNA',        contentType: 'center', content: <Slide25ApplySkills /> },
+    { id: 27, title: "What's Next — Part 2",          contentType: 'center', content: <Slide26Outlook /> },
   ],
 }

@@ -25,14 +25,14 @@ export function Slide01IfElse() {
         If / else — <GradientText variant="purple">making decisions</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8">
 
-        <SlideCard color="blue" layout="middle" padding="compact" className="border-l-4">
+        <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="blue" className="mb-3 md:mb-4">Branch</CardHeading>
           <CardList items={branch} bullet="▸" color="blue" />
         </SlideCard>
 
-        <SlideCard color="purple" layout="middle" padding="compact" className="border-l-4">
+        <SlideCard color="purple" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="purple" className="mb-3 md:mb-4">Combine &amp; sort</CardHeading>
           <CardList items={combine} bullet="▸" color="purple" />
         </SlideCard>
