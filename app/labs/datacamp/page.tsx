@@ -59,19 +59,22 @@ export default function DataCampPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 xl:gap-8">
           {courses.map((c) => {
             const disabled = c.status === 'coming-soon'
+            const className = `block rounded-md border p-6 md:p-8 transition-colors
+              ${disabled
+                ? 'border-white/10 bg-bio-dark/40 opacity-60 cursor-not-allowed'
+                : 'border-white/10 border-l-4 border-l-purple-400 bg-bio-dark/40 hover:border-purple-400/40'}
+            `
+            /* See the note in labs/cheatsheets: a coming-soon card must not
+               be an <a> cancelling its own click, because that onClick
+               cannot cross the Server Component boundary. */
+            const Card = disabled ? 'div' : 'a'
             return (
-              <a
+              <Card
                 key={c.title}
-                href={c.href}
-                target={disabled ? undefined : '_blank'}
-                rel={disabled ? undefined : 'noopener noreferrer'}
-                aria-disabled={disabled}
-                onClick={disabled ? (e) => e.preventDefault() : undefined}
-                className={`block rounded-2xl border-2 p-6 md:p-8 transition-all duration-300
-                  ${disabled
-                    ? 'border-white/10 bg-white/[0.02] opacity-60 cursor-not-allowed'
-                    : 'border-purple-400/30 bg-purple-400/10 hover:bg-purple-400/15 hover:-translate-y-1'}
-                `}
+                {...(disabled
+                  ? { 'aria-disabled': true as const }
+                  : { href: c.href, target: '_blank', rel: 'noopener noreferrer' })}
+                className={className}
               >
                 <div className="flex items-center gap-3 mb-2 md:mb-3">
                   <span className="text-3xl md:text-4xl">🎓</span>
@@ -83,7 +86,7 @@ export default function DataCampPage() {
                 <span className={`inline-block text-xs md:text-sm font-semibold ${disabled ? 'text-white/40' : 'text-purple-400'}`}>
                   {disabled ? 'Coming soon' : 'Open course →'}
                 </span>
-              </a>
+              </Card>
             )
           })}
         </div>

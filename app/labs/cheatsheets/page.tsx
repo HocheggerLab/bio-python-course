@@ -58,19 +58,23 @@ export default function CheatsheetsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 xl:gap-8">
           {cheatsheets.map((c) => {
             const disabled = c.status === 'coming-soon'
+            const className = `block rounded-md border p-6 md:p-8 transition-colors
+              ${disabled
+                ? 'border-white/10 bg-bio-dark/40 opacity-60 cursor-not-allowed'
+                : 'border-white/10 border-l-4 border-l-bio-yellow bg-bio-dark/40 hover:border-bio-yellow/40'}
+            `
+            /* A coming-soon card is not a link, so it renders as a plain
+               element. Previously it stayed an <a> and cancelled its own
+               click — but an onClick cannot cross a Server Component
+               boundary, which broke the production build. */
+            const Card = disabled ? 'div' : 'a'
             return (
-              <a
+              <Card
                 key={c.title}
-                href={c.href}
-                target={disabled ? undefined : '_blank'}
-                rel={disabled ? undefined : 'noopener noreferrer'}
-                aria-disabled={disabled}
-                onClick={disabled ? (e) => e.preventDefault() : undefined}
-                className={`block rounded-2xl border-2 p-6 md:p-8 transition-all duration-300
-                  ${disabled
-                    ? 'border-white/10 bg-white/[0.02] opacity-60 cursor-not-allowed'
-                    : 'border-bio-yellow/30 bg-bio-yellow/10 hover:bg-bio-yellow/15 hover:-translate-y-1'}
-                `}
+                {...(disabled
+                  ? { 'aria-disabled': true as const }
+                  : { href: c.href, target: '_blank', rel: 'noopener noreferrer' })}
+                className={className}
               >
                 <div className="flex items-center gap-3 mb-2 md:mb-3">
                   <span className="text-3xl md:text-4xl">📄</span>
@@ -82,7 +86,7 @@ export default function CheatsheetsPage() {
                 <span className={`inline-block text-xs md:text-sm font-semibold ${disabled ? 'text-white/40' : 'text-bio-yellow'}`}>
                   {disabled ? 'Coming soon' : 'Open PDF →'}
                 </span>
-              </a>
+              </Card>
             )
           })}
         </div>
