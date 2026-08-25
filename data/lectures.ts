@@ -68,15 +68,15 @@ export const pythonBasicsData: Lecture[] = [
 export const pythonDataData: Lecture[] = [
   {
     id: 5,
-    title: "Analysing DepMap Data",
+    title: "Meet the DataFrame",
     status: "available",
     topics: [
-      "Object-oriented programming",
+      "Packages & objects (a peek at OOP)",
       "Pandas DataFrames",
-      "Cancer dependency analysis"
+      "Loading & exploring real data"
     ],
-    slideUrl: "/lectures/3",
-    notebookUrl: "/notebooks/lecture-3",
+    slideUrl: "/lectures/5",
+    notebookUrl: "/notebooks/lecture-5",
     videoUrl: "https://www.youtube.com/playlist?list=PLYTU_Kb0BRDKScs5gRfKyLdvnc-mveSCB",
     type: 'core'
   },

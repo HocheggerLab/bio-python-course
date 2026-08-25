@@ -11,17 +11,31 @@ interface Session {
 const sessions: Session[] = [
   {
     num: 1,
-    title: 'Lecture 2 Recap',
-    topics: ['Lists', 'Strings as sequences', 'Dictionaries', 'Practice notebooks'],
+    title: 'Lists',
+    topics: ['Index & slice', 'append, edit, del', 'sum() / len() → mean', 'Practice notebook'],
     status: 'available',
     href: '/labs/2/1',
   },
   {
     num: 2,
-    title: 'Local Python & uv',
-    topics: ['Why work locally?', 'Installing uv', 'Projects & environments', 'Running your own scripts'],
-    status: 'coming-soon',
+    title: 'Strings',
+    topics: ['Slice out codons', 'Immutable sequences', '.upper() · .find() · .replace()', 'Practice notebook'],
+    status: 'available',
     href: '/labs/2/2',
+  },
+  {
+    num: 3,
+    title: 'Dictionaries',
+    topics: ['Key → value lookup', 'The codon table, made real', 'Safe .get()', 'Practice notebook'],
+    status: 'available',
+    href: '/labs/2/3',
+  },
+  {
+    num: 4,
+    title: 'Local Python & uv',
+    topics: ['Why work locally?', 'Installing uv & Python', 'Run a real program (🐝)', 'Off Colab, onto your machine'],
+    status: 'available',
+    href: '/labs/2/4',
   },
 ]
 

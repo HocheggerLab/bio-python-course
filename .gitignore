@@ -126,3 +126,6 @@ CLAUDE.node_modules
 # pnpm-lock.yaml
 
 
+
+# Playwright MCP snapshots (local debugging artefacts)
+.playwright-mcp/

@@ -1,8 +1,7 @@
 const COLAB_BASE = 'https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main'
 
-export const NOTEBOOK_LISTS = `${COLAB_BASE}/lab02/01_lists.ipynb`
-export const NOTEBOOK_STRINGS = `${COLAB_BASE}/lab02/02_strings.ipynb`
-export const NOTEBOOK_DICTS = `${COLAB_BASE}/lab02/03_dictionaries.ipynb`
+export const NOTEBOOK_ERRORS_BASICS = `${COLAB_BASE}/lab04/03_errors_basics.ipynb`
+export const NOTEBOOK_ERRORS_ADVANCED = `${COLAB_BASE}/lab04/04_errors_advanced_concepts.ipynb`
 
 export function NotebookLink({ url, label }: { url: string; label?: string }) {
   return (

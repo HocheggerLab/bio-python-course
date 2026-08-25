@@ -1,6 +1,6 @@
 import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
 import { SlideCard, CardHeading, CardList } from '@/components/slides/SlideCard'
-import { NotebookLink, NOTEBOOK_DICTS } from './NotebookLink'
+import { NotebookLink, NOTEBOOK_DICTS_BASICS } from './NotebookLink'
 
 const lookup = [
   'Key → value pairs: codon_table = {"ATG": "Met", …}',
@@ -14,7 +14,7 @@ const build = [
   'Values can be numbers, lists, even other dicts',
 ]
 
-export function Slide04Dicts() {
+export function Slide01Dicts() {
   return (
     <>
       <SlideTitle>
@@ -35,7 +35,7 @@ export function Slide04Dicts() {
 
       </div>
 
-      <NotebookLink url={NOTEBOOK_DICTS} label="03 · Dictionaries — practice notebook" />
+      <NotebookLink url={NOTEBOOK_DICTS_BASICS} label="Dictionaries — practice notebook" />
     </>
   )
 }

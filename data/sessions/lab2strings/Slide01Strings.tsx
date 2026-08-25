@@ -1,6 +1,6 @@
 import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
 import { SlideCard, CardHeading, CardList } from '@/components/slides/SlideCard'
-import { NotebookLink, NOTEBOOK_STRINGS } from './NotebookLink'
+import { NotebookLink, NOTEBOOK_STRINGS_BASICS } from './NotebookLink'
 
 const sequence = [
   'A string is a sequence of characters: seq[0], seq[-1]',
@@ -14,7 +14,7 @@ const methods = [
   '.replace("T", "U") — transcription  ·  .startswith("ATG")',
 ]
 
-export function Slide03Strings() {
+export function Slide01Strings() {
   return (
     <>
       <SlideTitle>
@@ -35,7 +35,7 @@ export function Slide03Strings() {
 
       </div>
 
-      <NotebookLink url={NOTEBOOK_STRINGS} label="02 · Strings — practice notebook" />
+      <NotebookLink url={NOTEBOOK_STRINGS_BASICS} label="Strings — practice notebook" />
     </>
   )
 }

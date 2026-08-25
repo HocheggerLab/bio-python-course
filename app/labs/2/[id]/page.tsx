@@ -2,7 +2,10 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import SlideViewer from '@/components/lectures/SlideViewer'
 import { LectureData } from '@/data/lectures/types'
-import { lab2RecapData } from '@/data/sessions/lab2recap'
+import { lab2ListsData } from '@/data/sessions/lab2lists'
+import { lab2StringsData } from '@/data/sessions/lab2strings'
+import { lab2DictsData } from '@/data/sessions/lab2dicts'
+import { lab2LocalData } from '@/data/sessions/lab2local'
 
 interface SessionStub {
   num: number
@@ -10,21 +13,13 @@ interface SessionStub {
   outline: string[]
 }
 
-const sessionStubs: Record<string, SessionStub> = {
-  '2': {
-    num: 2,
-    title: 'Local Python & uv',
-    outline: [
-      'Why run Python locally — beyond the notebook',
-      'Installing uv, the fast Python project manager',
-      'Creating a project and its environment',
-      'Running and sharing your own scripts',
-    ],
-  },
-}
+const sessionStubs: Record<string, SessionStub> = {}
 
 const sessionDecks: Record<string, LectureData> = {
-  '1': lab2RecapData,
+  '1': lab2ListsData,
+  '2': lab2StringsData,
+  '3': lab2DictsData,
+  '4': lab2LocalData,
 }
 
 export default async function Lab2SessionPage({
