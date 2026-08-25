@@ -1,6 +1,7 @@
 'use client'
 
-import Link from 'next/link'
+import { PythonLogo } from '@/components/icons/PythonLogo'
+import { Microscope } from '@/components/icons/Microscope'
 
 export default function Hero() {
 
@@ -8,13 +9,16 @@ export default function Hero() {
     <section className="pt-32 pb-20 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center space-y-6 animate-fade-in">
-          <div className="inline-block animate-float">
-            <span className="text-7xl">🐍</span>
+          {/* Python logo and microscope flanking the title — the two halves
+              of the course, stated without a mascot. */}
+          <div className="flex items-center justify-center gap-6 md:gap-10">
+            <PythonLogo className="w-12 h-12 md:w-20 md:h-20 shrink-0" />
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+              Master Python
+              <br />for Biology
+            </h1>
+            <Microscope className="w-12 h-12 md:w-20 md:h-20 shrink-0 text-bio-blue" />
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold">
-            Master <span className="text-gradient">Python</span>
-            <br />for <span className="text-gradient-purple">Biology</span>
-          </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
             A practical programming course for Year 3 Life Sciences students at the University of Sussex. No prior coding experience required!
           </p>
