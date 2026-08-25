@@ -24,7 +24,7 @@ export default function Lectures() {
       </section>
 
       {/* Section 2: Python and Data in Biology */}
-      <section id="python-data" className="py-20 px-6 bg-gradient-to-b from-bio-darker to-bio-dark">
+      <section id="python-data" className="py-20 px-6 bg-bio-dark/40">
         <div className="container mx-auto max-w-6xl">
           <h2 className="section-header">
             Section 2: Python and <span className="text-gradient-purple">Data in Biology</span>
@@ -42,7 +42,7 @@ export default function Lectures() {
       </section>
 
       {/* DNA Analysis Task */}
-      <section id="dna-analysis-task" className="py-20 px-6 bg-gradient-to-b from-bio-dark to-bio-darker">
+      <section id="dna-analysis-task" className="py-20 px-6 bg-bio-dark/40">
         <div className="container mx-auto max-w-6xl">
           <h2 className="section-header">
             DNA Analysis <span className="text-gradient-green">Task</span>
@@ -53,7 +53,7 @@ export default function Lectures() {
           </p>
 
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-bio-green/10 to-bio-blue/10 border border-bio-green/30 rounded-2xl p-8">
+            <div className="bg-bio-dark/40 border border-bio-green/30 rounded-2xl p-8">
               <div className="text-center mb-8">
                 <div className="text-6xl mb-4">🧬</div>
                 <h3 className="text-2xl font-bold text-bio-green mb-2">
@@ -88,7 +88,7 @@ export default function Lectures() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-purple-500/20 to-bio-blue/20 border border-purple-500/30 rounded-xl p-6 mb-6">
+              <div className="bg-bio-dark/40 border border-purple-500/30 rounded-xl p-6 mb-6">
                 <h4 className="text-purple-400 font-semibold mb-3 text-center">
                   🎯 Project Overview
                 </h4>
@@ -117,7 +117,7 @@ export default function Lectures() {
               <div className="text-center">
                 <a
                   href="/assignments/sequence-analysis"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-bio-green to-bio-blue hover:from-bio-green/80 hover:to-bio-blue/80 text-white px-8 py-3 rounded-lg font-bold text-lg mb-4 transition-all transform hover:scale-105"
+                  className="inline-flex items-center gap-2 bg-bio-green text-white px-8 py-3 rounded-lg font-bold text-lg mb-4 transition-all transform hover:scale-105"
                 >
                   <span>📋</span>
                   <span>View Assignment Details</span>
@@ -132,7 +132,7 @@ export default function Lectures() {
       </section>
 
       {/* Final Project */}
-      <section id="final-project" className="py-20 px-6 bg-gradient-to-b from-bio-darker to-bio-dark">
+      <section id="final-project" className="py-20 px-6 bg-bio-dark/40">
         <div className="container mx-auto max-w-6xl">
           <h2 className="section-header">
             Final <span className="text-gradient">Project</span>

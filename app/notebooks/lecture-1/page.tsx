@@ -115,7 +115,7 @@ export default function Lecture1Notebooks() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-bio-darker to-bio-dark py-12 px-4">
+    <div className="min-h-screen bg-bio-darkest py-12 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mt-12 mb-12">
@@ -201,8 +201,8 @@ export default function Lecture1Notebooks() {
         </div>
 
         {/* Quick Links */}
-        <div className="bg-gradient-to-r from-bio-dark to-bio-darker rounded-lg p-6 mb-8 border border-gray-700">
-          <h2 className="text-2xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-bio-blue to-bio-green">
+        <div className="bg-bio-dark/40 rounded-lg p-6 mb-8 border border-gray-700">
+          <h2 className="text-2xl font-bold text-center mb-6 text-transparent bg-clip-text bg-bio-blue">
             🚀 Quick Access
           </h2>
           <div className="flex justify-center">
@@ -210,7 +210,7 @@ export default function Lecture1Notebooks() {
               href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/lecture_1/L1_P1_lab_calculator_toolkit.ipynb"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-bio-green to-teal-600 hover:from-teal-600 hover:to-bio-green text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-bio-green/20"
+              className="inline-flex items-center gap-2 bg-bio-green text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-bio-green/20"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.95 8.385l-1.446-.695a1.87 1.87 0 00-1.71.099l-.885.443a.59.59 0 01-.615-.009l-1.417-.816a.59.59 0 01-.294-.511V6.21c0-.21.11-.403.294-.511l1.417-.816a.59.59 0 01.615-.009l.885.443c.516.258 1.146.234 1.638-.062l1.518-.912a.59.59 0 01.885.511v2.042a.59.59 0 01-.294.511l-1.59.954z"/>

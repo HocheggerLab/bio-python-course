@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function DevToolsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-bio-dark to-bio-darker p-4">
+    <div className="min-h-screen bg-bio-darkest p-4">
       <div className="container mx-auto max-w-6xl">
         <Link href="/" className="inline-flex items-center mb-4 text-bio-blue hover:text-bio-yellow transition-colors">
           ← Back to Home

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function UnderConstruction() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-bio-darker to-bio-dark flex items-center justify-center px-4">
+    <div className="min-h-screen bg-bio-darkest flex items-center justify-center px-4">
       <div className="max-w-2xl mx-auto text-center">
         {/* Construction Icon */}
         <div className="mb-8">
@@ -53,7 +53,7 @@ export default function UnderConstruction() {
         <div className="mb-8">
           <h4 className="text-lg font-semibold mb-3 text-gray-300">Development Progress</h4>
           <div className="w-full bg-gray-700 rounded-full h-3">
-            <div className="bg-gradient-to-r from-bio-blue to-bio-green h-3 rounded-full" style={{width: '75%'}}></div>
+            <div className="bg-bio-blue h-3 rounded-full" style={{width: '75%'}}></div>
           </div>
           <p className="text-sm text-gray-400 mt-2">75% Complete</p>
         </div>

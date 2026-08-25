@@ -48,7 +48,7 @@ function CommandCard({ command, description, example, output }: CommandCardProps
 
 export default function TerminalPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-bio-dark to-bio-darker p-4 pt-24">
+    <div className="min-h-screen bg-bio-darkest p-4 pt-24">
       <div className="container mx-auto max-w-5xl">
         {/* Header */}
         <div className="mb-8">
@@ -66,7 +66,7 @@ export default function TerminalPage() {
         </div>
 
         {/* Why Terminal? */}
-        <div className="mb-12 p-6 bg-gradient-to-r from-purple-500/10 to-bio-blue/10 rounded-xl border border-bio-blue/20">
+        <div className="mb-12 p-6 bg-bio-dark/40 rounded-xl border border-bio-blue/20">
           <h2 className="text-2xl font-bold text-bio-blue mb-4">Why Do I Need This?</h2>
           <div className="space-y-3 text-gray-300">
             <p className="flex items-start">
@@ -88,7 +88,7 @@ export default function TerminalPage() {
         </div>
 
         {/* Warp Terminal Recommendation */}
-        <div className="mb-12 p-8 bg-gradient-to-br from-bio-darker to-bio-dark rounded-xl border border-green-400/30">
+        <div className="mb-12 p-8 bg-bio-dark/40 rounded-xl border border-green-400/30">
           <div className="flex items-start mb-6">
             <div className="text-5xl mr-4">🚀</div>
             <div>
@@ -369,7 +369,7 @@ Creating virtualenv at: .venv"
             </div>
 
             {/* Success */}
-            <div className="p-6 bg-gradient-to-r from-green-400/10 to-bio-blue/10 rounded-xl border border-green-400/30">
+            <div className="p-6 bg-bio-dark/40 rounded-xl border border-green-400/30">
               <div className="flex items-center">
                 <span className="text-3xl mr-3">🎉</span>
                 <div>
@@ -478,7 +478,7 @@ Creating virtualenv at: .venv"
         </div>
 
         {/* Learn More */}
-        <div className="p-8 bg-gradient-to-r from-purple-500/10 to-bio-blue/10 rounded-xl border border-bio-blue/20">
+        <div className="p-8 bg-bio-dark/40 rounded-xl border border-bio-blue/20">
           <h2 className="text-3xl font-bold text-bio-blue mb-4">📚 Want to Learn More?</h2>
           <p className="text-gray-300 mb-6">
             This page covers everything you need for this course, but if you&apos;re curious to dive deeper into shell scripting and terminal power-user techniques:

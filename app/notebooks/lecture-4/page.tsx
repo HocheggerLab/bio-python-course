@@ -123,7 +123,7 @@ export default function Lecture4Notebooks() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-bio-darker to-bio-dark py-12 px-4">
+    <div className="min-h-screen bg-bio-darkest py-12 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mt-12 mb-12">
@@ -237,7 +237,7 @@ export default function Lecture4Notebooks() {
         </div>
 
         {/* Key Skills */}
-        <div className="bg-gradient-to-r from-purple-900/20 to-bio-blue/20 border border-purple-500/30 rounded-lg p-6 mb-8">
+        <div className="bg-bio-dark/40 border border-purple-500/30 rounded-lg p-6 mb-8">
           <h2 className="text-2xl font-bold text-purple-400 mb-4 flex items-center">
             🚀 Essential EDA Skills You'll Master
           </h2>

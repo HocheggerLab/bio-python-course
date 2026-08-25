@@ -41,7 +41,7 @@ function TopicCard({ icon, title, description, topics, href }: TopicCardProps) {
 
 export default function CursorSetupPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-bio-dark to-bio-darker p-4">
+    <div className="min-h-screen bg-bio-darkest p-4">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-8">
@@ -60,7 +60,7 @@ export default function CursorSetupPage() {
         </div>
 
         {/* Key Benefits Section */}
-        <div className="mb-12 p-6 bg-gradient-to-r from-bio-blue/10 to-purple-500/10 rounded-xl border border-bio-blue/20">
+        <div className="mb-12 p-6 bg-bio-dark/40 rounded-xl border border-bio-blue/20">
           <h2 className="text-2xl font-bold text-bio-blue mb-4">Why Local Development?</h2>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="flex items-start space-x-3">
@@ -157,7 +157,7 @@ export default function CursorSetupPage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Mac/Linux Instructions */}
-            <div className="p-6 bg-gradient-to-br from-bio-darker to-bio-dark rounded-lg border border-green-400/30">
+            <div className="p-6 bg-bio-dark/40 rounded-lg border border-green-400/30">
               <div className="flex items-center mb-4">
                 <span className="text-4xl mr-3">🍎</span>
                 <div>
@@ -190,7 +190,7 @@ export default function CursorSetupPage() {
             </div>
 
             {/* Windows Instructions */}
-            <div className="p-6 bg-gradient-to-br from-bio-darker to-bio-dark rounded-lg border border-bio-blue/30">
+            <div className="p-6 bg-bio-dark/40 rounded-lg border border-bio-blue/30">
               <div className="flex items-center mb-4">
                 <span className="text-4xl mr-3">🪟</span>
                 <div>

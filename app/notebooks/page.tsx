@@ -78,7 +78,7 @@ export default function NotebooksPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-bio-dark to-bio-darker p-4">
+    <div className="min-h-screen bg-bio-darkest p-4">
       <div className="container mx-auto max-w-6xl">
         <Link href="/" className="inline-flex items-center mb-8 text-bio-blue hover:text-bio-yellow transition-colors">
           ← Back to Home
@@ -228,7 +228,7 @@ export default function NotebooksPage() {
         </div>
 
         {/* Getting Started */}
-        <div className="bg-gradient-to-r from-bio-blue/10 to-green-500/10 border border-bio-blue/40 rounded-xl p-8">
+        <div className="bg-bio-dark/40 border border-bio-blue/40 rounded-xl p-8">
           <h2 className="text-2xl font-bold text-bio-blue mb-6 text-center">
             💡 Getting Started with Notebooks
           </h2>

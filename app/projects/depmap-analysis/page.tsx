@@ -76,7 +76,7 @@ export default function DepMapAnalysisProject() {
 
           <div className="space-y-4">
             {/* Step 1: Data Import */}
-            <div className="bg-gradient-to-br from-bio-blue/10 to-purple-500/10 border border-bio-blue/30 rounded-xl p-6">
+            <div className="bg-bio-dark/40 border border-bio-blue/30 rounded-xl p-6">
               <div className="flex items-center gap-3 mb-3">
                 <span className="bg-bio-blue text-bio-dark font-bold rounded-full w-8 h-8 flex items-center justify-center">1</span>
                 <h3 className="text-xl font-semibold">Download and Cache Data</h3>
@@ -90,7 +90,7 @@ export default function DepMapAnalysisProject() {
                 href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/W11assignment/Project2DataImport.ipynb"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-bio-blue to-purple-500 hover:from-bio-blue/80 hover:to-purple-500/80 text-white px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
+                className="inline-flex items-center gap-2 bg-bio-blue text-white px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
               >
                 <span>📥</span>
                 <span>Open Data Import Notebook</span>
@@ -106,7 +106,7 @@ export default function DepMapAnalysisProject() {
             </div>
 
             {/* Step 2: Main Analysis */}
-            <div className="bg-gradient-to-br from-bio-yellow/10 to-bio-green/10 border border-bio-yellow/30 rounded-xl p-6">
+            <div className="bg-bio-dark/40 border border-bio-yellow/30 rounded-xl p-6">
               <div className="flex items-center gap-3 mb-3">
                 <span className="bg-bio-yellow text-bio-dark font-bold rounded-full w-8 h-8 flex items-center justify-center">2</span>
                 <h3 className="text-xl font-semibold">Start Your Analysis</h3>
@@ -119,7 +119,7 @@ export default function DepMapAnalysisProject() {
                 href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/W11assignment/Project2DepMapAnalysis.ipynb"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-bio-yellow to-bio-green hover:from-bio-yellow/80 hover:to-bio-green/80 text-bio-dark px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
+                className="inline-flex items-center gap-2 bg-bio-yellow text-bio-dark px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
               >
                 <span>🔬</span>
                 <span>Open Analysis Notebook</span>
@@ -270,7 +270,7 @@ export default function DepMapAnalysisProject() {
             </div>
           </div>
 
-          <div className="mt-6 bg-gradient-to-r from-bio-yellow/10 to-bio-green/10 border border-bio-yellow/30 rounded-xl p-6">
+          <div className="mt-6 bg-bio-dark/40 border border-bio-yellow/30 rounded-xl p-6">
             <h3 className="text-lg font-semibold text-bio-yellow mb-3">Expected Outputs</h3>
             <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-300">
               <div>
@@ -346,7 +346,7 @@ export default function DepMapAnalysisProject() {
 
         {/* Call to Action */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-bio-blue/10 to-purple-500/10 border border-bio-blue/30 rounded-2xl p-8">
+          <div className="bg-bio-dark/40 border border-bio-blue/30 rounded-2xl p-8">
             <h2 className="text-2xl font-bold mb-4">Ready to Begin?</h2>
             <p className="text-gray-300 mb-6">
               Start by downloading the data, then dive into the analysis notebook to
@@ -357,7 +357,7 @@ export default function DepMapAnalysisProject() {
                 href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/W11assignment/Project2DataImport.ipynb"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-bio-blue to-purple-500 hover:from-bio-blue/80 hover:to-purple-500/80 text-white px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
+                className="inline-flex items-center gap-2 bg-bio-blue text-white px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
               >
                 <span>📥</span>
                 <span>1. Download Data</span>
@@ -366,7 +366,7 @@ export default function DepMapAnalysisProject() {
                 href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/W11assignment/Project2DepMapAnalysis.ipynb"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-bio-yellow to-bio-green hover:from-bio-yellow/80 hover:to-bio-green/80 text-bio-dark px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
+                className="inline-flex items-center gap-2 bg-bio-yellow text-bio-dark px-6 py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
               >
                 <span>🔬</span>
                 <span>2. Start Analysis</span>

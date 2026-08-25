@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function LecturePage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-bio-dark to-bio-darker">
+    <div className="min-h-screen flex items-center justify-center bg-bio-darkest">
       <div className="text-center max-w-lg mx-auto px-6">
         <div className="text-6xl mb-6">🚧</div>
         <h1 className="text-3xl font-bold text-white mb-4">

@@ -4,9 +4,9 @@ import Link from 'next/link'
 
 export default function SequenceAnalysisAssignment() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-bio-dark via-bio-darker to-bio-dark">
+    <div className="min-h-screen bg-bio-darkest">
       {/* Header */}
-      <div className="bg-gradient-to-r from-bio-blue/20 to-purple-600/20 border-b border-bio-blue/30">
+      <div className="bg-bio-dark/40 border-b border-bio-blue/30">
         <div className="container mx-auto max-w-6xl px-6 py-8">
           <Link
             href="/#dna-analysis-task"
@@ -26,7 +26,7 @@ export default function SequenceAnalysisAssignment() {
       {/* Main Content */}
       <div className="container mx-auto max-w-6xl px-6 py-12">
         {/* Overview Box */}
-        <div className="bg-gradient-to-br from-purple-500/20 to-bio-blue/20 border border-purple-500/30 rounded-xl p-8 mb-8">
+        <div className="bg-bio-dark/40 border border-purple-500/30 rounded-xl p-8 mb-8">
           <h2 className="text-2xl font-bold text-purple-400 mb-4 flex items-center gap-2">
             <span>🎯</span>
             <span>Your Task</span>
@@ -145,7 +145,7 @@ export default function SequenceAnalysisAssignment() {
 
         {/* Code Quality Requirements */}
         <div className="grid md:grid-cols-2 gap-6 mb-8">
-          <div className="bg-gradient-to-br from-bio-green/20 to-bio-blue/20 border border-bio-green/30 rounded-xl p-6">
+          <div className="bg-bio-dark/40 border border-bio-green/30 rounded-xl p-6">
             <h3 className="text-xl font-bold text-bio-green mb-4 flex items-center gap-2">
               <span>💻</span>
               <span>Code Quality Requirements</span>
@@ -161,7 +161,7 @@ export default function SequenceAnalysisAssignment() {
             </ul>
           </div>
 
-          <div className="bg-gradient-to-br from-amber-500/20 to-bio-yellow/20 border border-amber-500/30 rounded-xl p-6">
+          <div className="bg-bio-dark/40 border border-amber-500/30 rounded-xl p-6">
             <h3 className="text-xl font-bold text-amber-400 mb-4 flex items-center gap-2">
               <span>⭐</span>
               <span>Advanced Functionality</span>
@@ -176,7 +176,7 @@ export default function SequenceAnalysisAssignment() {
         </div>
 
         {/* Submission Details */}
-        <div className="bg-gradient-to-r from-purple-600/30 to-bio-blue/30 border border-purple-500/50 rounded-xl p-8 mb-8">
+        <div className="bg-bio-dark/40 border border-purple-500/50 rounded-xl p-8 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 text-center flex items-center justify-center gap-2">
             <span>📤</span>
             <span>Submitting Your Assignment</span>
@@ -204,7 +204,7 @@ export default function SequenceAnalysisAssignment() {
         </div>
 
         {/* Assignment Resources */}
-        <div className="bg-gradient-to-br from-bio-blue/10 to-purple-600/10 border border-bio-blue/30 rounded-xl p-8">
+        <div className="bg-bio-dark/40 border border-bio-blue/30 rounded-xl p-8">
           <h2 className="text-2xl font-bold text-bio-blue mb-6 text-center flex items-center justify-center gap-2">
             <span>📁</span>
             <span>Assignment Resources</span>
@@ -219,7 +219,7 @@ export default function SequenceAnalysisAssignment() {
               href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/Project1DNAAnalysis.ipynb"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-bio-blue hover:from-purple-600 hover:to-bio-blue/80 text-white py-4 px-8 rounded-lg font-bold text-lg transition-all transform hover:scale-105"
+              className="inline-flex items-center gap-3 bg-purple-500 text-white py-4 px-8 rounded-lg font-bold text-lg transition-all transform hover:scale-105"
             >
               <span>📓</span>
               <span>Open Assignment Notebook in Colab</span>
@@ -228,7 +228,7 @@ export default function SequenceAnalysisAssignment() {
               href="https://www.youtube.com/watch?v=UfpW8xMXvDw"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white py-3 px-6 rounded-lg font-semibold transition-all transform hover:scale-105"
+              className="inline-flex items-center gap-3 bg-red-600 text-white py-3 px-6 rounded-lg font-semibold transition-all transform hover:scale-105"
             >
               <span>🎥</span>
               <span>Watch Assignment Walkthrough Video</span>

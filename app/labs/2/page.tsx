@@ -41,7 +41,7 @@ const sessions: Session[] = [
 
 export default function Lab2Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-bio-dark to-bio-darker pt-24 pb-16 px-4">
+    <div className="min-h-screen bg-bio-darkest pt-24 pb-16 px-4">
       <div className="container mx-auto max-w-6xl">
 
         <Link
