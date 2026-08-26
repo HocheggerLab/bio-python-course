@@ -1,20 +1,21 @@
 'use client'
 
 import { QRCodeSVG } from 'qrcode.react'
-import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
-import { SlideCard, CardHeading, CardBody, CardList } from '@/components/slides/SlideCard'
+import { GradientText } from '@/components/slides/SlideTitle'
+import { ExerciseSlide, type Step } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
 // Lecturer's permanent Poll Everywhere room.
 // Rotate the active poll inside the Poll Everywhere dashboard before class — no redeploy needed.
 const POLL_URL = 'https://pollev.com/your-handle'
 
-const tasks = [
-  'Loop through every sequence in the list',
-  'Test each: is its length a whole number of codons? (len(seq) % 3 == 0)',
-  'If it passes, add it to the ready list with .append()',
-  'Submit how many are ready — the length of the new list',
+const tasks: Step[] = [
+  { label: 'Loop through every sequence in the list', accent: 'yellow' },
+  { label: 'Test each: is its length a whole number of codons? (len(seq) % 3 == 0)', accent: 'yellow' },
+  { label: 'If it passes, add it to the ready list with .append()', accent: 'yellow' },
+  { label: 'Submit how many are ready — the length of the new list', accent: 'yellow' },
 ]
+
 
 const initialCode = `# Real viral sequence fragments — we fetched these for you.
 # To TRANSLATE a sequence it must be a whole number of codons
@@ -48,63 +49,26 @@ const hints = [
 
 export function Slide13TIYReadingFrame() {
   return (
-    <>
-      <SlideTitle>
-        Try it Yourself — <GradientText variant="yellow">Ready to Translate?</GradientText>
-      </SlideTitle>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
-
-        {/* LEFT — task + QR */}
-        <div className="flex flex-col gap-3 md:gap-4 min-h-0">
-          <SlideCard color="yellow" layout="start" padding="compact" className="border-l-4">
-            <CardHeading size="sm" color="yellow" className="mb-2 md:mb-3">
-              Filter for full reading frames
-            </CardHeading>
-            <CardBody className="mb-3 md:mb-4 text-xs md:text-sm xl:text-base">
-              You&apos;ve been handed real viral fragments. Before any can be translated, keep only
-              those that are a whole number of codons — <strong>loop, test each length, collect the
-              keepers</strong> in a new list. (A real pipeline would translate them next.)
-            </CardBody>
-            <CardList items={tasks} numbered color="yellow" />
-          </SlideCard>
-
-          <SlideCard color="blue" layout="start" padding="tight" className="border-l-4">
-            <div className="flex items-center gap-3 md:gap-5">
-              <div className="bg-white rounded-lg p-2 md:p-3 shrink-0">
-                <QRCodeSVG value={POLL_URL} size={96} level="M" marginSize={0} />
-              </div>
-              <div className="min-w-0">
-                <CardHeading size="sm" color="blue" className="mb-1 md:mb-2">
-                  Submit your count
-                </CardHeading>
-                <p className="text-gray-300 text-[11px] md:text-sm xl:text-base leading-snug">
-                  Scan with your phone — submit{' '}
-                  <span className="text-bio-blue font-semibold">how many sequences are ready</span>{' '}
-                  (the length of your new list).
-                </p>
-                <p className="font-mono text-[10px] md:text-xs xl:text-sm text-gray-500 mt-1 md:mt-2 break-all">
-                  {POLL_URL}
-                </p>
-              </div>
-            </div>
-          </SlideCard>
-        </div>
-
-        {/* RIGHT — runner */}
-        <div className="flex-1 min-h-0 overflow-hidden rounded-xl">
-          <LazyPythonRunner
-            initialCode={initialCode}
-            expectedOutput={expectedOutput}
-            hints={hints}
-            height="560px"
-            showLineNumbers
-            description="Test — keep the sequences ready to translate"
-            staticOutput={expectedOutput}
-          />
-        </div>
-
-      </div>
-    </>
+    <ExerciseSlide
+      title={<>Try it Yourself — <GradientText variant="yellow">Ready to Translate?</GradientText></>}
+      intro={
+        <>
+          You&apos;ve been handed real viral fragments. Before any can be translated, keep only
+          those that are a whole number of codons — <strong>loop, test each length, collect the
+          keepers</strong> in a new list. (A real pipeline would translate them next.)
+        </>
+      }
+      steps={tasks}
+    >
+      <LazyPythonRunner
+        initialCode={initialCode}
+        expectedOutput={expectedOutput}
+        hints={hints}
+        height="562px"
+        showLineNumbers
+        description="Test — keep the sequences ready to translate"
+        staticOutput={expectedOutput}
+      />
+    </ExerciseSlide>
   )
 }

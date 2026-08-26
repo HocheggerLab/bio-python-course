@@ -10,7 +10,7 @@ export function Slide02TheProblem() {
         Today's Question: Can a City Feed Its Own <GradientText variant="green">Bees?</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 items-start">
 
         {/* LEFT — bee photo (placeholder until the Nicholls Lab image is added) */}
         <figure className="relative rounded-2xl overflow-hidden ring-1 ring-white/10 bg-gradient-to-br from-bio-green/20 via-bio-dark to-bio-blue/10 min-h-0 flex items-center justify-center">
@@ -35,7 +35,7 @@ export function Slide02TheProblem() {
         </figure>
 
         {/* RIGHT — build the question with care, then the study */}
-        <div className="flex flex-col justify-center gap-4 md:gap-5">
+        <div className="flex flex-col gap-4 md:gap-5">
 
           <p className="text-lg md:text-2xl xl:text-3xl text-gray-200 leading-relaxed">
             Most of our fruit and veg needs an{' '}

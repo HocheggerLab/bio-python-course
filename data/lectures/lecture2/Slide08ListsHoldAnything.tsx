@@ -1,5 +1,6 @@
-import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
+import { GradientText } from '@/components/slides/SlideTitle'
 import { SlideCard, CardHeading, CardBody } from '@/components/slides/SlideCard'
+import { ConceptSlide } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
 const demoCode = `# A list can mix types: text, numbers, booleans
@@ -22,53 +23,41 @@ TP53`
 
 export function Slide08ListsHoldAnything() {
   return (
-    <>
-      <SlideTitle>
-        Lists Hold <GradientText>Anything</GradientText>
-      </SlideTitle>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
-
-        <div className="flex flex-col gap-3 md:gap-4 min-h-0">
-          <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
-            <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">
-              Any type, mixed freely
-            </CardHeading>
-            <CardBody>
-              A list doesn&apos;t care what it holds — strings, ints, floats, booleans, all in the
-              same list. Often a single record about one gene: name, length, GC fraction, a QC
-              flag.
-            </CardBody>
-          </SlideCard>
-
-          <SlideCard color="green" layout="start" padding="compact" className="border-l-4">
-            <CardHeading size="sm" color="green" className="mb-2 md:mb-3">
-              Lists of lists — a table
-            </CardHeading>
-            <CardBody>
-              An item can itself be a list. Stack rows and you have a table; reach in twice —{' '}
-              <span className="font-mono">plate[1][0]</span> — to get one cell. This is the shape
-              of the data tables we&apos;ll meet later.
-            </CardBody>
-          </SlideCard>
-        </div>
-
-        <div className="flex flex-col gap-3 md:gap-4 min-h-0">
-          <p className="text-gray-300 text-xs md:text-sm xl:text-base italic">
-            Run it — try reaching <span className="font-mono not-italic">plate[2][1]</span>:
-          </p>
-          <div className="flex-1 min-h-0 overflow-hidden rounded-xl">
-            <LazyPythonRunner
-              initialCode={demoCode}
-              height="280px"
-              showLineNumbers
-              description="Live demo — mixed types and lists of lists"
-              staticOutput={demoOutput}
-            />
-          </div>
-        </div>
-
-      </div>
-    </>
+    <ConceptSlide
+      title={<>Lists Hold <GradientText>Anything</GradientText></>}
+      points={
+      <>
+        <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
+          <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">
+            Any type, mixed freely
+          </CardHeading>
+          <CardBody className="text-sm md:text-base xl:text-lg">
+            A list doesn&apos;t care what it holds — strings, ints, floats, booleans, all in the
+            same list. Often a single record about one gene: name, length, GC fraction, a QC
+            flag.
+          </CardBody>
+        </SlideCard>
+        <SlideCard color="green" layout="start" padding="compact" className="border-l-4">
+          <CardHeading size="sm" color="green" className="mb-2 md:mb-3">
+            Lists of lists — a table
+          </CardHeading>
+          <CardBody className="text-sm md:text-base xl:text-lg">
+            An item can itself be a list. Stack rows and you have a table; reach in twice —{' '}
+            <span className="font-mono">plate[1][0]</span> — to get one cell. This is the shape
+            of the data tables we&apos;ll meet later.
+          </CardBody>
+        </SlideCard>
+      </>
+      }
+      note={<>Run it — try reaching <span className="font-mono not-italic">plate[2][1]</span>:</>}
+    >
+      <LazyPythonRunner
+        initialCode={demoCode}
+        height="247px"
+        showLineNumbers
+        description="Live demo — mixed types and lists of lists"
+        staticOutput={demoOutput}
+      />
+    </ConceptSlide>
   )
 }

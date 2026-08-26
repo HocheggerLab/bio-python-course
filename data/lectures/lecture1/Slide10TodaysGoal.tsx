@@ -33,7 +33,7 @@ export function Slide10TodaysGoal() {
       right={
         <LazyPythonRunner
           initialCode={initialCode}
-          height="380px"
+          height="373px"
           showLineNumbers
           description="Step 1 of Claudia's pipeline"
           staticOutput={`Gene:       BRCA1_exon3\nLength:     16 bases\nGC content: 56.2%`}

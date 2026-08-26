@@ -1,20 +1,22 @@
 'use client'
 
 import { QRCodeSVG } from 'qrcode.react'
-import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
-import { SlideCard, CardHeading, CardBody, CardList } from '@/components/slides/SlideCard'
+import { GradientText } from '@/components/slides/SlideTitle'
+import { SlideCard, CardHeading } from '@/components/slides/SlideCard'
+import { ExerciseSlide, type Step } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
 // Lecturer's permanent Poll Everywhere room.
 // Rotate the active poll inside the Poll Everywhere dashboard before class — no redeploy needed.
 const POLL_URL = 'https://pollev.com/your-handle'
 
-const tasks = [
-  'Convert each incubation period from days to whole minutes (× 1440, rounded)',
-  'Collect the results in incubation_minutes with .append()',
-  'Add every value into one running total',
-  'Submit your grand total — how many minutes in all?',
+const tasks: Step[] = [
+  { label: 'Convert each incubation period from days to whole minutes (× 1440, rounded)', accent: 'yellow' },
+  { label: 'Collect the results in incubation_minutes with .append()', accent: 'yellow' },
+  { label: 'Add every value into one running total', accent: 'yellow' },
+  { label: 'Submit your grand total — how many minutes in all?', accent: 'yellow' },
 ]
+
 
 const initialCode = `# Approximate mean incubation period (infection → symptoms), in days.
 # A panel of coronaviruses: 229E, SARS, SARS-CoV-2, MERS, Omicron
@@ -44,62 +46,43 @@ const hints = [
 
 export function Slide08TIYIncubation() {
   return (
-    <>
-      <SlideTitle>
-        Try it Yourself — <GradientText variant="yellow">Total Incubation Time</GradientText>
-      </SlideTitle>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
-
-        {/* LEFT — task + QR */}
-        <div className="flex flex-col gap-3 md:gap-4 min-h-0">
-          <SlideCard color="yellow" layout="start" padding="compact" className="border-l-4">
-            <CardHeading size="sm" color="yellow" className="mb-2 md:mb-3">
-              Transform, then add it all up
-            </CardHeading>
-            <CardBody className="mb-3 md:mb-4 text-xs md:text-sm xl:text-base">
-              Two loops, both from today — <strong>transform</strong> each incubation period into
-              minutes, then <strong>accumulate</strong> them into one total.
-            </CardBody>
-            <CardList items={tasks} numbered color="yellow" />
-          </SlideCard>
-
-          <SlideCard color="blue" layout="start" padding="tight" className="border-l-4">
-            <div className="flex items-center gap-3 md:gap-5">
-              <div className="bg-white rounded-lg p-2 md:p-3 shrink-0">
-                <QRCodeSVG value={POLL_URL} size={96} level="M" marginSize={0} />
-              </div>
-              <div className="min-w-0">
-                <CardHeading size="sm" color="blue" className="mb-1 md:mb-2">
-                  Submit your total
-                </CardHeading>
-                <p className="text-gray-300 text-[11px] md:text-sm xl:text-base leading-snug">
-                  Scan with your phone — submit your{' '}
-                  <span className="text-bio-blue font-semibold">total minutes</span> to today&apos;s
-                  poll. Did everyone get the same number?
-                </p>
-                <p className="font-mono text-[10px] md:text-xs xl:text-sm text-gray-500 mt-1 md:mt-2 break-all">
-                  {POLL_URL}
-                </p>
-              </div>
+    <ExerciseSlide
+      title={<>Try it Yourself — <GradientText variant="yellow">Total Incubation Time</GradientText></>}
+      intro={
+        <>
+          Two loops, both from today — <strong>transform</strong> each incubation period into
+          minutes, then <strong>accumulate</strong> them into one total.
+        </>
+      }
+      steps={tasks}
+      aside={
+        <SlideCard color="blue" layout="start" padding="tight" className="border-l-4">
+          <div className="flex items-center gap-3 md:gap-5">
+            <div className="bg-white rounded p-2 md:p-3 shrink-0">
+              <QRCodeSVG value={POLL_URL} size={96} level="M" includeMargin={false} />
             </div>
-          </SlideCard>
-        </div>
-
-        {/* RIGHT — runner */}
-        <div className="flex-1 min-h-0 overflow-hidden rounded-xl">
-          <LazyPythonRunner
-            initialCode={initialCode}
-            expectedOutput={expectedOutput}
-            hints={hints}
-            height="560px"
-            showLineNumbers
-            description="Test — total incubation time in minutes"
-            staticOutput={expectedOutput}
-          />
-        </div>
-
-      </div>
-    </>
+            <div className="min-w-0">
+              <CardHeading size="sm" color="blue" className="mb-1 md:mb-2">
+                Submit your total
+              </CardHeading>
+              <p className="text-gray-400 text-xs md:text-sm xl:text-base leading-snug">
+                Scan with your phone — submit your{' '}
+                <span className="text-bio-blue font-semibold">total</span> to today&apos;s poll.
+              </p>
+            </div>
+          </div>
+        </SlideCard>
+      }
+    >
+      <LazyPythonRunner
+        initialCode={initialCode}
+        expectedOutput={expectedOutput}
+        hints={hints}
+        height="562px"
+        showLineNumbers
+        description="Test — total incubation time in minutes"
+        staticOutput={expectedOutput}
+      />
+    </ExerciseSlide>
   )
 }

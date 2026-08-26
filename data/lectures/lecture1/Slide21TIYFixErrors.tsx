@@ -51,7 +51,7 @@ export function Slide21TIYFixErrors() {
         initialCode={initialCode}
         expectedOutput={expectedOutput}
         hints={hints}
-        height="420px"
+        height="415px"
         showLineNumbers
         description="Test — fix the three errors"
         staticOutput={expectedOutput}

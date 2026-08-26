@@ -22,12 +22,12 @@ export const lecture5Data: LectureData = {
     { id: 3, title: 'This Session — Meet the DataFrame',  contentType: 'center', content: <Slide03ThisSession /> },
     // ── Part 1: packages (via random) ──────────────────────
     { id: 4, title: 'Two Kinds of Package',              contentType: 'center', content: <Slide04Packages /> },
-    { id: 5, title: 'A First Package — random',          contentType: 'top', content: <Slide05RandomGame /> },
+    { id: 5, title: 'A First Package — random',          contentType: 'center', content: <Slide05RandomGame /> },
     // ── Part 2: a detour into OOP ──────────────────────────
-    { id: 6, title: 'How Does random Actually Work?',    contentType: 'top', content: <Slide06RandomQuestion /> },
+    { id: 6, title: 'How Does random Actually Work?',    contentType: 'center', content: <Slide06RandomQuestion /> },
     { id: 7, title: "Use It, Don't Build It",            contentType: 'center', content: <Slide06bLaundry /> },
-    { id: 8, title: 'Build the Simplest Object',         contentType: 'top', content: <Slide07Objects /> },
-    { id: 9, title: 'Methods — Why Pandas Looks Familiar', contentType: 'top', content: <Slide08MethodsBridge /> },
+    { id: 8, title: 'Build the Simplest Object',         contentType: 'center', content: <Slide07Objects /> },
+    { id: 9, title: 'Methods — Why Pandas Looks Familiar', contentType: 'center', content: <Slide08MethodsBridge /> },
     // ── Part 3: the DataFrame (Colab) — TO BUILD ───────────
   ],
 }

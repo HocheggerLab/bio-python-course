@@ -31,7 +31,7 @@ export function Slide17FStrings() {
     >
       <LazyPythonRunner
         initialCode={demoCode}
-        height="296px"
+        height="289px"
         showLineNumbers
         description="Live demo — f-strings"
         staticOutput={demoOutput}

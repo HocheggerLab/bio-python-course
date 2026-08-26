@@ -9,9 +9,9 @@ export function Slide19Raise() {
         Fail Loudly — <GradientText variant="yellow">raise</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 items-start">
 
-        <div className="flex flex-col justify-center gap-3 md:gap-4">
+        <div className="flex flex-col gap-3 md:gap-4">
           <SlideCard color="neutral" layout="start" padding="compact">
             <CardBody className="text-xs md:text-sm xl:text-base">
               Skipping bad data is one option. The other is to <strong>stop, on purpose</strong>,
@@ -43,7 +43,7 @@ export function Slide19Raise() {
           </SlideCard>
         </div>
 
-        <div className="flex flex-col justify-center gap-3 md:gap-4">
+        <div className="flex flex-col gap-3 md:gap-4">
           <p className="text-gray-300 text-xs md:text-sm xl:text-base italic">
             The error is now <em>yours</em> — your type, your message:
           </p>

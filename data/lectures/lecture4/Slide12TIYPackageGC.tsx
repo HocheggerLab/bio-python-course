@@ -1,21 +1,23 @@
 'use client'
 
 import { QRCodeSVG } from 'qrcode.react'
-import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
-import { SlideCard, CardHeading, CardBody, CardList } from '@/components/slides/SlideCard'
+import { GradientText } from '@/components/slides/SlideTitle'
+import { SlideCard, CardHeading } from '@/components/slides/SlideCard'
+import { ExerciseSlide, type Step } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
 // Lecturer's permanent Poll Everywhere room.
 // Rotate the active poll inside the Poll Everywhere dashboard before class — no redeploy needed.
 const POLL_URL = 'https://pollev.com/your-handle'
 
-const tasks = [
-  'Write one function: def gc_content(seq):',
-  'Give it a docstring — what goes in, what comes out',
-  'return the percentage (don’t print it)',
-  'Call it three times — one per sequence',
-  'Submit how many lines your whole program is',
+const tasks: Step[] = [
+  { label: 'Write one function: def gc_content(seq):', accent: 'yellow' },
+  { label: 'Give it a docstring — what goes in, what comes out', accent: 'yellow' },
+  { label: 'return the percentage (don’t print it)', accent: 'yellow' },
+  { label: 'Call it three times — one per sequence', accent: 'yellow' },
+  { label: 'Submit how many lines your whole program is', accent: 'yellow' },
 ]
+
 
 const initialCode = `# The GC calculation from Session 1 — copy-pasted THREE times.
 # Same six lines, over and over. This is "spaghetti code".
@@ -51,66 +53,46 @@ const hints = [
 
 export function Slide12TIYPackageGC() {
   return (
-    <>
-      <SlideTitle>
-        Try it Yourself — <GradientText variant="yellow">Package the Spaghetti</GradientText>
-      </SlideTitle>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
-
-        {/* LEFT — task + QR */}
-        <div className="flex flex-col gap-3 md:gap-4 min-h-0">
-          <SlideCard color="yellow" layout="start" padding="compact" className="border-l-4">
-            <CardHeading size="sm" color="yellow" className="mb-2 md:mb-3">
-              One function, called three times
-            </CardHeading>
-            <CardBody className="mb-3 md:mb-4 text-xs md:text-sm xl:text-base">
-              The GC calculation you wrote in Session 1 is here <strong>three times over</strong> —
-              the same six lines, copy-pasted. Fix it: write a proper{' '}
-              <span className="font-mono">gc_content(seq)</span> function{' '}
-              <strong>once</strong>, with a docstring, and call it. Same three answers, far fewer
-              lines.
-            </CardBody>
-            <CardList items={tasks} numbered color="yellow" />
-          </SlideCard>
-
-          <SlideCard color="blue" layout="start" padding="tight" className="border-l-4">
-            <div className="flex items-center gap-3 md:gap-5">
-              <div className="bg-white rounded-lg p-2 md:p-3 shrink-0">
-                <QRCodeSVG value={POLL_URL} size={96} level="M" marginSize={0} />
-              </div>
-              <div className="min-w-0">
-                <CardHeading size="sm" color="blue" className="mb-1 md:mb-2">
-                  Submit your line count
-                </CardHeading>
-                <p className="text-gray-300 text-[11px] md:text-sm xl:text-base leading-snug">
-                  Scan with your phone — submit{' '}
-                  <span className="text-bio-blue font-semibold">how many lines</span> your whole
-                  program is now. The spaghetti is <strong>12</strong> — can you get under{' '}
-                  <strong>10</strong>?
-                </p>
-                <p className="font-mono text-[10px] md:text-xs xl:text-sm text-gray-500 mt-1 md:mt-2 break-all">
-                  {POLL_URL}
-                </p>
-              </div>
+    <ExerciseSlide
+      title={<>Try it Yourself — <GradientText variant="yellow">Package the Spaghetti</GradientText></>}
+      intro={
+        <>
+          The GC calculation you wrote in Session 1 is here <strong>three times over</strong> —
+          the same six lines, copy-pasted. Fix it: write a proper{' '}
+          <span className="font-mono">gc_content(seq)</span> function{' '}
+          <strong>once</strong>, with a docstring, and call it. Same three answers, far fewer
+          lines.
+        </>
+      }
+      steps={tasks}
+      aside={
+        <SlideCard color="blue" layout="start" padding="tight" className="border-l-4">
+          <div className="flex items-center gap-3 md:gap-5">
+            <div className="bg-white rounded p-2 md:p-3 shrink-0">
+              <QRCodeSVG value={POLL_URL} size={96} level="M" includeMargin={false} />
             </div>
-          </SlideCard>
-        </div>
-
-        {/* RIGHT — runner */}
-        <div className="flex-1 min-h-0 overflow-hidden rounded-xl">
-          <LazyPythonRunner
-            initialCode={initialCode}
-            expectedOutput={expectedOutput}
-            hints={hints}
-            height="560px"
-            showLineNumbers
-            description="Refactor — package the repeated GC calculation into one function"
-            staticOutput={expectedOutput}
-          />
-        </div>
-
-      </div>
-    </>
+            <div className="min-w-0">
+              <CardHeading size="sm" color="blue" className="mb-1 md:mb-2">
+                Submit your result
+              </CardHeading>
+              <p className="text-gray-400 text-xs md:text-sm xl:text-base leading-snug">
+                Scan with your phone — submit your{' '}
+                <span className="text-bio-blue font-semibold">answer</span> to today&apos;s poll.
+              </p>
+            </div>
+          </div>
+        </SlideCard>
+      }
+    >
+      <LazyPythonRunner
+        initialCode={initialCode}
+        expectedOutput={expectedOutput}
+        hints={hints}
+        height="562px"
+        showLineNumbers
+        description="Refactor — package the repeated GC calculation into one function"
+        staticOutput={expectedOutput}
+      />
+    </ExerciseSlide>
   )
 }

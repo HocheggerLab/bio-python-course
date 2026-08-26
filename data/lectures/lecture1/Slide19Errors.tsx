@@ -28,7 +28,7 @@ export function Slide19Errors() {
     >
       <LazyPythonRunner
         initialCode={demoCode}
-        height="208px"
+        height="205px"
         showLineNumbers
         description="Live demo — reading a traceback"
         staticOutput={demoOutput}

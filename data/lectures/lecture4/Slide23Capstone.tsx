@@ -63,7 +63,7 @@ export function Slide23Capstone() {
         Claudia&apos;s Whole Job — <GradientText variant="green">One Program</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 items-start">
 
         {/* LEFT — a happy Claudia, running it on the whole folder */}
         <div className="flex items-center justify-center min-h-0">
@@ -84,7 +84,7 @@ export function Slide23Capstone() {
           <div className="flex-1 min-h-0 overflow-hidden rounded-xl">
             <LazyPythonRunner
               initialCode={demoCode}
-              height="620px"
+              height="625px"
               showLineNumbers
               description="Live demo — Claudia's complete, defensive ORF translator over many sequences"
               staticOutput={demoOutput}

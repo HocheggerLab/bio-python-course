@@ -17,7 +17,7 @@ export function Slide06RandomQuestion() {
         How Does <GradientText variant="purple">random</GradientText> Actually Work?
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 items-start">
 
         {/* LEFT — the scary machinery */}
         <div className="flex flex-col gap-3 md:gap-4">
@@ -31,7 +31,7 @@ export function Slide06RandomQuestion() {
         </div>
 
         {/* RIGHT — you don't need the internals; you need the API */}
-        <div className="flex flex-col justify-center gap-4 md:gap-5">
+        <div className="flex flex-col gap-4 md:gap-5">
           <SlideCard color="green" layout="start" padding="compact" className="border-l-4">
             <CardHeading size="sm" color="green" className="mb-2 md:mb-3">
               You don&apos;t need to know.

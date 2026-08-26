@@ -93,7 +93,7 @@ export function Slide28TIYSpikeTrain() {
         initialCode={initialCode}
         expectedOutput={expectedOutput}
         hints={hints}
-        height="460px"
+        height="457px"
         showLineNumbers
         description="Test — spike train firing rate"
         staticOutput={expectedOutput}

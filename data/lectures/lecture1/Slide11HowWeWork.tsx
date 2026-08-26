@@ -64,7 +64,7 @@ export function Slide11HowWeWork() {
             }
           />
           <div className="overflow-hidden rounded-xl mt-auto">
-            <LazyPythonRunner initialCode={helloWorld} height="120px" />
+            <LazyPythonRunner initialCode={helloWorld} height="205px" />
           </div>
         </SlideCard>
 

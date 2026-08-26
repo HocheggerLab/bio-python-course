@@ -45,7 +45,7 @@ export function Slide24Operators() {
       right={
         <LazyPythonRunner
           initialCode={demoCode}
-          height="330px"
+          height="331px"
           showLineNumbers
           description="Live demo — arithmetic on variables"
           staticOutput={demoOutput}

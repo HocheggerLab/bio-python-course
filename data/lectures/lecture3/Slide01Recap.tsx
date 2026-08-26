@@ -28,10 +28,10 @@ export function Slide01Recap() {
         Last Session — <GradientText variant="green">A Quick Recap</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 items-start">
 
         {/* LEFT — what they already know */}
-        <SlideCard color="green" layout="middle" padding="compact" className="border-l-4">
+        <SlideCard color="green" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="green" className="mb-3 md:mb-5">
             You can already…
           </CardHeading>
@@ -43,7 +43,7 @@ export function Slide01Recap() {
           <p className="text-gray-300 text-xs md:text-sm xl:text-base italic">
             …so you translated three codons <strong>by hand</strong>:
           </p>
-          <pre className="bg-bio-dark/60 rounded-xl p-3 md:p-5 font-mono text-[11px] md:text-sm xl:text-base text-gray-200 overflow-auto flex-1 min-h-0">
+          <pre className="bg-bio-dark/60 rounded-xl p-3 md:p-5 font-mono text-[11px] md:text-sm xl:text-base text-gray-200 overflow-auto">
 {byHand}
           </pre>
         </div>

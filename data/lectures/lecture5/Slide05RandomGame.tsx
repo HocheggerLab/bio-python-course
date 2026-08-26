@@ -28,9 +28,9 @@ export function Slide05RandomGame() {
         A First Package — <GradientText variant="green">random</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 items-center">
 
-        <div className="flex flex-col justify-center gap-4 md:gap-5">
+        <div className="flex flex-col gap-4 md:gap-5">
           <SlideCard color="neutral" layout="start" padding="compact">
             <CardBody>
               <span className="font-mono">random</span> is in the standard library — one{' '}
@@ -58,14 +58,14 @@ export function Slide05RandomGame() {
           </SlideCard>
         </div>
 
-        <div className="flex flex-col justify-center gap-3 md:gap-4 min-h-0">
+        <div className="flex flex-col gap-3 md:gap-4 min-h-0">
           <p className="text-gray-300 text-sm md:text-lg xl:text-xl italic">
             Roll against the bee — run it, then run it again:
           </p>
           <div className="overflow-hidden rounded-xl">
             <LazyPythonRunner
               initialCode={demoCode}
-              height="400px"
+              height="394px"
               showLineNumbers
               description="Live demo — random dice duel"
               staticOutput={demoOutput}

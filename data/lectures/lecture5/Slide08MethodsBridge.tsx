@@ -26,16 +26,16 @@ export function Slide08MethodsBridge() {
         Methods — and Why <GradientText variant="green">Pandas</GradientText> Looks Familiar
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 items-center">
 
-        <div className="flex flex-col justify-center gap-3 md:gap-4 min-h-0">
+        <div className="flex flex-col gap-3 md:gap-4 min-h-0">
           <p className="text-gray-300 text-sm md:text-lg xl:text-xl italic">
             A <strong>method</strong> is a function that lives on the object — call it with a dot:
           </p>
           <div className="overflow-hidden rounded-xl">
             <LazyPythonRunner
               initialCode={demoCode}
-              height="400px"
+              height="394px"
               showLineNumbers
               description="Live demo — gene.gc_content()"
               staticOutput={demoOutput}
@@ -43,7 +43,7 @@ export function Slide08MethodsBridge() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center gap-4 md:gap-5">
+        <div className="flex flex-col gap-4 md:gap-5">
           <SlideCard color="purple" layout="start" padding="compact" className="border-l-4">
             <CardHeading size="sm" color="purple" className="mb-2 md:mb-3">
               🎯 This is exactly how pandas works
