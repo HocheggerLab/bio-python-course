@@ -14,6 +14,7 @@ export function ConceptSlide({
   title,
   lead,
   points,
+  pointsLayout = 'grid',
   closing,
   children,
   note,
@@ -27,6 +28,12 @@ export function ConceptSlide({
    * say). Keeps the text above the code rather than beside it.
    */
   points?: React.ReactNode
+  /**
+   * 'rows' stacks the points full width instead of side by side. Use it when
+   * the cards carry real prose — three narrow columns turn 30 words into a
+   * tall grey slab, whereas a full-width row stays two lines.
+   */
+  pointsLayout?: 'grid' | 'rows'
   /**
    * A closing thought that belongs *after* the code — the "look what just
    * happened" beat. Full width, so it reads as a conclusion rather than a
@@ -52,7 +59,8 @@ export function ConceptSlide({
       ? (points.props as { children?: React.ReactNode }).children
       : points
   )
-  const pointCols = n >= 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'
+  const pointCols =
+    pointsLayout === 'rows' ? '' : n >= 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'
 
   return (
     <>
@@ -61,7 +69,13 @@ export function ConceptSlide({
       {points && (
         <div
           className={`w-full ${widths[maxWidth]} mx-auto grid grid-cols-1 ${pointCols}
-            items-start gap-4 md:gap-6 mt-4 md:mt-6`}
+            items-start mt-4 md:mt-6
+            ${
+              pointsLayout === 'rows'
+                ? 'gap-2 md:gap-2.5 [&_p]:text-sm [&_p]:md:text-base [&_p]:xl:text-lg ' +
+                  '[&_.slide-card-heading]:text-base [&_.slide-card-heading]:md:text-xl'
+                : 'gap-4 md:gap-6'
+            }`}
         >
           {points}
         </div>

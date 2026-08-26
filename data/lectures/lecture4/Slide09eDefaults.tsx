@@ -19,10 +19,11 @@ export function Slide09eDefaults() {
   return (
     <ConceptSlide
       title={<>Two Parameters — and a <GradientText variant="yellow">Default</GradientText></>}
+      pointsLayout="rows"
       points={
       <>
-        <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
-          <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">
+        <SlideCard color="blue" layout="start" padding="tight" className="border-l-4">
+          <CardHeading size="sm" color="blue" className="mb-1">
             More than one box
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
@@ -33,8 +34,8 @@ export function Slide09eDefaults() {
             <span className="font-mono">position</span>.
           </CardBody>
         </SlideCard>
-        <SlideCard color="yellow" layout="start" padding="compact" className="border-l-4">
-          <CardHeading size="sm" color="yellow" className="mb-2 md:mb-3">
+        <SlideCard color="yellow" layout="start" padding="tight" className="border-l-4">
+          <CardHeading size="sm" color="yellow" className="mb-1">
             <span className="font-mono">position=0</span> — a default
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
@@ -44,8 +45,8 @@ export function Slide09eDefaults() {
             don&apos;t tell me?&quot;
           </CardBody>
         </SlideCard>
-        <SlideCard color="green" layout="start" padding="compact" className="border-l-4">
-          <CardHeading size="sm" color="green" className="mb-2 md:mb-3">
+        <SlideCard color="green" layout="start" padding="tight" className="border-l-4">
+          <CardHeading size="sm" color="green" className="mb-1">
             Remember last week?
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
@@ -74,7 +75,7 @@ export function Slide09eDefaults() {
     >
       <LazyPythonRunner
         initialCode={demoCode}
-        height="205px"
+        height="184px"
         showLineNumbers
         description="Live demo — a default parameter"
         staticOutput={demoOutput}

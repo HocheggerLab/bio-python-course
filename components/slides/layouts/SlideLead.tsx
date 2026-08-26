@@ -16,7 +16,7 @@ export function SlideLead({
 }) {
   return (
     <p
-      className={`text-gray-400 leading-relaxed max-w-4xl
+      className={`text-gray-400 leading-relaxed max-w-5xl
         text-base md:text-xl xl:text-2xl
         mt-3 md:mt-5
         ${align === 'center' ? 'mx-auto text-center' : ''}

@@ -37,10 +37,11 @@ export function Slide11Docstrings() {
   return (
     <ConceptSlide
       title={<>Say What It Does — <GradientText variant="yellow">docstrings</GradientText></>}
+      pointsLayout="rows"
       points={
       <>
-        <SlideCard color="red" layout="start" padding="compact" className="border-l-4">
-          <CardHeading size="sm" color="red" className="mb-2 md:mb-3">
+        <SlideCard color="red" layout="start" padding="tight" className="border-l-4">
+          <CardHeading size="sm" color="red" className="mb-1">
             Reading code is hard
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
@@ -49,8 +50,8 @@ export function Slide11Docstrings() {
             remember whether it wanted DNA or RNA — or what it gave back.
           </CardBody>
         </SlideCard>
-        <SlideCard color="yellow" layout="start" padding="compact" className="border-l-4">
-          <CardHeading size="sm" color="yellow" className="mb-2 md:mb-3">
+        <SlideCard color="yellow" layout="start" padding="tight" className="border-l-4">
+          <CardHeading size="sm" color="yellow" className="mb-1">
             Three quotes, right under the <span className="font-mono">def</span>
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
@@ -60,8 +61,8 @@ export function Slide11Docstrings() {
             <strong>keeps</strong> it.
           </CardBody>
         </SlideCard>
-        <SlideCard color="green" layout="start" padding="compact" className="border-l-4">
-          <CardHeading size="sm" color="green" className="mb-2 md:mb-3">
+        <SlideCard color="green" layout="start" padding="tight" className="border-l-4">
+          <CardHeading size="sm" color="green" className="mb-1">
             <span className="font-mono">help()</span> — where it shows up
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
@@ -74,7 +75,7 @@ export function Slide11Docstrings() {
       }
       note={<>Run it — you never wrote a help page, but you have one:</>}
       closing={
-        <SlideCard color="neutral" layout="start" padding="compact" className="border-l-4">
+        <SlideCard color="neutral" layout="start" padding="tight" className="border-l-4">
           <CardBody className="text-sm md:text-base xl:text-lg">
             A name says <em>what</em>. A docstring says <em>what it expects</em> — and that turns
         out to matter enormously when someone hands it a sequence full of{' '}
@@ -85,7 +86,7 @@ export function Slide11Docstrings() {
     >
       <LazyPythonRunner
         initialCode={demoCode}
-        height="247px"
+        height="226px"
         showLineNumbers
         description="Live demo — a docstring, and help() reading it back"
         staticOutput={demoOutput}

@@ -190,7 +190,11 @@ export function CardHeading({
     lg: 'text-2xl md:text-5xl xl:text-6xl 2xl:text-7xl',
   }
   const colorClass = color ? cardAccents.text[color] : 'text-white'
-  return <div className={`font-bold ${colorClass} ${sizes[size]} ${className}`}>{children}</div>
+  return (
+    <div className={`slide-card-heading font-bold ${colorClass} ${sizes[size]} ${className}`}>
+      {children}
+    </div>
+  )
 }
 
 export function CardStatNumber({

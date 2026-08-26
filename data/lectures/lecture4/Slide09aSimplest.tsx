@@ -27,10 +27,11 @@ export function Slide09aSimplest() {
           gives nothing back, and just prints.
         </>
       }
+      pointsLayout="rows"
       points={
       <>
-        <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
-          <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">
+        <SlideCard color="blue" layout="start" padding="tight" className="border-l-4">
+          <CardHeading size="sm" color="blue" className="mb-1">
             <span className="font-mono">def name():</span>
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
@@ -40,8 +41,8 @@ export function Slide09aSimplest() {
             indent, body.
           </CardBody>
         </SlideCard>
-        <SlideCard color="yellow" layout="start" padding="compact" className="border-l-4">
-          <CardHeading size="sm" color="yellow" className="mb-2 md:mb-3">
+        <SlideCard color="yellow" layout="start" padding="tight" className="border-l-4">
+          <CardHeading size="sm" color="yellow" className="mb-1">
             Defining is not running
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
@@ -51,8 +52,8 @@ export function Slide09aSimplest() {
             <em>first</em>, even though the function was written above it.
           </CardBody>
         </SlideCard>
-        <SlideCard color="green" layout="start" padding="compact" className="border-l-4">
-          <CardHeading size="sm" color="green" className="mb-2 md:mb-3">
+        <SlideCard color="green" layout="start" padding="tight" className="border-l-4">
+          <CardHeading size="sm" color="green" className="mb-1">
             The brackets are the &quot;go&quot; button
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
@@ -67,7 +68,7 @@ export function Slide09aSimplest() {
     >
       <LazyPythonRunner
         initialCode={demoCode}
-        height="205px"
+        height="163px"
         showLineNumbers
         description="Live demo — defining vs calling"
         staticOutput={demoOutput}
