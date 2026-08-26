@@ -43,9 +43,13 @@ export default function LazyPyodideWrapper({ children }: { children: React.React
   const [needed, setNeeded] = useState(false)
   const request = useCallback(() => setNeeded(true), [])
 
+  // The provider is always rendered so the element type never changes;
+  // `enabled` is what actually defers the ~10MB Pyodide download until a
+  // Python slide asks for it. Swapping the element type here instead would
+  // remount the entire deck and throw the lecturer back to slide 1.
   return (
     <RequestCtx.Provider value={request}>
-      {needed ? <PyodideProvider>{children}</PyodideProvider> : children}
+      <PyodideProvider enabled={needed}>{children}</PyodideProvider>
     </RequestCtx.Provider>
   )
 }

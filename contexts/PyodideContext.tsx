@@ -54,7 +54,16 @@ interface PyodideContextType {
 
 const PyodideContext = createContext<PyodideContextType | null>(null)
 
-export const PyodideProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+/**
+ * `enabled` gates the CDN download only — the provider itself must always be
+ * rendered, or React sees a different element type at that position and
+ * unmounts the whole subtree (which used to reset the slide deck to slide 1
+ * the moment the first Python slide appeared).
+ */
+export const PyodideProvider: React.FC<{ children: React.ReactNode; enabled?: boolean }> = ({
+  children,
+  enabled = true,
+}) => {
   const [pyodide, setPyodide] = useState<PyodideInterface | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
@@ -67,15 +76,16 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode }> = ({ child
   useEffect(() => {
     // Ensure we're running in browser
     if (typeof window === 'undefined') return
-    
+    if (!enabled) return
+
     const support = checkPyodideSupport()
     setBrowserSupport(support)
-    
+
     if (support.supported && !initializationAttempted.current) {
       initializationAttempted.current = true
       initPyodide()
     }
-  }, [])
+  }, [enabled])
 
   const loadPyodideScript = useCallback((): Promise<void> => {
     return new Promise((resolve, reject) => {

@@ -28,6 +28,11 @@ module.exports = {
         "bio-darker": "#151920",
         "bio-darkest": "#0d0f13",
 
+        /* Raised panel behind code runners and inline code displays.
+           Referenced as `bg-bio-card` in ~39 places; it was never defined,
+           so all of those rendered with no background at all. */
+        "bio-card": "#1b1f27",
+
         // Code blocks — one step darker than the page, hairline border
         "code-bg": "#0a0c0f",
         "code-border": "#22262e",
