@@ -1,14 +1,13 @@
-import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
+import { SectionSlide } from '@/components/slides/layouts'
 
 export function Slide03Assessment() {
   return (
-    <>
-      <SlideTitle>
-        Assessment &amp; <GradientText variant="yellow">Exams</GradientText>
-      </SlideTitle>
-      <p className="text-center text-gray-500 italic text-base md:text-xl xl:text-2xl mt-8 md:mt-12">
-        — assessment details to be confirmed —
-      </p>
-    </>
+    <SectionSlide
+      eyebrow="How you'll be marked"
+      title="Assessment &"
+      accent="Exams"
+      note="A written paper testing whether you can read code, and a project where you write it."
+      status="Assessment details to be confirmed"
+    />
   )
 }

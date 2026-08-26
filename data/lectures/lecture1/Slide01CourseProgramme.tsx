@@ -1,12 +1,13 @@
-import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
+import { SectionSlide } from '@/components/slides/layouts'
 
 export function Slide01CourseProgramme() {
   return (
-    <div className="flex flex-col items-center justify-center h-full text-center">
-      <SlideTitle>
-        Course <GradientText>Programme</GradientText>
-      </SlideTitle>
-      <p className="text-gray-500 text-xl mt-8 italic">— slide to be designed when full programme is confirmed —</p>
-    </div>
+    <SectionSlide
+      eyebrow="Welcome"
+      title="Course"
+      accent="Programme"
+      note="Eight lectures, eight labs, and one project — from your first variable to analysing real biological data."
+      status="Full programme to be confirmed"
+    />
   )
 }

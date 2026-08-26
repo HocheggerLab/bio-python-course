@@ -1,4 +1,5 @@
-import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
+import { GradientText } from '@/components/slides/SlideTitle'
+import { ParallelSet } from '@/components/slides/layouts'
 import { SlideCard, CardHeading, CardBody, type CardColor } from '@/components/slides/SlideCard'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
@@ -42,12 +43,11 @@ function CardSectionHeader({
 
 export function Slide11HowWeWork() {
   return (
-    <>
-      <SlideTitle>
-        How We&apos;ll Work With <GradientText>Python</GradientText>
-      </SlideTitle>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 xl:gap-6 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
+    <ParallelSet
+      title={<>How We&apos;ll Work With <GradientText>Python</GradientText></>}
+      lead="Three places you'll run Python on this course — each suited to a different moment."
+      columns={3}
+    >
 
         {/* 1 — In the browser (Pyodide) */}
         <SlideCard color="blue" layout="start" padding="compact">
@@ -91,7 +91,7 @@ export function Slide11HowWeWork() {
             href={COLAB_LECTURE1}
             target="_blank"
             rel="noopener noreferrer"
-            className="self-start mt-auto rounded-full bg-bio-green/20 hover:bg-bio-green/30 border border-bio-green/40 text-bio-green font-semibold px-3 md:px-5 py-1.5 md:py-2 text-xs md:text-sm xl:text-base transition-colors"
+            className="self-start mt-auto rounded bg-bio-green/20 hover:bg-bio-green/30 border border-bio-green/40 text-bio-green font-semibold px-3 md:px-5 py-1.5 md:py-2 text-xs md:text-sm xl:text-base transition-colors"
           >
             Open Session 1 notebook →
           </a>
@@ -117,13 +117,12 @@ export function Slide11HowWeWork() {
           </ul>
           <a
             href="/dev-tools"
-            className="self-start mt-auto rounded-full bg-bio-yellow/20 hover:bg-bio-yellow/30 border border-bio-yellow/40 text-bio-yellow font-semibold px-3 md:px-5 py-1.5 md:py-2 text-xs md:text-sm xl:text-base transition-colors"
+            className="self-start mt-auto rounded bg-bio-yellow/20 hover:bg-bio-yellow/30 border border-bio-yellow/40 text-bio-yellow font-semibold px-3 md:px-5 py-1.5 md:py-2 text-xs md:text-sm xl:text-base transition-colors"
           >
             Setup guide →
           </a>
         </SlideCard>
 
-      </div>
-    </>
+    </ParallelSet>
   )
 }

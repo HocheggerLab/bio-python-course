@@ -1,11 +1,12 @@
-import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
-import { SlideCard, CardHeading, CardList } from '@/components/slides/SlideCard'
+import { GradientText } from '@/components/slides/SlideTitle'
+import { SlideCard, CardBody } from '@/components/slides/SlideCard'
+import { ExerciseSlide, type Step } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
-const tasks = [
-  'Run it — read the FIRST error message',
-  'Fix one bug, then run again',
-  'Repeat until you get the clean report below',
+const tasks: Step[] = [
+  { label: 'Run it', detail: 'Read the FIRST error message', accent: 'yellow' },
+  { label: 'Fix one bug', detail: 'Then run again', accent: 'yellow' },
+  { label: 'Repeat', detail: 'Until you get the clean report below', accent: 'yellow' },
 ]
 
 const initialCode = `# This script should print a short gene report — but it has 3 bugs.
@@ -33,45 +34,28 @@ const hints = [
 
 export function Slide21TIYFixErrors() {
   return (
-    <>
-      <SlideTitle>
-        Try it Yourself — <GradientText variant="yellow">Fix the errors</GradientText>
-      </SlideTitle>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 flex-1 min-h-0">
-
-        <div className="flex flex-col gap-3 md:gap-4 min-h-0">
-          <SlideCard color="yellow" layout="start" padding="compact" className="border-l-4">
-            <CardHeading size="sm" color="yellow" className="mb-3 md:mb-4">
-              Three bugs, one clean report
-            </CardHeading>
-            <CardList items={tasks} numbered color="yellow" />
-          </SlideCard>
-
-          <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
-            <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">
-              The golden rule
-            </CardHeading>
-            <p className="text-gray-300 text-xs md:text-sm xl:text-base leading-snug">
-              Fix <span className="text-bio-blue font-semibold">one bug at a time</span> and
-              re-run. The error message moves as you go — that&apos;s progress, not a new problem.
-            </p>
-          </SlideCard>
-        </div>
-
-        <div className="flex-1 min-h-0 overflow-hidden rounded-xl">
-          <LazyPythonRunner
-            initialCode={initialCode}
-            expectedOutput={expectedOutput}
-            hints={hints}
-            height="360px"
-            showLineNumbers
-            description="Test — fix the three errors"
-            staticOutput={expectedOutput}
-          />
-        </div>
-
-      </div>
-    </>
+    <ExerciseSlide
+      title={<>Try it Yourself — <GradientText variant="yellow">Fix the errors</GradientText></>}
+      intro="Three bugs stand between this script and a clean gene report."
+      steps={tasks}
+      aside={
+        <SlideCard color="blue" layout="start" padding="tight" className="border-l-4">
+          <CardBody className="text-sm md:text-base xl:text-lg">
+            Fix <span className="text-bio-blue font-semibold">one bug at a time</span> and re-run.
+            The error message moves as you go — that&apos;s progress, not a new problem.
+          </CardBody>
+        </SlideCard>
+      }
+    >
+      <LazyPythonRunner
+        initialCode={initialCode}
+        expectedOutput={expectedOutput}
+        hints={hints}
+        height="420px"
+        showLineNumbers
+        description="Test — fix the three errors"
+        staticOutput={expectedOutput}
+      />
+    </ExerciseSlide>
   )
 }
