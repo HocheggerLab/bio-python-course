@@ -11,6 +11,7 @@ import { Slide06RandomQuestion } from './Slide06RandomQuestion'
 import { Slide06bLaundry } from './Slide06bLaundry'
 import { Slide07Objects } from './Slide07Objects'
 import { Slide08MethodsBridge } from './Slide08MethodsBridge'
+import { Slide09TIYBeeTable } from './Slide09TIYBeeTable'
 
 export const lecture5Data: LectureData = {
   id: 'lecture-5',
@@ -28,6 +29,7 @@ export const lecture5Data: LectureData = {
     { id: 7, title: "Use It, Don't Build It",            contentType: 'center', content: <Slide06bLaundry /> },
     { id: 8, title: 'Build the Simplest Object',         contentType: 'center', content: <Slide07Objects /> },
     { id: 9, title: 'Methods — Why Pandas Looks Familiar', contentType: 'center', content: <Slide08MethodsBridge /> },
+    { id: 10, title: "Try it Yourself — Drive an Object You Didn't Write", contentType: 'center', content: <Slide09TIYBeeTable /> },
     // ── Part 3: the DataFrame (Colab) — TO BUILD ───────────
   ],
 }

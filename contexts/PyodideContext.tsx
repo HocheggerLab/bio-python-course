@@ -11,14 +11,23 @@ import { checkPyodideSupport, PyodideSupport } from '@/utils/checkPyodideSupport
 const PYODIDE_CDN = 'https://cdn.jsdelivr.net/pyodide/v314.0.6/full/'
 
 /**
- * Course datasets, served from `public/data/` and copied into Pyodide's virtual
- * filesystem the first time a snippet mentions one. Students then write the
- * same `pd.read_csv("pollinators.csv")` on a slide as they do in Colab — the
- * path is not a browser artefact they have to unlearn.
+ * Course files, served from `public/data/` and copied into Pyodide's virtual
+ * filesystem the first time a snippet mentions one.
+ *
+ * Data files let a slide write the same `pd.read_csv("pollinators.csv")` that
+ * students run in Colab — the path is not a browser artefact they have to
+ * unlearn. Python modules let an exercise hand out a class whose source the
+ * student genuinely cannot read, so exploring it means reading its
+ * documentation, exactly as with a real package.
  */
-const DATASETS: Record<string, string> = {
+const COURSE_FILES: Record<string, string> = {
   'pollinators.csv': '/data/pollinators.csv',
+  'beetable.py': '/data/beetable.py',
 }
+
+/** A module is named without its extension at the import site. */
+const mentionTokens = (filename: string) =>
+  filename.endsWith('.py') ? [filename, filename.slice(0, -3)] : [filename]
 
 // Type definitions for Pyodide (loaded from CDN)
 interface PyodideInterface {
@@ -87,6 +96,45 @@ const PyodideContext = createContext<PyodideContextType | null>(null)
  * a figure to make it legible on a slide. Their code stays identical to what
  * they will run in Colab; only the theme differs.
  */
+/**
+ * Run the student's code the way a notebook cell does, and report failures the
+ * way Python does.
+ *
+ * Two problems this solves. First, Pyodide 314 raises a `PythonError` whose
+ * `.message` is empty — only `.type` survives the trip to JS — so a snippet
+ * with a typo used to fail completely silently, which is the worst possible
+ * behaviour in a teaching tool. Catching inside Python instead gives us the
+ * real traceback, the same one students learned to read in Session 4.
+ *
+ * Second, a notebook echoes the value of a cell's last line. Without that,
+ * `df.head()` on its own displays nothing and every slide has to wrap it in a
+ * print() that students would not write in Colab. So the last statement is
+ * split off and evaluated separately when it is an expression.
+ */
+const RUN_USER_CODE = `
+import ast as _ast, traceback as _traceback
+
+__run_error__ = ""
+try:
+    _tree = _ast.parse(__user_code__)
+    _last = _tree.body.pop() if _tree.body else None
+    exec(compile(_tree, "your code", "exec"), globals())
+    if isinstance(_last, _ast.Expr):
+        _value = eval(
+            compile(_ast.Expression(_last.value), "your code", "eval"), globals()
+        )
+        if _value is not None:
+            print(repr(_value))
+    elif _last is not None:
+        exec(compile(_ast.Module([_last], []), "your code", "exec"), globals())
+except BaseException as _exc:
+    # Drop the harness's own exec frame — the student's first line should be
+    # the first line of their traceback.
+    _tb = _exc.__traceback__.tb_next if _exc.__traceback__ else None
+    __run_error__ = "".join(_traceback.format_exception(type(_exc), _exc, _tb))
+__run_error__
+`
+
 const PLOT_THEME = `
 import matplotlib as _mpl
 _mpl.rcParams.update({
@@ -352,16 +400,17 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode; enabled?: bo
   }, [loadPyodideScript])
 
   /**
-   * Copy any course dataset the snippet names into Pyodide's virtual FS.
+   * Copy any course file the snippet names into Pyodide's virtual FS.
    * Fetched once per session; `FS.analyzePath` is not exposed on the typed
    * surface, so a module-level Set tracks what has already landed.
    */
   const ensureDatasets = useCallback(async (code: string) => {
     if (!pyodide) return
-    for (const [filename, url] of Object.entries(DATASETS)) {
-      if (!code.includes(filename) || loadedDatasets.current.has(filename)) continue
+    for (const [filename, url] of Object.entries(COURSE_FILES)) {
+      if (loadedDatasets.current.has(filename)) continue
+      if (!mentionTokens(filename).some((t) => code.includes(t))) continue
       const res = await fetch(url)
-      if (!res.ok) throw new Error(`Could not load dataset ${filename} (${res.status})`)
+      if (!res.ok) throw new Error(`Could not load ${filename} (${res.status})`)
       pyodide.FS.writeFile(filename, await res.text())
       loadedDatasets.current.add(filename)
     }
@@ -403,7 +452,8 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode; enabled?: bo
       `)
       
       // Run user code
-      const result = await pyodide.runPythonAsync(code)
+      pyodide.globals.set('__user_code__', code)
+      const pythonError = (await pyodide.runPythonAsync(RUN_USER_CODE)) as string
       
       // Get captured output
       const captured = await pyodide.runPythonAsync(`
@@ -428,17 +478,15 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode; enabled?: bo
       if (outputBuffer.current.length > 0) {
         output += outputBuffer.current.join('')
       }
-      if (result !== undefined && result !== null && stdout === '') {
-        output += String(result)
-      }
 
       /* A snippet whose whole point is a figure has no stdout — don't label
-         that "(no output)" underneath a perfectly good plot. */
-      const placeholder = images.length > 0 ? '' : '(no output)'
+         that "(no output)" underneath a perfectly good plot, nor above a
+         traceback that already explains why nothing was printed. */
+      const placeholder = images.length > 0 || pythonError ? '' : '(no output)'
 
       return {
         output: output || placeholder,
-        error: stderr || undefined,
+        error: pythonError || stderr || undefined,
         images: images.length > 0 ? images : undefined,
       }
       
@@ -451,9 +499,11 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode; enabled?: bo
         `)
       } catch {}
       
-      return { 
-        output: outputBuffer.current.join('') || '', 
-        error: (err as Error).message 
+      /* Python-level failures are caught inside Python now; reaching here
+         means the harness itself broke. */
+      return {
+        output: outputBuffer.current.join('') || '',
+        error: (err as Error).message || String(err),
       }
     }
   }, [pyodide, ensureDatasets])
