@@ -45,6 +45,7 @@ export default function PythonCodeRunner({
   
   const [code, setCode] = useState(initialCode)
   const [output, setOutput] = useState('')
+  const [images, setImages] = useState<string[]>([])
   const [error, setError] = useState('')
   const [isRunning, setIsRunning] = useState(false)
   const [showHint, setShowHint] = useState(false)
@@ -78,11 +79,13 @@ export default function PythonCodeRunner({
     setIsRunning(true)
     setError('')
     setOutput('')
+    setImages([])
     
     try {
       const result = await runCode(code)
       
       setOutput(result.output)
+      setImages(result.images ?? [])
       if (result.error) {
         setError(result.error)
       } else if (expectedOutput && result.output.trim() === expectedOutput.trim()) {
@@ -99,6 +102,7 @@ export default function PythonCodeRunner({
     setCode(initialCode)
     setOutput('')
     setError('')
+    setImages([])
     setShowHint(false)
     setCurrentHint(0)
   }
@@ -108,6 +112,7 @@ export default function PythonCodeRunner({
     await resetWorkspace()
     setOutput('')
     setError('')
+    setImages([])
   }
 
   const handleShowHint = () => {
@@ -226,7 +231,7 @@ export default function PythonCodeRunner({
       )}
 
       {/* Output Display */}
-      {(output || error) && (
+      {(output || error || images.length > 0) && (
         <div className="p-4">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-semibold text-gray-400">Output</span>
@@ -241,6 +246,17 @@ export default function PythonCodeRunner({
             </pre>
           )}
           
+          {/* Figures render under the text output — a plot is the result of the
+              snippet, not a decoration beside it. */}
+          {images.map((png, i) => (
+            <img
+              key={i}
+              src={`data:image/png;base64,${png}`}
+              alt={`Figure ${i + 1}`}
+              className="mt-2 w-full rounded border border-white/10"
+            />
+          ))}
+
           {error && (
             <pre className="bg-red-900/20 border border-red-500/30 rounded p-3 text-sm text-red-400 font-mono overflow-x-auto whitespace-pre-wrap mt-2">
               {error}
