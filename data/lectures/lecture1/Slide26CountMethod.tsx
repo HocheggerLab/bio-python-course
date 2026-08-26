@@ -39,7 +39,6 @@ export function Slide26CountMethod() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="394px"
-        showLineNumbers
         description="Live demo — string .count() method"
         staticOutput={demoOutput}
         />

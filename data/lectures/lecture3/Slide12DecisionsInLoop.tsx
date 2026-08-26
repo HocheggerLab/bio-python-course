@@ -56,7 +56,6 @@ export function Slide12DecisionsInLoop() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="247px"
-        showLineNumbers
         description="Live demo — if inside a for loop"
         staticOutput={demoOutput}
       />

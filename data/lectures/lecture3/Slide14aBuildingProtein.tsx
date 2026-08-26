@@ -64,7 +64,6 @@ export function Slide14aBuildingProtein() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="247px"
-        showLineNumbers
         description="Live demo — translating DNA to protein"
         staticOutput={demoOutput}
       />

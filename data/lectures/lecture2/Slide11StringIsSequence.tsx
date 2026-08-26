@@ -31,7 +31,6 @@ export function Slide11StringIsSequence() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="226px"
-        showLineNumbers
         description="Live demo — indexing a string"
         staticOutput={demoOutput}
       />

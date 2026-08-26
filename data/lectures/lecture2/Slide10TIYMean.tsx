@@ -87,7 +87,6 @@ export function Slide10TIYMean() {
         expectedOutput={expectedOutput}
         hints={hints}
         height="541px"
-        showLineNumbers
         description="Test — clean the data and compute the mean"
         staticOutput={expectedOutput}
       />

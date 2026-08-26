@@ -83,7 +83,6 @@ export function Slide10WhyFunctions() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="247px"
-        showLineNumbers
         description="Live demo — the same two functions, on a whole list"
         staticOutput={demoOutput}
       />

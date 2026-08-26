@@ -51,7 +51,6 @@ export function Slide14CarvingCodons() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — stepping through codons"
         staticOutput={demoOutput}
       />

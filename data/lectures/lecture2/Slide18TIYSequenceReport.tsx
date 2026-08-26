@@ -89,7 +89,6 @@ export function Slide18TIYSequenceReport() {
         expectedOutput={expectedOutput}
         hints={hints}
         height="562px"
-        showLineNumbers
         description="Test — profile a sequence"
         staticOutput={expectedOutput}
       />

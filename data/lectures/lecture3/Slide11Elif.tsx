@@ -51,7 +51,6 @@ export function Slide11Elif() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — if / elif / else"
         staticOutput={demoOutput}
       />

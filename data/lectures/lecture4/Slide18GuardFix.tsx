@@ -67,7 +67,6 @@ export function Slide18GuardFix() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="247px"
-        showLineNumbers
         description="Live demo — guard the loop with an if"
         staticOutput={demoOutput}
       />

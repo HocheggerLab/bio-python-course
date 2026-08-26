@@ -50,7 +50,6 @@ export function Slide19CodonTable() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — building a dictionary"
         staticOutput={demoOutput}
       />

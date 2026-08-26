@@ -48,7 +48,6 @@ export function Slide13SlicingCodons() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — slicing codons"
         staticOutput={demoOutput}
       />

@@ -31,7 +31,6 @@ export function Slide16Print() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="289px"
-        showLineNumbers
         description="Live demo — print()"
         staticOutput={demoOutput}
         />

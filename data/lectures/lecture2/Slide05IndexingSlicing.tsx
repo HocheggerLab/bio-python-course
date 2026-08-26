@@ -52,7 +52,6 @@ export function Slide05IndexingSlicing() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — indexing and slicing a list"
         staticOutput={demoOutput}
       />

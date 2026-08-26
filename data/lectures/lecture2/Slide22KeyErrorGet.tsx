@@ -49,7 +49,6 @@ export function Slide22KeyErrorGet() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — KeyError and .get()"
         staticOutput={demoOutput}
       />

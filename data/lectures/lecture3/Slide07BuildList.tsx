@@ -49,7 +49,6 @@ export function Slide07BuildList() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — build a new list"
         staticOutput={demoOutput}
       />

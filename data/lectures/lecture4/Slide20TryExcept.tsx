@@ -60,7 +60,6 @@ export function Slide20TryExcept() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — try/except for values you can't check in advance"
         staticOutput={demoOutput}
       />

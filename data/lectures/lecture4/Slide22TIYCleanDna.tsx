@@ -64,7 +64,6 @@ export function Slide22TIYCleanDna() {
         expectedOutput={expectedOutput}
         hints={hints}
         height="562px"
-        showLineNumbers
         description="Write a defensive clean_dna() — tidy, validate, raise"
         staticOutput={expectedOutput}
       />

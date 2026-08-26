@@ -50,7 +50,6 @@ export function Slide23BuildingDicts() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — adding, updating, checking"
         staticOutput={demoOutput}
       />

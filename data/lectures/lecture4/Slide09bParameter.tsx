@@ -62,7 +62,6 @@ export function Slide09bParameter() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — a function with a parameter"
         staticOutput={demoOutput}
       />

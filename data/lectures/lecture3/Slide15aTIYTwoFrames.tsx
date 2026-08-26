@@ -69,7 +69,6 @@ export function Slide15aTIYTwoFrames() {
         expectedOutput={expectedOutput}
         hints={hints}
         height="562px"
-        showLineNumbers
         description="Test — translate two reading frames"
         staticOutput={expectedOutput}
       />

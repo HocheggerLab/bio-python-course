@@ -57,7 +57,6 @@ export function Slide06RunningTotal() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="247px"
-        showLineNumbers
         description="Live demo — an accumulator"
         staticOutput={demoOutput}
       />

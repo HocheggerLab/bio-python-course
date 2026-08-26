@@ -65,7 +65,6 @@ export function Slide13aStringRecap() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — indexing, slicing and looping a DNA string"
         staticOutput={demoOutput}
       />

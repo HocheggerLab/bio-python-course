@@ -87,7 +87,6 @@ export function Slide11Docstrings() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="226px"
-        showLineNumbers
         description="Live demo — a docstring, and help() reading it back"
         staticOutput={demoOutput}
       />

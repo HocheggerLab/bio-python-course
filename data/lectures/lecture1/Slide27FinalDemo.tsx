@@ -46,7 +46,6 @@ export function Slide27FinalDemo() {
         <LazyPythonRunner
           initialCode={demoCode}
           height="436px"
-          showLineNumbers
           description="Demo — full GC report"
           staticOutput={expectedOutput}
         />

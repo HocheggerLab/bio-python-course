@@ -58,7 +58,6 @@ export function Slide24TIYTranslate() {
         expectedOutput={expectedOutput}
         hints={hints}
         height="562px"
-        showLineNumbers
         description="Test — translate three codons by lookup"
         staticOutput={expectedOutput}
       />

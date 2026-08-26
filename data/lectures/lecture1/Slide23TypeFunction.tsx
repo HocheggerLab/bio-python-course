@@ -37,7 +37,6 @@ export function Slide23TypeFunction() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="289px"
-        showLineNumbers
         description="Live demo — exploring types"
         staticOutput={demoOutput}
         />

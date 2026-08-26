@@ -50,7 +50,6 @@ export function Slide09Decision() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — your first if"
         staticOutput={demoOutput}
       />

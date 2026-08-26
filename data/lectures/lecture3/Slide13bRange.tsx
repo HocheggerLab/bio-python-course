@@ -66,7 +66,6 @@ export function Slide13bRange() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="247px"
-        showLineNumbers
         description="Live demo — from [::3] to range()"
         staticOutput={demoOutput}
       />

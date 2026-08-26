@@ -50,7 +50,6 @@ export function Slide18BuiltinFunctions() {
         <LazyPythonRunner
           initialCode={demoCode}
           height="373px"
-          showLineNumbers
           description="Live demo — built-ins and help()"
           staticOutput={demoOutput}
         />

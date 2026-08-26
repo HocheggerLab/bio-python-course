@@ -98,7 +98,6 @@ export function Slide09TIYBeeTable() {
         expectedOutput={expectedOutput}
         hints={hints}
         height="520px"
-        showLineNumbers
         description="Explore the API — read the docs, call the methods"
         staticOutput={expectedOutput}
       />

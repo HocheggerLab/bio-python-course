@@ -65,7 +65,6 @@ export function Slide13TIYReadingFrame() {
         expectedOutput={expectedOutput}
         hints={hints}
         height="562px"
-        showLineNumbers
         description="Test — keep the sequences ready to translate"
         staticOutput={expectedOutput}
       />

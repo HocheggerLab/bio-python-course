@@ -23,7 +23,7 @@ export function Slide08MethodsBridge() {
   return (
     <>
       <SlideTitle>
-        Methods — and Why <GradientText variant="green">Pandas</GradientText> Looks Familiar
+        Methods — a simple way to get <GradientText variant="green">complex tasks</GradientText> done
       </SlideTitle>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 items-center">
@@ -36,7 +36,6 @@ export function Slide08MethodsBridge() {
             <LazyPythonRunner
               initialCode={demoCode}
               height="394px"
-              showLineNumbers
               description="Live demo — gene.gc_content()"
               staticOutput={demoOutput}
             />

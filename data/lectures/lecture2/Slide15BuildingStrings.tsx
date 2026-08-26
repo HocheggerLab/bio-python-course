@@ -50,7 +50,6 @@ export function Slide15BuildingStrings() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — building strings + immutability"
         staticOutput={demoOutput}
       />

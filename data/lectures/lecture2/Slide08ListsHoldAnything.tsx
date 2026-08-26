@@ -54,7 +54,6 @@ export function Slide08ListsHoldAnything() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="247px"
-        showLineNumbers
         description="Live demo — mixed types and lists of lists"
         staticOutput={demoOutput}
       />

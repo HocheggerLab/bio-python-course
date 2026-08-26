@@ -49,7 +49,6 @@ export function Slide07EditingList() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — replace and delete list items"
         staticOutput={demoOutput}
       />

@@ -4,6 +4,12 @@ import React, { useRef, useEffect } from 'react'
 import { Highlight } from 'prism-react-renderer'
 import { bioTheme } from '../syntax/bioTheme'
 
+/** Both layers use Tailwind's `p-4`. Kept as a number so the textarea can add
+ *  the gutter to it rather than restating a magic total. */
+const EDITOR_PADDING = 16
+/** Width of the line-number gutter, wide enough for three digits. */
+const GUTTER_WIDTH = 44
+
 interface CodeEditorProps {
   code: string
   onChange: (code: string) => void
@@ -21,7 +27,7 @@ export default function CodeEditor({
   height = '200px',
   placeholder = '# Your Python code here...',
   language = 'python',
-  showLineNumbers = true
+  showLineNumbers = false
 }: CodeEditorProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const highlightRef = useRef<HTMLPreElement>(null)
@@ -61,7 +67,10 @@ export default function CodeEditor({
               {tokens.map((line, i) => (
                 <div key={i} {...getLineProps({ line })} style={{ whiteSpace: 'pre' }}>
                   {showLineNumbers && (
-                    <span className="inline-block w-10 text-gray-500 select-none mr-1">
+                    <span
+                      className="inline-block text-gray-500 select-none"
+                      style={{ width: GUTTER_WIDTH }}
+                    >
                       {i + 1}
                     </span>
                   )}
@@ -90,7 +99,12 @@ export default function CodeEditor({
           fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace',
           lineHeight: '1.5',
           caretColor: '#d1d5db',
-          paddingLeft: showLineNumbers ? '56px' : '16px', // Offset for line numbers (w-10 + mr-1 = 44px + 12px padding)
+          /* The caret lives in this textarea while the glyphs live in the <pre>
+             behind it, so the two must agree on where text starts to the pixel
+             — otherwise clicking lands the cursor in the wrong column. The pre
+             indents by its own p-4 plus the gutter; the textarea has no gutter,
+             so it makes up the difference in padding. */
+          paddingLeft: showLineNumbers ? `${EDITOR_PADDING + GUTTER_WIDTH}px` : `${EDITOR_PADDING}px`,
           whiteSpace: 'pre',
           wordWrap: 'normal',
           overflowX: 'auto',

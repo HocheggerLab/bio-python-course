@@ -30,7 +30,6 @@ export function Slide14Variables() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="310px"
-        showLineNumbers
         description="Live demo — variable assignment"
         staticOutput={demoOutput}
       />

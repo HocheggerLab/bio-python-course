@@ -69,7 +69,6 @@ export function Slide07Objects() {
             <LazyPythonRunner
               initialCode={demoCode}
               height="394px"
-              showLineNumbers
               description="Live demo — an object stores its own data"
               staticOutput={demoOutput}
             />

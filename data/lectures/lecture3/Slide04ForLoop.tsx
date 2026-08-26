@@ -48,7 +48,6 @@ export function Slide04ForLoop() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — your first for loop"
         staticOutput={demoOutput}
       />

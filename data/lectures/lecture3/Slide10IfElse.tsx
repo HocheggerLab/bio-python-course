@@ -47,7 +47,6 @@ export function Slide10IfElse() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — if / else"
         staticOutput={demoOutput}
       />

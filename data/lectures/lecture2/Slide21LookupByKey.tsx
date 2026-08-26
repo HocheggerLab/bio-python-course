@@ -29,7 +29,6 @@ export function Slide21LookupByKey() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="247px"
-        showLineNumbers
         description="Live demo — lookup by key"
         staticOutput={demoOutput}
       />

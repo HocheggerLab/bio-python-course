@@ -42,7 +42,6 @@ export function Slide14TIYSliceCodons() {
         expectedOutput={expectedOutput}
         hints={hints}
         height="331px"
-        showLineNumbers
         description="Test — slice codons from a sequence"
         staticOutput={expectedOutput}
       />

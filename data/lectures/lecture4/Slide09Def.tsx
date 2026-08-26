@@ -79,7 +79,6 @@ export function Slide09Def() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="247px"
-        showLineNumbers
         description="Live demo — the same code, packaged into functions"
         staticOutput={demoOutput}
       />

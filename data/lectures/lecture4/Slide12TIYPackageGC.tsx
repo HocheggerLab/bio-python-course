@@ -89,7 +89,6 @@ export function Slide12TIYPackageGC() {
         expectedOutput={expectedOutput}
         hints={hints}
         height="562px"
-        showLineNumbers
         description="Refactor — package the repeated GC calculation into one function"
         staticOutput={expectedOutput}
       />

@@ -76,7 +76,6 @@ export function Slide09eDefaults() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="184px"
-        showLineNumbers
         description="Live demo — a default parameter"
         staticOutput={demoOutput}
       />

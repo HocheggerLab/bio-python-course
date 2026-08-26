@@ -49,7 +49,6 @@ export function Slide06GrowingList() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        showLineNumbers
         description="Live demo — append and join lists"
         staticOutput={demoOutput}
       />

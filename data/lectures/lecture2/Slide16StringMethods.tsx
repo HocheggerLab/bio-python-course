@@ -65,7 +65,6 @@ export function Slide16StringMethods() {
             <LazyPythonRunner
               initialCode={demoCode}
               height="247px"
-              showLineNumbers
               description="Live demo — string methods"
               staticOutput={demoOutput}
             />

@@ -55,7 +55,6 @@ export function Slide15StopAndGo() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="247px"
-        showLineNumbers
         description="Live demo — break at a stop codon"
         staticOutput={demoOutput}
       />

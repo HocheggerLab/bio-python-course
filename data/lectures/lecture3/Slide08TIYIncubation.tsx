@@ -79,7 +79,6 @@ export function Slide08TIYIncubation() {
         expectedOutput={expectedOutput}
         hints={hints}
         height="562px"
-        showLineNumbers
         description="Test — total incubation time in minutes"
         staticOutput={expectedOutput}
       />

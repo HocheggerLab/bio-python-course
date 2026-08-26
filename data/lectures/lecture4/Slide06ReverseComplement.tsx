@@ -59,7 +59,6 @@ export function Slide06ReverseComplement() {
       <LazyPythonRunner
         initialCode={demoCode}
         height="247px"
-        showLineNumbers
         description="Live demo — reverse complement, one step at a time"
         staticOutput={demoOutput}
       />

@@ -66,7 +66,6 @@ export function Slide05RandomGame() {
             <LazyPythonRunner
               initialCode={demoCode}
               height="394px"
-              showLineNumbers
               description="Live demo — random dice duel"
               staticOutput={demoOutput}
             />
