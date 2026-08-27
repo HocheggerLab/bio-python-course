@@ -6,7 +6,8 @@ export function Slide02TheProblem() {
   return (
     <>
       <SlideTitle>
-        What Happens When You Touch a <GradientText variant="purple">Whisker?</GradientText> 🐭
+        Today&apos;s Experiment — What Happens When You Touch a{' '}
+        <GradientText variant="purple">Whisker?</GradientText> 🐭
       </SlideTitle>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 items-start">
