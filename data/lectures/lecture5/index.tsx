@@ -14,6 +14,21 @@ import { Slide06bLaundry } from './Slide06bLaundry'
 import { Slide07Objects } from './Slide07Objects'
 import { Slide08MethodsBridge } from './Slide08MethodsBridge'
 import { Slide09TIYNeuronTrace } from './Slide09TIYNeuronTrace'
+// Part 3 — arrays: 1-D trace -> masking -> onsets -> 2-D -> the answer
+import { Slide10Part3 } from './Slide10Part3'
+import { Slide11TheFile } from './Slide11TheFile'
+import { Slide12ThePlan } from './Slide12ThePlan'
+import { Slide13WhyNotList } from './Slide13WhyNotList'
+import { Slide14FirstArray } from './Slide14FirstArray'
+import { Slide15TIYArray } from './Slide15TIYArray'
+import { Slide16Masking } from './Slide16Masking'
+import { Slide17Onsets } from './Slide17Onsets'
+import { Slide18Stack } from './Slide18Stack'
+import { Slide19Average } from './Slide19Average'
+import { Slide20Answer } from './Slide20Answer'
+import { Slide21TIYSecondNeuron } from './Slide21TIYSecondNeuron'
+import { Slide22ArrayVsList } from './Slide22ArrayVsList'
+import { Slide23Recap } from './Slide23Recap'
 
 export const lecture5Data: LectureData = {
   id: 'lecture-5',
@@ -34,6 +49,20 @@ export const lecture5Data: LectureData = {
     { id: 10, title: 'Build the Simplest Object',         contentType: 'center', content: <Slide07Objects /> },
     { id: 11, title: 'Methods — Why numpy Looks Familiar', contentType: 'center', content: <Slide08MethodsBridge /> },
     { id: 12, title: "Try it Yourself — Drive an Object You Didn't Write", contentType: 'center', content: <Slide09TIYNeuronTrace /> },
-    // ── Part 3: numpy — 1-D trace → masking → trials → 2-D — TO BUILD ──
+    // ── Part 3: arrays ─────────────────────────────────────
+    { id: 13, title: 'Part 3 — One Neuron, Many Trials',   contentType: 'center', content: <Slide10Part3 /> },
+    { id: 14, title: 'What Is Actually In the File',       contentType: 'center', content: <Slide11TheFile /> },
+    { id: 15, title: 'The Plan — Three Steps to an Answer', contentType: 'center', content: <Slide12ThePlan /> },
+    { id: 16, title: "A List Can't Do Arithmetic",         contentType: 'center', content: <Slide13WhyNotList /> },
+    { id: 17, title: 'Your First Array',                   contentType: 'center', content: <Slide14FirstArray /> },
+    { id: 18, title: 'Try it Yourself — Interrogate the Array', contentType: 'center', content: <Slide15TIYArray /> },
+    { id: 19, title: 'Masking — One Question, Every Value', contentType: 'center', content: <Slide16Masking /> },
+    { id: 20, title: 'Where Does a Trial Start?',          contentType: 'center', content: <Slide17Onsets /> },
+    { id: 21, title: 'Stack Them — Now It Is Two-Dimensional', contentType: 'center', content: <Slide18Stack /> },
+    { id: 22, title: 'axis=0 — Average Down the Columns',  contentType: 'center', content: <Slide19Average /> },
+    { id: 23, title: 'So What Is This Neuron Actually For?', contentType: 'center', content: <Slide20Answer /> },
+    { id: 24, title: 'Try it Yourself — A Second Neuron',  contentType: 'center', content: <Slide21TIYSecondNeuron /> },
+    { id: 25, title: 'List or Array?',                     contentType: 'center', content: <Slide22ArrayVsList /> },
+    { id: 26, title: 'What You Can Do Now',                contentType: 'center', content: <Slide23Recap /> },
   ],
 }
