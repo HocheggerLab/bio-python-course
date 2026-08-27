@@ -28,10 +28,19 @@ export const checkPyodideSupport = (): PyodideSupport => {
     }
   }
 
-  // Check for SharedArrayBuffer (optional but recommended)
-  if (typeof SharedArrayBuffer === 'undefined') {
-    warnings.push('SharedArrayBuffer not available - some Python packages may not work')
-  }
+  /* No SharedArrayBuffer check.
+   *
+   * SharedArrayBuffer is unavailable in any page that is not cross-origin
+   * isolated, which since Chrome 92 means almost every page — so this warning
+   * fired for every visitor, every time. It also wasn't true: numpy, pandas,
+   * matplotlib and scipy are all single-threaded wasm builds and run fine
+   * without it. The only thing that would need it is Pyodide's interrupt
+   * buffer, and nothing here offers a stop button.
+   *
+   * Making it available would mean serving COOP/COEP headers, which would in
+   * turn block the cross-origin Pyodide CDN this page loads from. Not a
+   * trade worth making for a feature we don't use.
+   */
 
   // Check if we're on mobile (warn about performance)
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
