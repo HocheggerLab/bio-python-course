@@ -45,12 +45,12 @@ export function Slide08MethodsBridge() {
         <div className="flex flex-col gap-4 md:gap-5">
           <SlideCard color="purple" layout="start" padding="compact" className="border-l-4">
             <CardHeading size="sm" color="purple" className="mb-2 md:mb-3">
-              🎯 This is exactly how pandas works
+              🎯 This is exactly how numpy works
             </CardHeading>
             <CardBody>
-              A <span className="font-mono text-bio-green">DataFrame</span> is just an object — a
-              big, clever one. It holds your table as its data, and comes with methods that know how
-              to work on it.
+              A numpy <span className="font-mono text-bio-green">array</span> is just an object — a
+              big, fast one. It holds your 21,238 numbers as its data, and comes with methods that
+              know how to work on all of them at once.
             </CardBody>
           </SlideCard>
 
@@ -63,17 +63,17 @@ gene.name`}
               </pre>
             </div>
             <div className="bg-bio-green/10 border border-bio-green/30 rounded-xl p-4 md:p-5">
-              <p className="text-bio-green font-semibold text-xs md:text-base mb-2">A DataFrame</p>
+              <p className="text-bio-green font-semibold text-xs md:text-base mb-2">A numpy array</p>
               <pre className="font-mono text-[12px] md:text-base text-gray-200">
-{`df.head()
-df.describe()`}
+{`dff.mean()
+dff.max()`}
               </pre>
             </div>
           </div>
 
           <p className="text-bio-yellow text-base md:text-xl xl:text-2xl font-semibold text-center">
             Same shape: <span className="font-mono">object.method()</span>. Now let&apos;s meet the
-            DataFrame for real. →
+            array for real. →
           </p>
         </div>
 

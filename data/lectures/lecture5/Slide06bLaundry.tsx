@@ -58,7 +58,7 @@ export function Slide06bLaundry() {
           An <span className="text-purple-400 font-semibold">object</span> is that front desk. You
           hand it a request — <span className="font-mono">something.method()</span> — and get a
           result back. The machinery stays hidden. <span className="font-mono">random</span> did it;{' '}
-          <span className="font-mono">pandas</span> will too.
+          <span className="font-mono">numpy</span> will too.
         </CardBody>
       </SlideCard>
     </>

@@ -33,8 +33,8 @@ export function Slide07Objects() {
           <SlideCard color="neutral" layout="start" padding="compact">
             <CardBody>
               You never <em>have</em> to look inside <span className="font-mono">random</span> or{' '}
-              <span className="font-mono">pandas</span>. But let&apos;s peek once — build the simplest
-              object ourselves, so a DataFrame is never magic. Remember{' '}
+              <span className="font-mono">numpy</span>. But let&apos;s peek once — build the simplest
+              object ourselves, so an array is never magic. Remember{' '}
               <span className="font-mono">gc_content(seq)</span> from Lab 4? A{' '}
               <span className="font-mono">class</span> bundles that data and its functions into one.
             </CardBody>
