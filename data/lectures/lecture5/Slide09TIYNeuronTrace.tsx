@@ -22,8 +22,8 @@ const tasks: Step[] = [
 
 const initialCode = `from neurotrace import NeuronTrace   # a class whose code you cannot see
 
-# One neuron from mouse somatosensory cortex, recorded while the
-# animal worked through a go / no-go task.
+# One neuron's activity, recorded while the animal worked
+# through the whisker task.
 trace = NeuronTrace.load("neuron_0588_20180828_5.csv")
 
 # help(NeuronTrace)   <- uncomment, run, READ. Then comment it out again.
@@ -47,7 +47,7 @@ Most active during: lick`
 const hints = [
   'Start with help(NeuronTrace). Every package documents its API this way — this is the looking-it-up you saw with random.',
   'Every call has the shape you already know: the object, a dot, the method, brackets. frames = trace.n_frames().',
-  'The class knows the microscope ran at 10.8 frames per second, so it can do the arithmetic for you: trace.minutes().',
+  'The class knows the recording ran at 10.8 readings per second, so it can do the arithmetic for you: trace.minutes().',
   'n_trials needs to know which event — pass the name as a string: trace.n_trials("go").',
   'most_active() works it out for you, so it needs no argument at all: trace.most_active().',
 ]

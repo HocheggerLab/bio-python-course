@@ -12,7 +12,7 @@ of your career.
 
 import csv
 
-#: Frames per second of the two-photon microscope, from the paper's methods.
+#: Readings per second, from the paper's methods.
 FRAME_RATE = 10.8
 
 EVENTS = ["cue", "go", "nogo", "reward", "punish", "lick"]
@@ -25,9 +25,9 @@ class NeuronTrace:
 
         trace = NeuronTrace.load("neuron_0588_20180828_5.csv")
 
-    The recording is a fluorescence trace (dF/F) sampled at 10.8 frames per
-    second, plus a 0/1 marker per frame for each task event: cue, go, nogo,
-    reward, punish, lick.
+    The recording samples the neuron's activity 10.8 times a second, plus a
+    0/1 marker per reading for each task event: cue, go, nogo, reward,
+    punish, lick.
 
     Methods
     -------

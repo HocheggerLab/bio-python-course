@@ -56,9 +56,10 @@ export function Slide02TheProblem() {
               The question
             </CardHeading>
             <CardBody className="text-base md:text-xl xl:text-2xl">
-              While it plays, a microscope watches one neuron. Is that cell firing for the{' '}
-              <strong>touch</strong>? For the <strong>decision</strong>? For the{' '}
-              <strong>water</strong>? Today you find out — from the numbers.
+              We measure <strong>neural activity</strong> while the animal receives the signal.
+              Is the neuron responding to the <strong>touch</strong>? To the{' '}
+              <strong>decision</strong>? To the <strong>water</strong>? Today you find out — from
+              the numbers.
             </CardBody>
           </SlideCard>
 

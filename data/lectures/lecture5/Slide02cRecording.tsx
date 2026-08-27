@@ -13,9 +13,9 @@ export function Slide02cRecording() {
       }
       lead={
         <>
-          A microscope watches one cell in the whisker part of the cortex. It{' '}
-          <span className="text-bio-blue font-semibold">glows brighter when it fires</span>, 10.8
-          pictures a second, for half an hour.
+          One neuron&apos;s activity, measured{' '}
+          <span className="text-bio-blue font-semibold">about eleven times a second</span> for half
+          an hour, while the animal works through the task.
         </>
       }
       closing={
@@ -32,8 +32,8 @@ export function Slide02cRecording() {
       }
       note={
         <>
-          One row per frame: <span className="font-mono not-italic">dff</span>, plus a 0 or 1 for{' '}
-          <span className="font-mono not-italic">cue, go, nogo, reward, punish, lick</span>.
+          One row per reading: <span className="font-mono not-italic">dff</span> — activity above
+          the neuron&apos;s resting level — plus a 0 or 1 for each event.
         </>
       }
     >
