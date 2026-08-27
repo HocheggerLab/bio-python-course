@@ -6,8 +6,8 @@ export function Slide02TheProblem() {
   return (
     <>
       <SlideTitle>
-        Today&apos;s Experiment — What Happens When You Touch a{' '}
-        <GradientText variant="purple">Whisker?</GradientText> 🐭
+        Today&apos;s Experiment — Touching a{' '}
+        <GradientText variant="purple">Whisker</GradientText> 🐭
       </SlideTitle>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 items-start">
@@ -16,20 +16,7 @@ export function Slide02TheProblem() {
           src="/L5-whiskers.png"
           alt="A mouse's face, its whiskers resting against a stimulator paddle"
           maxHeight="52vh"
-          caption={
-            <>
-              Figure from{' '}
-              <a
-                href="https://doi.org/10.1016/j.cub.2020.10.059"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-bio-purple hover:text-bio-blue transition-colors font-semibold not-italic"
-              >
-                Bale et al., 2021
-              </a>{' '}
-              — the Maravall Lab, just down the corridor at Sussex (CC BY 4.0)
-            </>
-          }
+          caption="Figure from Bale et al., 2021 (CC BY 4.0) — a lab just down the corridor" 
         />
 
         <div className="flex flex-col gap-4 md:gap-5">
@@ -63,6 +50,26 @@ export function Slide02TheProblem() {
               the numbers.
             </CardBody>
           </SlideCard>
+
+          {/* Where this came from — one line, both links, no ceremony. */}
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm md:text-lg xl:text-xl font-semibold">
+            <a
+              href="https://www.sussex.ac.uk/lifesci/maravalllab/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-bio-green hover:text-bio-blue transition-colors"
+            >
+              🔬 The Maravall Lab, Sussex →
+            </a>
+            <a
+              href="https://doi.org/10.1016/j.cub.2020.10.059"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-bio-green hover:text-bio-blue transition-colors"
+            >
+              📄 Bale et al., 2021 →
+            </a>
+          </div>
 
         </div>
 

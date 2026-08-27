@@ -22,7 +22,7 @@ export const lecture5Data: LectureData = {
     // ── Intro ──────────────────────────────────────────────
     { id: 1, title: 'Part 1 Done — You Have Mastered the Basics', contentType: 'center', content: <Slide01Recap /> },
     { id: 2, title: 'Part 2 — Python Meets Real Data', contentType: 'center', content: <Slide01bPart2 /> },
-    { id: 3, title: "Today's Experiment — What Happens When You Touch a Whisker?", contentType: 'center', content: <Slide02TheProblem /> },
+    { id: 3, title: "Today's Experiment — Touching a Whisker", contentType: 'center', content: <Slide02TheProblem /> },
     { id: 4, title: 'One Neuron, 21,238 Numbers',          contentType: 'center', content: <Slide02cRecording /> },
     { id: 5, title: 'This Session — Arrays',               contentType: 'center', content: <Slide03ThisSession /> },
     // ── Part 1: packages (via random) ──────────────────────
