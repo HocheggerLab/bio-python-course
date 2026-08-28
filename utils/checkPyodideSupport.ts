@@ -30,16 +30,18 @@ export const checkPyodideSupport = (): PyodideSupport => {
 
   /* No SharedArrayBuffer check.
    *
-   * SharedArrayBuffer is unavailable in any page that is not cross-origin
-   * isolated, which since Chrome 92 means almost every page — so this warning
-   * fired for every visitor, every time. It also wasn't true: numpy, pandas,
-   * matplotlib and scipy are all single-threaded wasm builds and run fine
-   * without it. The only thing that would need it is Pyodide's interrupt
-   * buffer, and nothing here offers a stop button.
+   * The old check warned "some Python packages may not work" whenever
+   * SharedArrayBuffer was missing. That was never true here: numpy, pandas,
+   * matplotlib and scipy are single-threaded wasm builds and need nothing of
+   * the sort. The only thing that would use it is Pyodide's interrupt buffer,
+   * and this runner has no stop button.
    *
-   * Making it available would mean serving COOP/COEP headers, which would in
-   * turn block the cross-origin Pyodide CDN this page loads from. Not a
-   * trade worth making for a feature we don't use.
+   * next.config.ts already sends COOP/COEP, so the site is normally
+   * cross-origin isolated and SharedArrayBuffer is in fact present — checked
+   * in Chrome, with the Pyodide CDN loading fine alongside it. But isolation
+   * can be lost for reasons outside our control (a proxy stripping headers, a
+   * browser or extension policy), and when that happens nothing about Python
+   * execution actually breaks. So there is nothing worth warning about.
    */
 
   // Check if we're on mobile (warn about performance)
