@@ -30,8 +30,9 @@ export default function Lectures() {
             Section 2: Python and <span className="text-gradient-purple">Data in Biology</span>
           </h2>
           <p className="text-center text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
-            Apply your Python skills to real biological datasets. Sessions 5–8 cover
-            data analysis, visualisation, statistics, and AI tools for research.
+            Four sessions, four real datasets, four real questions — one each from
+            neurobiology, ecology, cancer biology and cell biology. Three of them come
+            from labs in this building.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             {pythonDataData.map((lecture) => (

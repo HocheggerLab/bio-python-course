@@ -8,6 +8,13 @@ export interface Lecture {
   videoUrl?: string
   labsUrl?: string
   type?: 'core' | 'specialization'
+  /** The real dataset this session works on — shown on the card. */
+  dataset?: {
+    emoji: string
+    field: string
+    /** Where it came from, in a few words. */
+    source: string
+  }
 }
 
 export const pythonBasicsData: Lecture[] = [
@@ -68,59 +75,59 @@ export const pythonBasicsData: Lecture[] = [
 export const pythonDataData: Lecture[] = [
   {
     id: 5,
-    title: "Meet the DataFrame",
-    status: "available",
+    title: "Arrays — One Neuron, Many Trials",
+    status: "under-construction",
+    dataset: { emoji: "🐭", field: "Neurobiology", source: "Whisker touch — Maravall Lab, Sussex" },
     topics: [
-      "Packages & objects (a peek at OOP)",
-      "Pandas DataFrames",
-      "Loading & exploring real data"
+      "Packages, objects and methods",
+      "numpy arrays and vectorisation",
+      "Masking and finding events in a signal",
+      "2-D arrays: averaging 254 trials into an answer"
     ],
     slideUrl: "/lectures/5",
-    notebookUrl: "/notebooks/lecture-5",
-    videoUrl: "https://www.youtube.com/playlist?list=PLYTU_Kb0BRDKScs5gRfKyLdvnc-mveSCB",
+    labsUrl: "/labs/5",
     type: 'core'
   },
   {
     id: 6,
-    title: "Explorative Data Analysis",
-    status: "available",
+    title: "Meet the DataFrame",
+    status: "coming-soon",
+    dataset: { emoji: "🐝", field: "Ecology", source: "Urban pollinator survey — Nicholls Lab, Sussex" },
     topics: [
-      "Vectorisation",
-      "Explorative data analysis techniques",
-      "Visualization principles",
-      "Matplotlib for scientific plots"
+      "Vectorisation, timed",
+      "pandas DataFrames: load, inspect, describe",
+      "Selecting, filtering and sorting rows",
+      "Grouping and summarising"
     ],
-    slideUrl: "/lectures/4",
-    notebookUrl: "/notebooks/lecture-4",
-    videoUrl: "https://www.youtube.com/watch?v=rIGN8RcXHP8&list=PLYTU_Kb0BRDLyGEG_kbOjL8e7hgkxEBWD&index=11",
+    labsUrl: "/labs/6",
     type: 'core'
   },
   {
     id: 7,
-    title: "End to End Data Mining Project",
-    status: "available",
+    title: "Plotting and Exploratory Data Analysis",
+    status: "coming-soon",
+    dataset: { emoji: "🧬", field: "Cancer biology", source: "Cancer Dependency Map (DepMap)" },
     topics: [
-      "Linear regression analysis",
-      "Seaborn for publication-ready plots",
-      "Statistics and SciPy",
-      "Exploring new packages on PyPI"
+      "matplotlib and seaborn",
+      "Distributions, box plots and small multiples",
+      "Scatter plots, correlation and statistics",
+      "Building a publication-ready figure"
     ],
-    slideUrl: "/lectures/5",
-    notebookUrl: "/notebooks/lecture-5",
-    videoUrl: "https://www.youtube.com/playlist?list=PLYTU_Kb0BRDI4iMytSaNMFZL64K2jm9uK",
+    labsUrl: "/labs/7",
     type: 'core'
   },
   {
     id: 8,
-    title: "LLMs and Agentic AI in Biology",
-    status: "available",
+    title: "Analysing Images in Python",
+    status: "coming-soon",
+    dataset: { emoji: "🔬", field: "Cell biology", source: "Fluorescence microscopy — Hochegger Lab, Sussex" },
     topics: [
-      "Working with LLMs for biology",
-      "Automating literature searches",
-      "Text mining PubMed abstracts",
-      "Building research assistants"
+      "An image is a 2-D array",
+      "Cropping, indexing and displaying",
+      "Otsu thresholding: finding the nuclei",
+      "Counting, measuring, and a cell-cycle profile"
     ],
-    slideUrl: "/lectures/8",
+    labsUrl: "/labs/8",
     type: 'core'
   }
 ]

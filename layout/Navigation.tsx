@@ -102,16 +102,16 @@ export default function Navigation() {
                   </Link>
                   <div className="px-4 py-2 text-xs font-semibold text-bio-blue/70 uppercase tracking-wider border-t border-b border-white/10">Python &amp; Data</div>
                   <Link href="/lectures/5" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    5. DepMap Data Analysis
+                    5. Arrays &amp; numpy 🐭
                   </Link>
                   <Link href="/lectures/6" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    6. Explorative Data Analysis
+                    6. DataFrames &amp; pandas 🐝
                   </Link>
                   <Link href="/lectures/7" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    7. End-to-End Data Mining
+                    7. Plotting &amp; EDA 🧬
                   </Link>
                   <Link href="/lectures/8" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    8. LLMs &amp; Agentic AI
+                    8. Image Analysis 🔬
                   </Link>
                 </div>
               )}
@@ -148,16 +148,16 @@ export default function Navigation() {
                   </Link>
                   <div className="px-4 py-2 text-xs font-semibold text-bio-blue/70 uppercase tracking-wider border-t border-b border-white/10">Python &amp; Data</div>
                   <Link href="/labs/5" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    Lab 5. DepMap Data Analysis
+                    Lab 5. Arrays &amp; numpy 🐭
                   </Link>
                   <Link href="/labs/6" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    Lab 6. Explorative Data Analysis
+                    Lab 6. DataFrames &amp; pandas 🐝
                   </Link>
                   <Link href="/labs/7" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    Lab 7. End-to-End Data Mining
+                    Lab 7. Plotting &amp; EDA 🧬
                   </Link>
                   <Link href="/labs/8" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    Lab 8. LLMs &amp; Agentic AI
+                    Lab 8. Image Analysis 🔬
                   </Link>
                 </div>
               )}
@@ -232,10 +232,10 @@ export default function Navigation() {
               <Link href="/lectures/3" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">3. Loops &amp; Dictionaries</Link>
               <Link href="/lectures/4" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">4. Functions, Files &amp; Errors</Link>
               <div className="text-xs font-semibold text-bio-blue/70 uppercase tracking-wider mt-2 mb-1">Python &amp; Data</div>
-              <Link href="/lectures/5" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">5. DepMap Data Analysis</Link>
-              <Link href="/lectures/6" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">6. Explorative Data Analysis</Link>
-              <Link href="/lectures/7" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">7. End-to-End Data Mining</Link>
-              <Link href="/lectures/8" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">8. LLMs &amp; Agentic AI</Link>
+              <Link href="/lectures/5" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">5. Arrays &amp; numpy 🐭</Link>
+              <Link href="/lectures/6" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">6. DataFrames &amp; pandas 🐝</Link>
+              <Link href="/lectures/7" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">7. Plotting &amp; EDA 🧬</Link>
+              <Link href="/lectures/8" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">8. Image Analysis 🔬</Link>
             </div>
 
             {/* Labs Section */}
@@ -247,10 +247,10 @@ export default function Navigation() {
               <Link href="/labs/3" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 3. Loops &amp; Dictionaries</Link>
               <Link href="/labs/4" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 4. Functions, Files &amp; Errors</Link>
               <div className="text-xs font-semibold text-bio-blue/70 uppercase tracking-wider mt-2 mb-1">Python &amp; Data</div>
-              <Link href="/labs/5" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 5. DepMap Data Analysis</Link>
-              <Link href="/labs/6" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 6. Explorative Data Analysis</Link>
-              <Link href="/labs/7" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 7. End-to-End Data Mining</Link>
-              <Link href="/labs/8" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 8. LLMs &amp; Agentic AI</Link>
+              <Link href="/labs/5" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 5. Arrays &amp; numpy 🐭</Link>
+              <Link href="/labs/6" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 6. DataFrames &amp; pandas 🐝</Link>
+              <Link href="/labs/7" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 7. Plotting &amp; EDA 🧬</Link>
+              <Link href="/labs/8" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 8. Image Analysis 🔬</Link>
             </div>
 
             <button onClick={() => { scrollToSection('seminars'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Seminars</button>
