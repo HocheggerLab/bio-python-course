@@ -13,10 +13,32 @@ export function Slide02TheProblem() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 items-start">
 
         <Figure
-          src="/L5-whiskers.png"
-          alt="A mouse's face, its whiskers resting against a stimulator paddle"
+          src="/L5-whiskers.jpg"
+          alt="A wood mouse seen head-on, its whiskers fanned out to either side"
           maxHeight="52vh"
-          caption="Figure from Bale et al., 2021 (CC BY 4.0) — a lab just down the corridor" 
+          caption={
+            <>
+              Wood mouse. Photo by{' '}
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Apodemus_sylvaticus_bosmuis.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-bio-purple hover:text-bio-blue transition-colors font-semibold not-italic"
+              >
+                Rasbak
+              </a>
+              , cropped,{' '}
+              <a
+                href="https://creativecommons.org/licenses/by-sa/3.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-bio-purple hover:text-bio-blue transition-colors font-semibold not-italic"
+              >
+                CC BY-SA 3.0
+              </a>
+            </>
+          }
+
         />
 
         <div className="flex flex-col gap-4 md:gap-5">
