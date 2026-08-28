@@ -3645,6 +3645,10 @@ video {
   background-color: rgb(255 255 255 / 0.06);
 }
 
+.hover\:bg-bio-blue\/10:hover {
+  background-color: rgb(91 157 249 / 0.1);
+}
+
 .hover\:from-bio-blue\/80:hover {
   --tw-gradient-from: rgb(91 157 249 / 0.8) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(91 157 249 / 0) var(--tw-gradient-to-position);

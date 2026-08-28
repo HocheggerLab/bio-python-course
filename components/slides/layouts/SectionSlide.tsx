@@ -14,6 +14,7 @@ export function SectionSlide({
   accent,
   note,
   status,
+  action,
 }: {
   /** e.g. "Block 2" or "Coming up". */
   eyebrow?: string
@@ -23,6 +24,8 @@ export function SectionSlide({
   note?: React.ReactNode
   /** Marks a slide still to be written, without looking broken. */
   status?: string
+  /** An optional call to action — a download, a link to the notebook. */
+  action?: React.ReactNode
 }) {
   return (
     <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
@@ -46,6 +49,7 @@ export function SectionSlide({
           {note}
         </p>
       )}
+      {action && <div className="mt-7 md:mt-9">{action}</div>}
       {status && (
         <div className="mt-6 md:mt-8 inline-flex items-center gap-2 text-gray-500 text-xs md:text-sm xl:text-base border border-white/10 rounded px-3 py-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-bio-yellow/60" />
