@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST="{\"components/python/LazyPythonRunner.tsx -> ./PythonCodeRunner\":{\"id\":\"components/python/LazyPythonRunner.tsx -> ./PythonCodeRunner\",\"files\":[\"static/chunks/_app-pages-browser_components_python_PythonCodeRunner_tsx.js\"]}}"
