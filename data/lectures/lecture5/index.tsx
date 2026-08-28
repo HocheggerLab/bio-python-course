@@ -42,7 +42,7 @@ export const lecture5Data: LectureData = {
     { id: 5, title: 'This Session — Arrays',               contentType: 'center', content: <Slide03ThisSession /> },
     // ── Part 1: packages (via random) ──────────────────────
     { id: 6, title: 'Two Kinds of Package',              contentType: 'center', content: <Slide04Packages /> },
-    { id: 7, title: 'A First Package — random',          contentType: 'center', content: <Slide05RandomGame /> },
+    { id: 7, title: 'Roll the Dice — random',          contentType: 'center', content: <Slide05RandomGame /> },
     // ── Part 2: a detour into OOP ──────────────────────────
     { id: 8, title: 'How Does random Actually Work?',    contentType: 'center', content: <Slide06RandomQuestion /> },
     { id: 9, title: "Use It, Don't Build It",            contentType: 'center', content: <Slide06bLaundry /> },

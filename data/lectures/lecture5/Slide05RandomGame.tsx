@@ -4,28 +4,28 @@ import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
 const demoCode = `import random
 
-# roll a die for you and for the bee
+# roll two dice
 you = random.randint(1, 6)
-bee = random.randint(1, 6)
+me  = random.randint(1, 6)
 
-print(f"You rolled {you}, the bee rolled {bee}")
+print(f"You rolled {you}, I rolled {me}")
 
-if you > bee:
-    print("You win! 🎉")
-elif bee > you:
-    print("The bee wins! 🐝")
+if you > me:
+    print("You win!")
+elif me > you:
+    print("I win!")
 else:
-    print("Draw — roll again!")
+    print("Draw — roll again")
 `
 
-const demoOutput = `You rolled 5, the bee rolled 2
-You win! 🎉`
+const demoOutput = `You rolled 5, I rolled 2
+You win!`
 
 export function Slide05RandomGame() {
   return (
     <>
       <SlideTitle>
-        A First Package — <GradientText variant="green">random</GradientText>
+        Roll the Dice — <GradientText variant="green">random</GradientText>
       </SlideTitle>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 items-center">
@@ -60,13 +60,13 @@ export function Slide05RandomGame() {
 
         <div className="flex flex-col gap-3 md:gap-4 min-h-0">
           <p className="text-gray-300 text-sm md:text-lg xl:text-xl italic">
-            Roll against the bee — run it, then run it again:
+            Run it, then run it again:
           </p>
           <div className="overflow-hidden rounded-xl">
             <LazyPythonRunner
               initialCode={demoCode}
               height="394px"
-              description="Live demo — random dice duel"
+              description="Live demo — roll two dice"
               staticOutput={demoOutput}
             />
           </div>
