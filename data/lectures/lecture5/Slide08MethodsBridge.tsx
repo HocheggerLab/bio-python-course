@@ -23,7 +23,7 @@ export function Slide08MethodsBridge() {
   return (
     <>
       <SlideTitle>
-        Methods — a simple way to get <GradientText variant="green">complex tasks</GradientText> done
+        Methods — attaching <GradientText variant="green">functions</GradientText> to an object
       </SlideTitle>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 xl:gap-10 mt-4 md:mt-6 xl:mt-8 items-center">
