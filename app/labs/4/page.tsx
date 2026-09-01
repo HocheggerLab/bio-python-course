@@ -26,8 +26,8 @@ const sessions: Session[] = [
   {
     num: 3,
     title: 'Paths & Files',
-    topics: ['pathlib basics', 'read a folder of sequences', 'translate 100 ORFs', 'drift across the tree'],
-    status: 'coming-soon',
+    topics: ['pathlib & the terminal', 'reading with a context manager', 'point a program at your data', 'writing results out'],
+    status: 'available',
     href: '/labs/4/3',
   },
 ]

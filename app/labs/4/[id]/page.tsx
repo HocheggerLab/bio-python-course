@@ -4,10 +4,12 @@ import SlideViewer from '@/components/lectures/SlideViewer'
 import { LectureData } from '@/data/lectures/types'
 import { lab4FunctionsData } from '@/data/sessions/lab4functions'
 import { lab4ErrorsData } from '@/data/sessions/lab4errors'
+import { lab4PathsData } from '@/data/sessions/lab4paths'
 
 const sessionDecks: Record<string, LectureData> = {
   '1': lab4FunctionsData,
   '2': lab4ErrorsData,
+  '3': lab4PathsData,
 }
 
 export default async function Lab4SessionPage({
