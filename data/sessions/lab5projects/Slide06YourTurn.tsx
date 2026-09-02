@@ -8,21 +8,21 @@ const ZENODO_URL = '#'
 
 const steps: React.ReactNode[] = [
   <>
-    <span className="font-mono text-white">uv init neurons</span> &nbsp;·&nbsp;{' '}
-    <span className="font-mono text-white">cd neurons</span> &nbsp;·&nbsp;{' '}
+    <span className="font-mono text-white">uv init --bare --vcs none neurons</span> &nbsp;·&nbsp;{' '}
+    <span className="font-mono text-white">cd neurons</span>
+  </>,
+  <>
+    <span className="font-mono text-white">uv sync</span> — watch{' '}
+    <span className="font-mono text-white">.venv</span> appear &nbsp;·&nbsp;{' '}
     <span className="font-mono text-white">uv add numpy</span>
   </>,
   <>
     <span className="text-white">Download</span> the five recordings and unzip them into the
-    project.
+    project, then drop <span className="font-mono text-white">analyse_neurons.py</span> in.
   </>,
   <>
-    Drop <span className="font-mono text-white">analyse_neurons.py</span> in and open the{' '}
-    <span className="text-white">folder</span> in VS Code.
-  </>,
-  <>
-    Fill in the <span className="text-white">four TODOs</span> — all recap: a path, a guard, a loop,
-    a sort.
+    <span className="font-mono text-white">code .</span> — open the{' '}
+    <span className="text-white">folder</span>, and fill in the four TODOs.
   </>,
   <>
     <span className="font-mono text-white">uv run analyse_neurons.py</span>
