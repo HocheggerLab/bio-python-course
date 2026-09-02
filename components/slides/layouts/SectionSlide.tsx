@@ -30,7 +30,7 @@ export function SectionSlide({
   return (
     <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
       {eyebrow && (
-        <div className="text-bio-blue/70 text-xs md:text-sm xl:text-base font-semibold uppercase tracking-[0.2em] mb-4 md:mb-6">
+        <div className="text-bio-blue text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold uppercase tracking-[0.15em] mb-3 md:mb-5">
           {eyebrow}
         </div>
       )}
@@ -45,13 +45,13 @@ export function SectionSlide({
       </h2>
       <div className="w-16 md:w-24 h-px bg-white/20 mt-6 md:mt-8" />
       {note && (
-        <p className="text-gray-400 text-base md:text-xl xl:text-2xl leading-relaxed mt-6 md:mt-8 max-w-3xl">
+        <p className="text-gray-100 text-base md:text-xl xl:text-2xl leading-relaxed mt-6 md:mt-8 max-w-3xl">
           {note}
         </p>
       )}
       {action && <div className="mt-7 md:mt-9">{action}</div>}
       {status && (
-        <div className="mt-6 md:mt-8 inline-flex items-center gap-2 text-gray-500 text-xs md:text-sm xl:text-base border border-white/10 rounded px-3 py-1.5">
+        <div className="mt-6 md:mt-8 inline-flex items-center gap-2 text-gray-400 text-xs md:text-sm xl:text-base border border-white/10 rounded px-3 py-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-bio-yellow/60" />
           {status}
         </div>

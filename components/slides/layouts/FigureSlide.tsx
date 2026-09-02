@@ -34,7 +34,7 @@ export function Figure({
         />
       </div>
       {caption && (
-        <figcaption className="text-gray-400 text-sm md:text-base xl:text-lg leading-relaxed mt-3 md:mt-4 text-center italic">
+        <figcaption className="text-gray-300 text-sm md:text-base xl:text-lg leading-relaxed mt-3 md:mt-4 text-center italic">
           {caption}
         </figcaption>
       )}

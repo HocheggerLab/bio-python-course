@@ -16,7 +16,7 @@ export function SlideLead({
 }) {
   return (
     <p
-      className={`text-gray-400 leading-relaxed max-w-5xl
+      className={`text-gray-100 leading-relaxed max-w-5xl
         text-base md:text-xl xl:text-2xl
         mt-3 md:mt-5
         ${align === 'center' ? 'mx-auto text-center' : ''}
@@ -40,7 +40,7 @@ export function SlideNote({
 }) {
   return (
     <p
-      className={`text-center text-gray-500 italic
+      className={`text-center text-gray-300 italic
         text-sm md:text-base xl:text-lg
         mt-3 md:mt-5 max-w-4xl mx-auto ${className}`}
     >

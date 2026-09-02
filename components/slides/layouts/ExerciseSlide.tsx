@@ -31,7 +31,7 @@ export function ExerciseSlide({
       <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] items-start gap-5 md:gap-8 xl:gap-10 mt-5 md:mt-7">
         <div className="min-w-0 flex flex-col gap-4 md:gap-6">
           {intro && (
-            <p className="text-gray-400 text-sm md:text-lg xl:text-xl leading-relaxed">{intro}</p>
+            <p className="text-gray-100 text-sm md:text-lg xl:text-xl leading-relaxed">{intro}</p>
           )}
           <StepList steps={steps} />
           {aside}

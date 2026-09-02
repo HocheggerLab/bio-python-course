@@ -90,14 +90,14 @@ export const pythonDataData: Lecture[] = [
   },
   {
     id: 6,
-    title: "Meet the DataFrame",
-    status: "coming-soon",
+    title: "DataFrames — Who Pollinates Your Dinner?",
+    status: "under-construction",
     dataset: { emoji: "🐝", field: "Ecology", source: "Urban pollinator survey — Nicholls Lab, Sussex" },
     topics: [
-      "Vectorisation, timed",
-      "pandas DataFrames: load, inspect, describe",
-      "Selecting, filtering and sorting rows",
-      "Grouping and summarising"
+      "A column is an array with a name",
+      "Selecting columns, filtering rows",
+      "value_counts and the effort trap",
+      "groupby — split, add up, combine"
     ],
     labsUrl: "/labs/6",
     type: 'core'

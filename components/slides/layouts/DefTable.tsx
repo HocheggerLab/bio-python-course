@@ -49,7 +49,7 @@ export function DefTable({
           <div
             key={`h${i}`}
             className="px-1 md:px-2 pb-2 md:pb-3 border-b border-white/10
-              text-[10px] md:text-xs xl:text-sm font-semibold uppercase tracking-widest text-gray-500"
+              text-[10px] md:text-xs xl:text-sm 2xl:text-base font-semibold uppercase tracking-widest text-gray-400"
           >
             {h}
           </div>
@@ -57,23 +57,23 @@ export function DefTable({
       {rows.map((r, i) => (
         <div key={i} className="contents group">
           <div
-            className={`px-1 md:px-2 py-2 md:py-2.5 font-mono whitespace-nowrap
-              ${accents[accent]} text-sm md:text-lg xl:text-xl
+            className={`px-1 md:px-2 py-2 md:py-2.5 2xl:py-4 font-mono whitespace-nowrap
+              ${accents[accent]} text-sm md:text-lg xl:text-xl 2xl:text-2xl
               ${i ? 'border-t border-white/10' : headers ? '' : ''}`}
           >
             {r.term}
           </div>
           <div
-            className={`px-1 md:px-2 py-2 md:py-2.5 text-gray-400
-              text-sm md:text-lg xl:text-xl leading-relaxed
+            className={`px-1 md:px-2 py-2 md:py-2.5 2xl:py-4 text-gray-200
+              text-sm md:text-lg xl:text-xl 2xl:text-2xl leading-relaxed
               ${i ? 'border-t border-white/10' : ''}`}
           >
             {r.def}
           </div>
           {hasExtra && (
             <div
-              className={`px-1 md:px-2 py-2 md:py-2.5 text-gray-500
-                text-xs md:text-base xl:text-lg whitespace-nowrap
+              className={`px-1 md:px-2 py-2 md:py-2.5 2xl:py-4 text-gray-400
+                text-xs md:text-base xl:text-lg 2xl:text-xl whitespace-nowrap
                 ${i ? 'border-t border-white/10' : ''}`}
             >
               {r.extra}

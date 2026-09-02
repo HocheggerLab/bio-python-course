@@ -38,7 +38,7 @@ export function StepList({ steps, start = 1 }: { steps: Step[]; start?: number }
               {s.label}
             </div>
             {s.detail && (
-              <div className="text-gray-400 text-sm md:text-lg xl:text-xl leading-relaxed mt-0.5 md:mt-1">
+              <div className="text-gray-200 text-sm md:text-lg xl:text-xl leading-relaxed mt-0.5 md:mt-1">
                 {s.detail}
               </div>
             )}

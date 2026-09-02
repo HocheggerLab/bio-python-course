@@ -224,7 +224,7 @@ export function CardBody({
 }) {
   return (
     <p
-      className={`text-gray-400 text-sm md:text-lg xl:text-xl 2xl:text-2xl leading-relaxed ${className}`}
+      className={`text-gray-200 text-sm md:text-lg xl:text-xl 2xl:text-2xl leading-relaxed ${className}`}
     >
       {children}
     </p>
@@ -267,7 +267,7 @@ export function CardList({
       {items.map((it, i) => (
         <li
           key={i}
-          className="flex items-center gap-2 md:gap-3 text-sm md:text-base xl:text-xl 2xl:text-2xl text-gray-300 leading-relaxed"
+          className="flex items-center gap-2 md:gap-3 text-sm md:text-base xl:text-xl 2xl:text-2xl text-gray-100 leading-relaxed"
         >
           {numbered ? (
             <span
