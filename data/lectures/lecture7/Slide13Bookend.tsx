@@ -15,7 +15,7 @@ ax.set_title("SOX10 across 1,165 cancer cell lines")
 plt.show()
 `
 
-export function Slide12Bookend() {
+export function Slide13Bookend() {
   return (
     <ConceptSlide
       maxWidth="6xl"

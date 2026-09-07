@@ -15,7 +15,9 @@ export interface QuestionDef {
 }
 
 const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
-  'l7-q1': { lecture: 7, correctIndex: 2 },
+  // label= belongs on the plot call; ax.legend() only draws what is labelled.
+  'l7-p1': { lecture: 7, correctIndex: 1 },
+  'l7-r1': { lecture: 7, correctIndex: 2 },
 }
 
 export function getQuestion(id: string): QuestionDef | undefined {

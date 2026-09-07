@@ -11,7 +11,7 @@ import { POLL_CONTENT } from '@/lib/poll/content'
  * and the explanation as much as the bars — has to stay hidden until then, or
  * the poll measures who can read the screen.
  */
-export function Slide14PollResults() {
+export function Slide15RecallTitleResults() {
   return (
     <ConceptSlide
       maxWidth="6xl"
@@ -20,10 +20,10 @@ export function Slide14PollResults() {
           Responses — <GradientText>coming in</GradientText>
         </>
       }
-      lead={<>{POLL_CONTENT['l7-q1'].prompt}</>}
+      lead={<>Which line gives that panel a title?</>}
     >
       <PollResults
-        questionId="l7-q1"
+        questionId="l7-r1"
         answer={
           <>
             <span className="font-mono">ax.set_title()</span>. Not{' '}
