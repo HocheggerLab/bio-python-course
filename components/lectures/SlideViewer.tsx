@@ -4,15 +4,20 @@ import { LectureData } from '@/data/lectures/types'
 
 interface SlideViewerProps {
   lecture: LectureData
+  /** Include slides marked `teacher` — driven by ?teach=1 on the page. */
+  teacher?: boolean
 }
 
 // Server Component — no state, no hooks.
 // slide.content is passed as RSC children into SlidePane (Client),
 // which is the supported Next.js pattern for crossing the server/client boundary.
-export default function SlideViewer({ lecture }: SlideViewerProps) {
+export default function SlideViewer({ lecture, teacher = false }: SlideViewerProps) {
+  /* Filter before indexing, so the student deck numbers slides consecutively
+     rather than leaving gaps where the answers were removed. */
+  const slides = teacher ? lecture.slides : lecture.slides.filter((s) => !s.teacher)
   return (
-    <SlideController totalSlides={lecture.slides.length}>
-      {lecture.slides.map((slide, index) => (
+    <SlideController totalSlides={slides.length}>
+      {slides.map((slide, index) => (
         <SlidePane key={slide.id} index={index} contentType={slide.contentType}>
           {slide.content}
         </SlidePane>
