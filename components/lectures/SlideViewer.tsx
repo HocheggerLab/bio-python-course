@@ -4,7 +4,7 @@ import { LectureData } from '@/data/lectures/types'
 
 interface SlideViewerProps {
   lecture: LectureData
-  /** Include slides marked `teacher` — driven by ?teach=1 on the page. */
+  /** Include slides marked `teacher` — driven by the /teach cookie. */
   teacher?: boolean
 }
 
