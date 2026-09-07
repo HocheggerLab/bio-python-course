@@ -30,6 +30,7 @@ const COURSE_FILES: Record<string, string> = {
   'neuron_0406_20180620_8_lecture.csv': '/data/neuron_0406_20180620_8_lecture.csv',
   'neuron_0588_20180928_14.csv': '/data/neuron_0588_20180928_14.csv',
   'neuron_1140_20190614_72.csv': '/data/neuron_1140_20190614_72.csv',
+  'depmap_lecture.csv': '/data/depmap_lecture.csv',
   'beetable.py': '/data/beetable.py',
   'neurotrace.py': '/data/neurotrace.py',
 }
