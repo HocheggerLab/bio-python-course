@@ -154,6 +154,10 @@ export default function PythonCodeRunner({
     )
   }
 
+  /* Only a rendered figure earns the two-column layout: it is the one output
+     tall enough to push itself off the slide. */
+  const sideBySide = images.length > 0
+
   return (
     <div className="bg-bio-card border border-bio-blue/20 rounded-xl overflow-hidden">
       {/* Header */}
@@ -207,8 +211,20 @@ export default function PythonCodeRunner({
           </div>
         )}
         
-        {/* Code Editor with Syntax Highlighting */}
-        <div className="bg-bio-dark">
+      </div>
+
+      {/* Code and output.
+          A figure is tall: stacked under the editor it pushes itself off the
+          bottom of the slide, so on a wide screen the two sit side by side and
+          the plot stays visible next to the code that made it. Text-only runs
+          keep the original stacked layout — a paragraph of stdout is short, and
+          half-width would only make it wrap. */}
+      <div className={sideBySide ? 'xl:flex xl:items-stretch' : ''}>
+        <div
+          className={`bg-bio-dark border-b border-bio-blue/20 ${
+            sideBySide ? 'xl:w-1/2 xl:border-b-0 xl:border-r xl:border-bio-blue/20' : ''
+          }`}
+        >
           <CodeEditor
             code={code}
             onChange={setCode}
@@ -219,8 +235,8 @@ export default function PythonCodeRunner({
             showLineNumbers={showLineNumbers}
           />
         </div>
-      </div>
 
+        <div className={sideBySide ? 'xl:w-1/2 xl:overflow-y-auto' : ''}>
       {/* Hint Display */}
       {showHint && hints[currentHint] && (
         <div className="px-4 py-2 bg-bio-yellow/10 border-b border-bio-yellow/20">
@@ -247,13 +263,17 @@ export default function PythonCodeRunner({
           )}
           
           {/* Figures render under the text output — a plot is the result of the
-              snippet, not a decoration beside it. */}
+              snippet, not a decoration beside it.
+              Bounded by *height*, not width: `w-full` used to stretch a 690px
+              figure across the panel and scale it to ~700px tall, which pushed
+              every plotting slide off the bottom of the screen. Capping the
+              height instead lets a figure sit inside the slide it belongs to. */}
           {images.map((png, i) => (
             <img
               key={i}
               src={`data:image/png;base64,${png}`}
               alt={`Figure ${i + 1}`}
-              className="mt-2 w-full rounded border border-white/10"
+              className="mt-2 mx-auto max-w-full max-h-[34vh] w-auto object-contain rounded border border-white/10"
             />
           ))}
 
@@ -264,6 +284,8 @@ export default function PythonCodeRunner({
           )}
         </div>
       )}
+        </div>
+      </div>
 
       {/* Status bar */}
       <div className="px-4 py-2 bg-bio-dark/30 border-t border-bio-blue/20">

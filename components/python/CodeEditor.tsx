@@ -39,6 +39,58 @@ export default function CodeEditor({
     }
   }
 
+  /** Tab belongs to the code, not to the focus ring.
+   *
+   *  Python is whitespace-significant, so a textarea that hands Tab straight
+   *  to the browser is unusable for editing: the student loses the cell just
+   *  as they try to indent a body. Insert four spaces instead, and let
+   *  Shift+Tab take them back off. */
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key !== 'Tab') return
+    e.preventDefault()
+
+    const el = e.currentTarget
+    const { selectionStart, selectionEnd } = el
+    const INDENT = '    '
+
+    // Whole-line handling, so a multi-line selection indents as a block.
+    const lineStart = code.lastIndexOf('\n', selectionStart - 1) + 1
+    const lineEndRaw = code.indexOf('\n', selectionEnd)
+    const lineEnd = lineEndRaw === -1 ? code.length : lineEndRaw
+    const multiline = code.slice(selectionStart, selectionEnd).includes('\n')
+
+    if (!multiline && !e.shiftKey) {
+      const next =
+        code.slice(0, selectionStart) + INDENT + code.slice(selectionEnd)
+      onChange(next)
+      const caret = selectionStart + INDENT.length
+      requestAnimationFrame(() => el.setSelectionRange(caret, caret))
+      return
+    }
+
+    const block = code.slice(lineStart, lineEnd)
+    const lines = block.split('\n')
+    let firstDelta = 0
+    let totalDelta = 0
+
+    const shifted = lines.map((line, i) => {
+      if (e.shiftKey) {
+        const removed = line.match(/^ {1,4}/)?.[0].length ?? 0
+        if (i === 0) firstDelta = -removed
+        totalDelta -= removed
+        return line.slice(removed)
+      }
+      if (i === 0) firstDelta = INDENT.length
+      totalDelta += INDENT.length
+      return INDENT + line
+    })
+
+    onChange(code.slice(0, lineStart) + shifted.join('\n') + code.slice(lineEnd))
+    const start = Math.max(lineStart, selectionStart + firstDelta)
+    const end = Math.max(start, selectionEnd + totalDelta)
+    requestAnimationFrame(() => el.setSelectionRange(start, end))
+  }
+
   useEffect(() => {
     if (textareaRef.current && highlightRef.current) {
       highlightRef.current.scrollTop = textareaRef.current.scrollTop
@@ -90,6 +142,7 @@ export default function CodeEditor({
         value={code}
         onChange={(e) => onChange(e.target.value)}
         onScroll={handleScroll}
+        onKeyDown={handleKeyDown}
         disabled={disabled}
         placeholder={placeholder}
         spellCheck={false}
