@@ -10,6 +10,24 @@ const EDITOR_PADDING = 16
 /** Width of the line-number gutter, wide enough for three digits. */
 const GUTTER_WIDTH = 44
 
+/**
+ * One font for both layers, stated explicitly everywhere it could be overridden.
+ *
+ * The caret lives in the textarea while the glyphs live in the <pre> behind it,
+ * so if the two resolve different faces the caret drifts a fraction of a
+ * character per column — invisible at the start of a line and a whole character
+ * wide by the middle of it. That is exactly what happened: Tailwind's preflight
+ * styles `code` and `pre` with the theme mono font, which beat the inline font
+ * on the wrapping <pre> and left the highlighted text in JetBrains Mono while
+ * the textarea used SF Mono. The two drift in opposite directions in Blink and
+ * WebKit, which is why it looked fine in one browser and broken in the other.
+ *
+ * Setting it on the textarea, the <pre> and the <code> means no cascade can
+ * separate them again.
+ */
+const EDITOR_FONT =
+  'var(--font-mono), ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace'
+
 interface CodeEditorProps {
   code: string
   onChange: (code: string) => void
@@ -109,13 +127,13 @@ export default function CodeEditor({
               ...style,
               backgroundColor: 'transparent',
               fontSize: '14px',
-              fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace',
+              fontFamily: EDITOR_FONT,
               lineHeight: '1.5',
               whiteSpace: 'pre',
               overflowX: 'auto',
             }}
           >
-            <code style={{ whiteSpace: 'pre' }}>
+            <code style={{ whiteSpace: 'pre', fontFamily: EDITOR_FONT }}>
               {tokens.map((line, i) => (
                 <div key={i} {...getLineProps({ line })} style={{ whiteSpace: 'pre' }}>
                   {showLineNumbers && (
@@ -149,14 +167,12 @@ export default function CodeEditor({
         className="absolute top-0 left-0 w-full h-full bg-transparent text-transparent caret-gray-300 p-4 m-0 outline-none resize-none overflow-auto"
         style={{
           fontSize: '14px',
-          fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace',
+          fontFamily: EDITOR_FONT,
           lineHeight: '1.5',
           caretColor: '#d1d5db',
-          /* The caret lives in this textarea while the glyphs live in the <pre>
-             behind it, so the two must agree on where text starts to the pixel
-             — otherwise clicking lands the cursor in the wrong column. The pre
-             indents by its own p-4 plus the gutter; the textarea has no gutter,
-             so it makes up the difference in padding. */
+          /* Both layers must agree on where text *starts*, as well as on the
+             font. The pre indents by its own p-4 plus the gutter; the textarea
+             has no gutter, so it makes up the difference in padding. */
           paddingLeft: showLineNumbers ? `${EDITOR_PADDING + GUTTER_WIDTH}px` : `${EDITOR_PADDING}px`,
           whiteSpace: 'pre',
           wordWrap: 'normal',
