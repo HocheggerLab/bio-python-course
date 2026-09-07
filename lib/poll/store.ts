@@ -1,4 +1,5 @@
 import { MemoryPollStore } from './memory-store'
+import { SqlPollStore } from './sql-store'
 
 export type CastResult = 'recorded' | 'updated'
 
@@ -42,6 +43,9 @@ let store: PollStore | null = null
  * one is live.
  */
 export function getStore(): PollStore {
-  if (!store) store = new MemoryPollStore()
+  if (!store) {
+    const url = process.env.DATABASE_URL
+    store = url ? new SqlPollStore(url) : new MemoryPollStore()
+  }
   return store
 }
