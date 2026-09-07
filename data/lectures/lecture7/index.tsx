@@ -36,6 +36,6 @@ export const lecture7Data: LectureData = {
     { id: 12, title: 'You can now read every line',     contentType: 'center', content: <Slide12Bookend /> },
 
     { id: 13, title: 'Quick check — which line is right?', contentType: 'center', content: <Slide13Poll /> },
-    { id: 14, title: 'The answer',                       contentType: 'center', content: <Slide14PollResults />, teacher: true },
+    { id: 14, title: 'Poll results',                       contentType: 'center', content: <Slide14PollResults />, teacher: true },
   ],
 }

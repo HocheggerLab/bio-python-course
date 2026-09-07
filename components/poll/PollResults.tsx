@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { getContent } from '@/lib/poll/content'
 
 interface Results {
@@ -24,7 +24,14 @@ const REFRESH_MS = 2000
  * you what anyone understood. The count still ticks up, which is the part that
  * creates the urgency.
  */
-export default function PollResults({ questionId }: { questionId: string }) {
+export default function PollResults({
+  questionId,
+  answer,
+}: {
+  questionId: string
+  /** Shown only once revealed — the explanation you talk over. */
+  answer?: React.ReactNode
+}) {
   const content = getContent(questionId)
   const [token, setToken] = useState<string | null>(null)
   const [results, setResults] = useState<Results | null>(null)
@@ -116,6 +123,12 @@ export default function PollResults({ questionId }: { questionId: string }) {
           {results?.isOpen ? 'open' : 'closed'}
         </span>
       </div>
+
+      {revealed && answer && (
+        <div className="mt-6 md:mt-8 text-center text-gray-100 text-base md:text-xl xl:text-2xl leading-relaxed max-w-4xl mx-auto">
+          {answer}
+        </div>
+      )}
 
       {revealed && content && results && (
         /* One line per option: letter, the code itself, the bar, the tally.

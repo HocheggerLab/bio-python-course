@@ -23,12 +23,19 @@ export async function POST(request: Request) {
     return Response.json({ error: 'server has no POLL_ADMIN_TOKEN' }, { status: 500 })
   }
 
+  /* Secure follows the actual protocol rather than NODE_ENV: `next start`
+     runs in production mode, so keying off NODE_ENV marked the cookie Secure
+     on http://localhost and the browser silently refused to store it — the
+     sign-in appeared to do nothing. */
+  const proto =
+    request.headers.get('x-forwarded-proto') ?? new URL(request.url).protocol.replace(':', '')
+
   const store = await cookies()
   store.set(TEACHER_COOKIE, value, {
     // httpOnly: page scripts never need this, and it keeps the value out of
     // reach of anything running in the browser.
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
+    secure: proto === 'https',
     sameSite: 'lax',
     path: '/',
     maxAge: MAX_AGE_SECONDS,
