@@ -29,6 +29,15 @@ import { Slide25Division } from './Slide25Division'
 import { Slide26CountMethod } from './Slide26CountMethod'
 import { Slide27FinalDemo } from './Slide27FinalDemo'
 import { Slide28TIYSpikeTrain } from './Slide28TIYSpikeTrain'
+// Closing poll block — sits before the recap, so an overrun eats the summary
+// (which is on the website anyway) rather than the only feedback we get.
+import { PollBlockOpener } from './PollBlockOpener'
+import { PollQ1 } from './PollQ1'
+import { PollQ1Results } from './PollQ1Results'
+import { PollQ2 } from './PollQ2'
+import { PollQ2Results } from './PollQ2Results'
+import { PollQ3 } from './PollQ3'
+import { PollQ3Results } from './PollQ3Results'
 import { Slide29Recap } from './Slide29Recap'
 import { Slide30Outlook } from './Slide30Outlook'
 
@@ -67,7 +76,16 @@ export const lecture1Data: LectureData = {
     { id: 26, title: 'Counting Characters — .count()',  contentType: 'center',    content: <Slide26CountMethod /> },
     { id: 27, title: "Demo — Claudia's first report",   contentType: 'center',    content: <Slide27FinalDemo /> },
     { id: 28, title: 'TIY — Spike train',               contentType: 'center',    content: <Slide28TIYSpikeTrain /> },
-    { id: 29, title: 'Recap',                           contentType: 'center',    content: <Slide29Recap /> },
-    { id: 30, title: "What's Next",                     contentType: 'center',    content: <Slide30Outlook /> },
+    // ── Closing poll block ────────────────────────────────
+    { id: 29, title: 'What stuck?',                     contentType: 'center',    content: <PollBlockOpener /> },
+    { id: 30, title: 'Question 1 — f-strings',          contentType: 'center',    content: <PollQ1 /> },
+    { id: 31, title: 'Question 1 — responses',          contentType: 'center',    content: <PollQ1Results />, teacher: true },
+    { id: 32, title: 'Question 2 — types',              contentType: 'center',    content: <PollQ2 /> },
+    { id: 33, title: 'Question 2 — responses',          contentType: 'center',    content: <PollQ2Results />, teacher: true },
+    { id: 34, title: 'Question 3 — naming',             contentType: 'center',    content: <PollQ3 /> },
+    { id: 35, title: 'Question 3 — responses',          contentType: 'center',    content: <PollQ3Results />, teacher: true },
+    // ── Close ─────────────────────────────────────────────
+    { id: 36, title: 'Recap',                           contentType: 'center',    content: <Slide29Recap /> },
+    { id: 37, title: "What's Next",                     contentType: 'center',    content: <Slide30Outlook /> },
   ],
 }

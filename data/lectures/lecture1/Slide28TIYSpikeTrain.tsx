@@ -1,19 +1,12 @@
-'use client'
-
-import { QRCodeSVG } from 'qrcode.react'
 import { GradientText } from '@/components/slides/SlideTitle'
 import { SlideCard, CardHeading } from '@/components/slides/SlideCard'
 import { ExerciseSlide, type Step } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
-// Lecturer's permanent Poll Everywhere room.
-// Rotate the active poll inside the Poll Everywhere dashboard before class — no redeploy needed.
-const POLL_URL = 'https://pollev.com/your-handle'
-
 const tasks: Step[] = [
   { label: 'Compute duration, spike count, and firing rate', accent: 'yellow' },
   { label: 'Follow the hint comments', detail: 'Each line names the tool to use', accent: 'yellow' },
-  { label: 'Submit your rate', detail: 'Scan the QR and add it to the poll', accent: 'yellow' },
+  { label: 'Check your answer', detail: 'Compare with a neighbour, then Check solution', accent: 'yellow' },
 ]
 
 const initialCode = `# Extracellular recording — 1 ms sampling, 1 = spike, 0 = silent
@@ -46,6 +39,16 @@ print(f"Duration:    {duration_ms} ms")
 print(f"Firing rate: {firing_rate} Hz")
 `
 
+const solution = `# The three blanks filled in.
+duration_ms = len(spike_train)                              # one character = one ms
+spike_count = spike_train.count("1")                        # same .count() as GC content
+firing_rate = round(spike_count / duration_ms * 1000, 1)    # per ms -> per second
+
+print(f"Spikes:      {spike_count}")
+print(f"Duration:    {duration_ms} ms")
+print(f"Firing rate: {firing_rate} Hz")
+`
+
 const expectedOutput = `Spikes:      23
 Duration:    750 ms
 Firing rate: 30.7 Hz`
@@ -71,26 +74,19 @@ export function Slide28TIYSpikeTrain() {
       steps={tasks}
       aside={
         <SlideCard color="blue" layout="start" padding="tight" className="border-l-4">
-          <div className="flex items-center gap-3 md:gap-5">
-            <div className="bg-white rounded p-2 md:p-3 shrink-0">
-              <QRCodeSVG value={POLL_URL} size={96} level="M" includeMargin={false} />
-            </div>
-            <div className="min-w-0">
-              <CardHeading size="sm" color="blue" className="mb-1 md:mb-2">
-                Submit your firing rate
-              </CardHeading>
-              <p className="text-gray-400 text-xs md:text-sm xl:text-base leading-snug">
-                Scan with your phone — submit your{' '}
-                <span className="text-bio-blue font-semibold">firing rate in Hz</span> to
-                today&apos;s poll.
-              </p>
-            </div>
-          </div>
+          <CardHeading size="sm" color="blue" className="mb-1 md:mb-2">
+            One character, one millisecond
+          </CardHeading>
+          <p className="text-gray-300 text-xs md:text-sm xl:text-base leading-snug">
+            So the length of the string <em>is</em> the recording duration. That is the
+            step people miss.
+          </p>
         </SlideCard>
       }
     >
       <LazyPythonRunner
         initialCode={initialCode}
+        solution={solution}
         expectedOutput={expectedOutput}
         hints={hints}
         height="457px"

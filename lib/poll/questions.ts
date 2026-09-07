@@ -15,6 +15,12 @@ export interface QuestionDef {
 }
 
 const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
+  // All three verified against CPython: only B interpolates, "3.14" is a str,
+  // and the other three names are SyntaxErrors (digit first, space, keyword).
+  'l1-r1': { lecture: 1, correctIndex: 1 },
+  'l1-r2': { lecture: 1, correctIndex: 1 },
+  'l1-r3': { lecture: 1, correctIndex: 2 },
+
   // label= belongs on the plot call; ax.legend() only draws what is labelled.
   'l7-p1': { lecture: 7, correctIndex: 1 },
   'l7-r1': { lecture: 7, correctIndex: 2 },

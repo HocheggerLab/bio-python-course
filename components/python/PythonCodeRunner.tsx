@@ -14,7 +14,17 @@ export interface PythonCodeRunnerProps {
   hints?: string[]
   onSuccess?: () => void
   showLineNumbers?: boolean
-  
+  /**
+   * The worked answer for an exercise.
+   *
+   * Shown publicly rather than hidden on a teacher-only slide: it keeps the
+   * exercise and its answer in one file so they cannot drift apart, and it
+   * leaves the deck usable for revision instead of half-blank after the
+   * lecture. A student who reveals it immediately has at least read correct
+   * code — and hiding it would not have stopped them anyway.
+   */
+  solution?: string
+
   // Static fallback props
   staticOutput?: string
   staticError?: string
@@ -30,6 +40,7 @@ export default function PythonCodeRunner({
   hints = [],
   onSuccess,
   showLineNumbers = false,
+  solution,
   staticOutput,
   staticError,
   description
@@ -50,6 +61,11 @@ export default function PythonCodeRunner({
   const [isRunning, setIsRunning] = useState(false)
   const [showHint, setShowHint] = useState(false)
   const [currentHint, setCurrentHint] = useState(0)
+  /* Holds the student's own attempt while the solution is on screen, so
+     revealing it is reversible. It also lets the lecturer show the answer,
+     run it, edit a line to demonstrate what breaks, then hand the slide back
+     the way it was. */
+  const [stashedCode, setStashedCode] = useState<string | null>(null)
 
   // Update code when initialCode changes
   useEffect(() => {
@@ -99,6 +115,7 @@ export default function PythonCodeRunner({
   }
 
   const handleReset = () => {
+    setStashedCode(null)
     setCode(initialCode)
     setOutput('')
     setError('')
@@ -110,6 +127,19 @@ export default function PythonCodeRunner({
   const handleResetWorkspace = async () => {
     if (!isReady) return
     await resetWorkspace()
+    setOutput('')
+    setError('')
+    setImages([])
+  }
+
+  const toggleSolution = () => {
+    if (stashedCode === null) {
+      setStashedCode(code)
+      setCode(solution ?? '')
+    } else {
+      setCode(stashedCode)
+      setStashedCode(null)
+    }
     setOutput('')
     setError('')
     setImages([])
@@ -176,6 +206,18 @@ export default function PythonCodeRunner({
                 className="px-3 py-1 text-xs bg-bio-yellow/20 text-bio-yellow rounded hover:bg-bio-yellow/30 transition-colors"
               >
                 💡 Hint
+              </button>
+            )}
+            {solution && (
+              <button
+                onClick={toggleSolution}
+                className={`px-3 py-1 text-xs rounded transition-colors ${
+                  stashedCode !== null
+                    ? 'bg-bio-green/30 text-bio-green hover:bg-bio-green/40'
+                    : 'bg-bio-blue/20 text-bio-blue hover:bg-bio-blue/30'
+                }`}
+              >
+                {stashedCode !== null ? '← Back to my code' : 'Check solution'}
               </button>
             )}
             <button

@@ -38,6 +38,35 @@ ax.legend()`,
     ],
   },
 
+
+  /* Lecture 1 closing block — three recall questions, asked before the recap
+     so an overrun eats the summary (which is on the website) rather than the
+     only feedback we get. Each maps onto a bug in the Lab 1 notebooks, so the
+     lecture and the lab reinforce the same three mistakes. */
+  'l1-r1': {
+    prompt: 'Which line prints  Sample S-014 has pH 7.4  ?',
+    code: `sample = "S-014"
+ph = 7.4`,
+    optionsAreCode: true,
+    options: [
+      'print("Sample {sample} has pH {ph}")',
+      'print(f"Sample {sample} has pH {ph}")',
+      'print("Sample $sample has pH $ph")',
+      'print(f"Sample {{sample}} has pH {{ph}}")',
+    ],
+  },
+  'l1-r2': {
+    prompt: 'A reading comes back from a file as "3.14", with the quotes. What does type() say it is?',
+    code: 'print(type("3.14"))',
+    optionsAreCode: true,
+    options: ["<class 'float'>", "<class 'str'>", "<class 'int'>", "<class 'decimal'>"],
+  },
+  'l1-r3': {
+    prompt: 'Which of these is a variable name Python will accept?',
+    optionsAreCode: true,
+    options: ['2nd_sample', 'buffer ph', 'buffer_ph', 'class'],
+  },
+
   /* Closing recall block. */
   'l7-r1': {
     prompt:

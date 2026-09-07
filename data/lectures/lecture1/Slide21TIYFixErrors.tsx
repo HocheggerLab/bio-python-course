@@ -22,6 +22,18 @@ print("Length: {length} bases")
 print(f"Sequence: {sequenc}")
 `
 
+const solution = `# All three bugs fixed.
+
+gene_name = "TP53"
+seq = "ATGGAGGAG"
+
+length = len(seq)                      # 1. the closing bracket was missing
+
+print(f"Gene: {gene_name}")
+print(f"Length: {length} bases")       # 2. the f was missing, so it printed {length}
+print(f"Sequence: {seq}")              # 3. 'sequenc' was a typo for 'seq'
+`
+
 const expectedOutput = `Gene: TP53
 Length: 9 bases
 Sequence: ATGGAGGAG`
@@ -49,6 +61,7 @@ export function Slide21TIYFixErrors() {
     >
       <LazyPythonRunner
         initialCode={initialCode}
+        solution={solution}
         expectedOutput={expectedOutput}
         hints={hints}
         height="415px"
