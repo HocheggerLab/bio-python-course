@@ -15,18 +15,23 @@ const builtins = [
   { fn: 'max(a, b)', what: 'Larger of two values' },
 ]
 
-const demoCode = `sequence = "ATGCGTACGT"
+const demoCode = `sequence   = "ATGCGTACGT"
+gc_percent = 66.66666
 
 # The same pattern every time: function(value)
-print(len(sequence))      # how long is it?
-print(type(sequence))     # what kind of value?
+# Store the answer first, then print it — one job per line
+seq_length = len(sequence)         # how long is it?
+gc_rounded = round(gc_percent, 1)  # to 1 decimal place
+
+print(seq_length)
+print(gc_rounded)
 
 # help() reads the docs from inside Python — super useful!
 help(round)
 `
 
 const demoOutput = `10
-<class 'str'>
+66.7
 Help on built-in function round in module builtins:
 
 round(number, ndigits=None)
@@ -57,7 +62,9 @@ export function Slide18BuiltinFunctions() {
       note={
         <>
           Forgotten what one does? Pass it to <span className="font-mono text-bio-yellow">help()</span>{' '}
-          and Python prints the official documentation — for <em>any</em> function.
+          and Python prints the official documentation — for <em>any</em> function. Try{' '}
+          <span className="font-mono text-bio-yellow">round(2.5)</span> too: Python rounds{' '}
+          <em>half to even</em>, so the answer is 2, not 3.
         </>
       }
     />

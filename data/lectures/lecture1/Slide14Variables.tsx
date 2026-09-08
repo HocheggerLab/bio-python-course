@@ -2,16 +2,12 @@ import { GradientText } from '@/components/slides/SlideTitle'
 import { ConceptSlide } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
+// No print() yet — assignment on its own produces no output, which is the
+// point: the values are stored, just not shown. print() comes two slides on.
 const demoCode = `# = puts the value on the right into the name on the left
 gene_name = "BRCA1"
 length    = 16
-
-print(gene_name)
-print(length)
 `
-
-const demoOutput = `BRCA1
-16`
 
 export function Slide14Variables() {
   return (
@@ -25,13 +21,12 @@ export function Slide14Variables() {
           its name.
         </>
       }
-      note="Run it, then change the values and re-run."
+      note="Run it — nothing appears. The values are stored; showing them is the next step."
     >
       <LazyPythonRunner
         initialCode={demoCode}
         height="310px"
         description="Live demo — variable assignment"
-        staticOutput={demoOutput}
       />
     </ConceptSlide>
   )

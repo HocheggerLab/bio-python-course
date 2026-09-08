@@ -25,7 +25,7 @@ export function Slide24Operators() {
   return (
     <SplitSlide
       title={<>Arithmetic <GradientText>Operators</GradientText></>}
-      lead="Numbers in, a number out — and they work on variables exactly as they do on raw numbers."
+      lead="Integers and Floats work with mathematical operators, either directly or when assigned to a variable"
       ratio="even"
       left={
         <DefTable

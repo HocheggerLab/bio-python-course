@@ -27,7 +27,7 @@ const sessions: Step[] = [
 export function Slide09bRoadmap2() {
   return (
     <SplitSlide
-      title={<>Roadmap — <GradientText>Python for Data Science</GradientText></>}
+      title={<>2nd course half — <GradientText>Python for Data Science</GradientText></>}
       ratio="wide-right"
       left={
         <Figure

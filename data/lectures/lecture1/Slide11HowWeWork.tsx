@@ -8,9 +8,6 @@ print("Hello, World!")
 print("2 + 2 =", 2 + 2)
 `
 
-const COLAB_LECTURE1 =
-  'https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/revision/Lecture01_Iteration_Basics.ipynb'
-
 // Card section helpers ────────────────────────────────────────────────
 // Fixed min-heights ensure titles + descriptions sit at the same vertical
 // positions across all three cards regardless of body content length.
@@ -88,12 +85,10 @@ export function Slide11HowWeWork() {
             <li className="flex items-start gap-2"><span className="text-bio-green shrink-0">✓</span>Works on any laptop / iPad</li>
           </ul>
           <a
-            href={COLAB_LECTURE1}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/labs/1"
             className="self-start mt-auto rounded bg-bio-green/20 hover:bg-bio-green/30 border border-bio-green/40 text-bio-green font-semibold px-3 md:px-5 py-1.5 md:py-2 text-xs md:text-sm xl:text-base transition-colors"
           >
-            Open Session 1 notebook →
+            See Lab 1 →
           </a>
         </SlideCard>
 
@@ -116,10 +111,10 @@ export function Slide11HowWeWork() {
             <li className="flex items-start gap-2"><span className="text-bio-yellow shrink-0">→</span>Git, virtual environments, real projects</li>
           </ul>
           <a
-            href="/dev-tools"
+            href="/labs/4"
             className="self-start mt-auto rounded bg-bio-yellow/20 hover:bg-bio-yellow/30 border border-bio-yellow/40 text-bio-yellow font-semibold px-3 md:px-5 py-1.5 md:py-2 text-xs md:text-sm xl:text-base transition-colors"
           >
-            Setup guide →
+            See Lab 4 →
           </a>
         </SlideCard>
 
