@@ -1,6 +1,6 @@
 import { GradientText } from '@/components/slides/SlideTitle'
 import { ConceptSlide } from '@/components/slides/layouts'
-import PollQuestionSlide from '@/components/poll/PollQuestionSlide'
+import PollSlide from '@/components/poll/PollSlide'
 
 /**
  * Closing recall block — asked after the teaching, to find out what stuck
@@ -23,7 +23,18 @@ export function Slide14RecallTitle() {
         </>
       }
     >
-      <PollQuestionSlide questionId="l7-r1" />
+      <PollSlide
+        questionId="l7-r1"
+        answer={
+      <>
+        <span className="font-mono">ax.set_title()</span>. Not{' '}
+        <span className="font-mono">plt</span>, which has no such method; not{' '}
+        <span className="font-mono">fig</span>, which titles the whole sheet with{' '}
+        <span className="font-mono">suptitle</span>; and{' '}
+        <span className="font-mono">ax.title</span> is an attribute, not a function.
+      </>
+        }
+      />
     </ConceptSlide>
   )
 }

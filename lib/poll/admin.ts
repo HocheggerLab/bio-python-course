@@ -1,10 +1,11 @@
+import { isTeacher } from './teacher'
+
 /**
  * Admin actions (open, close, reset, reading results while a poll runs) sit
  * behind a bearer token from the environment.
  *
  * Not obscurity: without this, anyone who reads the client bundle could reset
- * the poll mid-lecture. The token lives in POLL_ADMIN_TOKEN and is pasted once
- * into the teacher page.
+ * the poll mid-lecture. The token lives in POLL_ADMIN_TOKEN.
  */
 export function isAdmin(request: Request): boolean {
   const expected = process.env.POLL_ADMIN_TOKEN
@@ -17,6 +18,18 @@ export function isAdmin(request: Request): boolean {
 
   const given = header.slice(prefix.length)
   return timingSafeEqual(given, expected)
+}
+
+/**
+ * Either credential will do: the bearer token (scripts, load tests) or the
+ * teacher cookie set once at /teach.
+ *
+ * The cookie is what makes the lecture workable — the controls now live on the
+ * question slide itself, and pasting a token before every question in a dark
+ * room was never going to happen.
+ */
+export async function isAuthorised(request: Request): Promise<boolean> {
+  return isAdmin(request) || (await isTeacher())
 }
 
 /** Constant-time-ish comparison so the token can't be guessed byte by byte. */

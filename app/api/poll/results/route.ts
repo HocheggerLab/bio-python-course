@@ -1,6 +1,6 @@
 import { getStore } from '@/lib/poll/store'
 import { getQuestion } from '@/lib/poll/questions'
-import { isAdmin } from '@/lib/poll/admin'
+import { isAuthorised } from '@/lib/poll/admin'
 
 export const dynamic = 'force-dynamic'
 
@@ -12,7 +12,7 @@ export const dynamic = 'force-dynamic'
  * the answer distribution stops telling us what anyone actually understood.
  */
 export async function GET(request: Request) {
-  if (!isAdmin(request)) {
+  if (!(await isAuthorised(request))) {
     return Response.json({ error: 'unauthorised' }, { status: 401 })
   }
 

@@ -1,6 +1,6 @@
 import { getStore } from '@/lib/poll/store'
 import { getQuestion } from '@/lib/poll/questions'
-import { isAdmin } from '@/lib/poll/admin'
+import { isAuthorised } from '@/lib/poll/admin'
 
 export const dynamic = 'force-dynamic'
 
@@ -13,7 +13,7 @@ function isAction(value: unknown): value is Action {
 
 /** Open, close or clear a question. Opening one closes whatever else was open. */
 export async function POST(request: Request) {
-  if (!isAdmin(request)) {
+  if (!(await isAuthorised(request))) {
     return Response.json({ error: 'unauthorised' }, { status: 401 })
   }
 
