@@ -5,6 +5,7 @@ import { Slide03Cells } from './Slide03Cells'
 import { Slide04OpenAndSave } from './Slide04OpenAndSave'
 import { Slide05Tips } from './Slide05Tips'
 import { Slide06Gemini } from './Slide06Gemini'
+import { Slide07Launch } from './Slide07Launch'
 
 export const session1Data: LectureData = {
   id: 'session-1',
@@ -16,5 +17,6 @@ export const session1Data: LectureData = {
     { id: 4, title: 'Open, Save, Share',       contentType: 'center', content: <Slide04OpenAndSave /> },
     { id: 5, title: 'Top Tips & Gotchas',      contentType: 'center', content: <Slide05Tips /> },
     { id: 6, title: 'Using Gemini in Colab',   contentType: 'center', content: <Slide06Gemini /> },
+    { id: 7, title: 'Now open the notebook', contentType: 'center', content: <Slide07Launch /> },
   ],
 }

@@ -1,5 +1,5 @@
 export const SESSION1_COLAB_URL =
-  'https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/lecture01/01_using_notebooks.ipynb'
+  'https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/lab01/01_using_notebooks.ipynb'
 
 export function NotebookLink() {
   return (
