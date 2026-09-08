@@ -41,6 +41,10 @@ export default function PollSlide({
   const [results, setResults] = useState<Results | null>(null)
   const [teacher, setTeacher] = useState(false)
   const [revealed, setRevealed] = useState(false)
+  /* An open that silently failed looks exactly like one that worked — the
+     chip just stays "closed". That cost us a demo; it must not cost a
+     lecture. */
+  const [failed, setFailed] = useState<string | null>(null)
   /* Every slide in the deck stays mounted, so an unconditional interval would
      have three of these polling from every laptop in the room. Only the slide
      actually on screen refreshes, and only for a lecturer. */
@@ -88,11 +92,25 @@ export default function PollSlide({
   }, [teacher, onScreen, refresh])
 
   async function act(action: 'open' | 'close' | 'reset') {
-    await fetch('/api/poll/admin', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ questionId, action }),
-    })
+    try {
+      const res = await fetch('/api/poll/admin', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ questionId, action }),
+      })
+      if (!res.ok) {
+        setFailed(
+          res.status === 401
+            ? `${action} refused — sign in again at /teach`
+            : `${action} failed (${res.status})`
+        )
+        return
+      }
+      setFailed(null)
+    } catch {
+      setFailed(`${action} failed — no connection`)
+      return
+    }
     if (action === 'close') setRevealed(true)
     if (action === 'open' || action === 'reset') setRevealed(false)
     refresh()
@@ -195,6 +213,9 @@ export default function PollSlide({
             >
               {results?.isOpen ? 'open' : 'closed'}
             </span>
+            {failed && (
+              <p className="mt-2 text-red-400 text-xs font-semibold leading-snug">{failed}</p>
+            )}
             <div className="mt-3 flex flex-col gap-2">
               <button
                 onClick={() => act('open')}
