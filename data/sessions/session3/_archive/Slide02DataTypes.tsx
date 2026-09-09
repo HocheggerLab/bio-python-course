@@ -1,6 +1,6 @@
 import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
 import { SlideCard, CardHeading, CardBody, type CardColor } from '@/components/slides/SlideCard'
-import { NotebookLink, NOTEBOOK_DATATYPES } from './NotebookLink'
+import { NotebookLink, NOTEBOOK_DATATYPES } from '../NotebookLink'
 
 const types: Array<{
   name: string

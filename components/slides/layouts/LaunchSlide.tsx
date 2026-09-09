@@ -24,6 +24,7 @@ export function LaunchSlide({
   notebook,
   url,
   solutionsUrl,
+  recap,
   headline,
   core,
   doneWhen,
@@ -39,6 +40,14 @@ export function LaunchSlide({
    *  themselves out of a formative exercise; a student who is stuck at 21:00
    *  with nobody to ask is the case worth designing for. */
   solutionsUrl?: string
+  /**
+   * The one idea to carry into the notebook.
+   *
+   * A lab bridge is a runway, not a lesson: the notebook does the teaching,
+   * so the slide holds a single thing worth remembering — ideally the
+   * misconception the first exercise attacks.
+   */
+  recap?: React.ReactNode
   /** Replaces "Now open <notebook>" when the task is not a notebook. */
   headline?: React.ReactNode
   /** The tasks everyone must finish. */
@@ -66,7 +75,16 @@ export function LaunchSlide({
         )}
       </SlideTitle>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-5 md:gap-8 mt-5 md:mt-7 items-start">
+      {recap && (
+        <div className="mt-4 md:mt-5 rounded-2xl border border-bio-blue/25 bg-bio-blue/[0.07] px-5 py-4 md:px-6 md:py-5">
+          <div className="text-bio-blue text-xs md:text-sm font-bold uppercase tracking-widest mb-1.5">
+            Remember this
+          </div>
+          <div className="text-gray-100 text-base md:text-xl xl:text-2xl leading-snug">{recap}</div>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-4 md:gap-6 mt-4 md:mt-5 items-start">
         <div className="flex flex-col gap-3 md:gap-4">
           <Row label="Core" color="text-bio-green" border="border-bio-green/40">
             {core}

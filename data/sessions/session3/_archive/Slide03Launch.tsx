@@ -1,5 +1,5 @@
 import { LaunchSlide } from '@/components/slides/layouts'
-import { NOTEBOOK_DATATYPES } from './NotebookLink'
+import { NOTEBOOK_DATATYPES } from '../NotebookLink'
 
 export function Slide03Launch() {
   return (

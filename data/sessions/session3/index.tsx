@@ -1,14 +1,12 @@
 import { LectureData } from '@/data/lectures/types'
-import { Slide01Overview } from './Slide01Overview'
-import { Slide02DataTypes } from './Slide02DataTypes'
-import { Slide03Launch } from './Slide03Launch'
+import { Slide01Launch } from './Slide01Launch'
 
+/* One slide: the idea, then the notebook. The longer version — an overview
+   card and a four-type reference — is in _archive/ if the room ever needs it. */
 export const session3Data: LectureData = {
   id: 'session-3',
   title: 'Lab 1 — Session 3: Data Types',
   slides: [
-    { title: 'Session 3 — Data Types', content: <Slide01Overview /> },
-    { title: 'Four Core Data Types', content: <Slide02DataTypes /> },
-    { title: 'Now open the notebook', content: <Slide03Launch /> },
+    { title: 'Data types — recap and notebook', content: <Slide01Launch /> },
   ],
 }
