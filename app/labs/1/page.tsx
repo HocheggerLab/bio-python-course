@@ -65,7 +65,7 @@ const practice = [
   {
     icon: '⌨️',
     title: 'Introduction to Shell',
-    detail: 'Takes the terminal session further — useful from Lab 6 onwards.',
+    detail: 'Takes the terminal session further — develop a genuinely useful skill.',
     href: 'https://app.datacamp.com/learn/courses/introduction-to-shell',
     cta: 'DataCamp →',
   },
