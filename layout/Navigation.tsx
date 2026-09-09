@@ -163,7 +163,6 @@ export default function Navigation() {
               )}
             </div>
 
-            <button onClick={() => scrollToSection('seminars')} className="nav-link mr-8">Seminars</button>
 
             {/* Resources Dropdown */}
             <div className="relative mr-8" ref={resourcesRef}>
@@ -253,7 +252,6 @@ export default function Navigation() {
               <Link href="/labs/8" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 8. Image Analysis 🔬</Link>
             </div>
 
-            <button onClick={() => { scrollToSection('seminars'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Seminars</button>
 
             {/* Resources Section */}
             <div className="border-b border-white/10 pb-3">
