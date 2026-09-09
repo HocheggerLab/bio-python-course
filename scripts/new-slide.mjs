@@ -50,6 +50,27 @@ if (existsSync(file)) {
   process.exit(1)
 }
 
+const indexPath = join(dir, 'index.tsx')
+let index = readFileSync(indexPath, 'utf8')
+
+const anchorTitle = flags.after ?? flags.before
+let anchorLine = null
+if (anchorTitle) {
+  const lines = index.split('\n')
+  const matches = lines
+    .map((l, i) => [l, i])
+    .filter(([l]) => /^\s*\{ title:/.test(l) && l.includes(anchorTitle))
+  if (matches.length === 0) {
+    console.error(`No slide titled like "${anchorTitle}" in ${indexPath}`)
+    process.exit(1)
+  }
+  if (matches.length > 1) {
+    console.error(`"${anchorTitle}" matches ${matches.length} slides — be more specific.`)
+    process.exit(1)
+  }
+  anchorLine = matches[0][1]
+}
+
 const [head, ...tail] = title.split(' ')
 const accent = tail.join(' ')
 
@@ -72,9 +93,6 @@ export function ${component}() {
 `
 )
 
-const indexPath = join(dir, 'index.tsx')
-let index = readFileSync(indexPath, 'utf8')
-
 // Import goes after the last existing local import, so the list stays together.
 const imports = [...index.matchAll(/^import .* from '\.\/.*'$/gm)]
 if (!imports.length) {
@@ -90,21 +108,10 @@ index =
 
 const entry = `    { title: ${JSON.stringify(title)},${flags.teacher ? ' teacher: true,' : ''} content: <${component} /> },`
 
-const anchorTitle = flags.after ?? flags.before
-if (anchorTitle) {
+if (anchorLine !== null) {
   const lines = index.split('\n')
-  const matches = lines
-    .map((l, i) => [l, i])
-    .filter(([l]) => /^\s*\{ title:/.test(l) && l.includes(anchorTitle))
-  if (matches.length === 0) {
-    console.error(`No slide titled like "${anchorTitle}" in ${indexPath}`)
-    process.exit(1)
-  }
-  if (matches.length > 1) {
-    console.error(`"${anchorTitle}" matches ${matches.length} slides — be more specific.`)
-    process.exit(1)
-  }
-  const at = matches[0][1] + (flags.after ? 1 : 0)
+  /* The import added above shifted every later line by one. */
+  const at = anchorLine + 1 + (flags.after ? 1 : 0)
   lines.splice(at, 0, entry)
   index = lines.join('\n')
 } else {
@@ -116,3 +123,4 @@ if (anchorTitle) {
 writeFileSync(indexPath, index)
 console.log(`created  ${file}`)
 console.log(`updated  ${indexPath}  (${anchorTitle ? `${flags.after ? 'after' : 'before'} "${anchorTitle}"` : 'at the end'})`)
+console.log('then:    npm run renumber:slides -- --write')

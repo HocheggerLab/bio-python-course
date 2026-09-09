@@ -133,3 +133,6 @@ CLAUDE.node_modules
 
 # Playwright MCP snapshots (local debugging artefacts)
 .playwright-mcp/
+
+# builds from agent sessions
+/.next-claude/

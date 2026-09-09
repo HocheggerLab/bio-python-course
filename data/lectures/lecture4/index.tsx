@@ -11,26 +11,26 @@ import { Slide07TIYDecompose } from './Slide07TIYDecompose'
 import { Slide08ChainsToFunctions } from './Slide08ChainsToFunctions'
 // Part 2 — functions: the target, then built up from nothing
 import { Slide09Def } from './Slide09Def'
-import { Slide09aSimplest } from './Slide09aSimplest'
-import { Slide09bParameter } from './Slide09bParameter'
-import { Slide09cNaming } from './Slide09cNaming'
-import { Slide09dReturn } from './Slide09dReturn'
-import { Slide09eDefaults } from './Slide09eDefaults'
-import { Slide10WhyFunctions } from './Slide10WhyFunctions'
-import { Slide11Docstrings } from './Slide11Docstrings'
-import { Slide12TIYPackageGC } from './Slide12TIYPackageGC'
+import { Slide10Simplest } from './Slide10Simplest'
+import { Slide11Parameter } from './Slide11Parameter'
+import { Slide12Naming } from './Slide12Naming'
+import { Slide13Return } from './Slide13Return'
+import { Slide14Defaults } from './Slide14Defaults'
+import { Slide15WhyFunctions } from './Slide15WhyFunctions'
+import { Slide16Docstrings } from './Slide16Docstrings'
+import { Slide17TIYPackageGC } from './Slide17TIYPackageGC'
 // Part 3 — defensive programming (error TYPES + reading tracebacks were done in Session 1).
-import { Slide17DefensiveCrash } from './Slide17DefensiveCrash'
-import { Slide18GuardFix } from './Slide18GuardFix'
-import { Slide19Raise } from './Slide19Raise'
-import { Slide20TryExcept } from './Slide20TryExcept'
-import { Slide21WhenWhich } from './Slide21WhenWhich'
-import { Slide22TIYCleanDna } from './Slide22TIYCleanDna'
+import { Slide18DefensiveCrash } from './Slide18DefensiveCrash'
+import { Slide19GuardFix } from './Slide19GuardFix'
+import { Slide20Raise } from './Slide20Raise'
+import { Slide21TryExcept } from './Slide21TryExcept'
+import { Slide22WhenWhich } from './Slide22WhenWhich'
+import { Slide23TIYCleanDna } from './Slide23TIYCleanDna'
 // Wrap-up — capstone, course recap, outlook to Part 2
-import { Slide23Capstone } from './Slide23Capstone'
-import { Slide24RecapCourse } from './Slide24RecapCourse'
-import { Slide25ApplySkills } from './Slide25ApplySkills'
-import { Slide26Outlook } from './Slide26Outlook'
+import { Slide24Capstone } from './Slide24Capstone'
+import { Slide25RecapCourse } from './Slide25RecapCourse'
+import { Slide26ApplySkills } from './Slide26ApplySkills'
+import { Slide27Outlook } from './Slide27Outlook'
 
 export const lecture4Data: LectureData = {
   id: 'lecture-4',
@@ -49,26 +49,26 @@ export const lecture4Data: LectureData = {
     // ── Part 2: functions — where we're heading… ───────────
     { title: 'Packaging It Up — def', content: <Slide09Def /> },
     // …now build it from nothing, one idea per slide
-    { title: 'The Simplest Function', content: <Slide09aSimplest /> },
-    { title: 'Give It Something to Work On', content: <Slide09bParameter /> },
-    { title: 'Naming Functions', content: <Slide09cNaming /> },
-    { title: 'Hand the Answer Back — return', content: <Slide09dReturn /> },
-    { title: 'Two Parameters — and a Default', content: <Slide09eDefaults /> },
+    { title: 'The Simplest Function', content: <Slide10Simplest /> },
+    { title: 'Give It Something to Work On', content: <Slide11Parameter /> },
+    { title: 'Naming Functions', content: <Slide12Naming /> },
+    { title: 'Hand the Answer Back — return', content: <Slide13Return /> },
+    { title: 'Two Parameters — and a Default', content: <Slide14Defaults /> },
     // …and back to the full picture
-    { title: 'Why Bother? Readable · Reusable', content: <Slide10WhyFunctions /> },
-    { title: 'Say What It Does — docstrings', content: <Slide11Docstrings /> },
-    { title: 'TIY — Package the Spaghetti', content: <Slide12TIYPackageGC /> },
+    { title: 'Why Bother? Readable · Reusable', content: <Slide15WhyFunctions /> },
+    { title: 'Say What It Does — docstrings', content: <Slide16Docstrings /> },
+    { title: 'TIY — Package the Spaghetti', content: <Slide17TIYPackageGC /> },
     // ── Part 3: defensive programming ──────────────────────
-    { title: 'Real Data Is Messy', content: <Slide17DefensiveCrash /> },
-    { title: 'Check First — the if guard', content: <Slide18GuardFix /> },
-    { title: 'Fail Loudly — raise', content: <Slide19Raise /> },
-    { title: 'The Advanced Pattern — try / except', content: <Slide20TryExcept /> },
-    { title: 'Which One? if vs try / except', content: <Slide21WhenWhich /> },
-    { title: 'TIY — A Defensive Function', content: <Slide22TIYCleanDna /> },
+    { title: 'Real Data Is Messy', content: <Slide18DefensiveCrash /> },
+    { title: 'Check First — the if guard', content: <Slide19GuardFix /> },
+    { title: 'Fail Loudly — raise', content: <Slide20Raise /> },
+    { title: 'The Advanced Pattern — try / except', content: <Slide21TryExcept /> },
+    { title: 'Which One? if vs try / except', content: <Slide22WhenWhich /> },
+    { title: 'TIY — A Defensive Function', content: <Slide23TIYCleanDna /> },
     // ── Wrap-up: capstone · course recap · outlook ─────────
-    { title: "Claudia's Whole Job — One Program", content: <Slide23Capstone /> },
-    { title: 'Recap — Sessions 1–4', content: <Slide24RecapCourse /> },
-    { title: 'It Was Never About DNA', content: <Slide25ApplySkills /> },
-    { title: "What's Next — Part 2", content: <Slide26Outlook /> },
+    { title: "Claudia's Whole Job — One Program", content: <Slide24Capstone /> },
+    { title: 'Recap — Sessions 1–4', content: <Slide25RecapCourse /> },
+    { title: 'It Was Never About DNA', content: <Slide26ApplySkills /> },
+    { title: "What's Next — Part 2", content: <Slide27Outlook /> },
   ],
 }

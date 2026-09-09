@@ -12,9 +12,9 @@ import { Slide08AddData } from './Slide08AddData'
 import { Slide09Labels } from './Slide09Labels'
 import { Slide10WhoOwnsWhat } from './Slide10WhoOwnsWhat'
 import { Slide11PollLegend } from './Slide11PollLegend'
-import { Slide13Bookend } from './Slide13Bookend'
+import { Slide12Bookend } from './Slide12Bookend'
 // Closing recall block — moves to the end of the lecture as parts 2 and 3 land
-import { Slide14RecallTitle } from './Slide14RecallTitle'
+import { Slide13RecallTitle } from './Slide13RecallTitle'
 
 export const lecture7Data: LectureData = {
   id: 'lecture-7',
@@ -32,8 +32,8 @@ export const lecture7Data: LectureData = {
     { title: 'Step 3 — say what it is', content: <Slide09Labels /> },
     { title: 'Who owns what', content: <Slide10WhoOwnsWhat /> },
     { title: 'Your turn — fix the legend', content: <Slide11PollLegend /> },
-    { title: 'You can now read every line', content: <Slide13Bookend /> },
+    { title: 'You can now read every line', content: <Slide12Bookend /> },
 
-    { title: 'Recall — who owns the title?', content: <Slide14RecallTitle /> },
+    { title: 'Recall — who owns the title?', content: <Slide13RecallTitle /> },
   ],
 }
