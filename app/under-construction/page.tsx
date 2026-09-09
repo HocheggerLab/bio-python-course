@@ -64,7 +64,7 @@ export default function UnderConstruction() {
             <Link href="/" className="btn-primary">
               ← Back to Homepage
             </Link>
-            <Link href="/notebooks/lecture-1" className="btn-secondary">
+            <Link href="/notebooks" className="btn-secondary">
               Start Learning Now →
             </Link>
           </div>

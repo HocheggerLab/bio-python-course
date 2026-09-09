@@ -10,7 +10,7 @@ export const resources: Resource[] = [
   {
     id: 'notebooks',
     title: 'Notebooks',
-    description: 'Colab templates for every lecture',
+    description: 'Every practice notebook, by lab',
     icon: '📓',
     href: '/notebooks'
   },
