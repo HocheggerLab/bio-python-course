@@ -196,8 +196,9 @@ export default function Navigation() {
               )}
             </div>
 
-            <button onClick={() => scrollToSection('schedule')} className="nav-link mr-8">Schedule</button>
-            <button onClick={() => scrollToSection('about')} className="nav-link mr-8">About</button>
+            <Link href="/assessment" className="nav-link mr-8">Assessment</Link>
+            <Link href="/schedule" className="nav-link mr-8">Schedule</Link>
+            <Link href="/about" className="nav-link mr-8">About</Link>
             <a href="https://github.com/HocheggerLab/y3-bio-python" target="_blank"
                className="btn-secondary !py-2 !px-4 text-sm">
               GitHub →
@@ -263,8 +264,9 @@ export default function Navigation() {
               <Link href="/dev-tools" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Development Tools</Link>
             </div>
 
-            <button onClick={() => { scrollToSection('schedule'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">Schedule</button>
-            <button onClick={() => { scrollToSection('about'); toggleMobileMenu(); }} className="block nav-link py-2 text-left w-full">About</button>
+            <Link href="/assessment" onClick={toggleMobileMenu} className="block nav-link py-2">Assessment</Link>
+            <Link href="/schedule" onClick={toggleMobileMenu} className="block nav-link py-2">Schedule</Link>
+            <Link href="/about" onClick={toggleMobileMenu} className="block nav-link py-2">About</Link>
             <a href="https://github.com/HocheggerLab/y3-bio-python" target="_blank" className="block nav-link py-2" onClick={toggleMobileMenu}>GitHub →</a>
           </div>
         </div>

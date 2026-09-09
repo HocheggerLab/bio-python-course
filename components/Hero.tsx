@@ -23,7 +23,7 @@ export default function Hero() {
             A practical programming course for Year 3 Life Sciences students at the University of Sussex. No prior coding experience required!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-            <a href="#core-sessions" className="btn-primary text-lg">
+            <a href="#python-basics" className="btn-primary text-lg">
               Start Learning →
             </a>
             <a href="https://youtu.be/-8e-c_Rqvn0" target="_blank" rel="noopener noreferrer" className="btn-secondary text-lg">
