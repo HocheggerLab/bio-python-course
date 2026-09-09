@@ -5,6 +5,6 @@ export const lab2ListsData: LectureData = {
   id: 'lab-2-lists',
   title: 'Lab 2 · Lists',
   slides: [
-    { id: 1, title: 'Lists', contentType: 'center', content: <Slide01Lists /> },
+    { title: 'Lists', content: <Slide01Lists /> },
   ],
 }

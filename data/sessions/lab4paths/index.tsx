@@ -10,11 +10,11 @@ export const lab4PathsData: LectureData = {
   id: 'lab-4-paths',
   title: 'Lab 4 · Paths & Files',
   slides: [
-    { id: 1, title: 'Where am I?',            contentType: 'center', content: <Slide01WhereAmI /> },
-    { id: 2, title: 'Terminal → Python',      contentType: 'center', content: <Slide02TerminalToPython /> },
-    { id: 3, title: 'A path is an object',    contentType: 'center', content: <Slide03PathObjects /> },
-    { id: 4, title: 'Opening files with with', contentType: 'center', content: <Slide04ReadWrite /> },
-    { id: 5, title: 'cwd vs __file__',        contentType: 'center', content: <Slide05CwdVsFile /> },
-    { id: 6, title: 'Your turn — 99 bees',    contentType: 'center', content: <Slide06YourTurn /> },
+    { title: 'Where am I?', content: <Slide01WhereAmI /> },
+    { title: 'Terminal → Python', content: <Slide02TerminalToPython /> },
+    { title: 'A path is an object', content: <Slide03PathObjects /> },
+    { title: 'Opening files with with', content: <Slide04ReadWrite /> },
+    { title: 'cwd vs __file__', content: <Slide05CwdVsFile /> },
+    { title: 'Your turn — 99 bees', content: <Slide06YourTurn /> },
   ],
 }

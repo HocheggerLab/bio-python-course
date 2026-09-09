@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "new:slide": "node scripts/new-slide.mjs"
   },
   "dependencies": {
     "@codemirror/commands": "^6.8.1",

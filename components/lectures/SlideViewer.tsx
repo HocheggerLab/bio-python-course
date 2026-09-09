@@ -18,7 +18,7 @@ export default function SlideViewer({ lecture, teacher = false }: SlideViewerPro
   return (
     <SlideController totalSlides={slides.length}>
       {slides.map((slide, index) => (
-        <SlidePane key={slide.id} index={index} contentType={slide.contentType}>
+        <SlidePane key={index} index={index} contentType={slide.contentType ?? 'center'}>
           {slide.content}
         </SlidePane>
       ))}

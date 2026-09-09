@@ -8,9 +8,9 @@ export const session5Data: LectureData = {
   id: 'session-5',
   title: 'Lab 1 — Session 5: The Terminal',
   slides: [
-    { id: 1, title: 'Your First Terminal — Safe to Touch', contentType: 'center', content: <Slide01Sandbox /> },
-    { id: 2, title: 'TIY — Make Your Course Folder',        contentType: 'center', content: <Slide02Mission /> },
-    { id: 3, title: 'Open Your Own Terminal',              contentType: 'center', content: <Slide03OpenTerminal /> },
-    { id: 4, title: 'Now do it on your machine', contentType: 'center', content: <Slide04Launch /> },
+    { title: 'Your First Terminal — Safe to Touch', content: <Slide01Sandbox /> },
+    { title: 'TIY — Make Your Course Folder', content: <Slide02Mission /> },
+    { title: 'Open Your Own Terminal', content: <Slide03OpenTerminal /> },
+    { title: 'Now do it on your machine', content: <Slide04Launch /> },
   ],
 }

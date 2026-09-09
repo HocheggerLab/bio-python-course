@@ -8,9 +8,9 @@ export const session4Data: LectureData = {
   id: 'session-4',
   title: 'Lab 1 — Session 4: Operators',
   slides: [
-    { id: 1, title: 'Session 4 — Operators',            contentType: 'center', content: <Slide01Overview /> },
-    { id: 2, title: 'Arithmetic & String Operators',    contentType: 'center', content: <Slide02Operators /> },
-    { id: 3, title: 'Comparisons & a Mini-Program',     contentType: 'center', content: <Slide03Comparisons /> },
-    { id: 4, title: 'Now open the notebook', contentType: 'center', content: <Slide04Launch /> },
+    { title: 'Session 4 — Operators', content: <Slide01Overview /> },
+    { title: 'Arithmetic & String Operators', content: <Slide02Operators /> },
+    { title: 'Comparisons & a Mini-Program', content: <Slide03Comparisons /> },
+    { title: 'Now open the notebook', content: <Slide04Launch /> },
   ],
 }
