@@ -46,6 +46,31 @@ const sessions: Session[] = [
   },
 ]
 
+/* The homework, named as such. Chapters are numbered because the classroom
+   subscription reports per-chapter progress — "do chapter 1 and 2" is a
+   checkable instruction, "have a look at DataCamp" is not. */
+const practice = [
+  {
+    icon: '📖',
+    title: 'Revise',
+    detail: 'Lecture 1 and your Lab 1 notebooks — re-run the cells you had to fix.',
+  },
+  {
+    icon: '🐍',
+    title: 'Intro to Python for Data Science',
+    detail: 'Chapter 1 (Python Basics) and Chapter 2 (Python Lists) — preparation for next week.',
+    href: 'https://app.datacamp.com/learn/courses/intro-to-python-for-data-science',
+    cta: 'DataCamp →',
+  },
+  {
+    icon: '⌨️',
+    title: 'Introduction to Shell',
+    detail: 'Takes the terminal session further — useful from Lab 6 onwards.',
+    href: 'https://app.datacamp.com/learn/courses/introduction-to-shell',
+    cta: 'DataCamp →',
+  },
+]
+
 export default function Lab1Page() {
   return (
     <div className="min-h-screen bg-bio-darkest pt-24 pb-16 px-4">
@@ -120,6 +145,56 @@ export default function Lab1Page() {
               </Link>
             )
           })}
+        </div>
+
+        {/* Independent practice — the homework */}
+        <div className="mt-8 md:mt-10 rounded-2xl border-2 border-bio-green/30 bg-bio-green/10 p-6 md:p-8">
+          <div className="flex items-center gap-4 md:gap-5 mb-5 md:mb-6">
+            <span className="text-4xl md:text-5xl shrink-0">🏋️</span>
+            <div className="min-w-0">
+              <h2 className="text-lg md:text-xl xl:text-2xl font-bold text-white leading-snug">
+                Independent Practice
+              </h2>
+              <p className="text-sm md:text-base text-gray-300 mt-1">
+                In your own time, before next week. Your DataCamp access comes with the
+                course — sign in with your Sussex email.
+              </p>
+            </div>
+          </div>
+
+          <ul className="flex flex-col gap-3 md:gap-4">
+            {practice.map((p) => (
+              <li
+                key={p.title}
+                className="flex items-start gap-3 md:gap-4 rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3 md:px-5 md:py-4"
+              >
+                <span className="text-2xl md:text-3xl shrink-0">{p.icon}</span>
+                <div className="min-w-0 flex-1">
+                  <p className="text-white font-semibold text-sm md:text-base xl:text-lg">
+                    {p.title}
+                  </p>
+                  <p className="text-gray-300 text-xs md:text-sm xl:text-base mt-0.5 leading-snug">
+                    {p.detail}
+                  </p>
+                </div>
+                {p.href && (
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 self-center rounded-full bg-bio-green/20 hover:bg-bio-green/30 border border-bio-green/40 text-bio-green font-semibold px-3 md:px-4 py-1.5 text-xs md:text-sm transition-colors"
+                  >
+                    {p.cta}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          <p className="text-gray-400 text-xs md:text-sm mt-4 md:mt-5">
+            I can see chapter progress in the classroom, so I will know which parts the
+            year found hard — that is what it is for.
+          </p>
         </div>
 
         {/* Resources & cheat sheets */}
