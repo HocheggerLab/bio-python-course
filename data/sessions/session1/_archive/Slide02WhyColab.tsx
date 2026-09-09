@@ -1,6 +1,6 @@
 import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
 import { SlideCard, CardHeading, CardBody, CardList } from '@/components/slides/SlideCard'
-import { NotebookLink } from './NotebookLink'
+import { NotebookLink } from '../NotebookLink'
 
 export function Slide02WhyColab() {
   return (

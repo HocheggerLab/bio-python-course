@@ -1,6 +1,6 @@
 import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
 import { SlideCard, CardHeading, CardBody } from '@/components/slides/SlideCard'
-import { NotebookLink, NOTEBOOK_VARIABLES } from './NotebookLink'
+import { NotebookLink, NOTEBOOK_VARIABLES } from '../NotebookLink'
 
 export function Slide03PrintFStrings() {
   return (

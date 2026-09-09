@@ -1,6 +1,6 @@
 import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
 import { SlideCard, CardHeading, CardBody, CardIcon, type CardColor } from '@/components/slides/SlideCard'
-import { NotebookLink } from './NotebookLink'
+import { NotebookLink } from '../NotebookLink'
 
 const cards: Array<{ icon: string; title: string; body: React.ReactNode; color: CardColor }> = [
   {

@@ -1,6 +1,6 @@
 import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
 import { SlideCard, CardHeading, CardList } from '@/components/slides/SlideCard'
-import { NotebookLink, NOTEBOOK_OPERATORS } from './NotebookLink'
+import { NotebookLink, NOTEBOOK_OPERATORS } from '../NotebookLink'
 
 export function Slide01Overview() {
   return (

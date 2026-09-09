@@ -1,19 +1,27 @@
 import { LaunchSlide } from '@/components/slides/layouts'
 import { NOTEBOOK_VARIABLES } from './NotebookLink'
 
-export function Slide04Launch() {
+export function Slide01Launch() {
   return (
     <LaunchSlide
       notebook="02 · Variables & print"
       url={NOTEBOOK_VARIABLES}
       minutes={15}
       solutionsUrl="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/lab01/solutions/02_variables_and_print_solutions.ipynb"
+      recap={
+        <>
+          <span className="font-mono text-white">name = value</span> stores it;{' '}
+          <span className="font-mono text-white">f&quot;...&#123;name&#125;...&quot;</span> shows it.
+          Forget the <span className="font-mono text-bio-yellow">f</span> and Python prints the
+          braces — no error, wrong output.
+        </>
+      }
       core={
         <>
-          <span className="text-white font-semibold">Skills 1–3</span>. Each one is the same three
-          beats: read the <span className="text-bio-blue">Demo</span>, repair the{' '}
-          <span className="text-bio-yellow">Fix it</span>, then do the{' '}
-          <span className="text-bio-green">Write it</span> from scratch.
+          <span className="text-white font-semibold">Skills 1–3</span> — each one{' '}
+          <span className="text-bio-blue">Demo</span> →{' '}
+          <span className="text-bio-yellow">Fix it</span> →{' '}
+          <span className="text-bio-green">Write it</span>.
         </>
       }
       doneWhen={

@@ -1,5 +1,5 @@
 import { LaunchSlide } from '@/components/slides/layouts'
-import { SESSION1_COLAB_URL } from './NotebookLink'
+import { SESSION1_COLAB_URL } from '../NotebookLink'
 
 export function Slide07Launch() {
   return (
