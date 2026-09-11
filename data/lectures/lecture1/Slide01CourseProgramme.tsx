@@ -6,7 +6,7 @@ export function Slide01CourseProgramme() {
       eyebrow="Welcome"
       title="Course"
       accent="Programme"
-      note="Eight lectures, eight labs, and one project — from your first variable to analysing real biological data."
+      note="Eight lectures, eight guided labs, and two projects — from your first variable to analysing real biological data."
       status="Full programme to be confirmed"
     />
   )
