@@ -16,6 +16,13 @@ const websiteFeatures = [
   { icon: '🧬', label: 'Project Description', desc: 'Practice your new skills and get evaluated' },
 ]
 
+const canvasFeatures = [
+  { icon: '❓', label: 'Discussion board', desc: 'Ask questions anonymously' },
+  { icon: '📥', label: 'Submission', desc: 'Hand in your work' },
+  { icon: '📑', label: 'Feedback', desc: 'See your grades and feedback' },
+  { icon: 'ℹ', label: 'Module info', desc: 'Comprehensive module information' }
+]
+
 export function Slide04Resources() {
   return (
     <>
@@ -63,11 +70,23 @@ export function Slide04Resources() {
           <div className="flex items-center gap-3 md:gap-5 mb-4 md:mb-6">
             <CardIcon size="sm">🎓</CardIcon>
             <div>
-              <CardEyebrow color="green">Submission &amp; Grades</CardEyebrow>
+              <CardEyebrow color="green">Assessments &amp; Guidance</CardEyebrow>
               <CardHeading color="green">Canvas</CardHeading>
             </div>
           </div>
-          <CardBody>Hand in your work and pick up your grades here.</CardBody>
+
+          <ul className="flex flex-col gap-2 md:gap-5 xl:gap-6">
+            {canvasFeatures.map((f) => (
+              <li key={f.label} className="flex items-start gap-3 md:gap-5">
+                <span className="text-lg md:text-3xl xl:text-4xl mt-0.5 shrink-0">{f.icon}</span>
+                <div className="text-sm md:text-lg xl:text-xl 2xl:text-2xl leading-relaxed">
+                  <span className="font-semibold text-white">{f.label}</span>
+                  <span className="text-gray-400"> — {f.desc}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+          
           <CardPill color="green" className="mt-4 md:mt-6 self-start">
             canvas.sussex.ac.uk →
           </CardPill>

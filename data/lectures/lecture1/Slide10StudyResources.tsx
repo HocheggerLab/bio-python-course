@@ -61,11 +61,10 @@ export function Slide10StudyResources() {
           🧪 Labs
         </CardHeading>
         <CardPill color="green" className="mb-3 md:mb-4 self-start">
-          2 hours × 8 weeks
+          2 hours × 11 weeks
         </CardPill>
         <CardBody>
-          Hands-on exercises with us on hand to help. This is where the code
-          actually starts to stick — come, and bring your questions.
+          Hands-on exercises and time for project work, with us there to help. This is where coding starts to click — come, and bring your questions.
         </CardBody>
       </SlideCard>
 
@@ -78,7 +77,7 @@ export function Slide10StudyResources() {
           Your own time
         </CardPill>
         <CardBody>
-          Revise the lecture material, then complete the weekly DataCamp
+          Revise the weekly material, then complete the DataCamp
           assignments — we have a classroom set up for the course.
         </CardBody>
         <a
