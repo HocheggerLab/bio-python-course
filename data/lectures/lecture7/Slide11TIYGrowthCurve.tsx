@@ -17,7 +17,7 @@ time_h = np.linspace(0, 12, 100)
 cells = 1e4 * 2 ** (time_h / 1.5)
 
 fig, ax = plt.subplots()
-ax.plot(time_h, cells, color="#00d4ff")
+ax.plot(time_h, cells)
 
 # Meant to label the y axis. It runs — and nothing appears.
 fig.set_label("Cells per mL")
@@ -32,7 +32,7 @@ time_h = np.linspace(0, 12, 100)
 cells = 1e4 * 2 ** (time_h / 1.5)
 
 fig, ax = plt.subplots()
-ax.plot(time_h, cells, color="#00d4ff")
+ax.plot(time_h, cells)
 
 ax.set_ylabel("Cells per mL")
 ax.set_xlabel("Time (hours)")

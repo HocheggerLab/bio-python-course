@@ -9,7 +9,7 @@ time_h = np.linspace(0, 4, 100)
 cells = 5e5 * 2 ** (time_h / 0.5)
 
 fig, ax = plt.subplots()
-ax.plot(time_h, cells, color="#00d4ff")
+ax.plot(time_h, cells)
 
 ax.set_xlabel("Time (hours)")
 ax.set_ylabel("Cells per mL")
@@ -23,7 +23,7 @@ export function Slide09Labels() {
       maxWidth="6xl"
       title={
         <>
-          Step 3 — <GradientText variant="yellow">say what it is</GradientText>
+          Step 3 — <GradientText variant="yellow">add labels</GradientText>
         </>
       }
       lead={

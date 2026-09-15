@@ -6,13 +6,13 @@ import PollSlide from '@/components/poll/PollSlide'
  * Closing recall block — asked after the teaching, to find out what stuck
  * rather than whether they can follow along.
  */
-export function Slide13RecallTitle() {
+export function Slide23RecallTitle() {
   return (
     <ConceptSlide
       maxWidth="6xl"
       title={
         <>
-          Recall — <GradientText>who owns the title?</GradientText>
+          Question 2 — <GradientText>who owns the title?</GradientText>
         </>
       }
       lead={

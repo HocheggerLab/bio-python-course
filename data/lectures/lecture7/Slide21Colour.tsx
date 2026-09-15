@@ -11,9 +11,9 @@ rest = df[df["oncotree_lineage"] != "Skin"]
 
 fig, ax = plt.subplots()
 ax.scatter(rest["BRAF"], rest["SOX10"], s=8, alpha=0.3,
-           color="#9ca3af", label="other lineages")
+           color="#6b7280", label="other lineages")
 ax.scatter(skin["BRAF"], skin["SOX10"], s=8, alpha=0.9,
-           color="#00d4ff", label="skin (melanoma)")
+           color="#5b9df9", label="skin (melanoma)")
 
 ax.set_xlabel("BRAF dependency")
 ax.set_ylabel("SOX10 dependency")

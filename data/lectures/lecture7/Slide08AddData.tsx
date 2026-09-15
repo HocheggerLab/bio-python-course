@@ -9,6 +9,7 @@ time_h = np.linspace(0, 4, 100)
 cells = 5e5 * 2 ** (time_h / 0.5)
 
 fig, ax = plt.subplots()
+fig.set_size_inches(7, 3)
 ax.plot(time_h, cells)
 plt.show()
 `
@@ -19,27 +20,31 @@ export function Slide08AddData() {
       maxWidth="6xl"
       title={
         <>
-          Step 2 — <GradientText variant="green">put data on it</GradientText>
+          Step 2 — <GradientText variant="green">add data </GradientText>
         </>
       }
       lead={
         <>
-          <span className="font-mono">ax.plot(x, y)</span> takes two arrays and draws one
-          against the other — here an <em>E. coli</em> culture doubling every 30 minutes.
+          <span className="font-mono">np.linspace(0, 4, 100)</span> gives 100 evenly
+          spaced time points across four hours, and{' '}
+          <span className="font-mono">cells</span> is the growth formula for an{' '}
+          <em>E. coli</em> culture doubling every 30 minutes. Plot one against the other and
+          you have the curve.
         </>
       }
       note={
         <>
-          The method belongs to <span className="font-mono not-italic">ax</span>, not{' '}
-          <span className="font-mono not-italic">plt</span> — you are telling{' '}
-          <em>that panel</em> to draw. In Part 2 that is what lets you have two.
+          Watch the two objects do different jobs:{' '}
+          <span className="font-mono not-italic">fig.set_size_inches()</span> reshapes the{' '}
+          <em>paper</em>, <span className="font-mono not-italic">ax.plot()</span> draws on
+          the <em>panel</em>. Neither method exists on the other object.
         </>
       }
     >
       <LazyPythonRunner
         initialCode={code}
         height="289px"
-        description="One line of data on one set of axes"
+        description="Delete the fig line, run it again — only the paper changes"
       />
     </ConceptSlide>
   )

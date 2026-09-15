@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("depmap_lecture.csv")
 
 fig, ax = plt.subplots()
-ax.hist(df["SOX10"], bins=40, color="#00d4ff")
+ax.hist(df["SOX10"], bins=40)
 ax.set_xlabel("SOX10 dependency score")
 ax.set_ylabel("number of cell lines")
 plt.show()
@@ -18,7 +18,7 @@ plt.show()
  * `ax.hist` finally gets explained. It was on screen in the opening slide as
  * a motivation; here it becomes something the students can write.
  */
-export function Slide13Histogram() {
+export function Slide14Histogram() {
   return (
     <ConceptSlide
       maxWidth="6xl"

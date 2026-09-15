@@ -24,15 +24,28 @@ export function Slide02TheData() {
       maxWidth="6xl"
       title={
         <>
-          <GradientText>DepMap</GradientText> — what does a cancer cell need?
+          <GradientText>Today&rsquo;s data</GradientText> — DepMap: which genes matter in which cancer?
         </>
       }
       lead={
         <>
           Researchers took <strong>1,165 cancer cell lines</strong> and used CRISPR to switch
-          off <em>every gene, one at a time</em>. Each number is how badly the cells did
-          without that gene.
+          off <em>every gene, one at a time</em>. Each number tells you how badly the cells did
+          without that gene: <strong>negative</strong> means the cells need it to survive,{' '}
+          <strong>positive</strong> means they are better off without it.
         </>
+      }
+      closing={
+        <div className="text-center">
+          <a
+            href="https://depmap.org/portal/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded bg-bio-blue/20 hover:bg-bio-blue/30 border border-bio-blue/40 text-bio-blue font-semibold px-3 md:px-5 py-1.5 md:py-2 text-xs md:text-sm xl:text-base transition-colors"
+          >
+            Explore it yourself at depmap.org &rarr;
+          </a>
+        </div>
       }
       note={
         <>

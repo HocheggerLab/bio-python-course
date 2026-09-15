@@ -1,6 +1,6 @@
 import { SectionSlide } from '@/components/slides/layouts'
 
-export function Slide04Part1() {
+export function Slide05Part1() {
   return (
     <SectionSlide
       eyebrow="Part 1"

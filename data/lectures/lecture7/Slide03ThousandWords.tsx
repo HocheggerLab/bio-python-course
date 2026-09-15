@@ -10,7 +10,7 @@ df = pd.read_csv("depmap_lecture.csv")
 print(df["SOX10"].describe()[["mean", "std", "min", "max"]])
 
 fig, ax = plt.subplots()
-ax.hist(df["SOX10"], bins=40, color="#00d4ff")
+ax.hist(df["SOX10"], bins=40)
 ax.set_xlabel("SOX10 dependency score")
 plt.show()
 `
@@ -21,10 +21,10 @@ min    -3.015000
 max     0.377000
 Name: SOX10, dtype: float64`
 
-export function Slide05ThousandWords() {
+export function Slide03ThousandWords() {
   return (
     <ConceptSlide
-      maxWidth="full"
+      maxWidth="6xl"
       title={
         <>
           A figure is worth <GradientText>a thousand numbers</GradientText>

@@ -61,7 +61,16 @@ export function Slide06Anatomy() {
         </>
       }
     >
-      <div />
+      <div className="text-center">
+        <a
+          href="https://matplotlib.org/stable/users/explain/quick_start.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block rounded bg-bio-blue/20 hover:bg-bio-blue/30 border border-bio-blue/40 text-bio-blue font-semibold px-3 md:px-5 py-1.5 md:py-2 text-xs md:text-sm xl:text-base transition-colors"
+        >
+          The matplotlib docs &rarr;
+        </a>
+      </div>
     </ConceptSlide>
   )
 }

@@ -4,18 +4,17 @@ import PollSlide from '@/components/poll/PollSlide'
 import { POLL_CONTENT } from '@/lib/poll/content'
 
 /**
- * Part 1's one hands-on beat, as a poll rather than a writing exercise.
- *
- * Grown out of the two-strains growth curve: same code, but repairing one
- * line is a lecture-sized task where writing the whole cell was not.
+ * First of the closing question block. The hands-on beat moved to the DIY
+ * slide, so this is pure recall: asked after the teaching, to find out what
+ * stuck rather than whether they can follow along.
  */
-export function Slide11PollLegend() {
+export function Slide22PollLegend() {
   return (
     <ConceptSlide
       maxWidth="6xl"
       title={
         <>
-          Your turn — <GradientText variant="green">fix the legend</GradientText>
+          Question 1 — <GradientText variant="green">fix the legend</GradientText>
         </>
       }
       lead={<>{POLL_CONTENT['l7-p1'].prompt}</>}
