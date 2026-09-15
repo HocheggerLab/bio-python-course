@@ -161,6 +161,28 @@ _mpl.rcParams.update({
     "figure.figsize": (7.0, 4.0),
     "font.size": 11,
 })
+
+# Data colours, not just chrome. Matplotlib's defaults assume white paper:
+# the default C0 (#1f77b4) and the black boxplot/bar edges all but vanish on
+# #1b1f27. Setting the cycle and the element colours here means a student who
+# writes ax.hist(x) with no color= still gets something they can see.
+_mpl.rcParams.update({
+    "axes.prop_cycle": _mpl.cycler(color=[
+        "#5b9df9",  # bio-blue
+        "#5fb37a",  # bio-green
+        "#d6a44c",  # bio-yellow
+        "#c084fc",  # purple
+        "#f87171",  # red
+        "#22d3ee",  # cyan
+    ]),
+    "patch.edgecolor": "#0d0f13",
+    "boxplot.boxprops.color": "#d1d5db",
+    "boxplot.whiskerprops.color": "#d1d5db",
+    "boxplot.capprops.color": "#d1d5db",
+    "boxplot.flierprops.color": "#9ca3af",
+    "boxplot.flierprops.markeredgecolor": "#9ca3af",
+    "boxplot.medianprops.color": "#d6a44c",
+})
 `
 
 /**

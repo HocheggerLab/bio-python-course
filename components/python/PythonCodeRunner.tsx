@@ -331,11 +331,15 @@ export default function PythonCodeRunner({
 
       {/* Status bar */}
       <div className="px-4 py-2 bg-bio-dark/30 border-t border-bio-blue/20">
-        <div className="flex items-center justify-between text-xs text-gray-500">
-          <span>
+        <div className="flex items-center justify-between gap-4 text-xs">
+          <span className="shrink-0 text-gray-500">
             {isReady ? '🟢 Python Ready' : '🟡 Loading...'}
           </span>
-          {description && <span>{description}</span>}
+          {/* The caption is teaching text, not chrome: gray-500 on this bar was
+              legible on a laptop and gone on a projector. */}
+          {description && (
+            <span className="text-gray-300 md:text-sm text-right">{description}</span>
+          )}
         </div>
       </div>
     </div>
