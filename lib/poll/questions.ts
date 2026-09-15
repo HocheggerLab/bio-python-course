@@ -24,6 +24,11 @@ const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
   // label= belongs on the plot call; ax.legend() only draws what is labelled.
   'l7-p1': { lecture: 7, correctIndex: 1 },
   'l7-r1': { lecture: 7, correctIndex: 2 },
+  // Lineage is a label you count; the other three are measured on a scale.
+  'l7-r2': { lecture: 7, correctIndex: 1 },
+  // One continuous column, no groups: scatter needs a second column, barh and
+  // boxplot both need a category to split on.
+  'l7-r3': { lecture: 7, correctIndex: 2 },
 }
 
 export function getQuestion(id: string): QuestionDef | undefined {

@@ -79,6 +79,33 @@ ph = 7.4`,
       'ax.title("Growth")',
     ],
   },
+
+  /* Probes the distinction the whole of Part 2 hangs on. The three wrong
+     answers are all measured on a scale; only the lineage is a label. */
+  'l7-r2': {
+    prompt: 'Which of these columns holds categorical data?',
+    options: [
+      'SOX10 dependency score',
+      'Cancer lineage — Skin, Lung, Bowel…',
+      'Cell doubling time, in hours',
+      'Gene expression, in TPM',
+    ],
+  },
+
+  /* One continuous column and nothing to split it by — the histogram case.
+     Every distractor needs something the question does not give you: a second
+     column, a category, or groups. */
+  'l7-r3': {
+    prompt:
+      'You have SOX10 expression for all 1,165 cell lines — one column, 1,165 numbers, nothing else. Which method?',
+    optionsAreCode: true,
+    options: [
+      'ax.scatter(x, y)',
+      'ax.barh(names, values)',
+      'ax.hist(values)',
+      'ax.boxplot(groups)',
+    ],
+  },
 }
 
 export function getContent(id: string): PollContent | undefined {
