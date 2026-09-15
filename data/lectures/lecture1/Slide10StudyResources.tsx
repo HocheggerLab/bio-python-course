@@ -46,8 +46,8 @@ export function Slide10StudyResources() {
         <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">
           🎓 Lectures
         </CardHeading>
-        <CardPill color="blue" className="mb-3 md:mb-4 self-start">
-          1 hour × 8 weeks
+        <CardPill color="neutral" className="mb-3 md:mb-4 self-start">
+          1 hour in Weeks 1–8
         </CardPill>
         <CardBody>
           The concepts, demonstrated live. Every slide runs Python in the browser,
@@ -58,10 +58,11 @@ export function Slide10StudyResources() {
       {/* 2 — Labs */}
       <SlideCard color="green" layout="start" padding="compact">
         <CardHeading size="sm" color="green" className="mb-2 md:mb-3">
-          🧪 Labs
+          🧪 Workshops
         </CardHeading>
-        <CardPill color="green" className="mb-3 md:mb-4 self-start">
-          2 hours × 11 weeks
+        <CardPill color="neutral" className="mb-3 md:mb-4 self-start">
+          2 hours in Weeks 1–11<br/>
+          — except Week 5 (2 × 2 hours)
         </CardPill>
         <CardBody>
           Hands-on exercises and time for project work, with us there to help. This is where coding starts to click — come, and bring your questions.
@@ -73,7 +74,7 @@ export function Slide10StudyResources() {
         <CardHeading size="sm" color="yellow" className="mb-2 md:mb-3">
           📚 Self study
         </CardHeading>
-        <CardPill color="yellow" className="mb-3 md:mb-4 self-start">
+        <CardPill color="neutral" className="mb-3 md:mb-4 self-start">
           Your own time
         </CardPill>
         <CardBody>

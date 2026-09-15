@@ -5,10 +5,12 @@ import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 const demoCode = `name     = "BRCA1"
 organism = "Homo sapiens"
 
-# Commas: a space appears wherever you did not want one
+# Using commas: spaces are printed around each "word" — not what we want
 print(name, "(", organism, ")")
+
 # With f: spacing exactly as you typed it
 print(f"{name} ({organism})")
+
 # Without f: the braces stay as literal text
 print("{name} ({organism})")
 `
@@ -28,7 +30,7 @@ export function Slide19FStrings() {
           swapped in, with the spacing exactly as you typed it.
         </>
       }
-      note={<>Look at the brackets — commas cannot help you there.</>}
+      note={<>f-strings are straightforward, versatile, and easy to understand.</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

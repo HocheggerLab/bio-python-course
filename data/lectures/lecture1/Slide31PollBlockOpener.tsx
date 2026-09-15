@@ -13,8 +13,9 @@ export function Slide31PollBlockOpener() {
     <SectionSlide
       eyebrow="Three questions"
       title="What stuck?"
-      accent="one tap each"
-      note="Anonymous, and it is not marked. It tells me what to go over again — so a wrong answer here is worth more to me than a right one."
+      accent="One tap each"
+      note={<>A quick anonymous quiz to close — just for fun!
+      <br/><br/>It tells me what to go over again — so a wrong answer here is worth more to me than a right one.</>}
       action={
         <figure className="mt-1">
           <div className="inline-block bg-white p-3 rounded-xl">

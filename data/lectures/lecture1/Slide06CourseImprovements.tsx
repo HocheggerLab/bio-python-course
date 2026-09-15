@@ -32,11 +32,11 @@ const methods = [
   { icon: '👨‍🏫', text: "In person / by email" },
 ]
 
-export function Slide13CourseImprovements() {
+export function Slide06CourseImprovements() {
   return (
     <>
       <SlideTitle>
-        Improving <GradientText>this module</GradientText>
+        Improving <GradientText>this Module</GradientText>
       </SlideTitle>
 
       <div className="flex flex-col gap-3 md:gap-4 xl:gap-5 mt-3 md:mt-4">

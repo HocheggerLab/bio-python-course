@@ -1,14 +1,14 @@
 import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
+import { ParallelSet } from '@/components/slides/layouts'
 import {
   SlideCard,
   CardHeading,
-  CardList,
+  CardList
 } from '@/components/slides/SlideCard'
 
 const goodUses = [
   "Explain concepts you didn't follow",
   'Debug code you wrote yourself',
-  'Suggest alternative approaches',
   'Generate test data',
 ]
 
@@ -21,14 +21,19 @@ const badUses = [
 
 const workflow = ['Write', 'Test', 'Debug', 'Ask AI', 'Understand', 'Improve']
 
-export function Slide06ResponsibleAI() {
+export function Slide09ResponsibleAI() {
   return (
     <>
-      <SlideTitle>
-        Using AI <GradientText>Responsibly</GradientText>
-      </SlideTitle>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8">
+      <ParallelSet
+            title={<>Using <GradientText>AI Responsibly</GradientText></>}
+            lead="Generative AI tools must only be used in an assistive role in this module."
+            columns={3}
+            note={
+              <span className="flex flex-col items-center gap-1">
+                <span>See Canvas for full details of permitted use of AI for assessments.</span>
+              </span>
+            }
+      >
 
         <SlideCard color="green" layout="start" padding="compact">
           <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4 xl:mb-6">
@@ -54,11 +59,7 @@ export function Slide06ResponsibleAI() {
           <CardList items={workflow} numbered color="blue" />
         </SlideCard>
 
-      </div>
-
-      <p className="text-center text-gray-400 mt-3 md:mt-4 xl:mt-6 text-xs md:text-sm xl:text-base">
-        AI will not be available in assessed work — you need to be able to code independently.
-      </p>
+      </ParallelSet>
     </>
   )
 }

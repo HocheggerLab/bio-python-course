@@ -17,23 +17,23 @@ const websiteFeatures = [
 ]
 
 const canvasFeatures = [
+  { icon: '✍', label: 'Practice quizzes', desc: 'Prepare for the Week 5 test' },
   { icon: '❓', label: 'Discussion board', desc: 'Ask questions anonymously' },
-  { icon: '📥', label: 'Submission', desc: 'Hand in your work' },
+  { icon: '📥', label: 'Submission', desc: 'Hand in your project work' },
   { icon: '📑', label: 'Feedback', desc: 'See your grades and feedback' },
-  { icon: 'ℹ', label: 'Module info', desc: 'Comprehensive module information' }
 ]
 
-export function Slide04Resources() {
+export function Slide07Resources() {
   return (
     <>
       <SlideTitle>
         Your Main <GradientText>Resources</GradientText>
       </SlideTitle>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8 items-start">
 
         {/* Website card */}
-        <SlideCard color="blue" layout="start" href="/" className="text-left md:col-span-2">
+        <SlideCard color="blue" layout="start" href="/" className="text-left md:col-span-3">
           <div className="flex items-center gap-3 md:gap-5 xl:gap-6 mb-4 md:mb-8 xl:mb-10">
             <CardIcon size="sm">🚀</CardIcon>
             <div>
@@ -63,9 +63,9 @@ export function Slide04Resources() {
         <SlideCard
           color="green"
           layout="start"
-          href="https://canvas.sussex.ac.uk/courses/34489"
+          href="https://canvas.sussex.ac.uk/courses/39392"
           external
-          className="text-left"
+          className="text-left md:col-span-2"
         >
           <div className="flex items-center gap-3 md:gap-5 mb-4 md:mb-6">
             <CardIcon size="sm">🎓</CardIcon>

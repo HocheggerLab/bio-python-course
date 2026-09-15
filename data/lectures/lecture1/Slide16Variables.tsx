@@ -4,9 +4,12 @@ import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
 // No print() yet — assignment on its own produces no output, which is the
 // point: the values are stored, just not shown. print() comes two slides on.
-const demoCode = `# = puts the value on the right into the name on the left
-gene_name = "BRCA1"
-length    = 16
+const demoCode = `# The = sign puts the value on the right into the name on the left
+gene_name = "BRCA1"    # store text (a string) in gene_name
+length    = 16         # store a whole number (an integer) in length
+
+# Any line starting with # is a comment
+# Python ignores it, but it's useful for us humans to understand the code.
 `
 
 export function Slide16Variables() {

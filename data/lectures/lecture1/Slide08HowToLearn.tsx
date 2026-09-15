@@ -26,7 +26,7 @@ const analogies = [
   { icon: '💻', text: "You don't learn coding by following a lecture" },
 ]
 
-export function Slide05HowToLearn() {
+export function Slide08HowToLearn() {
   return (
     <>
       <SlideTitle>

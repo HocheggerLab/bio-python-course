@@ -4,11 +4,7 @@ import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
 // The + / - pair is the hook: one works, one is a TypeError. The minus stays
 // commented so the cell runs — uncomment it live and read the error together.
-const demoCode = `# What do you expect? Then uncomment the second line and run again.
-print("Hello" + "World")
-# print("Hello" - "World")
-
-sequence = "ATGCGTACGTAGGCTA"
+const demoCode = `sequence = "ATGCGTACGTAGGCTA"
 
 # Strings also carry their own methods: value.method()
 print(sequence.count("A"))    # number of As
@@ -35,6 +31,7 @@ export function Slide28CountMethod() {
           <span className="font-mono text-bio-blue">value.method()</span>.
         </>
       }
+      note={<>A sneak preview for now — we'll discover more methods as we progress through the module. Try using <span className="font-mono">.count()</span> for different substrings — how many "GC"s are there in sequence?</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

@@ -4,19 +4,16 @@ import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
 const builtins = [
   { fn: 'print(x)',  what: 'Display a value' },
-  { fn: 'len(x)',    what: 'Length of a string (or list, later)' },
+  { fn: 'len(x)',    what: 'Length of a string (or list — coming later)' },
   { fn: 'type(x)',   what: 'What kind of value is this?' },
-  { fn: 'int(x)',    what: 'Convert to integer' },
-  { fn: 'float(x)',  what: 'Convert to floating-point' },
-  { fn: 'str(x)',    what: 'Convert to string' },
-  { fn: 'round(x, n)', what: 'Round to n decimal places' },
-  { fn: 'abs(x)',    what: 'Absolute value' },
-  { fn: 'min(a, b)', what: 'Smaller of two values' },
-  { fn: 'max(a, b)', what: 'Larger of two values' },
+  { fn: 'int(x)',    what: 'Convert to integer (whole number)' },
+  { fn: 'float(x)',  what: 'Convert to floating-point (decimal)' },
+  { fn: 'str(x)',    what: 'Convert to string (text)' },
+  { fn: 'round(x, n)', what: 'Round to n decimal places' }
 ]
 
-const demoCode = `sequence   = "ATGCGTACGT"
-gc_percent = 66.66666
+const demoCode = `sequence   = "ATGCGTACGT"          # a string (text)
+gc_percent = 66.66666              # a float (decimal number)
 
 # The same pattern every time: function(value)
 # Store the answer first, then print it — one job per line

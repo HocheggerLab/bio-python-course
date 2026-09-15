@@ -10,17 +10,17 @@ const components: Array<{
   color: CardColor
 }> = [
   { num: '8', label: 'Lectures',         desc: 'Core concepts, introduced with live coding and biological examples', icon: '📚', color: 'blue'   },
-  { num: '11', label: 'Lab Sessions',     desc: 'You write the code; demonstrators circulate to help',               icon: '💻', color: 'green'  },
+  { num: '12', label: 'Workshops',     desc: 'You write the code; demonstrators circulate to help',               icon: '💻', color: 'green'  },
   { num: '3', label: 'Assessments', desc: 'A Python fundamentals test and two projects using real data.',               icon: '🧬', color: 'yellow' },
-  { num: '∞', label: 'Support',          desc: 'Website, notebooks, discussion board, and one-to-one',                       icon: '🤝', color: 'purple' },
+  { num: '∞', label: 'Support',          desc: 'Website, Colab notebooks, DataCamp, practice quizzes, discussion board, and one-to-one',                       icon: '🤝', color: 'purple' },
 ]
 
-export function Slide02HowCourseWorks() {
+export function Slide04HowCourseWorks() {
   return (
     <ParallelSet
       title={<>How This Course <GradientText>Works</GradientText></>}
       columns={4}
-      note="Every lab session builds towards your final project — from your first variable to a working analysis pipeline."
+      note="Every computer workshop builds towards your final project — from your first variable to a working analysis pipeline."
     >
       {components.map((c) => (
         <SlideCard key={c.label} color={c.color} layout="start" padding="compact" className="border-l-4">
