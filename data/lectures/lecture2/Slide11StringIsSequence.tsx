@@ -19,14 +19,15 @@ export function Slide11StringIsSequence() {
       title={<>A String Is a <GradientText>Sequence of Characters</GradientText></>}
       lead={
         <>
-          A DNA string is just an <strong>ordered collection of bases</strong>. Reach in by
-          position exactly as you did with lists: <span className="font-mono">dna[0]</span> is
+          A <strong>string</strong> holding a DNA sequence is just an <strong>ordered collection of bases</strong>. Reach in by
+          position exactly as you did with lists: 
+          <br/><span className="font-mono">dna[0]</span> is
           the first base, <span className="font-mono">dna[-1]</span> the last, and{' '}
           <span className="font-mono">len(dna)</span> counts them.
         </>
       }
       note={<>Run it — then try <span className="font-mono not-italic">dna[1]</span> and{' '}
-        <span className="font-mono not-italic">dna[-2]</span>:</>}
+        <span className="font-mono not-italic">dna[-2]</span>.</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

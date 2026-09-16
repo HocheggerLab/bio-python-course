@@ -14,7 +14,7 @@ const tasks: Step[] = [
   { label: 'The 2nd reading was a pipetting error — remove it', accent: 'yellow' },
   { label: 'A late replicate came in — add the value 19 to the end', accent: 'yellow' },
   { label: 'Total the readings with sum()', accent: 'yellow' },
-  { label: 'Count them with len()', accent: 'yellow' },
+  { label: 'Count the number of readings with len()', accent: 'yellow' },
   { label: 'Mean = total ÷ count, rounded to 1 decimal place', accent: 'yellow' },
 ]
 
@@ -57,9 +57,8 @@ export function Slide10TIYMean() {
       title={<>Try it Yourself — <GradientText variant="yellow">Clean the data, report the mean</GradientText></>}
       intro={
         <>
-          You start with 20 readings. After removing one and adding one you&apos;re back to{' '}
-          <span className="text-bio-yellow font-semibold">20</span> — a good check before you
-          average.
+          You've just collected <span className="text-bio-yellow font-semibold">20 readings</span> from a growth assay in the lab. Clean up your data
+          and then calculate the overall mean by following the steps below:
         </>
       }
       steps={tasks}

@@ -8,7 +8,10 @@ const demoCode = `seq = "ATGCGTACGTAG"   # four codons, read in threes
 print(seq[0:3])    # first codon — ATG is a start codon!
 print(seq[3:6])    # second codon
 print(seq[-3:])    # last codon — TAG is a stop codon!
+
+# Slicing with a step value: seq[start:end:step]
 print(seq[::-1])   # the whole sequence, reversed
+#                    — same as seq[0:len(seq):-1]
 `
 
 const demoOutput = `ATG
@@ -27,23 +30,30 @@ export function Slide13SlicingCodons() {
             A codon is a 3-base slice
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
-            <span className="font-mono">seq[0:3]</span> grabs the first three bases — one codon.
-            The <strong>end is not included</strong>, so <span className="font-mono">0:3</span>{' '}
-            gives positions 0, 1, 2. Same slicing you used on lists.
+            <span className="font-mono">seq[0:3]</span> grabs the first three bases — one codon. 
+            Just like with lists, we use <span className="font-mono">[start:end]</span> to slice 
+            — remember that the <strong>end is not included</strong>, so <span className="font-mono">0:3</span>{' '}
+            gives positions 0, 1, 2.
           </CardBody>
         </SlideCard>
         <SlideCard color="green" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="green" className="mb-2 md:mb-3">
-            <span className="font-mono">seq[::-1]</span> reverses it
+            Stepping through a slice
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
-            A handy shortcut that runs the sequence backwards — the first step toward building a
-            reverse-complement strand later.
+            What if we want a slice in reverse order? 
+            We can set the step value. 
+            Using <span className="font-mono">[::-1]</span> moves 
+            backwards through the slice 1 step at a time — perfect for getting the 
+            reverse-complement strand.
           </CardBody>
         </SlideCard>
       </>
       }
-      note={<>Run it — then slice the third codon yourself:</>}
+      note={
+      <>Run it — then find out what happens if you step through every 3rd base 
+      with <span className="font-mono">seq[::3]</span>. Can you figure out how to slice the 3rd codon?
+      </>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

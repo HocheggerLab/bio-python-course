@@ -7,7 +7,7 @@ genes = ["BRCA1", "TP53", "EGFR", "MYC"]
 
 print(genes)
 
-# len() counts the items — just like it counted characters
+# len() counts the items — just like it counted characters in a string
 print(len(genes))
 `
 
@@ -25,7 +25,7 @@ export function Slide04Lists() {
           <span className="font-mono">len()</span> tells you how many there are.
         </>
       }
-      note={<>Run it, then add a gene of your own to the list:</>}
+      note={<>Run it, then add a gene of your own to the list and try running it again.</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}
