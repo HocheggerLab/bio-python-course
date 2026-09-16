@@ -21,7 +21,7 @@ const badUses = [
 
 const workflow = ['Write', 'Test', 'Debug', 'Ask AI', 'Understand', 'Improve']
 
-export function Slide09ResponsibleAI() {
+export function Slide05ResponsibleAI() {
   return (
     <>
       <ParallelSet

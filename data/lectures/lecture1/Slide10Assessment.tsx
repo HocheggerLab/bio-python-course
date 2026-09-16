@@ -24,7 +24,7 @@ const shortName: Record<string, string> = {
   'project-2': 'Project 2',
 }
 
-export function Slide05Assessment() {
+export function Slide10Assessment() {
   return (
     <ParallelSet
       title={<>How You&apos;ll Be <GradientText>Assessed</GradientText></>}
@@ -32,7 +32,7 @@ export function Slide05Assessment() {
       columns={3}
       note={
         <span className="flex flex-col items-center gap-1">
-          <span>Full details on the website under Assessment; projects are submitted via Canvas.</span>
+          <span>Full details of the projects will be covered in the <strong>Week 5 Project Practical</strong>. Projects are submitted via Canvas.</span>
         </span>
       }
     >

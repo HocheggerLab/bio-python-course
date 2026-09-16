@@ -2,17 +2,16 @@ import { LectureData } from '@/data/lectures/types'
 import { Slide01WhyProgramming } from './Slide01WhyProgramming'
 import { Slide02WhyPython } from './Slide02WhyPython'
 import { Slide03StoryOfPython } from './Slide03StoryOfPython'
-import { Slide04HowCourseWorks } from './Slide04HowCourseWorks'
-import { Slide05Assessment } from './Slide05Assessment'
-import { Slide06CourseImprovements } from './Slide06CourseImprovements'
+import { Slide04HowToLearn } from './Slide04HowToLearn'
+import { Slide05ResponsibleAI } from './Slide05ResponsibleAI'
+import { Slide06HowCourseWorks } from './Slide06HowCourseWorks'
 import { Slide07Resources } from './Slide07Resources'
-import { Slide08HowToLearn } from './Slide08HowToLearn'
-import { Slide09ResponsibleAI } from './Slide09ResponsibleAI'
-import { Slide10StudyResources } from './Slide10StudyResources'
-import { Slide11Roadmap } from './Slide11Roadmap'
-import { Slide12Roadmap2 } from './Slide12Roadmap2'
-import { Slide14HowWeWork } from './Slide14HowWeWork'
-import { Slide15TodaysGoal } from './Slide15TodaysGoal'
+import { Slide08Roadmap } from './Slide08Roadmap'
+import { Slide09Roadmap2 } from './Slide09Roadmap2'
+import { Slide10Assessment } from './Slide10Assessment'
+import { Slide11CourseImprovements } from './Slide11CourseImprovements'
+import { Slide12HowWeWork } from './Slide12HowWeWork'
+import { Slide13TodaysGoal } from './Slide13TodaysGoal'
 // Block 1 — Variables, print, built-ins, errors
 import { Slide16Variables } from './Slide16Variables'
 import { Slide17NamingVariables } from './Slide17NamingVariables'
@@ -45,18 +44,17 @@ export const lecture1Data: LectureData = {
     // ── Intro ──────────────────────────────────────────────
     { title: 'Why Should I Learn Programming?', content: <Slide01WhyProgramming /> },
     { title: 'Why Python?', content: <Slide02WhyPython /> },
-    { title: 'The Story of Python', content: <Slide03StoryOfPython /> },    
-    { title: 'How the Course Works', content: <Slide04HowCourseWorks /> },
-    { title: 'Assessment & Exams', content: <Slide05Assessment /> },
-    { title: 'Improving This Module', content: <Slide06CourseImprovements /> },
+    { title: 'The Story of Python', content: <Slide03StoryOfPython /> },  
+    { title: 'How to Learn Programming', content: <Slide04HowToLearn /> },
+    { title: 'Using AI Responsibly', content: <Slide05ResponsibleAI /> },      
+    { title: 'How the Course Works', content: <Slide06HowCourseWorks /> },
     { title: 'Your Main Resources', content: <Slide07Resources /> },
-    { title: 'How to Learn Programming', content: <Slide08HowToLearn /> },
-    { title: 'Using AI Responsibly', content: <Slide09ResponsibleAI /> },
-    { title: 'How You’ll Study Python', content: <Slide10StudyResources /> },
-    { title: 'Our Roadmap', content: <Slide11Roadmap /> },
-    { title: 'Roadmap — Data Science', content: <Slide12Roadmap2 /> },
-    { title: "How We'll Work With Python", content: <Slide14HowWeWork /> },
-    { title: "Session 1 — Today's Goal", content: <Slide15TodaysGoal /> },
+    { title: 'Our Roadmap', content: <Slide08Roadmap /> },
+    { title: 'Roadmap — Data Science', content: <Slide09Roadmap2 /> },
+    { title: 'Assessment & Exams', content: <Slide10Assessment /> },
+    { title: 'Improving This Module', content: <Slide11CourseImprovements /> },    
+    { title: "How We'll Work With Python", content: <Slide12HowWeWork /> },
+    { title: "Session 1 — Today's Goal", content: <Slide13TodaysGoal /> },
     // ── Block 1: Variables · print · built-ins · errors ────
     { title: 'Variables', content: <Slide16Variables /> },
     { title: 'Naming Variables', content: <Slide17NamingVariables /> },

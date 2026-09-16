@@ -25,7 +25,7 @@ const sessions: Step[] = [
   },
 ]
 
-export function Slide11Roadmap() {
+export function Slide08Roadmap() {
   return (
     <SplitSlide
       title={<>Weeks 1–4: <GradientText>Python fundamentals</GradientText></>}
