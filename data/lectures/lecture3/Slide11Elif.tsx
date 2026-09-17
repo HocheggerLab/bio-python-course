@@ -3,19 +3,19 @@ import { SlideCard, CardHeading, CardBody } from '@/components/slides/SlideCard'
 import { ConceptSlide } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
-const demoCode = `genome = 29903             # SARS-CoV-2, base pairs
+const demoCode = `genome = 29_903             # SARS-CoV-2, base pairs
 
-if genome < 5000:
-    category = "tiny — genes overlap"
-elif genome < 30000:
-    category = "compact RNA virus"
+if genome < 5_000:
+    category = "Tiny RNA virus — genes overlap"
+elif genome < 30_000:
+    category = "Compact RNA virus"
 else:
-    category = "large — DNA virus / phage"
+    category = "Large — DNA virus / phage"
 
 print(category)
 `
 
-const demoOutput = `compact RNA virus`
+const demoOutput = `Compact RNA virus`
 
 export function Slide11Elif() {
   return (
@@ -45,8 +45,8 @@ export function Slide11Elif() {
         </SlideCard>
       </>
       }
-      note={<>SARS-CoV-2 sits just under the ceiling. Change the number, rerun, watch the category
-        change:</>}
+      note={<>SARS-CoV-2 sits just under the 30 kb ceiling. What about hepatitis B (3,182 bp)? Change the number, rerun, watch the category
+        change.</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

@@ -2,9 +2,9 @@ import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
 import { SlideCard, CardHeading, CardList } from '@/components/slides/SlideCard'
 
 const covered = [
-  'Lists — hold many sequences, index & slice',
-  'Strings are sequences — slice out codons',
-  'Dictionaries — the codon table, key → value',
+  'Lists — hold many DNA sequences, index & slice',
+  'Strings are sequences of bases — slice out codons',
+  'Dictionaries — use as a codon table, key → value',
   'Safe lookup — .get(codon, "?")',
 ]
 

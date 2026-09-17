@@ -52,7 +52,7 @@ export function Slide06GenomeReveal() {
           </CardHeading>
           <CardBody className="text-xs md:text-sm xl:text-base">
             RNA viruses (SARS-CoV-2, HIV, flu) copy themselves <em>without</em> proofreading, so
-            errors cap their genomes at roughly 30&nbsp;kb. To survive, they pack genes tightly —
+            errors cap their genomes at <strong>roughly 30&nbsp;kb</strong>. To survive, they pack genes tightly —
             even <strong>overlapping</strong> them. Phage λ is a <strong>DNA</strong> virus: accurate
             copying lets it afford a far bigger genome. <em>Nasty to humans ≠ big.</em>
           </CardBody>

@@ -20,7 +20,7 @@ const parts = [
     icon: '🧬',
     name: 'Translation',
     example: 'peptide.append(aa)',
-    note: 'Put them together: walk a viral genome and build its proteins, automatically.',
+    note: 'Put them together: walk through a viral genome and build its proteins, automatically.',
     color: 'green' as const,
   },
 ]

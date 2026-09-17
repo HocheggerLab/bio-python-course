@@ -11,7 +11,7 @@ import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 const POLL_URL = 'https://pollev.com/your-handle'
 
 const tasks: Step[] = [
-  { label: 'Convert each incubation period from days to whole minutes (× 1440, rounded)', accent: 'yellow' },
+  { label: 'Convert each incubation period from days to minutes (× 1440, rounded to a whole number)', accent: 'yellow' },
   { label: 'Collect the results in incubation_minutes with .append()', accent: 'yellow' },
   { label: 'Add every value into one running total', accent: 'yellow' },
   { label: 'Submit your grand total — how many minutes in all?', accent: 'yellow' },
@@ -25,11 +25,11 @@ incubation_days = [3.0, 4.7, 4.9, 5.8, 3.4]
 # 1. Build a new list of the incubation periods in whole minutes.
 #    1 day = 1440 minutes — and round() each one to a whole number.
 incubation_minutes = []
-# your loop here
+# your for loop here
 
 # 2. Add every value in incubation_minutes into one running total.
 total = 0
-# your loop here
+# your for loop here
 
 print(f"Total incubation time: {total} minutes")
 `

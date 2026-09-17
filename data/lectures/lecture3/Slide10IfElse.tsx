@@ -3,15 +3,15 @@ import { SlideCard, CardHeading, CardBody } from '@/components/slides/SlideCard'
 import { ConceptSlide } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
-const demoCode = `genome = 3182              # hepatitis B, base pairs
+const demoCode = `genome = 48_502     # λ, base pairs
 
-if genome > 10000:
-    print("Large genome")
+if genome < 30_000:
+    print("Compact RNA virus")
 else:
-    print("Small genome")
+    print("Large - DNA virus / phage")
 `
 
-const demoOutput = `Small genome`
+const demoOutput = `Large - DNA virus / phage`
 
 export function Slide10IfElse() {
   return (
@@ -36,13 +36,13 @@ export function Slide10IfElse() {
           <CardBody className="text-sm md:text-base xl:text-lg">
             With <span className="font-mono">if</span> alone, a <span className="font-mono">False</span>{' '}
             condition just does nothing. <span className="font-mono">else</span> guarantees the
-            program always says <em>something</em> — large or small.
+            program always says <em>something</em> — RNA or DNA virus?
           </CardBody>
         </SlideCard>
       </>
       }
-      note={<>Hepatitis B is tiny — so this time the <span className="font-mono">else</span> branch
-        runs:</>}
+      note={<>λ phage is above 30 kb — so this time the <span className="font-mono">else</span> branch
+              runs.</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}
