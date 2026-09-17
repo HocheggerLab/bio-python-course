@@ -13,10 +13,10 @@ print(codon_table["TAA"])
 const demoOutput = `Met
 Stop`
 
-export function Slide21LookupByKey() {
+export function Slide22LookupByKey() {
   return (
     <ConceptSlide
-      title={<>Looking Up by <GradientText>Key</GradientText></>}
+      title={<>Looking Up a <GradientText>Value</GradientText> by its <GradientText>Key</GradientText></>}
       lead={
         <>
           The same <span className="font-mono">[ ]</span> you used to reach into lists and strings — but

@@ -22,13 +22,14 @@ import { Slide18TIYSequenceReport } from './Slide18TIYSequenceReport'
 // Block 3 — Dictionaries
 import { Slide19CodonTable } from './Slide19CodonTable'
 import { Slide20DictExamples } from './Slide20DictExamples'
-import { Slide21LookupByKey } from './Slide21LookupByKey'
-import { Slide22KeyErrorGet } from './Slide22KeyErrorGet'
-import { Slide23BuildingDicts } from './Slide23BuildingDicts'
-import { Slide24TIYTranslate } from './Slide24TIYTranslate'
+import { Slide21DictKeysAndValues } from './Slide21DictKeysAndValues'
+import { Slide22LookupByKey } from './Slide22LookupByKey'
+import { Slide23KeyErrorGet } from './Slide23KeyErrorGet'
+import { Slide24BuildingDicts } from './Slide24BuildingDicts'
+import { Slide25TIYTranslate } from './Slide25TIYTranslate'
 // Wrap-up
-import { Slide25Recap } from './Slide25Recap'
-import { Slide26Outlook } from './Slide26Outlook'
+import { Slide26Recap } from './Slide26Recap'
+import { Slide27Outlook } from './Slide27Outlook'
 
 export const lecture2Data: LectureData = {
   id: 'lecture-2',
@@ -57,12 +58,13 @@ export const lecture2Data: LectureData = {
     // ── Block 3: Dictionaries ──────────────────────────────
     { title: 'Dictionaries — a lookup table', content: <Slide19CodonTable /> },
     { title: 'Dictionaries Are Everywhere', content: <Slide20DictExamples /> },
-    { title: 'Looking Up by Key', content: <Slide21LookupByKey /> },
-    { title: 'KeyError & .get()', content: <Slide22KeyErrorGet /> },
-    { title: 'Building & Checking', content: <Slide23BuildingDicts /> },
-    { title: 'TIY — Translate by lookup', content: <Slide24TIYTranslate /> },
+    { title: 'Keys & Values', content: <Slide21DictKeysAndValues /> },
+    { title: 'Looking Up by Key', content: <Slide22LookupByKey /> },
+    { title: 'KeyError & .get()', content: <Slide23KeyErrorGet /> },
+    { title: 'Building & Checking', content: <Slide24BuildingDicts /> },
+    { title: 'TIY — Translate by lookup', content: <Slide25TIYTranslate /> },
     // ── Wrap-up ────────────────────────────────────────────
-    { title: 'Recap — Lists, Strings & Maps', content: <Slide25Recap /> },
-    { title: 'What’s Next — Control Flow', content: <Slide26Outlook /> },
+    { title: 'Recap — Lists, Strings & Maps', content: <Slide26Recap /> },
+    { title: 'What’s Next — Control Flow', content: <Slide27Outlook /> },
   ],
 }

@@ -42,7 +42,7 @@ const hints = [
   'CGT is not in the table — that’s why .get returns "?" instead of raising a KeyError. That is the whole point of .get.',
 ]
 
-export function Slide24TIYTranslate() {
+export function Slide25TIYTranslate() {
   return (
     <ExerciseSlide
       title={<>Try it Yourself — <GradientText variant="yellow">Translate by lookup</GradientText></>}

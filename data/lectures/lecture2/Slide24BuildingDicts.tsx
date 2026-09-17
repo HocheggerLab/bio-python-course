@@ -17,7 +17,7 @@ const demoOutput = `{'ATG': 'Met', 'GGT': 'Glycine', 'TAA': 'Stop'}
 True
 3`
 
-export function Slide23BuildingDicts() {
+export function Slide24BuildingDicts() {
   return (
     <ConceptSlide
       title={<>Building &amp; <GradientText>Checking</GradientText></>}

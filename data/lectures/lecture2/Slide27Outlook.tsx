@@ -14,7 +14,7 @@ const practice = [
   'Half an hour of practice beats re-watching the lecture',
 ]
 
-export function Slide26Outlook() {
+export function Slide27Outlook() {
   return (
     <>
       <SlideTitle>

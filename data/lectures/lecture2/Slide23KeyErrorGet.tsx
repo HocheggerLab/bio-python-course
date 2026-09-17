@@ -16,7 +16,7 @@ print(codon_table.get("ATG", "?"))   # found
 const demoOutput = `?
 Met`
 
-export function Slide22KeyErrorGet() {
+export function Slide23KeyErrorGet() {
   return (
     <ConceptSlide
       title={<>When the Key Isn&apos;t There — <GradientText><span className="font-mono">.get()</span></GradientText></>}
