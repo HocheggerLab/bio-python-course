@@ -2,11 +2,11 @@ import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
 
 /* Code lines, each tinted to match its flowchart node */
 const codeLines: Array<{ text: string; bar: string; dim?: boolean }> = [
-  { text: 'large = []', bar: 'border-white/40' },
+  { text: 'rna = []', bar: 'border-white/40' },
   { text: 'for g in genomes:', bar: 'border-bio-blue' },
   { text: '    if g > 10000:', bar: 'border-bio-yellow' },
-  { text: '        large.append(g)', bar: 'border-bio-green' },
-  { text: 'print(large)', bar: 'border-white/40' },
+  { text: '        rna.append(g)', bar: 'border-bio-green' },
+  { text: 'print(rna)', bar: 'border-white/40' },
 ]
 
 function Arrow({ label }: { label?: string }) {
@@ -75,7 +75,7 @@ export function Slide13ProgramFlow() {
 
             {/* START */}
             <FlowBox color="border-white/30 bg-white/5">
-              <span className="font-mono text-gray-200 text-sm md:text-base">large = []</span>
+              <span className="font-mono text-gray-200 text-sm md:text-base">rna = []</span>
               <span className="block text-[10px] md:text-xs text-gray-400 mt-0.5">
                 start with an empty list
               </span>
@@ -107,7 +107,7 @@ export function Slide13ProgramFlow() {
                   </span>
                   <FlowBox color="border-bio-green/50 bg-bio-green/10">
                     <span className="font-mono text-bio-green text-xs md:text-sm">
-                      large.append(g)
+                      rna.append(g)
                     </span>
                   </FlowBox>
                 </div>
@@ -126,7 +126,7 @@ export function Slide13ProgramFlow() {
 
             {/* END */}
             <FlowBox color="border-white/30 bg-white/5">
-              <span className="font-mono text-gray-200 text-sm md:text-base">print(large)</span>
+              <span className="font-mono text-gray-200 text-sm md:text-base">print(rna)</span>
               <span className="block text-[10px] md:text-xs text-bio-green/80 mt-0.5 font-mono">
                 [48502, 29903]
               </span>

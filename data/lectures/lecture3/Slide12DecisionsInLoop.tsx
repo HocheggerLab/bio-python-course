@@ -3,26 +3,20 @@ import { SlideCard, CardHeading, CardBody } from '@/components/slides/SlideCard'
 import { ConceptSlide } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
-const demoCode = `# Virus genome sizes in a dictionary
-virus_sizes = {
-    "λ": 48_502,
-    "SARS-CoV-2": 29_903,
-    "HIV-1": 9_719,
-    "hep B": 3_182
-}
+const demoCode = `genomes = [48_502, 29_903, 9_719, 3_182]   # λ, SARS-CoV-2, HIV-1, hep B
 
 # How many are smaller than 30 kb?
 count = 0
-for size in virus_sizes.values():
-    if size < 30_000:
+for g in genomes:
+    if g < 30_000:
         count = count + 1
 print(count)
 
-# Collect just the RNA virus names into a new list
+# Collect just the RNA virus genome sizes into a new list
 rna = []
-for virus, size in virus_sizes.items():
-    if size < 30_000:
-        rna.append(virus)
+for g in genomes:
+    if g < 30_000:
+        rna.append(g)
 print(rna)
 `
 

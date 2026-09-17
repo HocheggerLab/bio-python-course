@@ -9,12 +9,13 @@ import { Slide06GenomeReveal } from './Slide06GenomeReveal'
 import { Slide05RunningTotal } from './Slide05RunningTotal'
 import { Slide07BuildList } from './Slide07BuildList'
 import { Slide08TIYIncubation } from './Slide08TIYIncubation'
-// Part 2 — if / elif / else
+// Part 2 — if / elif / else / looping dictionaries
 import { Slide09Decision } from './Slide09Decision'
 import { Slide10IfElse } from './Slide10IfElse'
 import { Slide11Elif } from './Slide11Elif'
 import { Slide12DecisionsInLoop } from './Slide12DecisionsInLoop'
 import { Slide13ProgramFlow } from './Slide13ProgramFlow'
+import { Slide14LoopsForDictionaries } from './Slide14LoopsForDictionaries'
 import { Slide14TIYReadingFrame } from './Slide14TIYReadingFrame'
 // Part 3 — strings, range, and the translation capstone
 import { Slide15StringRecap } from './Slide15StringRecap'
@@ -49,6 +50,7 @@ export const lecture3Data: LectureData = {
     { title: 'Many Branches — if / elif / else', content: <Slide11Elif /> },
     { title: 'Decisions Inside a Loop', content: <Slide12DecisionsInLoop /> },
     { title: 'The Program as a Flowchart', content: <Slide13ProgramFlow /> },
+    { title: 'Looping Through a Dictionary', content: <Slide14LoopsForDictionaries /> },
     { title: 'TIY — Ready to Translate?', content: <Slide14TIYReadingFrame /> },
     // ── Part 3: strings → range → translation capstone ─────
     { title: 'A String Is a Sequence — Recap', content: <Slide15StringRecap /> },
