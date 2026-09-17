@@ -29,7 +29,7 @@ export function Slide23BuildingDicts() {
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
             <span className="font-mono">table[&quot;TAA&quot;] = &quot;Stop&quot;</span> adds a new
-            entry. Use a key that already exists and it{' '}
+            entry. If you use a key that already exists, it{' '}
             <strong>overwrites</strong> the old value — no error, no duplicate.
           </CardBody>
         </SlideCard>
@@ -45,7 +45,8 @@ export function Slide23BuildingDicts() {
         </SlideCard>
       </>
       }
-      note={<>Run it — watch <span className="font-mono not-italic">GGT</span> get updated, not duplicated:</>}
+      note={<>Run it — watch <span className="font-mono not-italic">GGT</span> get updated, not duplicated.{' '}
+              Then try adding a new codon!</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

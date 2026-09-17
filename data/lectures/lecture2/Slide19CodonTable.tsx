@@ -11,7 +11,7 @@ codon_table = {
 }
 
 print(codon_table)
-print(len(codon_table))   # how many entries
+print(len(codon_table))   # how many entries in the dictionary?
 `
 
 const demoOutput = `{'ATG': 'Met', 'GGT': 'Gly', 'TAA': 'Stop'}
@@ -28,8 +28,8 @@ export function Slide19CodonTable() {
             Key → value pairs
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
-            A list finds things by <strong>position</strong> (0, 1, 2). A dictionary finds them
-            by a <strong>meaningful key</strong> — here, a codon. Write the pairs in{' '}
+            A list finds things by <strong>position</strong> (0, 1, 2). A dictionary finds each <strong>value</strong>{' '}
+            it holds via a <strong>paired key</strong> — here, a codon. Write the pairs in{' '}
             <span className="font-mono text-bio-blue">{'{ }'}</span> as{' '}
             <span className="font-mono text-bio-blue">key: value</span>.
           </CardBody>
@@ -45,7 +45,7 @@ export function Slide19CodonTable() {
         </SlideCard>
       </>
       }
-      note={<>Run it — then add a fourth codon of your own:</>}
+      note={<>Run it — then add a fourth codon of your own (you can make it up or find one online!).</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

@@ -15,7 +15,6 @@ import { Slide10TIYMean } from './Slide10TIYMean'
 import { Slide11StringIsSequence } from './Slide11StringIsSequence'
 import { Slide12Encoding } from './Slide12Encoding'
 import { Slide13SlicingCodons } from './Slide13SlicingCodons'
-import { Slide14TIYSliceCodons } from './Slide14TIYSliceCodons'
 import { Slide15BuildingStrings } from './Slide15BuildingStrings'
 import { Slide16StringMethods } from './Slide16StringMethods'
 import { Slide17Transcription } from './Slide17Transcription'
@@ -51,7 +50,6 @@ export const lecture2Data: LectureData = {
     { title: 'A String Is a Sequence', content: <Slide11StringIsSequence /> },
     { title: 'How Big Is a Character?', content: <Slide12Encoding /> },
     { title: 'Slicing Out Codons', content: <Slide13SlicingCodons /> },
-    { title: 'TIY — Slice the codons', content: <Slide14TIYSliceCodons /> },
     { title: 'Building Strings', content: <Slide15BuildingStrings /> },
     { title: 'String Methods', content: <Slide16StringMethods /> },
     { title: 'Transcription with .replace()', content: <Slide17Transcription /> },

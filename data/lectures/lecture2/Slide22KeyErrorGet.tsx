@@ -44,7 +44,7 @@ export function Slide22KeyErrorGet() {
         </SlideCard>
       </>
       }
-      note={<>Run it — then uncomment the <span className="font-mono not-italic">[&quot;TTT&quot;]</span> line to meet the KeyError:</>}
+      note={<>Run it — then uncomment the <span className="font-mono not-italic">[&quot;TTT&quot;]</span> line to meet the KeyError.</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

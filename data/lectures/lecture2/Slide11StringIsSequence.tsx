@@ -26,8 +26,9 @@ export function Slide11StringIsSequence() {
           <span className="font-mono">len(dna)</span> counts them.
         </>
       }
-      note={<>Run it — then try <span className="font-mono not-italic">dna[1]</span> and{' '}
-        <span className="font-mono not-italic">dna[-2]</span>.</>}
+      note={<>Run it — then guess what <span className="font-mono not-italic">dna[1]</span> and{' '}
+        <span className="font-mono not-italic">dna[-2]</span> will output. Try running them and 
+        see if you were right.</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

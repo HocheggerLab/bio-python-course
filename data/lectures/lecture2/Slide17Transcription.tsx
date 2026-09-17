@@ -9,7 +9,7 @@ const demoCode = `dna = "ATGCGT"
 mrna = dna.replace("T", "U")
 print(mrna)
 
-# Tempting but BROKEN — a complement by chaining replace:
+# Tempting but BROKEN — try making a complement by chaining replace:
 print(dna.replace("A", "T").replace("T", "A"))   # NOT the complement!
 `
 
@@ -28,8 +28,8 @@ export function Slide17Transcription() {
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
             <span className="font-mono">dna.replace(&quot;T&quot;, &quot;U&quot;)</span> returns a{' '}
-            <em>new</em> string with every <span className="font-mono">T</span> turned into{' '}
-            <span className="font-mono">U</span> — transcription in one line.
+            <em>new</em> string with <strong>every</strong> <span className="font-mono">T</span> turned into{' '}
+            <span className="font-mono">U</span> — DNA transcription in one line.
           </CardBody>
         </SlideCard>
         <SlideCard color="yellow" layout="start" padding="compact" className="border-l-4">
@@ -45,8 +45,8 @@ export function Slide17Transcription() {
         </SlideCard>
       </>
       }
-      note={<>Run it — the second line should be <span className="font-mono not-italic">TACGCA</span>,
-        but isn&apos;t:</>}
+      note={<>Run it — if the final line made the complement, it would print <span className="font-mono not-italic">TACGCA</span>,
+        but it doesn't. We need loops for this — next week!</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}
