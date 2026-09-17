@@ -41,9 +41,8 @@ export function Slide14LoopsForDictionaries() {
             Looping through a dictionary
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
-            Great — but which viruses are in our output? {' '}
-            Using a dictionary we can store name–size pairs, and {' '}
-            loop through it with <span className="font-mono">for</span> — {' '}
+            Great — but we lost the names of the viruses along the way. {' '}
+            A dictionary would help, and we can loop through it  — {' '}
             just like a list. {' '}
             To count viruses &lt;30 kb, we use <span className="font-mono">.values()</span> to {' '}
             get the sizes from our dictionary. {' '}
@@ -54,7 +53,7 @@ export function Slide14LoopsForDictionaries() {
             Using both keys and values
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
-            To get the names of viruses &lt;30 kb, {' '}
+            To get only viruses &lt;30 kb, {' '}
             we need a loop that checks the sizes (values) {' '}
             <strong>and</strong> stores the names (keys). {' '}
             With <span className="font-mono">.items()</span>, {' '}

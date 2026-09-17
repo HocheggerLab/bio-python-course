@@ -96,7 +96,7 @@ export function Slide13ProgramFlow() {
 
               {/* DECISION */}
               <FlowBox color="border-bio-yellow/50 bg-bio-yellow/10">
-                <span className="font-mono text-bio-yellow text-sm md:text-base">g &gt; 10000 ?</span>
+                <span className="font-mono text-bio-yellow text-sm md:text-base">g &lt; 30000 ?</span>
               </FlowBox>
 
               {/* TRUE / FALSE branches */}
@@ -128,7 +128,7 @@ export function Slide13ProgramFlow() {
             <FlowBox color="border-white/30 bg-white/5">
               <span className="font-mono text-gray-200 text-sm md:text-base">print(rna)</span>
               <span className="block text-[10px] md:text-xs text-bio-green/80 mt-0.5 font-mono">
-                [48502, 29903]
+                [29903, 9719, 3182]
               </span>
             </FlowBox>
 
