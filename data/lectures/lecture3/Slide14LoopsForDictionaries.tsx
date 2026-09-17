@@ -4,13 +4,14 @@ import { ConceptSlide } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
 const demoCode = `genomes = {
-    "phage λ": 48_502,
-    "SARS-CoV-2": 29_903,
-    "HIV-1": 9_719,
-    "hep B": 3_182
+    "phage λ":      48_502,
+    "SARS-CoV-2":   29_903,
+    "HIV-1":        9_719,
+    "hep B":        3_182
 }
 
 # How many are smaller than 30 kb?
+# Get the genome sizes with .values() and loop through them
 count = 0
 for size in genomes.values():
     if size < 30_000:
@@ -18,6 +19,7 @@ for size in genomes.values():
 print(count)
 
 # Collect the names of all viruses smaller than 30 kb
+# Here our for loop uses .items() to get both the virus name and genome size
 rna = []
 for virus, size in genomes.items():
     if size < 30_000:
@@ -39,20 +41,25 @@ export function Slide14LoopsForDictionaries() {
             Looping through a dictionary
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
-            Our loop is good, but we might lose track of which virus is which. {' '}
-            No problem — just like with lists, <span className="font-mono">for</span> {' '}
-            loops can iterate through a dictionary&apos;s {' '}.
+            Great — but which viruses are in our output? {' '}
+            Using a dictionary we can store name–size pairs, and {' '}
+            loop through it with <span className="font-mono">for</span> — {' '}
+            just like a list. {' '}
+            To count viruses &lt;30 kb, we use <span className="font-mono">.values()</span> to {' '}
+            get the sizes from our dictionary. {' '}
           </CardBody>
         </SlideCard>
         <SlideCard color="green" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="green" className="mb-2 md:mb-3">
-            Looking up values and items
+            Using both keys and values
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
-            We can use the <span className="font-mono">.values()</span> method to {' '}
-            loop through just the genome sizes, or <span className="font-mono">in</span> to loop through the names. {' '}
-            What if we need both keys and names in our loop? With the <span className="font-mono">.items()</span> {' '}
-            method, handle key–value pairs in one go using <span className="font-mono">for virus, size in genomes.items():</span>.
+            To get the names of viruses &lt;30 kb, {' '}
+            we need a loop that checks the sizes (values) {' '}
+            <strong>and</strong> stores the names (keys). {' '}
+            With <span className="font-mono">.items()</span>, {' '}
+            we can process both keys and values in one loop, {' '}
+            using <span className="font-mono">for key, value in dict.items():</span>
           </CardBody>
         </SlideCard>
       </>
