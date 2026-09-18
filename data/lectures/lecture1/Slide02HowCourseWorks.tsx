@@ -10,9 +10,9 @@ const components: Array<{
   color: CardColor
 }> = [
   { num: '8', label: 'Lectures',         desc: 'Core concepts, introduced with live coding and biological examples', icon: '📚', color: 'blue'   },
-  { num: '8', label: 'Lab Sessions',     desc: 'You write the code; demonstrators circulate to help',               icon: '💻', color: 'green'  },
-  { num: '1', label: 'Assessed Project', desc: 'Everything applied to a real dataset of your choice',               icon: '🧬', color: 'yellow' },
-  { num: '∞', label: 'Support',          desc: 'Website, notebooks, Colab, and office hours',                       icon: '🤝', color: 'purple' },
+  { num: '11', label: 'Lab Sessions',     desc: 'You write the code; demonstrators circulate to help',               icon: '💻', color: 'green'  },
+  { num: '3', label: 'Assessments', desc: 'A Python fundamentals test and two projects using real data.',               icon: '🧬', color: 'yellow' },
+  { num: '∞', label: 'Support',          desc: 'Website, notebooks, discussion board, and one-to-one',                       icon: '🤝', color: 'purple' },
 ]
 
 export function Slide02HowCourseWorks() {
@@ -20,7 +20,7 @@ export function Slide02HowCourseWorks() {
     <ParallelSet
       title={<>How This Course <GradientText>Works</GradientText></>}
       columns={4}
-      note="One project thread runs through all eight sessions — from your first variable to a working analysis pipeline."
+      note="Every lab session builds towards your final project — from your first variable to a working analysis pipeline."
     >
       {components.map((c) => (
         <SlideCard key={c.label} color={c.color} layout="start" padding="compact" className="border-l-4">
