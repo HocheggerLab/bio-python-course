@@ -13,29 +13,29 @@ import { Slide11CourseImprovements } from './Slide11CourseImprovements'
 import { Slide12HowWeWork } from './Slide12HowWeWork'
 import { Slide13TodaysGoal } from './Slide13TodaysGoal'
 // Block 1 — Variables, print, built-ins, errors
-import { Slide16Variables } from './Slide16Variables'
-import { Slide17NamingVariables } from './Slide17NamingVariables'
-import { Slide18Print } from './Slide18Print'
-import { Slide19FStrings } from './Slide19FStrings'
-import { Slide20BuiltinFunctions } from './Slide20BuiltinFunctions'
-import { Slide21Errors } from './Slide21Errors'
-import { Slide22CommonErrors } from './Slide22CommonErrors'
-import { Slide23TIYFixErrors } from './Slide23TIYFixErrors'
+import { Slide14Variables } from './Slide14Variables'
+import { Slide15NamingVariables } from './Slide15NamingVariables'
+import { Slide16Print } from './Slide16Print'
+import { Slide17FStrings } from './Slide17FStrings'
+import { Slide18BuiltinFunctions } from './Slide18BuiltinFunctions'
+import { Slide19Errors } from './Slide19Errors'
+import { Slide20CommonErrors } from './Slide20CommonErrors'
+import { Slide21TIYFixErrors } from './Slide21TIYFixErrors'
 // Block 2 — Data types, operators, GC calculator
-import { Slide24DataTypes } from './Slide24DataTypes'
-import { Slide25TypeFunction } from './Slide25TypeFunction'
-import { Slide26Operators } from './Slide26Operators'
-import { Slide27Division } from './Slide27Division'
-import { Slide28CountMethod } from './Slide28CountMethod'
-import { Slide29FinalDemo } from './Slide29FinalDemo'
+import { Slide22DataTypes } from './Slide22DataTypes'
+import { Slide23TypeFunction } from './Slide23TypeFunction'
+import { Slide24Operators } from './Slide24Operators'
+import { Slide25Division } from './Slide25Division'
+import { Slide26CountMethod } from './Slide26CountMethod'
+import { Slide27FinalDemo } from './Slide27FinalDemo'
 // Closing poll block — sits before the recap, so an overrun eats the summary
 // (which is on the website anyway) rather than the only feedback we get.
-import { Slide31PollBlockOpener } from './Slide31PollBlockOpener'
-import { Slide32PollQ1 } from './Slide32PollQ1'
-import { Slide33PollQ2 } from './Slide33PollQ2'
-import { Slide34PollQ3 } from './Slide34PollQ3'
-import { Slide35Recap } from './Slide35Recap'
-import { Slide36Outlook } from './Slide36Outlook'
+import { Slide28PollBlockOpener } from './Slide28PollBlockOpener'
+import { Slide29PollQ1 } from './Slide29PollQ1'
+import { Slide30PollQ2 } from './Slide30PollQ2'
+import { Slide31PollQ3 } from './Slide31PollQ3'
+import { Slide32Recap } from './Slide32Recap'
+import { Slide33Outlook } from './Slide33Outlook'
 
 export const lecture1Data: LectureData = {
   id: 'lecture-1',
@@ -56,28 +56,28 @@ export const lecture1Data: LectureData = {
     { title: "How We'll Work With Python", content: <Slide12HowWeWork /> },
     { title: "Session 1 — Today's Goal", content: <Slide13TodaysGoal /> },
     // ── Block 1: Variables · print · built-ins · errors ────
-    { title: 'Variables', content: <Slide16Variables /> },
-    { title: 'Naming Variables', content: <Slide17NamingVariables /> },
-    { title: 'print()', content: <Slide18Print /> },
-    { title: 'f-strings', content: <Slide19FStrings /> },
-    { title: 'Built-in Functions', content: <Slide20BuiltinFunctions /> },
-    { title: 'Errors Are Normal', content: <Slide21Errors /> },
-    { title: 'Common Errors', content: <Slide22CommonErrors /> },
-    { title: 'TIY — Fix the errors', content: <Slide23TIYFixErrors /> },
+    { title: 'Variables', content: <Slide14Variables /> },
+    { title: 'Naming Variables', content: <Slide15NamingVariables /> },
+    { title: 'print()', content: <Slide16Print /> },
+    { title: 'f-strings', content: <Slide17FStrings /> },
+    { title: 'Built-in Functions', content: <Slide18BuiltinFunctions /> },
+    { title: 'Errors Are Normal', content: <Slide19Errors /> },
+    { title: 'Common Errors', content: <Slide20CommonErrors /> },
+    { title: 'TIY — Fix the errors', content: <Slide21TIYFixErrors /> },
     // ── Block 2: Data types · operators · GC calculator ────
-    { title: 'The Four Data Types', content: <Slide24DataTypes /> },
-    { title: 'type()', content: <Slide25TypeFunction /> },
-    { title: 'Arithmetic Operators', content: <Slide26Operators /> },
-    { title: 'Division & Decimals', content: <Slide27Division /> },
-    { title: 'Counting Characters — .count()', content: <Slide28CountMethod /> },
-    { title: "Demo — Claudia's first report", content: <Slide29FinalDemo /> },
+    { title: 'The Four Data Types', content: <Slide22DataTypes /> },
+    { title: 'type()', content: <Slide23TypeFunction /> },
+    { title: 'Arithmetic Operators', content: <Slide24Operators /> },
+    { title: 'Division & Decimals', content: <Slide25Division /> },
+    { title: 'Counting Characters — .count()', content: <Slide26CountMethod /> },
+    { title: "Demo — Claudia's first report", content: <Slide27FinalDemo /> },
     // ── Closing poll block ────────────────────────────────
-    { title: 'What stuck?', content: <Slide31PollBlockOpener /> },
-    { title: 'Question 1 — f-strings', content: <Slide32PollQ1 /> },
-    { title: 'Question 2 — types', content: <Slide33PollQ2 /> },
-    { title: 'Question 3 — naming', content: <Slide34PollQ3 /> },
+    { title: 'What stuck?', content: <Slide28PollBlockOpener /> },
+    { title: 'Question 1 — f-strings', content: <Slide29PollQ1 /> },
+    { title: 'Question 2 — types', content: <Slide30PollQ2 /> },
+    { title: 'Question 3 — naming', content: <Slide31PollQ3 /> },
     // ── Close ─────────────────────────────────────────────
-    { title: 'Recap', content: <Slide35Recap /> },
-    { title: "What's Next", content: <Slide36Outlook /> },
+    { title: 'Recap', content: <Slide32Recap /> },
+    { title: "What's Next", content: <Slide33Outlook /> },
   ],
 }

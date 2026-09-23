@@ -15,21 +15,21 @@ import { Slide10TIYMean } from './Slide10TIYMean'
 import { Slide11StringIsSequence } from './Slide11StringIsSequence'
 import { Slide12Encoding } from './Slide12Encoding'
 import { Slide13SlicingCodons } from './Slide13SlicingCodons'
-import { Slide15BuildingStrings } from './Slide15BuildingStrings'
-import { Slide16StringMethods } from './Slide16StringMethods'
-import { Slide17Transcription } from './Slide17Transcription'
-import { Slide18TIYSequenceReport } from './Slide18TIYSequenceReport'
+import { Slide14BuildingStrings } from './Slide14BuildingStrings'
+import { Slide15StringMethods } from './Slide15StringMethods'
+import { Slide16Transcription } from './Slide16Transcription'
+import { Slide17TIYSequenceReport } from './Slide17TIYSequenceReport'
 // Block 3 — Dictionaries
-import { Slide19CodonTable } from './Slide19CodonTable'
-import { Slide20DictExamples } from './Slide20DictExamples'
-import { Slide21DictKeysAndValues } from './Slide21DictKeysAndValues'
-import { Slide22LookupByKey } from './Slide22LookupByKey'
-import { Slide23KeyErrorGet } from './Slide23KeyErrorGet'
-import { Slide24BuildingDicts } from './Slide24BuildingDicts'
-import { Slide25TIYTranslate } from './Slide25TIYTranslate'
+import { Slide18CodonTable } from './Slide18CodonTable'
+import { Slide19DictExamples } from './Slide19DictExamples'
+import { Slide20DictKeysAndValues } from './Slide20DictKeysAndValues'
+import { Slide21LookupByKey } from './Slide21LookupByKey'
+import { Slide22KeyErrorGet } from './Slide22KeyErrorGet'
+import { Slide23BuildingDicts } from './Slide23BuildingDicts'
+import { Slide24TIYTranslate } from './Slide24TIYTranslate'
 // Wrap-up
-import { Slide26Recap } from './Slide26Recap'
-import { Slide27Outlook } from './Slide27Outlook'
+import { Slide25Recap } from './Slide25Recap'
+import { Slide26Outlook } from './Slide26Outlook'
 
 export const lecture2Data: LectureData = {
   id: 'lecture-2',
@@ -51,20 +51,20 @@ export const lecture2Data: LectureData = {
     { title: 'A String Is a Sequence', content: <Slide11StringIsSequence /> },
     { title: 'How Big Is a Character?', content: <Slide12Encoding /> },
     { title: 'Slicing Out Codons', content: <Slide13SlicingCodons /> },
-    { title: 'Building Strings', content: <Slide15BuildingStrings /> },
-    { title: 'String Methods', content: <Slide16StringMethods /> },
-    { title: 'Transcription with .replace()', content: <Slide17Transcription /> },
-    { title: 'TIY — Profile a sequence', content: <Slide18TIYSequenceReport /> },
+    { title: 'Building Strings', content: <Slide14BuildingStrings /> },
+    { title: 'String Methods', content: <Slide15StringMethods /> },
+    { title: 'Transcription with .replace()', content: <Slide16Transcription /> },
+    { title: 'TIY — Profile a sequence', content: <Slide17TIYSequenceReport /> },
     // ── Block 3: Dictionaries ──────────────────────────────
-    { title: 'Dictionaries — a lookup table', content: <Slide19CodonTable /> },
-    { title: 'Dictionaries Are Everywhere', content: <Slide20DictExamples /> },
-    { title: 'Keys & Values', content: <Slide21DictKeysAndValues /> },
-    { title: 'Looking Up by Key', content: <Slide22LookupByKey /> },
-    { title: 'KeyError & .get()', content: <Slide23KeyErrorGet /> },
-    { title: 'Building & Checking', content: <Slide24BuildingDicts /> },
-    { title: 'TIY — Translate by lookup', content: <Slide25TIYTranslate /> },
+    { title: 'Dictionaries — a lookup table', content: <Slide18CodonTable /> },
+    { title: 'Dictionaries Are Everywhere', content: <Slide19DictExamples /> },
+    { title: 'Keys & Values', content: <Slide20DictKeysAndValues /> },
+    { title: 'Looking Up by Key', content: <Slide21LookupByKey /> },
+    { title: 'KeyError & .get()', content: <Slide22KeyErrorGet /> },
+    { title: 'Building & Checking', content: <Slide23BuildingDicts /> },
+    { title: 'TIY — Translate by lookup', content: <Slide24TIYTranslate /> },
     // ── Wrap-up ────────────────────────────────────────────
-    { title: 'Recap — Lists, Strings & Maps', content: <Slide26Recap /> },
-    { title: 'What’s Next — Control Flow', content: <Slide27Outlook /> },
+    { title: 'Recap — Lists, Strings & Maps', content: <Slide25Recap /> },
+    { title: 'What’s Next — Control Flow', content: <Slide26Outlook /> },
   ],
 }

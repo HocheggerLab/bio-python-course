@@ -16,19 +16,19 @@ import { Slide11Elif } from './Slide11Elif'
 import { Slide12DecisionsInLoop } from './Slide12DecisionsInLoop'
 import { Slide13ProgramFlow } from './Slide13ProgramFlow'
 import { Slide14LoopsForDictionaries } from './Slide14LoopsForDictionaries'
-import { Slide14TIYReadingFrame } from './Slide14TIYReadingFrame'
+import { Slide15TIYReadingFrame } from './Slide15TIYReadingFrame'
 // Part 3 — strings, range, and the translation capstone
-import { Slide15StringRecap } from './Slide15StringRecap'
-import { Slide16Range } from './Slide16Range'
-import { Slide17CarvingCodons } from './Slide17CarvingCodons'
-import { Slide18BuildingProtein } from './Slide18BuildingProtein'
-import { Slide19StopAndGo } from './Slide19StopAndGo'
-import { Slide21TIYTwoFrames } from './Slide21TIYTwoFrames'
+import { Slide16StringRecap } from './Slide16StringRecap'
+import { Slide17Range } from './Slide17Range'
+import { Slide18CarvingCodons } from './Slide18CarvingCodons'
+import { Slide19BuildingProtein } from './Slide19BuildingProtein'
+import { Slide20StopAndGo } from './Slide20StopAndGo'
+import { Slide22TIYTwoFrames } from './Slide22TIYTwoFrames'
 // Finale
-import { Slide20Finale } from './Slide20Finale'
+import { Slide21Finale } from './Slide21Finale'
 // Recap & outlook
-import { Slide22Recap } from './Slide22Recap'
-import { Slide23Outlook } from './Slide23Outlook'
+import { Slide23Recap } from './Slide23Recap'
+import { Slide24Outlook } from './Slide24Outlook'
 
 export const lecture3Data: LectureData = {
   id: 'lecture-3',
@@ -51,18 +51,18 @@ export const lecture3Data: LectureData = {
     { title: 'Decisions Inside a Loop', content: <Slide12DecisionsInLoop /> },
     { title: 'The Program as a Flowchart', content: <Slide13ProgramFlow /> },
     { title: 'Looping Through a Dictionary', content: <Slide14LoopsForDictionaries /> },
-    { title: 'TIY — Ready to Translate?', content: <Slide14TIYReadingFrame /> },
+    { title: 'TIY — Ready to Translate?', content: <Slide15TIYReadingFrame /> },
     // ── Part 3: strings → range → translation capstone ─────
-    { title: 'A String Is a Sequence — Recap', content: <Slide15StringRecap /> },
-    { title: 'Why We Need range()', content: <Slide16Range /> },
-    { title: 'Carving Out Codons', content: <Slide17CarvingCodons /> },
-    { title: 'Building the Protein', content: <Slide18BuildingProtein /> },
-    { title: 'Stop and Go — break', content: <Slide19StopAndGo /> },
+    { title: 'A String Is a Sequence — Recap', content: <Slide16StringRecap /> },
+    { title: 'Why We Need range()', content: <Slide17Range /> },
+    { title: 'Carving Out Codons', content: <Slide18CarvingCodons /> },
+    { title: 'Building the Protein', content: <Slide19BuildingProtein /> },
+    { title: 'Stop and Go — break', content: <Slide20StopAndGo /> },
     // ── Finale: phiX174 overlapping ORFs — reveal, then build it ──
-    { title: 'Two Proteins, One Sequence', content: <Slide20Finale /> },
-    { title: 'TIY — Two Frames, Two Proteins', content: <Slide21TIYTwoFrames /> },
+    { title: 'Two Proteins, One Sequence', content: <Slide21Finale /> },
+    { title: 'TIY — Two Frames, Two Proteins', content: <Slide22TIYTwoFrames /> },
     // ── Recap & outlook ────────────────────────────────────
-    { title: 'Recap — Session 3', content: <Slide22Recap /> },
-    { title: "What's Next — Session 4", content: <Slide23Outlook /> },
+    { title: 'Recap — Session 3', content: <Slide23Recap /> },
+    { title: "What's Next — Session 4", content: <Slide24Outlook /> },
   ],
 }
