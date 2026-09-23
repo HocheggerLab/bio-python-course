@@ -19,12 +19,14 @@ export function Slide21Errors() {
       lead={
         <>
           When Python hits something it can&apos;t do, it stops and prints a{' '}
-          <strong>traceback</strong>. Don&apos;t panic — <strong>read the last line</strong>.
+          <strong>traceback</strong>.
+          
+          <br/><br/>Don&apos;t panic — <strong>read the last line</strong>.
           It names the error type and tells you exactly what went wrong. Every programmer
           reads these all day long.
         </>
       }
-      note={<>Run it — read the last line before anything else:</>}
+      note={<>Run your code — did you get an error? Read the last line of the traceback for the <strong>error type</strong>. Above that, Python tells you <strong>exactly which line</strong> the error occurred on.</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

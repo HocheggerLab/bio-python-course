@@ -16,7 +16,7 @@ export function Slide27Division() {
           </CardHeading>
           <CardBody className="mb-3 md:mb-4">
             Even when the numbers divide evenly. That decimal point is Python keeping your
-            fractions honest — exactly what GC content needs.
+            fractions accurate — exactly what GC content needs.
           </CardBody>
           <pre className="bg-bio-dark/60 rounded-lg p-3 md:p-5 font-mono text-xs md:text-base xl:text-lg text-gray-200 overflow-x-auto">
 {`9 / 3       # 3.0   (a float, not 3!)
@@ -37,7 +37,7 @@ gc_frac  = gc_count / length    # 0.5625`}
           </CardBody>
           <pre className="bg-bio-dark/60 rounded-lg p-3 md:p-5 font-mono text-xs md:text-base xl:text-lg text-gray-200 overflow-x-auto">
 {`gc_frac * 100              # 56.25
-round(gc_frac * 100, 1)    # 56.2  (1 decimal place)`}
+round(gc_frac * 100, 1)    # 56.2 percent  (1 decimal place)`}
           </pre>
         </SlideCard>
 

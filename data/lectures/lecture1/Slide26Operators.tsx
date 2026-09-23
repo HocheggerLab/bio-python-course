@@ -16,6 +16,13 @@ length  = 16
 gc_count = g_count + c_count   # how many G or C bases
 print(gc_count)
 print(gc_count / length)       # as a fraction of the whole
+
+# Which operators work on strings? Only one other than + works...
+# Make a prediction, then uncomment one line and run again.
+print("Calculation " + "Complete!")
+# print("Calculation " - "Complete!")
+# print("Calculation " * 3)
+# print("Calculation " / 3)
 `
 
 const demoOutput = `9

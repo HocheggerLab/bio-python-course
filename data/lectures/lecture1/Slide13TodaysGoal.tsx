@@ -23,7 +23,7 @@ print(f"Length:     {length} bases")
 print(f"GC content: {gc_pct}%")
 `
 
-export function Slide15TodaysGoal() {
+export function Slide13TodaysGoal() {
   return (
     <SplitSlide
       title={<>Session 1 — <GradientText>What You Will Be Able To Do</GradientText></>}

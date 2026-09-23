@@ -24,18 +24,15 @@ const shortName: Record<string, string> = {
   'project-2': 'Project 2',
 }
 
-export function Slide03Assessment() {
+export function Slide10Assessment() {
   return (
     <ParallelSet
-      title={<>How you&apos;ll be <GradientText>marked</GradientText></>}
+      title={<>How You&apos;ll Be <GradientText>Assessed</GradientText></>}
       lead="Three pieces, each building on the one before — nothing arrives without a run-up."
       columns={3}
       note={
         <span className="flex flex-col items-center gap-1">
-          <span>Both projects hand in a Colab notebook <em>and</em> a GitHub repository — the commits count.</span>
-          <span className="text-gray-400 text-xs md:text-sm">
-            Full details on the website under Assessment; deadlines on Canvas.
-          </span>
+          <span>Full details of the projects will be covered in the <strong>Week 5 Project Practical</strong>. Projects are submitted via Canvas.</span>
         </span>
       }
     >
@@ -54,7 +51,7 @@ export function Slide03Assessment() {
 
           <ul className="flex flex-col gap-1.5 text-gray-300 text-xs md:text-sm xl:text-base">
             <li><span className="text-gray-500">Covers:</span> {a.covers}</li>
-            <li><span className="text-gray-500">Hand in:</span> {a.submission}</li>
+            <li><span className="text-gray-500">Submission:</span> {a.submission}</li>
           </ul>
 
           {a.tbc && (

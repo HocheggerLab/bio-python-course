@@ -1,19 +1,17 @@
 import { LectureData } from '@/data/lectures/types'
-import { Slide01CourseProgramme } from './Slide01CourseProgramme'
-import { Slide02HowCourseWorks } from './Slide02HowCourseWorks'
-import { Slide03Assessment } from './Slide03Assessment'
-import { Slide04Resources } from './Slide04Resources'
-import { Slide05HowToLearn } from './Slide05HowToLearn'
-import { Slide06ResponsibleAI } from './Slide06ResponsibleAI'
-import { Slide07WhyProgramming } from './Slide07WhyProgramming'
-import { Slide08WhyPython } from './Slide08WhyPython'
-import { Slide09StoryOfPython } from './Slide09StoryOfPython'
-import { Slide10StudyResources } from './Slide10StudyResources'
-import { Slide11Roadmap } from './Slide11Roadmap'
-import { Slide12Roadmap2 } from './Slide12Roadmap2'
-import { Slide13CourseImprovements } from './Slide13CourseImprovements'
-import { Slide15TodaysGoal } from './Slide15TodaysGoal'
-import { Slide14HowWeWork } from './Slide14HowWeWork'
+import { Slide01WhyProgramming } from './Slide01WhyProgramming'
+import { Slide02WhyPython } from './Slide02WhyPython'
+import { Slide03StoryOfPython } from './Slide03StoryOfPython'
+import { Slide04HowToLearn } from './Slide04HowToLearn'
+import { Slide05ResponsibleAI } from './Slide05ResponsibleAI'
+import { Slide06HowCourseWorks } from './Slide06HowCourseWorks'
+import { Slide07Resources } from './Slide07Resources'
+import { Slide08Roadmap } from './Slide08Roadmap'
+import { Slide09Roadmap2 } from './Slide09Roadmap2'
+import { Slide10Assessment } from './Slide10Assessment'
+import { Slide11CourseImprovements } from './Slide11CourseImprovements'
+import { Slide12HowWeWork } from './Slide12HowWeWork'
+import { Slide13TodaysGoal } from './Slide13TodaysGoal'
 // Block 1 — Variables, print, built-ins, errors
 import { Slide16Variables } from './Slide16Variables'
 import { Slide17NamingVariables } from './Slide17NamingVariables'
@@ -30,7 +28,6 @@ import { Slide26Operators } from './Slide26Operators'
 import { Slide27Division } from './Slide27Division'
 import { Slide28CountMethod } from './Slide28CountMethod'
 import { Slide29FinalDemo } from './Slide29FinalDemo'
-import { Slide30TIYSpikeTrain } from './Slide30TIYSpikeTrain'
 // Closing poll block — sits before the recap, so an overrun eats the summary
 // (which is on the website anyway) rather than the only feedback we get.
 import { Slide31PollBlockOpener } from './Slide31PollBlockOpener'
@@ -45,21 +42,19 @@ export const lecture1Data: LectureData = {
   title: 'Data Types, Variables and Basic Operations',
   slides: [
     // ── Intro ──────────────────────────────────────────────
-    { title: 'Course Programme', content: <Slide01CourseProgramme /> },
-    { title: 'How the Course Works', content: <Slide02HowCourseWorks /> },
-    { title: 'Assessment & Exams', content: <Slide03Assessment /> },
-    { title: 'Your Main Resources', content: <Slide04Resources /> },
-    { title: 'How to Learn Programming', content: <Slide05HowToLearn /> },
-    { title: 'Using AI Responsibly', content: <Slide06ResponsibleAI /> },
-    { title: 'Why Should I Learn Programming?', content: <Slide07WhyProgramming /> },
-    { title: 'Why Python?', content: <Slide08WhyPython /> },
-    { title: 'The Story of Python', content: <Slide09StoryOfPython /> },
-    { title: 'How You’ll Study Python', content: <Slide10StudyResources /> },
-    { title: 'Our Roadmap', content: <Slide11Roadmap /> },
-    { title: 'Roadmap — Data Science', content: <Slide12Roadmap2 /> },
-    { title: 'Improving This Module', content: <Slide13CourseImprovements /> },
-    { title: "How We'll Work With Python", content: <Slide14HowWeWork /> },
-    { title: "Session 1 — Today's Goal", content: <Slide15TodaysGoal /> },
+    { title: 'Why Should I Learn Programming?', content: <Slide01WhyProgramming /> },
+    { title: 'Why Python?', content: <Slide02WhyPython /> },
+    { title: 'The Story of Python', content: <Slide03StoryOfPython /> },  
+    { title: 'How to Learn Programming', content: <Slide04HowToLearn /> },
+    { title: 'Using AI Responsibly', content: <Slide05ResponsibleAI /> },      
+    { title: 'How the Course Works', content: <Slide06HowCourseWorks /> },
+    { title: 'Your Main Resources', content: <Slide07Resources /> },
+    { title: 'Our Roadmap', content: <Slide08Roadmap /> },
+    { title: 'Roadmap — Data Science', content: <Slide09Roadmap2 /> },
+    { title: 'Assessment & Exams', content: <Slide10Assessment /> },
+    { title: 'Improving This Module', content: <Slide11CourseImprovements /> },    
+    { title: "How We'll Work With Python", content: <Slide12HowWeWork /> },
+    { title: "Session 1 — Today's Goal", content: <Slide13TodaysGoal /> },
     // ── Block 1: Variables · print · built-ins · errors ────
     { title: 'Variables', content: <Slide16Variables /> },
     { title: 'Naming Variables', content: <Slide17NamingVariables /> },
@@ -76,7 +71,6 @@ export const lecture1Data: LectureData = {
     { title: 'Division & Decimals', content: <Slide27Division /> },
     { title: 'Counting Characters — .count()', content: <Slide28CountMethod /> },
     { title: "Demo — Claudia's first report", content: <Slide29FinalDemo /> },
-    { title: 'TIY — Spike train', content: <Slide30TIYSpikeTrain /> },
     // ── Closing poll block ────────────────────────────────
     { title: 'What stuck?', content: <Slide31PollBlockOpener /> },
     { title: 'Question 1 — f-strings', content: <Slide32PollQ1 /> },

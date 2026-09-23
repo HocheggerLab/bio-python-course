@@ -38,7 +38,7 @@ function CardSectionHeader({
 
 // ─────────────────────────────────────────────────────────────────────
 
-export function Slide14HowWeWork() {
+export function Slide12HowWeWork() {
   return (
     <ParallelSet
       title={<>How We&apos;ll Work With <GradientText>Python</GradientText></>}

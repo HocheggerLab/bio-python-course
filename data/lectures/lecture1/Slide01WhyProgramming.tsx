@@ -1,7 +1,7 @@
 import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
 import { SlideCard, CardHeading, CardBody } from '@/components/slides/SlideCard'
 
-export function Slide07WhyProgramming() {
+export function Slide01WhyProgramming() {
   return (
     <>
       <SlideTitle>

@@ -8,8 +8,14 @@ print(type(16))
 print(type(0.5625))
 print(type(True))
 
-# A gotcha: quotes make it text, even if it looks like a number
+# A gotcha: quotes make it a string, even if it looks like a number
 print(type("16"))
+
+# But we can change a string into a whole number (int) or a decimal (float)
+# Essential if we want to do calculations with these values
+print(type(int("16")))
+print(int("16") + int("5"))
+print("16" + "5")  # strings get combined, not added numerically
 `
 
 const demoOutput = `<class 'str'>

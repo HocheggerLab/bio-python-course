@@ -23,7 +23,8 @@ export function Slide18Print() {
         <>
           Hand any value to <span className="font-mono">print()</span> and Python displays it.
           Pass several values separated by commas and it prints them on one line, with spaces
-          in between. This is how you check a variable holds what you expect.
+          in between.
+          <br/><br/>This is how you check a variable holds what you expect.
         </>
       }
       note={<>Run it, then try printing your own values:</>}

@@ -9,9 +9,10 @@ const sessionTwo = [
 ]
 
 const homework = [
-  'Open the Session 1 Colab notebook',
-  'Re-do today’s exercises in your own words',
-  'Try the calculator on a sequence you choose',
+  'Review the Lecture 1 slides',
+  'Play around with today’s code exercises',
+  'Try the GC calculator on a sequence of your choice',
+  'Complete the practice quiz on Canvas',
 ]
 
 export function Slide36Outlook() {
@@ -25,7 +26,7 @@ export function Slide36Outlook() {
 
         <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">
-            Session 2 — from one sequence to many
+            Lecture 2 — from one sequence to many
           </CardHeading>
           <CardBody className="mb-3 md:mb-4">
             Today you analysed <strong>one</strong> sequence. But Claudia has a whole{' '}
@@ -35,12 +36,12 @@ export function Slide36Outlook() {
           <CardList items={sessionTwo} bullet="▸" color="blue" />
         </SlideCard>
 
-        <SlideCard color="yellow" layout="start" padding="compact" className="border-l-4">
+      <SlideCard color="yellow" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="yellow" className="mb-2 md:mb-3">
-            Between now and then
+            Before your workshop next week
           </CardHeading>
           <CardBody className="mb-3 md:mb-4">
-            Coding is a muscle — it grows by use. Half an hour of practice between sessions is
+            💪 Coding is a muscle — it grows by use. Half an hour of practice between sessions is
             worth more than re-watching the lecture.
           </CardBody>
           <CardList items={homework} bullet="→" color="yellow" />

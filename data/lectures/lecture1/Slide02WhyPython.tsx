@@ -31,7 +31,7 @@ function Stars({ n }: { n: number }) {
   )
 }
 
-export function Slide08WhyPython() {
+export function Slide02WhyPython() {
   return (
     <>
       <SlideTitle>

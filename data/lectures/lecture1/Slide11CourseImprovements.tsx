@@ -32,11 +32,11 @@ const methods = [
   { icon: '👨‍🏫', text: "In person / by email" },
 ]
 
-export function Slide13CourseImprovements() {
+export function Slide11CourseImprovements() {
   return (
     <>
       <SlideTitle>
-        Improving <GradientText>this module</GradientText>
+        Improving <GradientText>this Module</GradientText>
       </SlideTitle>
 
       <div className="flex flex-col gap-3 md:gap-4 xl:gap-5 mt-3 md:mt-4">
@@ -44,24 +44,24 @@ export function Slide13CourseImprovements() {
         {/* Three sub-cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 xl:gap-6">
           <SlideCard color="yellow" layout="start" padding="compact">
-            <span className="text-xl md:text-3xl xl:text-4xl">💬</span>
             <CardHeading size="sm" color="yellow" className="mb-2 md:mb-3">
+              <span className="text-xl md:text-3xl xl:text-4xl">💬</span>
               Last year's students said
             </CardHeading>
             <CardList items={feedback} bullet="→" color="yellow" className="gap-1.5 md:gap-2 xl:gap-3" />
           </SlideCard>
 
           <SlideCard color="green" layout="start" padding="compact">
-            <span className="text-xl md:text-3xl xl:text-4xl">🛠</span>
             <CardHeading size="sm" color="green" className="mb-2 md:mb-3">
+              <span className="text-xl md:text-3xl xl:text-4xl">🛠️</span>
               We did
             </CardHeading>
             <CardList items={changes} bullet="✓" color="green" className="gap-1.5 md:gap-2 xl:gap-3" />
           </SlideCard>
 
           <SlideCard color="purple" layout="start" padding="compact">
-            <span className="text-xl md:text-3xl xl:text-4xl">✨</span>
             <CardHeading size="sm" color="purple" className="mb-2 md:mb-3">
+              <span className="text-xl md:text-3xl xl:text-4xl">✨</span>
               This year's module (we hope)
             </CardHeading>
             <CardList items={highlights} bullet="⭐" color="purple" className="gap-1.5 md:gap-2 xl:gap-3" />
@@ -71,20 +71,20 @@ export function Slide13CourseImprovements() {
         {/* How we collect feedback — one row, so the three cards above keep
             the height they need and the whole slide still fits a projector. */}
         <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <span className="text-xl md:text-3xl">🗣</span>
-            <CardHeading size="sm" color="blue">How to give us feedback</CardHeading>
-            <p className="text-sm md:text-lg text-gray-300">
+            <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">
+              <span className="text-xl md:text-3xl xl:text-4xl">📣</span>
+              How to give us feedback
+            </CardHeading>
+            <CardBody className="text-sm md:text-base xl:text-lg">
               We value <span className="text-bio-blue font-semibold">your feedback</span> and do
               our best to <span className="text-bio-blue font-semibold">act on it!</span>
-            </p>
-          </div>
-
+            </CardBody>
+          
           <div className="mt-3 md:mt-4 flex flex-wrap items-center gap-3 md:gap-6">
             {methods.map((a) => (
               <div key={a.icon} className="flex items-center gap-2 md:gap-3">
                 <span className="text-xl md:text-3xl">{a.icon}</span>
-                <p className="text-xs md:text-base text-gray-300 leading-snug">{a.text}</p>
+                <p className="text-xl md:text-xl leading-snug">{a.text}</p>
               </div>
             ))}
           </div>

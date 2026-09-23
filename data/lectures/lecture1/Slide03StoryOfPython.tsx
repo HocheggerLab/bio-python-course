@@ -34,7 +34,7 @@ const events = [
   },
 ]
 
-export function Slide09StoryOfPython() {
+export function Slide03StoryOfPython() {
   return (
     <>
       <SlideTitle>
