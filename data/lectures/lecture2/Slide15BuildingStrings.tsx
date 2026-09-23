@@ -29,7 +29,7 @@ export function Slide15BuildingStrings() {
           <CardBody className="text-sm md:text-base xl:text-lg">
             The same operators you used on numbers and lists also build strings —{' '}
             <span className="font-mono">primer + seq</span> joins them, and{' '}
-            <span className="font-mono">&quot;N&quot; * 5</span> repeats.
+            <span className="font-mono">&quot;N&quot; * 5</span> repeats the string.
           </CardBody>
         </SlideCard>
         <SlideCard color="red" layout="start" padding="compact" className="border-l-4">
@@ -45,7 +45,8 @@ export function Slide15BuildingStrings() {
         </SlideCard>
       </>
       }
-      note={<>Run it — then uncomment the last line to meet the TypeError:</>}
+      note={<>Run it — then uncomment the last line to see the TypeError{' '}
+              when you try to edit one character of the string in place.</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

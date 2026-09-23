@@ -26,10 +26,10 @@ export function Slide06GrowingList() {
       <>
         <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">
-            <span className="font-mono">.append()</span> — add one to the end
+            <span className="font-mono">.append()</span> — add one item to the list
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
-            The most common way a list grows: build it up one item at a time. This is exactly
+            The most common way a list grows: by adding items one-by-one to the end. This is exactly
             how we&apos;ll collect results inside a loop next session.
           </CardBody>
         </SlideCard>
@@ -38,13 +38,13 @@ export function Slide06GrowingList() {
             <span className="font-mono">+</span> — join two lists
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
-            The same <span className="font-mono">+</span> you used to add numbers also joins
-            lists end to end — just like it will join strings.
+            The same <span className="font-mono">+</span> you used to add numbers
+            also joins lists end to end — just like it joins two strings together.
           </CardBody>
         </SlideCard>
       </>
       }
-      note={<>Run it, then append another gene before joining:</>}
+      note={<>Run it, then try appending another gene before joining the lists.</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

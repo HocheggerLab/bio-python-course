@@ -3,10 +3,10 @@ import { SlideCard, CardHeading, CardBody } from '@/components/slides/SlideCard'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
 const methods = [
-  { fn: '.upper() / .lower()', what: 'Normalise case — "atg" → "ATG"' },
-  { fn: '.find("GAATTC")',     what: 'Position of a motif, or -1 if absent' },
-  { fn: '.startswith("ATG")',  what: 'Does it begin with a start codon? → True/False' },
-  { fn: '.count("G")',         what: 'How many times (from Session 1)' },
+  { fn: '.upper() / .lower()', what: 'Set to upper / lower case, e.g. "atg" → "ATG"' },
+  { fn: '.find("GAATTC")',     what: 'Find the position of a motif, or -1 if absent' },
+  { fn: '.startswith("ATG")',  what: 'Does the string begin with "ATG"? → True/False' },
+  { fn: '.count("G")',         what: 'How many "G" in the string? (from Lecture 1)' },
 ]
 
 const demoCode = `seq = "atgcgtgaattc"   # messy lower-case data
@@ -32,13 +32,13 @@ export function Slide16StringMethods() {
         <div className="flex flex-col gap-3 md:gap-4 min-h-0">
           <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
             <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">
-              The <span className="font-mono">value.method()</span> pattern
+              The <span className="font-mono">string.method()</span> pattern
             </CardHeading>
             <CardBody>
               Strings carry their own tools, called with a dot:{' '}
               <span className="font-mono text-bio-blue">seq.upper()</span>. You met{' '}
               <span className="font-mono">.count()</span> last week — here are the ones you&apos;ll
-              reach for most.
+              use the most.
             </CardBody>
           </SlideCard>
 
@@ -57,14 +57,20 @@ export function Slide16StringMethods() {
         </div>
 
         <div className="flex flex-col gap-3 md:gap-4 min-h-0">
-          <p className="text-gray-300 text-xs md:text-sm xl:text-base italic">
-            Run it — try <span className="font-mono not-italic">.find(&quot;TTT&quot;)</span> on a
-            motif that isn&apos;t there:
-          </p>
+          <SlideCard color="purple" layout="start" padding="compact" className="border-l-4">
+            <CardHeading size="sm" color="purple" className="mb-2 md:mb-3">
+              Chaining methods
+            </CardHeading>
+            <CardBody>
+              Methods can be chained together — the output of one becomes the input of the next.{' '}
+              <span className="font-mono text-bio-purple">seq.upper().find("GAATTC")</span> makes the string uppercase, then searches for the EcoRI motif.
+            </CardBody>
+          </SlideCard>
+
           <div className="flex-1 min-h-0 overflow-hidden rounded-xl">
             <LazyPythonRunner
               initialCode={demoCode}
-              height="247px"
+              height="197px"
               description="Live demo — string methods"
               staticOutput={demoOutput}
             />
@@ -72,6 +78,11 @@ export function Slide16StringMethods() {
         </div>
 
       </div>
+
+      <p className="text-center mt-4 text-gray-300 text-xs md:text-sm xl:text-base italic">
+            Run it — then try <span className="font-mono not-italic">.find(&quot;TTT&quot;)</span> to look for a
+            motif that isn&apos;t there. How many "AT"s are in the sequence?
+      </p>
     </>
   )
 }

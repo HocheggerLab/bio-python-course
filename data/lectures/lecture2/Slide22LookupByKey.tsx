@@ -13,18 +13,18 @@ print(codon_table["TAA"])
 const demoOutput = `Met
 Stop`
 
-export function Slide21LookupByKey() {
+export function Slide22LookupByKey() {
   return (
     <ConceptSlide
-      title={<>Looking Up by <GradientText>Key</GradientText></>}
+      title={<>Looking Up a <GradientText>Value</GradientText> by its <GradientText>Key</GradientText></>}
       lead={
         <>
-          The same <span className="font-mono">[ ]</span> you used on lists and strings — but
+          The same <span className="font-mono">[ ]</span> you used to reach into lists and strings — but
           instead of a position you give the <strong>key</strong>, and Python hands back its{' '}
           <strong>value</strong>. One step, instant answer.
         </>
       }
-      note={<>Run it — then look up <span className="font-mono not-italic">&quot;GGT&quot;</span>:</>}
+      note={<>Run it — then look up <span className="font-mono not-italic">&quot;GGT&quot;</span>.</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

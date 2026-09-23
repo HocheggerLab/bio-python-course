@@ -16,7 +16,7 @@ print(codon_table.get("ATG", "?"))   # found
 const demoOutput = `?
 Met`
 
-export function Slide22KeyErrorGet() {
+export function Slide23KeyErrorGet() {
   return (
     <ConceptSlide
       title={<>When the Key Isn&apos;t There — <GradientText><span className="font-mono">.get()</span></GradientText></>}
@@ -44,7 +44,7 @@ export function Slide22KeyErrorGet() {
         </SlideCard>
       </>
       }
-      note={<>Run it — then uncomment the <span className="font-mono not-italic">[&quot;TTT&quot;]</span> line to meet the KeyError:</>}
+      note={<>Run it — then uncomment the <span className="font-mono not-italic">[&quot;TTT&quot;]</span> line to meet the KeyError.</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

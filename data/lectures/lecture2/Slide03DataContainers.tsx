@@ -19,8 +19,8 @@ const containers = [
   {
     icon: '🗺️',
     name: 'Dictionaries',
-    example: '{"ATG": "Met"}',
-    note: 'A lookup table — map each codon to its amino acid.',
+    example: 'aa_lookup["ATG"] → "Met"',
+    note: 'A lookup table — maps each codon to its amino acid.',
     color: 'yellow' as const,
   },
 ]

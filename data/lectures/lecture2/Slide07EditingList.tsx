@@ -20,7 +20,7 @@ const demoOutput = `['BRCA1', 'KRAS', 'EGFR', 'MYC']
 export function Slide07EditingList() {
   return (
     <ConceptSlide
-      title={<>Editing a List — <GradientText>replace &amp; remove</GradientText></>}
+      title={<>Editing a List — <GradientText>replace &amp; delete</GradientText></>}
       points={
       <>
         <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
@@ -35,7 +35,7 @@ export function Slide07EditingList() {
         </SlideCard>
         <SlideCard color="yellow" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="yellow" className="mb-2 md:mb-3">
-            <span className="font-mono">del</span> — remove by position
+            <span className="font-mono">del</span> — delete by position
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
             <span className="font-mono">del genes[0]</span> drops the first item; everything
@@ -44,7 +44,7 @@ export function Slide07EditingList() {
         </SlideCard>
       </>
       }
-      note={<>Run it — watch the positions shift after <span className="font-mono not-italic">del</span>:</>}
+      note={<>Run it — watch the positions shift after <span className="font-mono not-italic">del</span>. What happens if you <span className="font-mono not-italic">del genes[-1]</span> and then print the list?</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

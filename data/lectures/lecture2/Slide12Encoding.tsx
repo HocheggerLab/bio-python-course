@@ -21,7 +21,7 @@ export function Slide12Encoding() {
         <div className="flex flex-col gap-3 md:gap-4 min-h-0">
           <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
             <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">
-              Every character is stored as bits
+              Every character in a string is stored as bits
             </CardHeading>
             <CardBody className="text-xs md:text-sm xl:text-base">
               When text is saved or sent, each character is encoded as a pattern of bits. The
@@ -53,7 +53,7 @@ export function Slide12Encoding() {
             <CardBody className="text-xs md:text-sm xl:text-base">
               With just four options, one base could be packed into{' '}
               <span className="font-mono text-bio-yellow">2 bits</span> (A=00, T=01, G=10, C=11).
-              But as an ordinary text character it takes <strong>8</strong> — four times bigger
+              But as an ordinary text character it takes <strong>8 bits</strong> — four times bigger
               than it needs to be. Across a 3-billion-base genome, that waste adds up.
             </CardBody>
           </SlideCard>
@@ -64,7 +64,7 @@ export function Slide12Encoding() {
             </CardHeading>
             <CardBody className="text-xs md:text-sm xl:text-base">
               For squeezing whole genomes into memory, specialised tools pack{' '}
-              <strong>4 bases per byte</strong> with bit operations. But for learning — and for
+              <strong>4 bases into each byte</strong> with bit operations. But for learning — and for
               almost every working biologist — a plain, readable{' '}
               <span className="font-mono text-bio-green">ATGC</span> string is exactly the right
               tool. Clarity beats cleverness.

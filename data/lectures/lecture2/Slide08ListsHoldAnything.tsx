@@ -4,7 +4,8 @@ import { ConceptSlide } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
 const demoCode = `# A list can mix types: text, numbers, booleans
-record = ["BRCA1", 1863, 0.62, True]
+# A gene record:   name,   length (bp),  GC fraction,  QC flag
+record =         ["BRCA1",    1863,          0.62,      True]
 print(record)
 
 # A list can even hold other lists — a small table
@@ -32,8 +33,8 @@ export function Slide08ListsHoldAnything() {
             Any type, mixed freely
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
-            A list doesn&apos;t care what it holds — strings, ints, floats, booleans, all in the
-            same list. Often a single record about one gene: name, length, GC fraction, a QC
+            A list doesn&apos;t care what it holds — strings, ints, floats, booleans — it can <strong>hold them all</strong>.
+            <br/>We could use one to hold a gene record: its name, length, GC fraction, and a Quality Control (QC)
             flag.
           </CardBody>
         </SlideCard>
@@ -49,7 +50,7 @@ export function Slide08ListsHoldAnything() {
         </SlideCard>
       </>
       }
-      note={<>Run it — try reaching <span className="font-mono not-italic">plate[2][1]</span>:</>}
+      note={<>Run it, then try reaching into the table with <span className="font-mono not-italic">plate[2][1]</span> — which row and column does it print?</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

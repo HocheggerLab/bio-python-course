@@ -46,7 +46,7 @@ export function Slide09NumberLists() {
         </SlideCard>
       </>
       }
-      note={<>Run it — then add a sixth reading and watch the mean shift:</>}
+      note={<>Run it — then add a sixth reading and watch the mean shift.</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

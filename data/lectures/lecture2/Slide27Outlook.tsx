@@ -14,7 +14,7 @@ const practice = [
   'Half an hour of practice beats re-watching the lecture',
 ]
 
-export function Slide26Outlook() {
+export function Slide27Outlook() {
   return (
     <>
       <SlideTitle>
@@ -25,7 +25,7 @@ export function Slide26Outlook() {
 
         <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">
-            Session 3 — control flow
+            Lecture 3 — control flow
           </CardHeading>
           <CardBody className="mb-3 md:mb-4">
             Today you translated <strong>three</strong> codons by hand. But a real gene has{' '}

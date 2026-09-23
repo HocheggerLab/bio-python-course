@@ -3,54 +3,57 @@ import { SlideCard, CardHeading, CardBody } from '@/components/slides/SlideCard'
 import { ConceptSlide } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
-const demoCode = `# A dictionary maps a KEY to a VALUE
+const demoCode = `# Our codon map — each ITEM contains a KEY and a VALUE
 codon_table = {
     "ATG": "Met",
     "GGT": "Gly",
     "TAA": "Stop",
 }
 
-print(codon_table)
-print(len(codon_table))   # how many entries in the dictionary?
+print(codon_table.keys())     # what are the keys?
+print(codon_table.values())   # what are the values?
+print(codon_table.items())    # what are the key-value pairs?
 `
 
 const demoOutput = `{'ATG': 'Met', 'GGT': 'Gly', 'TAA': 'Stop'}
 3`
 
-export function Slide19CodonTable() {
+export function Slide21DictKeysAndValues() {
   return (
     <ConceptSlide
-      title={<>Dictionaries — <GradientText>a lookup table</GradientText></>}
+      title={<>What&apos;s in my dictionary? <GradientText>Keys, values & items</GradientText></>}
       points={
       <>
         <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="blue" className="mb-2 md:mb-3">
-            Key → value pairs
+            Keys and values
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
-            A list finds things by <strong>position</strong> (0, 1, 2). A dictionary finds each <strong>value</strong>{' '}
-            it holds via a <strong>paired key</strong> — here, a codon. Write the pairs in{' '}
-            <span className="font-mono text-bio-blue">{'{ }'}</span> as{' '}
-            <span className="font-mono text-bio-blue">key: value</span>.
+            What if we want to look up just the <strong>keys</strong> or the {' '}
+            <strong>values</strong> in our codon table? We can use the {' '}
+            <span className="font-mono">.keys()</span> and {' '}
+            <span className="font-mono">.values()</span> methods to do that.
           </CardBody>
         </SlideCard>
         <SlideCard color="green" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="green" className="mb-2 md:mb-3">
-            The codon table, made real
+            Items: Key–value pairs
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
-            The genetic code <em>is</em> a lookup table: each three-base codon maps to one amino
-            acid. That&apos;s a dictionary, exactly.
+            Sometimes we want to see both the key and the value together. The {' '}
+            <span className="font-mono">.items()</span> method returns all of the {' '}
+            <strong>key–value pairs</strong> in the dictionary. We'll be using it {' '}
+            in the next lecture.
           </CardBody>
         </SlideCard>
       </>
       }
-      note={<>Run it — then add a fourth codon of your own (you can make it up or find one online!).</>}
+      note={<>Remember, each item in a dictionary maps a key to a value.</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}
         height="205px"
-        description="Live demo — building a dictionary"
+        description="Live demo — keys, values & items"
         staticOutput={demoOutput}
       />
     </ConceptSlide>

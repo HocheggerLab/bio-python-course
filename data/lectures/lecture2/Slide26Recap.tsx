@@ -22,7 +22,7 @@ const dicts = [
   'Add / update by key; test with in',
 ]
 
-export function Slide25Recap() {
+export function Slide26Recap() {
   return (
     <>
       <SlideTitle>
