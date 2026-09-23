@@ -3,7 +3,7 @@ import { SlideCard, CardHeading, CardBody } from '@/components/slides/SlideCard'
 import { ConceptSlide } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
-const demoCode = `genomes_bp = [48502, 29903, 9719, 3182]
+const demoCode = `genomes_bp = [48_502, 29_903, 9_719, 3_182]
 
 # Build a NEW list: convert each size to kilobases
 genomes_kb = []                 # 1. start empty
@@ -27,7 +27,7 @@ export function Slide07BuildList() {
             Empty list → loop → append
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
-            An accumulator that&apos;s a <strong>list</strong> instead of a number: start with{' '}
+            Set up an accumulator that&apos;s a <strong>list</strong> instead of a number: start with{' '}
             <span className="font-mono">[ ]</span>, take each item from the old list, change it,
             and <span className="font-mono">.append()</span> it to the new one.
           </CardBody>
@@ -39,12 +39,13 @@ export function Slide07BuildList() {
           <CardBody className="text-sm md:text-base xl:text-lg">
             <em>Take each item → transform it → collect the results.</em> Translating a gene is{' '}
             <strong>exactly</strong> this shape: take each codon, look up its amino acid, collect
-            the protein. Hold onto it — we build to it today.
+            the protein. Hold onto this — we're heading there.
           </CardBody>
         </SlideCard>
       </>
       }
-      note={<>One list goes in, a new transformed list comes out:</>}
+      note={<>One list goes in, a new transformed list comes out — this is a pattern you&apos;ll {' '}
+              see all the time in data analysis code.</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

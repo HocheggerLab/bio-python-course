@@ -10,9 +10,9 @@ import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 const POLL_URL = 'https://pollev.com/your-handle'
 
 const tasks: Step[] = [
-  { label: 'Loop through every sequence in the list', accent: 'yellow' },
-  { label: 'Test each: is its length a whole number of codons? (len(seq) % 3 == 0)', accent: 'yellow' },
-  { label: 'If it passes, add it to the ready list with .append()', accent: 'yellow' },
+  { label: 'Loop through every sequence in the dictionary (using sequences.items())', accent: 'yellow' },
+  { label: 'Test the sequence (value): is its length a whole number of codons? (len(seq) % 3 == 0)', accent: 'yellow' },
+  { label: 'If it passes, add the virus to the ready list with .append()', accent: 'yellow' },
   { label: 'Submit how many are ready — the length of the new list', accent: 'yellow' },
 ]
 
@@ -20,14 +20,14 @@ const tasks: Step[] = [
 const initialCode = `# Real viral sequence fragments — we fetched these for you.
 # To TRANSLATE a sequence it must be a whole number of codons
 # (length divisible by 3 — a complete reading frame). Keep only those.
-sequences = [
-    "ATTAAAGGTTTATACCTTCCCAGGTAACAA",  # SARS-CoV-2  (30 nt)
-    "GGTCTCTCTGGTTAGACCAGATCT",        # HIV-1  (24 nt)
-    "AATTCCACAACCTTCCACCA",            # hepatitis B  (20 nt)
-    "ACCAAACAAAGTTGGGTA",              # measles  (18 nt)
-    "GGGCGGCGACCTCGCG",                # phage λ  (16 nt)
-    "GAGTTTTATCGCTTCCATGAC",           # phiX174  (21 nt)
-]
+sequences = {
+    "SARS-CoV-2":   "ATTAAAGGTTTATACCTTCCCAGGTAACAA",
+    "HIV-1":        "GGTCTCTCTGGTTAGACCAGATCT",
+    "hepatitis B":  "AATTCCACAACCTTCCACCA",
+    "measles":      "ACCAAACAAAGTTGGGTA",
+    "phage λ":      "GGGCGGCGACCTCGCG",
+    "phiX174":      "GAGTTTTATCGCTTCCATGAC"
+}
 
 # Build a list of just the sequences ready to translate
 ready = []
@@ -35,6 +35,7 @@ ready = []
 #   for each sequence, test len(seq) % 3 == 0
 #   if it passes, .append() it to 'ready'
 
+print(ready)
 print(f"{len(ready)} sequences are ready to translate")
 `
 
@@ -53,9 +54,9 @@ export function Slide14TIYReadingFrame() {
       title={<>Try it Yourself — <GradientText variant="yellow">Ready to Translate?</GradientText></>}
       intro={
         <>
-          You&apos;ve been handed real viral fragments. Before any can be translated, keep only
-          those that are a whole number of codons — <strong>loop, test each length, collect the
-          keepers</strong> in a new list. (A real pipeline would translate them next.)
+          You&apos;ve been handed real viral fragments. Before translating them, identify which
+          ones have a whole number of codons — <strong>loop through the dictionary, test each length, and collect the
+          names of the viruses</strong> in a new list. (A real pipeline would translate the sequences next.)
         </>
       }
       steps={tasks}
