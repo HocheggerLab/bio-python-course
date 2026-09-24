@@ -10,9 +10,9 @@ import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 const POLL_URL = 'https://pollev.com/your-handle'
 
 const tasks: Step[] = [
-  { label: 'Loop through every sequence in the dictionary (using sequences.items())', accent: 'yellow' },
-  { label: 'Test the sequence (value): is its length a whole number of codons? (len(seq) % 3 == 0)', accent: 'yellow' },
-  { label: 'If it passes, add the virus to the ready list with .append()', accent: 'yellow' },
+  { label: 'Loop through every name and sequence in the dictionary (using sequences.items())', accent: 'yellow' },
+  { label: 'Test the sequence: is its length a whole number of codons? (len(seq) % 3 == 0)', accent: 'yellow' },
+  { label: 'If it passes, add the virus name to the ready list with .append()', accent: 'yellow' },
   { label: 'Submit how many are ready — the length of the new list', accent: 'yellow' },
 ]
 
@@ -39,12 +39,13 @@ print(ready)
 print(f"{len(ready)} sequences are ready to translate")
 `
 
-const expectedOutput = `4 sequences are ready to translate`
+const expectedOutput = `['SARS-CoV-2', 'HIV-1', 'measles', 'phiX174']
+4 sequences are ready to translate`
 
 const hints = [
-  'Start the loop: “for seq in sequences:”, then indent the lines below it so they run once per sequence.',
+  'Start the loop: “for virus, seq in sequences.items():”, then indent the lines below it so they run once per sequence.',
   'The test: “if len(seq) % 3 == 0:” — the % operator gives the remainder after dividing; a remainder of 0 means the length splits evenly into codons.',
-  'If a sequence passes the test, keep it: “ready.append(seq)” (indented inside the if).',
+  'If a sequence passes the test, keep it: “ready.append(virus)” (indented inside the if).',
   'After the loop, len(ready) is your answer — the print line already shows it. Expected: 4.',
 ]
 
