@@ -50,14 +50,23 @@ function LabSection({
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-        {items.map((lab) => (
-          <Link
+        {items.map((lab) => {
+          /* An unavailable lab is not a link. The card used to point at
+             /labs/N whatever `available` said, so a lab that reads "Coming
+             soon" still opened on click -- the flag only changed the colour. */
+          const Card = lab.available ? Link : 'div'
+          const linkProps = lab.available
+            ? { href: `/labs/${lab.num}` }
+            : { 'aria-disabled': true as const }
+
+          return (
+          <Card
             key={lab.num}
-            href={`/labs/${lab.num}`}
+            {...(linkProps as { href: string })}
             className={`block rounded-2xl border-2 p-5 md:p-6 transition-all duration-300
               ${lab.available
                 ? 'border-bio-blue/30 bg-bio-blue/10 hover:bg-bio-blue/15 hover:-translate-y-1 hover:shadow-xl'
-                : 'border-white/10 bg-white/[0.03] hover:bg-white/[0.06]'}
+                : 'border-white/10 bg-white/[0.03] cursor-not-allowed'}
             `}
           >
             <div className="flex items-center gap-3 mb-3">
@@ -82,8 +91,9 @@ function LabSection({
             >
               {lab.available ? 'Open lab →' : 'Coming soon'}
             </span>
-          </Link>
-        ))}
+          </Card>
+          )
+        })}
       </div>
     </section>
   )

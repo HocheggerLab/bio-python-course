@@ -47,7 +47,7 @@ export default function NotebooksPage() {
                 )}
               </div>
 
-              {lab.notebooks.length === 0 ? (
+              {!lab.available || lab.notebooks.length === 0 ? (
                 <div className="rounded-xl border border-white/10 bg-white/[0.02] px-4 py-5 text-gray-500 text-sm">
                   Notebooks for this lab are still being written.
                 </div>

@@ -54,7 +54,7 @@ export const labNotebooks: LabNotebooks[] = [
   {
     lab: 3,
     labTitle: 'Loops, Logic & VS Code',
-    available: true,
+    available: false,
     notebooks: [
       { path: 'lab03/01_loops_basics.ipynb', title: '01 · Loops — basics', blurb: 'for, range, accumulating a result.' },
       { path: 'lab03/02_loops_advanced_concepts.ipynb', title: '02 · Loops — advanced', blurb: 'Nesting, enumerate, comprehensions.' },
@@ -65,7 +65,7 @@ export const labNotebooks: LabNotebooks[] = [
   {
     lab: 4,
     labTitle: 'Functions, Errors & Files',
-    available: true,
+    available: false,
     notebooks: [
       { path: 'lab04/01_functions_basics.ipynb', title: '01 · Functions — basics', blurb: 'Arguments, return, one job per function.' },
       { path: 'lab04/02_functions_advanced_concepts.ipynb', title: '02 · Functions — advanced', blurb: 'Defaults, docstrings, composing functions.' },
@@ -76,7 +76,7 @@ export const labNotebooks: LabNotebooks[] = [
   {
     lab: 5,
     labTitle: 'Arrays, numpy & Projects',
-    available: true,
+    available: false,
     notebooks: [
       { path: 'lab05/01_arrays_1d_basics.ipynb', title: '01 · Arrays — basics', blurb: 'One neuron, one dimension.' },
       { path: 'lab05/02_arrays_1d_advanced_concepts.ipynb', title: '02 · Arrays — asking questions', blurb: 'Masking, thresholds, finding onsets.' },

@@ -35,7 +35,7 @@ export const pythonBasicsData: Lecture[] = [
   {
     id: 2,
     title: "Lists, Strings and Maps",
-    status: "under-construction",
+    status: "available",
     topics: [
       "Lists: holding a collection of sequences",
       "Strings as sequences: indexing & slicing",
@@ -84,8 +84,6 @@ export const pythonDataData: Lecture[] = [
       "Masking and finding events in a signal",
       "2-D arrays: averaging 254 trials into an answer"
     ],
-    slideUrl: "/lectures/5",
-    labsUrl: "/labs/5",
     type: 'core'
   },
   {
@@ -99,13 +97,12 @@ export const pythonDataData: Lecture[] = [
       "value_counts and the effort trap",
       "groupby — split, add up, combine"
     ],
-    labsUrl: "/labs/6",
     type: 'core'
   },
   {
     id: 7,
     title: "Plotting and Exploratory Data Analysis",
-    status: "coming-soon",
+    status: "under-construction",
     dataset: { emoji: "🧬", field: "Cancer biology", source: "Cancer Dependency Map (DepMap)" },
     topics: [
       "matplotlib and seaborn",
@@ -113,13 +110,12 @@ export const pythonDataData: Lecture[] = [
       "Scatter plots, correlation and statistics",
       "Building a publication-ready figure"
     ],
-    labsUrl: "/labs/7",
     type: 'core'
   },
   {
     id: 8,
     title: "Analysing Images in Python",
-    status: "coming-soon",
+    status: "under-construction",
     dataset: { emoji: "🔬", field: "Cell biology", source: "Fluorescence microscopy — Hochegger Lab, Sussex" },
     topics: [
       "An image is a 2-D array",
@@ -127,7 +123,6 @@ export const pythonDataData: Lecture[] = [
       "Otsu thresholding: finding the nuclei",
       "Counting, measuring, and a cell-cycle profile"
     ],
-    labsUrl: "/labs/8",
     type: 'core'
   }
 ]
