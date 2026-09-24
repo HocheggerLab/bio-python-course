@@ -2,6 +2,7 @@
 
 import { PythonLogo } from '@/components/icons/PythonLogo'
 import { Microscope } from '@/components/icons/Microscope'
+import Link from 'next/link'
 
 export default function Hero() {
 
@@ -26,9 +27,11 @@ export default function Hero() {
             <a href="#python-basics" className="btn-primary text-lg">
               Start Learning →
             </a>
-            <a href="https://youtu.be/-8e-c_Rqvn0" target="_blank" rel="noopener noreferrer" className="btn-secondary text-lg">
+            {/* Last year's intro video; being re-recorded. Point it back at
+                the YouTube URL once the new one is up. */}
+            <Link href="/under-construction" className="btn-secondary text-lg">
               Watch Intro Video
-            </a>
+            </Link>
           </div>
         </div>
 
