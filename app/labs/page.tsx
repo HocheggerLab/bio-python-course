@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { labs } from './_shared/labs'
+import { labs, isLabPublished } from './_shared/labs'
 
 export default function LabsPage() {
   const basics = labs.filter((l) => l.group === 'Python Basics')
@@ -54,8 +54,9 @@ function LabSection({
           /* An unavailable lab is not a link. The card used to point at
              /labs/N whatever `available` said, so a lab that reads "Coming
              soon" still opened on click -- the flag only changed the colour. */
-          const Card = lab.available ? Link : 'div'
-          const linkProps = lab.available
+          const shown = isLabPublished(lab.num)
+          const Card = shown ? Link : 'div'
+          const linkProps = shown
             ? { href: `/labs/${lab.num}` }
             : { 'aria-disabled': true as const }
 
@@ -64,7 +65,7 @@ function LabSection({
             key={lab.num}
             {...(linkProps as { href: string })}
             className={`block rounded-2xl border-2 p-5 md:p-6 transition-all duration-300
-              ${lab.available
+              ${shown
                 ? 'border-bio-blue/30 bg-bio-blue/10 hover:bg-bio-blue/15 hover:-translate-y-1 hover:shadow-xl'
                 : 'border-white/10 bg-white/[0.03] cursor-not-allowed'}
             `}
@@ -72,7 +73,7 @@ function LabSection({
             <div className="flex items-center gap-3 mb-3">
               <span
                 className={`inline-flex items-center justify-center rounded-full font-bold w-10 h-10 text-base
-                  ${lab.available ? 'bg-bio-blue/20 text-bio-blue' : 'bg-white/10 text-white/50'}`}
+                  ${shown ? 'bg-bio-blue/20 text-bio-blue' : 'bg-white/10 text-white/50'}`}
               >
                 {lab.num}
               </span>
@@ -87,9 +88,9 @@ function LabSection({
 
             <span
               className={`inline-block text-xs font-semibold
-                ${lab.available ? 'text-bio-blue' : 'text-white/40'}`}
+                ${shown ? 'text-bio-blue' : 'text-white/40'}`}
             >
-              {lab.available ? 'Open lab →' : 'Coming soon'}
+              {shown ? 'Open lab →' : 'Coming soon'}
             </span>
           </Card>
           )

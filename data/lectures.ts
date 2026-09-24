@@ -1,3 +1,5 @@
+import { showUnpublishedSessions } from '@/lib/visibility'
+
 export interface Lecture {
   id: number
   title: string
@@ -138,6 +140,10 @@ export const lectures: Lecture[] = coreSessionsData
  * out. `status` alone is not enough: it only picks the badge, while a card
  * falls through to /under-construction when the url is absent. A deck counts
  * as published when both agree.
+ *
+ * Outside production every deck answers true, so a lecture being written is
+ * reachable through the menu like any other. See lib/visibility.ts.
  */
 export const isLecturePublished = (num: number): boolean =>
+  showUnpublishedSessions ||
   coreSessionsData.some((l) => l.id === num && l.status === 'available' && !!l.slideUrl)

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { labNotebooks, colabUrl, notebookCount } from '@/data/notebooks'
+import { isLabPublished } from '@/app/labs/_shared/labs'
 
 export const metadata = { title: 'Notebooks — Python for Biologists' }
 
@@ -33,7 +34,7 @@ export default function NotebooksPage() {
                 <h2 className="text-xl md:text-2xl font-bold text-white">
                   Lab {lab.lab} — {lab.labTitle}
                 </h2>
-                {lab.available ? (
+                {isLabPublished(lab.lab) ? (
                   <Link
                     href={`/labs/${lab.lab}`}
                     className="text-bio-blue hover:text-bio-yellow text-xs md:text-sm font-semibold transition-colors"
@@ -47,7 +48,7 @@ export default function NotebooksPage() {
                 )}
               </div>
 
-              {!lab.available || lab.notebooks.length === 0 ? (
+              {!isLabPublished(lab.lab) || lab.notebooks.length === 0 ? (
                 <div className="rounded-xl border border-white/10 bg-white/[0.02] px-4 py-5 text-gray-500 text-sm">
                   Notebooks for this lab are still being written.
                 </div>

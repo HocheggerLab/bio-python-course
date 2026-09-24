@@ -1,3 +1,5 @@
+import { showUnpublishedSessions } from '@/lib/visibility'
+
 export interface LabMeta {
   num: number
   title: string
@@ -19,6 +21,11 @@ export const labs: LabMeta[] = [
 
 export const getLab = (num: number) => labs.find((l) => l.num === num)
 
-/** One source of truth for whether a lab may be linked to. */
+/**
+ * One source of truth for whether a lab may be linked to.
+ *
+ * Outside production every lab answers true, so one still being written is
+ * reachable through the menu. See lib/visibility.ts.
+ */
 export const isLabPublished = (num: number): boolean =>
-  labs.some((l) => l.num === num && l.available)
+  showUnpublishedSessions || labs.some((l) => l.num === num && l.available)
