@@ -3,11 +3,48 @@
 import React, { createContext, useContext, useEffect, useState, useRef, useCallback } from 'react'
 import { checkPyodideSupport, PyodideSupport } from '@/utils/checkPyodideSupport'
 
+/**
+ * Pyodide 314.0.x ships CPython 3.14 with pandas 3, numpy 2.4, matplotlib 3.10
+ * and scipy 1.18 prebuilt as wasm wheels. Bump this one constant to move the
+ * whole site — nothing else hardcodes a version.
+ */
+const PYODIDE_CDN = 'https://cdn.jsdelivr.net/pyodide/v314.0.6/full/'
+
+/**
+ * Course files, served from `public/data/` and copied into Pyodide's virtual
+ * filesystem the first time a snippet mentions one.
+ *
+ * Data files let a slide write the same `pd.read_csv("pollinators.csv")` that
+ * students run in Colab — the path is not a browser artefact they have to
+ * unlearn. Python modules let an exercise hand out a class whose source the
+ * student genuinely cannot read, so exploring it means reading its
+ * documentation, exactly as with a real package.
+ */
+const COURSE_FILES: Record<string, string> = {
+  'pollinators.csv': '/data/pollinators.csv',
+  'pollinators_lecture.csv': '/data/pollinators_lecture.csv',
+  'neuron_0406_20180620_11.csv': '/data/neuron_0406_20180620_11.csv',
+  'neuron_0406_20180620_8.csv': '/data/neuron_0406_20180620_8.csv',
+  'neuron_0588_20180828_5.csv': '/data/neuron_0588_20180828_5.csv',
+  'neuron_0588_20180828_5_lecture.csv': '/data/neuron_0588_20180828_5_lecture.csv',
+  'neuron_0406_20180620_8_lecture.csv': '/data/neuron_0406_20180620_8_lecture.csv',
+  'neuron_0588_20180928_14.csv': '/data/neuron_0588_20180928_14.csv',
+  'neuron_1140_20190614_72.csv': '/data/neuron_1140_20190614_72.csv',
+  'depmap_lecture.csv': '/data/depmap_lecture.csv',
+  'beetable.py': '/data/beetable.py',
+  'neurotrace.py': '/data/neurotrace.py',
+}
+
+/** A module is named without its extension at the import site. */
+const mentionTokens = (filename: string) =>
+  filename.endsWith('.py') ? [filename, filename.slice(0, -3)] : [filename]
+
 // Type definitions for Pyodide (loaded from CDN)
 interface PyodideInterface {
   runPython: (code: string) => any
   runPythonAsync: (code: string) => Promise<any>
   loadPackage: (packages: string | string[]) => Promise<void>
+  loadPackagesFromImports: (code: string) => Promise<void>
   registerJsModule: (name: string, module: any) => void
   unregisterJsModule: (name: string) => void
   interrupt: () => void
@@ -31,6 +68,14 @@ declare global {
   }
 }
 
+/** A run's result. `images` holds base64 PNGs of any matplotlib figures the
+ *  snippet left open, so a plot renders inline instead of vanishing. */
+export interface RunResult {
+  output: string
+  error?: string
+  images?: string[]
+}
+
 interface PyodideContextType {
   // Core state
   pyodide: PyodideInterface | null
@@ -43,7 +88,7 @@ interface PyodideContextType {
   browserSupport: PyodideSupport
   
   // Core functions
-  runCode: (code: string) => Promise<{ output: string; error?: string }>
+  runCode: (code: string) => Promise<RunResult>
   resetWorkspace: () => Promise<void>
   interruptExecution: () => void
   
@@ -54,7 +99,137 @@ interface PyodideContextType {
 
 const PyodideContext = createContext<PyodideContextType | null>(null)
 
-export const PyodideProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+/**
+ * Matplotlib's defaults are built for white paper — on a dark deck a plot
+ * arrives as a glaring rectangle with unreadable grey tick labels. Applied
+ * once per run, before the snippet executes, so students never have to style
+ * a figure to make it legible on a slide. Their code stays identical to what
+ * they will run in Colab; only the theme differs.
+ */
+/**
+ * Run the student's code the way a notebook cell does, and report failures the
+ * way Python does.
+ *
+ * Two problems this solves. First, Pyodide 314 raises a `PythonError` whose
+ * `.message` is empty — only `.type` survives the trip to JS — so a snippet
+ * with a typo used to fail completely silently, which is the worst possible
+ * behaviour in a teaching tool. Catching inside Python instead gives us the
+ * real traceback, the same one students learned to read in Session 4.
+ *
+ * Second, a notebook echoes the value of a cell's last line. Without that,
+ * `df.head()` on its own displays nothing and every slide has to wrap it in a
+ * print() that students would not write in Colab. So the last statement is
+ * split off and evaluated separately when it is an expression.
+ */
+const RUN_USER_CODE = `
+import ast as _ast, traceback as _traceback
+
+__run_error__ = ""
+try:
+    _tree = _ast.parse(__user_code__)
+    _last = _tree.body.pop() if _tree.body else None
+    exec(compile(_tree, "your code", "exec"), globals())
+    if isinstance(_last, _ast.Expr):
+        _value = eval(
+            compile(_ast.Expression(_last.value), "your code", "eval"), globals()
+        )
+        if _value is not None:
+            print(repr(_value))
+    elif _last is not None:
+        exec(compile(_ast.Module([_last], []), "your code", "exec"), globals())
+except BaseException as _exc:
+    # Drop the harness's own exec frame — the student's first line should be
+    # the first line of their traceback.
+    _tb = _exc.__traceback__.tb_next if _exc.__traceback__ else None
+    __run_error__ = "".join(_traceback.format_exception(type(_exc), _exc, _tb))
+__run_error__
+`
+
+const PLOT_THEME = `
+import matplotlib as _mpl
+_mpl.rcParams.update({
+    "figure.facecolor": "#1b1f27",
+    "axes.facecolor": "#1b1f27",
+    "savefig.facecolor": "#1b1f27",
+    "text.color": "#d1d5db",
+    "axes.labelcolor": "#d1d5db",
+    "axes.titlecolor": "#ffffff",
+    "xtick.color": "#9ca3af",
+    "ytick.color": "#9ca3af",
+    "axes.edgecolor": "#3f4756",
+    "grid.color": "#2a2f3a",
+    "figure.figsize": (7.0, 4.0),
+    "font.size": 11,
+})
+
+# Data colours, not just chrome. Matplotlib's defaults assume white paper:
+# the default C0 (#1f77b4) and the black boxplot/bar edges all but vanish on
+# #1b1f27. Setting the cycle and the element colours here means a student who
+# writes ax.hist(x) with no color= still gets something they can see.
+_mpl.rcParams.update({
+    "axes.prop_cycle": _mpl.cycler(color=[
+        "#5b9df9",  # bio-blue
+        "#5fb37a",  # bio-green
+        "#d6a44c",  # bio-yellow
+        "#c084fc",  # purple
+        "#f87171",  # red
+        "#22d3ee",  # cyan
+    ]),
+    "patch.edgecolor": "#0d0f13",
+    "boxplot.boxprops.color": "#d1d5db",
+    "boxplot.whiskerprops.color": "#d1d5db",
+    "boxplot.capprops.color": "#d1d5db",
+    "boxplot.flierprops.color": "#9ca3af",
+    "boxplot.flierprops.markeredgecolor": "#9ca3af",
+    "boxplot.medianprops.color": "#d6a44c",
+})
+`
+
+/**
+ * Render any matplotlib figures the snippet left open as base64 PNGs.
+ *
+ * Pyodide has no screen, so matplotlib runs on the Agg backend and `plt.show()`
+ * is a no-op — the figures simply stay open. We save each one, hand it back to
+ * React as a data URL, then close them so the next run starts clean. The
+ * facecolor matches the slide panel so a plot sits on the deck rather than
+ * punching a white rectangle through it.
+ */
+async function collectFigures(pyodide: PyodideInterface): Promise<string[]> {
+  try {
+    const figs = await pyodide.runPythonAsync(`
+import sys as _sys
+_figures = []
+if "matplotlib.pyplot" in _sys.modules:
+    import base64 as _b64, io as _io
+    import matplotlib.pyplot as _plt
+    for _num in _plt.get_fignums():
+        _fig = _plt.figure(_num)
+        if not _fig.get_axes():
+            continue
+        _buf = _io.BytesIO()
+        _fig.savefig(_buf, format="png", dpi=110, bbox_inches="tight",
+                     facecolor="#1b1f27", edgecolor="none")
+        _figures.append(_b64.b64encode(_buf.getvalue()).decode())
+    _plt.close("all")
+_figures
+`)
+    return (figs?.toJs?.() ?? []) as string[]
+  } catch {
+    /* Figure capture must never turn a working snippet into a failed run. */
+    return []
+  }
+}
+
+/**
+ * `enabled` gates the CDN download only — the provider itself must always be
+ * rendered, or React sees a different element type at that position and
+ * unmounts the whole subtree (which used to reset the slide deck to slide 1
+ * the moment the first Python slide appeared).
+ */
+export const PyodideProvider: React.FC<{ children: React.ReactNode; enabled?: boolean }> = ({
+  children,
+  enabled = true,
+}) => {
   const [pyodide, setPyodide] = useState<PyodideInterface | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
@@ -62,20 +237,22 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [browserSupport, setBrowserSupport] = useState<PyodideSupport>({ supported: false, warnings: [], fallbackMessage: '' })
   const outputBuffer = useRef<string[]>([])
   const initializationAttempted = useRef(false)
+  const loadedDatasets = useRef<Set<string>>(new Set())
 
   // Check browser support on mount (client-side only)
   useEffect(() => {
     // Ensure we're running in browser
     if (typeof window === 'undefined') return
-    
+    if (!enabled) return
+
     const support = checkPyodideSupport()
     setBrowserSupport(support)
-    
+
     if (support.supported && !initializationAttempted.current) {
       initializationAttempted.current = true
       initPyodide()
     }
-  }, [])
+  }, [enabled])
 
   const loadPyodideScript = useCallback((): Promise<void> => {
     return new Promise((resolve, reject) => {
@@ -95,7 +272,7 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
       // Load Pyodide script from CDN
       const script = document.createElement('script')
-      script.src = 'https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js'
+      script.src = `${PYODIDE_CDN}pyodide.js`
       script.async = true
       script.onload = () => resolve()
       script.onerror = () => reject(new Error('Failed to load Pyodide script'))
@@ -118,7 +295,7 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode }> = ({ child
       
       // Initialize Pyodide
       const pyodideInstance = await window.loadPyodide({
-        indexURL: "https://cdn.jsdelivr.net/pyodide/v0.24.1/full/",
+        indexURL: PYODIDE_CDN,
         stdout: (text: string) => {
           outputBuffer.current.push(text)
         },
@@ -133,6 +310,23 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode }> = ({ child
       await pyodideInstance.runPythonAsync(`
         import sys
         import io
+        import os
+
+        # There is no display in a browser tab: matplotlib must render to a
+        # buffer. Set before any import of pyplot, or the backend sticks.
+        os.environ["MPLBACKEND"] = "agg"
+
+        # plt.show() is the line students must write for Colab, and on Agg it
+        # warns that the canvas is non-interactive. The figure is captured and
+        # displayed regardless, so the warning is noise — and it would surface
+        # in the red error panel.
+        import warnings
+        warnings.filterwarnings("ignore", message="FigureCanvasAgg is non-interactive")
+
+        # pandas' own plotting calls trip matplotlib 3.10 deprecations that the
+        # student neither wrote nor can fix. Library-internal noise, hidden.
+        warnings.filterwarnings("ignore", category=DeprecationWarning, module="matplotlib")
+        warnings.filterwarnings("ignore", message=".*deprecated in Matplotlib.*")
         from contextlib import redirect_stdout, redirect_stderr
         
         # Genetic code dictionary (DNA codons to amino acids)
@@ -237,14 +431,44 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode }> = ({ child
     }
   }, [loadPyodideScript])
 
-  const runCode = useCallback(async (code: string): Promise<{ output: string; error?: string }> => {
+  /**
+   * Copy any course file the snippet names into Pyodide's virtual FS.
+   * Fetched once per session; `FS.analyzePath` is not exposed on the typed
+   * surface, so a module-level Set tracks what has already landed.
+   */
+  const ensureDatasets = useCallback(async (code: string) => {
+    if (!pyodide) return
+    for (const [filename, url] of Object.entries(COURSE_FILES)) {
+      if (loadedDatasets.current.has(filename)) continue
+      if (!mentionTokens(filename).some((t) => code.includes(t))) continue
+      const res = await fetch(url)
+      if (!res.ok) throw new Error(`Could not load ${filename} (${res.status})`)
+      pyodide.FS.writeFile(filename, await res.text())
+      loadedDatasets.current.add(filename)
+    }
+  }, [pyodide])
+
+  const runCode = useCallback(async (code: string): Promise<RunResult> => {
     if (!pyodide) {
       return { output: '', error: 'Pyodide not loaded' }
     }
 
-    outputBuffer.current = []
-    
     try {
+      /* Pull in whatever the snippet imports — pandas, numpy, matplotlib —
+         before it runs. Each wheel downloads once and is then cached by the
+         browser, so only the first pandas slide of a lecture pays for it. */
+      await pyodide.loadPackagesFromImports(code)
+      await ensureDatasets(code)
+
+      /* Clear only now: Pyodide narrates its wheel downloads ("Loading pandas,
+         numpy…") through the same stdout hook, and that chatter is plumbing,
+         not the snippet's output. */
+      outputBuffer.current = []
+
+      if (code.includes('matplotlib') || code.includes('seaborn') || code.includes('.plot')) {
+        await pyodide.runPythonAsync(PLOT_THEME)
+      }
+
       // Capture stdout and stderr
       await pyodide.runPythonAsync(`
         import sys
@@ -260,7 +484,8 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode }> = ({ child
       `)
       
       // Run user code
-      const result = await pyodide.runPythonAsync(code)
+      pyodide.globals.set('__user_code__', code)
+      const pythonError = (await pyodide.runPythonAsync(RUN_USER_CODE)) as string
       
       // Get captured output
       const captured = await pyodide.runPythonAsync(`
@@ -276,20 +501,25 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode }> = ({ child
       `)
       
       const [stdout, stderr] = captured.toJs()
-      
+
+      const images = await collectFigures(pyodide)
+
       // Combine outputs
       let output = ''
       if (stdout) output += stdout
       if (outputBuffer.current.length > 0) {
         output += outputBuffer.current.join('')
       }
-      if (result !== undefined && result !== null && stdout === '') {
-        output += String(result)
-      }
-      
-      return { 
-        output: output || '(no output)', 
-        error: stderr || undefined 
+
+      /* A snippet whose whole point is a figure has no stdout — don't label
+         that "(no output)" underneath a perfectly good plot, nor above a
+         traceback that already explains why nothing was printed. */
+      const placeholder = images.length > 0 || pythonError ? '' : '(no output)'
+
+      return {
+        output: output || placeholder,
+        error: pythonError || stderr || undefined,
+        images: images.length > 0 ? images : undefined,
       }
       
     } catch (err) {
@@ -301,12 +531,14 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode }> = ({ child
         `)
       } catch {}
       
-      return { 
-        output: outputBuffer.current.join('') || '', 
-        error: (err as Error).message 
+      /* Python-level failures are caught inside Python now; reaching here
+         means the harness itself broke. */
+      return {
+        output: outputBuffer.current.join('') || '',
+        error: (err as Error).message || String(err),
       }
     }
-  }, [pyodide])
+  }, [pyodide, ensureDatasets])
 
   const resetWorkspace = useCallback(async (): Promise<void> => {
     if (!pyodide) return

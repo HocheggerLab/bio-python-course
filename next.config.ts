@@ -1,6 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  /* Verification builds write somewhere else.
+   *
+   * `next build` empties and rewrites the output directory. Run it while a dev
+   * server is serving from the same place and the dev server's chunks vanish
+   * underneath it — ENOENT on .next/cache/... and "Cannot find module
+   * './1331.js'" until you stop everything and rebuild. Setting NEXT_DIST_DIR
+   * gives a throwaway build its own directory so the running dev server is
+   * never touched. Unset in normal use and on Vercel, so this is a no-op there.
+   */
+  distDir: process.env.NEXT_DIST_DIR || '.next',
+
   images: {
     remotePatterns: [
       {

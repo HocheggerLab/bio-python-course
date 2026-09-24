@@ -1,0 +1,61 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: 🧬
+        - link "Python for Biologists" [ref=e7] [cursor=pointer]:
+          - /url: /
+      - generic [ref=e8]:
+        - button "Lectures" [ref=e10] [cursor=pointer]
+        - button "Labs" [ref=e14] [cursor=pointer]
+        - button "Seminars" [ref=e17] [cursor=pointer]
+        - button "Resources" [ref=e19] [cursor=pointer]
+        - button "Schedule" [ref=e22] [cursor=pointer]
+        - button "About" [ref=e23] [cursor=pointer]
+        - link "GitHub →" [ref=e24] [cursor=pointer]:
+          - /url: https://github.com/HocheggerLab/y3-bio-python
+  - generic [ref=e27]:
+    - heading "Last Session — A Quick Recap" [level=2] [ref=e28]
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e31]: You can already…
+        - list [ref=e32]:
+          - listitem [ref=e33]:
+            - generic [ref=e34]: ✓
+            - generic [ref=e35]: for loops — do the same thing to every item
+          - listitem [ref=e36]:
+            - generic [ref=e37]: ✓
+            - generic [ref=e38]: range(start, stop, step) — loop over positions
+          - listitem [ref=e39]:
+            - generic [ref=e40]: ✓
+            - generic [ref=e41]: if / elif / else — let the program decide
+          - listitem [ref=e42]:
+            - generic [ref=e43]: ✓
+            - generic [ref=e44]: break — stop the moment you’re done
+      - generic [ref=e45]:
+        - paragraph [ref=e46]:
+          - text: …so you built a translator that reads a whole gene
+          - strong [ref=e47]: on its own
+          - text: ":"
+        - generic [ref=e48]: "seq = \"ATGAAACGCGGCGTTTAA\" codon_table = {\"ATG\": \"M\", \"AAA\": \"K\", \"CGC\": \"R\", \"GGC\": \"G\", \"GTT\": \"V\", \"TAA\": \"*\"} stop_codons = {\"TAA\", \"TAG\", \"TGA\"} protein = \"\" for i in range(0, len(seq) - 2, 3): codon = seq[i:i+3] if codon in stop_codons: break protein = protein + codon_table.get(codon, \"?\") print(protein) # MKRGV"
+  - generic [ref=e50]:
+    - button "← Previous" [disabled] [ref=e51]
+    - generic [ref=e52]:
+      - button "Go to slide 1" [ref=e53] [cursor=pointer]
+      - button "Go to slide 2" [ref=e54] [cursor=pointer]
+      - button "Go to slide 3" [ref=e55] [cursor=pointer]
+      - button "Go to slide 4" [ref=e56] [cursor=pointer]
+      - button "Go to slide 5" [ref=e57] [cursor=pointer]
+      - button "Go to slide 6" [ref=e58] [cursor=pointer]
+      - button "Go to slide 7" [ref=e59] [cursor=pointer]
+      - button "Go to slide 8" [ref=e60] [cursor=pointer]
+      - button "Go to slide 9" [ref=e61] [cursor=pointer]
+      - button "Go to slide 10" [ref=e62] [cursor=pointer]
+      - button "Go to slide 11" [ref=e63] [cursor=pointer]
+      - button "Go to slide 12" [ref=e64] [cursor=pointer]
+      - button "Go to slide 13" [ref=e65] [cursor=pointer]
+      - button "Go to slide 14" [ref=e66] [cursor=pointer]
+      - button "Go to slide 15" [ref=e67] [cursor=pointer]
+      - button "Go to slide 16" [ref=e68] [cursor=pointer]
+      - button "Go to slide 17" [ref=e69] [cursor=pointer]
+    - button "Next →" [ref=e70] [cursor=pointer]

@@ -1,0 +1,98 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: 🧬
+        - link "Python for Biologists" [ref=e7] [cursor=pointer]:
+          - /url: /
+      - generic [ref=e8]:
+        - button "Lectures" [ref=e10] [cursor=pointer]:
+          - text: Lectures
+          - img [ref=e11]
+        - button "Seminars" [ref=e13] [cursor=pointer]
+        - button "Resources" [ref=e15] [cursor=pointer]:
+          - text: Resources
+          - img [ref=e16]
+        - button "Schedule" [ref=e18] [cursor=pointer]
+        - button "About" [ref=e19] [cursor=pointer]
+        - link "GitHub →" [ref=e20] [cursor=pointer]:
+          - /url: https://github.com/HocheggerLab/y3-bio-python
+  - generic [ref=e95]:
+    - heading "Using AI Responsibly" [level=2] [ref=e96]
+    - generic [ref=e97]:
+      - generic [ref=e98]:
+        - heading "✅ AI as a tool" [level=3] [ref=e99]:
+          - generic [ref=e100]: ✅
+          - text: AI as a tool
+        - list [ref=e101]:
+          - listitem [ref=e102]:
+            - generic [ref=e103]: ✓
+            - text: Explain concepts you didn't follow
+          - listitem [ref=e104]:
+            - generic [ref=e105]: ✓
+            - text: Debug code you wrote yourself
+          - listitem [ref=e106]:
+            - generic [ref=e107]: ✓
+            - text: Suggest alternative approaches
+          - listitem [ref=e108]:
+            - generic [ref=e109]: ✓
+            - text: Generate test data
+      - generic [ref=e110]:
+        - heading "⚠️ AI as a crutch" [level=3] [ref=e111]:
+          - generic [ref=e112]: ⚠️
+          - text: AI as a crutch
+        - list [ref=e113]:
+          - listitem [ref=e114]:
+            - generic [ref=e115]: ✗
+            - text: Generate code → copy → submit
+          - listitem [ref=e116]:
+            - generic [ref=e117]: ✗
+            - text: Skip understanding the logic
+          - listitem [ref=e118]:
+            - generic [ref=e119]: ✗
+            - text: Never read an error message
+          - listitem [ref=e120]:
+            - generic [ref=e121]: ✗
+            - text: Can't write anything without it
+      - generic [ref=e122]:
+        - heading "🎯 The right workflow" [level=3] [ref=e123]:
+          - generic [ref=e124]: 🎯
+          - text: The right workflow
+        - generic [ref=e125]:
+          - generic [ref=e126]:
+            - generic [ref=e127]: "1"
+            - generic [ref=e128]: Write
+          - generic [ref=e129]:
+            - generic [ref=e130]: "2"
+            - generic [ref=e131]: Test
+          - generic [ref=e132]:
+            - generic [ref=e133]: "3"
+            - generic [ref=e134]: Debug
+          - generic [ref=e135]:
+            - generic [ref=e136]: "4"
+            - generic [ref=e137]: Ask AI
+          - generic [ref=e138]:
+            - generic [ref=e139]: "5"
+            - generic [ref=e140]: Understand
+          - generic [ref=e141]:
+            - generic [ref=e142]: "6"
+            - generic [ref=e143]: Improve
+    - paragraph [ref=e144]: AI will not be available in assessed work — you need to be able to code independently.
+  - generic [ref=e28]:
+    - button "← Previous" [ref=e29] [cursor=pointer]
+    - generic [ref=e30]:
+      - button "Go to slide 1" [ref=e31] [cursor=pointer]
+      - button "Go to slide 2" [ref=e32] [cursor=pointer]
+      - button "Go to slide 3" [ref=e33] [cursor=pointer]
+      - button "Go to slide 4" [ref=e34] [cursor=pointer]
+      - button "Go to slide 5" [ref=e35] [cursor=pointer]
+      - button "Go to slide 6" [ref=e36] [cursor=pointer]
+      - button "Go to slide 7" [ref=e37] [cursor=pointer]
+      - button "Go to slide 8" [ref=e38] [cursor=pointer]
+      - button "Go to slide 9" [ref=e39] [cursor=pointer]
+      - button "Go to slide 10" [ref=e40] [cursor=pointer]
+      - button "Go to slide 11" [ref=e41] [cursor=pointer]
+    - button "Next →" [active] [ref=e42] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=e64] [cursor=pointer]:
+    - img [ref=e65]
+  - alert [ref=e68]

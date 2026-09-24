@@ -10,7 +10,7 @@ export const resources: Resource[] = [
   {
     id: 'notebooks',
     title: 'Notebooks',
-    description: 'Colab templates for every lecture',
+    description: 'Every practice notebook, by lab',
     icon: '📓',
     href: '/notebooks'
   },
@@ -19,7 +19,7 @@ export const resources: Resource[] = [
     title: 'Sample Data',
     description: 'Real sequences & datasets',
     icon: '🧬',
-    href: '/data'
+    href: '/under-construction'
   },
   {
     id: 'cheatsheets',
@@ -29,17 +29,10 @@ export const resources: Resource[] = [
     href: '/under-construction'
   },
   {
-    id: 'exercises',
-    title: 'Practice',
-    description: 'Extra problems & solutions',
-    icon: '🎯',
-    href: '/practice'
-  },
-  {
     id: 'tools',
     title: 'Dev Tools',
     description: 'Python IDEs & setup guides',
     icon: '🛠️',
-    href: '/dev-tools'
+    href: '/under-construction'
   }
 ]

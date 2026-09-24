@@ -1,13 +1,11 @@
-'use client'
-
 import SlideViewer from '@/components/lectures/SlideViewer'
-import { lecture4Data } from '@/data/lectures/lecture4-slides'
-import { PyodideProvider } from '@/contexts/PyodideContext'
+import LazyPyodideWrapper from '@/components/lectures/LazyPyodideWrapper'
+import { lecture4Data } from '@/data/lectures/lecture4'
 
 export default function Lecture4Page() {
   return (
-    <PyodideProvider>
+    <LazyPyodideWrapper>
       <SlideViewer lecture={lecture4Data} />
-    </PyodideProvider>
+    </LazyPyodideWrapper>
   )
 }

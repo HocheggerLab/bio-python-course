@@ -32,7 +32,7 @@ export default function CapstoneProject() {
       <div className="space-y-4">
         <Link
           href="/projects/depmap-analysis"
-          className="block w-full bg-gradient-to-r from-bio-yellow to-bio-green hover:from-bio-yellow/80 hover:to-bio-green/80 text-bio-dark text-center px-6 py-3 rounded-lg font-bold transition-all transform hover:scale-105"
+          className="block w-full bg-bio-yellow text-bio-dark text-center px-6 py-3 rounded-lg font-bold transition-all transform hover:scale-105"
         >
           <span className="inline-flex items-center gap-2">
             <span>📊</span>

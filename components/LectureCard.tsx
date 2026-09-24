@@ -21,6 +21,16 @@ export default function LectureCard({ lecture }: LectureCardProps) {
         <span className="lecture-number">{lecture.id}</span>
         <h3 className="text-xl font-bold">{lecture.title}</h3>
       </div>
+      {/* The dataset the session works on. Half the point of the data half is
+          that every session lands in a different corner of biology, so the
+          card says which one before it lists the techniques. */}
+      {lecture.dataset && (
+        <div className="flex items-baseline gap-2 mb-4 -mt-1">
+          <span className="text-lg leading-none">{lecture.dataset.emoji}</span>
+          <span className="text-bio-green font-semibold text-sm">{lecture.dataset.field}</span>
+          <span className="text-gray-500 text-xs">{lecture.dataset.source}</span>
+        </div>
+      )}
       <ul className="space-y-2 text-gray-300 mb-6">
         {lecture.topics.map((topic, index) => (
           <li key={index} className="flex items-start">
@@ -35,9 +45,17 @@ export default function LectureCard({ lecture }: LectureCardProps) {
             <Link href={lecture.slideUrl} className="btn-primary !py-1 !px-3 text-xs">
               Slides
             </Link>
+            {lecture.labsUrl && (
+              <Link
+                href={lecture.labsUrl}
+                className="btn-secondary !py-1 !px-3 text-xs border-bio-green text-bio-green hover:bg-bio-green hover:text-bio-dark"
+              >
+                Labs
+              </Link>
+            )}
             {lecture.notebookUrl && (
-              <a 
-                href={lecture.notebookUrl} 
+              <a
+                href={lecture.notebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary !py-1 !px-3 text-xs"
@@ -72,6 +90,12 @@ export default function LectureCard({ lecture }: LectureCardProps) {
                 Slides
               </Link>
             )}
+            <Link
+              href={lecture.labsUrl ?? '/under-construction'}
+              className="btn-secondary !py-1 !px-3 text-xs border-bio-green text-bio-green hover:bg-bio-green hover:text-bio-dark"
+            >
+              Labs
+            </Link>
             {lecture.notebookUrl ? (
               <Link href={lecture.notebookUrl} className="btn-secondary !py-1 !px-3 text-xs">
                 Notebooks
@@ -101,6 +125,12 @@ export default function LectureCard({ lecture }: LectureCardProps) {
           <>
             <Link href="/under-construction" className="btn-primary !py-1 !px-3 text-xs">
               Slides
+            </Link>
+            <Link
+              href={lecture.labsUrl ?? '/under-construction'}
+              className="btn-secondary !py-1 !px-3 text-xs border-bio-green text-bio-green hover:bg-bio-green hover:text-bio-dark"
+            >
+              Labs
             </Link>
             <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs">
               Notebooks

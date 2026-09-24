@@ -15,6 +15,8 @@
 
 # next.js
 /.next/
+/.next-verify/
+/.next-dev/
 /out/
 
 # production
@@ -31,6 +33,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# but the documented template carries no secrets and should be shared
+!.env.example
 
 # vercel
 .vercel
@@ -126,3 +130,9 @@ CLAUDE.node_modules
 # pnpm-lock.yaml
 
 
+
+# Playwright MCP snapshots (local debugging artefacts)
+.playwright-mcp/
+
+# builds from agent sessions
+/.next-claude/

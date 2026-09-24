@@ -1,0 +1,25 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: 🧬
+        - link "Python for Biologists" [ref=e7] [cursor=pointer]:
+          - /url: /
+      - generic [ref=e8]:
+        - button "Lectures" [ref=e10] [cursor=pointer]:
+          - text: Lectures
+          - img [ref=e11]
+        - button "Seminars" [ref=e13] [cursor=pointer]
+        - button "Resources" [ref=e15] [cursor=pointer]:
+          - text: Resources
+          - img [ref=e16]
+        - button "Schedule" [ref=e18] [cursor=pointer]
+        - button "About" [ref=e19] [cursor=pointer]
+        - link "GitHub →" [ref=e20] [cursor=pointer]:
+          - /url: https://github.com/HocheggerLab/y3-bio-python
+  - generic [ref=e22]:
+    - generic [ref=e23]: 🚧
+    - heading "Lecture Under Construction" [level=1] [ref=e24]
+    - paragraph [ref=e25]: This lecture is being redesigned for the new course structure. Check back soon.
+    - link "← Back to Course" [ref=e26] [cursor=pointer]:
+      - /url: /

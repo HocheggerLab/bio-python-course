@@ -1,0 +1,81 @@
+- generic [ref=f1e1]:
+  - navigation [ref=f1e2]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - generic [ref=f1e6]: 🧬
+        - link "Python for Biologists" [ref=f1e7] [cursor=pointer]:
+          - /url: /
+      - generic [ref=f1e8]:
+        - button "Lectures" [ref=f1e10] [cursor=pointer]
+        - button "Labs" [ref=f1e14] [cursor=pointer]
+        - button "Seminars" [ref=f1e17] [cursor=pointer]
+        - button "Resources" [ref=f1e19] [cursor=pointer]
+        - button "Schedule" [ref=f1e22] [cursor=pointer]
+        - button "About" [ref=f1e23] [cursor=pointer]
+        - link "GitHub →" [ref=f1e24] [cursor=pointer]:
+          - /url: https://github.com/HocheggerLab/y3-bio-python
+  - link "← Lab 1" [ref=f1e25] [cursor=pointer]:
+    - /url: /labs/1
+  - generic [ref=f1e110]:
+    - heading "Try it Yourself — Make Your Course Folder" [level=2] [ref=f1e111]
+    - generic [ref=f1e112]:
+      - generic [ref=f1e113]:
+        - generic [ref=f1e114]:
+          - generic [ref=f1e115]: Five steps, following the prompts
+          - paragraph [ref=f1e116]: The terminal will walk you through it. By the end you'll have made a folder called bio-python and stepped inside it — the exact move you'll do for real, on your own machine, next.
+        - generic [ref=f1e117]:
+          - generic [ref=f1e118]: What you just did
+          - paragraph [ref=f1e119]:
+            - text: You navigated a computer's file system
+            - strong [ref=f1e120]: from the keyboard
+            - text: — found where you were, looked around, created something, and moved into it. That's the whole job. Everything else is more of the same.
+        - paragraph [ref=f1e122]: Stuck? Hit show hint. And remember — ↺ reset starts you over any time.
+      - generic [ref=f1e124]:
+        - generic [ref=f1e125]:
+          - generic [ref=f1e126]: practice terminal
+          - generic [ref=f1e132]:
+            - button "🍎 macOS" [ref=f1e133] [cursor=pointer]
+            - button "⊞ Windows" [ref=f1e134] [cursor=pointer]
+            - button "↺ reset" [ref=f1e135] [cursor=pointer]
+        - generic [ref=f1e137]:
+          - generic [ref=f1e138]:
+            - generic [ref=f1e139]: "Step 2/5:"
+            - text: Look around — type ls
+          - button "show hint" [ref=f1e140] [cursor=pointer]
+        - generic [ref=f1e141]:
+          - generic [ref=f1e142]: practice sandbox — type 'help' to see what you can do. You can't break anything here.
+          - generic [ref=f1e146]: you@mac ~ % pwd
+          - generic [ref=f1e147]: /Users/you
+          - generic [ref=f1e148]: ✓ That’s your home folder’s full path.
+          - generic [ref=f1e143]:
+            - generic [ref=f1e144]: you@mac ~ %
+            - textbox "terminal input" [active] [ref=f1e145]
+  - generic [ref=f1e77]:
+    - button "← Previous" [ref=f1e78] [cursor=pointer]
+    - generic [ref=f1e79]:
+      - button "Go to slide 1" [ref=f1e80] [cursor=pointer]
+      - button "Go to slide 2" [ref=f1e81] [cursor=pointer]
+    - button "Next →" [disabled] [ref=f1e82]
+  - contentinfo [ref=f1e83]:
+    - generic [ref=f1e85]:
+      - generic [ref=f1e86]:
+        - generic [ref=f1e87]:
+          - paragraph [ref=f1e88]: Python for Biologists
+          - link "University of Sussex" [ref=f1e89] [cursor=pointer]:
+            - /url: https://www.sussex.ac.uk/schools/life-sciences/
+        - paragraph [ref=f1e90]: © Helfrid Hochegger 2025 | All materials freely available
+      - generic [ref=f1e91]:
+        - generic [ref=f1e92]:
+          - link "📧 Contact" [ref=f1e93] [cursor=pointer]:
+            - /url: mailto:hh65@sussex.ac.uk
+          - link "💻 GitHub" [ref=f1e94] [cursor=pointer]:
+            - /url: https://github.com/HocheggerLab/y3-bio-python
+        - generic [ref=f1e95]:
+          - link "🦋 Bluesky" [ref=f1e96] [cursor=pointer]:
+            - /url: https://bsky.app/profile/helfridh.bsky.social
+          - link "💼 LinkedIn" [ref=f1e97] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/helfrid-hochegger-996a85299/
+          - link "👨‍🏫 Instructor" [ref=f1e98] [cursor=pointer]:
+            - /url: https://profiles.sussex.ac.uk/p218740-helfrid-hochegger
+  - button "Open Next.js Dev Tools" [ref=f1e104] [cursor=pointer]
+  - alert [ref=f1e108]

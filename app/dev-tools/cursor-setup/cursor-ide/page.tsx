@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function CursorIDEPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-bio-dark to-bio-darker p-4 pt-24">
+    <div className="min-h-screen bg-bio-darkest p-4 pt-24">
       <div className="container mx-auto max-w-5xl">
         {/* Header */}
         <div className="mb-8">
@@ -21,7 +21,7 @@ export default function CursorIDEPage() {
         </div>
 
         {/* What is Cursor? */}
-        <div className="mb-12 p-6 bg-gradient-to-r from-purple-500/10 to-bio-blue/10 rounded-xl border border-bio-blue/20">
+        <div className="mb-12 p-6 bg-bio-dark/40 rounded-xl border border-bio-blue/20">
           <h2 className="text-2xl font-bold text-bio-blue mb-4">What is Cursor?</h2>
           <div className="space-y-3 text-gray-300">
             <p className="flex items-start">
@@ -410,7 +410,7 @@ export default function CursorIDEPage() {
         </div>
 
         {/* Getting Help */}
-        <div className="p-8 bg-gradient-to-r from-green-400/10 to-bio-blue/10 rounded-xl border border-bio-blue/20">
+        <div className="p-8 bg-bio-dark/40 rounded-xl border border-bio-blue/20">
           <h2 className="text-3xl font-bold text-bio-blue mb-4">🆘 Getting Help</h2>
           <div className="space-y-4 text-gray-300">
             <p className="flex items-start">

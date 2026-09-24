@@ -1,3 +1,5 @@
+import { showUnpublishedSessions } from '@/lib/visibility'
+
 export interface Lecture {
   id: number
   title: string
@@ -6,125 +8,142 @@ export interface Lecture {
   slideUrl?: string
   notebookUrl?: string
   videoUrl?: string
+  labsUrl?: string
   type?: 'core' | 'specialization'
+  /** The real dataset this session works on — shown on the card. */
+  dataset?: {
+    emoji: string
+    field: string
+    /** Where it came from, in a few words. */
+    source: string
+  }
 }
 
-export const coreSessionsData: Lecture[] = [
+export const pythonBasicsData: Lecture[] = [
   {
     id: 1,
-    title: "Lab Calculations",
+    title: "Data Types, Variables and Basic Operations",
     status: "available",
     topics: [
-      "Introduction to Python",
-      "Types and assignment",
-      "For loops",
-      "Lists and file I/O"
+      "Variables and assignment",
+      "Core types: int, float, bool, str",
+      "Arithmetic and string operators",
+      "print() and f-strings"
     ],
     slideUrl: "/lectures/1",
-    notebookUrl: "/notebooks/lecture-1",
-    videoUrl: "https://www.youtube.com/playlist?list=PLYTU_Kb0BRDIjqcvTBfBkuWq6xEi6Wie2",
+    labsUrl: "/labs/1",
     type: 'core'
   },
   {
     id: 2,
-    title: "Analysing DNA",
+    title: "From One Sequence to Many: Lists, Strings & Maps",
     status: "available",
     topics: [
-      "String operations",
-      "Sequence file formats",
-      "File I/O",
-      "Biopython"
+      "Lists: holding a collection of sequences",
+      "Strings as sequences: indexing & slicing",
+      "String methods: .replace(), .find()",
+      "Dictionaries: mapping codons to amino acids"
     ],
     slideUrl: "/lectures/2",
-    notebookUrl: "/notebooks/lecture-2",
-    videoUrl: "https://www.youtube.com/playlist?list=PLYTU_Kb0BRDJB7Z6tLVHbJUtMcVcmev3-",
+    labsUrl: "/labs/2",
     type: 'core'
   },
   {
     id: 3,
-    title: "Analysing DepMap Data",
-    status: "available",
+    title: "Loops, Dictionaries and Control Flow",
+    status: "under-construction",
     topics: [
-      "Object-oriented programming",
-      "Pandas DataFrames",
-      "Cancer dependency analysis"
+      "for / while loops and range()",
+      "if / elif / else",
+      "Dictionaries and .items() iteration",
+      "Building a codon translation table"
     ],
-    slideUrl: "/lectures/3",
-    notebookUrl: "/notebooks/lecture-3",
-    videoUrl: "https://www.youtube.com/playlist?list=PLYTU_Kb0BRDKScs5gRfKyLdvnc-mveSCB",
     type: 'core'
   },
   {
     id: 4,
-    title: "Explorative Data Analysis",
-    status: "available",
+    title: "Functions, Files and Error Handling",
+    status: "under-construction",
     topics: [
-      "Vectorisation",
-      "Explorative data analysis techniques",
-      "Visualization principles",
-      "Matplotlib for scientific plots"
+      "Defining functions and return values",
+      "Scope, type hints and docstrings",
+      "Reading and writing files",
+      "try / except and raising errors"
     ],
-    slideUrl: "/lectures/4",
-    notebookUrl: "/notebooks/lecture-4",
-    videoUrl: "https://www.youtube.com/watch?v=rIGN8RcXHP8&list=PLYTU_Kb0BRDLyGEG_kbOjL8e7hgkxEBWD&index=11",
+    type: 'core'
+  },
+]
+
+export const pythonDataData: Lecture[] = [
+  {
+    id: 5,
+    title: "Arrays — One Neuron, Many Trials",
+    status: "under-construction",
+    dataset: { emoji: "🐭", field: "Neurobiology", source: "Whisker touch — Maravall Lab, Sussex" },
+    topics: [
+      "Packages, objects and methods",
+      "numpy arrays and vectorisation",
+      "Masking and finding events in a signal",
+      "2-D arrays: averaging 254 trials into an answer"
+    ],
     type: 'core'
   },
   {
-    id: 5,
-    title: "End to End Data Mining Project",
-    status: "available",
-    topics: [
-      "Linear regression analysis",
-      "Seaborn for publication-ready plots",
-      "Statistics and SciPy",
-      "Exploring new packages on PyPI"
-    ],
-    slideUrl: "/lectures/5",
-    notebookUrl: "/notebooks/lecture-5",
-    videoUrl: "https://www.youtube.com/playlist?list=PLYTU_Kb0BRDI4iMytSaNMFZL64K2jm9uK",
-    type: 'core'
-  }
-]
-
-export const specializationTracks: Lecture[] = [
-  {
     id: 6,
-    title: "Image Analysis Track",
-    status: "coming-soon",
+    title: "DataFrames — Who Pollinates Your Dinner?",
+    status: "under-construction",
+    dataset: { emoji: "🐝", field: "Ecology", source: "Urban pollinator survey — Nicholls Lab, Sussex" },
     topics: [
-      "NumPy and scikit-image basics",
-      "Microscopy image processing",
-      "Cell segmentation and tracking",
-      "Batch analysis pipelines"
+      "A column is an array with a name",
+      "Selecting columns, filtering rows",
+      "value_counts and the effort trap",
+      "groupby — split, add up, combine"
     ],
-    type: 'specialization'
+    type: 'core'
   },
   {
     id: 7,
-    title: "Data Analysis & Visualization Track",
-    status: "coming-soon",
+    title: "Plotting and Exploratory Data Analysis",
+    status: "under-construction",
+    dataset: { emoji: "🧬", field: "Cancer biology", source: "Cancer Dependency Map (DepMap)" },
     topics: [
-      "Pandas for biological data",
-      "Statistical analysis with SciPy",
-      "Creating publication-ready figures",
-      "Analyzing experimental results"
+      "matplotlib and seaborn",
+      "Distributions, box plots and small multiples",
+      "Scatter plots, correlation and statistics",
+      "Building a publication-ready figure"
     ],
-    type: 'specialization'
+    type: 'core'
   },
   {
     id: 8,
-    title: "LLMs and Agentic AI in Biology",
-    status: "available",
+    title: "Analysing Images in Python",
+    status: "under-construction",
+    dataset: { emoji: "🔬", field: "Cell biology", source: "Fluorescence microscopy — Hochegger Lab, Sussex" },
     topics: [
-      "Working with LLMs for biology",
-      "Automating literature searches",
-      "Text mining PubMed abstracts",
-      "Building research assistants"
+      "An image is a 2-D array",
+      "Cropping, indexing and displaying",
+      "Otsu thresholding: finding the nuclei",
+      "Counting, measuring, and a cell-cycle profile"
     ],
-    slideUrl: "/lectures/8",
-    type: 'specialization'
+    type: 'core'
   }
 ]
 
 // For backward compatibility
-export const lectures: Lecture[] = [...coreSessionsData, ...specializationTracks]
+export const coreSessionsData: Lecture[] = [...pythonBasicsData, ...pythonDataData]
+
+export const lectures: Lecture[] = coreSessionsData
+/**
+ * Is this lecture's deck published?
+ *
+ * One source of truth for the nav, the cards and anything else that links
+ * out. `status` alone is not enough: it only picks the badge, while a card
+ * falls through to /under-construction when the url is absent. A deck counts
+ * as published when both agree.
+ *
+ * Outside production every deck answers true, so a lecture being written is
+ * reachable through the menu like any other. See lib/visibility.ts.
+ */
+export const isLecturePublished = (num: number): boolean =>
+  showUnpublishedSessions ||
+  coreSessionsData.some((l) => l.id === num && l.status === 'available' && !!l.slideUrl)
