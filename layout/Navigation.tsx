@@ -196,13 +196,10 @@ export default function Navigation() {
                   <Link href="/labs" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
                     Labs
                   </Link>
-                  <Link href="/data" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
+                  <Link href="/under-construction" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
                     Sample Datasets
                   </Link>
-                  <Link href="/practice" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
-                    Practice Sessions
-                  </Link>
-                  <Link href="/dev-tools" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
+                  <Link href="/under-construction" className="block px-4 py-3 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors">
                     Development Tools
                   </Link>
                 </div>
@@ -284,9 +281,8 @@ export default function Navigation() {
               <div className="text-sm font-semibold text-bio-blue mb-2">Resources</div>
               <button onClick={() => { scrollToSection('resources'); toggleMobileMenu(); }} className="block nav-link py-2 pl-4 text-left w-full">All Resources</button>
               <Link href="/labs" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Labs</Link>
-              <Link href="/data" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Sample Datasets</Link>
-              <Link href="/practice" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Practice Sessions</Link>
-              <Link href="/dev-tools" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Development Tools</Link>
+              <Link href="/under-construction" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Sample Datasets</Link>
+              <Link href="/under-construction" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Development Tools</Link>
             </div>
 
             <Link href="/assessment" onClick={toggleMobileMenu} className="block nav-link py-2">Assessment</Link>
