@@ -34,7 +34,7 @@ export const pythonBasicsData: Lecture[] = [
   },
   {
     id: 2,
-    title: "Lists, Strings and Maps",
+    title: "From One Sequence to Many: Lists, Strings & Maps",
     status: "available",
     topics: [
       "Lists: holding a collection of sequences",

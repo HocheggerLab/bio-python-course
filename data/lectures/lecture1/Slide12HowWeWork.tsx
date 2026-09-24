@@ -110,8 +110,9 @@ export function Slide12HowWeWork() {
             <li className="flex items-start gap-2"><span className="text-bio-yellow shrink-0">→</span><span><span className="font-mono text-white">uv</span> — blazing-fast package manager</span></li>
             <li className="flex items-start gap-2"><span className="text-bio-yellow shrink-0">→</span>Git, virtual environments, real projects</li>
           </ul>
+          {/* Lab 4 is not published yet; point the button there once it is. */}
           <a
-            href="/labs/4"
+            href="/under-construction"
             className="self-start mt-auto rounded bg-bio-yellow/20 hover:bg-bio-yellow/30 border border-bio-yellow/40 text-bio-yellow font-semibold px-3 md:px-5 py-1.5 md:py-2 text-xs md:text-sm xl:text-base transition-colors"
           >
             See Lab 4 →
