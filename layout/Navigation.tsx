@@ -3,6 +3,39 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
+import { isLecturePublished } from '@/data/lectures'
+import { isLabPublished } from '@/app/labs/_shared/labs'
+
+/* The menu labels are shorter than the titles on the cards, so they live
+   here -- but whether an entry is *shown* is decided by the same data the
+   cards use. The menu used to hardcode all eight of each, which meant every
+   unpublished lecture and lab stayed one click away from every page. */
+type NavEntry = { num: number; label: string; group: 'basics' | 'data' }
+
+const LECTURE_NAV: NavEntry[] = [
+  { num: 1, label: '1. Variables & Data Types', group: 'basics' },
+  { num: 2, label: '2. Strings & Lists', group: 'basics' },
+  { num: 3, label: '3. Loops & Dictionaries', group: 'basics' },
+  { num: 4, label: '4. Functions, Files & Errors', group: 'basics' },
+  { num: 5, label: '5. Arrays & numpy \u{1F42D}', group: 'data' },
+  { num: 6, label: '6. DataFrames & pandas \u{1F41D}', group: 'data' },
+  { num: 7, label: '7. Plotting & EDA \u{1F9EC}', group: 'data' },
+  { num: 8, label: '8. Image Analysis \u{1F52C}', group: 'data' },
+]
+
+const LAB_NAV: NavEntry[] = [
+  { num: 1, label: 'Lab 1. Setup & First Steps', group: 'basics' },
+  { num: 2, label: 'Lab 2. Strings & Lists', group: 'basics' },
+  { num: 3, label: 'Lab 3. Loops & Dictionaries', group: 'basics' },
+  { num: 4, label: 'Lab 4. Functions, Files & Errors', group: 'basics' },
+  { num: 5, label: 'Lab 5. Arrays & numpy \u{1F42D}', group: 'data' },
+  { num: 6, label: 'Lab 6. DataFrames & pandas \u{1F41D}', group: 'data' },
+  { num: 7, label: 'Lab 7. Plotting & EDA \u{1F9EC}', group: 'data' },
+  { num: 8, label: 'Lab 8. Image Analysis \u{1F52C}', group: 'data' },
+]
+
+const publishedLectures = LECTURE_NAV.filter((e) => isLecturePublished(e.num))
+const publishedLabs = LAB_NAV.filter((e) => isLabPublished(e.num))
 
 const useScrollToSection = () => {
   const router = useRouter()
@@ -87,32 +120,22 @@ export default function Navigation() {
               </button>
               {isLecturesOpen && (
                 <div className="absolute top-full mt-2 w-64 bg-bio-dark/95 backdrop-blur-md border border-bio-blue/20 rounded-lg shadow-lg overflow-hidden">
-                  <div className="px-4 py-2 text-xs font-semibold text-bio-blue/70 uppercase tracking-wider border-b border-white/10">Python Basics</div>
-                  <Link href="/lectures/1" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    1. Variables &amp; Data Types
-                  </Link>
-                  <Link href="/lectures/2" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    2. Strings &amp; Lists
-                  </Link>
-                  <Link href="/lectures/3" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    3. Loops &amp; Dictionaries
-                  </Link>
-                  <Link href="/lectures/4" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    4. Functions, Files &amp; Errors
-                  </Link>
-                  <div className="px-4 py-2 text-xs font-semibold text-bio-blue/70 uppercase tracking-wider border-t border-b border-white/10">Python &amp; Data</div>
-                  <Link href="/lectures/5" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    5. Arrays &amp; numpy 🐭
-                  </Link>
-                  <Link href="/lectures/6" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    6. DataFrames &amp; pandas 🐝
-                  </Link>
-                  <Link href="/lectures/7" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    7. Plotting &amp; EDA 🧬
-                  </Link>
-                  <Link href="/lectures/8" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    8. Image Analysis 🔬
-                  </Link>
+                  {(['basics', 'data'] as const).map((g) => {
+                    const inGroup = publishedLectures.filter((e) => e.group === g)
+                    if (!inGroup.length) return null
+                    return (
+                      <div key={g}>
+                        <div className="px-4 py-2 text-xs font-semibold text-bio-blue/70 uppercase tracking-wider border-b border-white/10">
+                          {g === 'basics' ? 'Python Basics' : 'Python & Data'}
+                        </div>
+                        {inGroup.map((e) => (
+                          <Link key={e.num} href={`/lectures/${e.num}`} className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                            {e.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )
+                  })}
                 </div>
               )}
             </div>
@@ -133,32 +156,22 @@ export default function Navigation() {
                   <Link href="/labs" className="block px-4 py-2.5 text-bio-blue hover:bg-bio-blue/20 transition-colors text-sm font-semibold border-b border-white/10">
                     All Labs
                   </Link>
-                  <div className="px-4 py-2 text-xs font-semibold text-bio-blue/70 uppercase tracking-wider border-b border-white/10">Python Basics</div>
-                  <Link href="/labs/1" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    Lab 1. Setup &amp; First Steps
-                  </Link>
-                  <Link href="/labs/2" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    Lab 2. Strings &amp; Lists
-                  </Link>
-                  <Link href="/labs/3" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    Lab 3. Loops &amp; Dictionaries
-                  </Link>
-                  <Link href="/labs/4" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    Lab 4. Functions, Files &amp; Errors
-                  </Link>
-                  <div className="px-4 py-2 text-xs font-semibold text-bio-blue/70 uppercase tracking-wider border-t border-b border-white/10">Python &amp; Data</div>
-                  <Link href="/labs/5" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    Lab 5. Arrays &amp; numpy 🐭
-                  </Link>
-                  <Link href="/labs/6" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    Lab 6. DataFrames &amp; pandas 🐝
-                  </Link>
-                  <Link href="/labs/7" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    Lab 7. Plotting &amp; EDA 🧬
-                  </Link>
-                  <Link href="/labs/8" className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
-                    Lab 8. Image Analysis 🔬
-                  </Link>
+                  {(['basics', 'data'] as const).map((g) => {
+                    const inGroup = publishedLabs.filter((e) => e.group === g)
+                    if (!inGroup.length) return null
+                    return (
+                      <div key={g}>
+                        <div className="px-4 py-2 text-xs font-semibold text-bio-blue/70 uppercase tracking-wider border-b border-white/10">
+                          {g === 'basics' ? 'Python Basics' : 'Python & Data'}
+                        </div>
+                        {inGroup.map((e) => (
+                          <Link key={e.num} href={`/labs/${e.num}`} className="block px-4 py-2.5 text-gray-300 hover:bg-bio-blue/20 hover:text-bio-blue transition-colors text-sm">
+                            {e.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )
+                  })}
                 </div>
               )}
             </div>
@@ -226,31 +239,43 @@ export default function Navigation() {
           <div className="px-6 py-4 space-y-3">
             {/* Lectures Section */}
             <div className="border-b border-white/10 pb-3">
-              <div className="text-xs font-semibold text-bio-blue/70 uppercase tracking-wider mb-1">Python Basics</div>
-              <Link href="/lectures/1" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">1. Variables &amp; Data Types</Link>
-              <Link href="/lectures/2" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">2. Strings &amp; Lists</Link>
-              <Link href="/lectures/3" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">3. Loops &amp; Dictionaries</Link>
-              <Link href="/lectures/4" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">4. Functions, Files &amp; Errors</Link>
-              <div className="text-xs font-semibold text-bio-blue/70 uppercase tracking-wider mt-2 mb-1">Python &amp; Data</div>
-              <Link href="/lectures/5" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">5. Arrays &amp; numpy 🐭</Link>
-              <Link href="/lectures/6" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">6. DataFrames &amp; pandas 🐝</Link>
-              <Link href="/lectures/7" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">7. Plotting &amp; EDA 🧬</Link>
-              <Link href="/lectures/8" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">8. Image Analysis 🔬</Link>
+              {(['basics', 'data'] as const).map((g) => {
+                const inGroup = publishedLectures.filter((e) => e.group === g)
+                if (!inGroup.length) return null
+                return (
+                  <div key={g}>
+                    <div className="text-xs font-semibold text-bio-blue/70 uppercase tracking-wider mt-2 mb-1">
+                      {g === 'basics' ? 'Python Basics' : 'Python & Data'}
+                    </div>
+                    {inGroup.map((e) => (
+                      <Link key={e.num} href={`/lectures/${e.num}`} onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">
+                        {e.label}
+                      </Link>
+                    ))}
+                  </div>
+                )
+              })}
             </div>
 
             {/* Labs Section */}
             <div className="border-b border-white/10 pb-3">
               <Link href="/labs" onClick={toggleMobileMenu} className="block nav-link py-1.5 text-sm font-semibold text-bio-blue">All Labs</Link>
-              <div className="text-xs font-semibold text-bio-blue/70 uppercase tracking-wider mt-2 mb-1">Python Basics</div>
-              <Link href="/labs/1" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 1. Setup &amp; First Steps</Link>
-              <Link href="/labs/2" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 2. Strings &amp; Lists</Link>
-              <Link href="/labs/3" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 3. Loops &amp; Dictionaries</Link>
-              <Link href="/labs/4" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 4. Functions, Files &amp; Errors</Link>
-              <div className="text-xs font-semibold text-bio-blue/70 uppercase tracking-wider mt-2 mb-1">Python &amp; Data</div>
-              <Link href="/labs/5" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 5. Arrays &amp; numpy 🐭</Link>
-              <Link href="/labs/6" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 6. DataFrames &amp; pandas 🐝</Link>
-              <Link href="/labs/7" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 7. Plotting &amp; EDA 🧬</Link>
-              <Link href="/labs/8" onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">Lab 8. Image Analysis 🔬</Link>
+              {(['basics', 'data'] as const).map((g) => {
+                const inGroup = publishedLabs.filter((e) => e.group === g)
+                if (!inGroup.length) return null
+                return (
+                  <div key={g}>
+                    <div className="text-xs font-semibold text-bio-blue/70 uppercase tracking-wider mt-2 mb-1">
+                      {g === 'basics' ? 'Python Basics' : 'Python & Data'}
+                    </div>
+                    {inGroup.map((e) => (
+                      <Link key={e.num} href={`/labs/${e.num}`} onClick={toggleMobileMenu} className="block nav-link py-1.5 pl-4 text-sm">
+                        {e.label}
+                      </Link>
+                    ))}
+                  </div>
+                )
+              })}
             </div>
 
 

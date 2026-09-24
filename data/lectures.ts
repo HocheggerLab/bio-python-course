@@ -131,3 +131,13 @@ export const pythonDataData: Lecture[] = [
 export const coreSessionsData: Lecture[] = [...pythonBasicsData, ...pythonDataData]
 
 export const lectures: Lecture[] = coreSessionsData
+/**
+ * Is this lecture's deck published?
+ *
+ * One source of truth for the nav, the cards and anything else that links
+ * out. `status` alone is not enough: it only picks the badge, while a card
+ * falls through to /under-construction when the url is absent. A deck counts
+ * as published when both agree.
+ */
+export const isLecturePublished = (num: number): boolean =>
+  coreSessionsData.some((l) => l.id === num && l.status === 'available' && !!l.slideUrl)
