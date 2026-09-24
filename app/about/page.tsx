@@ -46,6 +46,17 @@ export default function AboutPage() {
 
         <div className="mt-8 md:mt-10 rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8 text-center">
           <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+            This course was developed by{' '}
+            <External href="https://www.hocheggerlab.org/">Helfrid Hochegger</External>{' '}
+            and{' '}
+            <External href="https://profiles.sussex.ac.uk/p412189-doran-amos">
+              Doran Amos
+            </External>.
+          </p>
+        </div>
+
+        <div className="mt-5 md:mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8 text-center">
+          <p className="text-gray-300 text-sm md:text-base leading-relaxed">
             Eight lectures and eight labs across the term, assessed by one test and two
             programming projects — see <Inline href="/assessment">Assessment</Inline> for
             what each involves and <Inline href="/schedule">Schedule</Inline> for when.
@@ -70,6 +81,19 @@ function List({ title, items }: { title: string; items: string[] }) {
         ))}
       </ul>
     </section>
+  )
+}
+
+function External({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-bio-blue hover:text-bio-yellow underline underline-offset-4 transition-colors"
+    >
+      {children}
+    </a>
   )
 }
 
