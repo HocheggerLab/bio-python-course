@@ -22,15 +22,6 @@ export function Slide22PollLegend() {
     >
       <PollSlide
         questionId="l7-p1"
-        answer={
-      <>
-        The label belongs on the <span className="font-mono">plot</span> call, not the
-        legend: <span className="font-mono">ax.legend()</span> only draws what has
-        already been labelled. Without it matplotlib warns{' '}
-        <em>&ldquo;No artists with labels found&rdquo;</em> and draws an empty box —{' '}
-        <span className="font-mono">loc=</span> moves that empty box around.
-      </>
-        }
       />
     </ConceptSlide>
   )

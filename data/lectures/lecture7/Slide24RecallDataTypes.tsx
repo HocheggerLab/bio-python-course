@@ -25,15 +25,6 @@ export function Slide24RecallDataTypes() {
     >
       <PollSlide
         questionId="l7-r2"
-        answer={
-          <>
-            <strong>Cancer lineage.</strong> It is a <em>label</em> you can count — there
-            are 73 skin lines and 124 lung. The other three are{' '}
-            <strong>continuous</strong>: measured on a scale, and any value in between is
-            possible. A score of <span className="font-mono">−0.83</span> means something;
-            a lineage halfway between Skin and Lung does not.
-          </>
-        }
       />
     </ConceptSlide>
   )

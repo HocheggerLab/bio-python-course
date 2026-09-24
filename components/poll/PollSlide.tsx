@@ -15,6 +15,24 @@ interface Results {
   total: number
   counts: number[]
   correctIndex: number
+  /** The worked explanation. Arrives with the tally, behind the same gate. */
+  explanation: string | null
+}
+
+/**
+ * The explanations cross the wire as plain strings, so a little markup is
+ * spelled rather than nested: `code`, **bold**, *italic*.
+ */
+function renderProse(text: string): React.ReactNode {
+  return text.split(/(`[^`]+`|\*\*[^*]+\*\*|\*[^*]+\*)/g).map((part, i) => {
+    if (part.startsWith('`') && part.endsWith('`'))
+      return <span key={i} className="font-mono">{part.slice(1, -1)}</span>
+    if (part.startsWith('**') && part.endsWith('**'))
+      return <strong key={i}>{part.slice(2, -2)}</strong>
+    if (part.startsWith('*') && part.endsWith('*'))
+      return <em key={i}>{part.slice(1, -1)}</em>
+    return part
+  })
 }
 
 /**
@@ -29,14 +47,7 @@ interface Results {
  * cookie, so a student's browser never receives the counts or the correct
  * answer, whatever they do to the page.
  */
-export default function PollSlide({
-  questionId,
-  answer,
-}: {
-  questionId: string
-  /** Shown only once revealed — the explanation you talk over. */
-  answer?: React.ReactNode
-}) {
+export default function PollSlide({ questionId }: { questionId: string }) {
   const content = getContent(questionId)
   const [results, setResults] = useState<Results | null>(null)
   const [teacher, setTeacher] = useState(false)
@@ -181,9 +192,9 @@ export default function PollSlide({
           })}
         </div>
 
-        {showBars && answer && (
+        {showBars && results?.explanation && (
           <div className="mt-4 md:mt-5 text-gray-100 text-sm md:text-lg leading-relaxed">
-            {answer}
+            {renderProse(results.explanation)}
           </div>
         )}
       </div>

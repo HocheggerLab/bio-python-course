@@ -1,6 +1,7 @@
 import { getStore } from '@/lib/poll/store'
 import { getQuestion } from '@/lib/poll/questions'
 import { isAuthorised } from '@/lib/poll/admin'
+import { getAnswerProse } from '@/lib/poll/answers'
 
 export const dynamic = 'force-dynamic'
 
@@ -39,5 +40,8 @@ export async function GET(request: Request) {
     total,
     counts,
     correctIndex: def.correctIndex,
+    /* The explanation rides along with the tally rather than being shipped to
+       every browser as a slide prop. Same gate as the counts. */
+    explanation: getAnswerProse(questionId) ?? null,
   })
 }

@@ -25,15 +25,6 @@ export function Slide25RecallPlotChoice() {
     >
       <PollSlide
         questionId="l7-r3"
-        answer={
-          <>
-            <span className="font-mono">ax.hist()</span> — one continuous column is a{' '}
-            <strong>distribution</strong>. Each of the others needs something you were not
-            given: <span className="font-mono">scatter</span> a second column,{' '}
-            <span className="font-mono">barh</span> a category to label the bars, and{' '}
-            <span className="font-mono">boxplot</span> groups to split on.
-          </>
-        }
       />
     </ConceptSlide>
   )
