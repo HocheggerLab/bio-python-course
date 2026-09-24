@@ -21,7 +21,7 @@ export default function Hero() {
             <Microscope className="w-12 h-12 md:w-20 md:h-20 shrink-0 text-bio-blue" />
           </div>
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-            A practical programming course for Year 3 Life Sciences students at the University of Sussex. No prior coding experience required!
+            A practical programming course for biology students. No prior coding experience required!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
             <a href="#python-basics" className="btn-primary text-lg">

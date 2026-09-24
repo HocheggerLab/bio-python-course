@@ -9,7 +9,7 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", displ
 
 export const metadata: Metadata = {
   title: "Python for Biologists",
-  description: "A practical programming course for Year 3 Biology, Biochemistry, and Neuroscience students. No prior coding experience required!",
+  description: "A practical programming course for biology students. No prior coding experience required!",
 };
 
 export default function RootLayout({
