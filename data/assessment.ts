@@ -22,10 +22,10 @@ export const assessment: AssessmentItem[] = [
     id: 'test',
     name: 'Test on Python fundamentals',
     weight: 15,
-    week: 5,
+    week: 6,
     format: 'In-class MCQ test, 1 hour',
     covers: 'Weeks 1–4 — base Python',
-    submission: 'Taken in-class (Thurs 3-5 pm workshop, Week 5)',
+    submission: 'Taken in-class (Monday Class, Week 6)',
     detail: [
       'Master the fundamentals of Python before the project assignments.',
       'Prepare using the practice quizzes on Canvas.',

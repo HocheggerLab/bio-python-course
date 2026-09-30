@@ -2,18 +2,20 @@
 
 import { QRCodeSVG } from 'qrcode.react'
 import { GradientText } from '@/components/slides/SlideTitle'
+import { SlideCard, CardHeading } from '@/components/slides/SlideCard'
 import { ExerciseSlide, type Step } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
 // Lecturer's permanent Poll Everywhere room.
 // Rotate the active poll inside the Poll Everywhere dashboard before class — no redeploy needed.
-const POLL_URL = 'https://pollev.com/your-handle'
+const POLL_URL = 'https://pe.app/doranamos'
 
 const tasks: Step[] = [
   { label: 'Loop over the codon start positions with range(frame, len(seq) - 2, 3)', accent: 'yellow' },
   { label: 'Slice each codon with seq[i:i+3] and look it up with .get(codon, "?")', accent: 'yellow' },
   { label: 'Add each amino acid onto protein — the accumulator', accent: 'yellow' },
   { label: 'Run it for frame 0, then change the frame to 1 and run again', accent: 'yellow' },
+  { label: 'Submit your output for frame 1 to the poll', accent: 'yellow' },
 ]
 
 
@@ -63,6 +65,24 @@ export function Slide22TIYTwoFrames() {
         </>
       }
       steps={tasks}
+      aside={
+              <SlideCard color="blue" layout="start" padding="tight" className="border-l-4">
+                <div className="flex items-center gap-3 md:gap-5">
+                  <div className="bg-white rounded p-2 md:p-3 shrink-0">
+                    <QRCodeSVG value={POLL_URL} size={96} level="M" includeMargin={false} />
+                  </div>
+                  <div className="min-w-0">
+                    <CardHeading size="sm" color="blue" className="mb-1 md:mb-2">
+                      Submit your total
+                    </CardHeading>
+                    <p className="text-gray-400 text-xs md:text-sm xl:text-base leading-snug">
+                      Scan with your phone — submit your{' '}
+                      <span className="text-bio-blue font-semibold">total</span> to today&apos;s poll.
+                    </p>
+                  </div>
+                </div>
+              </SlideCard>
+            }      
     >
       <LazyPythonRunner
         initialCode={initialCode}

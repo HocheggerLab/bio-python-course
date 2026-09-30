@@ -8,7 +8,7 @@ import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
 // Lecturer's permanent Poll Everywhere room.
 // Rotate the active poll inside the Poll Everywhere dashboard before class — no redeploy needed.
-const POLL_URL = 'https://pollev.com/your-handle'
+const POLL_URL = 'https://pe.app/doranamos'
 
 const tasks: Step[] = [
   { label: 'Slice out the three codons (bases 0:3, 3:6, 6:9)', accent: 'yellow' },

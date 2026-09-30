@@ -115,8 +115,7 @@ vercel --prod
 
 ## 📞 Contact
 
-- **Course Instructor**: Prof. Helfrid Hochegger (hh65@sussex.ac.uk)
-- **Teaching Assistant**: Dr. Doran Amos (D.P.Amos@sussex.ac.uk)
+- **Course Instructors**: Prof. Helfrid Hochegger (hh65@sussex.ac.uk) and Dr. Doran Amos (D.P.Amos@sussex.ac.uk)
 - **Course Repository**: [github.com/HocheggerLab/y3-bio-python](https://github.com/HocheggerLab/y3-bio-python)
 
 ## 📄 License

@@ -42,7 +42,8 @@ export function Slide13SlicingCodons() {
           </CardHeading>
           <CardBody className="text-sm md:text-base xl:text-lg">
             What if we want a slice in reverse order? 
-            We can set the <strong>step value</strong>. 
+            We can set the <strong>step value</strong> with {' '}
+            <span className="font-mono">[start:end:step]</span>. 
             Using <span className="font-mono">[::-1]</span> moves{' '}
             <strong>backwards</strong> through the slice 1 step at a time 
             — perfect for getting the reverse-complement strand.
