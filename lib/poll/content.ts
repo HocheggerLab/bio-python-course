@@ -128,7 +128,7 @@ ph = 7.4`,
   'l1-r3': {
     prompt: 'Which of these is a variable name Python will accept?',
     optionsAreCode: true,
-    options: ['2nd_sample', 'buffer ph', 'buffer_ph', 'float'],
+    options: ['2nd_sample', 'buffer ph', 'buffer_ph', '.count'],
   },
 
   /* Closing recall block. */

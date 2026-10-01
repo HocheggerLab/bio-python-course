@@ -67,8 +67,8 @@ export const POLL_ANSWERS: Record<string, string> = {
     '`"3" * 2` is `"33"`. This is the single most common data-handling bug in biology.',
 
   'l1-r3':
-    '`buffer_ph`. Names cannot start with a digit, cannot contain a space, and ' +
-    'cannot be a word Python already uses — `float` is reserved. All three of the ' +
+    '`buffer_ph`. Names cannot contain a space and cannot start with a digit ' +
+    'or a special character (e.g. `.`). All three of the ' +
     'others generate a `SyntaxError`.',
 
   'l7-p1':

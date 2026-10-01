@@ -17,7 +17,7 @@ const websiteFeatures = [
 ]
 
 const canvasFeatures = [
-  { icon: '✍', label: 'Practice quizzes', desc: 'Prepare for the Week 5 test' },
+  { icon: '✍', label: 'Practice quizzes', desc: 'Prepare for the in-class test' },
   { icon: '❓', label: 'Discussion board', desc: 'Ask questions anonymously' },
   { icon: '📥', label: 'Submission', desc: 'Hand in your project work' },
   { icon: '📑', label: 'Feedback', desc: 'See your grades and feedback' },
