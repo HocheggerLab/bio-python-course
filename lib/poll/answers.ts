@@ -21,6 +21,40 @@
  *   *italic*    → emphasis
  */
 export const POLL_ANSWERS: Record<string, string> = {
+  'l2-t1':
+    '**51.7**. The two edits matter: `del readings[1]` drops the pipetting ' +
+    'error and `.append(19)` adds the late replicate, so n is 20 again. ' +
+    'Leaving the bad reading in gives 50.0; forgetting the replicate gives ' +
+    '53.4; doing neither gives 51.6.',
+
+  'l2-t2':
+    '**GC 8, EcoRI at 9.** Everything depends on cleaning first — on the raw ' +
+    'lower-case string `.count("G")` is 0 and `.find("GAATTC")` returns `-1`, ' +
+    'which is how `find` says *not here*. Work on `clean`, never on `dna`.',
+
+  'l2-t3':
+    '**Met-?-Stop.** `CGT` is not in the table, and `.get(codon, "?")` returns ' +
+    'the fallback instead of raising. `codon_table[codon]` would have crashed ' +
+    'the whole script on one missing codon — that is the entire reason `.get` ' +
+    'exists.',
+
+  'l3-t1':
+    '**31392 minutes.** One day is 1440 minutes, so 21.8 days of total ' +
+    'incubation is 31,392 minutes. The other options are the same answer in ' +
+    'the wrong unit: 523.2 hours, 21.8 days, 1,883,520 seconds. Always carry ' +
+    'the unit with the number.',
+
+  'l3-t2':
+    '**4.** `hepatitis B` (20 bases) and `phage λ` (16) are not whole numbers ' +
+    'of codons, so `len(seq) % 3` is 2 and 1 rather than 0. Answering 6 means ' +
+    'the filter never ran; answering 2 means the test was the wrong way round.',
+
+  'l3-t3':
+    '**MVRWTLWDTLAFLLLLSLL.** The same 60 bases read one position over give a ' +
+    'completely different protein — that is what a reading frame *is*. If you ' +
+    'got `YGTLDFVGYPRFPAPVEFIA` the loop still starts at 0; it has to start at ' +
+    '`frame`: `range(frame, len(seq) - 2, 3)`.',
+
   'l1-r1':
     'Only `f"..."` substitutes. Without the `f` Python prints the braces ' +
     'literally — no error, wrong output, and it will sit in a script for weeks. ' +

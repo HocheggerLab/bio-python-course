@@ -1,13 +1,10 @@
 'use client'
 
-import { QRCodeSVG } from 'qrcode.react'
 import { GradientText } from '@/components/slides/SlideTitle'
 import { ExerciseSlide, type Step } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
+import TIYPoll from '@/components/poll/TIYPoll'
 
-// Lecturer's permanent Poll Everywhere room.
-// Rotate the active poll inside the Poll Everywhere dashboard before class — no redeploy needed.
-const POLL_URL = 'https://pollev.com/your-handle'
 
 const tasks: Step[] = [
   { label: 'Loop through every sequence in the dictionary (using sequences.items())', accent: 'yellow' },

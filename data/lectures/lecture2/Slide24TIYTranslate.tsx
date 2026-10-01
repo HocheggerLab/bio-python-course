@@ -1,14 +1,10 @@
 'use client'
 
-import { QRCodeSVG } from 'qrcode.react'
 import { GradientText } from '@/components/slides/SlideTitle'
-import { SlideCard, CardHeading } from '@/components/slides/SlideCard'
 import { ExerciseSlide, type Step } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
+import TIYPoll from '@/components/poll/TIYPoll'
 
-// Lecturer's permanent Poll Everywhere room.
-// Rotate the active poll inside the Poll Everywhere dashboard before class — no redeploy needed.
-const POLL_URL = 'https://pollev.com/your-handle'
 
 const tasks: Step[] = [
   { label: 'Slice out the three codons (bases 0:3, 3:6, 6:9)', accent: 'yellow' },
@@ -53,24 +49,7 @@ export function Slide24TIYTranslate() {
         </>
       }
       steps={tasks}
-      aside={
-              <SlideCard color="blue" layout="start" padding="tight" className="border-l-4">
-                <div className="flex items-center gap-3 md:gap-5">
-                  <div className="bg-white rounded p-2 md:p-3 shrink-0">
-                    <QRCodeSVG value={POLL_URL} size={96} level="M" includeMargin={false} />
-                  </div>
-                  <div className="min-w-0">
-                    <CardHeading size="sm" color="blue" className="mb-1 md:mb-2">
-                      Submit your result
-                    </CardHeading>
-                    <p className="text-gray-400 text-xs md:text-sm xl:text-base leading-snug">
-                      Scan with your phone — submit your{' '}
-                      <span className="text-bio-blue font-semibold">answer</span> to today&apos;s poll.
-                    </p>
-                  </div>
-                </div>
-              </SlideCard>
-            }
+      aside={<TIYPoll questionId="l2-t3" />}
     >
       <LazyPythonRunner
         initialCode={initialCode}

@@ -15,6 +15,14 @@ export interface QuestionDef {
 }
 
 const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
+  // Try-it-Yourself polls. Answers verified by running each exercise.
+  'l2-t1': { lecture: 2, correctIndex: 0 },   // 51.7
+  'l2-t2': { lecture: 2, correctIndex: 0 },   // GC 8, EcoRI at 9
+  'l2-t3': { lecture: 2, correctIndex: 0 },   // Met-?-Stop
+  'l3-t1': { lecture: 3, correctIndex: 0 },   // 31392 minutes
+  'l3-t2': { lecture: 3, correctIndex: 0 },   // 4
+  'l3-t3': { lecture: 3, correctIndex: 0 },   // MVRWTLWDTLAFLLLLSLL
+
   // All three verified against CPython: only B interpolates, "3.14" is a str,
   // and the other three names are SyntaxErrors (digit first, space, keyword).
   'l1-r1': { lecture: 1, correctIndex: 1 },

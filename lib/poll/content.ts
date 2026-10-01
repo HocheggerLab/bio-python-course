@@ -20,6 +20,70 @@ export interface PollContent {
 }
 
 export const POLL_CONTENT: Record<string, PollContent> = {
+  /* Try-it-Yourself polls. Unlike the recall questions these are asked while
+     the room is still typing, so the options are the answers the exercise
+     actually produces — each wrong one is a specific mistake a student makes,
+     not a plausible-looking number. Verified against CPython. */
+
+  /* Forgetting to remove the bad reading leaves n=21 and gives 50.0;
+     forgetting to append the late replicate leaves n=19 and gives 53.4;
+     doing neither gives 51.6. */
+  'l2-t1': {
+    prompt: 'What mean did you get?',
+    options: ['51.7', '50.0', '53.4', '51.6'],
+  },
+
+  /* The whole exercise turns on cleaning first. On the raw lower-case string
+     .count("G") is 0 and .find("GAATTC") is -1, so skipping step 1 is visible
+     in the answer rather than merely wrong. */
+  'l2-t2': {
+    prompt: 'What GC count and EcoRI position did your report show?',
+    options: [
+      'GC 8, EcoRI at 9',
+      'GC 0, EcoRI at -1',
+      'GC 8, EcoRI at 10',
+      'GC 10, EcoRI at 9',
+    ],
+  },
+
+  /* CGT is deliberately absent from the table: .get returns "?" where [] would
+     raise KeyError. Picking Arg means translating from memory, not from the
+     dictionary in front of them. */
+  'l2-t3': {
+    prompt: 'What peptide did you get?',
+    optionsAreCode: true,
+    options: ['Met-?-Stop', 'Met-Arg-Stop', 'Met-Gly-Stop', 'KeyError'],
+  },
+
+  /* Every wrong option here is the right number in the wrong unit -- days,
+     hours, seconds. Rounding makes no difference to this data, so a units
+     slip is the only mistake the exercise can actually produce. */
+  'l3-t1': {
+    prompt: 'What was your total incubation time, in minutes?',
+    options: ['31392', '523.2', '21.8', '1883520'],
+  },
+
+  /* Six sequences in, four divisible by 3. Answering 6 means the filter never
+     ran; answering 2 means the test was inverted. */
+  'l3-t2': {
+    prompt: 'How many sequences are ready to translate?',
+    options: ['4', '6', '2', '3'],
+  },
+
+  /* Same 60 bases, read one base over. Option B is frame 0 -- picking it means
+     the loop still starts at 0 rather than at `frame`, which is the one line
+     the exercise is about. */
+  'l3-t3': {
+    prompt: 'What protein did frame 1 give you?',
+    optionsAreCode: true,
+    options: [
+      'MVRWTLWDTLAFLLLLSLL',
+      'YGTLDFVGYPRFPAPVEFIA',
+      'MVRWTLWDTLAFLLLLSLL?',
+      'YGTLDFVGYPRFPAPVEFI',
+    ],
+  },
+
   /* Part 1 — grown out of the two-strains exercise. The bug is silent apart
      from a warning: both lines draw, the legend is simply empty. */
   'l7-p1': {
