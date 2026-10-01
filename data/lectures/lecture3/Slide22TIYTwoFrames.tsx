@@ -11,6 +11,7 @@ const tasks: Step[] = [
   { label: 'Slice each codon with seq[i:i+3] and look it up with .get(codon, "?")', accent: 'yellow' },
   { label: 'Add each amino acid onto protein — the accumulator', accent: 'yellow' },
   { label: 'Run it for frame 0, then change the frame to 1 and run again', accent: 'yellow' },
+  { label: 'Submit your frame 1 protein to the poll', accent: 'yellow' },
 ]
 
 

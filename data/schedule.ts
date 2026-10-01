@@ -41,13 +41,13 @@ export const scheduleData: ScheduleWeek[] = [
     week: 5,
     lecture: { num: 5, title: 'Arrays — One Neuron, Many Trials' },
     workshop: { num: 4, title: 'Functions, Errors & Files' },
-    assessment: 'Test (15%) — sat in this workshop',
     projectWork: 'Project 1',
   },
   {
     week: 6,
     lecture: { num: 6, title: 'DataFrames — Who Pollinates Your Dinner?' },
     workshop: { num: 5, title: 'Arrays, numpy & Projects' },
+    assessment: 'Test (15%) — sat in the Monday class',
     projectWork: 'Projects 1 & 2',
   },
   {

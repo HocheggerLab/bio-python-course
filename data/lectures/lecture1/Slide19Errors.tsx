@@ -33,6 +33,7 @@ export function Slide19Errors() {
         height="205px"
         description="Live demo — reading a traceback"
         staticOutput={demoOutput}
+        showLineNumbers={true}
         />
     </ConceptSlide>
   )
