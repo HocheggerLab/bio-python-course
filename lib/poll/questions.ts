@@ -21,7 +21,11 @@ const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
   'l2-t1c': { lecture: 2, correctIndex: 0 },  // readings.append(19)
   'l2-t1d': { lecture: 2, correctIndex: 2 },  // 20
   'l2-t1e': { lecture: 2, correctIndex: 1 },  // round(sum / len, 1) -> 51.7
-  'l2-t2': { lecture: 2, correctIndex: 0 },   // GC 8, EcoRI at 9
+  'l2-t2a': { lecture: 2, correctIndex: 2 },  // clean = dna.upper()
+  'l2-t2b': { lecture: 2, correctIndex: 0 },  // 21
+  'l2-t2c': { lecture: 2, correctIndex: 1 },  // clean[0:3]
+  'l2-t2d': { lecture: 2, correctIndex: 3 },  // count G + count C -> 8
+  'l2-t2e': { lecture: 2, correctIndex: 2 },  // 9
   'l2-t3': { lecture: 2, correctIndex: 0 },   // Met-?-Stop
   'l3-t1': { lecture: 3, correctIndex: 0 },   // 31392 minutes
   'l3-t2': { lecture: 3, correctIndex: 0 },   // 4

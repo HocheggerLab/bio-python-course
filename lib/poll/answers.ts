@@ -51,10 +51,32 @@ export const POLL_ANSWERS: Record<string, string> = {
     'have no `.sum()` method: `sum()` and `len()` are functions you hand the ' +
     'list to.',
 
-  'l2-t2':
-    '**GC 8, EcoRI at 9.** Everything depends on cleaning first — on the raw ' +
-    'lower-case string `.count("G")` is 0 and `.find("GAATTC")` returns `-1`, ' +
-    'which is how `find` says *not here*. Work on `clean`, never on `dna`.',
+  'l2-t2a':
+    '**`clean = dna.upper()`**. A method needs its round brackets to run: ' +
+    'without them, `clean` holds the method itself, not an upper-case string. ' +
+    '`upper` is not a function on its own (`NameError`), and Python is ' +
+    'case-sensitive, so `.UPPER()` does not exist (`AttributeError`).',
+
+  'l2-t2b':
+    '**21**. `len()` counts every base. 20 is the position of the *last* base: ' +
+    'positions start at 0, so they run from 0 to 20. 7 is the number of codons.',
+
+  'l2-t2c':
+    '**`clean[0:3]`**. The first base is at position 0, and the end of a slice ' +
+    'is not included, so `0:3` gives positions 0, 1, 2. `[1:4]` starts one too ' +
+    'late (TGC), `[0:2]` stops one too early (AT), and `[3]` is a single base.',
+
+  'l2-t2d':
+    '**`clean.count("G") + clean.count("C")`**, which gives 8. `.count("GC")` ' +
+    'counts the two-letter text *GC* (just 1 here). On the messy `dna` there ' +
+    'are no upper-case G or C at all, so you get 0. `.count()` takes one thing ' +
+    'to look for, so `.count("G", "C")` is a `TypeError`.',
+
+  'l2-t2e':
+    '**9**. `.find()` gives the position where the match *starts*, counting from ' +
+    '0. 10 is counting from 1, and 15 is where the site ends. `-1` is how ' +
+    '`.find()` says *not found*. That is what you get searching the lower-case ' +
+    '`dna`, which is why we clean first.',
 
   'l2-t3':
     '**Met-?-Stop.** `CGT` is not in the table, and `.get(codon, "?")` returns ' +

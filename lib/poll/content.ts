@@ -63,17 +63,41 @@ export const POLL_CONTENT: Record<string, PollContent> = {
     ],
   },
 
-  /* The whole exercise turns on cleaning first. On the raw lower-case string
-     .count("G") is 0 and .find("GAATTC") is -1, so skipping step 1 is visible
-     in the answer rather than merely wrong. */
-  'l2-t2': {
-    prompt: 'What GC count and EcoRI position did your report show?',
+  /* The strings exercise, one step per question, like the list block above.
+     Every wrong option is a real mistake, checked in CPython: forgetting the
+     brackets on a method, counting from 1, treating the slice end as
+     included, searching the messy lower-case dna instead of clean. */
+  'l2-t2a': {
+    prompt: 'Which line stores an upper-case copy of the sequence in clean?',
+    code: 'dna = "atgcgtacggaattcaaatag"',
+    optionsAreCode: true,
+    options: ['clean = dna.upper', 'clean = upper(dna)', 'clean = dna.upper()', 'clean = dna.UPPER()'],
+  },
+  'l2-t2b': {
+    prompt: 'How many bases long is the sequence?',
+    code: 'clean = "ATGCGTACGGAATTCAAATAG"\nprint(len(clean))',
+    options: ['21', '20', '7'],
+  },
+  'l2-t2c': {
+    prompt: 'Which slice gives you the first codon, ATG?',
+    code: 'clean = "ATGCGTACGGAATTCAAATAG"',
+    optionsAreCode: true,
+    options: ['clean[1:4]', 'clean[0:3]', 'clean[0:2]', 'clean[3]'],
+  },
+  'l2-t2d': {
+    prompt: 'Which line counts all the G and C bases?',
+    optionsAreCode: true,
     options: [
-      'GC 8, EcoRI at 9',
-      'GC 0, EcoRI at -1',
-      'GC 8, EcoRI at 10',
-      'GC 10, EcoRI at 9',
+      'clean.count("GC")',
+      'dna.count("G") + dna.count("C")',
+      'clean.count("G", "C")',
+      'clean.count("G") + clean.count("C")',
     ],
+  },
+  'l2-t2e': {
+    prompt: 'Where does the EcoRI site GAATTC start?',
+    code: 'clean = "ATGCGTACGGAATTCAAATAG"\nprint(clean.find("GAATTC"))',
+    options: ['10', '-1', '9', '15'],
   },
 
   /* CGT is deliberately absent from the table: .get returns "?" where [] would

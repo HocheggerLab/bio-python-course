@@ -26,7 +26,15 @@ import { Slide13SlicingCodons } from './Slide13SlicingCodons'
 import { Slide14BuildingStrings } from './Slide14BuildingStrings'
 import { Slide15StringMethods } from './Slide15StringMethods'
 import { Slide16Transcription } from './Slide16Transcription'
-import { Slide17TIYSequenceReport } from './Slide17TIYSequenceReport'
+import {
+  Slide17StringQuizOpener,
+  Slide17StringQ1,
+  Slide17StringQ2,
+  Slide17StringQ3,
+  Slide17StringQ4,
+  Slide17StringQ5,
+} from './Slide17StringQuiz'
+import { Slide17RevisionSequence } from './Slide17RevisionSequence'
 // Block 3 — Dictionaries
 import { Slide18CodonTable } from './Slide18CodonTable'
 import { Slide19DictExamples } from './Slide19DictExamples'
@@ -68,7 +76,13 @@ export const lecture2Data: LectureData = {
     { title: 'Building Strings', content: <Slide14BuildingStrings /> },
     { title: 'String Methods', content: <Slide15StringMethods /> },
     { title: 'Transcription with .replace()', content: <Slide16Transcription /> },
-    { title: 'TIY — Profile a sequence', content: <Slide17TIYSequenceReport /> },
+    { title: 'Quiz — Profile a sequence, step by step', content: <Slide17StringQuizOpener /> },
+    { title: 'Quiz 1 — Clean it up', content: <Slide17StringQ1 /> },
+    { title: 'Quiz 2 — Count the bases', content: <Slide17StringQ2 /> },
+    { title: 'Quiz 3 — The first codon', content: <Slide17StringQ3 /> },
+    { title: 'Quiz 4 — GC count', content: <Slide17StringQ4 /> },
+    { title: 'Quiz 5 — Find the EcoRI site', content: <Slide17StringQ5 /> },
+    { title: 'Revision — Profile a sequence', content: <Slide17RevisionSequence /> },
     // ── Block 3: Dictionaries ──────────────────────────────
     { title: 'Dictionaries — a lookup table', content: <Slide18CodonTable /> },
     { title: 'Dictionaries Are Everywhere', content: <Slide19DictExamples /> },
