@@ -13,7 +13,7 @@ for i in range(0, len(seq) - 2, 3):
     codon = seq[i:i+3]
     if codon in stop_codons:      # ribosome reaches the stop...
         break                     # ...and lets go. Nothing more is read.
-    protein = protein + codon_table.get(codon, "?")
+    protein = protein + codon_table[codon]
 print(protein)
 `
 
@@ -32,8 +32,9 @@ export function Slide20StopAndGo() {
           <CardBody className="text-sm md:text-base xl:text-lg">
             The three stop codons live in a set:{' '}
             <span className="font-mono">{'{"TAA", "TAG", "TGA"}'}</span>. Then{' '}
-            <span className="font-mono">codon in stop_codons</span> — the same membership test you
-            used on dictionaries in Session 2.
+            <span className="font-mono">codon in stop_codons</span> asks a yes/no question: is this
+            codon one of the three? <span className="font-mono">True</span> or{' '}
+            <span className="font-mono">False</span>, ready for an <span className="font-mono">if</span>.
           </CardBody>
         </SlideCard>
         <SlideCard color="yellow" layout="start" padding="compact" className="border-l-4">

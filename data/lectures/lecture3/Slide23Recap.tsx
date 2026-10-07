@@ -18,7 +18,7 @@ const decisions = [
 const translator = [
   'A string loops too — one base at a time',
   'seq[i:i+3] — carve out each codon',
-  '.get(codon, "?") — look it up safely',
+  'codon_table[codon] — look it up',
   'Shift the frame — a different protein falls out',
 ]
 

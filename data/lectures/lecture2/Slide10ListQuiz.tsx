@@ -1,4 +1,4 @@
-import { StepQuizOpener, StepQuizQuestion } from './StepQuiz'
+import { StepQuizOpener, StepQuizQuestion } from '@/components/poll/StepQuiz'
 
 const readingsCode = `readings = [42, 17, 88, 63, 29, 55, 71, 34, 90, 12,
             47, 68, 23, 81, 59, 36, 74, 50, 28, 65]`

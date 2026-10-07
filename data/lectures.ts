@@ -50,14 +50,15 @@ export const pythonBasicsData: Lecture[] = [
   },
   {
     id: 3,
-    title: "Loops, Dictionaries and Control Flow",
-    status: "under-construction",
+    title: "Control Flow: Teaching a Program to Run Itself",
+    status: "available",
     topics: [
-      "for / while loops and range()",
-      "if / elif / else",
-      "Dictionaries and .items() iteration",
-      "Building a codon translation table"
+      "for loops and the accumulator pattern",
+      "if / elif / else inside a loop",
+      "Looping through a dictionary with .items()",
+      "range() and translating a gene"
     ],
+    slideUrl: "/lectures/3",
     type: 'core'
   },
   {

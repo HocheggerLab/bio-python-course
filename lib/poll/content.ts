@@ -134,33 +134,119 @@ export const POLL_CONTENT: Record<string, PollContent> = {
     options: ['Met', 'GGT', 'Gly', 'KeyError'],
   },
 
-  /* Every wrong option here is the right number in the wrong unit -- days,
-     hours, seconds. Rounding makes no difference to this data, so a units
-     slip is the only mistake the exercise can actually produce. */
-  'l3-t1': {
-    prompt: 'What was your total incubation time, in minutes?',
-    options: ['31392', '523.2', '21.8', '1883520'],
-  },
-
-  /* Six sequences in, four divisible by 3. Answering 6 means the filter never
-     ran; answering 2 means the test was inverted. */
-  'l3-t2': {
-    prompt: 'How many sequences are ready to translate?',
-    options: ['4', '6', '2', '3'],
-  },
-
-  /* Same 60 bases, read one base over. Option B is frame 0 -- picking it means
-     the loop still starts at 0 rather than at `frame`, which is the one line
-     the exercise is about. */
-  'l3-t3': {
-    prompt: 'What protein did frame 1 give you?',
+  /* Lecture 3, the three Try-it-Yourselfs as poll blocks, like lecture 2:
+     one question per step, each opening gently, with the code kept as a
+     checked revision slide. Every option was run in CPython. */
+  'l3-t1a': {
+    prompt: 'Which line starts a loop over every incubation period?',
+    code: 'incubation_days = [3.0, 4.7, 4.9, 5.8, 3.4]',
     optionsAreCode: true,
     options: [
-      'MVRWTLWDTLAFLLLLSLL',
-      'YGTLDFVGYPRFPAPVEFIA',
-      'MVRWTLWDTLAFLLLLSLL?',
-      'YGTLDFVGYPRFPAPVEFI',
+      'for days in incubation_days',
+      'for days in incubation_days:',
+      'for incubation_days in days:',
+      'for days = incubation_days:',
     ],
+  },
+  'l3-t1b': {
+    prompt: 'Which line turns one period into whole minutes?',
+    code: 'for days in incubation_days:\n    # ???',
+    optionsAreCode: true,
+    options: [
+      'minutes = days * 1440',
+      'minutes = round(days / 1440)',
+      'minutes = round(incubation_days * 1440)',
+      'minutes = round(days * 1440)',
+    ],
+  },
+  'l3-t1c': {
+    prompt: 'Which line adds minutes to the new list?',
+    code: 'incubation_minutes = []\nfor days in incubation_days:\n    minutes = round(days * 1440)\n    # ???',
+    optionsAreCode: true,
+    options: [
+      'incubation_minutes = minutes',
+      'incubation_minutes.append(minutes)',
+      'incubation_minutes + minutes',
+      'minutes.append(incubation_minutes)',
+    ],
+  },
+  'l3-t1d': {
+    prompt: 'Where does total = 0 have to go?',
+    code: 'for m in incubation_minutes:\n    total = total + m\nprint(total)',
+    options: ['Before the loop', 'Inside the loop', 'After the loop'],
+  },
+  'l3-t1e': {
+    prompt: 'What is the total incubation time, in minutes?',
+    code: 'print(f"Total incubation time: {total} minutes")',
+    options: ['4896', '31392', '21.8', '523.2'],
+  },
+
+  'l3-t2a': {
+    prompt: 'What is 20 % 3?',
+    code: 'print(20 % 3)',
+    options: ['6', '2', '6.67', '0'],
+  },
+  'l3-t2b': {
+    prompt: "Which loop gives you each virus's name and its sequence?",
+    optionsAreCode: true,
+    options: [
+      'for seq in sequences:',
+      'for name, seq in sequences:',
+      'for name, seq in sequences.items():',
+      'for name, seq in sequences.values():',
+    ],
+  },
+  'l3-t2c': {
+    prompt: 'Which test is True only for a whole number of codons?',
+    optionsAreCode: true,
+    options: [
+      'if len(seq) % 3 == 0:',
+      'if len(seq) / 3 == 0:',
+      'if len(seq) % 3 = 0:',
+      'if seq % 3 == 0:',
+    ],
+  },
+  'l3-t2d': {
+    prompt: 'Which line keeps the name of a virus that passes?',
+    code: 'ready = []\nfor name, seq in sequences.items():\n    if len(seq) % 3 == 0:\n        # ???',
+    optionsAreCode: true,
+    options: ['ready = name', 'ready.append(seq)', 'ready.append(sequences)', 'ready.append(name)'],
+  },
+  'l3-t2e': {
+    prompt: 'After the loop, what is len(ready)?',
+    options: ['6', '2', '4', '0'],
+  },
+
+  'l3-t3a': {
+    prompt: 'Which numbers does range(0, 12, 3) give?',
+    code: 'for i in range(0, 12, 3):\n    print(i)',
+    options: ['0, 3, 6, 9', '0, 3, 6, 9, 12', '3, 6, 9, 12', '0, 1, 2, … 11'],
+  },
+  'l3-t3b': {
+    prompt: 'Which slice gives the codon that starts at i?',
+    code: 'for i in range(frame, len(seq) - 2, 3):\n    codon = ???',
+    optionsAreCode: true,
+    options: ['seq[i:3]', 'seq[i:i+3]', 'seq[i+3]', 'seq[i, i+3]'],
+  },
+  'l3-t3c': {
+    prompt: 'Which line gives the amino acid for codon?',
+    optionsAreCode: true,
+    options: ['codon_table(codon)', 'codon_table[i]', 'codon_table["codon"]', 'codon_table[codon]'],
+  },
+  'l3-t3d': {
+    prompt: 'protein starts as "". Which line adds each amino acid on?',
+    optionsAreCode: true,
+    options: [
+      'protein = protein + codon_table[codon]',
+      'protein = codon_table[codon]',
+      'protein + codon_table[codon]',
+      'protein.append(codon_table[codon])',
+    ],
+  },
+  'l3-t3e': {
+    prompt: 'With frame = 1, which protein falls out?',
+    optionsAreCode: true,
+    options: ['YGTLDFVGYPRFPAPVEFIA', 'MVRWTLWDTLAFLLLLSLL', 'L', 'ATGGTACGCTGGACT…'],
   },
 
   /* Part 1 — grown out of the two-strains exercise. The bug is silent apart

@@ -31,9 +31,21 @@ const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
   'l2-t3c': { lecture: 2, correctIndex: 0 },  // codon_table["GGT"]
   'l2-t3d': { lecture: 2, correctIndex: 3 },  // .values()
   'l2-t3e': { lecture: 2, correctIndex: 2 },  // Gly
-  'l3-t1': { lecture: 3, correctIndex: 0 },   // 31392 minutes
-  'l3-t2': { lecture: 3, correctIndex: 0 },   // 4
-  'l3-t3': { lecture: 3, correctIndex: 0 },   // MVRWTLWDTLAFLLLLSLL
+  'l3-t1a': { lecture: 3, correctIndex: 1 },  // for days in incubation_days:
+  'l3-t1b': { lecture: 3, correctIndex: 3 },  // round(days * 1440)
+  'l3-t1c': { lecture: 3, correctIndex: 1 },  // .append(minutes)
+  'l3-t1d': { lecture: 3, correctIndex: 0 },  // before the loop
+  'l3-t1e': { lecture: 3, correctIndex: 1 },  // 31392
+  'l3-t2a': { lecture: 3, correctIndex: 1 },  // 2
+  'l3-t2b': { lecture: 3, correctIndex: 2 },  // .items()
+  'l3-t2c': { lecture: 3, correctIndex: 0 },  // len(seq) % 3 == 0
+  'l3-t2d': { lecture: 3, correctIndex: 3 },  // ready.append(name)
+  'l3-t2e': { lecture: 3, correctIndex: 2 },  // 4
+  'l3-t3a': { lecture: 3, correctIndex: 0 },  // 0, 3, 6, 9
+  'l3-t3b': { lecture: 3, correctIndex: 1 },  // seq[i:i+3]
+  'l3-t3c': { lecture: 3, correctIndex: 3 },  // codon_table[codon]
+  'l3-t3d': { lecture: 3, correctIndex: 0 },  // protein = protein + ...
+  'l3-t3e': { lecture: 3, correctIndex: 1 },  // MVRWTLWDTLAFLLLLSLL
 
   // All three verified against CPython: only B interpolates, "3.14" is a str,
   // and the other three names are SyntaxErrors (digit first, space, keyword).

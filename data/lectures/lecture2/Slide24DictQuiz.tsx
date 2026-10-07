@@ -1,4 +1,4 @@
-import { StepQuizOpener, StepQuizQuestion } from './StepQuiz'
+import { StepQuizOpener, StepQuizQuestion } from '@/components/poll/StepQuiz'
 
 const tableCode = `codon_table = {"ATG": "Met", "GGT": "Gly", "TAA": "Stop"}
 seq = "ATGGGTTAA"`

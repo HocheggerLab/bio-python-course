@@ -14,8 +14,8 @@ type NavEntry = { num: number; label: string; group: 'basics' | 'data' }
 
 const LECTURE_NAV: NavEntry[] = [
   { num: 1, label: '1. Variables & Data Types', group: 'basics' },
-  { num: 2, label: '2. Strings & Lists', group: 'basics' },
-  { num: 3, label: '3. Loops & Dictionaries', group: 'basics' },
+  { num: 2, label: '2. Lists, Strings & Dictionaries', group: 'basics' },
+  { num: 3, label: '3. For Loops & Conditionals', group: 'basics' },
   { num: 4, label: '4. Functions, Files & Errors', group: 'basics' },
   { num: 5, label: '5. Arrays & numpy \u{1F42D}', group: 'data' },
   { num: 6, label: '6. DataFrames & pandas \u{1F41D}', group: 'data' },

@@ -106,22 +106,93 @@ export const POLL_ANSWERS: Record<string, string> = {
     '`seq[0:3]`. "GGT" is the slice before it is looked up. A slice is just a ' +
     'string, so it works fine as a key: no `KeyError`.',
 
-  'l3-t1':
-    '**31392 minutes.** One day is 1440 minutes, so 21.8 days of total ' +
-    'incubation is 31,392 minutes. The other options are the same answer in ' +
-    'the wrong unit: 523.2 hours, 21.8 days, 1,883,520 seconds. Always carry ' +
-    'the unit with the number.',
+  'l3-t1a':
+    '**`for days in incubation_days:`**. Name the loop variable first (you pick ' +
+    'it), then the list, and end the line with a colon. Without the colon it is ' +
+    'a `SyntaxError`. The other way round, `days` does not exist yet ' +
+    '(`NameError`), and `=` has no place in a `for` line.',
 
-  'l3-t2':
-    '**4.** `hepatitis B` (20 bases) and `phage λ` (16) are not whole numbers ' +
-    'of codons, so `len(seq) % 3` is 2 and 1 rather than 0. Answering 6 means ' +
-    'the filter never ran; answering 2 means the test was the wrong way round.',
+  'l3-t1b':
+    '**`minutes = round(days * 1440)`**. Multiply, because a day is *more* ' +
+    'minutes, and round to get a whole number. Without `round()` you get ' +
+    '6768.0. Dividing gives a tiny fraction that rounds to 0. And the list as ' +
+    'a whole cannot be multiplied and rounded; work on `days`, one value at a time.',
 
-  'l3-t3':
-    '**MVRWTLWDTLAFLLLLSLL.** The same 60 bases read one position over give a ' +
-    'completely different protein — that is what a reading frame *is*. If you ' +
-    'got `YGTLDFVGYPRFPAPVEFIA` the loop still starts at 0; it has to start at ' +
-    '`frame`: `range(frame, len(seq) - 2, 3)`.',
+  'l3-t1c':
+    '**`incubation_minutes.append(minutes)`**. `.append()` grows the list by ' +
+    'one each time round. `=` would throw the list away and keep just one ' +
+    'number. `+` cannot join a list to a number, and a number has no ' +
+    '`.append()`.',
+
+  'l3-t1d':
+    '**Before the loop.** The accumulator starts at 0 *once*, then grows each ' +
+    'time round. Inside the loop it is reset every time, so you are left with ' +
+    'only the last value (4896). After the loop is too late: `total + m` ' +
+    'meets a `total` that does not exist yet (`NameError`).',
+
+  'l3-t1e':
+    '**31392**. The five periods in minutes are 4320, 6768, 7056, 8352 and ' +
+    '4896. 4896 is `total = 0` *inside* the loop (only the last one survives). ' +
+    '21.8 is the total in days (the × 1440 never happened), and 523.2 is hours.',
+
+  'l3-t2a':
+    '**2**. 3 goes into 20 six times (18) with **2 left over**, and `%` gives ' +
+    'what is left over. 6 is `20 // 3`, 6.67 is `20 / 3`. A remainder of **0** ' +
+    'means it divides exactly, which is the test we need next.',
+
+  'l3-t2b':
+    '**`for name, seq in sequences.items():`**. `.items()` hands you each key ' +
+    'and value as a pair. `for seq in sequences:` runs, but quietly gives you ' +
+    'the *keys*, so `seq` would be "HIV-1", not its DNA. Without `.items()`, or ' +
+    'with `.values()`, Python cannot split each one into two names (`ValueError`).',
+
+  'l3-t2c':
+    '**`if len(seq) % 3 == 0:`**. A remainder of 0 means the length divides ' +
+    'exactly into codons. `/ 3` is never 0 for a real sequence. A single `=` ' +
+    'assigns rather than compares (`SyntaxError`), and `%` needs the *length*, ' +
+    'a number, not the sequence itself.',
+
+  'l3-t2d':
+    '**`ready.append(name)`**. We want the *names* of the viruses that pass. ' +
+    '`.append(seq)` collects their DNA instead, `.append(sequences)` adds the ' +
+    'whole dictionary each time, and `ready = name` replaces the list with a ' +
+    'single name.',
+
+  'l3-t2e':
+    '**4**: SARS-CoV-2 (30 bases), HIV-1 (24), measles (18) and phiX174 (21). ' +
+    '6 means nothing was filtered and 2 means the test was the wrong way round. ' +
+    '0 is what `for seq in sequences:` gives: it tests the length of each *name*, ' +
+    'and none of them divides by 3.',
+
+  'l3-t3a':
+    '**0, 3, 6, 9**. Start at 0, go up in steps of 3, and stop *before* 12. The ' +
+    'stop is never included, just like the end of a slice. Without the step you ' +
+    'would get every number from 0 to 11.',
+
+  'l3-t3b':
+    '**`seq[i:i+3]`**. Start at `i`, stop three later. `seq[i:3]` always stops ' +
+    'at 3, so it is empty after the first codon. `seq[i+3]` is a single base, ' +
+    'and a slice needs a colon, not a comma.',
+
+  'l3-t3c':
+    '**`codon_table[codon]`**. Look up by the key, the codon itself. ' +
+    '`codon_table[i]` looks for the *number* `i` (`KeyError`), and ' +
+    '`["codon"]` looks for the word "codon", not the value stored in `codon`. ' +
+    'A dictionary is not a function, so no round brackets.',
+
+  'l3-t3d':
+    '**`protein = protein + codon_table[codon]`**. The accumulator again, ' +
+    'with letters instead of numbers. Without `protein +` each amino acid ' +
+    'replaces the last. Without `protein =` the result is thrown away, and a ' +
+    'string has no `.append()`.',
+
+  'l3-t3e':
+    '**MVRWTLWDTLAFLLLLSLL**. The same 60 bases read one base over give a ' +
+    'completely different protein: this is how phiX174 packs two genes into ' +
+    'one sequence. YGTLDFVGYPRFPAPVEFIA is frame 0 (the loop still starts at 0, ' +
+    'not at `frame`). `L` is what is left if each amino acid replaces the last, ' +
+    'and ATGGTACGCTGGACT… is the DNA rebuilt: adding `codon` instead of ' +
+    '`codon_table[codon]` skips the lookup.',
 
   'l1-r1':
     'Only `f"..."` substitutes. Without the `f` Python prints the braces ' +

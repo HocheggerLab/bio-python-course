@@ -12,7 +12,7 @@ codon_table = {"ATG": "M", "AAA": "K", "CGC": "R",
 protein = ""                        # start empty — the accumulator
 for i in range(0, len(seq) - 2, 3):
     codon = seq[i:i+3]              # carve out the codon
-    amino = codon_table.get(codon, "?")   # look it up
+    amino = codon_table[codon]      # look it up
     protein = protein + amino       # add it on
 print(protein)
 `
@@ -42,7 +42,7 @@ export function Slide19BuildingProtein() {
           <CardBody className="text-sm md:text-base xl:text-lg">
             <span className="font-mono">range</span> gives the codon start ·{' '}
             <span className="font-mono">seq[i:i+3]</span> carves it out ·{' '}
-            <span className="font-mono">.get()</span> looks it up. Everything from Sessions&nbsp;2
+            <span className="font-mono">codon_table[codon]</span> looks it up. Everything from Sessions&nbsp;2
             and 3, finally in one place.
           </CardBody>
         </SlideCard>

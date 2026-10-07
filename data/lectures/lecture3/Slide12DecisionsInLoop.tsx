@@ -52,7 +52,7 @@ export function Slide12DecisionsInLoop() {
         </SlideCard>
       </>
       }
-      note={<>Two of the four — the question we asked at the start, answered automatically:</>}
+      note={<>Three of the four — the question we asked at the start, answered automatically:</>}
     >
       <LazyPythonRunner
         initialCode={demoCode}

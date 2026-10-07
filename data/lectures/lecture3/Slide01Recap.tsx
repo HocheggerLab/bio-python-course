@@ -5,21 +5,21 @@ const covered = [
   'Lists — hold many DNA sequences, index & slice',
   'Strings are sequences of bases — slice out codons',
   'Dictionaries — use as a codon table, key → value',
-  'Safe lookup — .get(codon, "?")',
+  'Look up a value by its key — table["ATG"]',
 ]
 
-const byHand = `seq   = "ATGCGTTAA"
-table = {"ATG": "Met", "CGT": "Arg", "TAA": "Stop"}
+const byHand = `seq   = "ATGGGTTAA"
+table = {"ATG": "Met", "GGT": "Gly", "TAA": "Stop"}
 
 codon1 = seq[0:3]            # "ATG"
-codon2 = seq[3:6]            # "CGT"
+codon2 = seq[3:6]            # "GGT"
 codon3 = seq[6:9]            # "TAA"
 
-aa1 = table.get(codon1, "?")   # "Met"
-aa2 = table.get(codon2, "?")   # "Arg"
-aa3 = table.get(codon3, "?")   # "Stop"
+aa1 = table[codon1]          # "Met"
+aa2 = table[codon2]          # "Gly"
+aa3 = table[codon3]          # "Stop"
 
-print(f"{aa1}-{aa2}-{aa3}")    # Met-Arg-Stop`
+print(f"{aa1}-{aa2}-{aa3}")  # Met-Gly-Stop`
 
 export function Slide01Recap() {
   return (

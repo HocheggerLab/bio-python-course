@@ -28,7 +28,7 @@ print(rna)
 `
 
 const demoOutput = `3
-["SARS-CoV-2", "HIV-1", "hep B"]`
+['SARS-CoV-2', 'HIV-1', 'hep B']`
 
 export function Slide14LoopsForDictionaries() {
   return (

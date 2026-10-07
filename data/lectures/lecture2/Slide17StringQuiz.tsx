@@ -1,4 +1,4 @@
-import { StepQuizOpener, StepQuizQuestion } from './StepQuiz'
+import { StepQuizOpener, StepQuizQuestion } from '@/components/poll/StepQuiz'
 
 const dnaCode = `# A sequence straight from a file — messy lower-case
 dna = "atgcgtacggaattcaaatag"`
