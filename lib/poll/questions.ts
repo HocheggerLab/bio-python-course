@@ -26,7 +26,11 @@ const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
   'l2-t2c': { lecture: 2, correctIndex: 1 },  // clean[0:3]
   'l2-t2d': { lecture: 2, correctIndex: 3 },  // count G + count C -> 8
   'l2-t2e': { lecture: 2, correctIndex: 2 },  // 9
-  'l2-t3': { lecture: 2, correctIndex: 0 },   // Met-?-Stop
+  'l2-t3a': { lecture: 2, correctIndex: 2 },  // {"ATG": "Met"}
+  'l2-t3b': { lecture: 2, correctIndex: 1 },  // 3
+  'l2-t3c': { lecture: 2, correctIndex: 0 },  // codon_table["GGT"]
+  'l2-t3d': { lecture: 2, correctIndex: 3 },  // .values()
+  'l2-t3e': { lecture: 2, correctIndex: 2 },  // Gly
   'l3-t1': { lecture: 3, correctIndex: 0 },   // 31392 minutes
   'l3-t2': { lecture: 3, correctIndex: 0 },   // 4
   'l3-t3': { lecture: 3, correctIndex: 0 },   // MVRWTLWDTLAFLLLLSLL

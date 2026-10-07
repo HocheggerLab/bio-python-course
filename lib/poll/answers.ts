@@ -78,11 +78,33 @@ export const POLL_ANSWERS: Record<string, string> = {
     '`.find()` says *not found*. That is what you get searching the lower-case ' +
     '`dna`, which is why we clean first.',
 
-  'l2-t3':
-    '**Met-?-Stop.** `CGT` is not in the table, and `.get(codon, "?")` returns ' +
-    'the fallback instead of raising. `codon_table[codon]` would have crashed ' +
-    'the whole script on one missing codon — that is the entire reason `.get` ' +
-    'exists.',
+  'l2-t3a':
+    '**`{"ATG": "Met"}`**. Curly brackets, and a colon between each key and ' +
+    'its value. Square brackets make a list, which has no pairs, so ' +
+    '`["ATG": "Met"]` is a `SyntaxError`. With a comma instead of a colon you ' +
+    'get a *set* of two loose strings, nothing paired. And `=` is for naming ' +
+    'variables, not for pairing a key with its value.',
+
+  'l2-t3b':
+    '**3**. `len()` counts *entries*, and each key with its value is one entry. ' +
+    '6 counts the keys and the values separately; 1 counts the dictionary itself.',
+
+  'l2-t3c':
+    '**`codon_table["GGT"]`**. You look up by the *key* (the codon) and get ' +
+    'back the *value* (the amino acid). A dictionary has no positions, so ' +
+    '`[1]` is a `KeyError`. `["Gly"]` is backwards: "Gly" is a value, not a ' +
+    'key. Round brackets mean *call*, and a dictionary is not a function.',
+
+  'l2-t3d':
+    '**`codon_table.values()`**. The amino acids are the values. `.keys()` ' +
+    'gives the codons, and `.items()` gives the codon–amino acid pairs. ' +
+    '`["values"]` looks for a key literally called "values", so it is a `KeyError`.',
+
+  'l2-t3e':
+    '**Gly**. Work from the inside out: `seq[3:6]` slices out the second codon, ' +
+    '"GGT", and `codon_table["GGT"]` looks it up. "Met" is the first codon, ' +
+    '`seq[0:3]`. "GGT" is the slice before it is looked up. A slice is just a ' +
+    'string, so it works fine as a key: no `KeyError`.',
 
   'l3-t1':
     '**31392 minutes.** One day is 1440 minutes, so 21.8 days of total ' +

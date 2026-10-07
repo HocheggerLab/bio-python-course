@@ -15,8 +15,9 @@ print(codon_table.values())   # what are the values?
 print(codon_table.items())    # what are the key-value pairs?
 `
 
-const demoOutput = `{'ATG': 'Met', 'GGT': 'Gly', 'TAA': 'Stop'}
-3`
+const demoOutput = `dict_keys(['ATG', 'GGT', 'TAA'])
+dict_values(['Met', 'Gly', 'Stop'])
+dict_items([('ATG', 'Met'), ('GGT', 'Gly'), ('TAA', 'Stop')])`
 
 export function Slide20DictKeysAndValues() {
   return (

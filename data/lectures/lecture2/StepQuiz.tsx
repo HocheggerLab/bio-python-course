@@ -54,18 +54,21 @@ export function StepQuizQuestion({
   topic,
   lead,
   questionId,
+  label = 'Step',
 }: {
   n: number
   topic: string
   lead: ReactNode
   questionId: string
+  /** 'Question' when the set checks concepts rather than walking one exercise. */
+  label?: string
 }) {
   return (
     <ConceptSlide
       maxWidth="6xl"
       title={
         <>
-          Step {n} — <GradientText variant="yellow">{topic}</GradientText>
+          {label} {n} — <GradientText variant="yellow">{topic}</GradientText>
         </>
       }
       lead={lead}

@@ -18,8 +18,8 @@ const strings = [
 const dicts = [
   'A lookup table — key → value',
   'The codon table: "ATG" → "Met"',
-  'Look up with [key]; .get(key, "?") is safe',
-  'Add / update by key; test with in',
+  'Look up a value with [key]',
+  '.keys() and .values() — what\'s inside',
 ]
 
 export function Slide25Recap() {

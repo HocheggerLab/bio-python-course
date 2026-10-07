@@ -40,9 +40,15 @@ import { Slide18CodonTable } from './Slide18CodonTable'
 import { Slide19DictExamples } from './Slide19DictExamples'
 import { Slide20DictKeysAndValues } from './Slide20DictKeysAndValues'
 import { Slide21LookupByKey } from './Slide21LookupByKey'
-import { Slide22KeyErrorGet } from './Slide22KeyErrorGet'
-import { Slide23BuildingDicts } from './Slide23BuildingDicts'
-import { Slide24TIYTranslate } from './Slide24TIYTranslate'
+import {
+  Slide24DictQuizOpener,
+  Slide24DictQ1,
+  Slide24DictQ2,
+  Slide24DictQ3,
+  Slide24DictQ4,
+  Slide24DictQ5,
+} from './Slide24DictQuiz'
+import { Slide24RevisionTranslate } from './Slide24RevisionTranslate'
 // Wrap-up
 import { Slide25Recap } from './Slide25Recap'
 import { Slide26Outlook } from './Slide26Outlook'
@@ -88,9 +94,13 @@ export const lecture2Data: LectureData = {
     { title: 'Dictionaries Are Everywhere', content: <Slide19DictExamples /> },
     { title: 'Keys & Values', content: <Slide20DictKeysAndValues /> },
     { title: 'Looking Up by Key', content: <Slide21LookupByKey /> },
-    { title: 'KeyError & .get()', content: <Slide22KeyErrorGet /> },
-    { title: 'Building & Checking', content: <Slide23BuildingDicts /> },
-    { title: 'TIY — Translate by lookup', content: <Slide24TIYTranslate /> },
+    { title: 'Quiz — Codon lookup, five quick checks', content: <Slide24DictQuizOpener /> },
+    { title: 'Quiz 1 — Make a dictionary', content: <Slide24DictQ1 /> },
+    { title: 'Quiz 2 — How many entries?', content: <Slide24DictQ2 /> },
+    { title: 'Quiz 3 — Look up a value', content: <Slide24DictQ3 /> },
+    { title: 'Quiz 4 — Keys or values?', content: <Slide24DictQ4 /> },
+    { title: 'Quiz 5 — Translate a codon', content: <Slide24DictQ5 /> },
+    { title: 'Revision — Translate by lookup', content: <Slide24RevisionTranslate /> },
     // ── Wrap-up ────────────────────────────────────────────
     { title: 'Recap — Lists, Strings & Maps', content: <Slide25Recap /> },
     { title: 'What’s Next — Control Flow', content: <Slide26Outlook /> },

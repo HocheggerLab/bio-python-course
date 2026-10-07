@@ -100,13 +100,38 @@ export const POLL_CONTENT: Record<string, PollContent> = {
     options: ['10', '-1', '9', '15'],
   },
 
-  /* CGT is deliberately absent from the table: .get returns "?" where [] would
-     raise KeyError. Picking Arg means translating from memory, not from the
-     dictionary in front of them. */
-  'l2-t3': {
-    prompt: 'What peptide did you get?',
+  /* The dictionary block, as five concept checks rather than the steps of
+     one exercise. .get() and adding/updating entries moved to the Lab 2
+     notebook, so nothing here relies on them. */
+  'l2-t3a': {
+    prompt: 'Which line makes a dictionary that maps "ATG" to "Met"?',
     optionsAreCode: true,
-    options: ['Met-?-Stop', 'Met-Arg-Stop', 'Met-Gly-Stop', 'KeyError'],
+    options: ['["ATG": "Met"]', '{"ATG", "Met"}', '{"ATG": "Met"}', '{"ATG" = "Met"}'],
+  },
+  'l2-t3b': {
+    prompt: 'How many entries does the codon table have?',
+    code: 'codon_table = {"ATG": "Met", "GGT": "Gly", "TAA": "Stop"}\nprint(len(codon_table))',
+    options: ['6', '3', '1'],
+  },
+  'l2-t3c': {
+    prompt: 'Which line gives you "Gly"?',
+    code: 'codon_table = {"ATG": "Met", "GGT": "Gly", "TAA": "Stop"}',
+    optionsAreCode: true,
+    options: ['codon_table["GGT"]', 'codon_table[1]', 'codon_table["Gly"]', 'codon_table("GGT")'],
+  },
+  'l2-t3d': {
+    prompt: 'Which line shows all the amino acids in the table?',
+    code: 'codon_table = {"ATG": "Met", "GGT": "Gly", "TAA": "Stop"}',
+    optionsAreCode: true,
+    options: ['codon_table.keys()', 'codon_table.items()', 'codon_table["values"]', 'codon_table.values()'],
+  },
+  'l2-t3e': {
+    prompt: 'Slice, then look up. What does this print?',
+    code:
+      'codon_table = {"ATG": "Met", "GGT": "Gly", "TAA": "Stop"}\n' +
+      'seq = "ATGGGTTAA"\n' +
+      'print(codon_table[seq[3:6]])',
+    options: ['Met', 'GGT', 'Gly', 'KeyError'],
   },
 
   /* Every wrong option here is the right number in the wrong unit -- days,
