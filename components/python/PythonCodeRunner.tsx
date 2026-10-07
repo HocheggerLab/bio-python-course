@@ -5,6 +5,13 @@ import { usePyodide } from '@/contexts/PyodideContext'
 import StaticCodeDisplay from './StaticCodeDisplay'
 import CodeEditor from './CodeEditor'
 
+/** One step of an exercise, checked against the student's variables. */
+export interface StepCheck {
+  label: string
+  /** A Python expression, evaluated after the student's code has run. */
+  test: string
+}
+
 export interface PythonCodeRunnerProps {
   initialCode?: string
   height?: string
@@ -24,6 +31,14 @@ export interface PythonCodeRunnerProps {
    * code — and hiding it would not have stopped them anyway.
    */
   solution?: string
+  /**
+   * Per-step checks for a revision exercise.
+   *
+   * Matching the printed output alone can be fooled by printing the answer,
+   * and says nothing about *which* step went wrong. These look at the
+   * variables the student actually built, so each step gets its own tick.
+   */
+  checks?: StepCheck[]
 
   // Static fallback props
   staticOutput?: string
@@ -41,6 +56,7 @@ export default function PythonCodeRunner({
   onSuccess,
   showLineNumbers = false,
   solution,
+  checks,
   staticOutput,
   staticError,
   description
@@ -66,6 +82,7 @@ export default function PythonCodeRunner({
      run it, edit a line to demonstrate what breaks, then hand the slide back
      the way it was. */
   const [stashedCode, setStashedCode] = useState<string | null>(null)
+  const [checkResults, setCheckResults] = useState<boolean[] | null>(null)
 
   // Update code when initialCode changes
   useEffect(() => {
@@ -96,16 +113,20 @@ export default function PythonCodeRunner({
     setError('')
     setOutput('')
     setImages([])
-    
+    setCheckResults(null)
+
     try {
       const result = await runCode(code)
-      
+
       setOutput(result.output)
       setImages(result.images ?? [])
       if (result.error) {
         setError(result.error)
-      } else if (expectedOutput && result.output.trim() === expectedOutput.trim()) {
-        onSuccess?.()
+      } else {
+        if (checks?.length) setCheckResults(await runChecks(checks))
+        if (expectedOutput && result.output.trim() === expectedOutput.trim()) {
+          onSuccess?.()
+        }
       }
     } catch (err) {
       setError((err as Error).message)
@@ -114,7 +135,33 @@ export default function PythonCodeRunner({
     setIsRunning(false)
   }
 
+  /* The student's code runs in the shared globals, so a second, silent run
+     can inspect what it left behind. A test that raises (say, a variable
+     never assigned) counts as a fail rather than an error on screen. JSON
+     string literals are valid Python string literals, so the tests can be
+     passed across as a list without any escaping of our own. */
+  const runChecks = async (steps: StepCheck[]): Promise<boolean[] | null> => {
+    const script = `import json as _json
+_results = []
+for _test in ${JSON.stringify(steps.map((s) => s.test))}:
+    try:
+        _results.append(bool(eval(_test)))
+    except Exception:
+        _results.append(False)
+print(_json.dumps(_results))
+del _json, _results, _test
+`
+    const result = await runCode(script)
+    if (result.error) return null
+    try {
+      return JSON.parse(result.output.trim().split('\n').pop() ?? '')
+    } catch {
+      return null
+    }
+  }
+
   const handleReset = () => {
+    setCheckResults(null)
     setStashedCode(null)
     setCode(initialCode)
     setOutput('')
@@ -140,6 +187,7 @@ export default function PythonCodeRunner({
       setCode(stashedCode)
       setStashedCode(null)
     }
+    setCheckResults(null)
     setOutput('')
     setError('')
     setImages([])
@@ -293,10 +341,30 @@ export default function PythonCodeRunner({
         <div className="p-4">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-semibold text-gray-400">Output</span>
-            {expectedOutput && output.trim() === expectedOutput.trim() && (
+            {(checks?.length
+              ? checkResults?.every(Boolean)
+              : expectedOutput && output.trim() === expectedOutput.trim()) && (
               <span className="text-xs text-bio-green">✓ Correct!</span>
             )}
           </div>
+
+          {checkResults && checks && (
+            <ul className="mb-3 flex flex-col gap-1 text-sm">
+              {checks.map((c, i) => (
+                <li
+                  key={i}
+                  className={`flex items-start gap-2 ${
+                    checkResults[i] ? 'text-bio-green' : 'text-red-400'
+                  }`}
+                >
+                  <span className="shrink-0 font-bold">{checkResults[i] ? '✓' : '✗'}</span>
+                  <span>
+                    Step {i + 1}: {c.label}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
           
           {output && (
             <pre className="bg-bio-dark/50 rounded p-3 text-sm text-gray-300 font-mono overflow-x-auto whitespace-pre-wrap">

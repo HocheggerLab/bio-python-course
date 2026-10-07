@@ -10,7 +10,15 @@ import { Slide06GrowingList } from './Slide06GrowingList'
 import { Slide07EditingList } from './Slide07EditingList'
 import { Slide08ListsHoldAnything } from './Slide08ListsHoldAnything'
 import { Slide09NumberLists } from './Slide09NumberLists'
-import { Slide10TIYMean } from './Slide10TIYMean'
+import {
+  Slide10ListQuizOpener,
+  Slide10ListQ1,
+  Slide10ListQ2,
+  Slide10ListQ3,
+  Slide10ListQ4,
+  Slide10ListQ5,
+} from './Slide10ListQuiz'
+import { Slide10RevisionMean } from './Slide10RevisionMean'
 // Block 2 — Strings are sequences
 import { Slide11StringIsSequence } from './Slide11StringIsSequence'
 import { Slide12Encoding } from './Slide12Encoding'
@@ -46,7 +54,13 @@ export const lecture2Data: LectureData = {
     { title: 'Editing a List', content: <Slide07EditingList /> },
     { title: 'Lists Hold Anything', content: <Slide08ListsHoldAnything /> },
     { title: 'Lists of Numbers', content: <Slide09NumberLists /> },
-    { title: 'TIY — Clean data, find the mean', content: <Slide10TIYMean /> },
+    { title: 'Quiz — Clean the data, step by step', content: <Slide10ListQuizOpener /> },
+    { title: 'Quiz 1 — Find a reading', content: <Slide10ListQ1 /> },
+    { title: 'Quiz 2 — Remove the bad reading', content: <Slide10ListQ2 /> },
+    { title: 'Quiz 3 — Add the late replicate', content: <Slide10ListQ3 /> },
+    { title: 'Quiz 4 — Count the readings', content: <Slide10ListQ4 /> },
+    { title: 'Quiz 5 — Report the mean', content: <Slide10ListQ5 /> },
+    { title: 'Revision — Clean data, find the mean', content: <Slide10RevisionMean /> },
     // ── Block 2: Strings are sequences ─────────────────────
     { title: 'A String Is a Sequence', content: <Slide11StringIsSequence /> },
     { title: 'How Big Is a Character?', content: <Slide12Encoding /> },

@@ -21,11 +21,35 @@
  *   *italic*    → emphasis
  */
 export const POLL_ANSWERS: Record<string, string> = {
-  'l2-t1':
-    '**51.7**. The two edits matter: `del readings[1]` drops the pipetting ' +
-    'error and `.append(19)` adds the late replicate, so n is 20 again. ' +
-    'Leaving the bad reading in gives 50.0; forgetting the replicate gives ' +
-    '53.4; doing neither gives 51.6.',
+  'l2-t1a':
+    '**`readings[2]`**. Python counts from 0, so the third item sits at index 2. ' +
+    '`readings[3]` is the fourth item (63), `readings[1]` the second (17), and ' +
+    'round brackets mean *call*, so `readings(2)` is a `TypeError`.',
+
+  'l2-t1b':
+    '**`del readings[1]`**. The 2nd item is index 1. `del readings[2]` throws ' +
+    'away the good 88 instead; `readings[1] = 0` keeps a fake zero that drags ' +
+    'the mean down; and `del readings(1)` is a `SyntaxError`, since positions ' +
+    'always take square brackets.',
+
+  'l2-t1c':
+    '**`readings.append(19)`**. `.append` is a method, so it takes round ' +
+    'brackets like any call: `append[19]` is a `TypeError`. `readings + 19` ' +
+    'fails because `+` joins a list to another list, not to a number, and ' +
+    '`readings[20] = 19` is an `IndexError`: you can only replace items that ' +
+    'already exist.',
+
+  'l2-t1d':
+    '**20**. Start with 20, `del` takes one away (19), `.append` adds one back ' +
+    '(20). The list changes in place, so every line works on the result of the ' +
+    'one before.',
+
+  'l2-t1e':
+    '**`round(sum(readings) / len(readings), 1)`**, which gives 51.7. `//` is ' +
+    'floor division and throws the decimals away before rounding (51); ' +
+    '`round(x)` with no second number rounds to a whole number (52); and lists ' +
+    'have no `.sum()` method: `sum()` and `len()` are functions you hand the ' +
+    'list to.',
 
   'l2-t2':
     '**GC 8, EcoRI at 9.** Everything depends on cleaning first — on the raw ' +

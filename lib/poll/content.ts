@@ -25,12 +25,42 @@ export const POLL_CONTENT: Record<string, PollContent> = {
      actually produces — each wrong one is a specific mistake a student makes,
      not a plausible-looking number. Verified against CPython. */
 
-  /* Forgetting to remove the bad reading leaves n=21 and gives 50.0;
-     forgetting to append the late replicate leaves n=19 and gives 53.4;
-     doing neither gives 51.6. */
-  'l2-t1': {
-    prompt: 'What mean did you get?',
-    options: ['51.7', '50.0', '53.4', '51.6'],
+  /* The list exercise, one step per question, asked in the room; the code
+     itself is left as a revision exercise for after the lecture. Each
+     question builds on the last, starting from plain indexing so complete
+     beginners get a gentle first tap. Every wrong option is a real mistake:
+     counting from 1, round brackets, assigning instead of deleting. */
+  'l2-t1a': {
+    prompt: 'Which gives you the third reading, 88?',
+    code: 'readings = [42, 17, 88, 63, 29, ...]',
+    optionsAreCode: true,
+    options: ['readings[3]', 'readings[2]', 'readings[1]', 'readings(2)'],
+  },
+  'l2-t1b': {
+    prompt: 'The 2nd reading (17) was a pipetting error. Which line removes it?',
+    code: 'readings = [42, 17, 88, 63, 29, ...]',
+    optionsAreCode: true,
+    options: ['del readings[2]', 'readings[1] = 0', 'del readings[1]', 'del readings(1)'],
+  },
+  'l2-t1c': {
+    prompt: 'A late replicate came in. Which line adds 19 to the end?',
+    optionsAreCode: true,
+    options: ['readings.append(19)', 'readings.append[19]', 'readings + 19', 'readings[20] = 19'],
+  },
+  'l2-t1d': {
+    prompt: 'We started with 20 readings. After both edits, what is len(readings)?',
+    code: 'del readings[1]\nreadings.append(19)\nprint(len(readings))',
+    options: ['19', '21', '20', '18'],
+  },
+  'l2-t1e': {
+    prompt: 'Which line gives the mean, rounded to 1 decimal place?',
+    optionsAreCode: true,
+    options: [
+      'round(sum(readings) // len(readings), 1)',
+      'round(sum(readings) / len(readings), 1)',
+      'round(sum(readings) / 20)',
+      'readings.sum() / readings.len()',
+    ],
   },
 
   /* The whole exercise turns on cleaning first. On the raw lower-case string

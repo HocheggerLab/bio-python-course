@@ -16,7 +16,11 @@ export interface QuestionDef {
 
 const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
   // Try-it-Yourself polls. Answers verified by running each exercise.
-  'l2-t1': { lecture: 2, correctIndex: 0 },   // 51.7
+  'l2-t1a': { lecture: 2, correctIndex: 1 },  // readings[2]
+  'l2-t1b': { lecture: 2, correctIndex: 2 },  // del readings[1]
+  'l2-t1c': { lecture: 2, correctIndex: 0 },  // readings.append(19)
+  'l2-t1d': { lecture: 2, correctIndex: 2 },  // 20
+  'l2-t1e': { lecture: 2, correctIndex: 1 },  // round(sum / len, 1) -> 51.7
   'l2-t2': { lecture: 2, correctIndex: 0 },   // GC 8, EcoRI at 9
   'l2-t3': { lecture: 2, correctIndex: 0 },   // Met-?-Stop
   'l3-t1': { lecture: 3, correctIndex: 0 },   // 31392 minutes
