@@ -40,6 +40,8 @@ import { Slide18CodonTable } from './Slide18CodonTable'
 import { Slide19DictExamples } from './Slide19DictExamples'
 import { Slide20DictKeysAndValues } from './Slide20DictKeysAndValues'
 import { Slide21LookupByKey } from './Slide21LookupByKey'
+import { Slide22KeyErrorGet } from './Slide22KeyErrorGet'
+import { Slide23BuildingDicts } from './Slide23BuildingDicts'
 import {
   Slide24DictQuizOpener,
   Slide24DictQ1,
@@ -94,6 +96,8 @@ export const lecture2Data: LectureData = {
     { title: 'Dictionaries Are Everywhere', content: <Slide19DictExamples /> },
     { title: 'Keys & Values', content: <Slide20DictKeysAndValues /> },
     { title: 'Looking Up by Key', content: <Slide21LookupByKey /> },
+    { title: 'KeyError & .get()', content: <Slide22KeyErrorGet /> },
+    { title: 'Building Dictionaries', content: <Slide23BuildingDicts /> },
     { title: 'Quiz — Codon lookup, five quick checks', content: <Slide24DictQuizOpener /> },
     { title: 'Quiz 1 — Make a dictionary', content: <Slide24DictQ1 /> },
     { title: 'Quiz 2 — How many entries?', content: <Slide24DictQ2 /> },

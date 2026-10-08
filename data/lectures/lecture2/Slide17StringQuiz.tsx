@@ -35,7 +35,7 @@ export function Slide17StringQ2() {
     <StepQuizQuestion
       n={2}
       topic="Count the bases"
-      lead={<>How many bases long is the sequence?</>}
+      lead={<>How would you find the number of bases in the sequence?</>}
       questionId="l2-t2b"
     />
   )
@@ -68,7 +68,7 @@ export function Slide17StringQ5() {
     <StepQuizQuestion
       n={5}
       topic="Find the EcoRI site"
-      lead={<>Where does the EcoRI site start?</>}
+      lead={<>How can you locate the starting position of the EcoRI site?</>}
       questionId="l2-t2e"
     />
   )

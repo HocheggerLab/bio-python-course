@@ -58,8 +58,9 @@ export const POLL_ANSWERS: Record<string, string> = {
     'case-sensitive, so `.UPPER()` does not exist (`AttributeError`).',
 
   'l2-t2b':
-    '**21**. `len()` counts every base. 20 is the position of the *last* base: ' +
-    'positions start at 0, so they run from 0 to 20. 7 is the number of codons.',
+    '`len()` counts every base. `length()` is not a function in Python. ' +
+    '`.length()` is a method that does not exist for strings, ' +
+    'while `.count()` counts occurrences of a substring.',
 
   'l2-t2c':
     '**`clean[0:3]`**. The first base is at position 0, and the end of a slice ' +
@@ -73,10 +74,9 @@ export const POLL_ANSWERS: Record<string, string> = {
     'to look for, so `.count("G", "C")` is a `TypeError`.',
 
   'l2-t2e':
-    '**9**. `.find()` gives the position where the match *starts*, counting from ' +
-    '0. 10 is counting from 1, and 15 is where the site ends. `-1` is how ' +
-    '`.find()` says *not found*. That is what you get searching the lower-case ' +
-    '`dna`, which is why we clean first.',
+    '`.find()` gives the position where the match *starts*, counting from ' +
+    '0. .search() does not exist, `"GAATTC" in clean` only says True or False, ' +
+    'and `find(clean, "GAATTC")` is a `NameError` because `find()` is not defined.',
 
   'l2-t3a':
     '**`{"ATG": "Met"}`**. Curly brackets, and a colon between each key and ' +

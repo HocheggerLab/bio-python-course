@@ -71,18 +71,33 @@ export const POLL_CONTENT: Record<string, PollContent> = {
     prompt: 'Which line stores an upper-case copy of the sequence in clean?',
     code: 'dna = "atgcgtacggaattcaaatag"',
     optionsAreCode: true,
-    options: ['clean = dna.upper', 'clean = upper(dna)', 'clean = dna.upper()', 'clean = dna.UPPER()'],
+    options: [
+      'clean = dna.upper',
+      'clean = upper(dna)',
+      'clean = dna.upper()',
+      'clean = dna.UPPER()',
+    ],
   },
   'l2-t2b': {
-    prompt: 'How many bases long is the sequence?',
-    code: 'clean = "ATGCGTACGGAATTCAAATAG"\nprint(len(clean))',
-    options: ['21', '20', '7'],
+    prompt: 'How would you print the number of bases in the sequence?',
+    code: 'clean = "ATGCGTACGGAATTCAAATAG"',
+    options: [
+      'print(len(clean))', 
+      'print(clean.length())',
+      'print(length(clean))',
+      'print(clean.count())',
+    ],
   },
   'l2-t2c': {
     prompt: 'Which slice gives you the first codon, ATG?',
     code: 'clean = "ATGCGTACGGAATTCAAATAG"',
     optionsAreCode: true,
-    options: ['clean[1:4]', 'clean[0:3]', 'clean[0:2]', 'clean[3]'],
+    options: [
+      'clean[1:4]',
+      'clean[0:3]',
+      'clean[0:2]',
+      'clean[3]',
+    ],
   },
   'l2-t2d': {
     prompt: 'Which line counts all the G and C bases?',
@@ -95,9 +110,14 @@ export const POLL_CONTENT: Record<string, PollContent> = {
     ],
   },
   'l2-t2e': {
-    prompt: 'Where does the EcoRI site GAATTC start?',
-    code: 'clean = "ATGCGTACGGAATTCAAATAG"\nprint(clean.find("GAATTC"))',
-    options: ['10', '-1', '9', '15'],
+    prompt: 'How can you locate the starting position of the EcoRI site?',
+    code: 'clean = "ATGCGTACGGAATTCAAATAG"',
+    options: [
+      '"GAATTC" in clean',
+      'clean.search("GAATTC")',
+      'clean.find("GAATTC")',
+      'find(clean, "GAATTC")',
+    ],
   },
 
   /* The dictionary block, as five concept checks rather than the steps of
@@ -130,8 +150,13 @@ export const POLL_CONTENT: Record<string, PollContent> = {
     code:
       'codon_table = {"ATG": "Met", "GGT": "Gly", "TAA": "Stop"}\n' +
       'seq = "ATGGGTTAA"\n' +
-      'print(codon_table[seq[3:6]])',
-    options: ['Met', 'GGT', 'Gly', 'KeyError'],
+      'print(codon_table.get(seq[3:6], "???"))',
+    options: [
+      'Met',
+      '???',
+      'Gly',
+      'KeyError',
+    ],
   },
 
   /* Lecture 3, the three Try-it-Yourselfs as poll blocks, like lecture 2:
