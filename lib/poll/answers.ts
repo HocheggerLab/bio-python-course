@@ -58,9 +58,10 @@ export const POLL_ANSWERS: Record<string, string> = {
     'case-sensitive, so `.UPPER()` does not exist (`AttributeError`).',
 
   'l2-t2b':
-    '`len()` counts every base. `length()` is not a function in Python. ' +
-    '`.length()` is a method that does not exist for strings, ' +
-    'while `.count()` counts occurrences of a substring.',
+    '**`print(len(clean))`**, which prints 21. `len()` counts every base. ' +
+    '`length()` is not a function in Python, strings have no `.length()` ' +
+    'method, and `.count()` needs something to look for: it counts how often ' +
+    'a substring appears.',
 
   'l2-t2c':
     '**`clean[0:3]`**. The first base is at position 0, and the end of a slice ' +
@@ -74,9 +75,10 @@ export const POLL_ANSWERS: Record<string, string> = {
     'to look for, so `.count("G", "C")` is a `TypeError`.',
 
   'l2-t2e':
-    '`.find()` gives the position where the match *starts*, counting from ' +
-    '0. .search() does not exist, `"GAATTC" in clean` only says True or False, ' +
-    'and `find(clean, "GAATTC")` is a `NameError` because `find()` is not defined.',
+    '**`clean.find("GAATTC")`**, which gives 9. `.find()` returns the position ' +
+    'where the match *starts*, counting from 0. `"GAATTC" in clean` only says ' +
+    '`True` or `False`, strings have no `.search()` method, and `find(clean, ' +
+    '"GAATTC")` is a `NameError`: `find` only exists as a method, after the dot.',
 
   'l2-t3a':
     '**`{"ATG": "Met"}`**. Curly brackets, and a colon between each key and ' +
@@ -102,9 +104,10 @@ export const POLL_ANSWERS: Record<string, string> = {
 
   'l2-t3e':
     '**Gly**. Work from the inside out: `seq[3:6]` slices out the second codon, ' +
-    '"GGT", and `codon_table["GGT"]` looks it up. "Met" is the first codon, ' +
-    '`seq[0:3]`. "GGT" is the slice before it is looked up. A slice is just a ' +
-    'string, so it works fine as a key: no `KeyError`.',
+    '"GGT", and it is in the table, so `.get()` returns its value. "???" is the ' +
+    'fallback, which `.get()` only gives when the key is *missing*. "Met" is the ' +
+    'first codon, `seq[0:3]`. And `.get()` never raises a `KeyError`: that is ' +
+    'the reason to use it instead of `[ ]`.',
 
   'l3-t1a':
     '**`for days in incubation_days:`**. Name the loop variable first (you pick ' +

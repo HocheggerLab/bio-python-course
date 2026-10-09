@@ -81,8 +81,9 @@ export const POLL_CONTENT: Record<string, PollContent> = {
   'l2-t2b': {
     prompt: 'How would you print the number of bases in the sequence?',
     code: 'clean = "ATGCGTACGGAATTCAAATAG"',
+    optionsAreCode: true,
     options: [
-      'print(len(clean))', 
+      'print(len(clean))',
       'print(clean.length())',
       'print(length(clean))',
       'print(clean.count())',
@@ -112,6 +113,7 @@ export const POLL_CONTENT: Record<string, PollContent> = {
   'l2-t2e': {
     prompt: 'How can you locate the starting position of the EcoRI site?',
     code: 'clean = "ATGCGTACGGAATTCAAATAG"',
+    optionsAreCode: true,
     options: [
       '"GAATTC" in clean',
       'clean.search("GAATTC")',

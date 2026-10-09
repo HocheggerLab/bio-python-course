@@ -17,8 +17,8 @@ const strings = [
 
 const dicts = [
   'A lookup table — key → value',
-  'The codon table: "ATG" → "Met"',
-  'Look up a value with [key]',
+  'Look up with [key]; .get(key, "?") is safe',
+  'Add / update by key; test with in',
   '.keys() and .values() — what\'s inside',
 ]
 
