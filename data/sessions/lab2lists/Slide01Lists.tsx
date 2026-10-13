@@ -1,6 +1,6 @@
 import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
 import { SlideCard, CardHeading, CardList } from '@/components/slides/SlideCard'
-import { NotebookLink, NOTEBOOK_LISTS_BASICS } from './NotebookLink'
+import { NotebookLink, NOTEBOOK_LISTS_BASICS, NOTEBOOK_LISTS_ADVANCED } from './NotebookLink'
 
 const access = [
   'Make one: genes = ["BRCA1", "TP53", "EGFR"]',
@@ -35,7 +35,8 @@ export function Slide01Lists() {
 
       </div>
 
-      <NotebookLink url={NOTEBOOK_LISTS_BASICS} label="01 · Lists — practice notebook" />
+      <NotebookLink url={NOTEBOOK_LISTS_BASICS} label="01 · Lists — basics practice notebook" />
+      <NotebookLink url={NOTEBOOK_LISTS_ADVANCED} label="02 · Lists — further practice notebook" />
     </>
   )
 }
