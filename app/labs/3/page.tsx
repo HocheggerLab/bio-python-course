@@ -26,9 +26,41 @@ const sessions: Session[] = [
   {
     num: 3,
     title: 'Writing code in VS Code',
-    topics: ['What is an IDE?', 'Install & the workflow', 'Run with uv run', 'Build spike_detector.py'],
+    topics: ['What is an IDE?', 'Set up VS Code & Python', 'Run with ▶ and uv run', 'Build spike_detector.py'],
     status: 'available',
     href: '/labs/3/3',
+  },
+]
+
+/* The homework, named as such. Chapters are numbered because the classroom
+   subscription reports per-chapter progress. */
+const practice = [
+  {
+    icon: '🐍',
+    title: 'Intermediate Python',
+    detail: 'Chapter 3 (Logic, Control Flow and Filtering) and Chapter 4 (Loops) — this lab, from another angle.',
+    href: 'https://app.datacamp.com/learn/courses/intermediate-python',
+    cta: 'DataCamp →',
+  },
+  {
+    icon: '🎬',
+    title: 'Project: Investigating Netflix Movies',
+    detail: 'About an hour — loops, filters and a first plot on a real dataset.',
+    href: 'https://projects.datacamp.com/projects/1674',
+    cta: 'DataCamp →',
+  },
+  {
+    icon: '📖',
+    title: 'Revise',
+    detail: 'Your Lab 3 notebooks — loops and if / else, basics first, then the advanced ones.',
+  },
+  {
+    icon: '🧑‍💻',
+    title: 'Get started with VS Code',
+    detail:
+      'The official VS Code tutorial: folders, the interface, settings, source control and the debugger. It builds a small web page rather than Python — the editor skills are the same.',
+    href: 'https://code.visualstudio.com/docs/editing/getting-started/editor-tutorial',
+    cta: 'Tutorial →',
   },
 ]
 
@@ -104,6 +136,79 @@ export default function Lab3Page() {
               </Link>
             )
           })}
+        </div>
+
+        {/* Independent practice — the homework */}
+        <div className="mt-8 md:mt-10 max-w-5xl mx-auto rounded-2xl border-2 border-bio-green/30 bg-bio-green/10 p-6 md:p-8">
+          <div className="flex items-center gap-4 md:gap-5 mb-5 md:mb-6">
+            <span className="text-4xl md:text-5xl shrink-0">🏋️</span>
+            <div className="min-w-0">
+              <h2 className="text-lg md:text-xl xl:text-2xl font-bold text-white leading-snug">
+                Independent Practice
+              </h2>
+              <p className="text-sm md:text-base text-gray-300 mt-1">
+                In your own time, before next week. Your DataCamp access comes with the
+                course — sign in with your Sussex email.
+              </p>
+            </div>
+          </div>
+
+          <ul className="flex flex-col gap-3 md:gap-4">
+            {practice.map((p) => (
+              <li
+                key={p.title}
+                className="flex items-start gap-3 md:gap-4 rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3 md:px-5 md:py-4"
+              >
+                <span className="text-2xl md:text-3xl shrink-0">{p.icon}</span>
+                <div className="min-w-0 flex-1">
+                  <p className="text-white font-semibold text-sm md:text-base xl:text-lg">
+                    {p.title}
+                  </p>
+                  <p className="text-gray-300 text-xs md:text-sm xl:text-base mt-0.5 leading-snug">
+                    {p.detail}
+                  </p>
+                </div>
+                {p.href && (
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 self-center rounded-full bg-bio-green/20 hover:bg-bio-green/30 border border-bio-green/40 text-bio-green font-semibold px-3 md:px-4 py-1.5 text-xs md:text-sm transition-colors"
+                  >
+                    {p.cta}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          <p className="text-gray-400 text-xs md:text-sm mt-4 md:mt-5">
+            I can see chapter progress in the classroom, so I will know which parts the
+            year found hard — that is what it is for.
+          </p>
+        </div>
+
+        {/* Resources & cheat sheets */}
+        <div className="mt-8 md:mt-10 max-w-5xl mx-auto">
+          <Link
+            href="/labs/3/resources"
+            className="block rounded-2xl border-2 border-bio-yellow/30 bg-bio-yellow/10 hover:bg-bio-yellow/15 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 p-6 md:p-8"
+          >
+            <div className="flex items-center gap-4 md:gap-5">
+              <span className="text-4xl md:text-5xl shrink-0">📄</span>
+              <div className="min-w-0">
+                <h2 className="text-lg md:text-xl xl:text-2xl font-bold text-white leading-snug">
+                  Resources &amp; Cheat Sheets
+                </h2>
+                <p className="text-sm md:text-base text-gray-300 mt-1">
+                  A downloadable one-page VS Code reference — setup, running, shortcuts.
+                </p>
+              </div>
+              <span className="ml-auto shrink-0 text-bio-yellow font-semibold text-sm md:text-base">
+                Open →
+              </span>
+            </div>
+          </Link>
         </div>
 
       </div>

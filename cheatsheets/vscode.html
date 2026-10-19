@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VS Code Cheat Sheet</title>
+<link rel="stylesheet" href="cheatsheet.css">
+</head>
+<body>
+
+<header>
+  <div class="row">
+    <h1>VS Code <span class="accent">Cheat Sheet</span></h1>
+    <span class="badge mac">Mac &amp; Windows</span>
+  </div>
+  <div class="sub">Set up once, then write → run → fix. Python for Biologists, Lab 3.</div>
+</header>
+
+<div class="open">
+  <h2>Set up — once</h2>
+  <ol>
+    <li>In a terminal, <b>before</b> VS Code: <span class="mono">uv python install 3.14</span>, then <span class="mono">uv run python --version</span> → 3.14</li>
+    <li><b>File → Open Folder</b> → New Folder → open it. Always a folder, never a lone file.</li>
+    <li>"Do you trust the authors?" → <b>Yes</b> — it's your own folder.</li>
+    <li>Extensions sidebar → search <b>Python</b> → Install (publisher: <b>Microsoft</b>).</li>
+    <li>Command Palette → <b>Python: Select Interpreter</b> → the 3.14 with <span class="mono">uv</span> in its path.</li>
+  </ol>
+  <div class="prompt">Not in the list? Enter interpreter path:  ~/.local/bin/python3.14  (Mac)  ·  %USERPROFILE%\.local\bin\python3.14.exe  (Windows)</div>
+</div>
+
+<div class="grid">
+
+  <div class="card green">
+    <h2>Run your code</h2>
+    <ul>
+      <li><b>▶</b> (top right of the editor) — runs the open file</li>
+      <li>Or open the terminal <kbd>Ctrl</kbd> <kbd>`</kbd> and type:</li>
+    </ul>
+<pre style="margin-top:5px">uv run hello.py     <span class="c"># the Lab 2 way</span></pre>
+    <p style="margin-top:6px">Both should use the same Python — the <b>status bar</b> (bottom right) shows which: it should say <b>3.14</b>.</p>
+  </div>
+
+  <div class="card blue">
+    <h2>Shortcuts worth learning</h2>
+    <table class="keys">
+      <tr><th>Action</th><th>Mac</th><th>Windows</th></tr>
+      <tr><td>Command Palette — every command</td><td><kbd>⌘⇧P</kbd></td><td><kbd>Ctrl+Shift+P</kbd></td></tr>
+      <tr><td>Jump to a file</td><td><kbd>⌘P</kbd></td><td><kbd>Ctrl+P</kbd></td></tr>
+      <tr><td>Show / hide terminal</td><td><kbd>Ctrl+`</kbd></td><td><kbd>Ctrl+`</kbd></td></tr>
+      <tr><td>Show / hide sidebar</td><td><kbd>⌘B</kbd></td><td><kbd>Ctrl+B</kbd></td></tr>
+      <tr><td>Save</td><td><kbd>⌘S</kbd></td><td><kbd>Ctrl+S</kbd></td></tr>
+      <tr><td>Comment / uncomment line</td><td><kbd>⌘/</kbd></td><td><kbd>Ctrl+/</kbd></td></tr>
+      <tr><td>Indent / un-indent</td><td><kbd>Tab</kbd> <kbd>⇧Tab</kbd></td><td><kbd>Tab</kbd> <kbd>Shift+Tab</kbd></td></tr>
+      <tr><td>Move line up / down</td><td><kbd>⌥↑</kbd> <kbd>⌥↓</kbd></td><td><kbd>Alt+↑</kbd> <kbd>Alt+↓</kbd></td></tr>
+      <tr><td>Copy line down</td><td><kbd>⇧⌥↓</kbd></td><td><kbd>Shift+Alt+↓</kbd></td></tr>
+      <tr><td>Select next match</td><td><kbd>⌘D</kbd></td><td><kbd>Ctrl+D</kbd></td></tr>
+      <tr><td>Find / find in all files</td><td><kbd>⌘F</kbd> <kbd>⌘⇧F</kbd></td><td><kbd>Ctrl+F</kbd> <kbd>Ctrl+Shift+F</kbd></td></tr>
+      <tr><td>Rename a variable everywhere</td><td><kbd>F2</kbd></td><td><kbd>F2</kbd></td></tr>
+      <tr><td>Word wrap on / off</td><td><kbd>⌥Z</kbd></td><td><kbd>Alt+Z</kbd></td></tr>
+      <tr><td>Zoom in / out</td><td><kbd>⌘=</kbd> <kbd>⌘-</kbd></td><td><kbd>Ctrl+=</kbd> <kbd>Ctrl+-</kbd></td></tr>
+      <tr><td>Undo / redo</td><td><kbd>⌘Z</kbd> <kbd>⇧⌘Z</kbd></td><td><kbd>Ctrl+Z</kbd> <kbd>Ctrl+Y</kbd></td></tr>
+    </table>
+  </div>
+
+  <div class="card yellow">
+    <h2>Read the squiggles</h2>
+    <ul>
+      <li><b style="color:#fca5a5">Red</b> underline — an error; it won't run like this</li>
+      <li><b style="color:#ffd700">Yellow</b> underline — a warning; it runs, but look</li>
+      <li><b>Hover</b> over it to read the message</li>
+      <li>All of them at once: <b>Problems</b> panel <kbd>⇧⌘M</kbd> / <kbd>Ctrl+Shift+M</kbd></li>
+      <li>A white dot on the file tab = <b>unsaved</b> changes</li>
+    </ul>
+  </div>
+
+  <div class="card purple">
+    <h2>In the Command Palette</h2>
+    <p>Open it, then start typing — you never need to remember the menus.</p>
+<pre>Python: Select Interpreter
+Python: Run Python File in Terminal
+Preferences: Open Settings (UI)
+Shell Command: Install 'code' command in PATH  <span class="c"># Mac</span></pre>
+    <p style="margin-top:6px">After the last one, <span class="mono">code .</span> in a terminal opens that folder in VS Code.</p>
+  </div>
+
+  <div class="card red">
+    <h2>When it goes wrong</h2>
+    <ul>
+      <li><b>No ▶ button?</b> Is the Python extension installed, and does the file end in <span class="mono">.py</span>?</li>
+      <li><b>Old output?</b> Save first — or turn on <b>File → Auto Save</b>.</li>
+      <li><b>Different results from ▶ and uv run?</b> Wrong interpreter — check the status bar, then Select Interpreter.</li>
+      <li><b>File not found?</b> The terminal runs from the folder you opened — open the project folder, not your whole Documents.</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <span>Python for Biologists — University of Sussex</span>
+  <span>Lost? <kbd>⌘⇧P</kbd> / <kbd>Ctrl+Shift+P</kbd> and type what you want.</span>
+</footer>
+
+</body>
+</html>

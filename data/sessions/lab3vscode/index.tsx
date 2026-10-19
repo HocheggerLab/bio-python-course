@@ -2,8 +2,9 @@ import { LectureData } from '@/data/lectures/types'
 import { Slide01WhatIsIde } from './Slide01WhatIsIde'
 import { Slide02MeetIdes } from './Slide02MeetIdes'
 import { Slide03Window } from './Slide03Window'
-import { Slide04Workflow } from './Slide04Workflow'
-import { Slide05YourTurn } from './Slide05YourTurn'
+import { Slide04Setup } from './Slide04Setup'
+import { Slide05FirstRun } from './Slide05FirstRun'
+import { Slide06YourTurn } from './Slide06YourTurn'
 
 export const lab3VsCodeData: LectureData = {
   id: 'lab-3-vscode',
@@ -12,7 +13,8 @@ export const lab3VsCodeData: LectureData = {
     { title: "What's an IDE?", content: <Slide01WhatIsIde /> },
     { title: 'Meet the IDEs', content: <Slide02MeetIdes /> },
     { title: 'The VS Code window', content: <Slide03Window /> },
-    { title: 'The workflow', content: <Slide04Workflow /> },
-    { title: 'Your turn', content: <Slide05YourTurn /> },
+    { title: 'Set up', content: <Slide04Setup /> },
+    { title: 'Your first run', content: <Slide05FirstRun /> },
+    { title: 'Your turn', content: <Slide06YourTurn /> },
   ],
 }

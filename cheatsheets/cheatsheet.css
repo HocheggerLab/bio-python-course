@@ -90,3 +90,13 @@ footer {
   display: flex; justify-content: space-between;
   font-size: 7.6pt; color: #6b7280;
 }
+
+/* shortcut table: action · Mac · Windows (VS Code sheet) */
+table.keys { width: 100%; border-collapse: collapse; font-size: 8.2pt; }
+table.keys th { text-align: left; font-size: 7.4pt; letter-spacing: 1px; text-transform: uppercase; color: #8b949e; font-weight: 700; padding: 0 0 3px; }
+table.keys td { padding: 2.5px 0; border-top: 1px solid #21262d; vertical-align: middle; }
+table.keys td:first-child { color: #c9d1d9; padding-right: 6px; }
+table.keys td + td { white-space: nowrap; }
+.card ul { margin: 0; padding-left: 15px; font-size: 8.3pt; }
+.card ul li { margin: 2px 0; }
+.mono { font-family: "SF Mono", Menlo, Consolas, monospace; color: #e6edf3; font-size: 8pt; }

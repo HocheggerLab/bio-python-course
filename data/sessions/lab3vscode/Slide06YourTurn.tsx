@@ -8,7 +8,7 @@ const notToday = [
   'any extension beyond Python',
 ]
 
-export function Slide05YourTurn() {
+export function Slide06YourTurn() {
   return (
     <>
       <SlideTitle>
@@ -34,6 +34,7 @@ export function Slide05YourTurn() {
               Run &amp; iterate
             </CardHeading>
             <CardBody>
+              Press <span className="text-white">▶</span> or type{' '}
               <span className="font-mono text-white">uv run spike_detector.py</span>, read the output, change a
               threshold, run again. That edit-run loop is the whole point.
             </CardBody>

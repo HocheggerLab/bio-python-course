@@ -253,12 +253,15 @@ export function CardList({
   items,
   bullet = '✓',
   numbered = false,
+  start = 1,
   color = 'green',
   className = '',
 }: {
   items: Array<string | React.ReactNode>
   bullet?: React.ReactNode
   numbered?: boolean
+  /** first number when `numbered` — to continue a sequence from an earlier slide */
+  start?: number
   color?: CardColor
   className?: string
 }) {
@@ -278,7 +281,7 @@ export function CardList({
                 2xl:w-11 2xl:h-11 2xl:text-base
                 ${numberBubbleByColor[color]}`}
             >
-              {i + 1}
+              {start + i}
             </span>
           ) : (
             <span className={`${cardAccents.text[color]} shrink-0 font-semibold`}>{bullet}</span>
