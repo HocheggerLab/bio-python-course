@@ -64,13 +64,14 @@ export const pythonBasicsData: Lecture[] = [
   {
     id: 4,
     title: "Functions, Files and Error Handling",
-    status: "under-construction",
+    status: "available",
     topics: [
       "Defining functions and return values",
       "Scope, type hints and docstrings",
       "Reading and writing files",
       "try / except and raising errors"
     ],
+    slideUrl: "/lectures/4",
     type: 'core'
   },
 ]

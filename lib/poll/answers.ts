@@ -197,6 +197,96 @@ export const POLL_ANSWERS: Record<string, string> = {
     'and ATGGTACGCTGGACT… is the DNA rebuilt: adding `codon` instead of ' +
     '`codon_table[codon]` skips the lookup.',
 
+  'l4-t1a':
+    '**Keep only the sequences that start with ATG.** It is one thing, and you could ' +
+    'look up how to do it. "Analyse the sequences" and "work out the answer" are the ' +
+    'whole problem again, just renamed. A good step is small enough that you can ' +
+    'see the line of code behind it.',
+
+  'l4-t1b':
+    '**Keep the ATG starters → GC of each → mean.** Each step needs what the one ' +
+    'before it made. A mean is a single number, so once you have it you can no ' +
+    'longer pick out which sequences went into it. Filter first, then measure, ' +
+    'then summarise.',
+
+  'l4-t1c':
+    '**`seq[:3] == "ATG"`**: the first three bases, compared with ATG. `"ATG" in seq` ' +
+    'is True if ATG appears *anywhere*, so CATATG would sneak in. `seq[3]` and ' +
+    '`seq[0]` are single bases, and one letter can never equal three.',
+
+  'l4-t1d':
+    '**A for loop that appends each GC value to a new list.** "Each one" is the cue ' +
+    'for a loop, and keeping every answer is the cue for `.append()`. That is the ' +
+    'transform shape from Session 3. An if decides, a lookup translates, and print ' +
+    'only shows.',
+
+  'l4-t1e':
+    '**`sum(gc_values) / len(gc_values)`**: the total divided by how many values ' +
+    'went into it. Dividing by `len(seqs)` counts every sequence, including the ones ' +
+    'you filtered out, so the mean comes out far too low. The other way up is not a ' +
+    'mean, and `max()` is the largest value.',
+
+  'l4-t2a':
+    '**`def gc_content(seq):`**: `def`, the name, the parameter in brackets, and a ' +
+    'colon. Without the colon it is a `SyntaxError`. Without `def`, Python thinks you ' +
+    'are calling a function that does not exist yet. Without the brackets there is ' +
+    'nowhere for the sequence to go in.',
+
+  'l4-t2b':
+    '**The line that uses `seq`.** Inside the function, the parameter is the ' +
+    'sequence, whichever one was passed in. `seq1` would always measure the same ' +
+    'sequence. `"seq"` in quotes is the three letters s, e, q. `gc_content` is the ' +
+    'function itself, not a sequence.',
+
+  'l4-t2c':
+    '**`return round(gc, 1)`** hands the number back, so `gc1 = gc_content(seq1)` ' +
+    'has something to store. `print` only shows it on screen. A bare `return` hands ' +
+    'back `None`. `round(gc, 1)` on its own works the number out and then throws it ' +
+    'away.',
+
+  'l4-t2d':
+    '**Straight under the def line, indented.** It has to be the first thing inside ' +
+    'the function: that is how Python knows it is the docstring, and how `help()` ' +
+    'finds it. Above the def it is just a stray string. After the return it never ' +
+    'runs. A `#` comment is for the code, not for the person calling it.',
+
+  'l4-t2e':
+    '**62.5, then None.** The `print` inside the function shows 62.5 on screen, but ' +
+    'nothing is returned. A function with no `return` hands back `None`, so ' +
+    '`result` is `None`, and that is what the second print shows. Seeing None ' +
+    'where you expected a number usually means a missing `return`.',
+
+  'l4-t3a':
+    '**`seq = seq.upper().strip()`**. String methods hand back a *new* string, so you ' +
+    'must store it. Without `seq =`, the tidy copy is made and thrown away. Without ' +
+    'the brackets, `seq.upper` is the method itself, not a call, so `.strip` fails ' +
+    'with an `AttributeError`. `upper()` and `strip()` are methods, not stand-alone ' +
+    'functions.',
+
+  'l4-t3b':
+    '**`not all(base in "ATGC" for base in seq)`**. `all()` is True when every base ' +
+    'is A, T, G or C, so `not all(...)` is True as soon as one is not. Without the ' +
+    '`not`, you would raise an error for every *good* sequence. `"ATGC" in seq` looks ' +
+    'for the four letters in a row, and `seq != "ATGC"` compares the whole string.',
+
+  'l4-t3c':
+    '**`raise ValueError(f"Not DNA: {seq}")`** stops the function and says why. ' +
+    '`print` shows a message but carries on as if nothing were wrong. `return` hands ' +
+    'the error back as an ordinary value. `ValueError(...)` on its own creates the ' +
+    'error and then does nothing with it.',
+
+  'l4-t3d':
+    '**Raises ValueError: Not DNA: ATGCN.** The tidy step runs first, so by the time ' +
+    'of the check `seq` is already `"ATGCN"`, in upper case. N is not one of A, T, G ' +
+    'or C, so `not all(...)` is True and the function raises. It never reaches the ' +
+    '`return`.',
+
+  'l4-t3e':
+    '**ATG · skipped AXG · GC.** `"atg"` and `"gc "` are tidied and returned. `"AXG"` ' +
+    'raises a `ValueError`, the `except` block catches it, and the loop carries on. ' +
+    'That is the point of try / except: one bad sequence no longer stops the whole ' +
+    'run. Without it, the program would crash at AXG.',
+
   'l1-r1':
     'Only `f"..."` substitutes. Without the `f` Python prints the braces ' +
     'literally — no error, wrong output, and it will sit in a script for weeks. ' +

@@ -47,6 +47,23 @@ const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
   'l3-t3d': { lecture: 3, correctIndex: 0 },  // protein = protein + ...
   'l3-t3e': { lecture: 3, correctIndex: 1 },  // MVRWTLWDTLAFLLLLSLL
 
+  // Lecture 4 — verified against CPython; see the explanations in answers.ts.
+  'l4-t1a': { lecture: 4, correctIndex: 1 },  // keep only the ATG starters
+  'l4-t1b': { lecture: 4, correctIndex: 0 },  // filter → GC → mean
+  'l4-t1c': { lecture: 4, correctIndex: 0 },  // seq[:3] == "ATG"
+  'l4-t1d': { lecture: 4, correctIndex: 0 },  // loop + append
+  'l4-t1e': { lecture: 4, correctIndex: 0 },  // sum / len of the filtered list
+  'l4-t2a': { lecture: 4, correctIndex: 0 },  // def gc_content(seq):
+  'l4-t2b': { lecture: 4, correctIndex: 0 },  // the body uses seq
+  'l4-t2c': { lecture: 4, correctIndex: 0 },  // return round(gc, 1)
+  'l4-t2d': { lecture: 4, correctIndex: 0 },  // under the def line
+  'l4-t2e': { lecture: 4, correctIndex: 0 },  // 62.5, then None
+  'l4-t3a': { lecture: 4, correctIndex: 0 },  // seq = seq.upper().strip()
+  'l4-t3b': { lecture: 4, correctIndex: 0 },  // not all(...)
+  'l4-t3c': { lecture: 4, correctIndex: 0 },  // raise ValueError(...)
+  'l4-t3d': { lecture: 4, correctIndex: 1 },  // Not DNA: ATGCN
+  'l4-t3e': { lecture: 4, correctIndex: 0 },  // ATG · skipped AXG · GC
+
   // All three verified against CPython: only B interpolates, "3.14" is a str,
   // and the other three names are SyntaxErrors (digit first, space, keyword).
   'l1-r1': { lecture: 1, correctIndex: 1 },

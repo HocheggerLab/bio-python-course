@@ -276,6 +276,158 @@ export const POLL_CONTENT: Record<string, PollContent> = {
     options: ['YGTLDFVGYPRFPAPVEFIA', 'MVRWTLWDTLAFLLLLSLL', 'L', 'ATGGTACGCTGGACT…'],
   },
 
+  /* Lecture 4 — the three Try-it-Yourself exercises, asked one step at a time.
+     The code itself is kept as a revision exercise after each block. */
+
+  // Block 1 — break it down: mean GC of the sequences that start with ATG
+  'l4-t1a': {
+    prompt: 'Which of these is ONE step — small enough to look up how to do?',
+    options: [
+      'Analyse the sequences',
+      'Keep only the sequences that start with ATG',
+      'Work out the answer',
+      'Write the program',
+    ],
+  },
+  'l4-t1b': {
+    prompt: 'Which order of steps works?',
+    options: [
+      'Keep the ATG starters → GC of each → mean',
+      'Mean → GC of each → keep the ATG starters',
+      'GC of each → mean → keep the ATG starters',
+      'Mean → keep the ATG starters → GC of each',
+    ],
+  },
+  'l4-t1c': {
+    prompt: 'Step: keep only the sequences that start with ATG. Which test does it?',
+    code: 'for seq in seqs:\n    if ???:\n        atg_seqs.append(seq)',
+    optionsAreCode: true,
+    options: ['seq[:3] == "ATG"', '"ATG" in seq', 'seq[3] == "ATG"', 'seq[0] == "ATG"'],
+  },
+  'l4-t1d': {
+    prompt: 'Step: work out the GC content of each one. Which Python shape is that?',
+    options: [
+      'A for loop that appends each GC value to a new list',
+      'One if statement',
+      'A dictionary lookup',
+      'A single print()',
+    ],
+  },
+  'l4-t1e': {
+    prompt: 'Step: report the mean. Which line?',
+    code: '# gc_values holds the GC % of the ATG starters only',
+    optionsAreCode: true,
+    options: [
+      'sum(gc_values) / len(gc_values)',
+      'sum(gc_values) / len(seqs)',
+      'len(gc_values) / sum(gc_values)',
+      'max(gc_values)',
+    ],
+  },
+
+  // Block 2 — package the spaghetti into gc_content(seq)
+  'l4-t2a': {
+    prompt: 'Which line starts the function?',
+    optionsAreCode: true,
+    options: ['def gc_content(seq):', 'def gc_content(seq)', 'gc_content(seq):', 'def gc_content:'],
+  },
+  'l4-t2b': {
+    prompt: 'Which line belongs inside the function?',
+    code: 'def gc_content(seq):\n    # ???',
+    optionsAreCode: true,
+    options: [
+      'gc = (seq.count("G") + seq.count("C")) / len(seq) * 100',
+      'gc = (seq1.count("G") + seq1.count("C")) / len(seq1) * 100',
+      'gc = ("seq".count("G") + "seq".count("C")) / len("seq") * 100',
+      'gc = (gc_content.count("G") + gc_content.count("C")) / len(gc_content) * 100',
+    ],
+  },
+  'l4-t2c': {
+    prompt: 'Which last line hands the answer back to whoever called the function?',
+    optionsAreCode: true,
+    options: ['return round(gc, 1)', 'print(round(gc, 1))', 'return', 'round(gc, 1)'],
+  },
+  'l4-t2d': {
+    prompt: 'Where does the docstring go?',
+    options: [
+      'Straight under the def line, indented',
+      'Just above the def line',
+      'After the return line',
+      'In a # comment at the end',
+    ],
+  },
+  'l4-t2e': {
+    prompt: 'What does this print?',
+    code: `def gc_content(seq):
+    gc = (seq.count("G") + seq.count("C")) / len(seq) * 100
+    print(round(gc, 1))
+
+result = gc_content("GGGCGCGCGCAATATA")
+print(result)`,
+    options: ['62.5, then None', '62.5, then 62.5', 'None', '62.5'],
+  },
+
+  // Block 3 — a defensive clean_dna(seq)
+  'l4-t3a': {
+    prompt: 'Step 1 — tidy the input. Which line?',
+    code: 'def clean_dna(seq):\n    # ???',
+    optionsAreCode: true,
+    options: [
+      'seq = seq.upper().strip()',
+      'seq.upper().strip()',
+      'seq = seq.upper.strip',
+      'seq = upper(strip(seq))',
+    ],
+  },
+  'l4-t3b': {
+    prompt: 'Step 2 — which condition is True when seq is NOT clean DNA?',
+    optionsAreCode: true,
+    options: [
+      'not all(base in "ATGC" for base in seq)',
+      'all(base in "ATGC" for base in seq)',
+      '"ATGC" in seq',
+      'seq != "ATGC"',
+    ],
+  },
+  'l4-t3c': {
+    prompt: 'Inside that if — which line fails loudly?',
+    optionsAreCode: true,
+    options: [
+      'raise ValueError(f"Not DNA: {seq}")',
+      'print(f"Not DNA: {seq}")',
+      'return ValueError(f"Not DNA: {seq}")',
+      'ValueError(f"Not DNA: {seq}")',
+    ],
+  },
+  'l4-t3d': {
+    prompt: 'What does clean_dna("atgcn") do?',
+    code: `def clean_dna(seq):
+    seq = seq.upper().strip()
+    if not all(base in "ATGC" for base in seq):
+        raise ValueError(f"Not DNA: {seq}")
+    return seq`,
+    options: [
+      'Returns "ATGCN"',
+      'Raises ValueError: Not DNA: ATGCN',
+      'Raises ValueError: Not DNA: atgcn',
+      'Returns None',
+    ],
+  },
+  'l4-t3e': {
+    prompt: 'What does this print?',
+    code: `for s in ["atg", "AXG", "gc "]:
+    try:
+        print(clean_dna(s))
+    except ValueError:
+        print("skipped", s)`,
+    options: [
+      'ATG · skipped AXG · GC',
+      'ATG — then the program crashes',
+      'ATG · GC',
+      'skipped AXG',
+    ],
+  },
+
   /* Part 1 — grown out of the two-strains exercise. The bug is silent apart
      from a warning: both lines draw, the legend is simply empty. */
   'l7-p1': {

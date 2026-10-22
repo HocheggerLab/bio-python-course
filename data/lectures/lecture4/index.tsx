@@ -7,7 +7,15 @@ import { Slide03ThisSession } from './Slide03ThisSession'
 import { Slide04AlgorithmReveal } from './Slide04AlgorithmReveal'
 import { Slide05Protocol } from './Slide05Protocol'
 import { Slide06ReverseComplement } from './Slide06ReverseComplement'
-import { Slide07TIYDecompose } from './Slide07TIYDecompose'
+import {
+  Slide07DecomposeQuizOpener,
+  Slide07DecomposeQ1,
+  Slide07DecomposeQ2,
+  Slide07DecomposeQ3,
+  Slide07DecomposeQ4,
+  Slide07DecomposeQ5,
+} from './Slide07DecomposeQuiz'
+import { Slide07RevisionDecompose } from './Slide07RevisionDecompose'
 import { Slide08ChainsToFunctions } from './Slide08ChainsToFunctions'
 // Part 2 — functions: the target, then built up from nothing
 import { Slide09Def } from './Slide09Def'
@@ -18,14 +26,30 @@ import { Slide13Return } from './Slide13Return'
 import { Slide14Defaults } from './Slide14Defaults'
 import { Slide15WhyFunctions } from './Slide15WhyFunctions'
 import { Slide16Docstrings } from './Slide16Docstrings'
-import { Slide17TIYPackageGC } from './Slide17TIYPackageGC'
+import {
+  Slide17PackageGCQuizOpener,
+  Slide17PackageGCQ1,
+  Slide17PackageGCQ2,
+  Slide17PackageGCQ3,
+  Slide17PackageGCQ4,
+  Slide17PackageGCQ5,
+} from './Slide17PackageGCQuiz'
+import { Slide17RevisionPackageGC } from './Slide17RevisionPackageGC'
 // Part 3 — defensive programming (error TYPES + reading tracebacks were done in Session 1).
 import { Slide18DefensiveCrash } from './Slide18DefensiveCrash'
 import { Slide19GuardFix } from './Slide19GuardFix'
 import { Slide20Raise } from './Slide20Raise'
 import { Slide21TryExcept } from './Slide21TryExcept'
 import { Slide22WhenWhich } from './Slide22WhenWhich'
-import { Slide23TIYCleanDna } from './Slide23TIYCleanDna'
+import {
+  Slide23CleanDnaQuizOpener,
+  Slide23CleanDnaQ1,
+  Slide23CleanDnaQ2,
+  Slide23CleanDnaQ3,
+  Slide23CleanDnaQ4,
+  Slide23CleanDnaQ5,
+} from './Slide23CleanDnaQuiz'
+import { Slide23RevisionCleanDna } from './Slide23RevisionCleanDna'
 // Wrap-up — capstone, course recap, outlook to Part 2
 import { Slide24Capstone } from './Slide24Capstone'
 import { Slide25RecapCourse } from './Slide25RecapCourse'
@@ -44,7 +68,13 @@ export const lecture4Data: LectureData = {
     { title: 'You Already Wrote an Algorithm', content: <Slide04AlgorithmReveal /> },
     { title: 'You Already Do This at the Bench', content: <Slide05Protocol /> },
     { title: 'Break Down — the Other Strand', content: <Slide06ReverseComplement /> },
-    { title: 'TIY — Break It Down', content: <Slide07TIYDecompose /> },
+    { title: 'Quiz — Break it down, step by step', content: <Slide07DecomposeQuizOpener /> },
+    { title: 'Quiz 1 — One step', content: <Slide07DecomposeQ1 /> },
+    { title: 'Quiz 2 — The order', content: <Slide07DecomposeQ2 /> },
+    { title: 'Quiz 3 — Starts with ATG', content: <Slide07DecomposeQ3 /> },
+    { title: 'Quiz 4 — GC of each one', content: <Slide07DecomposeQ4 /> },
+    { title: 'Quiz 5 — Report the mean', content: <Slide07DecomposeQ5 /> },
+    { title: 'Revision — From Plan to Code', content: <Slide07RevisionDecompose /> },
     { title: 'Chains Get Long', content: <Slide08ChainsToFunctions /> },
     // ── Part 2: functions — where we're heading… ───────────
     { title: 'Packaging It Up — def', content: <Slide09Def /> },
@@ -57,14 +87,26 @@ export const lecture4Data: LectureData = {
     // …and back to the full picture
     { title: 'Why Bother? Readable · Reusable', content: <Slide15WhyFunctions /> },
     { title: 'Say What It Does — docstrings', content: <Slide16Docstrings /> },
-    { title: 'TIY — Package the Spaghetti', content: <Slide17TIYPackageGC /> },
+    { title: 'Quiz — Package the spaghetti, step by step', content: <Slide17PackageGCQuizOpener /> },
+    { title: 'Quiz 1 — Start the function', content: <Slide17PackageGCQ1 /> },
+    { title: 'Quiz 2 — The body', content: <Slide17PackageGCQ2 /> },
+    { title: 'Quiz 3 — Hand it back', content: <Slide17PackageGCQ3 /> },
+    { title: 'Quiz 4 — The docstring', content: <Slide17PackageGCQ4 /> },
+    { title: 'Quiz 5 — print or return?', content: <Slide17PackageGCQ5 /> },
+    { title: 'Revision — Package the Spaghetti', content: <Slide17RevisionPackageGC /> },
     // ── Part 3: defensive programming ──────────────────────
     { title: 'Real Data Is Messy', content: <Slide18DefensiveCrash /> },
     { title: 'Check First — the if guard', content: <Slide19GuardFix /> },
     { title: 'Fail Loudly — raise', content: <Slide20Raise /> },
     { title: 'The Advanced Pattern — try / except', content: <Slide21TryExcept /> },
     { title: 'Which One? if vs try / except', content: <Slide22WhenWhich /> },
-    { title: 'TIY — A Defensive Function', content: <Slide23TIYCleanDna /> },
+    { title: 'Quiz — A defensive function, step by step', content: <Slide23CleanDnaQuizOpener /> },
+    { title: 'Quiz 1 — Tidy it', content: <Slide23CleanDnaQ1 /> },
+    { title: 'Quiz 2 — Spot bad DNA', content: <Slide23CleanDnaQ2 /> },
+    { title: 'Quiz 3 — Fail loudly', content: <Slide23CleanDnaQ3 /> },
+    { title: 'Quiz 4 — Messy and bad', content: <Slide23CleanDnaQ4 /> },
+    { title: 'Quiz 5 — Catch it', content: <Slide23CleanDnaQ5 /> },
+    { title: 'Revision — A Defensive Function', content: <Slide23RevisionCleanDna /> },
     // ── Wrap-up: capstone · course recap · outlook ─────────
     { title: "Claudia's Whole Job — One Program", content: <Slide24Capstone /> },
     { title: 'Recap — Sessions 1–4', content: <Slide25RecapCourse /> },
