@@ -12,7 +12,7 @@ const rows: DefRow[] = [
   { term: 'mkdir results', def: py('p.mkdir()'),             extra: 'a new folder' },
 ]
 
-export function Slide02TerminalToPython() {
+export function Slide06TerminalToPython() {
   return (
     <>
       <SlideTitle>
@@ -20,8 +20,8 @@ export function Slide02TerminalToPython() {
       </SlideTitle>
 
       <SlideLead>
-        Everything you just did by hand, <span className="text-white">pathlib</span> does in code.
-        Same ideas, same order — you already know what these mean.
+        <span className="font-mono text-white">peek.py</span> used one Path. Before the loop, here is the rest of
+        the toolkit — every one of them is a terminal command you already know.
       </SlideLead>
 
       <div className="mt-4 md:mt-6 xl:mt-8 max-w-5xl mx-auto w-full">

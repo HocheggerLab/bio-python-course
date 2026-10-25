@@ -3,7 +3,9 @@ import { SlideCard, CardHeading, CardList } from '@/components/slides/SlideCard'
 import {
   NotebookLink,
   NOTEBOOK_LOOPS_BASICS,
+  SOLUTIONS_LOOPS_BASICS,
   NOTEBOOK_LOOPS_ADVANCED,
+  SOLUTIONS_LOOPS_ADVANCED,
 } from './NotebookLink'
 
 const patterns = [
@@ -40,8 +42,8 @@ export function Slide01Loops() {
       </div>
 
       <div className="flex flex-col md:flex-row justify-center gap-2 md:gap-4">
-        <NotebookLink url={NOTEBOOK_LOOPS_BASICS} label="01 · Loops — basics" />
-        <NotebookLink url={NOTEBOOK_LOOPS_ADVANCED} label="02 · Loops — advanced" />
+        <NotebookLink url={NOTEBOOK_LOOPS_BASICS} solutionsUrl={SOLUTIONS_LOOPS_BASICS} label="01 · Loops — basics" />
+        <NotebookLink url={NOTEBOOK_LOOPS_ADVANCED} solutionsUrl={SOLUTIONS_LOOPS_ADVANCED} label="02 · Loops — advanced" />
       </div>
     </>
   )

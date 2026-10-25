@@ -3,7 +3,9 @@ import { SlideCard, CardHeading, CardList } from '@/components/slides/SlideCard'
 import {
   NotebookLink,
   NOTEBOOK_CONDITIONALS_BASICS,
+  SOLUTIONS_CONDITIONALS_BASICS,
   NOTEBOOK_CONDITIONALS_ADVANCED,
+  SOLUTIONS_CONDITIONALS_ADVANCED,
 } from './NotebookLink'
 
 const branch = [
@@ -40,8 +42,8 @@ export function Slide01IfElse() {
       </div>
 
       <div className="flex flex-col md:flex-row justify-center gap-2 md:gap-4">
-        <NotebookLink url={NOTEBOOK_CONDITIONALS_BASICS} label="03 · If / else — basics" />
-        <NotebookLink url={NOTEBOOK_CONDITIONALS_ADVANCED} label="04 · If / else — advanced" />
+        <NotebookLink url={NOTEBOOK_CONDITIONALS_BASICS} solutionsUrl={SOLUTIONS_CONDITIONALS_BASICS} label="03 · If / else — basics" />
+        <NotebookLink url={NOTEBOOK_CONDITIONALS_ADVANCED} solutionsUrl={SOLUTIONS_CONDITIONALS_ADVANCED} label="04 · If / else — advanced" />
       </div>
     </>
   )

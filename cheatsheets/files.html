@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Files &amp; Paths Cheat Sheet</title>
+<link rel="stylesheet" href="cheatsheet.css">
+<style>pre { font-size: 7.6pt; }</style>
+</head>
+<body>
+
+<header>
+  <div class="row">
+    <h1>Files &amp; Paths <span class="accent">Cheat Sheet</span></h1>
+    <span class="badge mac">Mac &amp; Windows</span>
+  </div>
+  <div class="sub">Find a file, read it, write the result. Python for Biologists, Lab 4.</div>
+</header>
+
+<div class="open">
+  <h2>Run your script — the same way every time</h2>
+  <ol>
+    <li>VS Code → <b>File → Open Folder</b> → your project folder (e.g. <span class="mono">lab4</span>).</li>
+    <li>Terminal inside VS Code: <kbd>Ctrl</kbd> <kbd>`</kbd> — check it with <span class="mono">pwd</span>: it should end in your folder.</li>
+    <li><span class="mono">uv run peek.py</span> — the script runs with the terminal's folder as its <b>current working directory</b>.</li>
+  </ol>
+</div>
+
+<div class="grid">
+
+  <div class="card blue">
+    <h2>Paths are objects</h2>
+<pre><span class="n">from</span> pathlib <span class="n">import</span> Path
+
+<span class="c"># the folder this script is saved in</span>
+here = Path(__file__).parent
+<span class="c"># / joins path parts</span>
+data_dir = here / <span class="s">"sequences"</span>
+bee = data_dir / <span class="s">"Bombus_terrestris.fasta"</span>
+
+bee.name      <span class="c"># 'Bombus_terrestris.fasta'</span>
+bee.stem      <span class="c"># 'Bombus_terrestris'</span>
+bee.suffix    <span class="c"># '.fasta'</span>
+bee.parent    <span class="c"># the sequences folder</span>
+bee.exists()  <span class="c"># True / False</span>
+bee.resolve() <span class="c"># full absolute path</span></pre>
+  </div>
+
+  <div class="card green">
+    <h2>Terminal → Python</h2>
+    <table class="keys">
+      <tr><th>Terminal</th><th>Python</th></tr>
+      <tr><td class="mono">pwd</td><td class="mono">Path.cwd()</td></tr>
+      <tr><td class="mono">ls</td><td class="mono">list(p.iterdir())</td></tr>
+      <tr><td class="mono">ls *.fasta</td><td class="mono">sorted(p.glob("*.fasta"))</td></tr>
+      <tr><td class="mono">cd sequences</td><td class="mono">p / "sequences"</td></tr>
+      <tr><td class="mono">cd ..</td><td class="mono">p.parent</td></tr>
+      <tr><td class="mono">mkdir results</td><td class="mono">p.mkdir(exist_ok=True)</td></tr>
+    </table>
+  </div>
+
+  <div class="card yellow">
+    <h2>Reading</h2>
+<pre><span class="c"># the file closes when the block ends</span>
+<span class="n">with</span> open(bee) <span class="n">as</span> f:
+    text = f.read()        <span class="c"># one string</span>
+
+<span class="n">with</span> open(bee) <span class="n">as</span> f:
+    lines = f.read().splitlines()
+    <span class="c"># a list of lines, no \n</span>
+
+<span class="n">with</span> open(bee) <span class="n">as</span> f:
+    <span class="n">for</span> line <span class="n">in</span> f:     <span class="c"># line by line</span>
+        line = line.strip()  <span class="c"># drop \n</span>
+
+text = bee.read_text()   <span class="c"># shortcut</span></pre>
+    <p style="margin-top:5px">Everything you read is a <b>string</b> — <span class="mono">float("24.0")</span> before maths.</p>
+  </div>
+
+  <div class="card purple">
+    <h2>Loop over a folder</h2>
+<pre>files = sorted(data_dir.glob(<span class="s">"*.fasta"</span>))
+<span class="n">for</span> fasta_file <span class="n">in</span> files:
+    species = fasta_file.stem
+    dna = read_fasta(fasta_file)
+    print(species, len(dna))</pre>
+  </div>
+
+  <div class="card pink">
+    <h2>Writing</h2>
+<pre>out = here / <span class="s">"results"</span>
+out.mkdir(exist_ok=<span class="n">True</span>)
+
+<span class="n">with</span> open(out / <span class="s">"bees.csv"</span>, <span class="s">"w"</span>) <span class="n">as</span> f:
+    f.write(<span class="s">"species,gc\n"</span>)  <span class="c"># header</span>
+    <span class="n">for</span> species, gc <span class="n">in</span> rows:
+        f.write(<span class="s">f"{species},{gc}\n"</span>)</pre>
+    <table class="keys" style="margin-top:5px">
+      <tr><th>Mode</th><th>Does</th></tr>
+      <tr><td class="mono">"r"</td><td>read (default)</td></tr>
+      <tr><td class="mono">"w"</td><td><span class="o">empties the file first!</span></td></tr>
+      <tr><td class="mono">"a"</td><td>add to the end</td></tr>
+    </table>
+    <p class="warn"><span class="mono">write()</span> adds no newline and takes only strings.</p>
+  </div>
+
+  <div class="card red">
+    <h2>When it goes wrong</h2>
+    <ul>
+      <li><b>FileNotFoundError</b> — print <span class="mono">path.resolve()</span>. Typo, or a relative path from the wrong folder? Use <span class="mono">Path(__file__).parent</span>.</li>
+      <li><b>IsADirectoryError</b> / <b>PermissionError</b> — you opened a folder, or (Windows) Excel has the file open.</li>
+      <li><b>Everything on one line?</b> Missing <span class="mono">\n</span>.</li>
+      <li><b>Results file empty?</b> <span class="mono">"w"</span> inside a loop wipes it each time — open once, before the loop.</li>
+      <li><b>Windows path in a string?</b> <span class="mono">"C:/Users/…"</span> or <span class="mono">r"C:\Users\…"</span>.</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <span>Python for Biologists — University of Sussex</span>
+  <span>Read the traceback from the bottom up.</span>
+</footer>
+
+</body>
+</html>

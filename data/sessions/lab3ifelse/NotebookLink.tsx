@@ -2,10 +2,20 @@ const COLAB_BASE = 'https://colab.research.google.com/github/HocheggerLab/y3-bio
 
 export const NOTEBOOK_CONDITIONALS_BASICS = `${COLAB_BASE}/lab03/03_conditionals_basics.ipynb`
 export const NOTEBOOK_CONDITIONALS_ADVANCED = `${COLAB_BASE}/lab03/04_conditionals_advanced_concepts.ipynb`
+export const SOLUTIONS_CONDITIONALS_BASICS = `${COLAB_BASE}/lab03/solutions/03_conditionals_basics_solutions.ipynb`
+export const SOLUTIONS_CONDITIONALS_ADVANCED = `${COLAB_BASE}/lab03/solutions/04_conditionals_advanced_concepts_solutions.ipynb`
 
-export function NotebookLink({ url, label }: { url: string; label?: string }) {
+export function NotebookLink({
+  url,
+  label,
+  solutionsUrl,
+}: {
+  url: string
+  label?: string
+  solutionsUrl?: string
+}) {
   return (
-    <div className="flex justify-center mt-3 md:mt-4">
+    <div className="flex flex-col items-center gap-1 mt-3 md:mt-4">
       <a
         href={url}
         target="_blank"
@@ -14,6 +24,16 @@ export function NotebookLink({ url, label }: { url: string; label?: string }) {
       >
         📓 {label ?? 'Colab practice notebook'} →
       </a>
+      {solutionsUrl && (
+        <a
+          href={solutionsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-400 hover:text-gray-200 text-xs underline underline-offset-4 transition-colors"
+        >
+          🔑 Solutions — try it first
+        </a>
+      )}
     </div>
   )
 }

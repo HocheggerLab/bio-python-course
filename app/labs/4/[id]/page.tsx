@@ -1,15 +1,16 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import SlideViewer from '@/components/lectures/SlideViewer'
+import LazyPyodideWrapper from '@/components/lectures/LazyPyodideWrapper'
 import { LectureData } from '@/data/lectures/types'
 import { lab4FunctionsData } from '@/data/sessions/lab4functions'
 import { lab4ErrorsData } from '@/data/sessions/lab4errors'
 import { lab4PathsData } from '@/data/sessions/lab4paths'
 
 const sessionDecks: Record<string, LectureData> = {
-  '1': lab4FunctionsData,
-  '2': lab4ErrorsData,
-  '3': lab4PathsData,
+  '1': lab4PathsData,
+  '2': lab4FunctionsData,
+  '3': lab4ErrorsData,
 }
 
 export default async function Lab4SessionPage({
@@ -30,7 +31,10 @@ export default async function Lab4SessionPage({
       >
         ← Lab 4
       </Link>
-      <SlideViewer lecture={deck} />
+      {/* the Functions recap slides run Python in the browser */}
+      <LazyPyodideWrapper>
+        <SlideViewer lecture={deck} />
+      </LazyPyodideWrapper>
     </>
   )
 }

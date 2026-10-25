@@ -11,24 +11,47 @@ interface Session {
 const sessions: Session[] = [
   {
     num: 1,
-    title: 'Functions',
-    topics: ['def & return', 'parameters & defaults', 'build translate()', 'compose a drift analysis'],
+    title: 'Paths & Files',
+    topics: ['check Python runs', 'download & read a FASTA file', 'one file, then all 99', 'cwd vs __file__'],
     status: 'available',
     href: '/labs/4/1',
   },
   {
     num: 2,
-    title: 'Errors',
-    topics: ['read a traceback', 'try / except', 'raise & custom errors', 'a batch job that survives'],
+    title: 'Functions',
+    topics: ['def & return', 'parameters & defaults', 'build translate()', 'compose a drift analysis'],
     status: 'available',
     href: '/labs/4/2',
   },
   {
     num: 3,
-    title: 'Paths & Files',
-    topics: ['pathlib & the terminal', 'reading with a context manager', 'point a program at your data', 'writing results out'],
+    title: 'Errors',
+    topics: ['read a traceback', 'try / except', 'raise & custom errors', 'a batch job that survives'],
     status: 'available',
     href: '/labs/4/3',
+  },
+]
+
+/* The homework, named as such. Chapters are numbered because the classroom
+   subscription reports per-chapter progress. */
+const practice = [
+  {
+    icon: '🐝',
+    title: 'Homework: finish fasta_loop.py',
+    detail:
+      'Three levels — GC content, write a CSV, then the drift analysis as a stretch. Every step has a hint at the bottom of the file.',
+  },
+  {
+    icon: '📥',
+    title: 'Introduction to Importing Data in Python',
+    detail: 'Chapter 1 only (Introduction and flat files) — open(), with, and reading text files, from another angle.',
+    href: 'https://app.datacamp.com/learn/courses/introduction-to-importing-data-in-python',
+    cta: 'DataCamp →',
+  },
+  {
+    icon: '📖',
+    title: 'Revise',
+    detail: 'Your Lab 4 notebooks — functions and errors, basics first, then the advanced ones.',
   },
 ]
 
@@ -105,6 +128,103 @@ export default function Lab4Page() {
               </Link>
             )
           })}
+        </div>
+
+        {/* Independent practice — the homework */}
+        <div className="mt-8 md:mt-10 max-w-5xl mx-auto rounded-2xl border-2 border-bio-green/30 bg-bio-green/10 p-6 md:p-8">
+          <div className="flex items-center gap-4 md:gap-5 mb-5 md:mb-6">
+            <span className="text-4xl md:text-5xl shrink-0">🏋️</span>
+            <div className="min-w-0">
+              <h2 className="text-lg md:text-xl xl:text-2xl font-bold text-white leading-snug">
+                Independent Practice
+              </h2>
+              <p className="text-sm md:text-base text-gray-300 mt-1">
+                In your own time, before next week. Your DataCamp access comes with the
+                course — sign in with your Sussex email.
+              </p>
+            </div>
+          </div>
+
+          <ul className="flex flex-col gap-3 md:gap-4">
+            {practice.map((p) => (
+              <li
+                key={p.title}
+                className="flex items-start gap-3 md:gap-4 rounded-xl bg-white/[0.03] border border-white/10 px-4 py-3 md:px-5 md:py-4"
+              >
+                <span className="text-2xl md:text-3xl shrink-0">{p.icon}</span>
+                <div className="min-w-0 flex-1">
+                  <p className="text-white font-semibold text-sm md:text-base xl:text-lg">
+                    {p.title}
+                  </p>
+                  <p className="text-gray-300 text-xs md:text-sm xl:text-base mt-0.5 leading-snug">
+                    {p.detail}
+                  </p>
+                </div>
+                {p.href && (
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 self-center rounded-full bg-bio-green/20 hover:bg-bio-green/30 border border-bio-green/40 text-bio-green font-semibold px-3 md:px-4 py-1.5 text-xs md:text-sm transition-colors"
+                  >
+                    {p.cta}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          <p className="text-gray-400 text-xs md:text-sm mt-4 md:mt-5">
+            I can see chapter progress in the classroom, so I will know which parts the
+            year found hard — that is what it is for.
+          </p>
+        </div>
+
+        {/* Lab notes */}
+        <div className="mt-8 md:mt-10 max-w-5xl mx-auto">
+          <Link
+            href="/labs/4/notes"
+            className="block rounded-2xl border-2 border-bio-blue/30 bg-bio-blue/10 hover:bg-bio-blue/15 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 p-6 md:p-8"
+          >
+            <div className="flex items-center gap-4 md:gap-5">
+              <span className="text-4xl md:text-5xl shrink-0">📚</span>
+              <div className="min-w-0">
+                <h2 className="text-lg md:text-xl xl:text-2xl font-bold text-white leading-snug">
+                  Lab Notes — Reading &amp; Writing Files
+                </h2>
+                <p className="text-sm md:text-base text-gray-300 mt-1">
+                  Paths, open() and with, reading, writing, and the errors you will meet — everything from today,
+                  in one place.
+                </p>
+              </div>
+              <span className="ml-auto shrink-0 text-bio-blue font-semibold text-sm md:text-base">
+                Read →
+              </span>
+            </div>
+          </Link>
+        </div>
+
+        {/* Resources & cheat sheets */}
+        <div className="mt-8 md:mt-10 max-w-5xl mx-auto">
+          <Link
+            href="/labs/4/resources"
+            className="block rounded-2xl border-2 border-bio-yellow/30 bg-bio-yellow/10 hover:bg-bio-yellow/15 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 p-6 md:p-8"
+          >
+            <div className="flex items-center gap-4 md:gap-5">
+              <span className="text-4xl md:text-5xl shrink-0">📄</span>
+              <div className="min-w-0">
+                <h2 className="text-lg md:text-xl xl:text-2xl font-bold text-white leading-snug">
+                  Resources &amp; Cheat Sheets
+                </h2>
+                <p className="text-sm md:text-base text-gray-300 mt-1">
+                  A one-page reading & writing files reference to print or keep open.
+                </p>
+              </div>
+              <span className="ml-auto shrink-0 text-bio-yellow font-semibold text-sm md:text-base">
+                Open →
+              </span>
+            </div>
+          </Link>
         </div>
 
       </div>

@@ -3,7 +3,9 @@ import { SlideCard, CardHeading, CardList } from '@/components/slides/SlideCard'
 import {
   NotebookLink,
   NOTEBOOK_ERRORS_BASICS,
+  SOLUTIONS_ERRORS_BASICS,
   NOTEBOOK_ERRORS_ADVANCED,
+  SOLUTIONS_ERRORS_ADVANCED,
 } from './NotebookLink'
 
 const catchIt = [
@@ -40,8 +42,8 @@ export function Slide01Errors() {
       </div>
 
       <div className="flex flex-col md:flex-row justify-center gap-2 md:gap-4">
-        <NotebookLink url={NOTEBOOK_ERRORS_BASICS} label="03 · Errors — basics" />
-        <NotebookLink url={NOTEBOOK_ERRORS_ADVANCED} label="04 · Errors — advanced" />
+        <NotebookLink url={NOTEBOOK_ERRORS_BASICS} solutionsUrl={SOLUTIONS_ERRORS_BASICS} label="03 · Errors — basics" />
+        <NotebookLink url={NOTEBOOK_ERRORS_ADVANCED} solutionsUrl={SOLUTIONS_ERRORS_ADVANCED} label="04 · Errors — advanced" />
       </div>
     </>
   )

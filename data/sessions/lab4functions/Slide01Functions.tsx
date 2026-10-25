@@ -3,7 +3,9 @@ import { SlideCard, CardHeading, CardList } from '@/components/slides/SlideCard'
 import {
   NotebookLink,
   NOTEBOOK_FUNCTIONS_BASICS,
+  SOLUTIONS_FUNCTIONS_BASICS,
   NOTEBOOK_FUNCTIONS_ADVANCED,
+  SOLUTIONS_FUNCTIONS_ADVANCED,
 } from './NotebookLink'
 
 const define = [
@@ -40,8 +42,8 @@ export function Slide01Functions() {
       </div>
 
       <div className="flex flex-col md:flex-row justify-center gap-2 md:gap-4">
-        <NotebookLink url={NOTEBOOK_FUNCTIONS_BASICS} label="01 · Functions — basics" />
-        <NotebookLink url={NOTEBOOK_FUNCTIONS_ADVANCED} label="02 · Functions — advanced" />
+        <NotebookLink url={NOTEBOOK_FUNCTIONS_BASICS} solutionsUrl={SOLUTIONS_FUNCTIONS_BASICS} label="01 · Functions — basics" />
+        <NotebookLink url={NOTEBOOK_FUNCTIONS_ADVANCED} solutionsUrl={SOLUTIONS_FUNCTIONS_ADVANCED} label="02 · Functions — advanced" />
       </div>
     </>
   )
