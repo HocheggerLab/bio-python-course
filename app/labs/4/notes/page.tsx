@@ -477,6 +477,15 @@ with open(results_dir / "bees.csv", newline="") as f:
               className="text-bio-blue hover:text-bio-yellow underline"
             >
               reading and writing text files
+            </a>
+            ,{' '}
+            <a
+              href="https://www.datacamp.com/tutorial/python-write-to-file"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-bio-blue hover:text-bio-yellow underline"
+            >
+              writing text, CSV and JSON
             </a>{' '}
             and{' '}
             <a

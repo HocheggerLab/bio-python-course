@@ -49,6 +49,21 @@ const practice = [
     cta: 'DataCamp →',
   },
   {
+    icon: '🗂️',
+    title: "How to Use Python's Pathlib",
+    detail:
+      'Short tutorial: Path objects, exists(), glob() and mkdir() — every pathlib move in fasta_loop.py. Free, no sign-in.',
+    href: 'https://www.datacamp.com/tutorial/comprehensive-tutorial-on-using-pathlib-in-python-for-file-system-manipulation',
+    cta: 'Tutorial →',
+  },
+  {
+    icon: '✍️',
+    title: 'Python Write to File: Text, CSV and JSON',
+    detail: 'Short tutorial on writing files with open() and with — handy for Level 2, your bee_summary.csv. Free, no sign-in.',
+    href: 'https://www.datacamp.com/tutorial/python-write-to-file',
+    cta: 'Tutorial →',
+  },
+  {
     icon: '📖',
     title: 'Revise',
     detail: 'Your Lab 4 notebooks — functions and errors, basics first, then the advanced ones.',
