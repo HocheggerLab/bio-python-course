@@ -63,7 +63,7 @@ export default function LectureCard({ lecture }: LectureCardProps) {
                 Notebooks
               </a>
             )}
-            {lecture.videoUrl ? (
+            {lecture.videoUrl && (
               <a
                 href={lecture.videoUrl}
                 target="_blank"
@@ -72,10 +72,6 @@ export default function LectureCard({ lecture }: LectureCardProps) {
               >
                 Video
               </a>
-            ) : (
-              <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark">
-                Video
-              </Link>
             )}
           </>
         )}
@@ -105,7 +101,7 @@ export default function LectureCard({ lecture }: LectureCardProps) {
                 Notebooks
               </Link>
             )}
-            {lecture.videoUrl ? (
+            {lecture.videoUrl && (
               <a
                 href={lecture.videoUrl}
                 target="_blank"
@@ -114,10 +110,6 @@ export default function LectureCard({ lecture }: LectureCardProps) {
               >
                 Video
               </a>
-            ) : (
-              <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark">
-                Video
-              </Link>
             )}
           </>
         )}
@@ -135,7 +127,7 @@ export default function LectureCard({ lecture }: LectureCardProps) {
             <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs">
               Notebooks
             </Link>
-            {lecture.videoUrl ? (
+            {lecture.videoUrl && (
               <a
                 href={lecture.videoUrl}
                 target="_blank"
@@ -144,10 +136,6 @@ export default function LectureCard({ lecture }: LectureCardProps) {
               >
                 Video
               </a>
-            ) : (
-              <Link href="/under-construction" className="btn-secondary !py-1 !px-3 text-xs border-bio-yellow text-bio-yellow hover:bg-bio-yellow hover:text-bio-dark">
-                Video
-              </Link>
             )}
           </>
         )}

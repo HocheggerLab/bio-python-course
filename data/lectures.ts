@@ -59,6 +59,7 @@ export const pythonBasicsData: Lecture[] = [
       "range() and translating a gene"
     ],
     slideUrl: "/lectures/3",
+    labsUrl: "/labs/3",
     type: 'core'
   },
   {
@@ -72,6 +73,7 @@ export const pythonBasicsData: Lecture[] = [
       "try / except and raising errors"
     ],
     slideUrl: "/lectures/4",
+    labsUrl: "/labs/4",
     type: 'core'
   },
 ]
