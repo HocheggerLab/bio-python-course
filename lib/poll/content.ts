@@ -428,6 +428,98 @@ print(result)`,
     ],
   },
 
+  /* Lecture 5 — the three Try-it-Yourselfs as three-question blocks; the code
+     follows each block as a revision exercise. Verified against CPython and
+     the course data files. */
+
+  // Block 1 — random through its API: attribute vs method, arguments, the docs
+  'l5-t1a': {
+    prompt: 'Which line rolls a die?',
+    code: 'import random',
+    optionsAreCode: true,
+    options: ['random.randint', 'random.randint(1, 6)', 'randint(1, 6)', 'random.randint[1, 6]'],
+  },
+  'l5-t1b': {
+    prompt: 'Which line picks one random base from the list?',
+    code: 'bases = ["A", "C", "G", "T"]',
+    optionsAreCode: true,
+    options: ['random.choice()', 'bases.choice()', 'random.choice(bases)', 'random.choice("bases")'],
+  },
+  'l5-t1c': {
+    prompt: 'The docs say: "random.shuffle(x) — shuffle the sequence x in place." What does this print?',
+    code: 'bases = ["A", "C", "G", "T"]\nresult = random.shuffle(bases)\nprint(result)',
+    options: ['A shuffled list, e.g. [\'G\', \'A\', \'T\', \'C\']', 'None', 'An error', '[\'A\', \'C\', \'G\', \'T\']'],
+  },
+
+  // Block 2 — interrogate the array: import, frames vs trials, the highest value
+  'l5-t2a': {
+    prompt: 'Which line lets you write np.loadtxt(...)?',
+    optionsAreCode: true,
+    options: ['import numpy', 'import numpy as np', 'from numpy import np', 'import np'],
+  },
+  'l5-t2b': {
+    prompt: 'nogo is 1 for each of the 9 frames a nogo signal plays. How many nogo trials were there?',
+    code: 'nogo = np.loadtxt(F, delimiter=",", skiprows=1, usecols=3)',
+    optionsAreCode: true,
+    options: ['len(nogo)', 'nogo.sum()', 'nogo.sum() / 9', 'nogo.count(1) / 9'],
+  },
+  'l5-t2c': {
+    prompt: "Which line gives the neuron's highest activity?",
+    code: 'dff = np.loadtxt(F, delimiter=",", skiprows=1, usecols=1)\n# dff.argmax() gives 11713: WHERE the highest value is, not what it is',
+    optionsAreCode: true,
+    options: ['dff.argmax()', 'dff.max()', 'dff.max', 'dff.highest()'],
+  },
+
+  // numpy toolbox (toy array): boolean filter, np.where()[0], argmax
+  'l5-n1': {
+    prompt: 'Which line keeps only the readings above 0.4?',
+    code: 'readings = np.array([0.1, 0.5, -0.2, 0.8, 0.3, 0.9])',
+    optionsAreCode: true,
+    options: ['readings > 0.4', 'readings[readings > 0.4]', '[readings > 0.4]', 'readings.filter(0.4)'],
+  },
+  'l5-n2': {
+    prompt: 'Which line gives the positions of the readings above 0.4, as a plain array?',
+    code: 'readings = np.array([0.1, 0.5, -0.2, 0.8, 0.3, 0.9])',
+    optionsAreCode: true,
+    options: ['np.where(readings > 0.4)[0]', 'np.where(readings > 0.4)', 'readings[readings > 0.4]', '(readings > 0.4).sum()'],
+  },
+  'l5-n3': {
+    prompt: 'At which position is the largest reading? Which line tells you?',
+    code: 'readings = np.array([0.1, 0.5, -0.2, 0.8, 0.3, 0.9])',
+    optionsAreCode: true,
+    options: ['readings.max()', 'readings.index(0.9)', 'readings.argmax()', 'max(readings)'],
+  },
+
+  // Block 3 — the same analysis on a second neuron (moved to the lab; not in the lecture deck)
+  'l5-t3a': {
+    prompt: 'To run this analysis on a second neuron, what do you change?',
+    options: [
+      'Rewrite response_to() for the new cell',
+      'Only the filename, F',
+      'The column numbers 2 and 3',
+      'Everything — a new cell needs new code',
+    ],
+  },
+  'l5-t3b': {
+    prompt: 'Each window is dff[i-10:i+30], with the event starting at i. Why does the peak use curve[10:]?',
+    code: 'print(f"{name:7s} peak {curve[10:].max():+.3f}")',
+    options: [
+      'To skip the 10 frames from before the event',
+      'Because numpy counts from 10',
+      'To skip the header row of the CSV',
+      'Because the first 10 values are always 0',
+    ],
+  },
+  'l5-t3c': {
+    prompt: 'Neuron one: go +0.29, nogo +0.06. Neuron two: go +1.28, nogo +1.04. Does neuron two tell go from nogo?',
+    options: [
+      'Yes — just as sharply as neuron one',
+      'Hardly — its go and nogo responses are close',
+      'Yes — but it prefers nogo',
+      'It does not respond to either',
+    ],
+  },
+
   /* Part 1 — grown out of the two-strains exercise. The bug is silent apart
      from a warning: both lines draw, the legend is simply empty. */
   'l7-p1': {

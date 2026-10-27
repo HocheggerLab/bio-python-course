@@ -19,16 +19,19 @@ export function StepQuizOpener({
   accent,
   note,
   code,
+  eyebrow = 'Five questions',
 }: {
   title: ReactNode
   accent: ReactNode
   note: ReactNode
   /** The data every question works on, shown once up front. */
   code: string
+  /** How many questions follow, e.g. 'Three questions'. */
+  eyebrow?: string
 }) {
   return (
     <SectionSlide
-      eyebrow="Five questions"
+      eyebrow={eyebrow}
       title={title}
       accent={accent}
       note={note}

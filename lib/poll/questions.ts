@@ -64,6 +64,20 @@ const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
   'l4-t3d': { lecture: 4, correctIndex: 1 },  // Not DNA: ATGCN
   'l4-t3e': { lecture: 4, correctIndex: 0 },  // ATG · skipped AXG · GC
 
+  // Lecture 5 — verified against CPython and the course data; see answers.ts.
+  'l5-t1a': { lecture: 5, correctIndex: 1 },  // random.randint(1, 6)
+  'l5-t1b': { lecture: 5, correctIndex: 2 },  // random.choice(bases)
+  'l5-t1c': { lecture: 5, correctIndex: 1 },  // shuffle returns None
+  'l5-t2a': { lecture: 5, correctIndex: 1 },  // import numpy as np
+  'l5-t2b': { lecture: 5, correctIndex: 2 },  // nogo.sum() / 9 -> 264
+  'l5-t2c': { lecture: 5, correctIndex: 1 },  // dff.max() -> 4.308
+  'l5-n1': { lecture: 5, correctIndex: 1 },  // readings[readings > 0.4]
+  'l5-n2': { lecture: 5, correctIndex: 0 },  // np.where(...)[0]
+  'l5-n3': { lecture: 5, correctIndex: 2 },  // readings.argmax()
+  'l5-t3a': { lecture: 5, correctIndex: 1 },  // only the filename
+  'l5-t3b': { lecture: 5, correctIndex: 0 },  // skip the baseline frames
+  'l5-t3c': { lecture: 5, correctIndex: 1 },  // go and nogo are close
+
   // All three verified against CPython: only B interpolates, "3.14" is a str,
   // and the other three names are SyntaxErrors (digit first, space, keyword).
   'l1-r1': { lecture: 1, correctIndex: 1 },

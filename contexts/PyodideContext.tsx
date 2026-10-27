@@ -32,7 +32,6 @@ const COURSE_FILES: Record<string, string> = {
   'neuron_1140_20190614_72.csv': '/data/neuron_1140_20190614_72.csv',
   'depmap_lecture.csv': '/data/depmap_lecture.csv',
   'beetable.py': '/data/beetable.py',
-  'neurotrace.py': '/data/neurotrace.py',
 }
 
 /** A module is named without its extension at the import site. */

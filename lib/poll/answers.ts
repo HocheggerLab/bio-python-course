@@ -287,6 +287,78 @@ export const POLL_ANSWERS: Record<string, string> = {
     'That is the point of try / except: one bad sequence no longer stops the whole ' +
     'run. Without it, the program would crash at AXG.',
 
+  'l5-t1a':
+    '**`random.randint(1, 6)`**: the module, a dot, the method, and brackets with the ' +
+    'range. Without brackets you only get the method itself — Python prints ' +
+    '`<bound method Random.randint of <random.Random object>>`, which shows that random ' +
+    'is itself an object of a class. `randint(1, 6)` alone is a `NameError`: it lives ' +
+    'inside random. Square brackets are a `TypeError`: you cannot index a method.',
+
+  'l5-t1b':
+    '**`random.choice(bases)`**: choice needs to be told what to choose from. Empty ' +
+    'brackets are a `TypeError` (missing argument). `bases.choice()` is an ' +
+    '`AttributeError`: a list has no choice method; random does. With quotes, ' +
+    '`"bases"` is just a word, so you get a random letter of b-a-s-e-s.',
+
+  'l5-t1c':
+    '**None.** "In place" means shuffle reorders the list you gave it and hands nothing ' +
+    'back. `bases` is now shuffled; `result` is `None`. No error, just a surprise if you ' +
+    'skipped the docs. Reading the API tells you what goes in and what comes out.',
+
+  'l5-t2a':
+    '**`import numpy as np`**: the whole package, under the short alias everyone uses. ' +
+    'Plain `import numpy` works too, but then you must write `numpy.loadtxt`; `np` is a ' +
+    '`NameError`. `from numpy import np` is an `ImportError`: numpy has nothing called ' +
+    'np inside it. `import np` is a `ModuleNotFoundError`: there is no package called np.',
+
+  'l5-t2b':
+    '**`nogo.sum() / 9`**: adding up the 0s and 1s counts the 1s, but each 1 is a frame. ' +
+    '`nogo.sum()` alone gives 2376 frames; every nogo signal lasts 9 frames, so that is ' +
+    '264 trials. `len(nogo)` counts every frame of the recording (21238). Arrays have no ' +
+    '`.count()` method, so the last one is an `AttributeError`: a list habit that does ' +
+    'not carry over.',
+
+  'l5-t2c':
+    '**`dff.max()`**: the array\'s own method for its largest value, 4.308. Without the ' +
+    'brackets, `dff.max` is the method itself, not its answer. `dff.highest()` is an ' +
+    '`AttributeError`: no such method, so check the menu. `dff.argmax()` answers a ' +
+    'different question: not what the highest value is, but where it is (frame 11713).',
+
+  'l5-n1':
+    '**`readings[readings > 0.4]`**: the comparison makes a mask of True/False, and the ' +
+    'mask inside square brackets keeps the values under a True: 0.5, 0.8, 0.9. ' +
+    '`readings > 0.4` on its own is only the mask. `[readings > 0.4]` wraps the mask in a ' +
+    'list, and arrays have no `.filter()` method (`AttributeError`).',
+
+  'l5-n2':
+    '**`np.where(readings > 0.4)[0]`**: positions 1, 3 and 5. Without the `[0]` you get ' +
+    '`(array([1, 3, 5]),)`, a tuple with the array inside, because np.where answers for ' +
+    'every dimension. `readings[readings > 0.4]` gives the values, not the positions, and ' +
+    '`(readings > 0.4).sum()` only counts them: 3.',
+
+  'l5-n3':
+    '**`readings.argmax()`**: position 5. `readings.max()` and `max(readings)` both give ' +
+    'the value, 0.9, not where it is. `.index()` is a list method; arrays do not have it ' +
+    '(`AttributeError`).',
+
+  'l5-t3a':
+    '**Only the filename, F.** The analysis is written once, and the data goes in ' +
+    'through one line. Both files have the same columns, so `response_to()` and the ' +
+    'column numbers stay as they are. That is real analysis: the same code, run on ' +
+    'the next cell.',
+
+  'l5-t3b':
+    '**To skip the 10 frames from before the event.** Each window starts 10 frames ' +
+    'early, so `curve[10:]` is the response from the event onwards. The 10 frames in ' +
+    'front are the baseline to compare it against. Neither numpy nor Python counts ' +
+    'from 10; both count from 0.',
+
+  'l5-t3c':
+    '**Hardly — its go and nogo responses are close.** Neuron one answered go about ' +
+    'five times more strongly than nogo (0.29 against 0.06). Neuron two gives 1.28 ' +
+    'against 1.04, so it fires whatever the whiskers felt. Two cells, two ' +
+    'personalities, and the same lines of code found both.',
+
   'l1-r1':
     'Only `f"..."` substitutes. Without the `f` Python prints the braces ' +
     'literally — no error, wrong output, and it will sit in a script for weeks. ' +

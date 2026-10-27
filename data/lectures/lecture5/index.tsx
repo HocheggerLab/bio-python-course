@@ -1,34 +1,41 @@
 import { LectureData } from '@/data/lectures/types'
-// Intro
+// Intro — the data, and why we need other people's code
 import { Slide01Recap } from './Slide01Recap'
 import { Slide02Part2 } from './Slide02Part2'
-import { Slide03TheProblem } from './Slide03TheProblem'
-import { Slide04Recording } from './Slide04Recording'
-import { Slide05ThisSession } from './Slide05ThisSession'
-// Part 1 — packages, discovered through random
-import { Slide06Packages } from './Slide06Packages'
-import { Slide07RandomGame } from './Slide07RandomGame'
-// Part 2 — a detour into OOP (abstraction → analogy → build one → arrays)
-import { Slide08RandomQuestion } from './Slide08RandomQuestion'
-import { Slide09Laundry } from './Slide09Laundry'
-import { Slide10Objects } from './Slide10Objects'
-import { Slide11MethodsBridge } from './Slide11MethodsBridge'
-import { Slide12TIYNeuronTrace } from './Slide12TIYNeuronTrace'
-// Part 3 — arrays: 1-D trace -> masking -> onsets -> 2-D -> the answer
-import { Slide13Part3 } from './Slide13Part3'
-import { Slide14TheFile } from './Slide14TheFile'
-import { Slide15ThePlan } from './Slide15ThePlan'
-import { Slide16WhyNotList } from './Slide16WhyNotList'
-import { Slide17FirstArray } from './Slide17FirstArray'
-import { Slide18TIYArray } from './Slide18TIYArray'
-import { Slide19Masking } from './Slide19Masking'
-import { Slide20Onsets } from './Slide20Onsets'
-import { Slide21Stack } from './Slide21Stack'
-import { Slide22Average } from './Slide22Average'
-import { Slide23Answer } from './Slide23Answer'
-import { Slide24TIYSecondNeuron } from './Slide24TIYSecondNeuron'
-import { Slide25ArrayVsList } from './Slide25ArrayVsList'
-import { Slide26Recap } from './Slide26Recap'
+import { Slide03TodaysData } from './Slide03TodaysData'
+import { Slide04ThisSession } from './Slide04ThisSession'
+// 1 · Classes — the hotel and its reception (the API)
+import { Slide05LaundryDIY, Slide05LaundryHotel } from './Slide05Laundry'
+import { Slide06Objects } from './Slide06Objects'
+// 2 · Borrow them — packages, through random
+import { Slide07Packages } from './Slide07Packages'
+import { Slide08RandomGame } from './Slide08RandomGame'
+import { Slide09RandomQuestion } from './Slide09RandomQuestion'
+import { Slide10RandomQuizOpener, Slide10RandomQ1, Slide10RandomQ2, Slide10RandomQ3 } from './Slide10RandomQuiz'
+import { Slide11RevisionRandom } from './Slide11RevisionRandom'
+// 3 · numpy — imports, speed, the array's reception, and the toolbox
+import { Slide12PartNumpy } from './Slide12PartNumpy'
+import { Slide13Imports } from './Slide13Imports'
+import { Slide14WhyNotList } from './Slide14WhyNotList'
+import { Slide15Speed } from './Slide15Speed'
+import { Slide16NumpyApi } from './Slide16NumpyApi'
+import { Slide17NumpyMenu } from './Slide17NumpyMenu'
+import { Slide18Filter } from './Slide18Filter'
+import { Slide19Where } from './Slide19Where'
+import { Slide20NumpyQuizOpener, Slide20NumpyQ1, Slide20NumpyQ2, Slide20NumpyQ3 } from './Slide20NumpyQuiz'
+import { Slide21RevisionNumpy } from './Slide21RevisionNumpy'
+// 4 · The neuron: the experiment, the file, first arrays — the analysis itself is the lab (see forLab/)
+import { Slide22PartNeuron } from './Slide22PartNeuron'
+import { Slide23TheExperiment } from './Slide23TheExperiment'
+import { Slide24Recording } from './Slide24Recording'
+import { Slide25TheFile } from './Slide25TheFile'
+import { Slide26FirstArray } from './Slide26FirstArray'
+import { Slide27GoSignal } from './Slide27GoSignal'
+import { Slide28ArrayQuizOpener, Slide28ArrayQ1, Slide28ArrayQ2, Slide28ArrayQ3 } from './Slide28ArrayQuiz'
+import { Slide29RevisionArray } from './Slide29RevisionArray'
+import { Slide30InTheLab } from './Slide30InTheLab'
+import { Slide31ArrayVsList } from './Slide31ArrayVsList'
+import { Slide32Recap } from './Slide32Recap'
 
 export const lecture5Data: LectureData = {
   id: 'lecture-5',
@@ -37,32 +44,49 @@ export const lecture5Data: LectureData = {
     // ── Intro ──────────────────────────────────────────────
     { title: 'Part 1 Done — You Have Mastered the Basics', content: <Slide01Recap /> },
     { title: 'Part 2 — Python Meets Real Data', content: <Slide02Part2 /> },
-    { title: "Today's Experiment — Touching a Whisker", content: <Slide03TheProblem /> },
-    { title: 'One Neuron, 21,238 Numbers', content: <Slide04Recording /> },
-    { title: 'This Session — Arrays', content: <Slide05ThisSession /> },
-    // ── Part 1: packages (via random) ──────────────────────
-    { title: 'Two Kinds of Package', content: <Slide06Packages /> },
-    { title: 'Roll the Dice — random', content: <Slide07RandomGame /> },
-    // ── Part 2: a detour into OOP ──────────────────────────
-    { title: 'How Does random Actually Work?', content: <Slide08RandomQuestion /> },
-    { title: "Use It, Don't Build It", content: <Slide09Laundry /> },
-    { title: 'Build the Simplest Object', content: <Slide10Objects /> },
-    { title: 'Methods — Why numpy Looks Familiar', content: <Slide11MethodsBridge /> },
-    { title: "Try it Yourself — Drive an Object You Didn't Write", content: <Slide12TIYNeuronTrace /> },
-    // ── Part 3: arrays ─────────────────────────────────────
-    { title: 'Part 3 — One Neuron, Many Trials', content: <Slide13Part3 /> },
-    { title: 'What Is Actually In the File', content: <Slide14TheFile /> },
-    { title: 'The Plan — Three Steps to an Answer', content: <Slide15ThePlan /> },
-    { title: "A List Can't Do Arithmetic", content: <Slide16WhyNotList /> },
-    { title: 'Your First Array', content: <Slide17FirstArray /> },
-    { title: 'Try it Yourself — Interrogate the Array', content: <Slide18TIYArray /> },
-    { title: 'Masking — One Question, Every Value', content: <Slide19Masking /> },
-    { title: 'Where Does a Trial Start?', content: <Slide20Onsets /> },
-    { title: 'Stack Them — Now It Is Two-Dimensional', content: <Slide21Stack /> },
-    { title: 'axis=0 — Average Down the Columns', content: <Slide22Average /> },
-    { title: 'So What Is This Neuron Actually For?', content: <Slide23Answer /> },
-    { title: 'Try it Yourself — A Second Neuron', content: <Slide24TIYSecondNeuron /> },
-    { title: 'List or Array?', content: <Slide25ArrayVsList /> },
-    { title: 'What You Can Do Now', content: <Slide26Recap /> },
+    { title: "Today's Data — a Neuron Firing", content: <Slide03TodaysData /> },
+    { title: 'This Session — Tools for Real Data', content: <Slide04ThisSession /> },
+    // ── 1 · Classes ────────────────────────────────────────
+    { title: 'Do It All Yourself', content: <Slide05LaundryDIY /> },
+    { title: 'Hand It Over', content: <Slide05LaundryHotel /> },
+    { title: 'Build the Simplest Object', content: <Slide06Objects /> },
+    // ── 2 · Borrow them: random ────────────────────────────
+    { title: "Borrow Other People's Classes", content: <Slide07Packages /> },
+    { title: 'Roll the Dice — random', content: <Slide08RandomGame /> },
+    { title: 'How Does random Actually Work?', content: <Slide09RandomQuestion /> },
+    { title: "Quiz — Use random's reception", content: <Slide10RandomQuizOpener /> },
+    { title: 'Quiz 1 — Call a method', content: <Slide10RandomQ1 /> },
+    { title: 'Quiz 2 — Pass an argument', content: <Slide10RandomQ2 /> },
+    { title: 'Quiz 3 — Read the docs', content: <Slide10RandomQ3 /> },
+    { title: "Revision — Use random's Reception", content: <Slide11RevisionRandom /> },
+    // ── 3 · numpy ──────────────────────────────────────────
+    { title: 'numpy — a Class for Numbers', content: <Slide12PartNumpy /> },
+    { title: 'Three Ways to Import', content: <Slide13Imports /> },
+    { title: "A List Can't Do Arithmetic", content: <Slide14WhyNotList /> },
+    { title: 'A Loop vs One numpy Call', content: <Slide15Speed /> },
+    { title: "The Array's Reception", content: <Slide16NumpyApi /> },
+    { title: 'What an Array Can Do', content: <Slide17NumpyMenu /> },
+    { title: 'Boolean Filtering — Keep What Passes', content: <Slide18Filter /> },
+    { title: 'Where Is It? — argmax and np.where', content: <Slide19Where /> },
+    { title: 'Quiz — The numpy toolbox', content: <Slide20NumpyQuizOpener /> },
+    { title: 'Quiz 1 — Filter', content: <Slide20NumpyQ1 /> },
+    { title: 'Quiz 2 — Where?', content: <Slide20NumpyQ2 /> },
+    { title: 'Quiz 3 — Where is the biggest?', content: <Slide20NumpyQ3 /> },
+    { title: 'Revision — The numpy Toolbox', content: <Slide21RevisionNumpy /> },
+    // ── 4 · The neuron ─────────────────────────────────────
+    { title: 'Back to the Mouse — One Neuron, Many Trials', content: <Slide22PartNeuron /> },
+    { title: 'The Experiment — Touching a Whisker', content: <Slide23TheExperiment /> },
+    { title: 'The Trace, With the Signals Marked', content: <Slide24Recording /> },
+    { title: 'What Is Actually In the File', content: <Slide25TheFile /> },
+    { title: 'Your First Array', content: <Slide26FirstArray /> },
+    { title: 'Your Second Array — the go Signal', content: <Slide27GoSignal /> },
+    { title: 'Quiz — Interrogate the array', content: <Slide28ArrayQuizOpener /> },
+    { title: 'Quiz 1 — Import numpy', content: <Slide28ArrayQ1 /> },
+    { title: 'Quiz 2 — Frames or trials?', content: <Slide28ArrayQ2 /> },
+    { title: 'Quiz 3 — The highest value', content: <Slide28ArrayQ3 /> },
+    { title: 'Revision — Interrogate the Array', content: <Slide29RevisionArray /> },
+    { title: 'In the Lab — Does It Tell go From nogo?', content: <Slide30InTheLab /> },
+    { title: 'List or Array?', content: <Slide31ArrayVsList /> },
+    { title: 'What You Can Do Now', content: <Slide32Recap /> },
   ],
 }
