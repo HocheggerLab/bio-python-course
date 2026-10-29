@@ -206,6 +206,7 @@ export default function Navigation() {
               )}
             </div>
 
+            <Link href="/practice" className="nav-link mr-8">Practice</Link>
             <Link href="/assessment" className="nav-link mr-8">Assessment</Link>
             <Link href="/schedule" className="nav-link mr-8">Schedule</Link>
             <Link href="/about" className="nav-link mr-8">About</Link>
@@ -285,6 +286,7 @@ export default function Navigation() {
               <Link href="/under-construction" onClick={toggleMobileMenu} className="block nav-link py-2 pl-4">Development Tools</Link>
             </div>
 
+            <Link href="/practice" onClick={toggleMobileMenu} className="block nav-link py-2">Practice</Link>
             <Link href="/assessment" onClick={toggleMobileMenu} className="block nav-link py-2">Assessment</Link>
             <Link href="/schedule" onClick={toggleMobileMenu} className="block nav-link py-2">Schedule</Link>
             <Link href="/about" onClick={toggleMobileMenu} className="block nav-link py-2">About</Link>

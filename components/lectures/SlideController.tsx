@@ -30,6 +30,15 @@ function isTypingTarget(target: EventTarget | null): boolean {
 export function SlideController({ children, totalSlides }: SlideControllerProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
 
+  /* ?slide=12 opens the deck on that slide (1-based), so the practice pages
+     can link straight to the slide that teaches a concept. Read once, on
+     mount, from window.location: useSearchParams would force a Suspense
+     boundary around every lecture page. */
+  useEffect(() => {
+    const n = Number(new URLSearchParams(window.location.search).get('slide'))
+    if (Number.isInteger(n) && n >= 1 && n <= totalSlides) setCurrentSlide(n - 1)
+  }, [totalSlides])
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (isTypingTarget(e.target)) {

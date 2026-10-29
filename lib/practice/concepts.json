@@ -1,0 +1,602 @@
+[
+ {
+  "slug": "variables",
+  "title": "Variables, print() and f-strings",
+  "lecture": "Lecture 1",
+  "summary": "A variable is a name for a value. print() shows values, and f-strings drop them into text.",
+  "slides": [
+   {
+    "lecture": 1,
+    "title": "Variables"
+   },
+   {
+    "lecture": 1,
+    "title": "Naming Variables"
+   },
+   {
+    "lecture": 1,
+    "title": "print()"
+   },
+   {
+    "lecture": 1,
+    "title": "f-strings"
+   }
+  ],
+  "notebook": "lab01/02_variables_and_print.ipynb",
+  "advanced": null,
+  "basics": [
+   {
+    "heading": "A name for a value",
+    "body": "Use a single = to store a value under a name. Assigning again replaces the old value: a variable holds one value at a time, and each line uses the value from the line before.",
+    "code": "cells = 120\ncells = cells + 30\nprint(cells)",
+    "output": "150"
+   },
+   {
+    "heading": "Good names",
+    "body": "Names may contain letters, digits and underscores, but cannot start with a digit or contain spaces or hyphens. They are case-sensitive: Gene and gene are different names.",
+    "code": null
+   },
+   {
+    "heading": "print() and f-strings",
+    "body": "print() shows each item it is given, separated by a space. An f-string — text with an f in front — replaces every {name} with that variable's value. Without the f, the braces are printed as they are.",
+    "code": "gene = \"TP53\"\nlength = 393\nprint(\"Gene:\", gene)\nprint(f\"{gene} has {length} amino acids\")\nprint(\"{gene} has {length} amino acids\")",
+    "output": "Gene: TP53\nTP53 has 393 amino acids\n{gene} has {length} amino acids"
+   }
+  ],
+  "further": [
+   {
+    "heading": "Formatting numbers",
+    "body": "Inside the braces you can put a whole expression, and after a colon a format: :.2f shows two decimal places, :.0f none.",
+    "code": "ratio = 2 / 3\nprint(f\"{ratio:.2f}\")\nprint(f\"{ratio * 100:.0f} percent\")",
+    "output": "0.67\n67 percent"
+   },
+   {
+    "heading": "Copying a value, not a link",
+    "body": "b = a copies the value a has at that moment. Changing a afterwards does not change b. Shortcuts such as += update a variable using its own value.",
+    "code": "a = 3\nb = a\na += 1\nprint(a, b)",
+    "output": "4 3"
+   }
+  ]
+ },
+ {
+  "slug": "types",
+  "title": "Data types and converting between them",
+  "lecture": "Lecture 1",
+  "summary": "Every value has a type — int, float, str or bool — and the type decides what you can do with it.",
+  "slides": [
+   {
+    "lecture": 1,
+    "title": "The Four Data Types"
+   },
+   {
+    "lecture": 1,
+    "title": "type()"
+   },
+   {
+    "lecture": 1,
+    "title": "Division & Decimals"
+   }
+  ],
+  "notebook": "lab01/03_data_types.ipynb",
+  "advanced": null,
+  "basics": [
+   {
+    "heading": "The four types",
+    "body": "Whole numbers are int, numbers with a decimal point are float, anything in quotes is a str (string), and True/False are bool. type() tells you which one you have.",
+    "code": "print(type(42))\nprint(type(3.0))\nprint(type(\"42\"))\nprint(type(True))",
+    "output": "<class 'int'>\n<class 'float'>\n<class 'str'>\n<class 'bool'>"
+   },
+   {
+    "heading": "Quotes change everything",
+    "body": "With strings, + joins and * repeats; with numbers they add and multiply. Text read from a file is always a string, so convert it before doing maths.",
+    "code": "print(\"12\" + \"3\")\nprint(int(\"12\") + 3)\nprint(str(4) + \" wells\")",
+    "output": "123\n15\n4 wells"
+   }
+  ],
+  "further": [
+   {
+    "heading": "Conversions have rules",
+    "body": "int() on a float cuts off the decimal part — it does not round. int() cannot read text with a decimal point (ValueError): go through float() first. Division with / always gives a float.",
+    "code": "print(int(7.9))\nprint(int(float(\"3.5\")))\nprint(10 / 2)",
+    "output": "7\n3\n5.0"
+   }
+  ]
+ },
+ {
+  "slug": "operators",
+  "title": "Operators: arithmetic, comparison and logic",
+  "lecture": "Lecture 1",
+  "summary": "Operators do the maths, compare values, and combine True/False answers.",
+  "slides": [
+   {
+    "lecture": 1,
+    "title": "Arithmetic Operators"
+   },
+   {
+    "lecture": 1,
+    "title": "Division & Decimals"
+   },
+   {
+    "lecture": 3,
+    "title": "Making a Decision"
+   }
+  ],
+  "notebook": "lab01/04_operators_and_mini_programs.ipynb",
+  "advanced": null,
+  "basics": [
+   {
+    "heading": "Arithmetic",
+    "body": "** is a power, // divides and drops the decimal part, % gives the remainder. Python follows the usual order — ** first, then * / // %, then + and - — and brackets go first of all.",
+    "code": "print(2 ** 5)\nprint(17 // 5, 17 % 5)\nprint(2 + 3 * 4, (2 + 3) * 4)",
+    "output": "32\n3 2\n14 20"
+   },
+   {
+    "heading": "Comparisons and logic",
+    "body": "== asks 'equal?' (a single = stores a value). != means 'not equal'. and needs both sides True, or needs at least one, and not flips True and False.",
+    "code": "od = 0.45\nprint(od == 0.45, od != 0.45)\nprint(od > 0.4 and od < 0.6)\nprint(not od > 0.4)",
+    "output": "True False\nTrue\nFalse"
+   }
+  ],
+  "further": [
+   {
+    "heading": "Chained comparisons and splitting units",
+    "body": "0.4 < od < 0.6 means 0.4 < od and od < 0.6. Together, // and % split a quantity into whole units and what is left over.",
+    "code": "od = 0.7\nprint(0.4 < od < 0.6)\nseconds = 200\nprint(seconds // 60, \"min\", seconds % 60, \"s\")",
+    "output": "False\n3 min 20 s"
+   }
+  ]
+ },
+ {
+  "slug": "lists",
+  "title": "Lists",
+  "lecture": "Lecture 2",
+  "summary": "A list holds many values in order. You can index it, slice it and change it.",
+  "slides": [
+   {
+    "lecture": 2,
+    "title": "Lists"
+   },
+   {
+    "lecture": 2,
+    "title": "Indexing & Slicing"
+   },
+   {
+    "lecture": 2,
+    "title": "Growing a List"
+   },
+   {
+    "lecture": 2,
+    "title": "Editing a List"
+   },
+   {
+    "lecture": 2,
+    "title": "Lists of Numbers"
+   }
+  ],
+  "notebook": "lab02/01_lists_basics.ipynb",
+  "advanced": "lab02/02_lists_advanced_concepts.ipynb",
+  "basics": [
+   {
+    "heading": "Indexing and slicing",
+    "body": "Counting starts at 0; -1 is the last item. A slice [start:stop] stops before stop, and leaving a side out runs to that end.",
+    "code": "weights = [21, 19, 25, 23]\nprint(weights[0], weights[-1])\nprint(weights[1:3], weights[:2])",
+    "output": "21 23\n[19, 25] [21, 19]"
+   },
+   {
+    "heading": "Changing a list",
+    "body": ".append() adds to the end, .insert() at a position, and x[i] = value replaces an item. len(), sum(), min() and max() summarise a list of numbers.",
+    "code": "weights = [21, 19, 25]\nweights.append(23)\nweights[0] = 22\nprint(weights, len(weights), sum(weights) / len(weights))",
+    "output": "[22, 19, 25, 23] 4 22.25"
+   }
+  ],
+  "further": [
+   {
+    "heading": "Two names, one list",
+    "body": "b = a does not copy a list: both names point to the same list, so a change through one shows up in the other. .copy() makes an independent list.",
+    "code": "a = [3, 1, 2]\nb = a\nc = a.copy()\na.append(9)\nprint(b, c)",
+    "output": "[3, 1, 2, 9] [3, 1, 2]"
+   },
+   {
+    "heading": "sort() versus sorted()",
+    "body": ".sort() reorders the list itself and returns None. sorted() gives back a new sorted list and leaves the original alone.",
+    "code": "x = [5, 2, 8]\ny = sorted(x)\nprint(x, y)\nprint(x.sort(), x)",
+    "output": "[5, 2, 8] [2, 5, 8]\nNone [2, 5, 8]"
+   },
+   {
+    "heading": "Lists inside lists",
+    "body": "Each item can itself be a list. Index twice: first the row, then the item in it.",
+    "code": "plate = [[1, 2, 3], [4, 5, 6]]\nprint(plate[1], plate[1][2])",
+    "output": "[4, 5, 6] 6"
+   }
+  ]
+ },
+ {
+  "slug": "strings",
+  "title": "Strings",
+  "lecture": "Lecture 2",
+  "summary": "A string is a sequence of characters — indexed and sliced like a list, with its own methods.",
+  "slides": [
+   {
+    "lecture": 2,
+    "title": "A String Is a Sequence"
+   },
+   {
+    "lecture": 2,
+    "title": "Slicing Out Codons"
+   },
+   {
+    "lecture": 2,
+    "title": "Building Strings"
+   },
+   {
+    "lecture": 2,
+    "title": "String Methods"
+   },
+   {
+    "lecture": 2,
+    "title": "Transcription with .replace()"
+   }
+  ],
+  "notebook": "lab02/03_strings_basics.ipynb",
+  "advanced": "lab02/04_strings_advanced_concepts.ipynb",
+  "basics": [
+   {
+    "heading": "A sequence of characters",
+    "body": "len(), indexing and slicing work just as they do for lists. in checks whether one piece of text appears inside another.",
+    "code": "dna = \"GATTACA\"\nprint(len(dna), dna[0], dna[2:5], dna[-2:])\nprint(\"TTA\" in dna)",
+    "output": "7 G TTA CA\nTrue"
+   },
+   {
+    "heading": "Methods return a new string",
+    "body": "Strings cannot be changed in place. .upper(), .replace() and friends hand back a new string — store it, or it is lost.",
+    "code": "dna = \"atgc\"\ndna.upper()\nprint(dna)\ndna = dna.upper()\nprint(dna, dna.replace(\"T\", \"U\"))",
+    "output": "atgc\nATGC AUGC"
+   },
+   {
+    "heading": "Useful methods",
+    "body": ".count() counts a piece of text, .find() gives where it starts, .split() cuts text into a list and .strip() removes spaces and newlines at both ends.",
+    "code": "line = \"  sample_07,GATTACA \\n\"\nclean = line.strip()\nprint(clean.split(\",\"))\nprint(clean.count(\"A\"), clean.find(\"GAT\"))",
+    "output": "['sample_07', 'GATTACA']\n3 10"
+   }
+  ],
+  "further": [
+   {
+    "heading": "Reversing, joining and searching",
+    "body": "A step of -1 reverses. \"-\".join(list) glues strings together with a separator. .find() returns -1 when the text is not there, and .count() does not count overlapping matches.",
+    "code": "print(\"ACGT\"[::-1])\nprint(\"-\".join([\"ATG\", \"GCC\", \"TAA\"]))\nprint(\"ATGC\".find(\"X\"), \"AAAA\".count(\"AA\"))",
+    "output": "TGCA\nATG-GCC-TAA\n-1 2"
+   }
+  ]
+ },
+ {
+  "slug": "dictionaries",
+  "title": "Dictionaries",
+  "lecture": "Lecture 2",
+  "summary": "A dictionary is a lookup table: each key points to a value.",
+  "slides": [
+   {
+    "lecture": 2,
+    "title": "Dictionaries — a lookup table"
+   },
+   {
+    "lecture": 2,
+    "title": "Keys & Values"
+   },
+   {
+    "lecture": 2,
+    "title": "Looking Up by Key"
+   },
+   {
+    "lecture": 2,
+    "title": "KeyError & .get()"
+   },
+   {
+    "lecture": 2,
+    "title": "Building Dictionaries"
+   },
+   {
+    "lecture": 3,
+    "title": "Looping Through a Dictionary"
+   }
+  ],
+  "notebook": "lab02/05_dictionaries_basics.ipynb",
+  "advanced": "lab02/06_dictionaries_advanced_concepts.ipynb",
+  "basics": [
+   {
+    "heading": "Looking things up",
+    "body": "Square brackets with a key give its value; assigning to a new key adds it. Reading a key that is not there raises a KeyError — keys are case-sensitive.",
+    "code": "codons = {\"ATG\": \"M\", \"TGG\": \"W\"}\ncodons[\"TTT\"] = \"F\"\nprint(codons[\"ATG\"], len(codons))",
+    "output": "M 3"
+   },
+   {
+    "heading": ".get() for missing keys",
+    "body": ".get(key, default) returns the default instead of raising an error. That makes it the standard way to count.",
+    "code": "counts = {}\nfor base in \"GATTACA\":\n    counts[base] = counts.get(base, 0) + 1\nprint(counts)\nprint(counts.get(\"N\", 0))",
+    "output": "{'G': 1, 'A': 3, 'T': 2, 'C': 1}\n0"
+   },
+   {
+    "heading": "Looping through a dictionary",
+    "body": ".items() gives each key together with its value; .keys() and .values() give one side.",
+    "code": "groups = {\"ctrl\": 4, \"drug\": 6}\nfor name, n in groups.items():\n    print(name, n)",
+    "output": "ctrl 4\ndrug 6"
+   }
+  ],
+  "further": [
+   {
+    "heading": "Building and sorting",
+    "body": "zip() pairs two lists, and dict() turns the pairs into a dictionary. sorted(d.items(), key=lambda kv: kv[1]) sorts the pairs by value; add reverse=True for largest first.",
+    "code": "d = dict(zip([\"rat\", \"bat\", \"cat\"], [3, 7, 5]))\nranked = sorted(d.items(), key=lambda kv: kv[1], reverse=True)\nprint(ranked[0])",
+    "output": "('bat', 7)"
+   },
+   {
+    "heading": "Comprehensions and nesting",
+    "body": "A dictionary comprehension builds key: value pairs in one line. A value can itself be a dictionary — look up twice.",
+    "code": "squares = {n: n * n for n in [1, 2, 3]}\nmice = {\"m1\": {\"weight\": 21}}\nprint(squares, mice[\"m1\"][\"weight\"])",
+    "output": "{1: 1, 2: 4, 3: 9} 21"
+   }
+  ]
+ },
+ {
+  "slug": "loops",
+  "title": "for loops and range()",
+  "lecture": "Lecture 3",
+  "summary": "A for loop runs the same lines once for every item.",
+  "slides": [
+   {
+    "lecture": 3,
+    "title": "Your First Loop"
+   },
+   {
+    "lecture": 3,
+    "title": "A Running Total"
+   },
+   {
+    "lecture": 3,
+    "title": "Building a New List"
+   },
+   {
+    "lecture": 3,
+    "title": "Why We Need range()"
+   },
+   {
+    "lecture": 3,
+    "title": "Stop and Go — break"
+   }
+  ],
+  "notebook": "lab03/01_loops_basics.ipynb",
+  "advanced": "lab03/02_loops_advanced_concepts.ipynb",
+  "basics": [
+   {
+    "heading": "Once per item",
+    "body": "The indented lines run once for each item, with the loop variable set to that item. Two patterns come up again and again: a running total that starts at 0, and a new list that starts empty.",
+    "code": "total = 0\ndoubled = []\nfor v in [2, 3, 5]:\n    total += v\n    doubled.append(v * 2)\nprint(total, doubled)",
+    "output": "10 [4, 6, 10]"
+   },
+   {
+    "heading": "range()",
+    "body": "range(stop) counts from 0 up to — not including — stop. range(start, stop, step) changes where it starts and how far it jumps.",
+    "code": "print(list(range(4)))\nprint(list(range(2, 6)))\nprint(list(range(0, 10, 3)))",
+    "output": "[0, 1, 2, 3]\n[2, 3, 4, 5]\n[0, 3, 6, 9]"
+   },
+   {
+    "heading": "break",
+    "body": "break leaves the loop straight away; the loop variable keeps its last value.",
+    "code": "for v in [3, 8, 2, 9]:\n    if v > 5:\n        break\nprint(v)",
+    "output": "8"
+   }
+  ],
+  "further": [
+   {
+    "heading": "enumerate() and zip()",
+    "body": "enumerate() gives each position together with its item. zip() walks two lists side by side.",
+    "code": "for i, b in enumerate(\"GAT\"):\n    print(i, b)\nfor a, b in zip([1, 2], [10, 20]):\n    print(a * b)",
+    "output": "0 G\n1 A\n2 T\n10\n40"
+   },
+   {
+    "heading": "List comprehensions",
+    "body": "[expression for item in list] builds a new list in one line.",
+    "code": "print([x * x for x in range(5)])",
+    "output": "[0, 1, 4, 9, 16]"
+   },
+   {
+    "heading": "while loops",
+    "body": "A while loop repeats as long as its condition is True — use it when you do not know in advance how many runs you need.",
+    "code": "n = 1\nsteps = 0\nwhile n < 100:\n    n = n * 3\n    steps += 1\nprint(n, steps)",
+    "output": "243 5"
+   }
+  ]
+ },
+ {
+  "slug": "conditionals",
+  "title": "if, elif and else",
+  "lecture": "Lecture 3",
+  "summary": "if statements let a program make decisions.",
+  "slides": [
+   {
+    "lecture": 3,
+    "title": "Making a Decision"
+   },
+   {
+    "lecture": 3,
+    "title": "Two Ways to Go — if / else"
+   },
+   {
+    "lecture": 3,
+    "title": "Many Branches — if / elif / else"
+   },
+   {
+    "lecture": 3,
+    "title": "Decisions Inside a Loop"
+   }
+  ],
+  "notebook": "lab03/03_conditionals_basics.ipynb",
+  "advanced": "lab03/04_conditionals_advanced_concepts.ipynb",
+  "basics": [
+   {
+    "heading": "One chain, one branch",
+    "body": "Python checks the conditions from the top and runs the first branch that is True; the rest of the chain is skipped. else takes no condition. Indentation decides which lines belong to each branch.",
+    "code": "ph = 6.5\nif ph < 7:\n    print(\"acid\")\nelif ph == 7:\n    print(\"neutral\")\nelse:\n    print(\"base\")",
+    "output": "acid"
+   },
+   {
+    "heading": "Decisions inside a loop",
+    "body": "Combine a loop with an if to count or collect only the items that pass a test.",
+    "code": "evens = 0\nfor v in [2, 7, 4, 9]:\n    if v % 2 == 0:\n        evens += 1\nprint(evens)",
+    "output": "2"
+   },
+   {
+    "heading": "Separate ifs are not a chain",
+    "body": "Two separate if statements are each checked, so both can run. Use elif when only one branch should.",
+    "code": "x = 10\nif x > 5:\n    print(\"over 5\")\nif x > 8:\n    print(\"over 8\")",
+    "output": "over 5\nover 8"
+   }
+  ],
+  "further": [
+   {
+    "heading": "Conditional expressions",
+    "body": "value_if_true if condition else value_if_false picks one of two values in a single line.",
+    "code": "x = 7\nprint(\"even\" if x % 2 == 0 else \"odd\")",
+    "output": "odd"
+   },
+   {
+    "heading": "Filtering with comprehensions",
+    "body": "An if at the end of a comprehension keeps only the items that pass; an if/else at the front labels every item. not in checks that something is absent.",
+    "code": "values = [3, 8, 1, 9]\nprint([v for v in values if v > 2])\nprint([\"H\" if v > 5 else \"L\" for v in values])\nprint([b for b in \"ANTG\" if b not in \"N\"])",
+    "output": "[3, 8, 9]\n['L', 'H', 'L', 'H']\n['A', 'T', 'G']"
+   }
+  ]
+ },
+ {
+  "slug": "functions",
+  "title": "Functions",
+  "lecture": "Lecture 4",
+  "summary": "A function packages a few lines under a name, so you can run them again with different inputs.",
+  "slides": [
+   {
+    "lecture": 4,
+    "title": "Packaging It Up — def"
+   },
+   {
+    "lecture": 4,
+    "title": "Give It Something to Work On"
+   },
+   {
+    "lecture": 4,
+    "title": "Hand the Answer Back — return"
+   },
+   {
+    "lecture": 4,
+    "title": "Two Parameters — and a Default"
+   },
+   {
+    "lecture": 4,
+    "title": "Say What It Does — docstrings"
+   }
+  ],
+  "notebook": "lab04/01_functions_basics.ipynb",
+  "advanced": "lab04/02_functions_advanced_concepts.ipynb",
+  "basics": [
+   {
+    "heading": "def, parameters and return",
+    "body": "def starts a function. The names in brackets are parameters; the values you pass in the call are arguments. return hands a result back to the caller and ends the function.",
+    "code": "def gc_content(seq):\n    gc = seq.count(\"G\") + seq.count(\"C\")\n    return gc / len(seq)\n\nprint(gc_content(\"ATGC\"))",
+    "output": "0.5"
+   },
+   {
+    "heading": "print is not return",
+    "body": "A function without return hands back None. Printing inside a function shows a value, but the caller cannot use it.",
+    "code": "def shout(x):\n    print(x.upper())\n\nresult = shout(\"hi\")\nprint(result)",
+    "output": "HI\nNone"
+   },
+   {
+    "heading": "Defaults and named arguments",
+    "body": "A default value is used when the argument is left out. Arguments can also be passed by name, in any order.",
+    "code": "def dilute(c, factor=10):\n    return c / factor\n\nprint(dilute(50), dilute(50, 5), dilute(factor=2, c=50))",
+    "output": "5.0 10.0 25.0"
+   }
+  ],
+  "further": [
+   {
+    "heading": "Returning several values",
+    "body": "return a, b hands back a tuple; unpack it straight into two names.",
+    "code": "def stats(values):\n    return min(values), max(values)\n\nlo, hi = stats([4, 9, 2])\nprint(lo, hi, stats([1, 5]))",
+    "output": "2 9 (1, 5)"
+   },
+   {
+    "heading": "Local variables",
+    "body": "Variables created inside a function are local: they disappear when it ends and never change a variable with the same name outside.",
+    "code": "x = 5\n\ndef change():\n    x = 99\n    return x\n\nprint(change(), x)",
+    "output": "99 5"
+   },
+   {
+    "heading": "Docstrings",
+    "body": "A string on the first line of a function documents it; Python stores it as __doc__, and help() shows it.",
+    "code": "def count_cells(image):\n    \"\"\"Count the cells in an image.\"\"\"\n    return 0\n\nprint(count_cells.__doc__)",
+    "output": "Count the cells in an image."
+   }
+  ]
+ },
+ {
+  "slug": "errors",
+  "title": "Errors and how to handle them",
+  "lecture": "Lectures 1 and 4",
+  "summary": "Errors are normal. Reading the error name tells you what went wrong; try/except lets a program carry on.",
+  "slides": [
+   {
+    "lecture": 1,
+    "title": "Errors Are Normal"
+   },
+   {
+    "lecture": 1,
+    "title": "Common Errors"
+   },
+   {
+    "lecture": 4,
+    "title": "Check First — the if guard"
+   },
+   {
+    "lecture": 4,
+    "title": "Fail Loudly — raise"
+   },
+   {
+    "lecture": 4,
+    "title": "The Advanced Pattern — try / except"
+   }
+  ],
+  "notebook": "lab04/03_errors_basics.ipynb",
+  "advanced": "lab04/04_errors_advanced_concepts.ipynb",
+  "basics": [
+   {
+    "heading": "The common errors",
+    "body": "NameError — a name that was never created. TypeError — the wrong type, e.g. \"A\" + 1. ValueError — the right type but an impossible value, e.g. int(\"abc\"). IndexError — a position past the end. KeyError — a dictionary key that is not there. The last line of the error message names it.",
+    "code": null
+   },
+   {
+    "heading": "Check first, or try",
+    "body": "An if guard checks before something can go wrong. try/except runs the risky line and, if that error happens, runs the except block instead of crashing.",
+    "code": "text = \"12x\"\ntry:\n    n = int(text)\nexcept ValueError:\n    n = 0\nprint(n)",
+    "output": "0"
+   },
+   {
+    "heading": "raise",
+    "body": "raise stops a function with an error of your choosing — better than carrying on with bad data. The caller can catch it.",
+    "code": "def check(seq):\n    if len(seq) == 0:\n        raise ValueError(\"empty sequence\")\n    return len(seq)\n\ntry:\n    check(\"\")\nexcept ValueError as e:\n    print(\"caught:\", e)",
+    "output": "caught: empty sequence"
+   }
+  ],
+  "further": [
+   {
+    "heading": "else and finally",
+    "body": "else runs only when the try block raised nothing; finally runs every time, error or not.",
+    "code": "for text in [\"7\", \"x\"]:\n    try:\n        n = int(text)\n    except ValueError:\n        print(text, \"is not a number\")\n    else:\n        print(text, \"doubled is\", n * 2)\n    finally:\n        print(\"checked\", text)",
+    "output": "7 doubled is 14\nchecked 7\nx is not a number\nchecked x"
+   },
+   {
+    "heading": "Errors travel up",
+    "body": "An error inside a function travels back to whoever called it, where an except can catch it. With several except blocks, the first matching one runs.",
+    "code": "def first(items):\n    return items[0]\n\ntry:\n    first([])\nexcept KeyError:\n    print(\"key\")\nexcept IndexError:\n    print(\"index\")",
+    "output": "index"
+   }
+  ]
+ }
+]

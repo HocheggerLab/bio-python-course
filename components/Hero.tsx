@@ -26,6 +26,9 @@ export default function Hero() {
             <a href="#python-basics" className="btn-primary text-lg">
               Start Learning →
             </a>
+            <a href="/practice" className="btn-secondary text-lg">
+              Practice Questions
+            </a>
             <a
               href="https://www.youtube.com/watch?v=n57YwgZs37w&list=PLD7ksBu0SbXM"
               target="_blank"

@@ -31,6 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page('/', 1.0, 'weekly'),
     page('/about', 0.8),
     page('/schedule', 0.7),
+    page('/practice', 0.8),
+    page('/practice/concepts', 0.6),
     page('/assessment', 0.7),
     page('/labs', 0.8, 'weekly'),
     page('/notebooks', 0.7, 'weekly'),
