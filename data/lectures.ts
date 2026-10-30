@@ -82,14 +82,15 @@ export const pythonDataData: Lecture[] = [
   {
     id: 5,
     title: "Arrays — One Neuron, Many Trials",
-    status: "under-construction",
+    status: "available",
     dataset: { emoji: "🐭", field: "Neurobiology", source: "Whisker touch — Maravall Lab, Sussex" },
     topics: [
-      "Packages, objects and methods",
-      "numpy arrays and vectorisation",
-      "Masking and finding events in a signal",
-      "2-D arrays: averaging 254 trials into an answer"
+      "Classes and objects: attributes and methods",
+      "Imports and the random module",
+      "numpy arrays, vectorisation and the method menu",
+      "Boolean filtering and np.where on a real neuron"
     ],
+    slideUrl: "/lectures/5",
     type: 'core'
   },
   {
