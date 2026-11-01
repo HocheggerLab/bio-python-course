@@ -88,6 +88,26 @@ const nextConfig: NextConfig = {
             key: 'Cross-Origin-Opener-Policy',
             value: 'same-origin',
           },
+          // Baseline hardening. No page is ever framed, so refuse it outright
+          // (clickjacking); stop browsers guessing content types; don't leak
+          // full URLs to other sites; switch off device APIs nothing here uses.
+          // Clipboard is left alone — the copy buttons need it.
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), payment=(), usb=()',
+          },
         ],
       },
     ];
