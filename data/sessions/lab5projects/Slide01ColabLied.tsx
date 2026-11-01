@@ -49,9 +49,9 @@ export function Slide01ColabLied() {
             Today: get it yourself
           </CardHeading>
           <CardBody>
-            One command to make a <span className="text-white">project</span>, one to add a{' '}
-            <span className="text-white">package</span>. Then the same analysis you did in the
-            notebooks, running on all five neurons, on your own machine.
+            One command builds a <span className="text-white">project</span> with everything a
+            data analysis needs. Then this week&apos;s notebooks, running in VS Code, on your own
+            machine.
           </CardBody>
         </SlideCard>
       </div>

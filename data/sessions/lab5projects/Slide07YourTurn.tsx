@@ -3,46 +3,32 @@ import { SlideCard, CardHeading, CardBody, CardList } from '@/components/slides/
 import { SlideNote } from '@/components/slides/layouts'
 import { CodeBox } from './CodeBox'
 
-/** TODO: replace with the real Zenodo DOI once the record is published. */
-const ZENODO_URL = '#'
-
 const steps: React.ReactNode[] = [
   <>
-    <span className="font-mono text-white">uv init --bare --vcs none neurons</span> &nbsp;·&nbsp;{' '}
-    <span className="font-mono text-white">cd neurons</span>
+    Open <span className="font-mono text-white">01_numpy_small_data.ipynb</span> — pick the{' '}
+    <span className="font-mono text-white">.venv</span> kernel again (once per notebook)
+  </>,
+  <>Work through it top to bottom — every ✅ should turn green</>,
+  <>
+    Then choose: <span className="font-mono text-white">02_…_basics</span> (step by step) or{' '}
+    <span className="font-mono text-white">02_…_advanced</span> (fewer hints, plus a stretch)
   </>,
   <>
-    <span className="font-mono text-white">uv sync</span> — watch{' '}
-    <span className="font-mono text-white">.venv</span> appear &nbsp;·&nbsp;{' '}
-    <span className="font-mono text-white">uv add numpy</span>
-  </>,
-  <>
-    <span className="text-white">Download</span> the five recordings and unzip them into the
-    project, then drop <span className="font-mono text-white">analyse_neurons.py</span> in.
-  </>,
-  <>
-    <span className="font-mono text-white">code .</span> — open the{' '}
-    <span className="text-white">folder</span>, and fill in the four TODOs.
-  </>,
-  <>
-    <span className="font-mono text-white">uv run analyse_neurons.py</span>
+    Save your final figure into <span className="font-mono text-white">results/</span>
   </>,
 ]
 
-const OUTPUT = `5 neurons, ranked by their response to the go cue
+const SAVE = `plt.savefig("results/go_vs_nogo.png", dpi=150)`
 
-neuron                       trials    peak     at
-neuron_0406_20180620_8          121   1.064   0.6s
-neuron_0406_20180620_11         121   0.548   0.9s
-neuron_0588_20180928_14         238   0.336   0.6s
-neuron_0588_20180828_5          254   0.262   2.1s
-neuron_1140_20190614_72         162   0.071   2.6s`
+const NUMBERS = `notebook 01      go 1.0 | nogo 0.2 | go is 5.0 times bigger
+notebook 02      neuron 1: go is 5.1 times nogo
+                 neuron 2: go is 1.2 times nogo`
 
 export function Slide07YourTurn() {
   return (
     <>
       <SlideTitle>
-        Your turn — <GradientText variant="green">five neurons</GradientText>
+        Your turn — <GradientText variant="green">locally</GradientText>
       </SlideTitle>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-3 md:mt-5 items-start">
@@ -53,40 +39,27 @@ export function Slide07YourTurn() {
             </CardHeading>
             <CardList items={steps} numbered color="green" />
           </SlideCard>
-
-          <div className="flex justify-center">
-            <a
-              href={ZENODO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-bio-green/20 hover:bg-bio-green/30
-                         border border-bio-green/40 text-bio-green font-semibold
-                         px-4 md:px-5 py-1.5 md:py-2 text-xs md:text-sm xl:text-base transition-colors"
-            >
-              ⬇ Download the five recordings →
-            </a>
-          </div>
+          <CodeBox label="add this after your last plot" color="blue">{SAVE}</CodeBox>
         </div>
 
         <div className="flex flex-col gap-3 md:gap-4">
-          <CodeBox label="what a finished run looks like" color="yellow">{OUTPUT}</CodeBox>
-
-          <SlideCard color="yellow" layout="start" padding="compact" className="border-l-4">
-            <CardHeading size="sm" color="yellow" className="mb-2">
-              Then the stretch — and it matters
+          <CodeBox label="numbers to check against" color="yellow">{NUMBERS}</CodeBox>
+          <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
+            <CardHeading size="sm" color="blue" className="mb-2">
+              Why the two neurons differ
             </CardHeading>
             <CardBody>
-              Re-rank by <span className="text-white">go minus nogo</span>. The neuron at the top
-              responds hardest to everything you show it, so it tells the mouse nothing. On
-              selectivity it drops to second — and the lecture&apos;s neuron takes first place.
+              Neuron 1 fires five times harder for <span className="text-white">go</span> than for{' '}
+              <span className="text-white">nogo</span> — it carries the mouse&apos;s decision. Neuron 2
+              barely tells them apart. Same code, opposite biology.
             </CardBody>
           </SlideCard>
         </div>
       </div>
 
       <SlideNote>
-        The analysis is the one you wrote in the notebooks. What is new is that it runs on your
-        machine, on data you fetched, in an environment you built.
+        Nothing here needs the internet any more. Close Colab — this is where your final project will
+        live too.
       </SlideNote>
     </>
   )

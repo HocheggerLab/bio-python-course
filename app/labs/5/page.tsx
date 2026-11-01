@@ -26,7 +26,7 @@ const sessions: Session[] = [
   {
     num: 3,
     title: 'Projects & Environments',
-    topics: ['uv init — your first project', 'uv add numpy', 'what .venv and uv.lock are for', 'all five neurons, on your machine'],
+    topics: ['packages, PyPI & virtual environments', 'uvx uv-start — a project in one command', 'notebooks in VS Code, on the .venv kernel', 'this week’s notebooks, run locally'],
     status: 'available',
     href: '/labs/5/3',
   },

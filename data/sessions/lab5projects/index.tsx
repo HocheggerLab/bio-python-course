@@ -1,22 +1,24 @@
 import { LectureData } from '@/data/lectures/types'
 import { Slide01ColabLied } from './Slide01ColabLied'
-import { Slide02Init } from './Slide02Init'
-import { Slide03Sync } from './Slide03Sync'
-import { Slide04AddNumpy } from './Slide04AddNumpy'
-import { Slide05WhyEnvironments } from './Slide05WhyEnvironments'
-import { Slide06Handover } from './Slide06Handover'
+import { Slide02Environments } from './Slide02Environments'
+import { Slide03UvStart } from './Slide03UvStart'
+import { Slide04WhatYouGot } from './Slide04WhatYouGot'
+import { Slide05OpenInVsCode } from './Slide05OpenInVsCode'
+import { Slide06GetTheFiles } from './Slide06GetTheFiles'
 import { Slide07YourTurn } from './Slide07YourTurn'
+import { Slide08WhenItBreaks } from './Slide08WhenItBreaks'
 
 export const lab5ProjectsData: LectureData = {
   id: 'lab-5-projects',
   title: 'Lab 5 · Projects & Environments',
   slides: [
     { title: 'Colab has been hiding something', content: <Slide01ColabLied /> },
-    { title: 'uv init — a project is one file', content: <Slide02Init /> },
-    { title: 'uv sync — make it real', content: <Slide03Sync /> },
-    { title: 'uv add numpy', content: <Slide04AddNumpy /> },
-    { title: 'Why not install it everywhere?', content: <Slide05WhyEnvironments /> },
-    { title: 'Terminal first, then VS Code', content: <Slide06Handover /> },
-    { title: 'Your turn — five neurons', content: <Slide07YourTurn /> },
+    { title: 'Where packages come from', content: <Slide02Environments /> },
+    { title: 'One command, a whole project', content: <Slide03UvStart /> },
+    { title: 'What you got', content: <Slide04WhatYouGot /> },
+    { title: 'Open it in VS Code', content: <Slide05OpenInVsCode /> },
+    { title: "Get this week's notebooks", content: <Slide06GetTheFiles /> },
+    { title: 'Your turn — locally', content: <Slide07YourTurn /> },
+    { title: 'When it breaks', content: <Slide08WhenItBreaks /> },
   ],
 }
