@@ -21,7 +21,7 @@
     "codemirror": "^6.0.2",
     "html-to-image": "^1.11.13",
     "html2canvas": "^1.4.1",
-    "next": "^15.5.28",
+    "next": "^16.4.3",
     "prism-react-renderer": "^2.4.1",
     "qrcode.react": "^4.2.0",
     "react": "19.1.0",
