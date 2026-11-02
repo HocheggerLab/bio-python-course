@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import FeedbackQRCard from '@/components/feedback/FeedbackQRCard'
 
 interface Session {
   num: number
@@ -106,6 +107,8 @@ export default function Lab5Page() {
             )
           })}
         </div>
+
+        <FeedbackQRCard />
 
       </div>
     </div>
