@@ -24,7 +24,7 @@ export function Slide03UvStart() {
             { cmd: 'uv self update' },
             { out: 'success: Upgraded uv to v0.13.x' },
             { comment: '# 2. build the project' },
-            { cmd: 'uvx uv-start lab5-neurons --data' },
+            { cmd: 'uvx uv-start@latest lab5-neurons --data' },
             { out: 'Data project template files copied successfully.' },
           ]}
         />
