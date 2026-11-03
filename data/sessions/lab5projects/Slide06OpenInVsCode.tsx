@@ -8,7 +8,9 @@ const steps: React.ReactNode[] = [
   <>&quot;Do you trust the authors?&quot; → <span className="text-white">Yes</span></>,
   <>
     &quot;Install recommended extensions?&quot; → <span className="text-white">Install</span> (Python,
-    Jupyter, Ruff)
+    Jupyter, Ruff). Missed the pop-up? Extensions (
+    <span className="text-white">⇧⌘X / Ctrl+Shift+X</span>) → search{' '}
+    <span className="text-white">Jupyter</span> → <span className="text-white">Install</span>
   </>,
   <>Open <span className="font-mono text-white">sample.ipynb</span></>,
   <>
