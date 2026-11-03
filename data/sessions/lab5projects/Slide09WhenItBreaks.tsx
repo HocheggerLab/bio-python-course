@@ -65,7 +65,7 @@ const fixes: Fix[] = [
   },
 ]
 
-export function Slide08WhenItBreaks() {
+export function Slide09WhenItBreaks() {
   return (
     <>
       <SlideTitle>

@@ -10,7 +10,7 @@ const steps: React.ReactNode[] = [
   </>,
   <>Work through it top to bottom — every ✅ should turn green</>,
   <>
-    Then choose: <span className="font-mono text-white">02_…_basics</span> (step by step) or{' '}
+    Then choose: <span className="font-mono text-white">02_…_basics</span> (the same tasks, on the real neuron) or{' '}
     <span className="font-mono text-white">02_…_advanced</span> (fewer hints, plus a stretch)
   </>,
   <>
@@ -20,11 +20,11 @@ const steps: React.ReactNode[] = [
 
 const SAVE = `plt.savefig("results/go_vs_nogo.png", dpi=150)`
 
-const NUMBERS = `notebook 01      go 1.0 | nogo 0.2 | go is 5.0 times bigger
-notebook 02      neuron 1: go is 5.1 times nogo
-                 neuron 2: go is 1.2 times nogo`
+const NUMBERS = `01            go 1.0   nogo 0.2     go ÷ nogo 5.0
+02 basics     go 0.29  nogo 0.057   go ÷ nogo 5.1
+02 advanced   neuron 1: 5.1   neuron 2: 1.2`
 
-export function Slide07YourTurn() {
+export function Slide08YourTurn() {
   return (
     <>
       <SlideTitle>
@@ -46,7 +46,7 @@ export function Slide07YourTurn() {
           <CodeBox label="numbers to check against" color="yellow">{NUMBERS}</CodeBox>
           <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
             <CardHeading size="sm" color="blue" className="mb-2">
-              Why the two neurons differ
+              Advanced: why the two neurons differ
             </CardHeading>
             <CardBody>
               Neuron 1 fires five times harder for <span className="text-white">go</span> than for{' '}

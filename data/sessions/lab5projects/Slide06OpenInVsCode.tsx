@@ -22,7 +22,7 @@ const steps: React.ReactNode[] = [
 const CHECK = `Mac:      …/lab5-neurons/.venv/bin/python
 Windows:  …\\lab5-neurons\\.venv\\Scripts\\python.exe`
 
-export function Slide05OpenInVsCode() {
+export function Slide06OpenInVsCode() {
   return (
     <>
       <SlideTitle>

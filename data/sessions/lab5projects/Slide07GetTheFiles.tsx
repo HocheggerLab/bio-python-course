@@ -15,7 +15,7 @@ const TREE = `lab5-neurons/
 ├── results/
 └── sample.ipynb`
 
-export function Slide06GetTheFiles() {
+export function Slide07GetTheFiles() {
   return (
     <>
       <SlideTitle>

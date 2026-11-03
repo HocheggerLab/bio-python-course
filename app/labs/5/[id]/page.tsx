@@ -7,9 +7,9 @@ import { lab5Arrays2DData } from '@/data/sessions/lab5arrays2d'
 import { lab5ProjectsData } from '@/data/sessions/lab5projects'
 
 const sessionDecks: Record<string, LectureData> = {
-  '1': lab5Arrays1DData,
-  '2': lab5Arrays2DData,
-  '3': lab5ProjectsData,
+  '1': lab5ProjectsData,
+  '2': lab5Arrays1DData,
+  '3': lab5Arrays2DData,
 }
 
 export default async function Lab5SessionPage({

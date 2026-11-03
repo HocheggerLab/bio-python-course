@@ -12,22 +12,22 @@ interface Session {
 const sessions: Session[] = [
   {
     num: 1,
-    title: 'Arrays in One Dimension',
-    topics: ['np.array, shape & dtype', 'slicing a 21,238-frame trace', 'boolean masks', 'np.where & event onsets'],
+    title: 'Projects & Environments',
+    topics: ['packages, PyPI & virtual environments', 'uvx uv-start — a project in one command', 'notebooks (.ipynb) vs scripts (.py)', 'this week’s notebooks in VS Code, run locally'],
     status: 'available',
     href: '/labs/5/1',
   },
   {
     num: 2,
-    title: 'Two Dimensions & Vectorisation',
-    topics: ['np.stack — trials become a table', 'axis=0 vs axis=1', 'time a loop against an array', 'broadcasting'],
+    title: 'Arrays in One Dimension',
+    topics: ['np.array, shape & dtype', 'slicing a 21,238-frame trace', 'boolean masks', 'np.where & event onsets'],
     status: 'available',
     href: '/labs/5/2',
   },
   {
     num: 3,
-    title: 'Projects & Environments',
-    topics: ['packages, PyPI & virtual environments', 'uvx uv-start — a project in one command', 'notebooks in VS Code, on the .venv kernel', 'this week’s notebooks, run locally'],
+    title: 'Two Dimensions & Vectorisation',
+    topics: ['np.stack — trials become a table', 'axis=0 vs axis=1', 'time a loop against an array', 'broadcasting'],
     status: 'available',
     href: '/labs/5/3',
   },
