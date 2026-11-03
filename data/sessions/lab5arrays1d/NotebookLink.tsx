@@ -1,9 +1,9 @@
 const COLAB_BASE = 'https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main'
 
-export const NOTEBOOK_ARRAYS_1D_BASICS = `${COLAB_BASE}/lab05/01_arrays_1d_basics.ipynb`
-export const NOTEBOOK_ARRAYS_1D_ADVANCED = `${COLAB_BASE}/lab05/02_arrays_1d_advanced_concepts.ipynb`
-export const NOTEBOOK_ARRAYS_2D_BASICS = `${COLAB_BASE}/lab05/03_arrays_2d_basics.ipynb`
-export const NOTEBOOK_VECTORISATION = `${COLAB_BASE}/lab05/04_vectorisation.ipynb`
+export const NOTEBOOK_ARRAYS_1D_BASICS = `${COLAB_BASE}/lab05/01_numpy_small_data.ipynb`
+export const NOTEBOOK_ARRAYS_1D_ADVANCED = `${COLAB_BASE}/lab05/02_neuron_analysis_basics.ipynb`
+export const NOTEBOOK_ARRAYS_2D_BASICS = `${COLAB_BASE}/lab05/02_neuron_analysis_basics.ipynb`
+export const NOTEBOOK_VECTORISATION = `${COLAB_BASE}/lab05/02_neuron_analysis_advanced.ipynb`
 
 export function NotebookLink({ url, label }: { url: string; label?: string }) {
   return (

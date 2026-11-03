@@ -49,8 +49,8 @@ export function Slide01Arrays2D() {
       </div>
 
       <div className="flex flex-col md:flex-row justify-center gap-2 md:gap-4">
-        <NotebookLink url={NOTEBOOK_ARRAYS_2D_BASICS} label="03 · Two dimensions" />
-        <NotebookLink url={NOTEBOOK_VECTORISATION} label="04 · Vectorisation" />
+        <NotebookLink url={NOTEBOOK_ARRAYS_2D_BASICS} label="02 · Neuron project — basic (step by step)" />
+        <NotebookLink url={NOTEBOOK_VECTORISATION} label="02 · Neuron project — advanced (more on your own)" />
       </div>
     </>
   )

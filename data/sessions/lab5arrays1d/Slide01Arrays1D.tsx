@@ -3,7 +3,6 @@ import { SlideCard, CardHeading, CardList } from '@/components/slides/SlideCard'
 import {
   NotebookLink,
   NOTEBOOK_ARRAYS_1D_BASICS,
-  NOTEBOOK_ARRAYS_1D_ADVANCED,
 } from './NotebookLink'
 
 const basics = [
@@ -49,8 +48,7 @@ export function Slide01Arrays1D() {
       </div>
 
       <div className="flex flex-col md:flex-row justify-center gap-2 md:gap-4">
-        <NotebookLink url={NOTEBOOK_ARRAYS_1D_BASICS} label="01 · Arrays — basics" />
-        <NotebookLink url={NOTEBOOK_ARRAYS_1D_ADVANCED} label="02 · Arrays — asking questions" />
+        <NotebookLink url={NOTEBOOK_ARRAYS_1D_BASICS} label="01 · numpy on small data — everyone starts here" />
       </div>
     </>
   )

@@ -76,12 +76,11 @@ export const labNotebooks: LabNotebooks[] = [
   {
     lab: 5,
     labTitle: 'Arrays, numpy & Projects',
-    available: false,
+    available: true,
     notebooks: [
-      { path: 'lab05/01_arrays_1d_basics.ipynb', title: '01 · Arrays — basics', blurb: 'One neuron, one dimension.' },
-      { path: 'lab05/02_arrays_1d_advanced_concepts.ipynb', title: '02 · Arrays — asking questions', blurb: 'Masking, thresholds, finding onsets.' },
-      { path: 'lab05/03_arrays_2d_basics.ipynb', title: '03 · Arrays — 2D', blurb: 'Stacking trials, averaging across rows.' },
-      { path: 'lab05/04_vectorisation.ipynb', title: '04 · Vectorisation', blurb: 'Why bother with numpy at all.' },
+      { path: 'lab05/01_numpy_small_data.ipynb', title: '01 · numpy on small data', blurb: 'Every step of the neuron analysis on a 50-frame toy. Everyone starts here.' },
+      { path: 'lab05/02_neuron_analysis_basics.ipynb', title: '02 · Neuron project — basic', blurb: 'The full analysis on the real recording, step by step.' },
+      { path: 'lab05/02_neuron_analysis_advanced.ipynb', title: '02 · Neuron project — advanced', blurb: 'The same analysis with checkpoints and hints, then stretch goals.' },
     ],
   },
   { lab: 6, labTitle: 'Explorative Data Analysis', available: false, notebooks: [] },
