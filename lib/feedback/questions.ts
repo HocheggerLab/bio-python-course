@@ -36,6 +36,7 @@ export const RATINGS: RatingQuestion[] = [
   { id: 'lab_notebooks', text: 'The lab notebooks are a good way to practise what the lecture introduced.' },
   { id: 'lab_level', text: 'Choosing basics or advanced in the labs lets me work at the right level.' },
   { id: 'lab_help', text: 'I can get help when I am stuck in a lab.' },
+  { id: 'datacamp', text: 'I find the parallel DataCamp course useful.' },
   { id: 'bio_examples', text: 'The biology examples make the programming feel relevant to my degree.' },
   { id: 'website', text: 'The course website makes it easy to find what I need.' },
   { id: 'confidence', text: 'I feel more confident writing Python than I did at the start of the course.' },

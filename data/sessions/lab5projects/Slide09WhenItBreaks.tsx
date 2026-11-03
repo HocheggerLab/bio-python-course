@@ -9,10 +9,12 @@ interface Fix {
 
 const fixes: Fix[] = [
   {
-    symptom: 'uv: command not found',
+    symptom: 'uv / uv-start: command not found',
     fix: (
       <>
-        Close the terminal and open a new one. Still missing? Re-run the installer from Lab 2.
+        Close the terminal and open a new one. uv-start still missing? Run{' '}
+        <span className="font-mono text-white">uv tool update-shell</span>, then a new terminal. uv
+        missing? Re-run the installer from Lab 2.
       </>
     ),
   },

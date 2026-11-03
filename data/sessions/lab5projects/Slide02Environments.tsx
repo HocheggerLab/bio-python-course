@@ -22,7 +22,11 @@ export function Slide02Environments() {
       </SlideTitle>
 
       <SlideLead>
-        numpy lives on <span className="text-white">PyPI</span>, the Python Package Index. Getting
+        numpy lives on{' '}
+        <a href="https://pypi.org" target="_blank" rel="noopener noreferrer" className="text-bio-yellow underline">
+          PyPI
+        </a>
+        , the Python Package Index. Getting
         it means downloading it — and the only real question is <em>where to put it</em>.
       </SlideLead>
 

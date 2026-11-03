@@ -13,7 +13,7 @@ const sessions: Session[] = [
   {
     num: 1,
     title: 'Projects & Environments',
-    topics: ['packages, PyPI & virtual environments', 'uvx uv-start — a project in one command', 'notebooks (.ipynb) vs scripts (.py)', 'this week’s notebooks in VS Code, run locally'],
+    topics: ['packages, PyPI & virtual environments', 'uv tool install uv-start — a project in one command', 'notebooks (.ipynb) vs scripts (.py)', 'this week’s notebooks in VS Code, run locally'],
     status: 'available',
     href: '/labs/5/1',
   },
