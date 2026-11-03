@@ -91,6 +91,7 @@ export const pythonDataData: Lecture[] = [
       "Boolean filtering and np.where on a real neuron"
     ],
     slideUrl: "/lectures/5",
+    labsUrl: "/labs/5",
     type: 'core'
   },
   {
