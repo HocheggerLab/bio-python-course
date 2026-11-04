@@ -6,51 +6,51 @@ import {
   NOTEBOOK_VECTORISATION,
 } from './NotebookLink'
 
-const twoD = [
-  'np.stack — a list of trials becomes a table',
-  'shape as (rows, columns) = (trials, frames)',
-  'trials[row, col] — and : for a whole column',
-  'axis=0 vs axis=1 — which dimension disappears',
+const basic = [
+  'the same eight steps, now on 21,238 frames',
+  '📎 each step points back to notebook 01',
+  'fill the ___ blanks; self-checks tell you if it worked',
+  'finale: one function, run on a second neuron',
 ]
 
-const vector = [
-  'the same job as a loop, in one line',
-  'time it yourself — tens of times faster',
-  'broadcasting, and the shape error you will hit',
-  'baseline-correct 254 trials without a loop',
+const advanced = [
+  'four checkpoints — you write the code, hints if stuck',
+  'stretch: np.diff onsets, fancy indexing, broadcasting',
+  'axis=1 — one score per trial',
+  'a shuffle test: is the response real or chance?',
 ]
 
 export function Slide01Arrays2D() {
   return (
     <>
       <SlideTitle>
-        Two dimensions, and <GradientText variant="green">no more loops</GradientText>
+        The <GradientText variant="green">full neuron</GradientText>
       </SlideTitle>
 
       <p className="text-center text-gray-400 text-sm md:text-base xl:text-lg mt-2 md:mt-3 max-w-3xl mx-auto">
-        Stack 254 single trials into one table, average down the columns, and find out what this
-        neuron is actually for — then find out why numpy is worth the trouble.
+        The real recording: 254 go and 264 no-go trials, a mouse deciding whether to lick. Same question as the
+        toy — pick how much guidance you want. Both end with the same answer.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 mt-4 md:mt-6 xl:mt-8">
         <SlideCard color="blue" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="blue" className="mb-3 md:mb-4">
-            The second dimension
+            Basic · step by step
           </CardHeading>
-          <CardList items={twoD} bullet="▸" color="blue" />
+          <CardList items={basic} bullet="▸" color="blue" />
         </SlideCard>
 
         <SlideCard color="green" layout="start" padding="compact" className="border-l-4">
           <CardHeading size="sm" color="green" className="mb-3 md:mb-4">
-            Vectorisation
+            Advanced · more on your own
           </CardHeading>
-          <CardList items={vector} bullet="▸" color="green" />
+          <CardList items={advanced} bullet="▸" color="green" />
         </SlideCard>
       </div>
 
       <div className="flex flex-col md:flex-row justify-center gap-2 md:gap-4">
-        <NotebookLink url={NOTEBOOK_ARRAYS_2D_BASICS} label="02 · Neuron project — basic (step by step)" />
-        <NotebookLink url={NOTEBOOK_VECTORISATION} label="02 · Neuron project — advanced (more on your own)" />
+        <NotebookLink url={NOTEBOOK_ARRAYS_2D_BASICS} label="02 · Full neuron — basic" />
+        <NotebookLink url={NOTEBOOK_VECTORISATION} label="02 · Full neuron — advanced" />
       </div>
     </>
   )
