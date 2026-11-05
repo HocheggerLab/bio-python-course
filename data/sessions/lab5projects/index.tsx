@@ -1,4 +1,5 @@
 import { LectureData } from '@/data/lectures/types'
+import { Slide00StepByStep } from './Slide00StepByStep'
 import { Slide01ColabLied } from './Slide01ColabLied'
 import { Slide02Environments } from './Slide02Environments'
 import { Slide03UvStart } from './Slide03UvStart'
@@ -13,6 +14,7 @@ export const lab5ProjectsData: LectureData = {
   id: 'lab-5-projects',
   title: 'Lab 5 · Projects & Environments',
   slides: [
+    { title: 'Today, step by step', content: <Slide00StepByStep /> },
     { title: 'Colab has been hiding something', content: <Slide01ColabLied /> },
     { title: 'Where packages come from', content: <Slide02Environments /> },
     { title: 'One command, a whole project', content: <Slide03UvStart /> },

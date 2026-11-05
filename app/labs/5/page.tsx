@@ -59,6 +59,19 @@ export default function Lab5Page() {
           </p>
         </div>
 
+        <Link
+          href="/labs/5/setup"
+          className="block max-w-5xl mx-auto mb-8 md:mb-10 rounded-2xl border-2 border-bio-green/40 bg-bio-green/10 hover:bg-bio-green/15 transition-colors p-5 md:p-6"
+        >
+          <p className="text-lg md:text-xl xl:text-2xl font-bold text-white">
+            🛠️ Start here: get it running, step by step
+          </p>
+          <p className="text-gray-300 text-sm md:text-base mt-1">
+            Seven steps from an empty terminal to a notebook running on your laptop, each with a
+            check and a fix. Keep it open while you work →
+          </p>
+        </Link>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 xl:gap-8 max-w-5xl mx-auto">
           {sessions.map((s) => {
             const disabled = s.status === 'coming-soon'
