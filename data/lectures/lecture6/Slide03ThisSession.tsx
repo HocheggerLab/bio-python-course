@@ -2,50 +2,75 @@ import { GradientText } from '@/components/slides/SlideTitle'
 import { ConceptSlide } from '@/components/slides/layouts'
 import { SlideCard, CardHeading, CardBody, CardEyebrow } from '@/components/slides/SlideCard'
 
+const parts = [
+  {
+    color: 'blue' as const,
+    eyebrow: 'Part 1',
+    heading: 'The DataFrame',
+    body: (
+      <>
+        Open the file and meet two receptions — the table and its columns — then go looking for
+        trouble in the data.
+      </>
+    ),
+  },
+  {
+    color: 'yellow' as const,
+    eyebrow: 'Part 2',
+    heading: 'The road to the answer',
+    body: (
+      <>
+        Five steps, one pandas method each, from the raw table to the crop that would lose its
+        bees. Run each one, then fix a broken copy.
+      </>
+    ),
+  },
+  {
+    color: 'green' as const,
+    eyebrow: 'The verdict',
+    heading: 'Settle the bet',
+    body: <>Your votes from the start, now with the answer.</>,
+  },
+  {
+    color: 'red' as const,
+    eyebrow: 'In the lab',
+    heading: 'The pandas workout',
+    body: <>Everything else pandas can do, tried on the same survey at your own pace.</>,
+  },
+]
+
 export function Slide03ThisSession() {
   return (
     <ConceptSlide
       maxWidth="6xl"
       title={
         <>
-          This session — <GradientText>three steps into pandas</GradientText>
+          This session — <GradientText>one question, five steps</GradientText>
         </>
       }
-      lead={<>We'll start with basic operations and then work ourselves towards finding the most important pollinator</>}
-      note={<>Pandas is huge, we'll continue with missing values, broken column names, joining tables in the lab.</>}
+      lead={
+        <>
+          One question, answered with pandas from start to finish. The rest of pandas is for the
+          lab.
+        </>
+      }
+      note={
+        <>
+          You won&apos;t remember every method — nobody does. The cheat sheet at the end is for
+          practising later.
+        </>
+      }
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-        <SlideCard color="blue" layout="start" padding="compact" className="border-t-4">
-          <CardEyebrow color="blue">Part 1</CardEyebrow>
-          <CardHeading size="sm" color="blue" className="mb-2 mt-1">
-            The Pandas dataframe: You'll never touch Ecel again...
-          </CardHeading>
-          <CardBody>
-            Load the file, look at it, and discover that every numpy trick you learned last week
-            still works. pandas is built on numpy.
-          </CardBody>
-        </SlideCard>
-
-        <SlideCard color="yellow" layout="start" padding="compact" className="border-t-4">
-          <CardEyebrow color="yellow">Part 2</CardEyebrow>
-          <CardHeading size="sm" color="yellow" className="mb-2 mt-1">
-            Asking a table questions
-          </CardHeading>
-          <CardBody>
-            Pick columns, keep the rows you want, and count things. But watch out, there will be a trap 🪤 before we get to the answer!
-          </CardBody>
-        </SlideCard>
-
-        <SlideCard color="green" layout="start" padding="compact" className="border-t-4">
-          <CardEyebrow color="green">Part 3</CardEyebrow>
-          <CardHeading size="sm" color="green" className="mb-2 mt-1">
-            One line, one answer
-          </CardHeading>
-          <CardBody>
-            <span className="font-mono text-white">groupby</span> — split the table by crop, add up
-            each piece, and read the answer straight off.
-          </CardBody>
-        </SlideCard>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-5">
+        {parts.map((p) => (
+          <SlideCard key={p.eyebrow} color={p.color} layout="start" padding="compact" className="border-t-4">
+            <CardEyebrow color={p.color}>{p.eyebrow}</CardEyebrow>
+            <CardHeading size="sm" color={p.color} className="mb-2 mt-1">
+              {p.heading}
+            </CardHeading>
+            <CardBody>{p.body}</CardBody>
+          </SlideCard>
+        ))}
       </div>
     </ConceptSlide>
   )

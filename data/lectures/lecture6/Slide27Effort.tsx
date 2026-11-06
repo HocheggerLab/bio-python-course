@@ -15,7 +15,7 @@ Strawberry    124
 Apple         124
 Name: count, dtype: int64`
 
-export function Slide12ValueCounts() {
+export function Slide27Effort() {
   return (
     <ConceptSlide
       maxWidth="6xl"
@@ -26,9 +26,9 @@ export function Slide12ValueCounts() {
       }
       lead={
         <>
-          <span className="font-mono">.value_counts()</span> counts how often each value appears. On
-          a text column that is a tally of categories — and here it tells you something important
-          before you compute anything.
+          Before any answer, the first question for any comparison: how many surveys did each crop
+          get? Part 3&apos;s <span className="font-mono">.value_counts()</span>, on the{' '}
+          <span className="font-mono">Crop</span> column.
         </>
       }
       closing={

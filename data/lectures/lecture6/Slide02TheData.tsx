@@ -101,7 +101,7 @@ export function Slide02TheData() {
             </div>
           </div>
           <p className="text-gray-400 text-xs md:text-sm xl:text-base leading-relaxed px-1">
-            Words on the left, numbers on the right — the shape numpy could not hold.
+            Words on the left, numbers on the right — the shape numpy could not hold. (Bbean = broad bean, Rbean = runner bean.)
           </p>
         </div>
 
@@ -111,7 +111,7 @@ export function Slide02TheData() {
             <img
               src="/L6-bumblebee.jpg"
               alt="A buff-tailed bumblebee queen, Bombus terrestris, feeding on lime flowers"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto max-h-[30vh] object-cover"
             />
           </div>
           <figcaption className="mt-1.5 text-center text-gray-400 text-[10px] md:text-xs xl:text-sm leading-relaxed">

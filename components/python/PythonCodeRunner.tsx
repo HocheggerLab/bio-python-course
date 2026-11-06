@@ -367,7 +367,13 @@ del _json, _results, _test
           )}
           
           {output && (
-            <pre className="bg-bio-dark/50 rounded p-3 text-sm text-gray-300 font-mono overflow-x-auto whitespace-pre-wrap">
+            /* No wrapping: a wrapped DataFrame row lands under the wrong
+               columns. Wide tables drop a font size and scroll sideways. */
+            <pre
+              className={`bg-bio-dark/50 rounded p-3 text-gray-300 font-mono overflow-x-auto whitespace-pre ${
+                output.split('\n').some((l) => l.length > 100) ? 'text-xs' : 'text-sm'
+              }`}
+            >
               {output}
             </pre>
           )}

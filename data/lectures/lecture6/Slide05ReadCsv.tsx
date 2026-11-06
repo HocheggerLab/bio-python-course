@@ -10,14 +10,12 @@ df = pd.read_csv("pollinators_lecture.csv")
 print(df.head())
 `
 
-const output = `    Month  Allotment       Crop  ...  Pratorum  Hypnorum  Hortorum
-0  August  Camp_Site  Raspberry  ...         0         0         0
-1  August  Camp_Site      Rbean  ...         0         0         0
-2  August      Hoggs      Rbean  ...         0         0         0
-3  August      Hoggs      Rbean  ...         0         0         1
-4  August      Hoggs      Rbean  ...         0         0         0
-
-[5 rows x 13 columns]`
+const output = `    Month  Allotment       Crop  Flowers  Honeybees  Bumblebees  Hoverflies  Terrestris  Lapidarius  Pascuorum  Pratorum  Hypnorum  Hortorum
+0  August  Camp_Site  Raspberry        6          0           0           0           0           0          0         0         0         0
+1  August  Camp_Site      Rbean       50          0           0           0           0           0          0         0         0         0
+2  August      Hoggs      Rbean      140          0           1           0           0           0          1         0         0         0
+3  August      Hoggs      Rbean       28          0           1           0           0           0          0         0         0         1
+4  August      Hoggs      Rbean       75          1           0           0           0           0          0         0         0         0`
 
 export function Slide05ReadCsv() {
   return (
@@ -30,10 +28,9 @@ export function Slide05ReadCsv() {
       }
       lead={
         <>
-          Experiment Data come as Excel or CSV files. You can load this in numpy with <span className="font-mono">np.loadtxt</span> with{' '}
-          <span className="font-mono">delimiter</span>, <span className="font-mono">skiprows</span>{' '}
-          and <span className="font-mono">usecols</span> but its cumbersome. Pandas reads the header row,
-          works out the types, and hands you a <strong>DataFrame</strong> objects that comes with lots of analysis methods.
+          Real data comes as CSV or Excel files. pandas reads the header row, works out a type for
+          every column, and hands you a <strong>DataFrame</strong> — a table with its own analysis
+          methods.
         </>
       }
       closing={
@@ -48,8 +45,8 @@ export function Slide05ReadCsv() {
               </span>
               <br />
               <br />
-              You had to say what the separator was, that there was a header, and{' '}
-              <span className="text-white">which numbered column</span> you meant. If you differnet tyes you get an error!
+              Say the separator, skip the header, and give the{' '}
+              <span className="text-white">column number</span>. Mixed text and numbers? An error.
             </CardBody>
           </SlideCard>
           <SlideCard color="green" layout="start" padding="compact" className="border-l-4">
@@ -60,24 +57,17 @@ export function Slide05ReadCsv() {
               <span className="font-mono text-white">pd.read_csv(path)</span>
               <br />
               <br />
-              pandas reads the header itself, names every column, and works out a{' '}
-              <span className="text-white">type per column</span> — text where there is text,
-              integers where there are integers.
+              Reads the header itself, names every column, and picks a{' '}
+              <span className="text-white">type per column</span>. Then{' '}
+              <span className="font-mono text-white">.head()</span> shows the first five rows.
             </CardBody>
           </SlideCard>
         </div>
       }
-      note={
-        <>
-          <span className="font-mono not-italic">.head()</span> shows the first five rows. The{' '}
-          <span className="font-mono not-italic">...</span> is pandas being polite — thirteen columns
-          will not fit, so it hides the middle. Picking the ones you want is Part 2.
-        </>
-      }
     >
       <LazyPythonRunner
         initialCode={code}
-        height="205px"
+        height="142px"
         description="Read the survey data and look at the top of it"
         staticOutput={output}
       />

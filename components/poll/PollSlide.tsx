@@ -46,8 +46,25 @@ function renderProse(text: string): React.ReactNode {
  * The tally is fetched from an endpoint that refuses anyone without the
  * cookie, so a student's browser never receives the counts or the correct
  * answer, whatever they do to the page.
+ *
+ * `prediction` is for a bet or a vote: the bars show how the room split, but
+ * no option is marked right and no explanation appears. A bet placed at the
+ * start of a lecture can then be shown again, without `prediction`, once the
+ * answer is in — same question id, same votes, now with the answer marked.
+ *
+ * `codeSlot` replaces the static code block on the slide, e.g. with a runner
+ * holding the same broken code, so the room can watch it fail before voting.
+ * The phone page still shows `content.code`.
  */
-export default function PollSlide({ questionId }: { questionId: string }) {
+export default function PollSlide({
+  questionId,
+  prediction = false,
+  codeSlot,
+}: {
+  questionId: string
+  prediction?: boolean
+  codeSlot?: React.ReactNode
+}) {
   const content = getContent(questionId)
   const [results, setResults] = useState<Results | null>(null)
   const [teacher, setTeacher] = useState(false)
@@ -138,7 +155,9 @@ export default function PollSlide({ questionId }: { questionId: string }) {
       className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-center"
     >
       <div>
-        {content.code && (
+        {codeSlot ? (
+          <div className="mb-4">{codeSlot}</div>
+        ) : content.code && (
           <pre className="mb-4 p-3 rounded-lg bg-bio-dark/70 border border-white/10 font-mono text-sm md:text-lg xl:text-xl text-gray-200 overflow-x-auto">
             {content.code}
           </pre>
@@ -148,11 +167,11 @@ export default function PollSlide({ questionId }: { questionId: string }) {
           {content.options.map((option, i) => {
             const n = results?.counts[i] ?? 0
             const pct = results?.total ? Math.round((n / results.total) * 100) : 0
-            const correct = showBars && i === results?.correctIndex
+            const correct = showBars && !prediction && i === results?.correctIndex
             return (
               <div
                 key={i}
-                className={`relative flex items-center gap-3 rounded-lg border px-3 py-2 md:px-4 md:py-2.5 overflow-hidden
+                className={`relative flex items-center gap-3 rounded-lg border px-3 overflow-hidden ${codeSlot ? 'py-1.5' : 'py-2 md:px-4 md:py-2.5'}
                   ${correct
                     ? 'border-bio-green/60 bg-bio-green/10'
                     : 'border-bio-blue/25 bg-bio-blue/10'}`}
@@ -176,7 +195,9 @@ export default function PollSlide({ questionId }: { questionId: string }) {
                 <code
                   className={`relative flex-1 ${
                     content.optionsAreCode
-                      ? 'font-mono text-sm md:text-lg xl:text-xl'
+                      ? codeSlot
+                        ? 'font-mono text-xs md:text-sm xl:text-base'
+                        : 'font-mono text-sm md:text-lg xl:text-xl'
                       : 'text-base md:text-lg'
                   } ${correct ? 'text-bio-green' : 'text-gray-100'}`}
                 >
@@ -192,7 +213,7 @@ export default function PollSlide({ questionId }: { questionId: string }) {
           })}
         </div>
 
-        {showBars && results?.explanation && (
+        {showBars && !prediction && results?.explanation && (
           <div className="mt-4 md:mt-5 text-gray-100 text-sm md:text-lg leading-relaxed">
             {renderProse(results.explanation)}
           </div>

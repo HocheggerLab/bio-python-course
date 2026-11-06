@@ -520,6 +520,168 @@ print(result)`,
     ],
   },
 
+  /* Lecture 6 — one block of three per part, asked in the room; each part's
+     revision slide repeats the tools as code. Every wrong option is a real
+     mistake, checked against pandas 3 (what Pyodide runs). */
+  /* The bet: asked right after the question is set, shown again at the end
+     with the answer marked (PollSlide `prediction` hides it the first time).
+     Raspberry is the tempting answer — the most bumblebee visits — but it
+     has plenty of honeybees too; broad bean has almost nothing else. */
+  'l6-bet': {
+    prompt: 'Place your bet: the bumblebees vanish, the honeybees stay. Which crop would be left with almost no bee visits?',
+    options: ['Raspberry', 'Squash', 'Broad bean', 'Apple', 'Blackberry'],
+  },
+  /* Part 2's "your call": the room votes on a question, the lecturer types
+     the winner live. Not a quiz — there is no right option. */
+  'l6-call': {
+    prompt: 'Your call: which question should we ask the table? I will type the winner live.',
+    options: [
+      'Where were the busiest single surveys (more than 5 bumblebees)?',
+      'Raspberries: are bumblebees busier in May or in August?',
+      'Squash and courgette: who actually visits them?',
+      'What was going on at Moulsecoomb in July?',
+    ],
+  },
+  'l6-p1a': {
+    prompt: 'What does df.shape give you?',
+    code: 'df = pd.read_csv("pollinators_lecture.csv")  # 1,620 surveys, 13 columns',
+    optionsAreCode: true,
+    options: ['1620', '(13, 1620)', '(1620, 13)', '[1620, 13]'],
+  },
+  'l6-p1b': {
+    prompt: 'Which line gives you the Bumblebees column as a Series?',
+    code: 'df = pd.read_csv("pollinators_lecture.csv")',
+    optionsAreCode: true,
+    options: ['df[["Bumblebees"]]', 'df["Bumblebees"]', 'df("Bumblebees")', 'df.Bumblebees()'],
+  },
+  'l6-p1c': {
+    prompt: 'How many surveys saw at least one bumblebee? Which line tells you?',
+    code: 'df = pd.read_csv("pollinators_lecture.csv")',
+    optionsAreCode: true,
+    options: ['df["Bumblebees"].sum()', 'df["Bumblebees"].count()', 'len(df["Bumblebees"])', '(df["Bumblebees"] > 0).sum()'],
+  },
+  'l6-p2a': {
+    prompt: 'Which line keeps only the Raspberry surveys, as a table?',
+    code: 'df = pd.read_csv("pollinators_lecture.csv")',
+    optionsAreCode: true,
+    options: ['df["Crop"] == "Raspberry"', 'df[df["Crop"] == "Raspberry"]', 'df[df["Crop"] = "Raspberry"]', 'df["Raspberry"]'],
+  },
+  'l6-p2b': {
+    prompt: 'Which line keeps the June surveys that saw at least one bumblebee?',
+    code: 'df = pd.read_csv("pollinators_lecture.csv")',
+    optionsAreCode: true,
+    options: [
+      'df[(df["Month"] == "June") & (df["Bumblebees"] > 0)]',
+      'df[df["Month"] == "June" & df["Bumblebees"] > 0]',
+      'df[(df["Month"] == "June") and (df["Bumblebees"] > 0)]',
+      'df[(df["Month"] == "June") | (df["Bumblebees"] > 0)]',
+    ],
+  },
+  'l6-p2c': {
+    prompt: 'Which line gives only Crop and Flowers, for surveys with more than 100 flowers?',
+    code: 'df = pd.read_csv("pollinators_lecture.csv")',
+    optionsAreCode: true,
+    options: [
+      'df.loc[["Crop", "Flowers"], df["Flowers"] > 100]',
+      'df[df["Flowers"] > 100, ["Crop", "Flowers"]]',
+      'df.loc[df["Flowers"] > 100, ["Crop", "Flowers"]]',
+      'df.loc(df["Flowers"] > 100, ["Crop", "Flowers"])',
+    ],
+  },
+  'l6-p3a': {
+    prompt: 'Which line shows the five surveys with the most bumblebees?',
+    code: 'df = pd.read_csv("pollinators_lecture.csv")',
+    optionsAreCode: true,
+    options: [
+      'df.sort_values("Bumblebees").head()',
+      'df["Bumblebees"].max()',
+      'df.sort("Bumblebees").head()',
+      'df.sort_values("Bumblebees", ascending=False).head()',
+    ],
+  },
+  'l6-p3b': {
+    prompt: 'Which line tells you how many surveys were done in each month?',
+    code: 'df = pd.read_csv("pollinators_lecture.csv")',
+    optionsAreCode: true,
+    options: ['df["Month"].value_counts()', 'df["Month"].unique()', 'df["Month"].nunique()', 'df["Month"].count()'],
+  },
+  'l6-p3c': {
+    prompt: 'Which line gives the total number of honeybees at each allotment?',
+    code: 'df = pd.read_csv("pollinators_lecture.csv")',
+    optionsAreCode: true,
+    options: [
+      'df.groupby("Honeybees")["Allotment"].sum()',
+      'df["Allotment"].value_counts()',
+      'df.groupby("Allotment")["Honeybees"].sum()',
+      'df["Honeybees"].sum()',
+    ],
+  },
+
+  /* Part 2 — the road to the answer. One fix-the-code question after each
+     step: the broken line is the step just run, so the answer repeats it.
+     Every error message below was produced by pandas 3.1. */
+  'l6-f1': {
+    prompt: 'Step 1, broken. Which line should replace the first one?',
+    code: `rasp = df["Crop"] == "Raspberry"
+rasp["Bumblebees"].sum()
+# KeyError: 'Bumblebees'`,
+    optionsAreCode: true,
+    options: [
+      'rasp = df[df["Crop"] == "Raspberry"]',
+      'rasp = df["Crop"] = "Raspberry"',
+      'rasp = df["Raspberry"]',
+      'rasp = df[df["Crop"]] == "Raspberry"',
+    ],
+  },
+  'l6-f2': {
+    prompt: 'Step 2, broken. Which line works?',
+    code: `visits = df.groupby("Crop")["Honeybees", "Bumblebees"].sum()
+# ValueError: Cannot subset columns with a tuple
+# with more than one element. Use a list instead.`,
+    optionsAreCode: true,
+    options: [
+      'visits = df.groupby["Crop"][["Honeybees", "Bumblebees"]].sum()',
+      'visits = df.groupby(Crop)[["Honeybees", "Bumblebees"]].sum()',
+      'visits = df.groupby("Crop")[["Honeybees", "Bumblebees"]].sum()',
+      'visits = df["Crop"].groupby()[["Honeybees", "Bumblebees"]].sum()',
+    ],
+  },
+  'l6-f3': {
+    prompt: 'Step 3 runs without an error, but broad bean gets a share of 34.5. Which line is right?',
+    code: `visits["share"] = visits["Bumblebees"] / visits["Honeybees"] + visits["Bumblebees"]
+print(visits.loc["Bbean"])`,
+    optionsAreCode: true,
+    options: [
+      'visits.share = visits["Bumblebees"] / (visits["Honeybees"] + visits["Bumblebees"])',
+      'visits["share"] = visits["Bumblebees"] / (visits["Honeybees"] + visits["Bumblebees"])',
+      'visits["share"] == visits["Bumblebees"] / (visits["Honeybees"] + visits["Bumblebees"])',
+      'share = visits["Bumblebees"] / visits["Honeybees"] + visits["Bumblebees"]',
+    ],
+  },
+  'l6-f4': {
+    prompt: 'Step 4 runs, but the top of the list is Squash, Courgette, Cherry: the lowest shares. Which line puts the highest first?',
+    code: `print(visits.sort_values("share").head())`,
+    optionsAreCode: true,
+    options: [
+      'print(visits.sort_values().head())',
+      'print(visits["share"].sort().head())',
+      'print(visits.sort_values("share").tail(1))',
+      'print(visits.sort_values("share", ascending=False).head())',
+    ],
+  },
+  'l6-f5': {
+    prompt: 'Step 5 runs, but prints True and False instead of a table. Which line keeps the crops with at least 20 bumblebee visits?',
+    code: `enough = visits["Bumblebees"] >= 20
+print(enough)`,
+    optionsAreCode: true,
+    options: [
+      'enough = visits[visits["Bumblebees"] => 20]',
+      'enough = visits["Bumblebees" >= 20]',
+      'enough = visits[visits["Bumblebees"] >= 20]',
+      'enough = visits.loc["Bumblebees" >= 20]',
+    ],
+  },
+
   /* Part 1 — grown out of the two-strains exercise. The bug is silent apart
      from a warning: both lines draw, the legend is simply empty. */
   'l7-p1': {

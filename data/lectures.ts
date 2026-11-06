@@ -97,14 +97,15 @@ export const pythonDataData: Lecture[] = [
   {
     id: 6,
     title: "DataFrames — Who Pollinates Your Dinner?",
-    status: "under-construction",
+    status: "available",
     dataset: { emoji: "🐝", field: "Ecology", source: "Urban pollinator survey — Nicholls Lab, Sussex" },
     topics: [
-      "A column is an array with a name",
-      "Selecting columns, filtering rows",
-      "value_counts and the effort trap",
-      "groupby — split, add up, combine"
+      "The DataFrame and the Series: two receptions",
+      "Five steps from raw table to answer",
+      "Masks, a new column and sort_values",
+      "groupby — split, apply, combine"
     ],
+    slideUrl: "/lectures/6",
     type: 'core'
   },
   {

@@ -12,20 +12,19 @@ print(f'honeybees {beans["Honeybees"].sum()}   bumblebees {beans["Bumblebees"].s
 const output = `(94, 13)
 honeybees 2   bumblebees 23`
 
-export function Slide11Filter() {
+export function Slide13Filter() {
   return (
     <ConceptSlide
       maxWidth="6xl"
       title={
         <>
-          Keep only the <GradientText>rows you care about</GradientText>
+          Back to the bet: <GradientText>the broad beans</GradientText>
         </>
       }
       lead={
         <>
-          A mask on a Series picks values. The same mask on a{' '}
-          <span className="font-mono">DataFrame</span> picks whole <strong>rows</strong> — all
-          thirteen columns come along.
+          Filter first, then ask the smaller table a question. Who actually visits the broad
+          beans?
         </>
       }
       closing={
@@ -37,14 +36,7 @@ export function Slide11Filter() {
           </CardBody>
         </SlideCard>
       }
-      note={
-        <>
-          <span className="font-mono not-italic">df[df[&quot;Crop&quot;] == &quot;Bbean&quot;]</span>{' '}
-          reads oddly the first time. Inside is a mask of 1,620 True/False; outside, the table keeps
-          the rows where it is True. Exactly{' '}
-          <span className="font-mono not-italic">dff[go == 1]</span> from last week.
-        </>
-      }
+      note={<>Swap in another crop and run it again. Which bees would it lose?</>}
     >
       <LazyPythonRunner
         initialCode={code}

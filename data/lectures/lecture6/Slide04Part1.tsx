@@ -4,8 +4,8 @@ export function Slide04Part1() {
   return (
     <SectionSlide
       eyebrow="Part 1"
-      title="A column is an array"
-      accent="with a name"
+      title="The DataFrame"
+      accent="and its columns"
       note="Working with messy tabular data of varied types, the reality of biology data..."
       action={
         <figure className="mt-2 md:mt-4">

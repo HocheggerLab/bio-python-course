@@ -77,6 +77,22 @@ const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
   'l5-t3a': { lecture: 5, correctIndex: 1 },  // only the filename
   'l5-t3b': { lecture: 5, correctIndex: 0 },  // skip the baseline frames
   'l5-t3c': { lecture: 5, correctIndex: 1 },  // go and nogo are close
+  'l6-bet': { lecture: 6, correctIndex: 2 },  // broad bean: 23 bumblebee vs 2 honeybee visits
+  'l6-call': { lecture: 6, correctIndex: -1 },  // a vote, not a quiz: nothing is marked right
+  'l6-p1a': { lecture: 6, correctIndex: 2 },  // (1620, 13)
+  'l6-p1b': { lecture: 6, correctIndex: 1 },  // df["Bumblebees"]
+  'l6-p1c': { lecture: 6, correctIndex: 3 },  // (mask).sum() -> 311
+  'l6-p2a': { lecture: 6, correctIndex: 1 },  // df[df["Crop"] == "Raspberry"]
+  'l6-p2b': { lecture: 6, correctIndex: 0 },  // (a) & (b) -> 70
+  'l6-p2c': { lecture: 6, correctIndex: 2 },  // df.loc[mask, cols]
+  'l6-p3a': { lecture: 6, correctIndex: 3 },  // sort_values(..., ascending=False)
+  'l6-p3b': { lecture: 6, correctIndex: 0 },  // value_counts()
+  'l6-p3c': { lecture: 6, correctIndex: 2 },  // groupby("Allotment")["Honeybees"]
+  'l6-f1': { lecture: 6, correctIndex: 0 },  // df[mask]
+  'l6-f2': { lecture: 6, correctIndex: 2 },  // [[list]] of columns
+  'l6-f3': { lecture: 6, correctIndex: 1 },  // brackets round the sum
+  'l6-f4': { lecture: 6, correctIndex: 3 },  // ascending=False
+  'l6-f5': { lecture: 6, correctIndex: 2 },  // visits[mask]
 
   // All three verified against CPython: only B interpolates, "3.14" is a str,
   // and the other three names are SyntaxErrors (digit first, space, keyword).

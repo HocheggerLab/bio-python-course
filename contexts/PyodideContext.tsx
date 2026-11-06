@@ -132,15 +132,19 @@ try:
         _value = eval(
             compile(_ast.Expression(_last.value), "your code", "eval"), globals()
         )
-        if _value is not None:
+        # A plot call returns its Axes; the picture is the answer, so skip
+        # the "<Axes: ...>" line a notebook would print above it.
+        if _value is not None and not type(_value).__module__.startswith("matplotlib"):
             print(repr(_value))
     elif _last is not None:
         exec(compile(_ast.Module([_last], []), "your code", "exec"), globals())
 except BaseException as _exc:
-    # Drop the harness's own exec frame — the student's first line should be
-    # the first line of their traceback.
-    _tb = _exc.__traceback__.tb_next if _exc.__traceback__ else None
-    __run_error__ = "".join(_traceback.format_exception(type(_exc), _exc, _tb))
+    # Keep only the student's own lines: the harness's exec frame and the
+    # frames inside pandas/numpy are noise on a slide. A SyntaxError has no
+    # frames of its own, so it keeps its usual caret display.
+    _frames = [f for f in _traceback.extract_tb(_exc.__traceback__) if f.filename == "your code"]
+    _head = "Traceback (most recent call last):\\n" + "".join(_traceback.format_list(_frames)) if _frames else ""
+    __run_error__ = _head + "".join(_traceback.format_exception_only(type(_exc), _exc))
 __run_error__
 `
 
@@ -457,6 +461,10 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode; enabled?: bo
          before it runs. Each wheel downloads once and is then cached by the
          browser, so only the first pandas slide of a lecture pays for it. */
       await pyodide.loadPackagesFromImports(code)
+      /* df.plot() needs matplotlib but the snippet never imports it, so the
+         line above would not fetch it. */
+      const plots = code.includes('matplotlib') || code.includes('seaborn') || code.includes('.plot')
+      if (plots) await pyodide.loadPackage('matplotlib')
       await ensureDatasets(code)
 
       /* Clear only now: Pyodide narrates its wheel downloads ("Loading pandas,
@@ -464,7 +472,21 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode; enabled?: bo
          not the snippet's output. */
       outputBuffer.current = []
 
-      if (code.includes('matplotlib') || code.includes('seaborn') || code.includes('.plot')) {
+      /* Show every column of a DataFrame. pandas' defaults assume an
+         80-character terminal and hide the middle columns behind `...`;
+         the output panel scrolls sideways instead. */
+      if (code.includes('pandas') || code.includes('pd.')) {
+        await pyodide.runPythonAsync(`
+try:
+    import pandas as _pd
+    _pd.set_option("display.max_columns", None)
+    _pd.set_option("display.width", 250)
+except ImportError:
+    pass
+`)
+      }
+
+      if (plots) {
         await pyodide.runPythonAsync(PLOT_THEME)
       }
 

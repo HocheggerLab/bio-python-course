@@ -3,55 +3,65 @@ import { LectureData } from '@/data/lectures/types'
 import { Slide01Recap } from './Slide01Recap'
 import { Slide02TheData } from './Slide02TheData'
 import { Slide03ThisSession } from './Slide03ThisSession'
-// Part 1 — a column is an array with a name
+// Part 1 — the DataFrame
 import { Slide04Part1 } from './Slide04Part1'
 import { Slide05ReadCsv } from './Slide05ReadCsv'
-import { Slide06WhatsInIt } from './Slide06WhatsInIt'
-import { Slide07Series } from './Slide07Series'
-import { Slide08TIYTable } from './Slide08TIYTable'
-// Part 2 — asking a table questions
-import { Slide09Part2 } from './Slide09Part2'
-import { Slide10SelectColumns } from './Slide10SelectColumns'
-import { Slide11Filter } from './Slide11Filter'
-import { Slide12ValueCounts } from './Slide12ValueCounts'
-import { Slide13TIYFilter } from './Slide13TIYFilter'
-// Part 3 — groupby, and the answer
-import { Slide14Part3 } from './Slide14Part3'
-import { Slide15GroupBy } from './Slide15GroupBy'
-import { Slide16TheAnswer } from './Slide16TheAnswer'
-import { Slide17WhyBeans } from './Slide17WhyBeans'
-import { Slide18Species } from './Slide18Species'
-import { Slide19TIYGroupBy } from './Slide19TIYGroupBy'
-import { Slide20Honesty } from './Slide20Honesty'
-import { Slide21Recap } from './Slide21Recap'
+import { SlideFrameReception, SlideFrameMenu, SlideSeriesReception, SlideSeriesMenu } from './SlideReceptions'
+import { Slide07LookFirst } from './Slide07LookFirst'
+import { Slide09Quiz1Opener, Slide09Quiz1Q1, Slide09Quiz1Q2, Slide09Quiz1Q3 } from './Slide09Quiz1'
+import { Slide10Revision1 } from './Slide10Revision1'
+// Close — the lab, the cheat sheet, the recap
+import { Slide29InTheLab } from './Slide29InTheLab'
+import { Slide30CheatSheet } from './Slide30CheatSheet'
+import { Slide31Recap } from './Slide31Recap'
+import { SlideFurther } from './SlideFurther'
+// The storyline: a bet at the start, five steps to the answer (Part 2), the bet settled at the end
+import { SlideTwoBees } from './SlideTwoBees'
+import { SlideRoadPart, SlideRoadMap, SlideStep1, SlideGroupByPicture, SlideStep2, SlideStep3, SlideStep4, SlideStep5, SlideFix } from './SlideRoad'
+import { SlideBet, SlideBetResult } from './SlideBet'
 
 export const lecture6Data: LectureData = {
   id: 'lecture-6',
   title: 'DataFrames — Who Pollinates Your Dinner?',
   slides: [
+    // ── Intro ──────────────────────────────────────────────
     { title: 'Last week you timed it yourself', content: <Slide01Recap /> },
     { title: 'Nine allotments in Brighton', content: <Slide02TheData /> },
-    { title: 'This session — three moves', content: <Slide03ThisSession /> },
-
-    { title: 'Part 1 — A column with a name', content: <Slide04Part1 /> },
+    { title: 'Two kinds of bee, one flower', content: <SlideTwoBees /> },
+    { title: 'Place your bet', content: <SlideBet /> },
+    { title: 'This session — one question, five steps', content: <Slide03ThisSession /> },
+    // ── 1 · The DataFrame ──────────────────────────────────
+    { title: 'Part 1 — The DataFrame and its columns', content: <Slide04Part1 /> },
     { title: 'One line to open the file', content: <Slide05ReadCsv /> },
-    { title: 'What is actually in there', content: <Slide06WhatsInIt /> },
-    { title: 'A single column is a Series', content: <Slide07Series /> },
-    { title: 'Try it Yourself — the table', content: <Slide08TIYTable /> },
-
-    { title: 'Part 2 — Asking questions', content: <Slide09Part2 /> },
-    { title: 'Take only the columns you want', content: <Slide10SelectColumns /> },
-    { title: 'Keep only the rows you care about', content: <Slide11Filter /> },
-    { title: 'How much effort went where?', content: <Slide12ValueCounts /> },
-    { title: 'Try it Yourself — filter & count', content: <Slide13TIYFilter /> },
-
-    { title: 'Part 3 — One line, one answer', content: <Slide14Part3 /> },
-    { title: 'groupby — split, add up, combine', content: <Slide15GroupBy /> },
-    { title: 'Read the last two rows', content: <Slide16TheAnswer /> },
-    { title: 'Why a bean is harder work', content: <Slide17WhyBeans /> },
-    { title: '"Bumblebees" is not one thing', content: <Slide18Species /> },
-    { title: 'Try it Yourself — group by', content: <Slide19TIYGroupBy /> },
-    { title: 'What we did slightly wrong', content: <Slide20Honesty /> },
-    { title: 'What you can do now', content: <Slide21Recap /> },
+    { title: "The DataFrame's reception", content: <SlideFrameReception /> },
+    { title: 'What a DataFrame can do', content: <SlideFrameMenu /> },
+    { title: 'Each column has its own reception: a Series', content: <SlideSeriesReception /> },
+    { title: 'What a Series can do', content: <SlideSeriesMenu /> },
+    { title: 'Two odd things are hiding in here', content: <Slide07LookFirst /> },
+    { title: 'Quiz — The DataFrame', content: <Slide09Quiz1Opener /> },
+    { title: 'Quiz 1 — Its shape', content: <Slide09Quiz1Q1 /> },
+    { title: 'Quiz 2 — One column', content: <Slide09Quiz1Q2 /> },
+    { title: 'Quiz 3 — Count with a mask', content: <Slide09Quiz1Q3 /> },
+    { title: 'Revision — Interrogate the table', content: <Slide10Revision1 /> },
+    // ── 2 · Pick and filter ────────────────────────────────
+    // Part 2 — the road to the answer
+    { title: 'Part 2 — The road to the answer', content: <SlideRoadPart /> },
+    { title: 'The map: five steps to the answer', content: <SlideRoadMap /> },
+    { title: 'Step 1 — who visits one crop?', content: <SlideStep1 /> },
+    { title: 'Fix step 1', content: <SlideFix n={1} /> },
+    { title: 'How groupby works', content: <SlideGroupByPicture /> },
+    { title: 'Step 2 — every crop at once', content: <SlideStep2 /> },
+    { title: 'Fix step 2', content: <SlideFix n={2} /> },
+    { title: 'Step 3 — what fraction are bumblebees?', content: <SlideStep3 /> },
+    { title: 'Fix step 3', content: <SlideFix n={3} /> },
+    { title: 'Step 4 — which crop is top?', content: <SlideStep4 /> },
+    { title: 'Fix step 4', content: <SlideFix n={4} /> },
+    { title: 'Step 5 — can we trust it?', content: <SlideStep5 /> },
+    { title: 'Fix step 5', content: <SlideFix n={5} /> },
+    { title: 'How did your bet do?', content: <SlideBetResult /> },
+    { title: 'In the Lab — What would you lose?', content: <Slide29InTheLab /> },
+    { title: 'The pandas cheat sheet', content: <Slide30CheatSheet /> },
+    { title: 'What you can do now', content: <Slide31Recap /> },
+    { title: 'Keep going with pandas', content: <SlideFurther /> },
   ],
 }

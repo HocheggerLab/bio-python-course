@@ -14,7 +14,7 @@ const output = `<class 'pandas.Series'>
 total 548   mean 0.34   max 13
 surveys with any bumblebee: 311`
 
-export function Slide07Series() {
+export function Slide08Series() {
   return (
     <ConceptSlide
       maxWidth="6xl"

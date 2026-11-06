@@ -359,6 +359,98 @@ export const POLL_ANSWERS: Record<string, string> = {
     'against 1.04, so it fires whatever the whiskers felt. Two cells, two ' +
     'personalities, and the same lines of code found both.',
 
+  'l6-bet':
+    '**Broad bean.** 23 bumblebee visits against 2 from honeybees: 92% of its bee ' +
+    'visits are bumblebees, so without them almost nothing is left. Raspberry had the ' +
+    '*most* bumblebee visits (311), but also 245 from honeybees: it would lose a lot and ' +
+    'keep a lot. Squash barely notices: 104 honeybees, 15 bumblebees.',
+
+  'l6-call':
+    'A vote, not a quiz: whichever wins, we type it live and read the answer together.',
+
+  'l6-p1a':
+    '**`(1620, 13)`**: rows first, then columns, in a tuple, the same as a numpy ' +
+    'grid. One row is one survey, so there are 1,620 of them. `shape` is an attribute, ' +
+    'so no brackets after it.',
+
+  'l6-p1b':
+    '**`df["Bumblebees"]`**: one name in square brackets gives one column, a Series. ' +
+    'With a list inside, `df[["Bumblebees"]]`, you get a one-column *DataFrame* instead. ' +
+    '`df("Bumblebees")` and `df.Bumblebees()` both raise `TypeError: … not callable`: a ' +
+    'table and a column are not functions.',
+
+  'l6-p1c':
+    '**`(df["Bumblebees"] > 0).sum()`**: 311 surveys. The comparison makes a mask of ' +
+    'True/False, and summing it counts the Trues, as on arrays last week. ' +
+    '`.sum()` on the column adds up the bees (548), not the surveys. `.count()` and ' +
+    '`len()` both give 1620: every survey, bee or no bee.',
+
+  'l6-p2a':
+    '**`df[df["Crop"] == "Raspberry"]`**: 269 rows, all 13 columns. The comparison on its ' +
+    'own is only the mask, a column of True/False. One `=` assigns rather than compares, ' +
+    'so Python stops with a `SyntaxError`. `df["Raspberry"]` looks for a *column* called ' +
+    'Raspberry: `KeyError`.',
+
+  'l6-p2b':
+    '**`df[(df["Month"] == "June") & (df["Bumblebees"] > 0)]`**: 70 surveys. Without the ' +
+    'brackets Python works out `"June" & df["Bumblebees"]` first and raises a ' +
+    '`TypeError`. `and` wants a single True or False, so a whole mask raises ' +
+    '`ValueError: … ambiguous`. `|` means *either*: 485 surveys, every June one plus ' +
+    'every one with a bumblebee.',
+
+  'l6-p2c':
+    '**`df.loc[df["Flowers"] > 100, ["Crop", "Flowers"]]`**: 339 rows, 2 columns. Rows go ' +
+    'before the comma and columns after, so swapping them fails (`IndexingError`). Plain ' +
+    '`df[...]` takes one thing, not a rows-and-columns pair (`InvalidIndexError`). And ' +
+    '`.loc` uses square brackets, not round ones (`TypeError`).',
+
+  'l6-p3a':
+    '**`df.sort_values("Bumblebees", ascending=False).head()`**: the 13-bee raspberry ' +
+    'survey at Roedale comes first. Without `ascending=False` the smallest come first, ' +
+    'five surveys with 0. `.max()` gives just the number 13, not the surveys. DataFrames ' +
+    'have no `.sort()` method (`AttributeError`).',
+
+  'l6-p3b':
+    '**`df["Month"].value_counts()`**: one count per month, August first with 527. ' +
+    '`.unique()` lists the six months but does not count them. `.nunique()` says there ' +
+    'are 6 of them. `.count()` gives 1620, every non-empty value in the column.',
+
+  'l6-p3c':
+    '**`df.groupby("Allotment")["Honeybees"].sum()`**: split by allotment, look at the ' +
+    'Honeybees column, add up each pile. Weald comes out top with 259. Swap the two names ' +
+    'and pandas groups by bee count and *adds up the allotment names* into long glued-' +
+    'together text, with no error. `value_counts()` counts surveys, not bees, and ' +
+    '`df["Honeybees"].sum()` is one total for the whole city, 662.',
+
+  'l6-f1':
+    '**`rasp = df[df["Crop"] == "Raspberry"]`**. The comparison alone is only the mask, ' +
+    '1,620 True/False values, and a mask has no Bumblebees column. Put it *inside* ' +
+    '`df[ ]` and you get the 269 raspberry rows back. The single `=` is the nasty one: no ' +
+    'error at all, it quietly sets every crop in the table to "Raspberry".',
+
+  'l6-f2':
+    '**`df.groupby("Crop")[["Honeybees", "Bumblebees"]].sum()`**. Two columns need a ' +
+    '*list*, so two pairs of brackets: the outer ones pick, the inner ones make the list. ' +
+    '`groupby` is a method, so round brackets (`groupby[...]` is a `TypeError`), and the ' +
+    'column name is text, so quotes (`Crop` alone is a `NameError`).',
+
+  'l6-f3':
+    '**`visits["share"] = visits["Bumblebees"] / (visits["Honeybees"] + visits["Bumblebees"])`**. ' +
+    'Without the brackets Python divides first, as in maths: 23 / 2 + 23 = 34.5. ' +
+    '`visits.share = ...` does not make a column (pandas only warns), `==` compares instead ' +
+    'of assigning, and a plain `share` variable never joins the table.',
+
+  'l6-f4':
+    '**`ascending=False`**. `sort_values` puts the smallest first unless told otherwise. ' +
+    '`sort_values()` with no column is a `TypeError`, a Series has no `.sort()`, and ' +
+    '`.tail(1)` shows Pepper: no bees at all, so 0 / 0 and no share (`NaN`), which ' +
+    'pandas always sorts to the end.',
+
+  'l6-f5':
+    '**`visits[visits["Bumblebees"] >= 20]`**. Same move as step 1: the comparison is the ' +
+    'mask, the outer brackets keep the rows where it is True. `=>` is not Python ' +
+    '(`SyntaxError`), and `"Bumblebees" >= 20` compares a word with a number: `TypeError`.',
+
   'l1-r1':
     'Only `f"..."` substitutes. Without the `f` Python prints the braces ' +
     'literally — no error, wrong output, and it will sit in a script for weeks. ' +

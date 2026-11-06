@@ -13,7 +13,7 @@ const output = `        Crop  Honeybees  Bumblebees
 3      Rbean          0           1
 4      Rbean          1           0`
 
-export function Slide10SelectColumns() {
+export function Slide12SelectColumns() {
   return (
     <ConceptSlide
       maxWidth="6xl"
