@@ -20,7 +20,7 @@ export const FEEDBACK_ROUNDS: FeedbackRound[] = [
     id: 'mid-2026',
     title: 'Mid-course feedback',
     opensAt: '2026-11-02T09:00:00Z',
-    closesAt: '2026-11-09T09:00:00Z',
+    closesAt: '2026-11-16T09:00:00Z',
   },
   {
     id: 'final-2026',
