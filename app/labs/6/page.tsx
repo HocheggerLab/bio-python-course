@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import HelpQRCard from '@/components/help/HelpQRCard'
+import HelpQueueCard from '@/components/help/HelpQueueCard'
 
 interface Session {
   num: number
@@ -52,7 +52,7 @@ export default function Lab6Page() {
           </p>
         </div>
 
-        <HelpQRCard className="mb-8 md:mb-10" />
+        <HelpQueueCard className="mb-8 md:mb-10" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 xl:gap-8 max-w-5xl mx-auto">
           {sessions.map((s) => {
