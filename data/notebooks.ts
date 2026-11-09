@@ -83,7 +83,19 @@ export const labNotebooks: LabNotebooks[] = [
       { path: 'lab05/02_neuron_analysis_advanced.ipynb', title: '02 · Neuron project — advanced', blurb: 'The same analysis with checkpoints and hints, then stretch goals.' },
     ],
   },
-  { lab: 6, labTitle: 'Explorative Data Analysis', available: false, notebooks: [] },
+  {
+    lab: 6,
+    labTitle: 'Explorative Data Analysis',
+    available: true,
+    notebooks: [
+      { path: 'lab06/01_dataframe_inspection.ipynb', title: '01 · Inspecting a DataFrame', blurb: 'The real pollinator survey: what is in it, what is wrong with it.' },
+      { path: 'lab06/02_selecting_rows_and_columns.ipynb', title: '02 · Selecting rows and columns', blurb: '.loc, .iloc, boolean masks, dates.' },
+      { path: 'lab06/03_groupby_basics.ipynb', title: '03 · groupby', blurb: 'Split, summarise, combine — one line per question.' },
+      { path: 'lab06/04_rates_and_plots.ipynb', title: '04 · Rates and plots', blurb: 'Rates, not counts — and your first pandas figure.' },
+      { path: 'lab06/extras/01_cleaning_deeper.ipynb', title: 'Extra · Cleaning, further in', blurb: 'Readable names, a date index, a table to hand over.' },
+      { path: 'lab06/extras/02_reshape_and_merge.ipynb', title: 'Extra · Reshaping and joining', blurb: 'melt, pivot_table and merge.' },
+    ],
+  },
   { lab: 7, labTitle: 'End-to-End Data Mining', available: false, notebooks: [] },
   { lab: 8, labTitle: 'LLMs & Agentic AI', available: false, notebooks: [] },
 ]
