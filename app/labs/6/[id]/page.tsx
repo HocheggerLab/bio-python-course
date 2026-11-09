@@ -3,13 +3,11 @@ import { notFound } from 'next/navigation'
 import SlideViewer from '@/components/lectures/SlideViewer'
 import { LectureData } from '@/data/lectures/types'
 import { lab6VsCodeData } from '@/data/sessions/lab6vscode'
-import { lab6ExtrasData, lab6GroupbyData, lab6InspectSelectData } from '@/data/sessions/lab6pandas'
+import { lab6PandasData } from '@/data/sessions/lab6pandas'
 
 const sessionDecks: Record<string, LectureData> = {
   '1': lab6VsCodeData,
-  '2': lab6InspectSelectData,
-  '3': lab6GroupbyData,
-  '4': lab6ExtrasData,
+  '2': lab6PandasData,
 }
 
 export function generateStaticParams() {

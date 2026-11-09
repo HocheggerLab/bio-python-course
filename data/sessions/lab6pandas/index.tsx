@@ -1,141 +1,135 @@
 import { LectureData } from '@/data/lectures/types'
 import { GradientText } from '@/components/slides/SlideTitle'
-import { NotebookLaunch } from './NotebookLaunch'
+import { RecapSlide } from './RecapSlide'
 
-/* Notebook paths are the ones listed for Lab 6 in data/notebooks.ts. */
+/* One slide per notebook. Notebook paths match the Lab 6 list in
+   data/notebooks.ts; the numbers quoted are checked against
+   lab06/data/pollinators_lecture.csv. */
 
-export const lab6InspectSelectData: LectureData = {
-  id: 'lab-6-inspect-select',
-  title: 'Lab 6 · Inspect and select',
+export const lab6PandasData: LectureData = {
+  id: 'lab-6-pandas',
+  title: 'Lab 6 · pandas practice',
   slides: [
     {
-      title: 'Inspect and select',
+      title: 'Look before you analyse',
       content: (
-        <NotebookLaunch
-          title={<>Inspect, then <GradientText>select</GradientText></>}
+        <RecapSlide
+          title={<>1 · Look before you <GradientText>analyse</GradientText></>}
           intro={
             <>
-              The real pollinator survey: 22 columns, 1,620 watches, two summers, and a mistake in the
-              header row. First find out what&apos;s in it, then start asking it questions.
+              Lecture part 1 again, slowly, with you typing the code. Find out what is in the
+              survey, and the two things to be careful about, before asking it anything.
             </>
           }
-          cards={[
-            {
-              heading: '01 · Inspecting a DataFrame',
-              color: 'blue',
-              items: [
-                '.info(), .describe() — a table describes itself',
-                'the column that isn’t there: a header with a stray space',
-                'a column is a Series',
-                'where are the holes? and which repeats are not errors',
-              ],
-              notebook: { path: 'lab06/01_dataframe_inspection.ipynb', label: '01 · Inspecting a DataFrame' },
-            },
-            {
-              heading: '02 · Selecting rows and columns',
-              color: 'yellow',
-              items: [
-                '.loc by label, .iloc by position',
-                'a question asked of every row: masks, combined with &',
-                '.isin() and .between()',
-                'dates that are secretly text, then adding a column',
-              ],
-              notebook: { path: 'lab06/02_selecting_rows_and_columns.ipynb', label: '02 · Selecting rows and columns' },
-            },
+          tools={[
+            { code: 'df.shape · df.head()', means: 'how big the table is; the first five rows' },
+            { code: 'df.info()', means: 'the type of each column, and whether anything is missing' },
+            { code: 'df.describe()', means: 'a quick summary of every number column' },
+            { code: 'df["Honeybees"].sum()', means: 'one column (a Series), then a method on it' },
+            { code: 'df["Allotment"].value_counts()', means: 'how many rows have each value' },
+            { code: '(df["Honeybees"] > 5).sum()', means: 'a mask of True/False, then count the Trues' },
           ]}
-          footer="About 45 minutes for both. Do them in order: notebook 02 assumes you have met the header bug in 01."
+          steps={[
+            'the size and shape of the table',
+            'what describe() tells you, row by row',
+            'the lecture’s revision numbers, worked out yourself',
+            'two odd things: flower counts that are estimates, and Weald (495 surveys) vs Camp_Site (2)',
+            'counting with a condition',
+          ]}
+          notebook={{ path: 'lab06/01_look_before_you_analyse.ipynb', label: '01 · Look before you analyse' }}
+          footer="About 35 minutes. Every exercise has a self-check that tells you what to fix."
         />
       ),
     },
-  ],
-}
-
-export const lab6GroupbyData: LectureData = {
-  id: 'lab-6-groupby',
-  title: 'Lab 6 · groupby and your first figure',
-  slides: [
     {
-      title: 'groupby and your first figure',
+      title: 'Pick out the rows you want',
       content: (
-        <NotebookLaunch
-          title={<>Split, summarise, <GradientText>combine</GradientText></>}
+        <RecapSlide
+          title={<>2 · Pick out the <GradientText>rows you want</GradientText></>}
           intro={
             <>
-              &quot;Which crop gets the most bumblebees?&quot; is one line of pandas. Then the most important
-              idea of the lab: a count measures the insects <span className="text-white">and the effort</span>.
-              A rate separates them.
+              Stop looking at the whole table. Choose the columns, keep the rows that match, put
+              them in order, and do step 1 of the lecture yourself.
             </>
           }
-          cards={[
-            {
-              heading: '03 · groupby',
-              color: 'blue',
-              items: [
-                'one key, one column, one answer per group',
-                'several summaries at once with .agg()',
-                'two keys at once',
-                'the group that is too small to trust',
-              ],
-              notebook: { path: 'lab06/03_groupby_basics.ipynb', label: '03 · groupby' },
-            },
-            {
-              heading: '04 · Rates, not counts',
-              color: 'yellow',
-              items: [
-                'visits per watch vs visits per flower: the ranking reverses',
-                'your first figure, straight from a groupby',
-                'draw the reversal',
-                'the shape of a season',
-              ],
-              notebook: { path: 'lab06/04_rates_and_plots.ipynb', label: '04 · Rates and plots' },
-            },
+          tools={[
+            { code: 'df[["Crop", "Bumblebees"]]', means: 'choose columns: a list inside the brackets' },
+            { code: 'df[df["Crop"] == "Bbean"]', means: 'keep the rows where the mask is True' },
+            { code: '(cond 1) & (cond 2)', means: '“and”: round brackets around each condition' },
+            { code: 'df["Crop"].isin([...])', means: 'match any value from a list' },
+            { code: 'df.sort_values("Flowers", ascending=False)', means: 'put the rows in order, biggest first' },
           ]}
-          footer="About 40 minutes for both. Notebook 04 picks up the ranking you make at the end of 03."
+          steps={[
+            'choosing columns, and the double brackets',
+            'filtering rows, read from the inside out',
+            'two conditions with &, and the error message to look out for',
+            'sorting, and the busiest surveys',
+            'step 1: who visits broad bean?',
+          ]}
+          notebook={{ path: 'lab06/02_pick_out_the_rows.ipynb', label: '02 · Pick out the rows you want' }}
+          footer="About 35 minutes."
         />
       ),
     },
-  ],
-}
-
-export const lab6ExtrasData: LectureData = {
-  id: 'lab-6-extras',
-  title: 'Lab 6 · Extras',
-  slides: [
     {
-      title: 'Extras',
+      title: 'From one crop to every crop',
       content: (
-        <NotebookLaunch
-          title={<>Extras, for when you&apos;re <GradientText>done</GradientText></>}
+        <RecapSlide
+          title={<>3 · From one crop to <GradientText>every crop</GradientText></>}
           intro={
             <>
-              Nothing in the assessed work assumes these. They are here for when the four core notebooks
-              are finished. Take them slowly, and come back to them.
+              Steps 2 to 5 of the lecture: if the bumblebees disappeared, which crop would lose the
+              most? Then one more check, to make the comparison fair.
             </>
           }
-          cards={[
-            {
-              heading: 'Cleaning, further in',
-              color: 'green',
-              items: [
-                'names that make code readable',
-                'who did the surveying, and when?',
-                'a date as the index',
-                'a clean table you can hand to someone else',
-              ],
-              notebook: { path: 'lab06/extras/01_cleaning_deeper.ipynb', label: 'Extra · Cleaning, further in' },
-            },
-            {
-              heading: 'Reshaping and joining',
-              color: 'purple',
-              items: [
-                'why the shape is wrong: eight insect columns',
-                'melt, and pivot_table back again',
-                'use the new shape to check the old one',
-                'merge: information the file does not contain',
-              ],
-              notebook: { path: 'lab06/extras/02_reshape_and_merge.ipynb', label: 'Extra · Reshaping and joining' },
-            },
+          tools={[
+            { code: 'df.groupby("Crop")["Bumblebees"].sum()', means: 'for each crop, add up the bumblebees' },
+            { code: 'visits["share"] = ... / (... + ...)', means: 'a new column, calculated row by row' },
+            { code: '(visits["share"] * 100).round(1)', means: 'the share as a percentage' },
+            { code: 'visits.sort_values("share", ascending=False)', means: 'which crop is top?' },
+            { code: 'visits[visits["Bumblebees"] >= 20]', means: 'keep only the crops with enough data' },
+            { code: 'df.groupby("Crop").size()', means: 'how many surveys of each crop' },
           ]}
+          steps={[
+            'groupby as split, take, combine',
+            'the bumblebee share, and what NaN means',
+            'why strawberry “wins” with 100%',
+            'the trust filter, and the lecture’s answer',
+            'per survey: two questions, two answers',
+          ]}
+          notebook={{ path: 'lab06/03_one_crop_to_every_crop.ipynb', label: '03 · From one crop to every crop' }}
+          footer="About 40 minutes. Lecture 7 turns tables like these into figures."
+        />
+      ),
+    },
+    {
+      title: 'Advanced: the real survey file',
+      content: (
+        <RecapSlide
+          title={<>Advanced · The <GradientText>real survey file</GradientText></>}
+          intro={
+            <>
+              Optional, for when notebooks 1 to 3 felt comfortable. The file the researchers
+              published: 23 columns, and the problems every real dataset has. Fewer demos, more
+              decisions.
+            </>
+          }
+          toolsHeading="Part A · Cleaning: four problems"
+          tools={[
+            { code: 'df.columns.str.strip()', means: 'a column that won’t work: a hidden space in its name' },
+            { code: 'df.isna().sum()', means: 'missing plant counts. Why brambles? And should you drop them?' },
+            { code: 'df.duplicated().sum()', means: 'rows that appear twice. Mistakes, or real empty surveys?' },
+            { code: 'pd.to_datetime(df["Date"])', means: 'dates stored as text, and six surveys in the wrong month' },
+          ]}
+          stepsHeading="Part B · Analysis: three questions"
+          steps={[
+            'do shared plots attract more insects? (per survey vs per flower)',
+            'which bumblebee species visit broad bean, and what is nectar robbing?',
+            'was 2018 a worse year for bees?',
+            'then: a question of your own',
+          ]}
+          notebook={{ path: 'lab06/04_advanced_the_real_survey.ipynb', label: '04 · Advanced: the real survey file' }}
+          footer="About an hour; fine to spread over two sessions. Nothing in the assessed work depends on it."
         />
       ),
     },

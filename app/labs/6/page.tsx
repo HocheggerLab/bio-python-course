@@ -19,24 +19,10 @@ const sessions: Session[] = [
   },
   {
     num: 2,
-    title: 'Inspect and Select',
-    topics: ['01 · the real survey: what is in it, what is wrong with it', '.info(), .describe(), the column that isn\u2019t there', '02 · .loc, .iloc and boolean masks', '.isin(), .between() and selecting on dates'],
+    title: 'pandas Practice: the Lecture, Step by Step',
+    topics: ['01 · look before you analyse: shape, info, describe, value_counts', '02 · pick out the rows you want: filter, isin, sort', '03 · from one crop to every crop: groupby, new columns, the answer', 'advanced · the real survey file: cleaning, then three questions'],
     status: 'available',
     href: '/labs/6/2',
-  },
-  {
-    num: 3,
-    title: 'groupby and Your First Figure',
-    topics: ['03 · split, summarise, combine', '.agg() and grouping on two keys', '04 · rates, not counts: the ranking reverses', 'your first figure from a groupby'],
-    status: 'available',
-    href: '/labs/6/3',
-  },
-  {
-    num: 4,
-    title: 'Extras',
-    topics: ['for when the four core notebooks are done', 'cleaning further: names, dates, a table to hand over', 'reshaping with melt and pivot_table', 'merge: bringing in a second table'],
-    status: 'available',
-    href: '/labs/6/4',
   },
 ]
 
@@ -60,9 +46,9 @@ export default function Lab6Page() {
             Explorative Data Analysis
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Nine allotments, two summers, 1,620 watches of who visits which
-            flower. Open the real survey, find out what is wrong with it, then
-            ask it questions in one line of pandas.
+            The lecture&apos;s pollinator survey again, this time with you at the
+            keyboard: look at the table, pick out the rows you want, and answer
+            the question for every crop at once.
           </p>
         </div>
 
