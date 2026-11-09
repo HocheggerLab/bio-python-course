@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import FeedbackQRCard from '@/components/feedback/FeedbackQRCard'
+import HelpQRCard from '@/components/help/HelpQRCard'
 
 interface Session {
   num: number
@@ -52,18 +52,7 @@ export default function Lab6Page() {
           </p>
         </div>
 
-        <Link
-          href="/help"
-          className="block max-w-5xl mx-auto mb-8 md:mb-10 rounded-2xl border-2 border-bio-green/40 bg-bio-green/10 hover:bg-bio-green/15 transition-colors p-5 md:p-6"
-        >
-          <p className="text-lg md:text-xl xl:text-2xl font-bold text-white">
-            🙋 Stuck? Join the help queue
-          </p>
-          <p className="text-gray-300 text-sm md:text-base mt-1">
-            Add your name at <span className="font-mono text-white">/help</span> and we&apos;ll come to you in
-            order. Solved it yourself before we get there? Just leave the queue →
-          </p>
-        </Link>
+        <HelpQRCard className="mb-8 md:mb-10" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 xl:gap-8 max-w-5xl mx-auto">
           {sessions.map((s) => {
@@ -113,8 +102,6 @@ export default function Lab6Page() {
             )
           })}
         </div>
-
-        <FeedbackQRCard />
 
       </div>
     </div>
