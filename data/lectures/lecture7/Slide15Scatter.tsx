@@ -11,6 +11,12 @@ fig, ax = plt.subplots()
 ax.scatter(df["BRAF"], df["SOX10"], s=6, alpha=0.4)
 ax.set_xlabel("BRAF dependency")
 ax.set_ylabel("SOX10 dependency")
+
+# Mark skin cancer: remove the # below, run again
+# skin = df[df["oncotree_lineage"] == "Skin"]
+# ax.scatter(skin["BRAF"], skin["SOX10"], s=30, label="skin cancer")
+# ax.legend()
+
 plt.show()
 `
 
@@ -33,9 +39,11 @@ export function Slide15Scatter() {
         <>
           <span className="font-mono not-italic">s=6</span> shrinks the dots and{' '}
           <span className="font-mono not-italic">alpha=0.4</span> makes them
-          see-through — with 1,165 points an opaque blob tells you nothing. They correlate
-          at <span className="font-mono not-italic">r = 0.59</span>: both are melanoma
-          drivers.
+          see-through — with 1,165 points an opaque blob tells you nothing. Then remove the{' '}
+          <span className="font-mono not-italic">#</span>s: a second{' '}
+          <span className="font-mono not-italic">ax.scatter</span> on the same panel draws the skin
+          lines on top, with bigger dots (<span className="font-mono not-italic">s=30</span>) in the
+          next colour. The cloud in the bottom left is melanoma.
         </>
       }
     >
