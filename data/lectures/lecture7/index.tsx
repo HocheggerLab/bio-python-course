@@ -24,6 +24,7 @@ import { Slide06Anatomy } from './Slide06Anatomy'
 import { Slide09Labels } from './Slide09Labels'
 import { SlideHistogramStep } from './SlideHistogramStep'
 import { SlideFigureParts } from './SlideFigureParts'
+import { SlideAxMethods } from './SlideAxMethods'
 // Part 3: extending a basic figure
 import { SlideExtendSection } from './SlideExtendSection'
 import { Slide15Scatter } from './Slide15Scatter'
@@ -70,6 +71,7 @@ export const lecture7Data: LectureData = {
     { title: 'Build your first plot', content: <Slide09Labels /> },
     { title: 'Your first real figure: the SOX10 histogram', content: <SlideHistogramStep /> },
     { title: 'Every part of a figure has a method', content: <SlideFigureParts /> },
+    { title: 'The ax plot methods you will use most', content: <SlideAxMethods /> },
     { title: 'Quiz 2', content: <SlideQuiz2Opener /> },
     { title: 'Quiz 2 — fig and ax', content: <SlideQuiz2Q1 /> },
     { title: 'Quiz 2 — Who owns the title?', content: <SlideQuiz2Q2 /> },
