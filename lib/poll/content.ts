@@ -768,6 +768,63 @@ ph = 7.4`,
       'ax.boxplot(groups)',
     ],
   },
+
+  /* Lecture 7 quiz 1: matching an aesthetic to a categorical column. x and y
+     are taken; size and alpha both read as "more of something". */
+  'l7-q1b': {
+    prompt:
+      'A scatter of BRAF against SOX10, one dot per cell line. You want to show which lineage each cell line comes from. Which aesthetic?',
+    options: [
+      'Colour: one colour per lineage',
+      'Size: a bigger dot for some lineages',
+      'Position on the x-axis',
+      'Transparency (alpha)',
+    ],
+  },
+
+  /* Lecture 7 quiz 2: indexing into a row of panels. */
+  'l7-q2c': {
+    prompt: 'After fig, axes = plt.subplots(1, 2), which line draws a histogram in the right-hand panel?',
+    optionsAreCode: true,
+    options: [
+      'axes[2].hist(values)',
+      'axes[1].hist(values)',
+      'fig[1].hist(values)',
+      'plt.hist(values, panel=2)',
+    ],
+  },
+
+  /* Lecture 7 quiz 3: the DepMap analysis. */
+  'l7-q3a': {
+    prompt:
+      'RAN has the lowest mean gene effect in skin cancer lines. Why is it still a poor drug target for melanoma?',
+    options: [
+      'RAN is not expressed in skin',
+      'Every cell needs RAN, so a drug would kill healthy cells too',
+      'RAN is mutated in melanoma',
+      'The DepMap measurements for RAN are unreliable',
+    ],
+  },
+  'l7-q3b': {
+    prompt: 'skin and rest are the mean gene effects in skin and in all other cancers. Which line gives the genes skin needs MORE than other cancers?',
+    optionsAreCode: true,
+    options: [
+      'skin.nsmallest(10)',
+      '(skin - rest).nlargest(10)',
+      '(skin - rest).nsmallest(10)',
+      '(rest - skin).nsmallest(10)',
+    ],
+  },
+  'l7-q3c': {
+    prompt:
+      'Why draw every cell line as a dot on top of the SOX10 box plot, instead of one bar for the mean?',
+    options: [
+      'It makes the mean easier to read',
+      'It shows that some skin lines hardly need SOX10 at all',
+      'matplotlib cannot draw a box plot without points',
+      'It shows how many lineages there are',
+    ],
+  },
 }
 
 export function getContent(id: string): PollContent | undefined {

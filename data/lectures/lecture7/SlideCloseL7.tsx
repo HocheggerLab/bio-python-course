@@ -2,6 +2,7 @@ import { GradientText } from '@/components/slides/SlideTitle'
 import { ConceptSlide } from '@/components/slides/layouts'
 
 const items = [
+  ['categorical or continuous?', 'decide what you hold, then choose the plot and the aesthetic'],
   ['fig, ax = plt.subplots()', 'every figure starts here; the axes do the drawing'],
   ['ax.hist · ax.scatter · ax.barh · ax.boxplot', 'pick the plot from the kind of columns you have'],
   ['plt.subplots(2, 2) and a for loop', 'the same figure for several groups'],

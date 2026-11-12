@@ -108,6 +108,14 @@ const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
   // One continuous column, no groups: scatter needs a second column, barh and
   // boxplot both need a category to split on.
   'l7-r3': { lecture: 7, correctIndex: 2 },
+  // Colour (or shape) for a label; size and alpha both suggest a quantity.
+  'l7-q1b': { lecture: 7, correctIndex: 0 },
+  // Panels are numbered from 0, so the right-hand one of two is axes[1].
+  'l7-q2c': { lecture: 7, correctIndex: 1 },
+  'l7-q3a': { lecture: 7, correctIndex: 1 },
+  // Most negative difference = needed most in skin compared with the rest.
+  'l7-q3b': { lecture: 7, correctIndex: 2 },
+  'l7-q3c': { lecture: 7, correctIndex: 1 },
 }
 
 export function getQuestion(id: string): QuestionDef | undefined {

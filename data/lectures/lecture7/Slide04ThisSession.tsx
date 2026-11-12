@@ -2,8 +2,9 @@ import { GradientText } from '@/components/slides/SlideTitle'
 import { ConceptSlide, DefTable, type DefRow } from '@/components/slides/layouts'
 
 const rows: DefRow[] = [
-  { term: 'Part 1', def: <>A quick tour of matplotlib: the two objects every figure is made of, and which plot answers which question.</>, extra: 'fig, ax · hist · scatter · box' },
-  { term: 'Part 2', def: <>Which genes does a cancer need? Exploring DepMap with pandas, one figure at a time.</>, extra: 'groupby + plots' },
+  { term: 'Part 1', def: <>How a figure shows data: categorical vs continuous, and showing differences with position, colour, shape and size.</>, extra: 'quiz 1' },
+  { term: 'Part 2', def: <>matplotlib: the figure and its axes, labels, and the plot types you will use most.</>, extra: 'quiz 2' },
+  { term: 'Part 3', def: <>Which genes does a cancer need? Exploring DepMap with pandas, one figure at a time.</>, extra: 'quiz 3' },
   { term: 'Project', def: <>Your final project, in five minutes: the question, the data, and what you hand in.</>, extra: 'TCGA' },
 ]
 

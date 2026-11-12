@@ -487,6 +487,34 @@ export const POLL_ANSWERS: Record<string, string> = {
     '`ax.hist()` — one continuous column is a **distribution**. Each of the others ' +
     'needs something you were not given: `scatter` a second column, `barh` a ' +
     'category to label the bars, and `boxplot` groups to split on.',
+
+  'l7-q1b':
+    '**Colour**, one per lineage (shape would work too). Lineage is categorical, so it ' +
+    'needs an aesthetic with no order. Size and transparency both suggest *more of ' +
+    'something*, and the x-axis is already showing BRAF.',
+
+  'l7-q2c':
+    '`axes[1].hist(values)`. The panels are numbered from 0, like a list: `axes[0]` ' +
+    'is the left panel and `axes[1]` the right. `axes[2]` would be an `IndexError`, ' +
+    'and the figure itself does not draw: its axes do.',
+
+  'l7-q3a':
+    '**Every cell needs RAN.** It moves proteins in and out of the nucleus in every ' +
+    'cell, cancer or not, so it tops the list for every cancer type. A drug against it ' +
+    'would kill healthy cells as well. A target is a gene the cancer needs *more* than ' +
+    'other cells do.',
+
+  'l7-q3b':
+    '`(skin - rest).nsmallest(10)`. Gene effects are negative when a gene is needed, so ' +
+    'the *most negative* difference is the gene skin needs most compared with the rest. ' +
+    '`nlargest` gives the genes skin needs *less*; `skin.nsmallest(10)` is the naive ' +
+    'question again (RAN and friends).',
+
+  'l7-q3c':
+    '**It shows the cell lines a mean hides.** Most skin lines need SOX10 badly, but ' +
+    'about 18 of 73 hardly need it at all. One bar for the mean would show a single ' +
+    'number and hide that split. The box with dots on top is also the figure your ' +
+    'final project asks for.',
 }
 
 export const getAnswerProse = (id: string): string | undefined =>

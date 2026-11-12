@@ -29,9 +29,9 @@ export function Slide20AestheticsMap() {
       }
       lead={
         <>
-          An aesthetic is a visual property you <strong>map to a column</strong>. Position
-          is the one you have been using all lecture; these are the rest, and each is an
-          argument you already know how to pass.
+          An aesthetic is a visual property you <strong>map to a column</strong>: where a
+          mark sits, its colour, its shape, its size. Each one is a way to show a difference.
+          In Part 2 you will see that each is also just an argument in the code.
         </>
       }
       note={
