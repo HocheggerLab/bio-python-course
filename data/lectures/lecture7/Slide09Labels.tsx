@@ -82,6 +82,16 @@ export function Slide09Labels() {
           <span className="font-mono not-italic">ax.scatter</span>,{' '}
           <span className="font-mono not-italic">ax.hist</span> or{' '}
           <span className="font-mono not-italic">ax.boxplot</span>; steps 1 and 3 stay the same.
+          Looking for something an <span className="font-mono not-italic">ax</span> can do? Look here
+          first:{' '}
+          <a
+            href="https://matplotlib.org/stable/api/axes_api.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="not-italic font-mono text-bio-blue hover:text-bio-green underline"
+          >
+            matplotlib.org/stable/api/axes_api.html
+          </a>
         </>
       }
     >
