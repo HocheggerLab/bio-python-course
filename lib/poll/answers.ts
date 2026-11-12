@@ -503,6 +503,16 @@ export const POLL_ANSWERS: Record<string, string> = {
     'dots as if the cancer types were in an order: they are categories, so no line. ' +
     '(Its other dips, Eye and Vulva/Vagina, are melanomas too: ocular and mucosal.)',
 
+  'l7-q2b':
+    '**The whole figure and one panel.** `fig` is the sheet of paper (size, overall ' +
+    'title, saving); `ax` is the panel you draw on and label. Nothing is drawn yet: the ' +
+    'panel is empty until you call something like `ax.hist()`.',
+
+  'l7-q2a':
+    '`bins=80`. The number of bins decides how finely the values are cut up: more bins, ' +
+    'narrower bars, more detail (too many and it turns into noise). A bigger figure, ' +
+    'different limits or a new title change how it is framed, not how the data are counted.',
+
   'l7-q2c':
     '`axes[1].hist(values)`. The panels are numbered from 0, like a list: `axes[0]` ' +
     'is the left panel and `axes[1]` the right. `axes[2]` would be an `IndexError`, ' +

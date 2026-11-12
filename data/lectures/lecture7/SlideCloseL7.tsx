@@ -5,9 +5,9 @@ const items = [
   ['categorical or continuous?', 'decide what you hold, then choose the plot and the aesthetic'],
   ['fig, ax = plt.subplots()', 'every figure starts here; the axes do the drawing'],
   ['ax.hist · ax.scatter · ax.barh · ax.boxplot', 'pick the plot from the kind of columns you have'],
-  ['plt.subplots(2, 2) and a for loop', 'the same figure for several groups'],
-  ['df.groupby(...)[genes].mean()', 'a table of means, ready to plot'],
-  ['here − rest', 'what one group needs more than the others'],
+  ['ax.scatter(..., label=) + ax.legend()', 'mark a group and say what it is'],
+  ['plt.subplots(1, 2) and axes[0], axes[1]', 'two panels, side by side'],
+  ['fig.suptitle() · plt.savefig()', 'finish the figure and save it'],
 ]
 
 export function SlideCloseL7() {
@@ -19,7 +19,7 @@ export function SlideCloseL7() {
           What you can <GradientText>do now</GradientText>
         </>
       }
-      note={<>Two questions, two answers: &quot;what does this cancer need most?&quot; and &quot;what does it need more than other cancers?&quot;. Next week: is a difference real, or could it be chance? Statistics.</>}
+      note={<>One gene, one question, five figures: that is how you will work in your project too. Next week: is a difference real, or could it be chance? Statistics.</>}
     >
         <div className="flex flex-col gap-2 md:gap-3">
           {items.map(([code, means]) => (

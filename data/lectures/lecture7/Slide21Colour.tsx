@@ -50,7 +50,7 @@ export function Slide21Colour() {
           <span className="font-mono not-italic">label=</span> goes on the{' '}
           <em>scatter</em> call, and <span className="font-mono not-italic">ax.legend()</span>{' '}
           draws whatever has already been labelled. Forget the label and the legend comes
-          up empty — remember that for the last question.
+          up empty — remember that for the quiz.
         </>
       }
     >

@@ -37,9 +37,10 @@ export function SlideEveryLine() {
       }
       closing={
         <p className="text-center text-gray-300">
-          Most skin lines need SOX10 badly, but about 18 of 73 hardly need it at all. A mean
-          can&apos;t show you that. Remember this figure: a box with the points on top is exactly the
-          plot your final project asks for.
+          <span className="text-bio-yellow font-semibold">🔍 Clue 3:</span> most skin lines need SOX10
+          badly, but 18 of 73 hardly need it, and 8 of those 18 are not melanoma at all (squamous cell
+          and Merkel cell cancers). A mean can&apos;t show you that. Remember this figure: a box with the
+          points on top is exactly the plot your final project asks for.
         </p>
       }
     >

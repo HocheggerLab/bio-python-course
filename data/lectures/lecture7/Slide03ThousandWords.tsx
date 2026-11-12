@@ -41,7 +41,7 @@ export function Slide03ThousandWords() {
           The mean says <span className="font-mono not-italic">−0.27</span>: a gene that
           barely matters. The picture says{' '}
           <span className="text-white not-italic">93 cell lines genuinely need it</span> —
-          averaged away by a single number.
+          averaged away by a single number. Who are they? That is today&apos;s case.
         </>
       }
     >

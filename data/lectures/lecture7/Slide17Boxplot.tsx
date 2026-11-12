@@ -33,16 +33,16 @@ export function Slide17Boxplot() {
       }
       lead={
         <>
-          The bar chart gave each lineage <strong>one number</strong>. A{' '}
-          <span className="font-mono">boxplot</span> keeps the whole distribution: the box
-          is the middle half, the line is the median, the whiskers the rest.
+          A histogram shows every cell line together. A{' '}
+          <span className="font-mono">boxplot</span> splits them into groups and draws each
+          group&apos;s spread: the box is the middle half, the line the median, the whiskers the rest.
         </>
       }
       note={
         <>
-          Same grouping as the bar chart, far more information — and it shows what a mean
-          of <span className="font-mono not-italic">−1.26</span> cannot: skin is{' '}
-          <strong>not</strong> uniformly dependent, it is a wide spread with a deep tail.
+          The skin box sits far below the others. But it is also tall: skin is{' '}
+          <strong>not</strong> uniformly dependent, and a mean of{' '}
+          <span className="font-mono not-italic">−1.26</span> would hide that.
         </>
       }
     >

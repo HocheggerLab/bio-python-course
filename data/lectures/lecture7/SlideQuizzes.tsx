@@ -108,55 +108,56 @@ export function SlideQuiz1Q3() {
 const q2Code = `import matplotlib.pyplot as plt
 
 fig, ax = plt.subplots()
-ax.plot(time_h, cells)
-ax.set_xlabel("Time (hours)")`
+ax.hist(df["SOX10"], bins=40)
+ax.set_xlabel("SOX10 gene effect")`
 
 export function SlideQuiz2Opener() {
   return (
     <StepQuizOpener
       eyebrow="Quiz 2"
-      title="matplotlib,"
+      title="Building a basic figure,"
       accent="three questions"
-      note={<>Remember who does the drawing: the axes.</>}
+      note={<>Make it, put data on it, label it.</>}
       code={q2Code}
     />
   )
 }
 
 export function SlideQuiz2Q1() {
-  return <StepQuizQuestion label="Question" n={1} topic="Who owns the title?" lead={<>Give the panel a title.</>} questionId="l7-r1" />
+  return <StepQuizQuestion label="Question" n={1} topic="fig and ax" lead={<>What does plt.subplots() hand you?</>} questionId="l7-q2b" />
 }
 
 export function SlideQuiz2Q2() {
-  return <StepQuizQuestion label="Question" n={2} topic="Fix the legend" lead={<>Both lines are drawn, but the legend is empty.</>} questionId="l7-p1" />
+  return <StepQuizQuestion label="Question" n={2} topic="Who owns the title?" lead={<>Give the panel a title.</>} questionId="l7-r1" />
 }
 
 export function SlideQuiz2Q3() {
-  return <StepQuizQuestion label="Question" n={3} topic="Two panels" lead={<>Draw in the right-hand panel.</>} questionId="l7-q2c" />
+  return <StepQuizQuestion label="Question" n={3} topic="More detail" lead={<>The histogram hides the tail.</>} questionId="l7-q2a" />
 }
 
-const q3Code = `genes = df.columns[4:]
-skin = df[df["oncotree_lineage"] == "Skin"][genes].mean()
-rest = df[df["oncotree_lineage"] != "Skin"][genes].mean()`
+const q3Code = `fig, ax = plt.subplots()
+ax.scatter(rest["BRAF"], rest["SOX10"], color="grey", label="other")
+ax.scatter(skin["BRAF"], skin["SOX10"], color="blue", label="skin")
+ax.legend()`
 
 export function SlideQuiz3Opener() {
   return (
     <StepQuizOpener
       eyebrow="Quiz 3"
-      title="Which genes does a cancer need?"
+      title="Extending a figure,"
       accent="three questions"
-      note={<>The analysis you just watched, one step at a time.</>}
+      note={<>Groups, legends, panels: the moves that found the SOX10 suspects.</>}
       code={q3Code}
     />
   )
 }
 
 export function SlideQuiz3Q1() {
-  return <StepQuizQuestion label="Question" n={1} topic="Essential everywhere" lead={<>Why not target RAN?</>} questionId="l7-q3a" />
+  return <StepQuizQuestion label="Question" n={1} topic="Fix the legend" lead={<>Both lines are drawn, but the legend is empty.</>} questionId="l7-p1" />
 }
 
 export function SlideQuiz3Q2() {
-  return <StepQuizQuestion label="Question" n={2} topic="The better question" lead={<>Which genes does skin need more?</>} questionId="l7-q3b" />
+  return <StepQuizQuestion label="Question" n={2} topic="Two panels" lead={<>Draw in the right-hand panel.</>} questionId="l7-q2c" />
 }
 
 export function SlideQuiz3Q3() {

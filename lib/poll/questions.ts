@@ -112,6 +112,10 @@ const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
   'l7-q1v': { lecture: 7, correctIndex: 1 },
   // Two groups that the message compares, with every cell line shown.
   'l7-q1w': { lecture: 7, correctIndex: 2 },
+  // plt.subplots() returns the figure and one Axes (a panel).
+  'l7-q2b': { lecture: 7, correctIndex: 1 },
+  // More bins = narrower bars; size, limits and title change nothing about the bars.
+  'l7-q2a': { lecture: 7, correctIndex: 2 },
   // Panels are numbered from 0, so the right-hand one of two is axes[1].
   'l7-q2c': { lecture: 7, correctIndex: 1 },
   'l7-q3a': { lecture: 7, correctIndex: 1 },

@@ -795,6 +795,27 @@ ph = 7.4`,
     ],
   },
 
+  /* Lecture 7 quiz 2, building a basic figure. */
+  'l7-q2b': {
+    prompt: 'What do you get from  fig, ax = plt.subplots() ?',
+    options: [
+      'fig is the data, ax is the axis labels',
+      'fig is the whole figure, ax is one panel you draw on',
+      'two separate figures',
+      'a finished plot, ready to show',
+    ],
+  },
+  'l7-q2a': {
+    prompt: 'Your SOX10 histogram looks blocky and hides the tail. Which change shows more detail?',
+    optionsAreCode: true,
+    options: [
+      'fig.set_size_inches(12, 6)',
+      'ax.set_xlim(-3, 0.5)',
+      'ax.hist(df["SOX10"], bins=80)',
+      'ax.set_title("SOX10, in detail")',
+    ],
+  },
+
   /* Lecture 7 quiz 2: indexing into a row of panels. */
   'l7-q2c': {
     prompt: 'After fig, axes = plt.subplots(1, 2), which line draws a histogram in the right-hand panel?',

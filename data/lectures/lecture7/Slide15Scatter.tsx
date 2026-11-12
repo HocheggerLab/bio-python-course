@@ -43,7 +43,8 @@ export function Slide15Scatter() {
           <span className="font-mono not-italic">#</span>s: a second{' '}
           <span className="font-mono not-italic">ax.scatter</span> on the same panel draws the skin
           lines on top, with bigger dots (<span className="font-mono not-italic">s=30</span>) in the
-          next colour. The cloud in the bottom left is melanoma.
+          next colour. <span className="text-bio-yellow not-italic font-semibold">🔍 Clue 2:</span> the
+          cloud in the bottom left is skin cancer, lines that need SOX10 <em>and</em> BRAF.
         </>
       }
     >

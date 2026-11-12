@@ -3,8 +3,8 @@ import { ConceptSlide, DefTable, type DefRow } from '@/components/slides/layouts
 
 const rows: DefRow[] = [
   { term: 'Part 1', def: <>How a figure shows data: categorical vs continuous, and showing differences with position, colour, shape and size.</>, extra: 'quiz 1' },
-  { term: 'Part 2', def: <>matplotlib: the figure and its axes, labels, and the plot types you will use most.</>, extra: 'quiz 2' },
-  { term: 'Part 3', def: <>Which genes does a cancer need? Exploring DepMap with pandas, one figure at a time.</>, extra: 'quiz 3' },
+  { term: 'Part 2', def: <>Building a basic figure: the three receptions, your first plot, and every part of a figure.</>, extra: 'quiz 2' },
+  { term: 'Part 3', def: <>Extending a basic figure: marking a group, colour and legends, box plots, two panels, saving.</>, extra: 'quiz 3' },
   { term: 'Project', def: <>Your final project, in five minutes: the question, the data, and what you hand in.</>, extra: 'TCGA' },
 ]
 
