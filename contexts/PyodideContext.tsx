@@ -465,6 +465,17 @@ export const PyodideProvider: React.FC<{ children: React.ReactNode; enabled?: bo
          line above would not fetch it. */
       const plots = code.includes('matplotlib') || code.includes('seaborn') || code.includes('.plot')
       if (plots) await pyodide.loadPackage('matplotlib')
+      /* seaborn is not bundled with Pyodide, but it is pure Python, so
+         micropip can fetch it from PyPI the first time a slide imports it. */
+      if (/^\s*(import seaborn|from seaborn)/m.test(code)) {
+        await pyodide.loadPackage('micropip')
+        await pyodide.runPythonAsync(`
+import importlib.util
+if importlib.util.find_spec("seaborn") is None:
+    import micropip
+    await micropip.install("seaborn")
+`)
+      }
       await ensureDatasets(code)
 
       /* Clear only now: Pyodide narrates its wheel downloads ("Loading pandas,

@@ -2,19 +2,20 @@ import { GradientText } from '@/components/slides/SlideTitle'
 import { ConceptSlide } from '@/components/slides/layouts'
 import LazyPythonRunner from '@/components/python/LazyPythonRunner'
 
-const code = `import numpy as np
-import pandas as pd
+const code = `import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 df = pd.read_csv("depmap_lecture.csv")
 names = ["Skin", "Bowel", "Breast", "Lung"]
-groups = [df[df["oncotree_lineage"] == n]["SOX10"] for n in names]
+four = df[df["oncotree_lineage"].isin(names)]
 
 fig, ax = plt.subplots()
-ax.boxplot(groups, tick_labels=names, showfliers=False)
-for i, values in enumerate(groups, start=1):
-    x = np.random.normal(i, 0.06, len(values))   # spread the dots a little sideways
-    ax.scatter(x, values, s=8, alpha=0.5)
+sns.boxplot(data=four, x="oncotree_lineage", y="SOX10", order=names,
+            color="white", showfliers=False, ax=ax)
+sns.stripplot(data=four, x="oncotree_lineage", y="SOX10", order=names,
+              size=3, alpha=0.5, ax=ax)
+ax.set_xlabel("")
 ax.set_ylabel("SOX10 gene effect")
 ax.set_title("Does every skin cancer line need SOX10?")
 plt.show()
@@ -31,16 +32,17 @@ export function SlideEveryLine() {
       }
       lead={
         <>
-          A box plot with every cell line drawn on top as a dot. The dots are nudged sideways at
-          random so they don&apos;t sit on top of each other.
+          <span className="font-mono">seaborn</span> is a library built on matplotlib. Give it the
+          DataFrame and the column names, and it splits the groups for you.{' '}
+          <span className="font-mono">stripplot</span> draws every cell line as a dot, nudged sideways
+          so they don&apos;t pile up. <span className="font-mono">ax=ax</span> puts it on your panel.
         </>
       }
       closing={
         <p className="text-center text-gray-300">
           <span className="text-bio-yellow font-semibold">🔍 Clue 3:</span> most skin lines need SOX10
-          badly, but 18 of 73 hardly need it, and 8 of those 18 are not melanoma at all (squamous cell
-          and Merkel cell cancers). A mean can&apos;t show you that. Remember this figure: a box with the
-          points on top is exactly the plot your final project asks for.
+          badly, but 18 of 73 hardly need it, and 8 of those are not melanoma at all. A box with dots
+          on top is also exactly the plot your final project asks for.
         </p>
       }
     >
