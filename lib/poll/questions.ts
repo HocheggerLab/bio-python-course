@@ -108,8 +108,10 @@ const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
   // One continuous column, no groups: scatter needs a second column, barh and
   // boxplot both need a category to split on.
   'l7-r3': { lecture: 7, correctIndex: 2 },
-  // Colour (or shape) for a label; size and alpha both suggest a quantity.
-  'l7-q1b': { lecture: 7, correctIndex: 0 },
+  // Highlight the group that carries the message; grey out the rest.
+  'l7-q1v': { lecture: 7, correctIndex: 1 },
+  // Two groups that the message compares, with every cell line shown.
+  'l7-q1w': { lecture: 7, correctIndex: 2 },
   // Panels are numbered from 0, so the right-hand one of two is axes[1].
   'l7-q2c': { lecture: 7, correctIndex: 1 },
   'l7-q3a': { lecture: 7, correctIndex: 1 },

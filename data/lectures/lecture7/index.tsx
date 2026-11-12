@@ -26,7 +26,7 @@ import { Slide18TwoPanels } from './Slide18TwoPanels'
 import { Slide21Colour } from './Slide21Colour'
 // Quizzes
 import {
-  SlideQuiz1Opener, SlideQuiz1Q1, SlideQuiz1Q2, SlideQuiz1Q3,
+  SlideQuiz1Opener, SlideQuiz1Q1, SlideQuiz1Q2Problem, SlideQuiz1Q2, SlideQuiz1Q3Problem, SlideQuiz1Q3,
   SlideQuiz2Opener, SlideQuiz2Q1, SlideQuiz2Q2, SlideQuiz2Q3,
   SlideQuiz3Opener, SlideQuiz3Q1, SlideQuiz3Q2, SlideQuiz3Q3,
 } from './SlideQuizzes'
@@ -60,8 +60,10 @@ export const lecture7Data: LectureData = {
     { title: 'Match the aesthetic to the data', content: <SlideAestheticsMatch /> },
     { title: 'Quiz 1', content: <SlideQuiz1Opener /> },
     { title: 'Quiz 1 — What kind of data?', content: <SlideQuiz1Q1 /> },
-    { title: 'Quiz 1 — Which aesthetic?', content: <SlideQuiz1Q2 /> },
-    { title: 'Quiz 1 — Which plot?', content: <SlideQuiz1Q3 /> },
+    { title: 'Quiz 1 — The hidden message', content: <SlideQuiz1Q2Problem /> },
+    { title: 'Quiz 1 — Fix it: which is clearest?', content: <SlideQuiz1Q2 /> },
+    { title: 'Quiz 1 — The wrong kind of plot', content: <SlideQuiz1Q3Problem /> },
+    { title: 'Quiz 1 — Fix it: which is clearest?', content: <SlideQuiz1Q3 /> },
 
     { title: 'Part 2 — matplotlib', content: <SlideApiSection /> },
     { title: 'The figure and the axes', content: <Slide06Anatomy /> },

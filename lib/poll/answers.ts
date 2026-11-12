@@ -488,10 +488,20 @@ export const POLL_ANSWERS: Record<string, string> = {
     'needs something you were not given: `scatter` a second column, `barh` a ' +
     'category to label the bars, and `boxplot` groups to split on.',
 
-  'l7-q1b':
-    '**Colour**, one per lineage (shape would work too). Lineage is categorical, so it ' +
-    'needs an aesthetic with no order. Size and transparency both suggest *more of ' +
-    'something*, and the x-axis is already showing BRAF.',
+  'l7-q1v':
+    '**B.** The message is about one group, so give that group the colour and grey out ' +
+    'everything else. **A** gives 30 colours nobody can tell apart (and a legend nobody can ' +
+    'read). **C** uses size, which says *more of something*, not *a different group*. **D** ' +
+    'uses shape, which is correct for a category, but triangles and circles of the same ' +
+    'colour are hard to tell apart in a crowd.',
+
+  'l7-q1w':
+    '**C.** The message compares two groups, so show exactly those two, with every cell ' +
+    'line as a dot. **B** shows it too, but you have to find Skin among 30 labels, and one ' +
+    'bar per group hides the spread. **A** throws the cancer type away; **D** puts the row ' +
+    'number on the x-axis, which means nothing. And the problem figure? A line joins the ' +
+    'dots as if the cancer types were in an order: they are categories, so no line. ' +
+    '(Its other dips, Eye and Vulva/Vagina, are melanomas too: ocular and mucosal.)',
 
   'l7-q2c':
     '`axes[1].hist(values)`. The panels are numbered from 0, like a list: `axes[0]` ' +

@@ -769,16 +769,29 @@ ph = 7.4`,
     ],
   },
 
-  /* Lecture 7 quiz 1: matching an aesthetic to a categorical column. x and y
-     are taken; size and alpha both read as "more of something". */
-  'l7-q1b': {
+  /* Lecture 7 quiz 1, visual: four fixes for a scatter that hides its message.
+     The figures are on the slide (public/l7-quiz/q2_*.png). */
+  'l7-q1v': {
     prompt:
-      'A scatter of BRAF against SOX10, one dot per cell line. You want to show which lineage each cell line comes from. Which aesthetic?',
+      'The message: skin cancer lines need both BRAF and SOX10. Look at the four figures on the screen. Which shows it most clearly?',
     options: [
-      'Colour: one colour per lineage',
-      'Size: a bigger dot for some lineages',
-      'Position on the x-axis',
-      'Transparency (alpha)',
+      'Every cancer type its own colour',
+      'Skin cancer in colour, the rest grey',
+      'Skin cancer as bigger dots',
+      'Skin cancer as triangles',
+    ],
+  },
+
+  /* Lecture 7 quiz 1, visual: four fixes for a line drawn through categories
+     (public/l7-quiz/q3_*.png). */
+  'l7-q1w': {
+    prompt:
+      'The message: skin cancer lines need SOX10 more than other cancers. Look at the four figures on the screen. Which shows it most clearly?',
+    options: [
+      'A histogram of all SOX10 values',
+      'One bar per cancer type, alphabetical',
+      'Skin vs all other cancers, box with dots',
+      'SOX10 against the row number',
     ],
   },
 
