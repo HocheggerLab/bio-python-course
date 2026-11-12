@@ -67,7 +67,7 @@ export const lecture7Data: LectureData = {
 
     { title: 'Part 2 — matplotlib', content: <SlideApiSection /> },
     { title: 'matplotlib has three receptions', content: <Slide06Anatomy /> },
-    { title: 'Data and labels', content: <Slide09Labels /> },
+    { title: 'Build your first plot', content: <Slide09Labels /> },
     { title: 'Two columns — ax.scatter()', content: <Slide15Scatter /> },
     { title: 'A mean hides the spread', content: <Slide17Boxplot /> },
     { title: 'Two panels — plt.subplots(1, 2)', content: <Slide18TwoPanels /> },
