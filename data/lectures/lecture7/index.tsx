@@ -66,7 +66,7 @@ export const lecture7Data: LectureData = {
     { title: 'Quiz 1 — Fix it: which is clearest?', content: <SlideQuiz1Q3 /> },
 
     { title: 'Part 2 — matplotlib', content: <SlideApiSection /> },
-    { title: 'The figure and the axes', content: <Slide06Anatomy /> },
+    { title: 'matplotlib has three receptions', content: <Slide06Anatomy /> },
     { title: 'Data and labels', content: <Slide09Labels /> },
     { title: 'Two columns — ax.scatter()', content: <Slide15Scatter /> },
     { title: 'A mean hides the spread', content: <Slide17Boxplot /> },
