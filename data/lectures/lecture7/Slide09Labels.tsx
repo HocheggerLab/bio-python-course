@@ -23,7 +23,7 @@ export function Slide09Labels() {
       maxWidth="6xl"
       title={
         <>
-          Step 3 — <GradientText variant="yellow">add labels</GradientText>
+          Put data on it, then <GradientText variant="yellow">label it</GradientText>
         </>
       }
       lead={

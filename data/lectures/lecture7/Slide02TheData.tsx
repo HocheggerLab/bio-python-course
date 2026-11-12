@@ -10,7 +10,7 @@ print(df.shape)
 print(df[["cell_line_name", "oncotree_lineage", "SOX10", "RAN"]].head())
 `
 
-const output = `(1165, 22)
+const output = `(1165, 261)
   cell_line_name      oncotree_lineage  SOX10    RAN
 0    NIH:OVCAR-3  Ovary/Fallopian Tube -0.327 -4.196
 1            HEL               Myeloid -0.137 -3.954
