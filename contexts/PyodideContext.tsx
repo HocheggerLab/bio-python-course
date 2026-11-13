@@ -588,16 +588,19 @@ keep_vars = {
     'dna_codon_table', 'rna_codon_table',
     'complement_dna', 'reverse_complement', 'transcribe', 'translate_dna', 'gc_content',
     'sys', 'io', 'redirect_stdout', 'redirect_stderr', 'StringIO',
-    'old_stdout', 'old_stderr'
+    'old_stdout', 'old_stderr',
+    # the helpers below live on in globals() after this runs; without them
+    # the next reset deletes keep_vars mid-loop and raises NameError
+    'current_vars', 'keep_vars', 'var_name', 'to_delete'
 }
 
-# Remove user-defined variables
-for var_name in list(current_vars):
-    if var_name not in keep_vars and not var_name.startswith('_'):
-        try:
-            del globals()[var_name]
-        except:
-            pass
+# Decide what to remove BEFORE mutating globals(), so deletions cannot
+# pull a name out from under the loop
+to_delete = [v for v in current_vars
+             if v not in keep_vars and not v.startswith('_')]
+
+for var_name in to_delete:
+    globals().pop(var_name, None)
 
 print("🔄 Workspace reset - biology tools still available!")
       `)

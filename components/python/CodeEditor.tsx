@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useLayoutEffect } from 'react'
 import { Highlight } from 'prism-react-renderer'
 import { bioTheme } from '../syntax/bioTheme'
 
@@ -49,6 +49,14 @@ export default function CodeEditor({
 }: CodeEditorProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const highlightRef = useRef<HTMLPreElement>(null)
+  /** Where the caret should sit once React has committed the edit below.
+   *
+   *  Setting it straight after onChange() races React: committing a new value
+   *  on a controlled textarea moves the selection to the end of the text, so
+   *  whichever lands second wins and the caret jumps to the bottom of the cell
+   *  at random. Stashing it here and restoring in useLayoutEffect removes the
+   *  race — that effect runs after the DOM is updated and before paint. */
+  const pendingSelection = useRef<[number, number] | null>(null)
 
   const handleScroll = () => {
     if (textareaRef.current && highlightRef.current) {
@@ -80,9 +88,9 @@ export default function CodeEditor({
     if (!multiline && !e.shiftKey) {
       const next =
         code.slice(0, selectionStart) + INDENT + code.slice(selectionEnd)
-      onChange(next)
       const caret = selectionStart + INDENT.length
-      requestAnimationFrame(() => el.setSelectionRange(caret, caret))
+      pendingSelection.current = [caret, caret]
+      onChange(next)
       return
     }
 
@@ -103,11 +111,19 @@ export default function CodeEditor({
       return INDENT + line
     })
 
-    onChange(code.slice(0, lineStart) + shifted.join('\n') + code.slice(lineEnd))
     const start = Math.max(lineStart, selectionStart + firstDelta)
     const end = Math.max(start, selectionEnd + totalDelta)
-    requestAnimationFrame(() => el.setSelectionRange(start, end))
+    pendingSelection.current = [start, end]
+    onChange(code.slice(0, lineStart) + shifted.join('\n') + code.slice(lineEnd))
   }
+
+  useLayoutEffect(() => {
+    const el = textareaRef.current
+    if (!el || !pendingSelection.current) return
+    const [start, end] = pendingSelection.current
+    pendingSelection.current = null
+    el.setSelectionRange(start, end)
+  }, [code])
 
   useEffect(() => {
     if (textareaRef.current && highlightRef.current) {
