@@ -9,6 +9,7 @@ import { LectureData } from '@/data/lectures/types'
 // Intro
 import { Slide01Recap } from './Slide01Recap'
 import { SlideToday } from './SlideToday'
+import { SlideDepMapExplained } from './SlideDepMapExplained'
 // Part 1: how a figure shows data
 import { SlideBasicsSection } from './SlideBasicsSection'
 import { Slide03ThousandWords } from './Slide03ThousandWords'
@@ -48,6 +49,7 @@ export const lecture7Data: LectureData = {
   slides: [
     { title: 'Last week you asked the table', content: <Slide01Recap /> },
     { title: 'Today: plotting figures', content: <SlideToday /> },
+    { title: 'DepMap: which genes does a cancer need?', content: <SlideDepMapExplained /> },
 
     { title: 'Part 1 — How a figure shows data', content: <SlideBasicsSection /> },
     { title: 'A figure is worth a thousand numbers', content: <Slide03ThousandWords /> },

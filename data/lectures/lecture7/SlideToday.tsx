@@ -32,7 +32,6 @@ export function SlideToday() {
     <ConceptSlide
       maxWidth="6xl"
       title={<>Today: <GradientText>plotting figures</GradientText></>}
-      note={<>Write down a guess for the question now. We open the case at the end of the lecture.</>}
     >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5">
         {tiles.map((t) => (
