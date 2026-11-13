@@ -94,7 +94,16 @@ export const labNotebooks: LabNotebooks[] = [
       { path: 'lab06/04_advanced_the_real_survey.ipynb', title: '04 · Advanced: the real survey file', blurb: 'Optional. Cleaning the published file, then three questions.', solutions: 'lab06/solutions/04_advanced_the_real_survey_solutions.ipynb' },
     ],
   },
-  { lab: 7, labTitle: 'End-to-End Data Mining', available: false, notebooks: [] },
+  {
+    lab: 7,
+    labTitle: 'End-to-End Data Mining',
+    available: false,
+    notebooks: [
+      { path: 'lab07/01_find_the_suspects.ipynb', title: '01 \u00b7 Finding the suspects', blurb: 'pandas on DepMap: filter, mean, nsmallest \u2014 and why RAN tops every list.', solutions: 'lab07/solutions/01_find_the_suspects_solutions.ipynb' },
+      { path: 'lab07/02_showing_it.ipynb', title: '02 \u00b7 Showing it', blurb: 'matplotlib from scratch: fig and ax, histogram, grey-plus-highlight scatter, box with dots.', solutions: 'lab07/solutions/02_showing_it_solutions.ipynb' },
+      { path: 'lab07/03_a_grid_and_a_loose_end.ipynb', title: '03 \u00b7 A grid, and the loose end', blurb: 'subplots(2, 2), axes.flat, a reusable plotting function, and the skin lines that do not need SOX10.', solutions: 'lab07/solutions/03_a_grid_and_a_loose_end_solutions.ipynb' },
+    ],
+  },
   { lab: 8, labTitle: 'LLMs & Agentic AI', available: false, notebooks: [] },
 ]
 
