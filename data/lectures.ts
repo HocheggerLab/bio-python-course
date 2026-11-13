@@ -106,6 +106,7 @@ export const pythonDataData: Lecture[] = [
       "groupby — split, apply, combine"
     ],
     slideUrl: "/lectures/6",
+    labsUrl: "/labs/6",
     type: 'core'
   },
   {
