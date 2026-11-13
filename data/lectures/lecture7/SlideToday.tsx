@@ -2,8 +2,7 @@ import { GradientText } from '@/components/slides/SlideTitle'
 import { ConceptSlide } from '@/components/slides/layouts'
 import { SlideCard } from '@/components/slides/SlideCard'
 
-/* The whole lecture on one slide: the data, the question, the technique.
-   The next slide (SlideTodayDetail) opens each of the three up. */
+/* The whole lecture on one slide: the data, the question, the technique. */
 
 const tiles: { label: string; head: React.ReactNode; body: React.ReactNode; color: 'blue' | 'yellow' | 'green' }[] = [
   {
@@ -32,7 +31,7 @@ export function SlideToday() {
   return (
     <ConceptSlide
       maxWidth="6xl"
-      title={<GradientText>Today</GradientText>}
+      title={<>Today: <GradientText>plotting figures</GradientText></>}
       note={<>Write down a guess for the question now. We open the case at the end of the lecture.</>}
     >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5">
