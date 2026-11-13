@@ -83,9 +83,9 @@ export const lecture7Data: LectureData = {
     { title: 'Two panels — plt.subplots(1, 2)', content: <Slide18TwoPanels /> },
     { title: 'Finishing touches', content: <SlideFinishing /> },
     { title: 'Quiz 3', content: <SlideQuiz3Opener /> },
-    { title: 'Quiz 3 — Fix the legend', content: <SlideQuiz3Q1 /> },
-    { title: 'Quiz 3 — Two panels', content: <SlideQuiz3Q2 /> },
-    { title: 'Quiz 3 — Show every cell line', content: <SlideQuiz3Q3 /> },
+    { title: 'Quiz 3 — Add to the same panel', content: <SlideQuiz3Q1 /> },
+    { title: 'Quiz 3 — A grid of panels', content: <SlideQuiz3Q2 /> },
+    { title: 'Quiz 3 — Why only skin?', content: <SlideQuiz3Q3 /> },
 
     { title: 'Case closed', content: <SlideCaseClosed /> },
     { title: 'Your final project', content: <SlideProject /> },

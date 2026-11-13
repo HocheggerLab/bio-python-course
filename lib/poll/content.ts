@@ -859,6 +859,43 @@ ph = 7.4`,
       'It shows how many lineages there are',
     ],
   },
+
+  /* Lecture 7 quiz 3, current set: add to a panel, index a grid, read the
+     biology off the figure. Replaces l7-p1 / l7-q2c / l7-q3c, which stay
+     defined so responses already recorded against them still resolve. */
+  'l7-q3d': {
+    prompt: 'The skin lines are drawn. Which line adds the lung lines to the SAME panel?',
+    code: `fig, ax = plt.subplots()
+ax.scatter(skin["BRAF"], skin["SOX10"], label="skin")
+# add the lung lines here`,
+    optionsAreCode: true,
+    options: [
+      'fig, ax = plt.subplots()\nax.scatter(lung["BRAF"], lung["SOX10"])',
+      'ax.scatter(lung["BRAF"], lung["SOX10"], label="lung")',
+      'fig.scatter(lung["BRAF"], lung["SOX10"], label="lung")',
+      'ax.scatter(lung["BRAF"], lung["SOX10"], overwrite=False)',
+    ],
+  },
+  'l7-q3e': {
+    prompt:
+      'After fig, axes = plt.subplots(3, 4), how many panels do you have, and which one is the bottom-right?',
+    options: [
+      '7 panels; axes[3][4]',
+      '12 panels; axes[2][3]',
+      '12 panels; axes[3][4]',
+      '12 panels; axes[4][3]',
+    ],
+  },
+  'l7-q3f': {
+    prompt:
+      'Skin cancer lines need SOX10 and almost nothing else does. What does that tell you about SOX10?',
+    options: [
+      'SOX10 is mutated in melanoma but not in other cancers',
+      'SOX10 runs the melanocyte identity programme, and melanoma keeps that programme',
+      'Only skin cells carry the SOX10 gene',
+      'Skin lines grow fastest, so any knockout hurts them more',
+    ],
+  },
 }
 
 export function getContent(id: string): PollContent | undefined {

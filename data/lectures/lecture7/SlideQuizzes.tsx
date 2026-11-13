@@ -153,13 +153,13 @@ export function SlideQuiz3Opener() {
 }
 
 export function SlideQuiz3Q1() {
-  return <StepQuizQuestion label="Question" n={1} topic="Fix the legend" lead={<>Both lines are drawn, but the legend is empty.</>} questionId="l7-p1" />
+  return <StepQuizQuestion label="Question" n={1} topic="Add to the same panel" lead={<>One panel, a second group of cell lines.</>} questionId="l7-q3d" />
 }
 
 export function SlideQuiz3Q2() {
-  return <StepQuizQuestion label="Question" n={2} topic="Two panels" lead={<>Draw in the right-hand panel.</>} questionId="l7-q2c" />
+  return <StepQuizQuestion label="Question" n={2} topic="A grid of panels" lead={<>Count them, then find the last one.</>} questionId="l7-q3e" />
 }
 
 export function SlideQuiz3Q3() {
-  return <StepQuizQuestion label="Question" n={3} topic="Show every cell line" lead={<>Why dots on top of the box?</>} questionId="l7-q3c" />
+  return <StepQuizQuestion label="Question" n={3} topic="Why only skin?" lead={<>Read the biology off the figure.</>} questionId="l7-q3f" />
 }

@@ -535,6 +535,30 @@ export const POLL_ANSWERS: Record<string, string> = {
     'about 18 of 73 hardly need it at all. One bar for the mean would show a single ' +
     'number and hide that split. The box with dots on top is also the figure your ' +
     'final project asks for.',
+
+  'l7-q3d':
+    '`ax.scatter(lung[...], lung[...], label="lung")`. Every `ax.<method>` call *adds* ' +
+    'to that panel \u2014 nothing you draw replaces what is already there, which is why each ' +
+    'call needs its own `label=`. Calling `plt.subplots()` again does not add anything: it ' +
+    'makes a second, empty figure and draws into that, which is why the skin lines seem to ' +
+    'vanish. `fig` holds the panels but does not draw; its axes do.',
+
+  'l7-q3e':
+    '**12 panels, bottom-right is `axes[2][3]`.** 3 rows \u00d7 4 columns = 12, and `axes` ' +
+    'comes back as a 2-D NumPy array indexed `[row][column]` counting from 0 \u2014 so the ' +
+    'last row is 2 and the last column is 3. `axes[3][4]` is an `IndexError`, and ' +
+    '`axes[4][3]` has the two swapped. To touch all twelve without nesting loops: ' +
+    '`for ax in axes.flat:`.',
+
+  'l7-q3f':
+    '**SOX10 runs the melanocyte identity programme.** It is a neural-crest transcription ' +
+    'factor that drives MITF and the pigment programme, and melanoma arises from melanocytes ' +
+    'and keeps that identity \u2014 so it stays dependent on the switch that makes the cell what ' +
+    'it is. This is **lineage addiction**: the dependency follows what the cell *is*, not a ' +
+    'mutation it carries. Every cell line has the gene; the others simply are not running the ' +
+    'programme that needs it. Compare RAN, which every cell needs \u2014 only the selective kind ' +
+    'makes a drug target. It also explains the ~18 of 73 skin lines on the box plot that do not ' +
+    'need SOX10: those have de-differentiated out of the melanocytic state.',
 }
 
 export const getAnswerProse = (id: string): string | undefined =>

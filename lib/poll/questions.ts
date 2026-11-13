@@ -122,6 +122,13 @@ const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
   // Most negative difference = needed most in skin compared with the rest.
   'l7-q3b': { lecture: 7, correctIndex: 2 },
   'l7-q3c': { lecture: 7, correctIndex: 1 },
+  // Every ax.<method> call adds to the panel; calling plt.subplots() again
+  // starts a fresh figure, which is why the first dataset 'disappears'.
+  'l7-q3d': { lecture: 7, correctIndex: 1 },
+  // 3 rows x 4 columns = 12, indexed [row][column] from 0.
+  'l7-q3e': { lecture: 7, correctIndex: 1 },
+  // Lineage addiction: the dependency follows cell identity, not a mutation.
+  'l7-q3f': { lecture: 7, correctIndex: 1 },
 }
 
 export function getQuestion(id: string): QuestionDef | undefined {
