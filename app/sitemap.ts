@@ -34,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page('/practice', 0.8),
     page('/practice/concepts', 0.6),
     page('/assessment', 0.7),
+    page('/projects/tcga-capstone', 0.7),
     page('/labs', 0.8, 'weekly'),
     page('/notebooks', 0.7, 'weekly'),
     page('/labs/cheatsheets', 0.5),

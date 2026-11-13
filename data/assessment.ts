@@ -15,6 +15,8 @@ export interface AssessmentItem {
   submission: string
   detail: string[]
   tbc?: string
+  /** Optional page with the full brief. */
+  href?: string
 }
 
 export const assessment: AssessmentItem[] = [
@@ -57,9 +59,10 @@ export const assessment: AssessmentItem[] = [
     covers: 'The whole module, including the packages from Weeks 5–8',
     submission: 'Colab notebook + GitHub repository with your revisions',
     detail: [
-      'The substantial piece of work: a real question, a real dataset, and your own analysis.',
+      'Does your gene respond to loss of p53? One gene and one cancer type each, from real TCGA patient data.',
+      'Six functions, each with self-checks on a worked example, plus your interpretation of what you found.',
       'Marked on the analysis and the code, so the repository history counts — commit as you go.',
     ],
-    tbc: 'Theme: still being decided.',
+    href: '/projects/tcga-capstone',
   },
 ]

@@ -66,6 +66,12 @@ export default function AssessmentPage() {
                   ))}
                 </ul>
 
+                {a.href && (
+                  <Link href={a.href} className="btn-primary !py-2 !px-5 text-sm inline-block mt-5">
+                    Read the full brief →
+                  </Link>
+                )}
+
                 {a.tbc && (
                   <p className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-xs md:text-sm text-gray-400">
                     <span className="w-1.5 h-1.5 rounded-full bg-bio-yellow/60" />

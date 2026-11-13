@@ -1,70 +1,71 @@
 import Link from 'next/link'
+import { notebooks } from '@/data/capstone'
 
+/**
+ * Homepage card for Project 2, the TCGA p53 capstone. Sits under the
+ * Section 2 lecture cards; the full brief lives at /projects/tcga-capstone.
+ */
 export default function CapstoneProject() {
-  const features = [
-    "Explore large gene effect datasets from DepMap",
-    "Analyze gene expression patterns across cancer cell lines",
-    "Perform correlation analysis to identify genetic dependencies",
-    "Create publication-ready visualizations of genomic data"
+  const startHere = notebooks.find((nb) => nb.file === '00_start_here')
+
+  const points = [
+    'One gene and one cancer type each, from real TCGA patient data',
+    'Clean a clinical export, test a hypothesis, draw the figure',
+    'Six functions, each with self-checks on a worked example',
+    'Marked on your analysis, your code quality and your GitHub history',
   ]
 
   return (
-    <div className="card group border-bio-yellow">
-      <span className="inline-block px-3 py-1 bg-bio-yellow/20 text-bio-yellow text-sm rounded-full font-semibold mb-4">
-        Capstone Project
-      </span>
-      <div className="flex items-center mb-4">
-        <span className="text-2xl mr-2">🧬</span>
-        <h3 className="text-xl font-bold">Become a Bioinformatician</h3>
-      </div>
-      <p className="text-gray-300 mb-6">
-        Explore large gene effect and expression data with EDA and correlation analysis:
-      </p>
-      <ul className="space-y-2 text-gray-300 mb-8">
-        {features.map((feature, index) => (
-          <li key={index} className="flex items-start">
-            <span className="text-bio-yellow mr-2">★</span>
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
-
-      <div className="space-y-4">
-        <Link
-          href="/projects/depmap-analysis"
-          className="block w-full bg-bio-yellow text-bio-dark text-center px-6 py-3 rounded-lg font-bold transition-all transform hover:scale-105"
-        >
-          <span className="inline-flex items-center gap-2">
-            <span>📊</span>
-            <span>View Project Details</span>
-          </span>
-        </Link>
-
-        <div className="flex flex-col sm:flex-row gap-3">
-          <a
-            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/W11assignment/Project2DataImport.ipynb"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 bg-bio-blue/20 hover:bg-bio-blue/30 text-bio-blue border border-bio-blue/30 text-center px-4 py-2 rounded-lg font-semibold transition-all text-sm"
-          >
-            <span className="inline-flex items-center gap-2">
-              <span>📥</span>
-              <span>Data Setup</span>
+    <section id="final-project" className="pb-20 px-6 bg-bio-dark/40">
+      <div className="container mx-auto max-w-6xl">
+        <div className="rounded-2xl border-2 border-bio-yellow/40 bg-bio-yellow/10 p-6 md:p-8">
+          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 mb-3">
+            <span className="rounded-full bg-bio-yellow/20 text-bio-yellow text-sm font-semibold px-3 py-1">
+              Final project
             </span>
-          </a>
-          <a
-            href="https://colab.research.google.com/github/HocheggerLab/y3-bio-python/blob/main/notebooks/W11assignment/Project2DepMapAnalysis.ipynb"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 bg-purple-500/20 hover:bg-purple-500/30 text-purple-400 border border-purple-500/30 text-center px-4 py-2 rounded-lg font-semibold transition-all text-sm"
-          >
-            <span className="inline-flex items-center gap-2">
-              <span>🔬</span>
-              <span>Analysis Notebook</span>
+            <span className="text-bio-yellow text-2xl font-bold tabular-nums">70%</span>
+            <span className="ml-auto rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs md:text-sm text-gray-300">
+              Week 11
             </span>
-          </a>
+          </div>
+
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+            🧬 Does your gene respond to p53 loss?
+          </h3>
+          <p className="text-gray-300 md:text-lg leading-relaxed mb-5 max-w-3xl">
+            Decide whether one gene’s expression responds to loss of p53 function in human
+            tumours — and if so, in which direction.
+          </p>
+
+          <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2 mb-6">
+            {points.map((point) => (
+              <li key={point} className="flex items-start gap-2 text-gray-200 text-sm md:text-base">
+                <span className="text-bio-yellow shrink-0">▸</span>
+                <span className="leading-snug">{point}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link href="/projects/tcga-capstone" className="btn-primary text-center">
+              Read the full brief →
+            </Link>
+            {startHere && (
+              <a
+                href={startHere.colab}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary text-center"
+              >
+                Start here in Colab
+              </a>
+            )}
+            <Link href="/assessment" className="btn-secondary text-center">
+              All assessment
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
