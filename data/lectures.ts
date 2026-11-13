@@ -9,7 +9,7 @@ export interface Lecture {
   notebookUrl?: string
   videoUrl?: string
   labsUrl?: string
-  type?: 'core' | 'specialization'
+  type?: 'core' | 'specialization' | 'bonus'
   /** The real dataset this session works on — shown on the card. */
   dataset?: {
     emoji: string
@@ -110,19 +110,35 @@ export const pythonDataData: Lecture[] = [
   },
   {
     id: 7,
-    title: "Plotting and Exploratory Data Analysis",
+    title: "Plotting — Making Data Visible",
     status: "under-construction",
     dataset: { emoji: "🧬", field: "Cancer biology", source: "Cancer Dependency Map (DepMap)" },
     topics: [
-      "matplotlib and seaborn",
-      "Distributions, box plots and small multiples",
-      "Scatter plots, correlation and statistics",
-      "Building a publication-ready figure"
+      "How a figure shows data: kinds of data, kinds of plot",
+      "fig and ax: building a basic figure",
+      "Scatter, colour, box plots and two panels",
+      "Who needs SOX10? A DepMap case"
     ],
     type: 'core'
   },
   {
     id: 8,
+    title: "Exploratory Data Analysis and Statistics",
+    status: "under-construction",
+    topics: [
+      "Look before you test: distributions and summaries",
+      "Comparing two groups: box plot, median difference",
+      "The Mann–Whitney test and what a p-value means",
+      "Many tests, many chances: multiple testing"
+    ],
+    type: 'core'
+  }
+]
+
+// Bonus sessions, after week 11 — not part of the assessed course.
+export const bonusData: Lecture[] = [
+  {
+    id: 9,
     title: "Analysing Images in Python",
     status: "under-construction",
     dataset: { emoji: "🔬", field: "Cell biology", source: "Fluorescence microscopy — Hochegger Lab, Sussex" },
@@ -132,7 +148,19 @@ export const pythonDataData: Lecture[] = [
       "Otsu thresholding: finding the nuclei",
       "Counting, measuring, and a cell-cycle profile"
     ],
-    type: 'core'
+    type: 'bonus'
+  },
+  {
+    id: 10,
+    title: "Coding with Agentic AI",
+    status: "coming-soon",
+    topics: [
+      "What a coding agent is, and what it does on your machine",
+      "Briefing an agent: context, scope and a clear goal",
+      "Reviewing what it wrote: tests, diffs and git",
+      "When to use one, and when to write it yourself"
+    ],
+    type: 'bonus'
   }
 ]
 

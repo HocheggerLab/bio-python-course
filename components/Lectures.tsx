@@ -1,5 +1,6 @@
+import CapstoneProject from './CapstoneProject'
 import LectureCard from './LectureCard'
-import { pythonBasicsData, pythonDataData } from '@/data/lectures'
+import { bonusData, pythonBasicsData, pythonDataData } from '@/data/lectures'
 
 export default function Lectures() {
   return (
@@ -29,9 +30,9 @@ export default function Lectures() {
             Section 2: Python and <span className="text-gradient-purple">Data in Biology</span>
           </h2>
           <p className="text-center text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
-            Four sessions, four real datasets, four real questions — one each from
-            neurobiology, ecology, cancer biology and cell biology. Three of them come
-            from labs in this building.
+            Four sessions on real data: a neuron from a lab in this building, a pollinator
+            survey from another, then cancer genomics, where you learn to plot, explore
+            and test the data the final project is built on.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             {pythonDataData.map((lecture) => (
@@ -41,6 +42,26 @@ export default function Lectures() {
         </div>
       </section>
 
+      {/* Final project: directly under the Section 2 lectures it builds on */}
+      <CapstoneProject />
+
+      {/* Bonus sessions: after week 11, not assessed */}
+      <section id="bonus" className="py-20 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="section-header">
+            Bonus: <span className="text-gradient">Beyond the Course</span>
+          </h2>
+          <p className="text-center text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
+            Two extra sessions after week 11, once the final project is in. Not
+            assessed: come for what you want to do next.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {bonusData.map((lecture) => (
+              <LectureCard key={lecture.id} lecture={lecture} />
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   )
 }
