@@ -19,8 +19,8 @@ const LECTURE_NAV: NavEntry[] = [
   { num: 4, label: '4. Functions, Files & Errors', group: 'basics' },
   { num: 5, label: '5. Arrays & numpy \u{1F42D}', group: 'data' },
   { num: 6, label: '6. DataFrames & pandas \u{1F41D}', group: 'data' },
-  { num: 7, label: '7. Plotting & EDA \u{1F9EC}', group: 'data' },
-  { num: 8, label: '8. Image Analysis \u{1F52C}', group: 'data' },
+  { num: 7, label: '7. Plotting \u{1F9EC}', group: 'data' },
+  { num: 8, label: '8. EDA & Statistics', group: 'data' },
 ]
 
 const LAB_NAV: NavEntry[] = [

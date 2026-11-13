@@ -111,7 +111,7 @@ export const pythonDataData: Lecture[] = [
   {
     id: 7,
     title: "Plotting — Making Data Visible",
-    status: "under-construction",
+    status: "available",
     dataset: { emoji: "🧬", field: "Cancer biology", source: "Cancer Dependency Map (DepMap)" },
     topics: [
       "How a figure shows data: kinds of data, kinds of plot",
@@ -119,6 +119,7 @@ export const pythonDataData: Lecture[] = [
       "Scatter, colour, box plots and two panels",
       "Who needs SOX10? A DepMap case"
     ],
+    slideUrl: "/lectures/7",
     type: 'core'
   },
   {
