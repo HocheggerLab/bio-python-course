@@ -59,24 +59,23 @@ export default function TcgaCapstonePage() {
             </div>
           </Section>
 
-          {/* Registration number */}
+          {/* Student ID */}
           <Section icon="🔑" title="Your gene is assigned to you">
             <p className="text-gray-300 leading-relaxed mb-4">
               Everyone has a different gene and cancer type. You never type them yourself: the
               setup cell at the top of each notebook asks for your{' '}
-              <strong className="text-white">6-digit registration number</strong> — the number
-              on Canvas and your student card — and looks yours up.
+              <strong className="text-white">Sussex username</strong> (the start of your Sussex
+              email, the one you log in with) and looks yours up.
             </p>
             <div className="code-block">
               <pre className="text-gray-200">
-                REGISTRATION_NUMBER = &quot;123456&quot;{'   '}
+                STUDENT_ID = &quot;ab123&quot;{'   '}
                 <span className="text-gray-500"># &lt;-- yours</span>
               </pre>
             </div>
             <p className="text-gray-400 text-sm mt-3">
-              If the notebook says your number is not on the class list, check it against
-              Canvas, then email the convenor. Do not pick a gene yourself — you are marked on
-              the one assigned to you.
+              If the notebook says you are not on the class list, check the spelling, then email
+              the convenor. Do not pick a gene yourself — you are marked on the one assigned to you.
             </p>
           </Section>
 
