@@ -35,12 +35,12 @@ export const lab7DepMapData: LectureData = {
             { code: 'difference.idxmin()', means: 'the name of the smallest value' },
           ]}
           steps={[
-            'count the groups before you trust them',
-            'skin and the rest: a table and its complement',
-            'the trap: RAN tops every list, so it tells you nothing',
-            'the fix: a difference, and SOX10 comes out on top',
-            'most_specific(table, lineage): one function for any cancer type',
-            '18 of 73 skin lines hardly need SOX10, so the mean is not enough',
+            'count the groups first',
+            'skin, and everything else',
+            'the trap: RAN tops every list',
+            'the fix: a difference finds SOX10',
+            'most_specific(table, lineage)',
+            'the 18 skin lines the mean hides',
           ]}
           notebook={{ path: 'lab07/01_find_the_suspects.ipynb', label: '01 · Finding the suspects' }}
           footer="About 35 minutes. No plots in this notebook, only tables."
