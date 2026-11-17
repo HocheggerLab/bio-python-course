@@ -7,6 +7,7 @@ import { Slide05Restore } from './Slide05Restore'
 import { Slide06Gitignore } from './Slide06Gitignore'
 import { Slide07GitHub } from './Slide07GitHub'
 import { Slide08Branches } from './Slide08Branches'
+import { Slide09Buttons } from './Slide09Buttons'
 
 /* The tech session for Lab 7: git on one local repo, for one person.
    Branching and merging are deliberately left out — with no collaborators a
@@ -26,5 +27,6 @@ export const lab7GitData: LectureData = {
     { title: 'What not to commit', content: <Slide06Gitignore /> },
     { title: 'GitHub and push', content: <Slide07GitHub /> },
     { title: 'Branches: not today', content: <Slide08Branches /> },
+    { title: 'Prefer buttons?', content: <Slide09Buttons /> },
   ],
 }

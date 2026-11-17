@@ -1,7 +1,7 @@
 import { SlideTitle, GradientText } from '@/components/slides/SlideTitle'
 import { SlideCard, CardHeading, CardList } from '@/components/slides/SlideCard'
 
-const DATACAMP = 'https://www.datacamp.com/courses/introduction-to-git'
+const DATACAMP = 'https://app.datacamp.com/learn/skill-tracks/github-foundations'
 
 const later: React.ReactNode[] = [
   <>A <span className="text-white">branch</span> is a second line of history, so you can try
@@ -54,7 +54,7 @@ export function Slide08Branches() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-full bg-bio-green/20 hover:bg-bio-green/30 border border-bio-green/40 text-bio-green font-semibold px-4 md:px-5 py-1.5 md:py-2 text-xs md:text-sm xl:text-base transition-colors"
         >
-          DataCamp · Introduction to Git →
+          DataCamp · GitHub Foundations track →
         </a>
       </div>
     </>
