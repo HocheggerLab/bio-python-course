@@ -4,7 +4,7 @@ import { ConceptSlide } from '@/components/slides/layouts'
 const facts = [
   ['Clue 1', 'A long tail: about 90 of 1,165 cell lines die without SOX10.'],
   ['Clue 2', 'In the scatter, the tail is skin cancer, and those lines need BRAF too.'],
-  ['Clue 3', 'Split by lineage: skin needs it most. The skin lines that don’t are mostly not melanoma at all.'],
+  ['Clue 3', 'Split by lineage: skin needs it most. Of the 18 skin lines that don’t, 8 are not melanoma at all.'],
 ]
 
 export function SlideCaseClosed() {

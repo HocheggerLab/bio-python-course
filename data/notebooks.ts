@@ -97,11 +97,11 @@ export const labNotebooks: LabNotebooks[] = [
   {
     lab: 7,
     labTitle: 'End-to-End Data Mining',
-    available: false,
+    available: true,
     notebooks: [
-      { path: 'lab07/01_find_the_suspects.ipynb', title: '01 \u00b7 Finding the suspects', blurb: 'pandas on DepMap: filter, mean, nsmallest \u2014 and why RAN tops every list.', solutions: 'lab07/solutions/01_find_the_suspects_solutions.ipynb' },
-      { path: 'lab07/02_showing_it.ipynb', title: '02 \u00b7 Showing it', blurb: 'matplotlib from scratch: fig and ax, histogram, grey-plus-highlight scatter, box with dots.', solutions: 'lab07/solutions/02_showing_it_solutions.ipynb' },
-      { path: 'lab07/03_a_grid_and_a_loose_end.ipynb', title: '03 \u00b7 A grid, and the loose end', blurb: 'subplots(2, 2), axes.flat, a reusable plotting function, and the skin lines that do not need SOX10.', solutions: 'lab07/solutions/03_a_grid_and_a_loose_end_solutions.ipynb' },
+      { path: 'lab07/01_find_the_suspects.ipynb', title: '01 \u00b7 Finding the suspects', blurb: 'pandas on DepMap: why RAN tops every list, how a difference finds SOX10, and a function for any lineage.', solutions: 'lab07/solutions/01_find_the_suspects_solutions.ipynb' },
+      { path: 'lab07/02_showing_it.ipynb', title: '02 \u00b7 Showing it', blurb: 'matplotlib from scratch: fig and ax, histograms, a grey-and-colour scatter, a box plot with every line as a dot.', solutions: 'lab07/solutions/02_showing_it_solutions.ipynb' },
+      { path: 'lab07/03_a_grid_and_a_loose_end.ipynb', title: '03 \u00b7 A grid, and the loose end', blurb: 'Grids with axes.flat and sharex, a plotting function that takes an ax, and who the 18 skin lines are.', solutions: 'lab07/solutions/03_a_grid_and_a_loose_end_solutions.ipynb' },
     ],
   },
   { lab: 8, labTitle: 'LLMs & Agentic AI', available: false, notebooks: [] },

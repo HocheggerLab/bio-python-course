@@ -21,28 +21,29 @@ export const lab7DepMapData: LectureData = {
           title={<>1 · Finding the <GradientText>suspects</GradientText></>}
           intro={
             <>
-              Lecture 7 part 1 again, with you typing. Which genes does skin cancer need?
-              The obvious answer is wrong, and finding out why is the point of the notebook.
+              Lecture 7 part 1 again, with you typing. Which gene does skin cancer need that
+              other cancers do not? The obvious way to ask gives the wrong answer.
             </>
           }
-          toolsHeading="pandas you already know"
+          toolsHeading="pandas you already know, and two new ones"
           tools={[
-            { code: 'df.shape · df.head()', means: 'how big the table is; the first five rows' },
             { code: 'df["oncotree_lineage"].value_counts()', means: 'how many cell lines per cancer type' },
-            { code: 'df[df["oncotree_lineage"] == "Skin"]', means: 'keep the skin rows' },
-            { code: 'skin.mean(numeric_only=True)', means: 'the mean gene effect of every gene, in skin' },
-            { code: 'means.nsmallest(10)', means: 'the ten genes skin needs most' },
-            { code: '(skin_mean - rest_mean)', means: 'needed in skin compared with everywhere else' },
+            { code: 'df[df["oncotree_lineage"] != "Skin"]', means: 'everything that is not skin' },
+            { code: 'skin.mean(numeric_only=True)', means: 'the mean of every gene column' },
+            { code: 'means.nsmallest(5)', means: 'the five genes the cells need most' },
+            { code: 'skin_mean - rest_mean', means: 'needed in skin more than elsewhere' },
+            { code: 'difference.idxmin()', means: 'the name of the smallest value' },
           ]}
           steps={[
-            'what one row is, and what a gene effect of −1 means',
-            'the ten genes skin needs most — then the same for lung, and for bowel',
+            'count the groups before you trust them',
+            'skin and the rest: a table and its complement',
             'the trap: RAN tops every list, so it tells you nothing',
-            'the fix: skin minus the rest, and SOX10 appearing near the top',
-            'your turn: run the same comparison for a lineage of your choice',
+            'the fix: a difference, and SOX10 comes out on top',
+            'most_specific(table, lineage): one function for any cancer type',
+            '18 of 73 skin lines hardly need SOX10, so the mean is not enough',
           ]}
           notebook={{ path: 'lab07/01_find_the_suspects.ipynb', label: '01 · Finding the suspects' }}
-          footer="About 40 minutes. No plots in this notebook — only tables."
+          footer="About 35 minutes. No plots in this notebook, only tables."
         />
       ),
     },
@@ -53,29 +54,29 @@ export const lab7DepMapData: LectureData = {
           title={<>2 · <GradientText>Showing</GradientText> it</>}
           intro={
             <>
-              You have a gene and a number. Now make the figure that convinces someone else,
-              starting from the one line every matplotlib figure begins with.
+              From an empty figure to a box plot with every cell line as a dot. Each exercise has a
+              self-check that looks at the figure you drew.
             </>
           }
           toolsHeading="matplotlib, from scratch"
           tools={[
             { code: 'fig, ax = plt.subplots()', means: 'a sheet of paper (fig) and one panel on it (ax)' },
             { code: 'ax.hist(df["SOX10"], bins=40)', means: 'the spread of one column' },
-            { code: 'ax.scatter(x, y, s=6, alpha=0.4)', means: 'two columns against each other' },
-            { code: 'ax.scatter(...) again', means: 'a second group on the SAME panel, drawn on top' },
-            { code: 'ax.set_xlabel · set_ylabel · legend', means: 'the labels, and the key' },
-            { code: 'fig.savefig("f.png", dpi=300)', means: 'a file you can put in a report' },
+            { code: 'ax.scatter(x, y, color="grey")', means: 'two columns; call it twice to draw a group on top' },
+            { code: 'label="skin" · ax.legend()', means: 'name each layer, then show the key' },
+            { code: 'ax.boxplot(groups, tick_labels=names)', means: 'one box per group' },
+            { code: 'np.random.normal(1, 0.06, n)', means: 'x values near box 1, so the dots spread out' },
           ]}
           steps={[
-            'the anatomy of a figure: fig, ax, and who owns the title',
-            'a histogram of SOX10 across every line — and the two humps in it',
-            'BRAF against SOX10: grey for everything, colour for skin',
-            'labels, a legend, and why label= goes on the scatter and not the legend',
-            'the box plot with every cell line as a dot on top',
-            'saving at 300 dpi, with bbox_inches="tight"',
+            'an empty figure with three labels',
+            'histograms: BRAF in every line, SOX10 in skin',
+            'a scatter plot, then grey for the rest and colour for skin',
+            'broken: why the blue dots disappeared',
+            'a box plot, then every cell line as a dot on it',
+            'six boxes from a loop with enumerate, then fig.savefig at 300 dpi',
           ]}
           notebook={{ path: 'lab07/02_showing_it.ipynb', label: '02 · Showing it' }}
-          footer="About 45 minutes. The last figure is the one the project asks for."
+          footer="About 40 minutes. The box plot with dots is the figure the project asks for."
         />
       ),
     },
@@ -86,28 +87,29 @@ export const lab7DepMapData: LectureData = {
           title={<>3 · A grid, and the <GradientText>loose end</GradientText></>}
           intro={
             <>
-              Four panels instead of one, a function so you write the plotting code once —
-              and then the question the box plot leaves hanging.
+              Several panels in one figure, a plotting function you write once, and who the 18
+              skin lines that do not need SOX10 are.
             </>
           }
           toolsHeading="More than one panel"
           tools={[
-            { code: 'fig, axes = plt.subplots(2, 2)', means: 'four panels; axes is a 2-D array' },
-            { code: 'axes[0][1]', means: 'row 0, column 1 — counting from 0' },
-            { code: 'for ax in axes.flat:', means: 'visit all four without nested loops' },
-            { code: 'plt.subplots(2, 2, sharey=True)', means: 'one y-axis scale, so panels compare' },
-            { code: 'fig.suptitle(...) · fig.tight_layout()', means: 'a title for the sheet; stop labels overlapping' },
-            { code: 'def plot_gene(ax, gene):', means: 'lab 4 again: write it once, use it four times' },
+            { code: 'fig, axes = plt.subplots(2, 2)', means: 'four panels; pick one with axes[row][col]' },
+            { code: 'for ax, name in zip(axes.flat, names):', means: 'visit every panel with a loop' },
+            { code: 'plt.subplots(2, 2, sharex=True)', means: 'one scale for all panels, so they compare' },
+            { code: 'def plot_gene(ax, gene):', means: 'a function that draws on the panel you give it' },
+            { code: 'fig.suptitle(...) · fig.tight_layout()', means: 'a title over the figure; no overlapping labels' },
+            { code: 'df["col"].str.contains("Melanoma")', means: 'rows whose text contains a word' },
           ]}
           steps={[
-            'four genes, four panels, one loop',
-            'why sharey changes what the reader concludes',
-            'turning the plotting code into a function that takes an ax',
-            'the loose end: about 18 of 73 skin lines barely need SOX10 at all',
-            'find them, look at them, and read about de-differentiation',
+            'two panels side by side, and the axes.hist error',
+            'a 2 × 2 grid by hand, then with a loop',
+            'why sharex changes what the reader concludes',
+            'plot_gene(ax, gene), and a function that ignores its argument',
+            'the 18: eight are not melanoma, ten are melanomas that switched',
+            'one three-panel figure for the whole result',
           ]}
           notebook={{ path: 'lab07/03_a_grid_and_a_loose_end.ipynb', label: '03 · A grid, and the loose end' }}
-          footer="About 45 minutes. The last section is open-ended on purpose."
+          footer="About 40 minutes. The last figure puts the whole lab in three panels."
         />
       ),
     },

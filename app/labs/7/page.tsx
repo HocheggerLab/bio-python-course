@@ -26,9 +26,9 @@ const sessions: Session[] = [
     num: 2,
     title: 'From Table to Figure: the SOX10 Story',
     topics: [
-      '01 · finding the suspects: filter, mean, nsmallest — and why RAN tops every list',
+      '01 · finding the suspects: why RAN tops every list, and how a difference finds SOX10',
       '02 · showing it: fig and ax, histogram, grey-plus-highlight scatter, box with dots',
-      '03 · a grid and a loose end: subplots(2, 2), axes.flat, a reusable plotting function',
+      '03 · a grid and a loose end: subplots(2, 2), axes.flat, plot_gene(ax, gene), and who the 18 are',
       'then a free matplotlib course to take it further',
     ],
     status: 'available',
