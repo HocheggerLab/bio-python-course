@@ -126,13 +126,15 @@ export const pythonDataData: Lecture[] = [
   {
     id: 8,
     title: "Statistics — Is It Real?",
-    status: "under-construction",
+    status: "available",
+    dataset: { emoji: "🧬", field: "Cancer biology", source: "Cancer Dependency Map (DepMap)" },
     topics: [
-      "The plotting landscape, and seaborn",
+      "The plotting landscape: pandas and seaborn",
       "Chance makes differences too: what a p-value means",
       "Mann–Whitney, and why significant is not the same as big",
-      "Many tests, and Spearman correlation"
+      "Pearson and Spearman: do two columns move together?"
     ],
+    slideUrl: "/lectures/8",
     type: 'core'
   }
 ]

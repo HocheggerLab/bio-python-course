@@ -104,7 +104,15 @@ export const labNotebooks: LabNotebooks[] = [
       { path: 'lab07/03_a_grid_and_a_loose_end.ipynb', title: '03 \u00b7 A grid, and the loose end', blurb: 'Grids with axes.flat and sharex, a plotting function that takes an ax, and who the 18 skin lines are.', solutions: 'lab07/solutions/03_a_grid_and_a_loose_end_solutions.ipynb' },
     ],
   },
-  { lab: 8, labTitle: 'LLMs & Agentic AI', available: false, notebooks: [] },
+  {
+    lab: 8,
+    labTitle: 'Figures, Tests & Your Toolkit',
+    available: true,
+    notebooks: [
+      { path: 'lab08/01_quicker_figures.ipynb', title: '01 \u00b7 Quicker figures', blurb: 'pandas .plot and seaborn on DepMap: a label column, box plus dots, and a function that returns the figure.', solutions: 'lab08/solutions/01_quicker_figures_solutions.ipynb' },
+      { path: 'lab08/02_real_or_chance.ipynb', title: '02 \u00b7 Real, or chance?', blurb: 'scipy.stats: random groups, Mann\u2013Whitney, significant vs big, compare() on nine genes, and a Spearman correlation.', solutions: 'lab08/solutions/02_real_or_chance_solutions.ipynb' },
+    ],
+  },
 ]
 
 export const notebookCount = labNotebooks.reduce((n, l) => n + l.notebooks.length, 0)

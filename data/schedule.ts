@@ -59,13 +59,13 @@ export const scheduleData: ScheduleWeek[] = [
   },
   {
     week: 8,
-    lecture: { num: 8, title: 'LLMs & Agentic AI' },
+    lecture: { num: 8, title: 'Statistics — Is It Real?' },
     workshop: { num: 7, title: 'End-to-End Data Mining' },
     projectWork: 'Project 2',
   },
   {
     week: 9,
-    workshop: { num: 8, title: 'LLMs & Agentic AI' },
+    workshop: { num: 8, title: 'Figures, Tests & Your Toolkit' },
     projectWork: 'Project 2',
   },
   {
