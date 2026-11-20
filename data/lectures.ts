@@ -121,6 +121,7 @@ export const pythonDataData: Lecture[] = [
       "Who needs SOX10? A DepMap case"
     ],
     slideUrl: "/lectures/7",
+    labsUrl: "/labs/7",
     type: 'core'
   },
   {
@@ -135,6 +136,7 @@ export const pythonDataData: Lecture[] = [
       "Pearson and Spearman: do two columns move together?"
     ],
     slideUrl: "/lectures/8",
+    labsUrl: "/labs/8",
     type: 'core'
   }
 ]
