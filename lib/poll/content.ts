@@ -896,6 +896,54 @@ ax.scatter(skin["BRAF"], skin["SOX10"], label="skin")
       'Skin lines grow fastest, so any knockout hurts them more',
     ],
   },
+
+  /* Lecture 8 quiz 1: the same histogram three ways. Which library draws the
+     bars? The trap in each: ax= does not make it matplotlib, df does not make
+     it pandas. */
+  'l8-q1a': {
+    prompt: 'Which library draws the bars in this code?',
+    code: "fig, ax = plt.subplots()\ndf[\"SOX10\"].plot.hist(bins=40, ax=ax)\nax.set_xlabel(\"SOX10 gene effect\")\nplt.show()",
+    optionsAreCode: true,
+    options: ['matplotlib', 'seaborn', 'pandas'],
+  },
+  'l8-q1b': {
+    prompt: 'Which library draws the bars in this code?',
+    code: "fig, ax = plt.subplots()\nax.hist(df[\"SOX10\"], bins=40)\nax.set_xlabel(\"SOX10 gene effect\")\nplt.show()",
+    optionsAreCode: true,
+    options: ['matplotlib', 'seaborn', 'pandas'],
+  },
+  'l8-q1c': {
+    prompt: 'Which library draws the bars in this code?',
+    code: "fig, ax = plt.subplots()\nsns.histplot(data=df, x=\"SOX10\", bins=40, ax=ax)\nax.set_xlabel(\"SOX10 gene effect\")\nplt.show()",
+    optionsAreCode: true,
+    options: ['matplotlib', 'seaborn', 'pandas'],
+  },
+
+  /* Lecture 8 quiz 2: reading p, choosing a test, reporting. */
+  'l8-q2a': {
+    prompt: 'Skin vs the rest gives p = 0.03. What does the p-value mean?',
+    options: [
+      'There is a 3% chance that skin and the rest are the same',
+      'If there were no real difference, a gap this big would turn up about 3% of the time',
+      'Skin differs from the rest by 3%',
+      'There is a 97% chance the result is important',
+    ],
+  },
+  'l8-q2b': {
+    prompt:
+      'You are comparing two conditions and are unsure how the data are distributed. Which test?',
+    options: ['t-test', 'Mann–Whitney U', 'Spearman correlation', 'No test: compare the means'],
+  },
+  'l8-q2c': {
+    prompt:
+      'KRAS, skin vs the rest: median difference +0.1, p = 0.009. What do you conclude?',
+    options: [
+      'Skin lines depend strongly on KRAS',
+      'The difference is probably real, but too small to matter biologically',
+      'The test must be wrong: the difference is tiny',
+      'Not significant',
+    ],
+  },
 }
 
 export function getContent(id: string): PollContent | undefined {

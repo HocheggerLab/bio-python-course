@@ -492,6 +492,11 @@ try:
     import pandas as _pd
     _pd.set_option("display.max_columns", None)
     _pd.set_option("display.width", 250)
+    # Adding one column to a wide table (depmap_lecture.csv has 261) trips
+    # pandas' fragmentation warning in Pyodide; it is about speed, not
+    # correctness, and reads as an error in the red output panel.
+    import warnings as _warnings
+    _warnings.simplefilter("ignore", _pd.errors.PerformanceWarning)
 except ImportError:
     pass
 `)

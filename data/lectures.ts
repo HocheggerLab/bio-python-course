@@ -125,13 +125,13 @@ export const pythonDataData: Lecture[] = [
   },
   {
     id: 8,
-    title: "Exploratory Data Analysis and Statistics",
+    title: "Statistics — Is It Real?",
     status: "under-construction",
     topics: [
-      "Look before you test: distributions and summaries",
-      "Comparing two groups: box plot, median difference",
-      "The Mann–Whitney test and what a p-value means",
-      "Many tests, many chances: multiple testing"
+      "The plotting landscape, and seaborn",
+      "Chance makes differences too: what a p-value means",
+      "Mann–Whitney, and why significant is not the same as big",
+      "Many tests, and Spearman correlation"
     ],
     type: 'core'
   }

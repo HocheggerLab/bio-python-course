@@ -129,6 +129,19 @@ const ANSWERS: Record<string, { lecture: number; correctIndex: number }> = {
   'l7-q3e': { lecture: 7, correctIndex: 1 },
   // Lineage addiction: the dependency follows cell identity, not a mutation.
   'l7-q3f': { lecture: 7, correctIndex: 1 },
+  // Lecture 8 quiz 1: options are matplotlib, seaborn, pandas.
+  // df["SOX10"].plot.hist(ax=ax): pandas draws, onto a matplotlib ax.
+  'l8-q1a': { lecture: 8, correctIndex: 2 },
+  // ax.hist(df["SOX10"]): matplotlib draws; df only supplies the numbers.
+  'l8-q1b': { lecture: 8, correctIndex: 0 },
+  // sns.histplot(data=df, x=...): seaborn.
+  'l8-q1c': { lecture: 8, correctIndex: 1 },
+  // Lecture 8 quiz 2. p is about the data under the null, not the null itself.
+  'l8-q2a': { lecture: 8, correctIndex: 1 },
+  // Long tail: rank-based test.
+  'l8-q2b': { lecture: 8, correctIndex: 1 },
+  // Significant but tiny.
+  'l8-q2c': { lecture: 8, correctIndex: 1 },
 }
 
 export function getQuestion(id: string): QuestionDef | undefined {

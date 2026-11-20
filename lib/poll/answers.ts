@@ -559,6 +559,41 @@ export const POLL_ANSWERS: Record<string, string> = {
     'programme that needs it. Compare RAN, which every cell needs \u2014 only the selective kind ' +
     'makes a drug target. It also explains the ~18 of 73 skin lines on the box plot that do not ' +
     'need SOX10: those have de-differentiated out of the melanocytic state.',
+
+  'l8-q1a':
+    '**pandas.** The plot is a method *of the data*: `df["SOX10"].plot.hist()`. Passing ' +
+    '`ax=ax` only tells pandas which matplotlib panel to draw on, and `ax.set_xlabel()` ' +
+    'labels it afterwards. All three libraries end up as matplotlib figures, which is why ' +
+    'they mix so easily.',
+
+  'l8-q1b':
+    '**matplotlib.** The drawing call is `ax.hist(...)`, a method of the axes. `df["SOX10"]` ' +
+    'only hands it the numbers: matplotlib does not know or care that they came from a ' +
+    'DataFrame.',
+
+  'l8-q1c':
+    '**seaborn.** `sns.histplot` takes the whole table as `data=df` and the *name* of a ' +
+    'column as `x=`. That is the seaborn signature: name the columns, and it does the ' +
+    'splitting, colouring and legends for you.',
+
+  'l8-q2a':
+    '**If there were no real difference, a gap this big would turn up about 3% of the time.** ' +
+    'A p-value is calculated *assuming* the null hypothesis is true, so it cannot also be the ' +
+    'probability that the null is true. It says nothing about how big the difference is either: ' +
+    'that is what the median difference is for.',
+
+  'l8-q2b':
+    '**Mann–Whitney U.** When you are unsure, it is the safe choice: it ranks all the values ' +
+    'and compares the ranks, so it needs no bell shape, and a long tail or a few extreme values ' +
+    'cannot drag the result. A t-test assumes roughly bell-shaped data. Spearman is for two ' +
+    'columns, not two groups.',
+
+  'l8-q2c':
+    '**Probably real, but too small to matter.** p = 0.009 says chance is an unlikely ' +
+    'explanation, so the shift is probably real. But +0.1 is tiny on a scale where SOX10 in ' +
+    'melanoma moves by more than 1, and the sign is positive: skin lines need KRAS slightly ' +
+    '*less* than the rest, which rules out the first option twice. Read the difference first, ' +
+    'then the p-value.',
 }
 
 export const getAnswerProse = (id: string): string | undefined =>
