@@ -55,23 +55,51 @@ export const lab8StatsData: LectureData = {
           }
           toolsHeading="scipy.stats"
           tools={[
-            { code: 'df.sample(73)', means: 'a random group, to see what chance does' },
             { code: 'mannwhitneyu(a, b).pvalue', means: 'could this difference be chance?' },
             { code: 'p < 0.05', means: 'the cut-off; difference first, then p' },
             { code: 'def compare(a, b): return {...}', means: 'medians, difference, p and significant, by name' },
             { code: 'pd.DataFrame(rows)', means: 'a list of dictionaries becomes a table, one row per gene' },
-            { code: 'spearmanr(x, y).statistic · sns.regplot', means: 'do two columns move together?' },
+            { code: 'spearmanr(x, y).statistic', means: 'do two columns move together?' },
+            { code: 'linregress(x, y).slope', means: 'by how much: the line, its r squared, a prediction' },
           ]}
           steps={[
-            '500 random groups vs the real skin difference',
-            'BRAF and PAX8: significant, or not?',
-            'broken: comparing the whole result with 0.05',
+            '500 random groups vs real skin',
+            'BRAF and PAX8: significant?',
+            'broken: result < 0.05',
             'NRAS: real but small',
-            'compare(a, b), then nine genes in one table',
-            'MITF and SOX10: a Spearman correlation',
+            'compare(a, b), then nine genes',
+            'Spearman, then your own regression line',
           ]}
           notebook={{ path: 'lab08/02_real_or_chance.ipynb', label: '02 · Real, or chance?' }}
-          footer="About 40 minutes. compare() is the core of your project's statistics."
+          footer="About 50 minutes. compare() is the core of your project's statistics."
+        />
+      ),
+    },
+    {
+      title: 'Statistics the hacker’s way',
+      content: (
+        <RecapSlide
+          title={<>3 · Advanced: statistics the <GradientText>hacker’s way</GradientText></>}
+          intro={<>Optional. A p-value and a confidence interval from a loop and random numbers, no formula.</>}
+          toolsHeading="numpy, a loop, and rng"
+          tools={[
+            { code: 'rng = np.random.default_rng()', means: 'a random number generator' },
+            { code: 'rng.permutation(is_skin)', means: 'the same labels, shuffled: pure chance' },
+            { code: 'values[labels] · values[~labels]', means: 'the True group and the False group' },
+            { code: 'count / n', means: 'how often chance beat the real difference: the p-value' },
+            { code: 'rng.choice(a, size=len(a), replace=True)', means: 'one bootstrap sample of your own data' },
+            { code: 'np.percentile(boots, [2.5, 97.5])', means: 'the middle 95 %: a confidence interval' },
+          ]}
+          steps={[
+            'median_diff(values, labels)',
+            'permutation_p: a thousand shuffles',
+            'a loop and Mann–Whitney agree: MDM2 and RAN',
+            'broken: a bootstrap with no width',
+            'bootstrap_ci(a, b): SOX10 and TP53',
+            'a shuffled correlation, then NRAS: when methods disagree',
+          ]}
+          notebook={{ path: 'lab08/03_advanced_statistics_for_hackers.ipynb', label: '03 · Statistics the hacker’s way' }}
+          footer="About 40 minutes. Based on Jake VanderPlas’s talk Statistics for Hackers, from Lecture 8."
         />
       ),
     },

@@ -32,7 +32,8 @@ const sessions: Session[] = [
     topics: [
       '01 · quicker figures: pandas .plot, seaborn box plus dots, and a function that returns the figure',
       '02 · real, or chance: random groups, Mann–Whitney, significant vs big, compare() on many genes',
-      'then a Spearman correlation, and free DataCamp courses to go further',
+      '02 continues: Spearman correlation and a regression line with linregress',
+      '03 · advanced, optional: permutation tests and the bootstrap, statistics from a loop',
     ],
     status: open,
     href: '/labs/8/2',
